@@ -64,6 +64,9 @@ public struct KeynoteWriter {
             if let body = slide.body {
                 try document.setSlideText(at: index, .body, to: body)
             }
+            if let notes = slide.notes {
+                try document.setSlideText(at: index, .notes, to: notes)
+            }
         }
         return document
     }

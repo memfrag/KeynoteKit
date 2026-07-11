@@ -38,12 +38,18 @@ Early development. Working today:
     payload without full decoding
   - Per-slide title/body reading and editing (`slideTitle`/`setSlideText`),
     navigating `SlideArchive` → placeholder → `StorageArchive`
-- **`KeynoteBuilder`** — the high-level API: describe a `Presentation` of
-  `Slide`s (title + body) declaratively and write it to a `.key`. Uses a
-  template strategy — an embedded seed deck carrying a real Keynote theme,
-  masters, and stylesheets is grown/shrunk to the requested slide count and
-  filled in, so output inherits genuine Keynote styling. Point it at your own
-  `.key` template to use a branded theme.
+- **`KeynoteBuilder`** — the high-level API:
+  - Describe a `Presentation` of `Slide`s (title, body, presenter notes)
+    declaratively and write it to a `.key`. Uses a template strategy — an
+    embedded seed deck carrying a real Keynote theme, masters, and stylesheets
+    is grown/shrunk to the requested slide count and filled in, so output
+    inherits genuine Keynote styling. Point it at your own `.key` template to
+    use a branded theme.
+  - **Markdown presentations**: a Marp/Deckset-style format
+    (`Presentation(markdown:)`) — `---` separates slides, the first heading is
+    the title, bullets/paragraphs become the body, and `Notes:` (or
+    `<!-- notes: … -->`) adds presenter notes. Image references are parsed and
+    carried but not yet placed (M4).
 - **`iwatool`** — CLI for inspecting, round-tripping, and rewriting `.key` files
 
 Files generated or modified through KeynoteKit open cleanly in Keynote with
@@ -70,6 +76,29 @@ try writer.write(deck, to: URL(filePath: "Deck.key"))
 
 The builder returns a `KeynoteDocument` from `build(_:)` if you want to apply
 further edits (e.g. `replaceImage`) before writing.
+
+Or author the deck as markdown:
+
+```markdown
+# KeynoteKit
+
+A Swift package for generating Keynote files
+
+Notes: This whole deck was generated from markdown.
+
+---
+
+# What you can do
+
+- Replace text and images
+- Add, remove, and reorder slides
+- Build decks from markdown
+```
+
+```swift
+let deck = try Presentation(markdownFileURL: URL(filePath: "talk.md"))
+try KeynoteWriter().write(deck, to: URL(filePath: "talk.key"))
+```
 
 ## Usage
 
@@ -100,6 +129,9 @@ swift run iwatool replace-image In.key Out.key photo.jpg new-photo.jpg
 
 # Build a deck from a text outline ("# " starts a slide; other lines are body)
 swift run iwatool build outline.txt Deck.key
+
+# Build a deck from a markdown presentation
+swift run iwatool build-md talk.md Deck.key
 ```
 
 ## Regenerating the schemas

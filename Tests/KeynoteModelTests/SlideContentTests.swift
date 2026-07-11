@@ -37,4 +37,18 @@ struct SlideContentTests {
             try document.setSlideText(at: 9, .title, to: "x")
         }
     }
+
+    @Test("sets and reads presenter notes")
+    func notes() throws {
+        var document = try KeynoteDocument(contentsOf: Self.twoSlideURL)
+        try document.setSlideText(at: 0, .notes, to: "Remember to smile")
+
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("slide-notes.key")
+        try document.write(to: url)
+        defer { try? FileManager.default.removeItem(at: url) }
+        let reread = try KeynoteDocument(contentsOf: url)
+
+        #expect(try reread.slideNotes(at: 0) == "Remember to smile")
+        #expect(try reread.slideTitle(at: 0) == "First")
+    }
 }

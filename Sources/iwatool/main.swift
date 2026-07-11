@@ -18,6 +18,7 @@ usage:
                                                  replace an image (by original file name)
   iwatool list-media <file.key>                  list Data/ files
   iwatool build <outline.txt> <out.key>          build a deck from a simple outline
+  iwatool build-md <slides.md> <out.key>         build a deck from a markdown presentation
   iwatool set-title <in.key> <out.key> <index> <text>   set a slide's title
 """
 
@@ -184,6 +185,19 @@ case "build":
     let writer = try KeynoteWriter()
     try writer.write(Presentation(slides: slides), to: outputURL)
     print("built \(slides.count)-slide deck")
+
+case "build-md":
+    guard arguments.count >= 4 else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    let presentation = try Presentation(markdownFileURL: inputURL)
+    let imageCount = presentation.slides.reduce(0) { $0 + $1.imagePaths.count }
+    let writer = try KeynoteWriter()
+    try writer.write(presentation, to: outputURL)
+    var message = "built \(presentation.slides.count)-slide deck from markdown"
+    if imageCount > 0 {
+        message += " (\(imageCount) image reference(s) parsed but not yet placed — coming with M4)"
+    }
+    print(message)
 
 default:
     fail(usage)

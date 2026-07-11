@@ -20,10 +20,18 @@ public struct Presentation {
 public struct Slide {
     public var title: String?
     public var body: String?
+    /// Presenter notes.
+    public var notes: String?
+    /// Image file paths parsed from the source (e.g. markdown `![](…)`).
+    /// Not yet rendered — image placement lands with M4; carried so the
+    /// format stays forward-compatible.
+    public var imagePaths: [String]
 
-    public init(title: String? = nil, body: String? = nil) {
+    public init(title: String? = nil, body: String? = nil, notes: String? = nil, imagePaths: [String] = []) {
         self.title = title
         self.body = body
+        self.notes = notes
+        self.imagePaths = imagePaths
     }
 }
 

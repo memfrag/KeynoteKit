@@ -6,14 +6,15 @@ public enum SlideContentError: Error {
     case slideIndexOutOfRange(Int)
     case slideComponentNotFound(UInt64)
     case placeholderHasNoStorage
-    case noTitlePlaceholder
-    case noBodyPlaceholder
+    case noPlaceholder(SlidePlaceholder)
 }
 
 /// The text placeholders a slide exposes for editing.
-public enum SlidePlaceholder {
+public enum SlidePlaceholder: Equatable, Sendable {
     case title
     case body
+    /// The presenter notes (`SlideArchive.note` → `NoteArchive`).
+    case notes
 }
 
 /// Reads and writes the title/body placeholder text of individual slides —
@@ -34,6 +35,10 @@ extension KeynoteDocument {
         try slideText(at: index, .body)
     }
 
+    public func slideNotes(at index: Int) throws -> String? {
+        try slideText(at: index, .notes)
+    }
+
     public func slideText(at index: Int, _ placeholder: SlidePlaceholder) throws -> String? {
         let location = try storageLocation(slideIndex: index, placeholder: placeholder)
         guard let location else { return nil }
@@ -50,7 +55,7 @@ extension KeynoteDocument {
         to text: String
     ) throws {
         guard let location = try storageLocation(slideIndex: index, placeholder: placeholder) else {
-            throw placeholder == .title ? SlideContentError.noTitlePlaceholder : SlideContentError.noBodyPlaceholder
+            throw SlideContentError.noPlaceholder(placeholder)
         }
         var record = components[location.component].records[location.record]
         var storage = try record.decode(TSWP_StorageArchive.self)
@@ -82,6 +87,25 @@ extension KeynoteDocument {
         let slideRecord = component.records.first { $0.identifier == slideRootID }!
         let slide = try slideRecord.decode(KN_SlideArchive.self)
 
+        // Notes reach their storage through a NoteArchive rather than a
+        // placeholder/ShapeInfoArchive.
+        if placeholder == .notes {
+            guard slide.hasNote else { return nil }
+            guard let noteRecord = component.records.first(where: {
+                $0.identifier == slide.note.identifier
+            }) else {
+                return nil
+            }
+            let note = try noteRecord.decode(KN_NoteArchive.self)
+            let noteStorageID = note.containedStorage.identifier
+            guard let storageRecordIndex = component.records.firstIndex(where: {
+                $0.identifier == noteStorageID
+            }) else {
+                return nil
+            }
+            return RecordLocation(component: componentIndex, record: storageRecordIndex)
+        }
+
         let placeholderRef: TSP_Reference
         switch placeholder {
         case .title:
@@ -90,6 +114,8 @@ extension KeynoteDocument {
         case .body:
             guard slide.hasBodyPlaceholder else { return nil }
             placeholderRef = slide.bodyPlaceholder
+        case .notes:
+            return nil // handled above
         }
 
         guard let placeholderRecordIndex = component.records.firstIndex(where: {

@@ -70,13 +70,15 @@ Early development. Working today:
     effect direction, and action-build rotation/scale/opacity.
 
   Effect names are open strings (Keynote doesn't validate them — an unknown
-  name simply doesn't animate). Keynote 15 ships ~150 identifiers in two
-  families: classic `apple:*` names (`apple:dissolve`, `apple:bc-pop`,
-  `apple:action-rotation`, `apple:3D-cube`) and plugin effects
-  (`com.apple.iWork.Keynote.KLNConfetti`, `.BUKAnvil`, `.BLTSwoosh`). The
-  reliable way to discover the identifier and parameters for a specific
-  Keynote UI effect: apply it in Keynote, save, and inspect with
-  `iwatool tree` / `iwatool builds`.
+  name simply doesn't animate), spanning two families: classic `apple:*`
+  names and plugin effects (`com.apple.iWork.Keynote.KLNConfetti`, …).
+  **`KeynoteEffects`** catalogs the known-good identifiers — 42 transitions,
+  40 build-ins, 39 build-outs, and 10 actions, extracted from decks authored
+  in Keynote 15.2.1 (raw data in `catalog/`) — plus convenience constants
+  (`KeynoteEffects.dissolve`, `.confetti`, `.magicMove`, …). List them with
+  `iwatool effects [transitions|build-ins|build-outs|actions]`. For anything
+  not cataloged: apply it in Keynote, save, and inspect with `iwatool tree` /
+  `iwatool builds`.
   - **Node-addressed edit commands** (the AI-facing write interface):
     `setNodeText`, `setNodeFrame`, `setNodeMedia` (replaces image content —
     including unmaterialized theme stock photos, by creating fresh data

@@ -28,6 +28,8 @@ usage:
                                                  set a slide transition (e.g. apple:dissolve;
                                                  "none" removes it)
   iwatool builds <file.key> <slide-index>        list a slide's element builds
+  iwatool effects [transitions|build-ins|build-outs|actions]
+                                                 list known-good effect identifiers
   iwatool add-build <in.key> <out.key> <slide-index> <node-id> <In|Out> <effect> [duration]
   iwatool remove-build <in.key> <out.key> <slide-index> <build-id>
   iwatool apply-tree <in.key> <out.key> <tree.json>         apply an edited scene tree
@@ -50,6 +52,25 @@ func fail(_ message: String) -> Never {
 }
 
 let arguments = CommandLine.arguments
+
+// Commands that take no input file.
+if arguments.count >= 2, arguments[1] == "effects" {
+    let lists: [(String, [String])] = [
+        ("transitions", KeynoteEffects.transitions),
+        ("build-ins", KeynoteEffects.buildIns),
+        ("build-outs", KeynoteEffects.buildOuts),
+        ("actions", KeynoteEffects.actions),
+    ]
+    let filter = arguments.count >= 3 ? arguments[2] : nil
+    for (name, identifiers) in lists where filter == nil || filter == name {
+        print("# \(name)")
+        for identifier in identifiers {
+            print(identifier)
+        }
+    }
+    exit(0)
+}
+
 guard arguments.count >= 3 else { fail(usage) }
 
 let command = arguments[1]

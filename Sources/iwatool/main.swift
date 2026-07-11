@@ -27,6 +27,9 @@ usage:
   iwatool set-transition <in.key> <out.key> <slide-index> <effect> [duration]
                                                  set a slide transition (e.g. apple:dissolve;
                                                  "none" removes it)
+  iwatool builds <file.key> <slide-index>        list a slide's element builds
+  iwatool add-build <in.key> <out.key> <slide-index> <node-id> <In|Out> <effect> [duration]
+  iwatool remove-build <in.key> <out.key> <slide-index> <build-id>
   iwatool apply-tree <in.key> <out.key> <tree.json>         apply an edited scene tree
                                                  (node ids come from 'iwatool tree')
   iwatool build <outline.txt> <out.key>          build a deck from a simple outline
@@ -106,7 +109,7 @@ case "dump":
         let id = record.identifier.map(String.init) ?? "-"
         for (index, info) in record.info.messageInfos.enumerated() {
             let fieldInfoNote = info.fieldInfos.isEmpty ? "" : " field_infos \(info.fieldInfos.map { "\($0.path.path):refs\($0.objectReferences)" })"
-            print("=== id \(id) type \(info.type) refs \(info.objectReferences)\(fieldInfoNote) ===")
+            print("=== id \(id) type \(info.type) v\(info.version) refs \(info.objectReferences)\(fieldInfoNote) ===")
             do {
                 let message = try record.decodeMessage(at: index)
                 print(message.textFormatString())
@@ -214,6 +217,33 @@ case "clone-node":
     let newID = try document.cloneDrawable(nodeID, toSlideAt: slideIndex)
     try document.write(to: outputURL)
     print("cloned node \(nodeID) onto slide \(slideIndex) as node \(newID)")
+
+case "builds":
+    guard arguments.count >= 4, let slideIndex = Int(arguments[3]) else { fail(usage) }
+    let document = try KeynoteDocument(contentsOf: inputURL)
+    for build in try document.slideBuilds(at: slideIndex) {
+        print("build \(build.id): node=\(build.nodeID) \(build.kind) \(build.effect) duration=\(build.duration) delay=\(build.delay)")
+    }
+
+case "add-build":
+    guard arguments.count >= 8, let slideIndex = Int(arguments[4]), let nodeID = UInt64(arguments[5]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    let duration = arguments.count >= 9 ? Double(arguments[8]) ?? 1.0 : 1.0
+    let buildID = try document.addBuild(
+        SlideBuild(nodeID: nodeID, kind: arguments[6], effect: arguments[7], duration: duration),
+        toSlideAt: slideIndex
+    )
+    try document.write(to: outputURL)
+    print("added build \(buildID) to node \(nodeID)")
+
+case "remove-build":
+    guard arguments.count >= 6, let slideIndex = Int(arguments[4]), let buildID = UInt64(arguments[5]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    try document.removeBuild(buildID, fromSlideAt: slideIndex)
+    try document.write(to: outputURL)
+    print("removed build \(buildID)")
 
 case "set-transition":
     guard arguments.count >= 6, let slideIndex = Int(arguments[4]) else { fail(usage) }

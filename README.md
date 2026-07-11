@@ -60,6 +60,10 @@ Early development. Working today:
   - **Chart data**: read and replace any chart's grid (`chartData`/
     `setChartData`) — row names, series names, and values, including
     changing the grid's dimensions; editable as `chart` on the scene tree.
+  - **Element builds**: read a slide's animations in playback order
+    (`slideBuilds(at:)`), add build-ins/outs to any drawable
+    (`addBuild(_:toSlideAt:)` with effects like `"apple:dissolve"`,
+    `"apple:bc-appear"`), and remove them (`removeBuild`).
   - **Node-addressed edit commands** (the AI-facing write interface):
     `setNodeText`, `setNodeFrame`, `setNodeMedia` (replaces image content —
     including unmaterialized theme stock photos, by creating fresh data
@@ -320,6 +324,9 @@ swift run iwatool delete-node In.key Out.key 2652817
 swift run iwatool clone-node In.key Out.key 2652817 4      # add: clone node onto slide 4
 swift run iwatool set-cell In.key Out.key 2652488 1 2 "31500"   # table cell (row 1, col 2)
 swift run iwatool set-transition In.key Out.key 0 apple:dissolve 1.5
+swift run iwatool builds Deck.key 0                             # list animations
+swift run iwatool add-build In.key Out.key 0 2652189 In apple:dissolve 1.5
+swift run iwatool remove-build In.key Out.key 0 2654110
 swift run iwatool apply-tree In.key Out.key edited-tree.json
 ```
 

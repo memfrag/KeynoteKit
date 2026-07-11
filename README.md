@@ -43,9 +43,16 @@ Early development. Working today:
     (text/media), and geometry — enough for a tool or AI to decide how to fill
     a template without hard-coding theme knowledge
   - **Scene tree**: a DOM-like view of each slide (`sceneTree(forSlideAt:)`) —
-    placeholders, images, shapes, groups, movies as typed nodes with stable
-    object-identifier handles, roles, prompts, authored text, frames, media
-    references, and z-order. Serializes to JSON (shape still evolving).
+    placeholders, images, shapes, groups, movies, and tables as typed nodes
+    with stable object-identifier handles, roles, prompts, authored text,
+    frames, media references, table cell grids, and z-order. Serializes to
+    JSON (shape still evolving).
+  - **Table cells**: read any table's grid (`tableCells`) and edit cells
+    (`setTableCellText`/`setTableCellNumber`) — decodes and rebuilds the
+    binary v5 tile storage, manages the shared string list's refcounts, and
+    encodes numbers in Keynote's base-10 decimal format. Edit `cells` in a
+    scene tree (or `iwatool set-cell`) to change table content; structure
+    (row/column count) is fixed — clone a template table sized to fit.
   - **Node-addressed edit commands** (the AI-facing write interface):
     `setNodeText`, `setNodeFrame`, `setNodeMedia` (replaces image content —
     including unmaterialized theme stock photos, by creating fresh data
@@ -304,6 +311,7 @@ swift run iwatool set-frame In.key Out.key 2652703 100 100 800 450
 swift run iwatool set-media In.key Out.key 2652703 photo.jpg
 swift run iwatool delete-node In.key Out.key 2652817
 swift run iwatool clone-node In.key Out.key 2652817 4      # add: clone node onto slide 4
+swift run iwatool set-cell In.key Out.key 2652488 1 2 "31500"   # table cell (row 1, col 2)
 swift run iwatool apply-tree In.key Out.key edited-tree.json
 ```
 

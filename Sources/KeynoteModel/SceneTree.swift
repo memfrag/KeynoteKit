@@ -30,6 +30,10 @@ public struct SceneNode: Codable {
     public var text: String?
     public var frame: Frame?
     public var media: MediaReference?
+    /// For `"table"` nodes: the cell grid as display strings (nil = empty
+    /// cell). Editable — the reconciler turns changed cells into
+    /// `setTableCellText`/`setTableCellNumber`.
+    public var cells: [[String?]]?
     public var children: [SceneNode]
     /// Write-side: to add a node, append a `SceneNode` whose `cloneOf` names
     /// an existing drawable anywhere in the document (e.g. a template
@@ -41,7 +45,7 @@ public struct SceneNode: Codable {
     public init(
         id: UInt64, type: String, role: String? = nil, prompt: String? = nil,
         text: String? = nil, frame: Frame? = nil, media: MediaReference? = nil,
-        children: [SceneNode] = [], cloneOf: UInt64? = nil
+        cells: [[String?]]? = nil, children: [SceneNode] = [], cloneOf: UInt64? = nil
     ) {
         self.id = id
         self.type = type
@@ -50,6 +54,7 @@ public struct SceneNode: Codable {
         self.text = text
         self.frame = frame
         self.media = media
+        self.cells = cells
         self.children = children
         self.cloneOf = cloneOf
     }
@@ -147,7 +152,11 @@ extension KeynoteDocument {
         role: String?,
         promptByRole: [String: String]
     ) throws -> SceneNode? {
-        guard let record = component.records.first(where: { $0.identifier == id }) else { return nil }
+        // Most drawables live in the slide's component, but some (tables)
+        // are stored elsewhere and referenced across components.
+        guard let record = component.records.first(where: { $0.identifier == id })
+            ?? components.flatMap(\.records).first(where: { $0.identifier == id })
+        else { return nil }
 
         switch record.primaryType {
         case 7: // KN.PlaceholderArchive
@@ -222,6 +231,15 @@ extension KeynoteDocument {
 
         case 3009:
             return SceneNode(id: id, type: "connectionLine")
+
+        case 6000: // TST.TableInfoArchive
+            let info = try record.decode(TST_TableInfoArchive.self)
+            return SceneNode(
+                id: id,
+                type: "table",
+                frame: frame(of: info.super),
+                cells: try? tableCells(id)
+            )
 
         default:
             return SceneNode(id: id, type: "unknown-\(record.primaryType)")

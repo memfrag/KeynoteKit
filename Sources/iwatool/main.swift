@@ -22,6 +22,8 @@ usage:
   iwatool set-media <in.key> <out.key> <node-id> <image-file>     replace a node's image
   iwatool delete-node <in.key> <out.key> <node-id>          delete a free drawable
   iwatool clone-node <in.key> <out.key> <node-id> <slide-index>   clone a drawable onto a slide
+  iwatool set-cell <in.key> <out.key> <node-id> <row> <col> <value>
+                                                 set a table cell (numeric value -> number cell)
   iwatool apply-tree <in.key> <out.key> <tree.json>         apply an edited scene tree
                                                  (node ids come from 'iwatool tree')
   iwatool build <outline.txt> <out.key>          build a deck from a simple outline
@@ -209,6 +211,20 @@ case "clone-node":
     let newID = try document.cloneDrawable(nodeID, toSlideAt: slideIndex)
     try document.write(to: outputURL)
     print("cloned node \(nodeID) onto slide \(slideIndex) as node \(newID)")
+
+case "set-cell":
+    guard arguments.count >= 8, let nodeID = UInt64(arguments[4]),
+          let row = Int(arguments[5]), let column = Int(arguments[6]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    let value = arguments[7]
+    if let number = Double(value) {
+        try document.setTableCellNumber(nodeID, row: row, column: column, to: number)
+    } else {
+        try document.setTableCellText(nodeID, row: row, column: column, to: value)
+    }
+    try document.write(to: outputURL)
+    print("set cell [\(row),\(column)] of table \(nodeID)")
 
 case "set-text", "set-frame", "set-media", "delete-node":
     guard arguments.count >= 5, let nodeID = UInt64(arguments[4]) else { fail(usage) }

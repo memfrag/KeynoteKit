@@ -82,6 +82,29 @@ extension KeynoteDocument {
             if let replacement = try mediaReplacement(for: editedNode, explicit: media[id]) {
                 try setNodeMedia(id, to: replacement)
             }
+
+            // Table cells: changed entries become text or number cells
+            // (numeric-looking strings stay numbers when the cell was one).
+            if let editedCells = editedNode.cells, let currentCells = currentNode.cells,
+               editedCells != currentCells {
+                for (rowIndex, editedRow) in editedCells.enumerated()
+                where rowIndex < currentCells.count {
+                    for (columnIndex, editedCell) in editedRow.enumerated()
+                    where columnIndex < currentCells[rowIndex].count
+                        && editedCell != currentCells[rowIndex][columnIndex] {
+                        guard let editedCell else {
+                            throw SceneEditError.unsupportedEdit(
+                                "clearing table cells is not supported; set them to \"\""
+                            )
+                        }
+                        if let number = Double(editedCell) {
+                            try setTableCellNumber(id, row: rowIndex, column: columnIndex, to: number)
+                        } else {
+                            try setTableCellText(id, row: rowIndex, column: columnIndex, to: editedCell)
+                        }
+                    }
+                }
+            }
         }
 
         // Restacking: compare the free-drawable sequence (placeholders are

@@ -22,18 +22,26 @@ Early development. Working today:
   from the schemas extracted by
   [keynote-parser](https://github.com/psobot/keynote-parser) (currently
   Keynote 14.4), plus the numeric type-ID → message-type registry
-- **`KeynoteModel`** — object-graph layer: parse a document into typed
-  records, decode/mutate/re-encode any archive with correct
-  `MessageInfo.length` bookkeeping, and document-wide text find/replace
-  over `TSWP.StorageArchive`
+- **`KeynoteModel`** — object-graph layer:
+  - Parse a document into typed records; decode/mutate/re-encode any archive
+    with correct `MessageInfo.length` bookkeeping
+  - Document-wide text find/replace over `TSWP.StorageArchive`
+  - **Slide operations**: duplicate (deep-copies the slide's `.iwa` component
+    with fresh identifiers, rewriting internal references while preserving
+    external style/theme references, and maintaining all package metadata),
+    remove, and reorder
+  - Schema-guided wire-format walking (`ReferenceRewriter` +
+    generated `MessageFieldMap`) to find/rewrite every `TSP.Reference` in any
+    payload without full decoding
 - **`iwatool`** — CLI for inspecting, round-tripping, and rewriting `.key` files
 
 Files unpacked, modified, and repacked through KeynoteKit open cleanly in
 Keynote with styling intact (verified against Keynote-authored fixtures,
-including scripted open-and-export-PDF smoke tests).
+including scripted open-and-export-PDF smoke tests — including duplicated,
+removed, and reordered slides).
 
-Planned next: slide add/remove/reorder via `SlideArchive` subtree cloning,
-image replacement, and a template-based document builder API.
+Planned next: image replacement, shape insertion, and a template-based
+document builder API.
 
 ## Usage
 
@@ -52,6 +60,11 @@ swift run iwatool text MyPresentation.key
 
 # Replace text across a presentation
 swift run iwatool replace In.key Out.key "old text" "new text"
+
+# Slide operations (0-based indices)
+swift run iwatool duplicate-slide In.key Out.key 0
+swift run iwatool remove-slide In.key Out.key 2
+swift run iwatool move-slide In.key Out.key 0 3
 ```
 
 ## Regenerating the schemas

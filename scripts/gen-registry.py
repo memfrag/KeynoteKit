@@ -61,6 +61,14 @@ for type_id, name in entries:
 lines += [
     "    ]",
     "",
+    "    /// Fully-qualified proto message names (as used by MessageFieldMap).",
+    "    public static let protoNames: [UInt32: String] = [",
+]
+for type_id, name in entries:
+    lines.append('        %s: "%s",' % (type_id, name))
+lines += [
+    "    ]",
+    "",
     "    public static func messageType(for typeID: UInt32) -> SwiftProtobuf.Message.Type? {",
     "        messageTypes[typeID]",
     "    }",

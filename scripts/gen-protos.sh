@@ -35,3 +35,4 @@ rm -f "$OUT_DIR"/*.pb.swift
 echo "Generated $(ls "$OUT_DIR" | wc -l | tr -d ' ') files in $OUT_DIR"
 
 python3 "$REPO_ROOT/scripts/gen-registry.py" "$VERSION"
+python3 "$REPO_ROOT/scripts/gen-fieldmap.py" "$VERSION"

@@ -86,4 +86,20 @@ public struct KeyArchive {
         guard let index = entries.firstIndex(where: { $0.path == path }) else { return }
         entries[index].data = data
     }
+
+    /// Replaces the entry if present, otherwise inserts it (after `anchor`
+    /// when given, else at the end).
+    public mutating func setEntry(at path: String, data: Data, after anchor: String? = nil) {
+        if let index = entries.firstIndex(where: { $0.path == path }) {
+            entries[index].data = data
+        } else if let anchor, let anchorIndex = entries.firstIndex(where: { $0.path == anchor }) {
+            entries.insert(Entry(path: path, data: data), at: anchorIndex + 1)
+        } else {
+            entries.append(Entry(path: path, data: data))
+        }
+    }
+
+    public mutating func removeEntry(at path: String) {
+        entries.removeAll { $0.path == path }
+    }
 }

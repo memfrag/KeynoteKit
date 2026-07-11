@@ -27,9 +27,29 @@ public struct KeynoteDocument {
         var output = archive
         for component in components {
             let file = IWAFile(records: try component.records.map { try $0.lowered() })
-            output.replaceEntry(at: component.path, with: IWA.compress(file.serialize()))
+            output.setEntry(at: component.path, data: IWA.compress(file.serialize()))
         }
         try output.write(to: url)
+    }
+
+    // MARK: Component management
+
+    /// Adds a new .iwa component (e.g. a cloned slide). Its zip entry is
+    /// placed after `anchor`'s when given, and its records are serialized
+    /// on the next `write`.
+    public mutating func addComponent(path: String, records: [ObjectRecord], after anchor: String? = nil) {
+        archive.setEntry(at: path, data: Data(), after: anchor)
+        let component = Component(path: path, records: records)
+        if let anchor, let index = components.firstIndex(where: { $0.path == anchor }) {
+            components.insert(component, at: index + 1)
+        } else {
+            components.append(component)
+        }
+    }
+
+    public mutating func removeComponent(path: String) {
+        archive.removeEntry(at: path)
+        components.removeAll { $0.path == path }
     }
 
     // MARK: Lookup

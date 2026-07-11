@@ -73,6 +73,32 @@ public struct ObjectRecord {
         isDirty = true
     }
 
+    /// Assigns a new object identifier (used when cloning records).
+    public mutating func setIdentifier(_ identifier: UInt64) {
+        info.identifier = identifier
+        isDirty = true
+    }
+
+    /// Replaces the payload bytes at `index` directly (already-encoded data,
+    /// e.g. from ReferenceRewriter), updating `MessageInfo.length`.
+    public mutating func setPayloadData(_ data: Data, at index: Int) throws {
+        guard index < payloads.count, index < info.messageInfos.count else {
+            throw ObjectRecordError.payloadIndexOutOfRange
+        }
+        payloads[index] = data
+        info.messageInfos[index].length = UInt32(data.count)
+        isDirty = true
+    }
+
+    /// Replaces `MessageInfo.object_references` bookkeeping at `index`.
+    public mutating func setObjectReferences(_ references: [UInt64], at index: Int) throws {
+        guard index < info.messageInfos.count else {
+            throw ObjectRecordError.payloadIndexOutOfRange
+        }
+        info.messageInfos[index].objectReferences = references
+        isDirty = true
+    }
+
     /// Lowers back to a raw `ArchiveRecord`.
     public func lowered() throws -> ArchiveRecord {
         let infoBytes: Data = isDirty ? try info.serializedData() : rawInfo

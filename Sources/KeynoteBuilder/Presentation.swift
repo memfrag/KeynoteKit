@@ -30,8 +30,8 @@ public struct Slide {
     /// the template author typed into it (`"left"`, `"right"`), or the
     /// layout's prompt (`"Attribution"`). List a template's blocks with
     /// `iwatool blocks-of template.key <slide>` or
-    /// ``KeynoteModel/KeynoteDocument/slideTextBlocks(at:)``. Values use `\n`
-    /// for bullet/paragraph breaks. Applied after `title`/`body`.
+    /// `KeynoteDocument.slideTextBlocks(at:)`. Values use `\n` for
+    /// bullet/paragraph breaks. Applied after `title`/`body`.
     public var blocks: [String: String]
     /// Names the template layout to use, matched against a template deck's
     /// `@layout:` tags or master-slide names (see `TemplateLibrary`). `nil`

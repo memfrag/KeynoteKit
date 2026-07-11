@@ -84,7 +84,7 @@ extension KeynoteDocument {
         }
         var record = components[location.component].records[location.record]
         var storage = try record.decode(TSWP_StorageArchive.self)
-        storage.text = [text.replacingOccurrences(of: "\n", with: "\u{2029}")]
+        StorageText.set(&storage, to: text)
         try record.setMessage(storage)
         components[location.component].records[location.record] = record
     }

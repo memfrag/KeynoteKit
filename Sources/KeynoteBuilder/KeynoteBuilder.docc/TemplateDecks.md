@@ -13,9 +13,27 @@ theme, Apple's or your own.
 
 ## Authoring a template
 
+The fastest path is the bundled script, which turns any installed Keynote
+theme into a full template — one tagged slide per master the theme defines
+(Apple's basic themes carry 17):
+
+```bash
+scripts/make-template.sh "Basic Black" BasicBlack-template.key
+```
+
+Each slide is tagged with its master's name, so `layout: Statement`,
+`layout: quote`, and `layout: Title & Bullets` all work immediately.
+
+To author by hand instead:
+
 1. Create a deck in Keynote. Add one slide per layout you want to offer,
    each based on the master (slide layout) that fits.
-2. Tag each slide in its **presenter notes** with a line like:
+2. **Type sample text into the title and body placeholders.** An untouched
+   placeholder has no style tables in its text storage, so programmatic
+   text falls back to default styling — black text, invisible on a dark
+   theme. Typing anything ("Title", "Body") materializes the theme's real
+   styles, which generated content then inherits.
+3. Tag each slide in its **presenter notes** with a line like:
 
    ```
    @layout: title
@@ -24,7 +42,7 @@ theme, Apple's or your own.
    Anything after that line stays private documentation for template
    authors ("use for the opening slide") — the builder strips the notes
    when filling the slide.
-3. For picture layouts, place an image on the slide (any placeholder
+4. For picture layouts, place an image on the slide (any placeholder
    image); generated images replace it. For decks with tables, size the
    table to fit your data — cell *content* is fillable, structure is not.
 

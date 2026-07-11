@@ -254,8 +254,18 @@ try writer.write(deck, to: URL(filePath: "Deck.key"),
 
 ### Using a template deck for multiple layouts
 
-Build a `.key` in Keynote with one slide per layout you want, and tag each in
-its presenter notes:
+Turn any installed Keynote theme into a template with one tagged slide per
+master the theme defines (Apple's basic themes carry 17 layouts):
+
+```sh
+scripts/make-template.sh "Basic Black" BasicBlack-template.key
+swift run iwatool build-md talk.md talk.key BasicBlack-template.key
+```
+
+Or build a `.key` in Keynote by hand with one slide per layout you want —
+**type sample text into each placeholder** (untouched placeholders carry no
+style tables, so generated text would lose the theme's styling) — and tag
+each slide in its presenter notes:
 
 ```
 @layout: title       ← on a slide using the Title layout

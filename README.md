@@ -55,7 +55,9 @@ Early development. Working today:
     (row/column count) is fixed — clone a template table sized to fit.
   - **Slide transitions**: read/set/remove (`slideTransition(at:)`,
     `setSlideTransition(at:to:)`) with effect (`"apple:dissolve"`,
-    `"apple:push"`, …), duration, delay, and auto-advance; editable as
+    `"apple:push"`, …), duration, delay, auto-advance, and effect
+    parameters — direction, color (Fade Through Color), text delivery,
+    twist/mosaic/bounce/motion-blur/travel-distance; editable as
     `transition` on the scene tree.
   - **Chart data**: read and replace any chart's grid (`chartData`/
     `setChartData`) — row names, series names, and values, including
@@ -63,7 +65,18 @@ Early development. Working today:
   - **Element builds**: read a slide's animations in playback order
     (`slideBuilds(at:)`), add build-ins/outs to any drawable
     (`addBuild(_:toSlideAt:)` with effects like `"apple:dissolve"`,
-    `"apple:bc-appear"`), and remove them (`removeBuild`).
+    `"apple:bc-appear"`), and remove them (`removeBuild`). Parameters:
+    text delivery (by object/word/character/line), delivery direction,
+    effect direction, and action-build rotation/scale/opacity.
+
+  Effect names are open strings (Keynote doesn't validate them — an unknown
+  name simply doesn't animate). Keynote 15 ships ~150 identifiers in two
+  families: classic `apple:*` names (`apple:dissolve`, `apple:bc-pop`,
+  `apple:action-rotation`, `apple:3D-cube`) and plugin effects
+  (`com.apple.iWork.Keynote.KLNConfetti`, `.BUKAnvil`, `.BLTSwoosh`). The
+  reliable way to discover the identifier and parameters for a specific
+  Keynote UI effect: apply it in Keynote, save, and inspect with
+  `iwatool tree` / `iwatool builds`.
   - **Node-addressed edit commands** (the AI-facing write interface):
     `setNodeText`, `setNodeFrame`, `setNodeMedia` (replaces image content —
     including unmaterialized theme stock photos, by creating fresh data

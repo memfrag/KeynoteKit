@@ -22,9 +22,25 @@ public struct SlideBuild: Codable, Equatable, Sendable {
     public var duration: Double
     public var delay: Double
 
+    // Parameters (optional; omitted = the effect's default).
+
+    /// How text builds: "byObject", "byWord", "byCharacter", or "byLine".
+    public var textDelivery: String?
+    /// "forward" or "backward".
+    public var deliveryOption: String?
+    /// Effect-specific direction constant.
+    public var direction: UInt32?
+    /// Action-build parameters (Rotate / Scale / Opacity actions).
+    public var rotationAngle: Double?
+    public var scaleSize: Double?
+    public var opacity: Double?
+
     public init(
         id: UInt64 = 0, nodeID: UInt64, kind: String, effect: String,
-        duration: Double = 1.0, delay: Double = 0.0
+        duration: Double = 1.0, delay: Double = 0.0,
+        textDelivery: String? = nil, deliveryOption: String? = nil,
+        direction: UInt32? = nil, rotationAngle: Double? = nil,
+        scaleSize: Double? = nil, opacity: Double? = nil
     ) {
         self.id = id
         self.nodeID = nodeID
@@ -32,7 +48,27 @@ public struct SlideBuild: Codable, Equatable, Sendable {
         self.effect = effect
         self.duration = duration
         self.delay = delay
+        self.textDelivery = textDelivery
+        self.deliveryOption = deliveryOption
+        self.direction = direction
+        self.rotationAngle = rotationAngle
+        self.scaleSize = scaleSize
+        self.opacity = opacity
     }
+}
+
+/// String names for the delivery enums.
+enum BuildEnumNames {
+    static let textDelivery: [KN_BuildAttributesArchive.BuildAttributesTextDelivery: String] = [
+        .kTextDeliveryByObject: "byObject",
+        .kTextDeliveryByWord: "byWord",
+        .kTextDeliveryByCharacter: "byCharacter",
+        .kTextDeliveryByLine: "byLine",
+    ]
+    static let deliveryOption: [KN_BuildAttributesArchive.BuildAttributesDeliveryOption: String] = [
+        .kDeliveryOptionForward: "forward",
+        .kDeliveryOptionBackward: "backward",
+    ]
 }
 
 /// Element builds (animations). A `KN.BuildArchive` (type 8) targets a
@@ -57,13 +93,22 @@ extension KeynoteDocument {
                   let build = try? buildRecord.decode(KN_BuildArchive.self)
             else { continue }
             let animation = build.attributes.animationAttributes
+            let attributes = build.attributes
             result.append(SlideBuild(
                 id: chunk.build.identifier,
                 nodeID: build.drawable.identifier,
                 kind: animation.animationType,
                 effect: animation.effect,
                 duration: animation.duration,
-                delay: animation.delay
+                delay: animation.delay,
+                textDelivery: attributes.hasCustomTextDelivery
+                    ? BuildEnumNames.textDelivery[attributes.customTextDelivery] : nil,
+                deliveryOption: attributes.hasCustomDeliveryOption
+                    ? BuildEnumNames.deliveryOption[attributes.customDeliveryOption] : nil,
+                direction: animation.hasDirection ? animation.direction : nil,
+                rotationAngle: attributes.hasActionRotationAngle ? attributes.actionRotationAngle : nil,
+                scaleSize: attributes.hasActionScaleSize ? attributes.actionScaleSize : nil,
+                opacity: attributes.hasActionColorAlpha ? attributes.actionColorAlpha : nil
             ))
         }
         return result
@@ -103,8 +148,20 @@ extension KeynoteDocument {
                     $0.effect = build.effect
                     $0.duration = build.duration
                     $0.delay = build.delay
+                    if let direction = build.direction { $0.direction = direction }
                     $0.randomNumberSeed = UInt32.random(in: 1...UInt32.max)
                 }
+                if let name = build.textDelivery,
+                   let value = BuildEnumNames.textDelivery.first(where: { $0.value == name })?.key {
+                    $0.customTextDelivery = value
+                }
+                if let name = build.deliveryOption,
+                   let value = BuildEnumNames.deliveryOption.first(where: { $0.value == name })?.key {
+                    $0.customDeliveryOption = value
+                }
+                if let angle = build.rotationAngle { $0.actionRotationAngle = angle }
+                if let scale = build.scaleSize { $0.actionScaleSize = scale }
+                if let alpha = build.opacity { $0.actionColorAlpha = alpha }
             }
             $0.chunkIDSeed = 1
         }

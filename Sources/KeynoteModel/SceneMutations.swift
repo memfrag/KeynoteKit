@@ -240,7 +240,7 @@ extension KeynoteDocument {
         let sourceRecord = components[sourceLocation.component].records[sourceLocation.record]
         guard [2011, 3005, 3007, 3008].contains(sourceRecord.primaryType) else {
             throw SceneEditError.unsupportedEdit(
-                "node \(nodeID) (type \(sourceRecord.primaryType)) can't be cloned; only shapes, images, movies, and groups"
+                "node \(nodeID) (type \(sourceRecord.primaryType ?? 0)) can't be cloned; only shapes, images, movies, and groups"
             )
         }
         let sourceComponent = components[sourceLocation.component]

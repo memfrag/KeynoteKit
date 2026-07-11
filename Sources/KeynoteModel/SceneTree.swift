@@ -259,7 +259,7 @@ extension KeynoteDocument {
             )
 
         default:
-            return SceneNode(id: id, type: "unknown-\(record.primaryType)")
+            return SceneNode(id: id, type: "unknown-\(record.primaryType ?? 0)")
         }
     }
 

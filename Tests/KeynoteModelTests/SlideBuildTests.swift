@@ -65,6 +65,30 @@ struct SlideBuildTests {
         #expect(builds.allSatisfy { $0.id != first.id })
     }
 
+    @Test("round-trips build parameters (text delivery, direction)")
+    func parameters() throws {
+        var document = try KeynoteDocument(contentsOf: Self.twoSlideURL)
+        let shape = try #require(
+            try document.sceneTree(forSlideAt: 0).nodes.first { $0.type == "shape" }
+        )
+        try document.addBuild(
+            SlideBuild(
+                nodeID: shape.id, kind: "In", effect: "apple:move in",
+                duration: 2.0, textDelivery: "byWord", direction: 2
+            ),
+            toSlideAt: 0
+        )
+
+        let reread = try writeAndReread(document)
+        let build = try #require(try reread.slideBuilds(at: 0).first)
+        #expect(build.textDelivery == "byWord")
+        #expect(build.direction == 2)
+
+        // The fixture's Keynote-authored builds expose their delivery too.
+        let fixture = try KeynoteDocument(contentsOf: Self.fixtureURL)
+        #expect(try fixture.slideBuilds(at: 0).first?.textDelivery == "byObject")
+    }
+
     @Test("rejects builds targeting drawables on other slides")
     func rejectsForeignNode() throws {
         var document = try KeynoteDocument(contentsOf: Self.twoSlideURL)

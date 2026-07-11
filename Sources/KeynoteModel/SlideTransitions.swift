@@ -16,20 +16,53 @@ public struct SlideTransition: Codable, Equatable, Sendable {
     /// Advance to the next slide automatically after `delay`.
     public var isAutomatic: Bool
 
+    // Effect parameters (optional; omitted = the effect's default).
+
+    /// RGB components 0…1, for color-based effects (Fade Through Color).
+    public var color: [Double]?
+    /// Text transitions: "byObject", "byWord", "byCharacter", or "byLine".
+    public var textDelivery: String?
+    public var twist: Double?
+    public var mosaicSize: UInt32?
+    public var bounce: Bool?
+    public var motionBlur: Bool?
+    public var travelDistance: Double?
+
     public init(
         effect: String,
         duration: Double = 1.0,
         delay: Double = 0.5,
         direction: UInt32? = nil,
-        isAutomatic: Bool = false
+        isAutomatic: Bool = false,
+        color: [Double]? = nil,
+        textDelivery: String? = nil,
+        twist: Double? = nil,
+        mosaicSize: UInt32? = nil,
+        bounce: Bool? = nil,
+        motionBlur: Bool? = nil,
+        travelDistance: Double? = nil
     ) {
         self.effect = effect
         self.duration = duration
         self.delay = delay
         self.direction = direction
         self.isAutomatic = isAutomatic
+        self.color = color
+        self.textDelivery = textDelivery
+        self.twist = twist
+        self.mosaicSize = mosaicSize
+        self.bounce = bounce
+        self.motionBlur = motionBlur
+        self.travelDistance = travelDistance
     }
 }
+
+private let transitionTextDeliveryNames: [KN_TransitionAttributesArchive.TransitionCustomAttributesTextDeliveryType: String] = [
+    .byObject: "byObject",
+    .byWord: "byWord",
+    .byCharacter: "byCharacter",
+    .byLine: "byLine",
+]
 
 extension KeynoteDocument {
 
@@ -40,13 +73,23 @@ extension KeynoteDocument {
               slide.transition.attributes.hasAnimationAttributes
         else { return nil }
         let animation = slide.transition.attributes.animationAttributes
+        let attributes = slide.transition.attributes
         guard animation.effect != "none", !animation.effect.isEmpty else { return nil }
         return SlideTransition(
             effect: animation.effect,
             duration: animation.duration,
             delay: animation.delay,
             direction: animation.hasDirection ? animation.direction : nil,
-            isAutomatic: animation.isAutomatic
+            isAutomatic: animation.isAutomatic,
+            color: animation.hasColor
+                ? [Double(animation.color.r), Double(animation.color.g), Double(animation.color.b)] : nil,
+            textDelivery: attributes.hasCustomTextDeliveryType
+                ? transitionTextDeliveryNames[attributes.customTextDeliveryType] : nil,
+            twist: attributes.hasCustomTwist ? Double(attributes.customTwist) : nil,
+            mosaicSize: attributes.hasCustomMosaicSize ? attributes.customMosaicSize : nil,
+            bounce: attributes.hasCustomBounce ? attributes.customBounce : nil,
+            motionBlur: attributes.hasCustomMotionBlur ? attributes.customMotionBlur : nil,
+            travelDistance: attributes.hasCustomTravelDistance ? Double(attributes.customTravelDistance) : nil
         )
     }
 
@@ -65,9 +108,26 @@ extension KeynoteDocument {
         }
         animation.isAutomatic = transition?.isAutomatic ?? false
         animation.randomNumberSeed = UInt32.random(in: 1...UInt32.max)
+        if let color = transition?.color, color.count >= 3 {
+            animation.color = TSP_Color.with {
+                $0.model = .rgb
+                $0.r = Float(color[0])
+                $0.g = Float(color[1])
+                $0.b = Float(color[2])
+            }
+        }
         updated.transition = KN_TransitionArchive.with {
             $0.attributes = KN_TransitionAttributesArchive.with {
                 $0.animationAttributes = animation
+                if let name = transition?.textDelivery,
+                   let value = transitionTextDeliveryNames.first(where: { $0.value == name })?.key {
+                    $0.customTextDeliveryType = value
+                }
+                if let twist = transition?.twist { $0.customTwist = Float(twist) }
+                if let size = transition?.mosaicSize { $0.customMosaicSize = size }
+                if let bounce = transition?.bounce { $0.customBounce = bounce }
+                if let blur = transition?.motionBlur { $0.customMotionBlur = blur }
+                if let distance = transition?.travelDistance { $0.customTravelDistance = Float(distance) }
             }
         }
 

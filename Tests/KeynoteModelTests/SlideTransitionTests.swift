@@ -46,6 +46,26 @@ struct SlideTransitionTests {
         #expect(try reread.slideTransition(at: 1)?.effect == "apple:3D-cube")
     }
 
+    @Test("round-trips effect parameters (color, text delivery, motion blur)")
+    func parameters() throws {
+        var document = try KeynoteDocument(contentsOf: Self.fixtureURL)
+        try document.setSlideTransition(at: 2, to: SlideTransition(
+            effect: "apple:fade-through-color",
+            duration: 1.2,
+            color: [1.0, 0.0, 0.0],
+            motionBlur: true
+        ))
+
+        let reread = try writeAndReread(document)
+        let transition = try #require(try reread.slideTransition(at: 2))
+        #expect(transition.color == [1.0, 0.0, 0.0])
+        #expect(transition.motionBlur == true)
+
+        // Keynote-authored parameters read back too: the cube transition on
+        // slide 1 carries custom_bounce.
+        #expect(try reread.slideTransition(at: 1)?.bounce == true)
+    }
+
     @Test("reconciler applies transition edits from the tree")
     func reconcile() throws {
         var document = try KeynoteDocument(contentsOf: Self.fixtureURL)

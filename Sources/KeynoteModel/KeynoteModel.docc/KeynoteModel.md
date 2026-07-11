@@ -45,6 +45,7 @@ verified against Keynote itself.
 
 - ``SlidePlaceholder``
 - ``TextReplacement``
+- ``SlideTextBlock``
 - ``LayoutDescription``
 - ``PlaceholderField``
 
@@ -69,3 +70,10 @@ verified against Keynote itself.
 - ``TableError``
 - ``ChartError``
 - ``BuildError``
+- ``TextBlockError``
+
+### Advanced
+
+- ``ObjectRecord``
+- ``ReferenceRewriter``
+- ``ObjectRecordError``

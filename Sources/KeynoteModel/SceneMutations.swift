@@ -119,8 +119,12 @@ extension KeynoteDocument {
             throw SceneEditError.nodeHasNoMedia(nodeID)
         }
 
-        if let mainFileName = fileName(forDataIdentifier: image.data.identifier) {
-            // Materialized: replace bytes in place (identifiers unchanged).
+        // Replace bytes in place only when this node exclusively owns the
+        // data. If the data is unmaterialized (theme stock) or shared with
+        // another drawable (e.g. after cloning an image), an in-place swap
+        // would change every user of it — so create fresh data and repoint.
+        if let mainFileName = fileName(forDataIdentifier: image.data.identifier),
+           !imageDataIsShared(image.data.identifier, byNodeOtherThan: nodeID) {
             try replaceMediaFile(named: mainFileName, with: newData)
             if image.hasThumbnailData,
                let thumbnailName = fileName(forDataIdentifier: image.thumbnailData.identifier),
@@ -131,6 +135,21 @@ extension KeynoteDocument {
         } else {
             try repointImage(at: location, to: newData)
         }
+    }
+
+    /// Whether a data identifier is referenced by any image drawable other
+    /// than `nodeID` (its main or thumbnail data).
+    private func imageDataIsShared(_ dataID: UInt64, byNodeOtherThan nodeID: UInt64) -> Bool {
+        for component in components {
+            for record in component.records where record.primaryType == 3005 && record.identifier != nodeID {
+                guard let other = try? record.decode(TSD_ImageArchive.self) else { continue }
+                if (other.hasData && other.data.identifier == dataID)
+                    || (other.hasThumbnailData && other.thumbnailData.identifier == dataID) {
+                    return true
+                }
+            }
+        }
+        return false
     }
 
     /// Creates fresh data entries for `newData` (plus a thumbnail) and points

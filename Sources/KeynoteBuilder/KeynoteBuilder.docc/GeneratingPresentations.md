@@ -101,8 +101,16 @@ How content lands:
   placeholder, inferred per layout as the larger of title/body — which is
   how a Statement or Quote layout renders its one line big and centered.
 - **Images** — each slide's `imagePaths` fill the layout's image nodes,
-  largest frame first, so on a photo layout the referenced image becomes
-  the picture. Relative paths resolve against `imageBaseURL`.
+  largest frame first. A photo layout's single picture takes the first path;
+  a two-photo layout takes two, largest first:
+
+  ```swift
+  Slide(layout: "two-photo", imagePaths: ["before.jpg", "after.jpg"])
+  ```
+
+  Relative paths resolve against `imageBaseURL`. For precise control over
+  which image lands where (rather than by size), address the image nodes
+  directly through the scene tree after ``KeynoteWriter/build(_:imageBaseURL:)``.
 
 ## Post-processing
 

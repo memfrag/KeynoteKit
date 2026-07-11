@@ -56,15 +56,30 @@ try document.reorderDrawables(onSlideAt: 0, to: [2652817, 2652703])
 
 ## Adding nodes: clone, don't synthesize
 
-New drawables are created by cloning an existing one — from the same slide,
-another slide, or a template slide. The source supplies valid styles and
-structure, which is why cloned content always renders correctly:
+You can *add* elements to a slide, not only replace what a template already
+contains — but new drawables are created by **cloning** an existing one,
+never synthesized from nothing. The source (from the same slide, another
+slide, or a template) supplies valid styles and structure, which is why
+cloned content always renders correctly:
 
 ```swift
-let newID = try document.cloneDrawable(sourceNodeID, toSlideAt: 2)
-try document.setNodeText(newID, to: "The cloned text box")
-try document.setNodeFrame(newID, to: Frame(x: 60, y: 700, width: 600, height: 80))
+// Add a text box by cloning one, then give it content and a position:
+let textID = try document.cloneDrawable(sourceTextNodeID, toSlideAt: 2)
+try document.setNodeText(textID, to: "The cloned text box")
+try document.setNodeFrame(textID, to: Frame(x: 60, y: 700, width: 600, height: 80))
+
+// Add a second image by cloning the first, then give it independent content:
+let imageID = try document.cloneDrawable(sourceImageNodeID, toSlideAt: 2)
+try document.setNodeMedia(imageID, to: try Data(contentsOf: photoURL))
+try document.setNodeFrame(imageID, to: Frame(x: 950, y: 250, width: 500, height: 375))
 ```
+
+A cloned image initially shares the source's media data; ``setNodeMedia``
+detects this and gives the clone its own fresh data, so replacing one
+image's content never disturbs the other.
+
+Keep a "palette" slide of prototype elements — a text box, an image box, a
+shape — and clone from it to compose slides element by element.
 
 ## Editing the tree wholesale
 

@@ -179,6 +179,35 @@ struct SceneTreeTests {
         }
     }
 
+    @Test("replacing a cloned image's media does not disturb the original")
+    func cloneImageIndependentMedia() throws {
+        var document = try KeynoteDocument(contentsOf: Self.imageDeckURL)
+        let source = try #require(
+            try document.sceneTree(forSlideAt: 0).nodes.first { $0.type == "image" }
+        )
+        let originalFile = try #require(source.media?.file)
+        let originalBytes = try #require(document.dataForEntry(at: "Data/" + originalFile))
+
+        // Clone the image (the clone shares the source's data), then give the
+        // clone new content.
+        let cloneID = try document.cloneDrawable(source.id, toSlideAt: 0)
+        let blue = try Data(contentsOf: Self.blueImageURL)
+        try document.setNodeMedia(cloneID, to: blue)
+
+        let reread = try writeAndReread(document)
+        let nodes = try reread.sceneTree(forSlideAt: 0).nodes
+        let originalNode = try #require(nodes.first { $0.id == source.id })
+        let cloneNode = try #require(nodes.first { $0.id == cloneID })
+
+        // The clone points at fresh data with the new bytes…
+        let cloneFile = try #require(cloneNode.media?.file)
+        #expect(reread.dataForEntry(at: "Data/" + cloneFile) == blue)
+        // …and the original is byte-for-byte unchanged.
+        let originalNodeFile = try #require(originalNode.media?.file)
+        #expect(reread.dataForEntry(at: "Data/" + originalNodeFile) == originalBytes)
+        #expect(cloneFile != originalNodeFile)
+    }
+
     @Test("apply() adds nodes via cloneOf with edits applied to the clone")
     func reconcileCloneOf() throws {
         var document = try KeynoteDocument(contentsOf: Self.twoSlideURL)

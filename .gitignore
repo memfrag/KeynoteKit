@@ -1,0 +1,10 @@
+.DS_Store
+.build/
+.swiftpm/
+*.xcodeproj
+xcuserdata/
+DerivedData/
+.netrc
+
+# Local Claude Code settings
+.claude/settings.local.json

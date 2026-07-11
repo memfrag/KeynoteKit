@@ -42,6 +42,19 @@ Early development. Working today:
     and every fillable placeholder with role, kind, prompt text, content type
     (text/media), and geometry — enough for a tool or AI to decide how to fill
     a template without hard-coding theme knowledge
+  - **Scene tree**: a DOM-like view of each slide (`sceneTree(forSlideAt:)`) —
+    placeholders, images, shapes, groups, movies as typed nodes with stable
+    object-identifier handles, roles, prompts, authored text, frames, media
+    references, and z-order. Serializes to JSON (shape still evolving).
+  - **Node-addressed edit commands** (the AI-facing write interface):
+    `setNodeText`, `setNodeFrame`, `setNodeMedia` (replaces image content —
+    including unmaterialized theme stock photos, by creating fresh data
+    entries with full digest bookkeeping), `deleteDrawable`,
+    `reorderDrawables`
+  - **Reconciler** (`apply(_:media:)`): mutate a scene tree (or its JSON) and
+    apply it back; diffs are translated into the commands above, and edits
+    that can't be expressed safely (adding nodes, reparenting, type changes)
+    are rejected
 - **`KeynoteBuilder`** — the high-level API:
   - Describe a `Presentation` of `Slide`s (title, body, presenter notes)
     declaratively and write it to a `.key`. Uses a template strategy — an
@@ -197,6 +210,14 @@ swift run iwatool masters Deck.key
 
 # Describe a template's layouts as JSON (role/kind/prompt/frame per placeholder)
 swift run iwatool describe-template MyTemplate.key
+
+# Scene tree: read, edit by node id, or apply an edited tree
+swift run iwatool tree Deck.key 2                       # JSON nodes for slide 2
+swift run iwatool set-text In.key Out.key 2652722 "New title"
+swift run iwatool set-frame In.key Out.key 2652703 100 100 800 450
+swift run iwatool set-media In.key Out.key 2652703 photo.jpg
+swift run iwatool delete-node In.key Out.key 2652817
+swift run iwatool apply-tree In.key Out.key edited-tree.json
 ```
 
 ## Regenerating the schemas

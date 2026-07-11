@@ -66,6 +66,12 @@ public struct KeynoteDocument {
         archive.replaceEntry(at: path, with: data)
     }
 
+    /// Replaces the entry if present, otherwise appends it (used when adding
+    /// new media files).
+    public mutating func setEntryData(at path: String, to data: Data) {
+        archive.setEntry(at: path, data: data)
+    }
+
     // MARK: Lookup
 
     struct RecordLocation {

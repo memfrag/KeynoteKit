@@ -17,6 +17,12 @@ usage:
   iwatool replace-image <in.key> <out.key> <name> <image-file>
                                                  replace an image (by original file name)
   iwatool list-media <file.key>                  list Data/ files
+  iwatool set-text <in.key> <out.key> <node-id> <text>      set a node's text
+  iwatool set-frame <in.key> <out.key> <node-id> <x> <y> <w> <h>  move/resize a node
+  iwatool set-media <in.key> <out.key> <node-id> <image-file>     replace a node's image
+  iwatool delete-node <in.key> <out.key> <node-id>          delete a free drawable
+  iwatool apply-tree <in.key> <out.key> <tree.json>         apply an edited scene tree
+                                                 (node ids come from 'iwatool tree')
   iwatool build <outline.txt> <out.key>          build a deck from a simple outline
   iwatool build-md <slides.md> <out.key> [template.key]
                                                  build a deck from a markdown presentation,
@@ -24,6 +30,9 @@ usage:
   iwatool set-title <in.key> <out.key> <index> <text>   set a slide's title
   iwatool describe-template <file.key>           JSON: each slide's layout tag, master, and
                                                  fillable placeholders (role/kind/prompt/frame)
+  iwatool tree <file.key> [slide-index]          JSON scene tree: every node (placeholder,
+                                                 image, shape, group...) with id/role/text/
+                                                 frame/media, z-ordered
 """
 
 func fail(_ message: String) -> Never {
@@ -165,6 +174,19 @@ case "describe-template":
     FileHandle.standardOutput.write(try encoder.encode(output))
     print()
 
+case "tree":
+    let document = try KeynoteDocument(contentsOf: inputURL)
+    let trees: [SceneTree]
+    if arguments.count >= 4, let slideIndex = Int(arguments[3]) {
+        trees = [try document.sceneTree(forSlideAt: slideIndex)]
+    } else {
+        trees = try document.sceneTrees()
+    }
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+    FileHandle.standardOutput.write(try encoder.encode(trees))
+    print()
+
 case "masters":
     let document = try KeynoteDocument(contentsOf: inputURL)
     for i in 0..<document.slideCount {
@@ -178,6 +200,40 @@ case "list-media":
     for name in document.mediaFileNames {
         print(name)
     }
+
+case "set-text", "set-frame", "set-media", "delete-node":
+    guard arguments.count >= 5, let nodeID = UInt64(arguments[4]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    switch command {
+    case "set-text":
+        guard arguments.count >= 6 else { fail(usage) }
+        try document.setNodeText(nodeID, to: arguments[5])
+    case "set-frame":
+        guard arguments.count >= 9,
+              let x = Double(arguments[5]), let y = Double(arguments[6]),
+              let w = Double(arguments[7]), let h = Double(arguments[8]) else { fail(usage) }
+        try document.setNodeFrame(nodeID, to: Frame(x: x, y: y, width: w, height: h))
+    case "set-media":
+        guard arguments.count >= 6 else { fail(usage) }
+        try document.setNodeMedia(nodeID, to: try Data(contentsOf: URL(fileURLWithPath: arguments[5])))
+    default:
+        try document.deleteDrawable(nodeID)
+    }
+    try document.write(to: outputURL)
+    print("\(command) applied to node \(nodeID)")
+
+case "apply-tree":
+    guard arguments.count >= 5 else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    let treeData = try Data(contentsOf: URL(fileURLWithPath: arguments[4]))
+    let trees = try JSONDecoder().decode([SceneTree].self, from: treeData)
+    for tree in trees {
+        try document.apply(tree)
+    }
+    try document.write(to: outputURL)
+    print("applied \(trees.count) slide tree(s)")
 
 case "replace-image":
     guard arguments.count >= 6 else { fail(usage) }

@@ -167,7 +167,7 @@ extension KeynoteDocument {
         return RecordLocation(component: componentIndex, record: storageRecordIndex)
     }
 
-    private func recordAnywhere(identifier: UInt64, type: UInt32) throws -> ObjectRecord {
+    func recordAnywhere(identifier: UInt64, type: UInt32) throws -> ObjectRecord {
         for component in components {
             if let record = component.records.first(where: {
                 $0.identifier == identifier && $0.primaryType == type

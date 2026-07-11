@@ -1,0 +1,332 @@
+import CoreGraphics
+import CryptoKit
+import Foundation
+import ImageIO
+import IWAContainer
+import KeynoteSchemas
+
+public enum SceneEditError: Error {
+    case unknownNode(UInt64)
+    case nodeHasNoText(UInt64)
+    case nodeHasNoFrame(UInt64)
+    case nodeHasNoMedia(UInt64)
+    case cannotDeletePlaceholder(UInt64)
+    case unsupportedEdit(String)
+}
+
+/// ObjectID-addressed edit commands — the wrapper interface an AI (or the
+/// scene reconciler) uses to change a document. Node ids come from
+/// `sceneTree(forSlideAt:)`; every command validates its target and keeps the
+/// document's bookkeeping (lengths, references, digests) consistent.
+extension KeynoteDocument {
+
+    // MARK: Text
+
+    /// Sets the text of a placeholder or shape node. `\n` becomes the
+    /// paragraph separator U+2029.
+    public mutating func setNodeText(_ nodeID: UInt64, to text: String) throws {
+        let location = try locateSceneNode(nodeID)
+        let record = components[location.component].records[location.record]
+
+        let shape: TSWP_ShapeInfoArchive
+        switch record.primaryType {
+        case 7:
+            shape = try record.decode(KN_PlaceholderArchive.self).super
+        case 2011:
+            shape = try record.decode(TSWP_ShapeInfoArchive.self)
+        default:
+            throw SceneEditError.nodeHasNoText(nodeID)
+        }
+        let storageID: UInt64
+        if shape.hasOwnedStorage {
+            storageID = shape.ownedStorage.identifier
+        } else if shape.hasTextFlow {
+            storageID = shape.textFlow.identifier
+        } else {
+            throw SceneEditError.nodeHasNoText(nodeID)
+        }
+        guard let storageIndex = components[location.component].records.firstIndex(where: {
+            $0.identifier == storageID
+        }) else {
+            throw SceneEditError.nodeHasNoText(nodeID)
+        }
+        var storageRecord = components[location.component].records[storageIndex]
+        var storage = try storageRecord.decode(TSWP_StorageArchive.self)
+        storage.text = [text.replacingOccurrences(of: "\n", with: "\u{2029}")]
+        try storageRecord.setMessage(storage)
+        components[location.component].records[storageIndex] = storageRecord
+    }
+
+    // MARK: Geometry
+
+    /// Moves/resizes a drawable node.
+    public mutating func setNodeFrame(_ nodeID: UInt64, to frame: Frame) throws {
+        let location = try locateSceneNode(nodeID)
+        var record = components[location.component].records[location.record]
+
+        func updated(_ geometry: inout TSD_GeometryArchive) {
+            geometry.position = TSP_Point.with { $0.x = Float(frame.x); $0.y = Float(frame.y) }
+            geometry.size = TSP_Size.with { $0.width = Float(frame.width); $0.height = Float(frame.height) }
+            // Clear the "size is unset" flag (bit 2) if present so the
+            // explicit size takes effect.
+            geometry.flags &= ~UInt32(4)
+        }
+
+        switch record.primaryType {
+        case 7:
+            var archive = try record.decode(KN_PlaceholderArchive.self)
+            updated(&archive.super.super.super.geometry)
+            try record.setMessage(archive)
+        case 2011:
+            var archive = try record.decode(TSWP_ShapeInfoArchive.self)
+            updated(&archive.super.super.geometry)
+            try record.setMessage(archive)
+        case 3005:
+            var archive = try record.decode(TSD_ImageArchive.self)
+            updated(&archive.super.geometry)
+            try record.setMessage(archive)
+        case 3007:
+            var archive = try record.decode(TSD_MovieArchive.self)
+            updated(&archive.super.geometry)
+            try record.setMessage(archive)
+        case 3008:
+            var archive = try record.decode(TSD_GroupArchive.self)
+            updated(&archive.super.geometry)
+            try record.setMessage(archive)
+        default:
+            throw SceneEditError.nodeHasNoFrame(nodeID)
+        }
+        components[location.component].records[location.record] = record
+    }
+
+    // MARK: Media
+
+    /// Replaces the media content of an image node.
+    ///
+    /// When the node's data is materialized (a real `Data/` file), the bytes
+    /// are swapped in place. When it is an unmaterialized theme resource
+    /// (stock photos in Apple's layouts), fresh `DataInfo` entries are
+    /// created and the node is repointed at them, with all digest and
+    /// data-reference bookkeeping updated.
+    public mutating func setNodeMedia(_ nodeID: UInt64, to newData: Data) throws {
+        let location = try locateSceneNode(nodeID)
+        let record = components[location.component].records[location.record]
+        guard record.primaryType == 3005 else {
+            throw SceneEditError.nodeHasNoMedia(nodeID)
+        }
+        let image = try record.decode(TSD_ImageArchive.self)
+        guard image.hasData else {
+            throw SceneEditError.nodeHasNoMedia(nodeID)
+        }
+
+        if let mainFileName = fileName(forDataIdentifier: image.data.identifier) {
+            // Materialized: replace bytes in place (identifiers unchanged).
+            try replaceMediaFile(named: mainFileName, with: newData)
+            if image.hasThumbnailData,
+               let thumbnailName = fileName(forDataIdentifier: image.thumbnailData.identifier),
+               let old = dataForEntry(at: "Data/" + thumbnailName),
+               let scaled = Self.imageData(newData, scaledToMatch: old) {
+                try replaceMediaFile(named: thumbnailName, with: scaled)
+            }
+        } else {
+            try repointImage(at: location, to: newData)
+        }
+    }
+
+    /// Creates fresh data entries for `newData` (plus a thumbnail) and points
+    /// the image node at them.
+    private mutating func repointImage(at location: RecordLocation, to newData: Data) throws {
+        var record = components[location.component].records[location.record]
+        var image = try record.decode(TSD_ImageArchive.self)
+        let oldIDs = [
+            image.hasData ? image.data.identifier : nil,
+            image.hasThumbnailData ? image.thumbnailData.identifier : nil,
+        ].compactMap { $0 }
+
+        let metadataLocation = try locateRecord(type: 11006, orThrow: MediaOperationError.packageMetadataNotFound)
+        var metadataRecord = components[metadataLocation.component].records[metadataLocation.record]
+        var metadata = try metadataRecord.decode(TSP_PackageMetadata.self)
+
+        // Thumbnail: a scaled render (max 512px on the long side).
+        let thumbnailData = Self.imageData(newData, scaledToFit: 512) ?? newData
+        let ext = Self.imageExtension(of: newData)
+
+        var nextDataID = (metadata.datas.map(\.identifier).max() ?? 0) + 1
+        func makeData(_ bytes: Data, stem: String) -> TSP_DataInfo {
+            let id = nextDataID
+            nextDataID += 1
+            return TSP_DataInfo.with {
+                $0.identifier = id
+                $0.digest = Data(Insecure.SHA1.hash(data: bytes))
+                $0.preferredFileName = "\(stem).\(ext)"
+                $0.fileName = "\(stem)-\(id).\(ext)"
+                $0.materializedLength = UInt64(bytes.count)
+            }
+        }
+        let mainInfo = makeData(newData, stem: "media")
+        let thumbnailInfo = makeData(thumbnailData, stem: "media-small")
+
+        // Files + registration + digest list.
+        setEntryData(at: "Data/" + mainInfo.fileName, to: newData)
+        setEntryData(at: "Data/" + thumbnailInfo.fileName, to: thumbnailData)
+        metadata.datas.append(mainInfo)
+        metadata.datas.append(thumbnailInfo)
+
+        // Component data-reference bookkeeping: this object no longer uses
+        // the old datas; it uses the new ones.
+        let objectID = record.identifier ?? 0
+        let componentRootID = components[location.component].records.first?.identifier ?? 0
+        if let componentInfoIndex = metadata.components.firstIndex(where: { $0.identifier == componentRootID }) {
+            var info = metadata.components[componentInfoIndex]
+            info.dataReferences = info.dataReferences.compactMap { reference in
+                guard oldIDs.contains(reference.dataIdentifier) else { return reference }
+                var updated = reference
+                updated.objectReferenceList.removeAll { $0.objectIdentifier == objectID }
+                return updated.objectReferenceList.isEmpty ? nil : updated
+            }
+            for dataID in [mainInfo.identifier, thumbnailInfo.identifier] {
+                info.dataReferences.append(TSP_ComponentDataReference.with {
+                    $0.dataIdentifier = dataID
+                    $0.objectReferenceList = [
+                        TSP_ComponentDataReference.ObjectReference.with {
+                            $0.objectIdentifier = objectID
+                            $0.count = 1
+                        },
+                    ]
+                })
+            }
+            metadata.components[componentInfoIndex] = info
+        }
+        try metadataRecord.setMessage(metadata)
+        components[metadataLocation.component].records[metadataLocation.record] = metadataRecord
+
+        // DocumentMetadata digest list.
+        let documentMetadataLocation = try locateRecord(type: 11011, orThrow: MediaOperationError.documentMetadataNotFound)
+        var documentMetadataRecord = components[documentMetadataLocation.component].records[documentMetadataLocation.record]
+        var documentMetadata = try documentMetadataRecord.decode(TSP_DocumentMetadata.self)
+        for bytes in [newData, thumbnailData] {
+            documentMetadata.dataPropertiesV1.properties.append(TSP_DataPropertiesEntryV1.with {
+                $0.digest = Data(Insecure.SHA1.hash(data: bytes))
+                $0.expectsMatchedDigest = true
+            })
+        }
+        try documentMetadataRecord.setMessage(documentMetadata)
+        components[documentMetadataLocation.component].records[documentMetadataLocation.record] = documentMetadataRecord
+
+        // Repoint the node and its MessageInfo data references.
+        image.data = TSP_DataReference.with { $0.identifier = mainInfo.identifier }
+        image.thumbnailData = TSP_DataReference.with { $0.identifier = thumbnailInfo.identifier }
+        image.clearAdjustedImageData()
+        image.clearEnhancedImageData()
+        image.clearThumbnailAdjustedImageData()
+        image.clearOriginalData()
+        try record.setMessage(image)
+        var dataReferences = record.info.messageInfos[0].dataReferences.filter { !oldIDs.contains($0) }
+        dataReferences.append(contentsOf: [mainInfo.identifier, thumbnailInfo.identifier])
+        try record.setDataReferences(dataReferences, at: 0)
+        components[location.component].records[location.record] = record
+    }
+
+    // MARK: Deletion & ordering
+
+    /// Removes a free drawable (image, shape, group, movie) from its slide.
+    /// Placeholders can't be deleted. Child records owned by the drawable
+    /// become unreferenced and are dropped by Keynote on next save.
+    public mutating func deleteDrawable(_ nodeID: UInt64) throws {
+        let location = try locateSceneNode(nodeID)
+        let record = components[location.component].records[location.record]
+        if record.primaryType == 7 {
+            throw SceneEditError.cannotDeletePlaceholder(nodeID)
+        }
+
+        // The slide root is the component's first record.
+        guard let slideIndex = components[location.component].records.firstIndex(where: { $0.primaryType == 5 || $0.primaryType == 6 }) else {
+            throw SceneEditError.unknownNode(nodeID)
+        }
+        var slideRecord = components[location.component].records[slideIndex]
+        var slide = try slideRecord.decode(KN_SlideArchive.self)
+        slide.ownedDrawables.removeAll { $0.identifier == nodeID }
+        slide.drawablesZOrder.removeAll { $0.identifier == nodeID }
+        slide.sageTagToInfoMap.removeAll { $0.info.identifier == nodeID }
+        try slideRecord.setMessage(slide)
+        let references = slideRecord.info.messageInfos[0].objectReferences.filter { $0 != nodeID }
+        try slideRecord.setObjectReferences(references, at: 0)
+        components[location.component].records[slideIndex] = slideRecord
+
+        components[location.component].records.remove(
+            at: components[location.component].records.firstIndex { $0.identifier == nodeID }!
+        )
+    }
+
+    /// Restacks a slide's free drawables. `order` must contain exactly the
+    /// current z-order ids, back to front.
+    public mutating func reorderDrawables(onSlideAt index: Int, to order: [UInt64]) throws {
+        let nodeIDs = try slideNodeIdentifiers()
+        guard nodeIDs.indices.contains(index) else {
+            throw SlideContentError.slideIndexOutOfRange(index)
+        }
+        let node = try recordAnywhere(identifier: nodeIDs[index], type: 4).decode(KN_SlideNodeArchive.self)
+        let slideRootID = node.slide.identifier
+        guard let componentIndex = components.firstIndex(where: {
+            $0.records.contains { $0.identifier == slideRootID }
+        }), let recordIndex = components[componentIndex].records.firstIndex(where: { $0.identifier == slideRootID })
+        else {
+            throw SlideContentError.slideComponentNotFound(slideRootID)
+        }
+        var slideRecord = components[componentIndex].records[recordIndex]
+        var slide = try slideRecord.decode(KN_SlideArchive.self)
+        guard Set(slide.drawablesZOrder.map(\.identifier)) == Set(order) else {
+            throw SceneEditError.unsupportedEdit("reorder must permute the existing z-order ids")
+        }
+        slide.drawablesZOrder = order.map { id in TSP_Reference.with { $0.identifier = id } }
+        try slideRecord.setMessage(slide)
+        components[componentIndex].records[recordIndex] = slideRecord
+    }
+
+    // MARK: Lookup
+
+    func locateSceneNode(_ nodeID: UInt64) throws -> RecordLocation {
+        for (componentIndex, component) in components.enumerated() {
+            if let recordIndex = component.records.firstIndex(where: { $0.identifier == nodeID }) {
+                return RecordLocation(component: componentIndex, record: recordIndex)
+            }
+        }
+        throw SceneEditError.unknownNode(nodeID)
+    }
+
+    // MARK: Image helpers
+
+    private static func imageExtension(of data: Data) -> String {
+        if data.starts(with: [0x89, 0x50, 0x4E, 0x47]) { return "png" }
+        if data.starts(with: [0xFF, 0xD8]) { return "jpeg" }
+        if data.starts(with: [0x47, 0x49, 0x46]) { return "gif" }
+        return "img"
+    }
+
+    /// Renders `data` scaled down so its long side is at most `maxDimension`,
+    /// keeping the container format.
+    static func imageData(_ data: Data, scaledToFit maxDimension: Int) -> Data? {
+        guard let source = CGImageSourceCreateWithData(data as CFData, nil),
+              let type = CGImageSourceGetType(source),
+              let image = CGImageSourceCreateImageAtIndex(source, 0, nil)
+        else { return nil }
+        let scale = min(1.0, Double(maxDimension) / Double(max(image.width, image.height)))
+        let width = max(1, Int(Double(image.width) * scale))
+        let height = max(1, Int(Double(image.height) * scale))
+        guard let colorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+              let context = CGContext(
+                  data: nil, width: width, height: height,
+                  bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace,
+                  bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue
+              )
+        else { return nil }
+        context.interpolationQuality = .high
+        context.draw(image, in: CGRect(x: 0, y: 0, width: width, height: height))
+        guard let scaled = context.makeImage() else { return nil }
+        let output = NSMutableData()
+        guard let destination = CGImageDestinationCreateWithData(output, type, 1, nil) else { return nil }
+        CGImageDestinationAddImage(destination, scaled, nil)
+        guard CGImageDestinationFinalize(destination) else { return nil }
+        return output as Data
+    }
+}

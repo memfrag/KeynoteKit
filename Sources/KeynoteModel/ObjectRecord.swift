@@ -99,6 +99,15 @@ public struct ObjectRecord {
         isDirty = true
     }
 
+    /// Replaces `MessageInfo.data_references` bookkeeping at `index`.
+    public mutating func setDataReferences(_ references: [UInt64], at index: Int) throws {
+        guard index < info.messageInfos.count else {
+            throw ObjectRecordError.payloadIndexOutOfRange
+        }
+        info.messageInfos[index].dataReferences = references
+        isDirty = true
+    }
+
     /// Lowers back to a raw `ArchiveRecord`.
     public func lowered() throws -> ArchiveRecord {
         let infoBytes: Data = isDirty ? try info.serializedData() : rawInfo

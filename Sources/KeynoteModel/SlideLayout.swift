@@ -8,6 +8,13 @@ public struct Frame: Equatable, Sendable, Codable {
     public let y: Double
     public let width: Double
     public let height: Double
+
+    public init(x: Double, y: Double, width: Double, height: Double) {
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+    }
 }
 
 /// One fillable region of a layout: a placeholder or a text shape, with the

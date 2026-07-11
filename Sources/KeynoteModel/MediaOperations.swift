@@ -99,7 +99,7 @@ extension KeynoteDocument {
     }
 
     /// Renders `data` at the pixel size and container format of `original`.
-    private static func imageData(_ data: Data, scaledToMatch original: Data) -> Data? {
+    static func imageData(_ data: Data, scaledToMatch original: Data) -> Data? {
         guard let originalSource = CGImageSourceCreateWithData(original as CFData, nil),
               let properties = CGImageSourceCopyPropertiesAtIndex(originalSource, 0, nil) as? [CFString: Any],
               let width = properties[kCGImagePropertyPixelWidth] as? Int,
@@ -130,4 +130,5 @@ extension KeynoteDocument {
     public var mediaFileNames: [String] {
         entryPaths.filter { $0.hasPrefix("Data/") }.map { String($0.dropFirst("Data/".count)) }
     }
+
 }

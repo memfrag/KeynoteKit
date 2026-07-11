@@ -36,15 +36,40 @@ Early development. Working today:
   - Schema-guided wire-format walking (`ReferenceRewriter` +
     generated `MessageFieldMap`) to find/rewrite every `TSP.Reference` in any
     payload without full decoding
+  - Per-slide title/body reading and editing (`slideTitle`/`setSlideText`),
+    navigating `SlideArchive` → placeholder → `StorageArchive`
+- **`KeynoteBuilder`** — the high-level API: describe a `Presentation` of
+  `Slide`s (title + body) declaratively and write it to a `.key`. Uses a
+  template strategy — an embedded seed deck carrying a real Keynote theme,
+  masters, and stylesheets is grown/shrunk to the requested slide count and
+  filled in, so output inherits genuine Keynote styling. Point it at your own
+  `.key` template to use a branded theme.
 - **`iwatool`** — CLI for inspecting, round-tripping, and rewriting `.key` files
 
-Files unpacked, modified, and repacked through KeynoteKit open cleanly in
-Keynote with styling intact (verified against Keynote-authored fixtures,
-including scripted open-and-export-PDF smoke tests — including duplicated,
-removed, and reordered slides).
+Files generated or modified through KeynoteKit open cleanly in Keynote with
+styling intact (verified against Keynote-authored fixtures, including scripted
+open-and-export-PDF smoke tests — text replacement, image replacement, and
+duplicated / removed / reordered slides, plus full decks built from scratch).
 
-Planned next: image replacement, shape insertion, and a template-based
-document builder API.
+Planned next: shapes and tables (M4), then builds / transitions / charts (M5).
+
+## Generating a presentation
+
+```swift
+import KeynoteBuilder
+
+let deck = Presentation {
+    Slide(title: "KeynoteKit", body: "A Swift package for generating Keynote files")
+    Slide(title: "How it works", body: "Start from a themed seed\nFill in each slide")
+    Slide(title: "Status", body: "Milestones 1–3 complete")
+}
+
+let writer = try KeynoteWriter()          // or KeynoteWriter(templateURL: myTheme)
+try writer.write(deck, to: URL(filePath: "Deck.key"))
+```
+
+The builder returns a `KeynoteDocument` from `build(_:)` if you want to apply
+further edits (e.g. `replaceImage`) before writing.
 
 ## Usage
 
@@ -72,6 +97,9 @@ swift run iwatool move-slide In.key Out.key 0 3
 # Replace an image (by its original file name)
 swift run iwatool list-media In.key
 swift run iwatool replace-image In.key Out.key photo.jpg new-photo.jpg
+
+# Build a deck from a text outline ("# " starts a slide; other lines are body)
+swift run iwatool build outline.txt Deck.key
 ```
 
 ## Regenerating the schemas

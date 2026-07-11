@@ -8,6 +8,7 @@ let package = Package(
         .library(name: "IWAContainer", targets: ["IWAContainer"]),
         .library(name: "KeynoteSchemas", targets: ["KeynoteSchemas"]),
         .library(name: "KeynoteModel", targets: ["KeynoteModel"]),
+        .library(name: "KeynoteBuilder", targets: ["KeynoteBuilder"]),
         .executable(name: "iwatool", targets: ["iwatool"]),
     ],
     dependencies: [
@@ -31,9 +32,14 @@ let package = Package(
                 .product(name: "SwiftProtobuf", package: "swift-protobuf"),
             ]
         ),
+        .target(
+            name: "KeynoteBuilder",
+            dependencies: ["KeynoteModel"],
+            resources: [.copy("Resources/seed.key")]
+        ),
         .executableTarget(
             name: "iwatool",
-            dependencies: ["IWAContainer", "KeynoteModel"]
+            dependencies: ["IWAContainer", "KeynoteModel", "KeynoteBuilder"]
         ),
         .testTarget(
             name: "IWAContainerTests",
@@ -44,6 +50,10 @@ let package = Package(
             name: "KeynoteModelTests",
             dependencies: ["KeynoteModel"],
             resources: [.copy("Fixtures")]
+        ),
+        .testTarget(
+            name: "KeynoteBuilderTests",
+            dependencies: ["KeynoteBuilder", "KeynoteModel"]
         ),
     ]
 )

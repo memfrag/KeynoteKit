@@ -1,5 +1,6 @@
 import Foundation
 import IWAContainer
+import KeynoteBuilder
 import KeynoteModel
 
 let usage = """
@@ -16,6 +17,8 @@ usage:
   iwatool replace-image <in.key> <out.key> <name> <image-file>
                                                  replace an image (by original file name)
   iwatool list-media <file.key>                  list Data/ files
+  iwatool build <outline.txt> <out.key>          build a deck from a simple outline
+  iwatool set-title <in.key> <out.key> <index> <text>   set a slide's title
 """
 
 func fail(_ message: String) -> Never {
@@ -146,6 +149,41 @@ case "replace-image":
     let replaced = try document.replaceImage(named: arguments[4], with: newData)
     try document.write(to: outputURL)
     print("replaced \(replaced.joined(separator: ", "))")
+
+case "set-title":
+    guard arguments.count >= 6, let index = Int(arguments[4]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    try document.setSlideText(at: index, .title, to: arguments[5])
+    try document.write(to: outputURL)
+    print("set title of slide \(index)")
+
+case "build":
+    // Outline format: a line starting with "# " begins a new slide (its
+    // title); subsequent non-blank lines are that slide's body.
+    guard arguments.count >= 4 else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    let outline = try String(contentsOf: inputURL, encoding: .utf8)
+    var slides: [Slide] = []
+    var currentBody: [String] = []
+    func flushBody() {
+        if !slides.isEmpty, !currentBody.isEmpty {
+            slides[slides.count - 1].body = currentBody.joined(separator: "\n")
+        }
+        currentBody = []
+    }
+    for line in outline.split(separator: "\n", omittingEmptySubsequences: false) {
+        if line.hasPrefix("# ") {
+            flushBody()
+            slides.append(Slide(title: String(line.dropFirst(2))))
+        } else if !line.trimmingCharacters(in: .whitespaces).isEmpty {
+            currentBody.append(String(line))
+        }
+    }
+    flushBody()
+    let writer = try KeynoteWriter()
+    try writer.write(Presentation(slides: slides), to: outputURL)
+    print("built \(slides.count)-slide deck")
 
 default:
     fail(usage)

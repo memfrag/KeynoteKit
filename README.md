@@ -123,6 +123,99 @@ let deck = try Presentation(markdownFileURL: URL(filePath: "talk.md"))
 try KeynoteWriter().write(deck, to: URL(filePath: "talk.key"))
 ```
 
+### Writing a markdown presentation
+
+The format follows the conventions of tools like Marp and Deckset: one
+markdown file is the whole deck, slides are separated by `---`.
+
+**Slides.** A line containing only three or more hyphens (`---`) starts a new
+slide. Blocks that contain no content at all are skipped, so stray separators
+are harmless.
+
+**Front matter.** An optional YAML block fenced by `---` at the very top of
+the file (title, author, anything) is ignored — you can keep metadata there
+for other tools.
+
+**Title.** The first heading in a slide becomes its title, whatever the
+level (`#`, `##`, …). Any *later* headings in the same slide are treated as
+body lines.
+
+**Body.** Bullet lines (`-`, `*`, or `+`) and plain paragraphs become the
+body, one line each; the bullet markers themselves are stripped (the layout's
+list style supplies them). Blank lines are ignored, so paragraphs and bullets
+can be mixed freely.
+
+**Presenter notes.** A line starting with `Notes:` begins the notes; that
+line and everything after it (until the next slide) goes to the presenter
+notes, not the slide. The HTML-comment form `<!-- notes: … -->` works too and
+keeps the notes invisible in other markdown renderers.
+
+**Layout.** `<!-- layout: name -->` (or a bare `layout: name` line) picks
+which template slide this content is cloned from — see the next section for
+how layouts get their names. Without a directive, the writer's
+`defaultLayout` ("bullets") is used. Names are matched case-insensitively.
+
+**Images.** `![alt](path)` places the image into the slide's layout — it
+replaces the layout's picture (the largest image node, e.g. a Photo layout's
+full-bleed stock photo). Relative paths resolve against the markdown file's
+directory. Multiple images fill the layout's image nodes largest-first;
+references beyond what the layout can show are ignored, so pick a layout
+that has a picture.
+
+**Where the text lands.** For a slide with both a title and body they map to
+the title and body placeholders directly. A slide with only one text block
+puts it in the layout's *prominent* placeholder — inferred per layout as the
+larger of the title/body placeholders — which is how a Statement or Quote
+slide renders its single line big and centered without any configuration.
+
+A complete example:
+
+```markdown
+---
+title: Quarterly Review        ← front matter, ignored
+---
+
+# Q3 Review
+<!-- layout: title -->
+
+Results and outlook
+
+Notes: Welcome everyone. Keep the intro under a minute.
+
+---
+
+# Highlights
+<!-- layout: bullets -->
+
+- Revenue up 40%
+- Churn at an all-time low
+- Two new markets opened
+
+---
+
+# Our best quarter yet.
+<!-- layout: statement -->
+
+---
+
+# The new factory
+<!-- layout: photo -->
+
+![factory floor](images/factory.jpg)
+
+<!-- notes: Photo taken during the September visit. -->
+```
+
+Build it with `swift run iwatool build-md talk.md Deck.key MyTemplate.key`,
+or from Swift:
+
+```swift
+let deck = try Presentation(markdownFileURL: URL(filePath: "talk.md"))
+let writer = try KeynoteWriter(templateURL: URL(filePath: "MyTemplate.key"))
+try writer.write(deck, to: URL(filePath: "Deck.key"),
+                 imageBaseURL: URL(filePath: "."))
+```
+
 ### Using a template deck for multiple layouts
 
 Build a `.key` in Keynote with one slide per layout you want, and tag each in
@@ -155,22 +248,11 @@ try writer.write(Presentation(markdownFileURL: URL(filePath: "talk.md")),
                  to: URL(filePath: "talk.key"))
 ```
 
-Title-primary layouts (Title, Section, Title & Bullets) take the heading as
-the slide title and bullets/paragraphs as the body. Body-primary layouts
-(Statement, Big Fact — configurable via `bodyPrimaryLayouts`) route the text
-into the body placeholder so it renders as the prominent text.
-
-Which placeholder receives single-block content is inferred from the layout
-(the larger of the title/body placeholders wins), so Statement and Quote route
-their text to the prominent body placeholder automatically — no per-theme
-configuration. Use `iwatool describe-template` to see how a template's layouts
-are structured.
-
-Markdown `![](…)` image references are placed into the layout's image nodes,
-largest first — so on a Photo layout the referenced image becomes the picture
-(replacing the layout's stock photo). Relative paths resolve against the
-markdown file's directory. Slides whose layout has no image node leave their
-references unplaced.
+A layout can also be referenced without a tag, by its master's name (e.g.
+`layout: Title & Bullets`) — tags win when both exist. Any theme works,
+Apple's or your own: the theme and its masters travel inside the template
+file. Use `iwatool describe-template` to see how a template's layouts are
+structured (each placeholder's role, prompt text, and geometry).
 
 ## Usage
 

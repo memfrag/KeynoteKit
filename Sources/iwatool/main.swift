@@ -286,10 +286,14 @@ case "build-md":
     let presentation = try Presentation(markdownFileURL: inputURL)
     let imageCount = presentation.slides.reduce(0) { $0 + $1.imagePaths.count }
     let writer = try KeynoteWriter(templateURL: templateURL)
-    try writer.write(presentation, to: outputURL)
+    try writer.write(
+        presentation,
+        to: outputURL,
+        imageBaseURL: inputURL.deletingLastPathComponent()
+    )
     var message = "built \(presentation.slides.count)-slide deck from markdown"
     if imageCount > 0 {
-        message += " (\(imageCount) image reference(s) parsed but not yet placed — coming with M4)"
+        message += " (\(imageCount) image reference(s))"
     }
     print(message)
 

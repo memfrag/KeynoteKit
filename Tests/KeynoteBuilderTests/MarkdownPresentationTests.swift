@@ -68,7 +68,7 @@ struct MarkdownPresentationTests {
         #expect(presentation.slides[0].body == "Body")
     }
 
-    @Test("collects image references without placing them")
+    @Test("collects image references")
     func images() {
         let markdown = """
         # Slide
@@ -80,6 +80,29 @@ struct MarkdownPresentationTests {
         let presentation = Presentation(markdown: markdown)
         #expect(presentation.slides[0].imagePaths == ["images/logo.png"])
         #expect(presentation.slides[0].body == "Some text")
+    }
+
+    @Test("places images into the layout's image nodes when building")
+    func placesImages() throws {
+        let templateURL = try #require(Bundle.module.url(forResource: "template2", withExtension: "key"))
+        let blueURL = try #require(Bundle.module.url(forResource: "blue", withExtension: "png"))
+        let blue = try Data(contentsOf: blueURL)
+
+        let presentation = Presentation(slides: [
+            Slide(title: "Hero", layout: "photo", imagePaths: [blueURL.path]),
+        ])
+        let writer = try KeynoteWriter(templateURL: templateURL)
+        let document = try writer.build(presentation)
+
+        let tree = try document.sceneTree(forSlideAt: 0)
+        let largest = try #require(
+            tree.nodes.filter { $0.type == "image" }.max {
+                ($0.frame?.width ?? 0) * ($0.frame?.height ?? 0) <
+                ($1.frame?.width ?? 0) * ($1.frame?.height ?? 0)
+            }
+        )
+        let file = try #require(largest.media?.file)
+        #expect(document.dataForEntry(at: "Data/" + file) == blue)
     }
 
     @Test("any heading level becomes the title; later headings join the body")

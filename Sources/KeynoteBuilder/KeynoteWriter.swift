@@ -46,14 +46,16 @@ public struct KeynoteWriter {
     }
 
     /// Builds `presentation` and writes the resulting `.key` to `url`.
-    public func write(_ presentation: Presentation, to url: URL) throws {
-        let document = try build(presentation)
+    /// Relative image paths resolve against `imageBaseURL` (e.g. the
+    /// markdown file's directory).
+    public func write(_ presentation: Presentation, to url: URL, imageBaseURL: URL? = nil) throws {
+        let document = try build(presentation, imageBaseURL: imageBaseURL)
         try document.write(to: url)
     }
 
     /// Builds `presentation` into a `KeynoteDocument` for further mutation
     /// (e.g. image replacement) before writing.
-    public func build(_ presentation: Presentation) throws -> KeynoteDocument {
+    public func build(_ presentation: Presentation, imageBaseURL: URL? = nil) throws -> KeynoteDocument {
         guard !presentation.slides.isEmpty else {
             throw KeynoteWriterError.emptyPresentation
         }
@@ -65,7 +67,33 @@ public struct KeynoteWriter {
         } else {
             try buildFromSingleSeed(presentation, into: &document)
         }
+        try placeImages(presentation, into: &document, baseURL: imageBaseURL)
         return document
+    }
+
+    /// Places each slide's image references into its image nodes, largest
+    /// frame first (a Photo layout's full-bleed picture before any small
+    /// inline image). Slides without image nodes leave their references
+    /// unplaced — choose a layout that shows a picture.
+    private func placeImages(
+        _ presentation: Presentation,
+        into document: inout KeynoteDocument,
+        baseURL: URL?
+    ) throws {
+        for (index, slide) in presentation.slides.enumerated() where !slide.imagePaths.isEmpty {
+            let tree = try document.sceneTree(forSlideAt: index)
+            let imageNodes = tree.nodes
+                .filter { $0.type == "image" }
+                .sorted {
+                    let a = ($0.frame?.width ?? 0) * ($0.frame?.height ?? 0)
+                    let b = ($1.frame?.width ?? 0) * ($1.frame?.height ?? 0)
+                    return a > b
+                }
+            for (path, node) in zip(slide.imagePaths, imageNodes) {
+                let url = URL(fileURLWithPath: path, relativeTo: baseURL)
+                try document.setNodeMedia(node.id, to: try Data(contentsOf: url))
+            }
+        }
     }
 
     /// Multi-layout template: clone the matching example slide per content

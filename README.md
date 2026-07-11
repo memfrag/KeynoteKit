@@ -65,9 +65,8 @@ Early development. Working today:
   - **Markdown presentations**: a Marp/Deckset-style format
     (`Presentation(markdown:)`) — `---` separates slides, the first heading is
     the title, bullets/paragraphs become the body, `Notes:` (or
-    `<!-- notes: … -->`) adds presenter notes, and `<!-- layout: quote -->`
-    picks a layout. Image references are parsed and carried but not yet
-    placed (M4).
+    `<!-- notes: … -->`) adds presenter notes, `<!-- layout: quote -->` picks
+    a layout, and `![](path)` images are placed into the layout's picture.
   - **Multi-layout templates**: point `KeynoteWriter` at a template `.key`
     whose slides each demonstrate a layout, tagged in their presenter notes
     (`@layout: quote`) or identified by their master (slide-layout) name. Each
@@ -167,9 +166,11 @@ their text to the prominent body placeholder automatically — no per-theme
 configuration. Use `iwatool describe-template` to see how a template's layouts
 are structured.
 
-> **Known limitation:** layouts whose content is a dedicated *media/object*
-> placeholder — the Photo layouts, and markdown `![](…)` images — aren't filled
-> yet; image placement is the next M4 increment.
+Markdown `![](…)` image references are placed into the layout's image nodes,
+largest first — so on a Photo layout the referenced image becomes the picture
+(replacing the layout's stock photo). Relative paths resolve against the
+markdown file's directory. Slides whose layout has no image node leave their
+references unplaced.
 
 ## Usage
 

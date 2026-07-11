@@ -16,6 +16,7 @@ let package = Package(
         // Keep in sync with the protoc-gen-swift used by scripts/gen-protos.sh —
         // a newer runtime than the generator produces deprecation warnings.
         .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.38.1"),
+        .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.4.0"),
     ],
     targets: [
         .target(

@@ -345,6 +345,22 @@ swift run iwatool remove-build In.key Out.key 0 2654110
 swift run iwatool apply-tree In.key Out.key edited-tree.json
 ```
 
+## Documentation
+
+The package is documented with DocC — API reference plus guide articles
+(editing documents, the scene tree, tables & charts, animations, the
+markdown format, template decks, and the container format). Build it in
+Xcode (Product ▸ Build Documentation) or from the command line:
+
+```sh
+swift package generate-documentation --target KeynoteModel
+swift package generate-documentation --target KeynoteBuilder
+swift package generate-documentation --target IWAContainer
+
+# or browse locally:
+swift package --disable-sandbox preview-documentation --target KeynoteModel
+```
+
 ## Regenerating the schemas
 
 The vendored `.proto` files (see `proto/`) come from keynote-parser, which

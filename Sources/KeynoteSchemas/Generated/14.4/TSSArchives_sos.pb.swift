@@ -15,31 +15,31 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSSSOS_SpecSetBoolArchive: Sendable {
+public nonisolated struct TSSSOS_SpecSetBoolArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var value: Bool {
-    get {return _value ?? false}
+    get {_value ?? false}
     set {_value = newValue}
   }
   /// Returns true if `value` has been explicitly set.
-  public var hasValue: Bool {return self._value != nil}
+  public var hasValue: Bool {self._value != nil}
   /// Clears the value of `value`. Subsequent reads from it will return its default value.
   public mutating func clearValue() {self._value = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -51,26 +51,26 @@ public struct TSSSOS_SpecSetBoolArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSSSOS_SpecSetColorArchive: Sendable {
+public nonisolated struct TSSSOS_SpecSetColorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var color: TSP_Color {
-    get {return _color ?? TSP_Color()}
+    get {_color ?? TSP_Color()}
     set {_color = newValue}
   }
   /// Returns true if `color` has been explicitly set.
-  public var hasColor: Bool {return self._color != nil}
+  public var hasColor: Bool {self._color != nil}
   /// Clears the value of `color`. Subsequent reads from it will return its default value.
   public mutating func clearColor() {self._color = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -82,26 +82,26 @@ public struct TSSSOS_SpecSetColorArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSSSOS_SpecSetDoubleArchive: Sendable {
+public nonisolated struct TSSSOS_SpecSetDoubleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var value: Double {
-    get {return _value ?? 0}
+    get {_value ?? 0}
     set {_value = newValue}
   }
   /// Returns true if `value` has been explicitly set.
-  public var hasValue: Bool {return self._value != nil}
+  public var hasValue: Bool {self._value != nil}
   /// Clears the value of `value`. Subsequent reads from it will return its default value.
   public mutating func clearValue() {self._value = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -113,26 +113,26 @@ public struct TSSSOS_SpecSetDoubleArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSSSOS_SpecSetIntegerArchive: Sendable {
+public nonisolated struct TSSSOS_SpecSetIntegerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var value: Int32 {
-    get {return _value ?? 0}
+    get {_value ?? 0}
     set {_value = newValue}
   }
   /// Returns true if `value` has been explicitly set.
-  public var hasValue: Bool {return self._value != nil}
+  public var hasValue: Bool {self._value != nil}
   /// Clears the value of `value`. Subsequent reads from it will return its default value.
   public mutating func clearValue() {self._value = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -144,26 +144,26 @@ public struct TSSSOS_SpecSetIntegerArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSSSOS_SpecSetStringArchive: Sendable {
+public nonisolated struct TSSSOS_SpecSetStringArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var value: String {
-    get {return _value ?? String()}
+    get {_value ?? String()}
     set {_value = newValue}
   }
   /// Returns true if `value` has been explicitly set.
-  public var hasValue: Bool {return self._value != nil}
+  public var hasValue: Bool {self._value != nil}
   /// Clears the value of `value`. Subsequent reads from it will return its default value.
   public mutating func clearValue() {self._value = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -175,17 +175,17 @@ public struct TSSSOS_SpecSetStringArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSSSOS_SpecBoolArchive: Sendable {
+public nonisolated struct TSSSOS_SpecBoolArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetBool: TSSSOS_SpecSetBoolArchive {
-    get {return _specSetBool ?? TSSSOS_SpecSetBoolArchive()}
+    get {_specSetBool ?? TSSSOS_SpecSetBoolArchive()}
     set {_specSetBool = newValue}
   }
   /// Returns true if `specSetBool` has been explicitly set.
-  public var hasSpecSetBool: Bool {return self._specSetBool != nil}
+  public var hasSpecSetBool: Bool {self._specSetBool != nil}
   /// Clears the value of `specSetBool`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetBool() {self._specSetBool = nil}
 
@@ -196,17 +196,17 @@ public struct TSSSOS_SpecBoolArchive: Sendable {
   fileprivate var _specSetBool: TSSSOS_SpecSetBoolArchive? = nil
 }
 
-public struct TSSSOS_SpecColorArchive: Sendable {
+public nonisolated struct TSSSOS_SpecColorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetColor: TSSSOS_SpecSetColorArchive {
-    get {return _specSetColor ?? TSSSOS_SpecSetColorArchive()}
+    get {_specSetColor ?? TSSSOS_SpecSetColorArchive()}
     set {_specSetColor = newValue}
   }
   /// Returns true if `specSetColor` has been explicitly set.
-  public var hasSpecSetColor: Bool {return self._specSetColor != nil}
+  public var hasSpecSetColor: Bool {self._specSetColor != nil}
   /// Clears the value of `specSetColor`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetColor() {self._specSetColor = nil}
 
@@ -217,17 +217,17 @@ public struct TSSSOS_SpecColorArchive: Sendable {
   fileprivate var _specSetColor: TSSSOS_SpecSetColorArchive? = nil
 }
 
-public struct TSSSOS_SpecDoubleArchive: Sendable {
+public nonisolated struct TSSSOS_SpecDoubleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetDouble: TSSSOS_SpecSetDoubleArchive {
-    get {return _specSetDouble ?? TSSSOS_SpecSetDoubleArchive()}
+    get {_specSetDouble ?? TSSSOS_SpecSetDoubleArchive()}
     set {_specSetDouble = newValue}
   }
   /// Returns true if `specSetDouble` has been explicitly set.
-  public var hasSpecSetDouble: Bool {return self._specSetDouble != nil}
+  public var hasSpecSetDouble: Bool {self._specSetDouble != nil}
   /// Clears the value of `specSetDouble`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetDouble() {self._specSetDouble = nil}
 
@@ -238,17 +238,17 @@ public struct TSSSOS_SpecDoubleArchive: Sendable {
   fileprivate var _specSetDouble: TSSSOS_SpecSetDoubleArchive? = nil
 }
 
-public struct TSSSOS_SpecIntegerArchive: Sendable {
+public nonisolated struct TSSSOS_SpecIntegerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetInteger: TSSSOS_SpecSetIntegerArchive {
-    get {return _specSetInteger ?? TSSSOS_SpecSetIntegerArchive()}
+    get {_specSetInteger ?? TSSSOS_SpecSetIntegerArchive()}
     set {_specSetInteger = newValue}
   }
   /// Returns true if `specSetInteger` has been explicitly set.
-  public var hasSpecSetInteger: Bool {return self._specSetInteger != nil}
+  public var hasSpecSetInteger: Bool {self._specSetInteger != nil}
   /// Clears the value of `specSetInteger`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetInteger() {self._specSetInteger = nil}
 
@@ -259,17 +259,17 @@ public struct TSSSOS_SpecIntegerArchive: Sendable {
   fileprivate var _specSetInteger: TSSSOS_SpecSetIntegerArchive? = nil
 }
 
-public struct TSSSOS_SpecStringArchive: Sendable {
+public nonisolated struct TSSSOS_SpecStringArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetString: TSSSOS_SpecSetStringArchive {
-    get {return _specSetString ?? TSSSOS_SpecSetStringArchive()}
+    get {_specSetString ?? TSSSOS_SpecSetStringArchive()}
     set {_specSetString = newValue}
   }
   /// Returns true if `specSetString` has been explicitly set.
-  public var hasSpecSetString: Bool {return self._specSetString != nil}
+  public var hasSpecSetString: Bool {self._specSetString != nil}
   /// Clears the value of `specSetString`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetString() {self._specSetString = nil}
 
@@ -282,14 +282,11 @@ public struct TSSSOS_SpecStringArchive: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSSSOS"
+fileprivate nonisolated let _protobuf_package = "TSSSOS"
 
-extension TSSSOS_SpecSetBoolArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSSSOS_SpecSetBoolArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetBoolArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "value"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}value\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._value == nil {return false}
@@ -332,12 +329,9 @@ extension TSSSOS_SpecSetBoolArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSSSOS_SpecSetColorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSSSOS_SpecSetColorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetColorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "color"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}color\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -380,12 +374,9 @@ extension TSSSOS_SpecSetColorArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSSSOS_SpecSetDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSSSOS_SpecSetDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetDoubleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "value"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}value\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._value == nil {return false}
@@ -428,12 +419,9 @@ extension TSSSOS_SpecSetDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSSSOS_SpecSetIntegerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSSSOS_SpecSetIntegerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetIntegerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "value"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}value\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._value == nil {return false}
@@ -476,12 +464,9 @@ extension TSSSOS_SpecSetIntegerArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSSSOS_SpecSetStringArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSSSOS_SpecSetStringArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetStringArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "value"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}value\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -523,11 +508,9 @@ extension TSSSOS_SpecSetStringArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSSSOS_SpecBoolArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSSSOS_SpecBoolArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecBoolArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_bool"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_bool\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetBool, !v.isInitialized {return false}
@@ -564,11 +547,9 @@ extension TSSSOS_SpecBoolArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSSSOS_SpecColorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSSSOS_SpecColorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecColorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_color"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_color\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetColor, !v.isInitialized {return false}
@@ -605,11 +586,9 @@ extension TSSSOS_SpecColorArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSSSOS_SpecDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSSSOS_SpecDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecDoubleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_double"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_double\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetDouble, !v.isInitialized {return false}
@@ -646,11 +625,9 @@ extension TSSSOS_SpecDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSSSOS_SpecIntegerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSSSOS_SpecIntegerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecIntegerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_integer"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_integer\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetInteger, !v.isInitialized {return false}
@@ -687,11 +664,9 @@ extension TSSSOS_SpecIntegerArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSSSOS_SpecStringArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSSSOS_SpecStringArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecStringArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_string"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_string\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetString, !v.isInitialized {return false}

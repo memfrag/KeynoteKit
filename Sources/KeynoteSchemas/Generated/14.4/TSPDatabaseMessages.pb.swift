@@ -15,22 +15,22 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSP_DatabaseData: Sendable {
+public nonisolated struct TSP_DatabaseData: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var data: TSP_DataReference {
-    get {return _data ?? TSP_DataReference()}
+    get {_data ?? TSP_DataReference()}
     set {_data = newValue}
   }
   /// Returns true if `data` has been explicitly set.
-  public var hasData: Bool {return self._data != nil}
+  public var hasData: Bool {self._data != nil}
   /// Clears the value of `data`. Subsequent reads from it will return its default value.
   public mutating func clearData() {self._data = nil}
 
@@ -41,62 +41,62 @@ public struct TSP_DatabaseData: Sendable {
   fileprivate var _data: TSP_DataReference? = nil
 }
 
-public struct TSP_DatabaseDataArchive: Sendable {
+public nonisolated struct TSP_DatabaseDataArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var data: TSP_Reference {
-    get {return _data ?? TSP_Reference()}
+    get {_data ?? TSP_Reference()}
     set {_data = newValue}
   }
   /// Returns true if `data` has been explicitly set.
-  public var hasData: Bool {return self._data != nil}
+  public var hasData: Bool {self._data != nil}
   /// Clears the value of `data`. Subsequent reads from it will return its default value.
   public mutating func clearData() {self._data = nil}
 
   public var appRelativePath: String {
-    get {return _appRelativePath ?? String()}
+    get {_appRelativePath ?? String()}
     set {_appRelativePath = newValue}
   }
   /// Returns true if `appRelativePath` has been explicitly set.
-  public var hasAppRelativePath: Bool {return self._appRelativePath != nil}
+  public var hasAppRelativePath: Bool {self._appRelativePath != nil}
   /// Clears the value of `appRelativePath`. Subsequent reads from it will return its default value.
   public mutating func clearAppRelativePath() {self._appRelativePath = nil}
 
   public var displayName: String {
-    get {return _displayName ?? String()}
+    get {_displayName ?? String()}
     set {_displayName = newValue}
   }
   /// Returns true if `displayName` has been explicitly set.
-  public var hasDisplayName: Bool {return self._displayName != nil}
+  public var hasDisplayName: Bool {self._displayName != nil}
   /// Clears the value of `displayName`. Subsequent reads from it will return its default value.
   public mutating func clearDisplayName() {self._displayName = nil}
 
   public var length: UInt64 {
-    get {return _length ?? 0}
+    get {_length ?? 0}
     set {_length = newValue}
   }
   /// Returns true if `length` has been explicitly set.
-  public var hasLength: Bool {return self._length != nil}
+  public var hasLength: Bool {self._length != nil}
   /// Clears the value of `length`. Subsequent reads from it will return its default value.
   public mutating func clearLength() {self._length = nil}
 
   public var hash: UInt32 {
-    get {return _hash ?? 0}
+    get {_hash ?? 0}
     set {_hash = newValue}
   }
   /// Returns true if `hash` has been explicitly set.
-  public var hasHash: Bool {return self._hash != nil}
+  public var hasHash: Bool {self._hash != nil}
   /// Clears the value of `hash`. Subsequent reads from it will return its default value.
   public mutating func clearHash() {self._hash = nil}
 
   public var sharable: Bool {
-    get {return _sharable ?? true}
+    get {_sharable ?? true}
     set {_sharable = newValue}
   }
   /// Returns true if `sharable` has been explicitly set.
-  public var hasSharable: Bool {return self._sharable != nil}
+  public var hasSharable: Bool {self._sharable != nil}
   /// Clears the value of `sharable`. Subsequent reads from it will return its default value.
   public mutating func clearSharable() {self._sharable = nil}
 
@@ -112,56 +112,38 @@ public struct TSP_DatabaseDataArchive: Sendable {
   fileprivate var _sharable: Bool? = nil
 }
 
-public struct TSP_DatabaseImageDataArchive: Sendable {
+public nonisolated struct TSP_DatabaseImageDataArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSP_DatabaseDataArchive {
-    get {return _super ?? TSP_DatabaseDataArchive()}
+    get {_super ?? TSP_DatabaseDataArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var type: TSP_DatabaseImageDataArchive.ImageType {
-    get {return _type ?? .unknown}
+    get {_type ?? .unknown}
     set {_type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return self._type != nil}
+  public var hasType: Bool {self._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {self._type = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ImageType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case unknown // = 0
-    case bitmap // = 1
-    case pdf // = 2
+  public nonisolated enum ImageType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case unknown = 0
+    case bitmap = 1
+    case pdf = 2
 
     public init() {
       self = .unknown
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .unknown
-      case 1: self = .bitmap
-      case 2: self = .pdf
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .unknown: return 0
-      case .bitmap: return 1
-      case .pdf: return 2
-      }
     }
 
   }
@@ -174,13 +156,11 @@ public struct TSP_DatabaseImageDataArchive: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSP"
+fileprivate nonisolated let _protobuf_package = "TSP"
 
-extension TSP_DatabaseData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DatabaseData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DatabaseData"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "data"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}data\0")
 
   public var isInitialized: Bool {
     if self._data == nil {return false}
@@ -218,16 +198,9 @@ extension TSP_DatabaseData: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension TSP_DatabaseDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DatabaseDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DatabaseDataArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "data"),
-    2: .standard(proto: "app_relative_path"),
-    3: .standard(proto: "display_name"),
-    4: .same(proto: "length"),
-    5: .same(proto: "hash"),
-    6: .same(proto: "sharable"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}data\0\u{3}app_relative_path\0\u{3}display_name\0\u{1}length\0\u{1}hash\0\u{1}sharable\0")
 
   public var isInitialized: Bool {
     if self._displayName == nil {return false}
@@ -291,12 +264,9 @@ extension TSP_DatabaseDataArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSP_DatabaseImageDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DatabaseImageDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DatabaseImageDataArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "type"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}type\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -340,10 +310,6 @@ extension TSP_DatabaseImageDataArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSP_DatabaseImageDataArchive.ImageType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "unknown"),
-    1: .same(proto: "bitmap"),
-    2: .same(proto: "pdf"),
-  ]
+nonisolated extension TSP_DatabaseImageDataArchive.ImageType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0unknown\0\u{1}bitmap\0\u{1}pdf\0")
 }

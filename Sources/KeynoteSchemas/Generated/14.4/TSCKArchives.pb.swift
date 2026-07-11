@@ -15,22 +15,22 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSCK_CollaborationCommandHistoryArray: Sendable {
+public nonisolated struct TSCK_CollaborationCommandHistoryArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArray: TSP_LargeArray {
-    get {return _largeArray ?? TSP_LargeArray()}
+    get {_largeArray ?? TSP_LargeArray()}
     set {_largeArray = newValue}
   }
   /// Returns true if `largeArray` has been explicitly set.
-  public var hasLargeArray: Bool {return self._largeArray != nil}
+  public var hasLargeArray: Bool {self._largeArray != nil}
   /// Clears the value of `largeArray`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArray() {self._largeArray = nil}
 
@@ -41,17 +41,17 @@ public struct TSCK_CollaborationCommandHistoryArray: Sendable {
   fileprivate var _largeArray: TSP_LargeArray? = nil
 }
 
-public struct TSCK_CollaborationCommandHistoryArraySegment: Sendable {
+public nonisolated struct TSCK_CollaborationCommandHistoryArraySegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeObjectArraySegment: TSP_LargeObjectArraySegment {
-    get {return _largeObjectArraySegment ?? TSP_LargeObjectArraySegment()}
+    get {_largeObjectArraySegment ?? TSP_LargeObjectArraySegment()}
     set {_largeObjectArraySegment = newValue}
   }
   /// Returns true if `largeObjectArraySegment` has been explicitly set.
-  public var hasLargeObjectArraySegment: Bool {return self._largeObjectArraySegment != nil}
+  public var hasLargeObjectArraySegment: Bool {self._largeObjectArraySegment != nil}
   /// Clears the value of `largeObjectArraySegment`. Subsequent reads from it will return its default value.
   public mutating func clearLargeObjectArraySegment() {self._largeObjectArraySegment = nil}
 
@@ -62,51 +62,51 @@ public struct TSCK_CollaborationCommandHistoryArraySegment: Sendable {
   fileprivate var _largeObjectArraySegment: TSP_LargeObjectArraySegment? = nil
 }
 
-public struct TSCK_CollaborationCommandHistory: Sendable {
+public nonisolated struct TSCK_CollaborationCommandHistory: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var localIdentifier: TSP_UUID {
-    get {return _localIdentifier ?? TSP_UUID()}
+    get {_localIdentifier ?? TSP_UUID()}
     set {_localIdentifier = newValue}
   }
   /// Returns true if `localIdentifier` has been explicitly set.
-  public var hasLocalIdentifier: Bool {return self._localIdentifier != nil}
+  public var hasLocalIdentifier: Bool {self._localIdentifier != nil}
   /// Clears the value of `localIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearLocalIdentifier() {self._localIdentifier = nil}
 
   public var undoItems: TSCK_CollaborationCommandHistory.ItemList {
-    get {return _undoItems ?? TSCK_CollaborationCommandHistory.ItemList()}
+    get {_undoItems ?? TSCK_CollaborationCommandHistory.ItemList()}
     set {_undoItems = newValue}
   }
   /// Returns true if `undoItems` has been explicitly set.
-  public var hasUndoItems: Bool {return self._undoItems != nil}
+  public var hasUndoItems: Bool {self._undoItems != nil}
   /// Clears the value of `undoItems`. Subsequent reads from it will return its default value.
   public mutating func clearUndoItems() {self._undoItems = nil}
 
   public var redoItems: TSCK_CollaborationCommandHistory.ItemList {
-    get {return _redoItems ?? TSCK_CollaborationCommandHistory.ItemList()}
+    get {_redoItems ?? TSCK_CollaborationCommandHistory.ItemList()}
     set {_redoItems = newValue}
   }
   /// Returns true if `redoItems` has been explicitly set.
-  public var hasRedoItems: Bool {return self._redoItems != nil}
+  public var hasRedoItems: Bool {self._redoItems != nil}
   /// Clears the value of `redoItems`. Subsequent reads from it will return its default value.
   public mutating func clearRedoItems() {self._redoItems = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ItemList: Sendable {
+  public nonisolated struct ItemList: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var itemsArray: TSP_Reference {
-      get {return _itemsArray ?? TSP_Reference()}
+      get {_itemsArray ?? TSP_Reference()}
       set {_itemsArray = newValue}
     }
     /// Returns true if `itemsArray` has been explicitly set.
-    public var hasItemsArray: Bool {return self._itemsArray != nil}
+    public var hasItemsArray: Bool {self._itemsArray != nil}
     /// Clears the value of `itemsArray`. Subsequent reads from it will return its default value.
     public mutating func clearItemsArray() {self._itemsArray = nil}
 
@@ -126,53 +126,53 @@ public struct TSCK_CollaborationCommandHistory: Sendable {
   fileprivate var _redoItems: TSCK_CollaborationCommandHistory.ItemList? = nil
 }
 
-public struct TSCK_CollaborationCommandHistoryItem: Sendable {
+public nonisolated struct TSCK_CollaborationCommandHistoryItem: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var command: TSP_Reference {
-    get {return _command ?? TSP_Reference()}
+    get {_command ?? TSP_Reference()}
     set {_command = newValue}
   }
   /// Returns true if `command` has been explicitly set.
-  public var hasCommand: Bool {return self._command != nil}
+  public var hasCommand: Bool {self._command != nil}
   /// Clears the value of `command`. Subsequent reads from it will return its default value.
   public mutating func clearCommand() {self._command = nil}
 
   public var actionString: String {
-    get {return _actionString ?? String()}
+    get {_actionString ?? String()}
     set {_actionString = newValue}
   }
   /// Returns true if `actionString` has been explicitly set.
-  public var hasActionString: Bool {return self._actionString != nil}
+  public var hasActionString: Bool {self._actionString != nil}
   /// Clears the value of `actionString`. Subsequent reads from it will return its default value.
   public mutating func clearActionString() {self._actionString = nil}
 
   public var behavior: TSP_Reference {
-    get {return _behavior ?? TSP_Reference()}
+    get {_behavior ?? TSP_Reference()}
     set {_behavior = newValue}
   }
   /// Returns true if `behavior` has been explicitly set.
-  public var hasBehavior: Bool {return self._behavior != nil}
+  public var hasBehavior: Bool {self._behavior != nil}
   /// Clears the value of `behavior`. Subsequent reads from it will return its default value.
   public mutating func clearBehavior() {self._behavior = nil}
 
   public var coalescingGroup: TSP_Reference {
-    get {return _coalescingGroup ?? TSP_Reference()}
+    get {_coalescingGroup ?? TSP_Reference()}
     set {_coalescingGroup = newValue}
   }
   /// Returns true if `coalescingGroup` has been explicitly set.
-  public var hasCoalescingGroup: Bool {return self._coalescingGroup != nil}
+  public var hasCoalescingGroup: Bool {self._coalescingGroup != nil}
   /// Clears the value of `coalescingGroup`. Subsequent reads from it will return its default value.
   public mutating func clearCoalescingGroup() {self._coalescingGroup = nil}
 
   public var revisionSequence: UInt64 {
-    get {return _revisionSequence ?? 0}
+    get {_revisionSequence ?? 0}
     set {_revisionSequence = newValue}
   }
   /// Returns true if `revisionSequence` has been explicitly set.
-  public var hasRevisionSequence: Bool {return self._revisionSequence != nil}
+  public var hasRevisionSequence: Bool {self._revisionSequence != nil}
   /// Clears the value of `revisionSequence`. Subsequent reads from it will return its default value.
   public mutating func clearRevisionSequence() {self._revisionSequence = nil}
 
@@ -187,7 +187,7 @@ public struct TSCK_CollaborationCommandHistoryItem: Sendable {
   fileprivate var _revisionSequence: UInt64? = nil
 }
 
-public struct TSCK_CollaborationCommandHistoryCoalescingGroup: Sendable {
+public nonisolated struct TSCK_CollaborationCommandHistoryCoalescingGroup: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -195,11 +195,11 @@ public struct TSCK_CollaborationCommandHistoryCoalescingGroup: Sendable {
   public var nodes: [TSP_Reference] = []
 
   public var didCoalesceAllCommands: Bool {
-    get {return _didCoalesceAllCommands ?? false}
+    get {_didCoalesceAllCommands ?? false}
     set {_didCoalesceAllCommands = newValue}
   }
   /// Returns true if `didCoalesceAllCommands` has been explicitly set.
-  public var hasDidCoalesceAllCommands: Bool {return self._didCoalesceAllCommands != nil}
+  public var hasDidCoalesceAllCommands: Bool {self._didCoalesceAllCommands != nil}
   /// Clears the value of `didCoalesceAllCommands`. Subsequent reads from it will return its default value.
   public mutating func clearDidCoalesceAllCommands() {self._didCoalesceAllCommands = nil}
 
@@ -210,17 +210,17 @@ public struct TSCK_CollaborationCommandHistoryCoalescingGroup: Sendable {
   fileprivate var _didCoalesceAllCommands: Bool? = nil
 }
 
-public struct TSCK_CollaborationCommandHistoryCoalescingGroupNode: Sendable {
+public nonisolated struct TSCK_CollaborationCommandHistoryCoalescingGroupNode: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var command: TSP_Reference {
-    get {return _command ?? TSP_Reference()}
+    get {_command ?? TSP_Reference()}
     set {_command = newValue}
   }
   /// Returns true if `command` has been explicitly set.
-  public var hasCommand: Bool {return self._command != nil}
+  public var hasCommand: Bool {self._command != nil}
   /// Clears the value of `command`. Subsequent reads from it will return its default value.
   public mutating func clearCommand() {self._command = nil}
 
@@ -231,26 +231,26 @@ public struct TSCK_CollaborationCommandHistoryCoalescingGroupNode: Sendable {
   fileprivate var _command: TSP_Reference? = nil
 }
 
-public struct TSCK_CollaborationCommandHistoryOriginatingCommandAcknowledgementObserver: Sendable {
+public nonisolated struct TSCK_CollaborationCommandHistoryOriginatingCommandAcknowledgementObserver: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var coalescingGroup: TSP_Reference {
-    get {return _coalescingGroup ?? TSP_Reference()}
+    get {_coalescingGroup ?? TSP_Reference()}
     set {_coalescingGroup = newValue}
   }
   /// Returns true if `coalescingGroup` has been explicitly set.
-  public var hasCoalescingGroup: Bool {return self._coalescingGroup != nil}
+  public var hasCoalescingGroup: Bool {self._coalescingGroup != nil}
   /// Clears the value of `coalescingGroup`. Subsequent reads from it will return its default value.
   public mutating func clearCoalescingGroup() {self._coalescingGroup = nil}
 
   public var node: TSP_Reference {
-    get {return _node ?? TSP_Reference()}
+    get {_node ?? TSP_Reference()}
     set {_node = newValue}
   }
   /// Returns true if `node` has been explicitly set.
-  public var hasNode: Bool {return self._node != nil}
+  public var hasNode: Bool {self._node != nil}
   /// Clears the value of `node`. Subsequent reads from it will return its default value.
   public mutating func clearNode() {self._node = nil}
 
@@ -262,26 +262,26 @@ public struct TSCK_CollaborationCommandHistoryOriginatingCommandAcknowledgementO
   fileprivate var _node: TSP_Reference? = nil
 }
 
-public struct TSCK_DocumentSupportCollaborationState: Sendable {
+public nonisolated struct TSCK_DocumentSupportCollaborationState: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var collaborationCommandHistory: TSP_Reference {
-    get {return _collaborationCommandHistory ?? TSP_Reference()}
+    get {_collaborationCommandHistory ?? TSP_Reference()}
     set {_collaborationCommandHistory = newValue}
   }
   /// Returns true if `collaborationCommandHistory` has been explicitly set.
-  public var hasCollaborationCommandHistory: Bool {return self._collaborationCommandHistory != nil}
+  public var hasCollaborationCommandHistory: Bool {self._collaborationCommandHistory != nil}
   /// Clears the value of `collaborationCommandHistory`. Subsequent reads from it will return its default value.
   public mutating func clearCollaborationCommandHistory() {self._collaborationCommandHistory = nil}
 
   public var collaborationSessionState: TSP_Reference {
-    get {return _collaborationSessionState ?? TSP_Reference()}
+    get {_collaborationSessionState ?? TSP_Reference()}
     set {_collaborationSessionState = newValue}
   }
   /// Returns true if `collaborationSessionState` has been explicitly set.
-  public var hasCollaborationSessionState: Bool {return self._collaborationSessionState != nil}
+  public var hasCollaborationSessionState: Bool {self._collaborationSessionState != nil}
   /// Clears the value of `collaborationSessionState`. Subsequent reads from it will return its default value.
   public mutating func clearCollaborationSessionState() {self._collaborationSessionState = nil}
 
@@ -293,44 +293,44 @@ public struct TSCK_DocumentSupportCollaborationState: Sendable {
   fileprivate var _collaborationSessionState: TSP_Reference? = nil
 }
 
-public struct TSCK_SetAnnotationAuthorColorCommandArchive: @unchecked Sendable {
+public nonisolated struct TSCK_SetAnnotationAuthorColorCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var annotationAuthor: TSP_Reference {
-    get {return _storage._annotationAuthor ?? TSP_Reference()}
+    get {_storage._annotationAuthor ?? TSP_Reference()}
     set {_uniqueStorage()._annotationAuthor = newValue}
   }
   /// Returns true if `annotationAuthor` has been explicitly set.
-  public var hasAnnotationAuthor: Bool {return _storage._annotationAuthor != nil}
+  public var hasAnnotationAuthor: Bool {_storage._annotationAuthor != nil}
   /// Clears the value of `annotationAuthor`. Subsequent reads from it will return its default value.
   public mutating func clearAnnotationAuthor() {_uniqueStorage()._annotationAuthor = nil}
 
   public var color: TSP_Color {
-    get {return _storage._color ?? TSP_Color()}
+    get {_storage._color ?? TSP_Color()}
     set {_uniqueStorage()._color = newValue}
   }
   /// Returns true if `color` has been explicitly set.
-  public var hasColor: Bool {return _storage._color != nil}
+  public var hasColor: Bool {_storage._color != nil}
   /// Clears the value of `color`. Subsequent reads from it will return its default value.
   public mutating func clearColor() {_uniqueStorage()._color = nil}
 
   public var oldColor: TSP_Color {
-    get {return _storage._oldColor ?? TSP_Color()}
+    get {_storage._oldColor ?? TSP_Color()}
     set {_uniqueStorage()._oldColor = newValue}
   }
   /// Returns true if `oldColor` has been explicitly set.
-  public var hasOldColor: Bool {return _storage._oldColor != nil}
+  public var hasOldColor: Bool {_storage._oldColor != nil}
   /// Clears the value of `oldColor`. Subsequent reads from it will return its default value.
   public mutating func clearOldColor() {_uniqueStorage()._oldColor = nil}
 
@@ -341,44 +341,44 @@ public struct TSCK_SetAnnotationAuthorColorCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCK_SetActivityAuthorShareParticipantIDCommandArchive: Sendable {
+public nonisolated struct TSCK_SetActivityAuthorShareParticipantIDCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var activityAuthor: TSP_Reference {
-    get {return _activityAuthor ?? TSP_Reference()}
+    get {_activityAuthor ?? TSP_Reference()}
     set {_activityAuthor = newValue}
   }
   /// Returns true if `activityAuthor` has been explicitly set.
-  public var hasActivityAuthor: Bool {return self._activityAuthor != nil}
+  public var hasActivityAuthor: Bool {self._activityAuthor != nil}
   /// Clears the value of `activityAuthor`. Subsequent reads from it will return its default value.
   public mutating func clearActivityAuthor() {self._activityAuthor = nil}
 
   public var shareParticipantID: String {
-    get {return _shareParticipantID ?? String()}
+    get {_shareParticipantID ?? String()}
     set {_shareParticipantID = newValue}
   }
   /// Returns true if `shareParticipantID` has been explicitly set.
-  public var hasShareParticipantID: Bool {return self._shareParticipantID != nil}
+  public var hasShareParticipantID: Bool {self._shareParticipantID != nil}
   /// Clears the value of `shareParticipantID`. Subsequent reads from it will return its default value.
   public mutating func clearShareParticipantID() {self._shareParticipantID = nil}
 
   public var oldShareParticipantID: String {
-    get {return _oldShareParticipantID ?? String()}
+    get {_oldShareParticipantID ?? String()}
     set {_oldShareParticipantID = newValue}
   }
   /// Returns true if `oldShareParticipantID` has been explicitly set.
-  public var hasOldShareParticipantID: Bool {return self._oldShareParticipantID != nil}
+  public var hasOldShareParticipantID: Bool {self._oldShareParticipantID != nil}
   /// Clears the value of `oldShareParticipantID`. Subsequent reads from it will return its default value.
   public mutating func clearOldShareParticipantID() {self._oldShareParticipantID = nil}
 
@@ -392,17 +392,17 @@ public struct TSCK_SetActivityAuthorShareParticipantIDCommandArchive: Sendable {
   fileprivate var _oldShareParticipantID: String? = nil
 }
 
-public struct TSCK_IdOperationArgs: Sendable {
+public nonisolated struct TSCK_IdOperationArgs: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var idPath: TSP_UUIDPath {
-    get {return _idPath ?? TSP_UUIDPath()}
+    get {_idPath ?? TSP_UUIDPath()}
     set {_idPath = newValue}
   }
   /// Returns true if `idPath` has been explicitly set.
-  public var hasIDPath: Bool {return self._idPath != nil}
+  public var hasIDPath: Bool {self._idPath != nil}
   /// Clears the value of `idPath`. Subsequent reads from it will return its default value.
   public mutating func clearIDPath() {self._idPath = nil}
 
@@ -413,26 +413,26 @@ public struct TSCK_IdOperationArgs: Sendable {
   fileprivate var _idPath: TSP_UUIDPath? = nil
 }
 
-public struct TSCK_AddIdOperationArgs: Sendable {
+public nonisolated struct TSCK_AddIdOperationArgs: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCK_IdOperationArgs {
-    get {return _super ?? TSCK_IdOperationArgs()}
+    get {_super ?? TSCK_IdOperationArgs()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var index: Int32 {
-    get {return _index ?? 0}
+    get {_index ?? 0}
     set {_index = newValue}
   }
   /// Returns true if `index` has been explicitly set.
-  public var hasIndex: Bool {return self._index != nil}
+  public var hasIndex: Bool {self._index != nil}
   /// Clears the value of `index`. Subsequent reads from it will return its default value.
   public mutating func clearIndex() {self._index = nil}
 
@@ -444,26 +444,26 @@ public struct TSCK_AddIdOperationArgs: Sendable {
   fileprivate var _index: Int32? = nil
 }
 
-public struct TSCK_RemoveIdOperationArgs: Sendable {
+public nonisolated struct TSCK_RemoveIdOperationArgs: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCK_IdOperationArgs {
-    get {return _super ?? TSCK_IdOperationArgs()}
+    get {_super ?? TSCK_IdOperationArgs()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var index: Int32 {
-    get {return _index ?? 0}
+    get {_index ?? 0}
     set {_index = newValue}
   }
   /// Returns true if `index` has been explicitly set.
-  public var hasIndex: Bool {return self._index != nil}
+  public var hasIndex: Bool {self._index != nil}
   /// Clears the value of `index`. Subsequent reads from it will return its default value.
   public mutating func clearIndex() {self._index = nil}
 
@@ -475,35 +475,35 @@ public struct TSCK_RemoveIdOperationArgs: Sendable {
   fileprivate var _index: Int32? = nil
 }
 
-public struct TSCK_RearrangeIdOperationArgs: Sendable {
+public nonisolated struct TSCK_RearrangeIdOperationArgs: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCK_IdOperationArgs {
-    get {return _super ?? TSCK_IdOperationArgs()}
+    get {_super ?? TSCK_IdOperationArgs()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var fromIndex: Int32 {
-    get {return _fromIndex ?? 0}
+    get {_fromIndex ?? 0}
     set {_fromIndex = newValue}
   }
   /// Returns true if `fromIndex` has been explicitly set.
-  public var hasFromIndex: Bool {return self._fromIndex != nil}
+  public var hasFromIndex: Bool {self._fromIndex != nil}
   /// Clears the value of `fromIndex`. Subsequent reads from it will return its default value.
   public mutating func clearFromIndex() {self._fromIndex = nil}
 
   public var toIndex: Int32 {
-    get {return _toIndex ?? 0}
+    get {_toIndex ?? 0}
     set {_toIndex = newValue}
   }
   /// Returns true if `toIndex` has been explicitly set.
-  public var hasToIndex: Bool {return self._toIndex != nil}
+  public var hasToIndex: Bool {self._toIndex != nil}
   /// Clears the value of `toIndex`. Subsequent reads from it will return its default value.
   public mutating func clearToIndex() {self._toIndex = nil}
 
@@ -516,35 +516,35 @@ public struct TSCK_RearrangeIdOperationArgs: Sendable {
   fileprivate var _toIndex: Int32? = nil
 }
 
-public struct TSCK_IdPlacementOperationArgs: Sendable {
+public nonisolated struct TSCK_IdPlacementOperationArgs: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCK_IdOperationArgs {
-    get {return _super ?? TSCK_IdOperationArgs()}
+    get {_super ?? TSCK_IdOperationArgs()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var fromIndex: Int32 {
-    get {return _fromIndex ?? 0}
+    get {_fromIndex ?? 0}
     set {_fromIndex = newValue}
   }
   /// Returns true if `fromIndex` has been explicitly set.
-  public var hasFromIndex: Bool {return self._fromIndex != nil}
+  public var hasFromIndex: Bool {self._fromIndex != nil}
   /// Clears the value of `fromIndex`. Subsequent reads from it will return its default value.
   public mutating func clearFromIndex() {self._fromIndex = nil}
 
   public var toIndex: Int32 {
-    get {return _toIndex ?? 0}
+    get {_toIndex ?? 0}
     set {_toIndex = newValue}
   }
   /// Returns true if `toIndex` has been explicitly set.
-  public var hasToIndex: Bool {return self._toIndex != nil}
+  public var hasToIndex: Bool {self._toIndex != nil}
   /// Clears the value of `toIndex`. Subsequent reads from it will return its default value.
   public mutating func clearToIndex() {self._toIndex = nil}
 
@@ -557,44 +557,44 @@ public struct TSCK_IdPlacementOperationArgs: Sendable {
   fileprivate var _toIndex: Int32? = nil
 }
 
-public struct TSCK_ActivityCommitCommandArchive: @unchecked Sendable {
+public nonisolated struct TSCK_ActivityCommitCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var activity: TSP_Reference {
-    get {return _storage._activity ?? TSP_Reference()}
+    get {_storage._activity ?? TSP_Reference()}
     set {_uniqueStorage()._activity = newValue}
   }
   /// Returns true if `activity` has been explicitly set.
-  public var hasActivity: Bool {return _storage._activity != nil}
+  public var hasActivity: Bool {_storage._activity != nil}
   /// Clears the value of `activity`. Subsequent reads from it will return its default value.
   public mutating func clearActivity() {_uniqueStorage()._activity = nil}
 
   public var author: TSP_Reference {
-    get {return _storage._author ?? TSP_Reference()}
+    get {_storage._author ?? TSP_Reference()}
     set {_uniqueStorage()._author = newValue}
   }
   /// Returns true if `author` has been explicitly set.
-  public var hasAuthor: Bool {return _storage._author != nil}
+  public var hasAuthor: Bool {_storage._author != nil}
   /// Clears the value of `author`. Subsequent reads from it will return its default value.
   public mutating func clearAuthor() {_uniqueStorage()._author = nil}
 
   public var wasActivityCommitted: Bool {
-    get {return _storage._wasActivityCommitted ?? true}
+    get {_storage._wasActivityCommitted ?? true}
     set {_uniqueStorage()._wasActivityCommitted = newValue}
   }
   /// Returns true if `wasActivityCommitted` has been explicitly set.
-  public var hasWasActivityCommitted: Bool {return _storage._wasActivityCommitted != nil}
+  public var hasWasActivityCommitted: Bool {_storage._wasActivityCommitted != nil}
   /// Clears the value of `wasActivityCommitted`. Subsequent reads from it will return its default value.
   public mutating func clearWasActivityCommitted() {_uniqueStorage()._wasActivityCommitted = nil}
 
@@ -605,17 +605,17 @@ public struct TSCK_ActivityCommitCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCK_ExecuteTestBetweenRollbackAndReapplyCommandArchive: Sendable {
+public nonisolated struct TSCK_ExecuteTestBetweenRollbackAndReapplyCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -626,26 +626,26 @@ public struct TSCK_ExecuteTestBetweenRollbackAndReapplyCommandArchive: Sendable 
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSCK_CreateLocalStorageSnapshotCommandArchive: Sendable {
+public nonisolated struct TSCK_CreateLocalStorageSnapshotCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var snapshotID: String {
-    get {return _snapshotID ?? String()}
+    get {_snapshotID ?? String()}
     set {_snapshotID = newValue}
   }
   /// Returns true if `snapshotID` has been explicitly set.
-  public var hasSnapshotID: Bool {return self._snapshotID != nil}
+  public var hasSnapshotID: Bool {self._snapshotID != nil}
   /// Clears the value of `snapshotID`. Subsequent reads from it will return its default value.
   public mutating func clearSnapshotID() {self._snapshotID = nil}
 
@@ -657,17 +657,17 @@ public struct TSCK_CreateLocalStorageSnapshotCommandArchive: Sendable {
   fileprivate var _snapshotID: String? = nil
 }
 
-public struct TSCK_BlockDiffsAtCurrentRevisionCommand: Sendable {
+public nonisolated struct TSCK_BlockDiffsAtCurrentRevisionCommand: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -678,35 +678,35 @@ public struct TSCK_BlockDiffsAtCurrentRevisionCommand: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSCK_TransformerEntry: Sendable {
+public nonisolated struct TSCK_TransformerEntry: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var sequence: UInt64 {
-    get {return _sequence ?? 0}
+    get {_sequence ?? 0}
     set {_sequence = newValue}
   }
   /// Returns true if `sequence` has been explicitly set.
-  public var hasSequence: Bool {return self._sequence != nil}
+  public var hasSequence: Bool {self._sequence != nil}
   /// Clears the value of `sequence`. Subsequent reads from it will return its default value.
   public mutating func clearSequence() {self._sequence = nil}
 
   public var creationTime: Double {
-    get {return _creationTime ?? 0}
+    get {_creationTime ?? 0}
     set {_creationTime = newValue}
   }
   /// Returns true if `creationTime` has been explicitly set.
-  public var hasCreationTime: Bool {return self._creationTime != nil}
+  public var hasCreationTime: Bool {self._creationTime != nil}
   /// Clears the value of `creationTime`. Subsequent reads from it will return its default value.
   public mutating func clearCreationTime() {self._creationTime = nil}
 
   public var transformer: TSK_OperationTransformer {
-    get {return _transformer ?? TSK_OperationTransformer()}
+    get {_transformer ?? TSK_OperationTransformer()}
     set {_transformer = newValue}
   }
   /// Returns true if `transformer` has been explicitly set.
-  public var hasTransformer: Bool {return self._transformer != nil}
+  public var hasTransformer: Bool {self._transformer != nil}
   /// Clears the value of `transformer`. Subsequent reads from it will return its default value.
   public mutating func clearTransformer() {self._transformer = nil}
 
@@ -719,46 +719,46 @@ public struct TSCK_TransformerEntry: Sendable {
   fileprivate var _transformer: TSK_OperationTransformer? = nil
 }
 
-public struct TSCK_CollaborationAppliedCommandDocumentRevisionMapping: Sendable {
+public nonisolated struct TSCK_CollaborationAppliedCommandDocumentRevisionMapping: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var command: TSP_Reference {
-    get {return _command ?? TSP_Reference()}
+    get {_command ?? TSP_Reference()}
     set {_command = newValue}
   }
   /// Returns true if `command` has been explicitly set.
-  public var hasCommand: Bool {return self._command != nil}
+  public var hasCommand: Bool {self._command != nil}
   /// Clears the value of `command`. Subsequent reads from it will return its default value.
   public mutating func clearCommand() {self._command = nil}
 
   public var documentRevisionIdentifier: TSP_UUID {
-    get {return _documentRevisionIdentifier ?? TSP_UUID()}
+    get {_documentRevisionIdentifier ?? TSP_UUID()}
     set {_documentRevisionIdentifier = newValue}
   }
   /// Returns true if `documentRevisionIdentifier` has been explicitly set.
-  public var hasDocumentRevisionIdentifier: Bool {return self._documentRevisionIdentifier != nil}
+  public var hasDocumentRevisionIdentifier: Bool {self._documentRevisionIdentifier != nil}
   /// Clears the value of `documentRevisionIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentRevisionIdentifier() {self._documentRevisionIdentifier = nil}
 
   public var documentRevisionSequence: Int32 {
-    get {return _documentRevisionSequence ?? 0}
+    get {_documentRevisionSequence ?? 0}
     set {_documentRevisionSequence = newValue}
   }
   /// Returns true if `documentRevisionSequence` has been explicitly set.
-  public var hasDocumentRevisionSequence: Bool {return self._documentRevisionSequence != nil}
+  public var hasDocumentRevisionSequence: Bool {self._documentRevisionSequence != nil}
   /// Clears the value of `documentRevisionSequence`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentRevisionSequence() {self._documentRevisionSequence = nil}
 
   public var remainingCommandOperations: [TSK_Operation] = []
 
   public var timestamp: TSP_Date {
-    get {return _timestamp ?? TSP_Date()}
+    get {_timestamp ?? TSP_Date()}
     set {_timestamp = newValue}
   }
   /// Returns true if `timestamp` has been explicitly set.
-  public var hasTimestamp: Bool {return self._timestamp != nil}
+  public var hasTimestamp: Bool {self._timestamp != nil}
   /// Clears the value of `timestamp`. Subsequent reads from it will return its default value.
   public mutating func clearTimestamp() {self._timestamp = nil}
 
@@ -772,168 +772,168 @@ public struct TSCK_CollaborationAppliedCommandDocumentRevisionMapping: Sendable 
   fileprivate var _timestamp: TSP_Date? = nil
 }
 
-public struct TSCK_CollaborationDocumentSessionState: @unchecked Sendable {
+public nonisolated struct TSCK_CollaborationDocumentSessionState: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var collaboratorIds: [String] {
-    get {return _storage._collaboratorIds}
+    get {_storage._collaboratorIds}
     set {_uniqueStorage()._collaboratorIds = newValue}
   }
 
   public var rsvpCommandQueueItems: [TSP_Reference] {
-    get {return _storage._rsvpCommandQueueItems}
+    get {_storage._rsvpCommandQueueItems}
     set {_uniqueStorage()._rsvpCommandQueueItems = newValue}
   }
 
   public var collaboratorCursorTransformerEntries: [TSP_Reference] {
-    get {return _storage._collaboratorCursorTransformerEntries}
+    get {_storage._collaboratorCursorTransformerEntries}
     set {_uniqueStorage()._collaboratorCursorTransformerEntries = newValue}
   }
 
   public var acknowledgedCommandsPendingResumeProcessDiffs: [TSP_Reference] {
-    get {return _storage._acknowledgedCommandsPendingResumeProcessDiffs}
+    get {_storage._acknowledgedCommandsPendingResumeProcessDiffs}
     set {_uniqueStorage()._acknowledgedCommandsPendingResumeProcessDiffs = newValue}
   }
 
   public var unprocessedCommandsPendingResumeProcessDiffs: [TSP_Reference] {
-    get {return _storage._unprocessedCommandsPendingResumeProcessDiffs}
+    get {_storage._unprocessedCommandsPendingResumeProcessDiffs}
     set {_uniqueStorage()._unprocessedCommandsPendingResumeProcessDiffs = newValue}
   }
 
   public var commandAcknowledgementObserverEntries: [TSCK_CollaborationDocumentSessionState.AcknowledgementObserverEntry] {
-    get {return _storage._commandAcknowledgementObserverEntries}
+    get {_storage._commandAcknowledgementObserverEntries}
     set {_uniqueStorage()._commandAcknowledgementObserverEntries = newValue}
   }
 
   public var transformerFromUnprocessedCommandOperationsEntries: [TSP_Reference] {
-    get {return _storage._transformerFromUnprocessedCommandOperationsEntries}
+    get {_storage._transformerFromUnprocessedCommandOperationsEntries}
     set {_uniqueStorage()._transformerFromUnprocessedCommandOperationsEntries = newValue}
   }
 
   public var mailboxRequestDocumentRevisionSequence: Int32 {
-    get {return _storage._mailboxRequestDocumentRevisionSequence ?? 0}
+    get {_storage._mailboxRequestDocumentRevisionSequence ?? 0}
     set {_uniqueStorage()._mailboxRequestDocumentRevisionSequence = newValue}
   }
   /// Returns true if `mailboxRequestDocumentRevisionSequence` has been explicitly set.
-  public var hasMailboxRequestDocumentRevisionSequence: Bool {return _storage._mailboxRequestDocumentRevisionSequence != nil}
+  public var hasMailboxRequestDocumentRevisionSequence: Bool {_storage._mailboxRequestDocumentRevisionSequence != nil}
   /// Clears the value of `mailboxRequestDocumentRevisionSequence`. Subsequent reads from it will return its default value.
   public mutating func clearMailboxRequestDocumentRevisionSequence() {_uniqueStorage()._mailboxRequestDocumentRevisionSequence = nil}
 
   public var mailboxRequestDocumentRevisionIdentifier: TSP_UUID {
-    get {return _storage._mailboxRequestDocumentRevisionIdentifier ?? TSP_UUID()}
+    get {_storage._mailboxRequestDocumentRevisionIdentifier ?? TSP_UUID()}
     set {_uniqueStorage()._mailboxRequestDocumentRevisionIdentifier = newValue}
   }
   /// Returns true if `mailboxRequestDocumentRevisionIdentifier` has been explicitly set.
-  public var hasMailboxRequestDocumentRevisionIdentifier: Bool {return _storage._mailboxRequestDocumentRevisionIdentifier != nil}
+  public var hasMailboxRequestDocumentRevisionIdentifier: Bool {_storage._mailboxRequestDocumentRevisionIdentifier != nil}
   /// Clears the value of `mailboxRequestDocumentRevisionIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearMailboxRequestDocumentRevisionIdentifier() {_uniqueStorage()._mailboxRequestDocumentRevisionIdentifier = nil}
 
   public var lastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue: Bool {
-    get {return _storage._lastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue ?? false}
+    get {_storage._lastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue ?? false}
     set {_uniqueStorage()._lastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue = newValue}
   }
   /// Returns true if `lastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue` has been explicitly set.
-  public var hasLastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue: Bool {return _storage._lastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue != nil}
+  public var hasLastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue: Bool {_storage._lastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue != nil}
   /// Clears the value of `lastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue`. Subsequent reads from it will return its default value.
   public mutating func clearLastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue() {_uniqueStorage()._lastSendPendingCommandQueueItemWasMovedFromRsvpCommandQueue = nil}
 
   public var lastCommandSendMarkerSequence: Int32 {
-    get {return _storage._lastCommandSendMarkerSequence ?? 0}
+    get {_storage._lastCommandSendMarkerSequence ?? 0}
     set {_uniqueStorage()._lastCommandSendMarkerSequence = newValue}
   }
   /// Returns true if `lastCommandSendMarkerSequence` has been explicitly set.
-  public var hasLastCommandSendMarkerSequence: Bool {return _storage._lastCommandSendMarkerSequence != nil}
+  public var hasLastCommandSendMarkerSequence: Bool {_storage._lastCommandSendMarkerSequence != nil}
   /// Clears the value of `lastCommandSendMarkerSequence`. Subsequent reads from it will return its default value.
   public mutating func clearLastCommandSendMarkerSequence() {_uniqueStorage()._lastCommandSendMarkerSequence = nil}
 
   public var lastCommandSendMarkerIdentifier: TSP_UUID {
-    get {return _storage._lastCommandSendMarkerIdentifier ?? TSP_UUID()}
+    get {_storage._lastCommandSendMarkerIdentifier ?? TSP_UUID()}
     set {_uniqueStorage()._lastCommandSendMarkerIdentifier = newValue}
   }
   /// Returns true if `lastCommandSendMarkerIdentifier` has been explicitly set.
-  public var hasLastCommandSendMarkerIdentifier: Bool {return _storage._lastCommandSendMarkerIdentifier != nil}
+  public var hasLastCommandSendMarkerIdentifier: Bool {_storage._lastCommandSendMarkerIdentifier != nil}
   /// Clears the value of `lastCommandSendMarkerIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearLastCommandSendMarkerIdentifier() {_uniqueStorage()._lastCommandSendMarkerIdentifier = nil}
 
   public var skippedAcknowledgedCommandsPendingResumeProcessDiffs: [TSP_Reference] {
-    get {return _storage._skippedAcknowledgedCommandsPendingResumeProcessDiffs}
+    get {_storage._skippedAcknowledgedCommandsPendingResumeProcessDiffs}
     set {_uniqueStorage()._skippedAcknowledgedCommandsPendingResumeProcessDiffs = newValue}
   }
 
   public var lastTooOldCommandIdentifier: TSP_UUID {
-    get {return _storage._lastTooOldCommandIdentifier ?? TSP_UUID()}
+    get {_storage._lastTooOldCommandIdentifier ?? TSP_UUID()}
     set {_uniqueStorage()._lastTooOldCommandIdentifier = newValue}
   }
   /// Returns true if `lastTooOldCommandIdentifier` has been explicitly set.
-  public var hasLastTooOldCommandIdentifier: Bool {return _storage._lastTooOldCommandIdentifier != nil}
+  public var hasLastTooOldCommandIdentifier: Bool {_storage._lastTooOldCommandIdentifier != nil}
   /// Clears the value of `lastTooOldCommandIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearLastTooOldCommandIdentifier() {_uniqueStorage()._lastTooOldCommandIdentifier = nil}
 
   public var unprocessedOperationEntriesPendingResumeProcessDiffs: TSP_Reference {
-    get {return _storage._unprocessedOperationEntriesPendingResumeProcessDiffs ?? TSP_Reference()}
+    get {_storage._unprocessedOperationEntriesPendingResumeProcessDiffs ?? TSP_Reference()}
     set {_uniqueStorage()._unprocessedOperationEntriesPendingResumeProcessDiffs = newValue}
   }
   /// Returns true if `unprocessedOperationEntriesPendingResumeProcessDiffs` has been explicitly set.
-  public var hasUnprocessedOperationEntriesPendingResumeProcessDiffs: Bool {return _storage._unprocessedOperationEntriesPendingResumeProcessDiffs != nil}
+  public var hasUnprocessedOperationEntriesPendingResumeProcessDiffs: Bool {_storage._unprocessedOperationEntriesPendingResumeProcessDiffs != nil}
   /// Clears the value of `unprocessedOperationEntriesPendingResumeProcessDiffs`. Subsequent reads from it will return its default value.
   public mutating func clearUnprocessedOperationEntriesPendingResumeProcessDiffs() {_uniqueStorage()._unprocessedOperationEntriesPendingResumeProcessDiffs = nil}
 
   public var sendPendingCommandQueue: TSP_Reference {
-    get {return _storage._sendPendingCommandQueue ?? TSP_Reference()}
+    get {_storage._sendPendingCommandQueue ?? TSP_Reference()}
     set {_uniqueStorage()._sendPendingCommandQueue = newValue}
   }
   /// Returns true if `sendPendingCommandQueue` has been explicitly set.
-  public var hasSendPendingCommandQueue: Bool {return _storage._sendPendingCommandQueue != nil}
+  public var hasSendPendingCommandQueue: Bool {_storage._sendPendingCommandQueue != nil}
   /// Clears the value of `sendPendingCommandQueue`. Subsequent reads from it will return its default value.
   public mutating func clearSendPendingCommandQueue() {_uniqueStorage()._sendPendingCommandQueue = nil}
 
   public var countOfSendPendingCommandQueueItemsMovedFromRsvpQueue: UInt64 {
-    get {return _storage._countOfSendPendingCommandQueueItemsMovedFromRsvpQueue ?? 0}
+    get {_storage._countOfSendPendingCommandQueueItemsMovedFromRsvpQueue ?? 0}
     set {_uniqueStorage()._countOfSendPendingCommandQueueItemsMovedFromRsvpQueue = newValue}
   }
   /// Returns true if `countOfSendPendingCommandQueueItemsMovedFromRsvpQueue` has been explicitly set.
-  public var hasCountOfSendPendingCommandQueueItemsMovedFromRsvpQueue: Bool {return _storage._countOfSendPendingCommandQueueItemsMovedFromRsvpQueue != nil}
+  public var hasCountOfSendPendingCommandQueueItemsMovedFromRsvpQueue: Bool {_storage._countOfSendPendingCommandQueueItemsMovedFromRsvpQueue != nil}
   /// Clears the value of `countOfSendPendingCommandQueueItemsMovedFromRsvpQueue`. Subsequent reads from it will return its default value.
   public mutating func clearCountOfSendPendingCommandQueueItemsMovedFromRsvpQueue() {_uniqueStorage()._countOfSendPendingCommandQueueItemsMovedFromRsvpQueue = nil}
 
   public var lastEnqueuedDocumentLoadCommandIdentifier: TSP_UUID {
-    get {return _storage._lastEnqueuedDocumentLoadCommandIdentifier ?? TSP_UUID()}
+    get {_storage._lastEnqueuedDocumentLoadCommandIdentifier ?? TSP_UUID()}
     set {_uniqueStorage()._lastEnqueuedDocumentLoadCommandIdentifier = newValue}
   }
   /// Returns true if `lastEnqueuedDocumentLoadCommandIdentifier` has been explicitly set.
-  public var hasLastEnqueuedDocumentLoadCommandIdentifier: Bool {return _storage._lastEnqueuedDocumentLoadCommandIdentifier != nil}
+  public var hasLastEnqueuedDocumentLoadCommandIdentifier: Bool {_storage._lastEnqueuedDocumentLoadCommandIdentifier != nil}
   /// Clears the value of `lastEnqueuedDocumentLoadCommandIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearLastEnqueuedDocumentLoadCommandIdentifier() {_uniqueStorage()._lastEnqueuedDocumentLoadCommandIdentifier = nil}
 
   public var appliedCommandDocumentRevisionMappingsToNotifyPendingResumeProcessDiffs: [TSCK_CollaborationAppliedCommandDocumentRevisionMapping] {
-    get {return _storage._appliedCommandDocumentRevisionMappingsToNotifyPendingResumeProcessDiffs}
+    get {_storage._appliedCommandDocumentRevisionMappingsToNotifyPendingResumeProcessDiffs}
     set {_uniqueStorage()._appliedCommandDocumentRevisionMappingsToNotifyPendingResumeProcessDiffs = newValue}
   }
 
   public var countOfCommandQueueItemsInLastOutgoingCommandGroup: UInt64 {
-    get {return _storage._countOfCommandQueueItemsInLastOutgoingCommandGroup ?? 0}
+    get {_storage._countOfCommandQueueItemsInLastOutgoingCommandGroup ?? 0}
     set {_uniqueStorage()._countOfCommandQueueItemsInLastOutgoingCommandGroup = newValue}
   }
   /// Returns true if `countOfCommandQueueItemsInLastOutgoingCommandGroup` has been explicitly set.
-  public var hasCountOfCommandQueueItemsInLastOutgoingCommandGroup: Bool {return _storage._countOfCommandQueueItemsInLastOutgoingCommandGroup != nil}
+  public var hasCountOfCommandQueueItemsInLastOutgoingCommandGroup: Bool {_storage._countOfCommandQueueItemsInLastOutgoingCommandGroup != nil}
   /// Clears the value of `countOfCommandQueueItemsInLastOutgoingCommandGroup`. Subsequent reads from it will return its default value.
   public mutating func clearCountOfCommandQueueItemsInLastOutgoingCommandGroup() {_uniqueStorage()._countOfCommandQueueItemsInLastOutgoingCommandGroup = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct AcknowledgementObserverEntry: Sendable {
+  public nonisolated struct AcknowledgementObserverEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var commandIdentifier: TSP_UUID {
-      get {return _commandIdentifier ?? TSP_UUID()}
+      get {_commandIdentifier ?? TSP_UUID()}
       set {_commandIdentifier = newValue}
     }
     /// Returns true if `commandIdentifier` has been explicitly set.
-    public var hasCommandIdentifier: Bool {return self._commandIdentifier != nil}
+    public var hasCommandIdentifier: Bool {self._commandIdentifier != nil}
     /// Clears the value of `commandIdentifier`. Subsequent reads from it will return its default value.
     public mutating func clearCommandIdentifier() {self._commandIdentifier = nil}
 
@@ -951,17 +951,17 @@ public struct TSCK_CollaborationDocumentSessionState: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCK_OperationStorageEntryArray: Sendable {
+public nonisolated struct TSCK_OperationStorageEntryArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArray: TSP_LargeArray {
-    get {return _largeArray ?? TSP_LargeArray()}
+    get {_largeArray ?? TSP_LargeArray()}
     set {_largeArray = newValue}
   }
   /// Returns true if `largeArray` has been explicitly set.
-  public var hasLargeArray: Bool {return self._largeArray != nil}
+  public var hasLargeArray: Bool {self._largeArray != nil}
   /// Clears the value of `largeArray`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArray() {self._largeArray = nil}
 
@@ -972,46 +972,46 @@ public struct TSCK_OperationStorageEntryArray: Sendable {
   fileprivate var _largeArray: TSP_LargeArray? = nil
 }
 
-public struct TSCK_OperationStorageEntryArraySegment: Sendable {
+public nonisolated struct TSCK_OperationStorageEntryArraySegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArraySegment: TSP_LargeArraySegment {
-    get {return _largeArraySegment ?? TSP_LargeArraySegment()}
+    get {_largeArraySegment ?? TSP_LargeArraySegment()}
     set {_largeArraySegment = newValue}
   }
   /// Returns true if `largeArraySegment` has been explicitly set.
-  public var hasLargeArraySegment: Bool {return self._largeArraySegment != nil}
+  public var hasLargeArraySegment: Bool {self._largeArraySegment != nil}
   /// Clears the value of `largeArraySegment`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArraySegment() {self._largeArraySegment = nil}
 
   public var elements: [TSK_OperationStorageEntry] = []
 
   public var lastDocumentRevisionSequenceBeforeSegment: Int32 {
-    get {return _lastDocumentRevisionSequenceBeforeSegment ?? 0}
+    get {_lastDocumentRevisionSequenceBeforeSegment ?? 0}
     set {_lastDocumentRevisionSequenceBeforeSegment = newValue}
   }
   /// Returns true if `lastDocumentRevisionSequenceBeforeSegment` has been explicitly set.
-  public var hasLastDocumentRevisionSequenceBeforeSegment: Bool {return self._lastDocumentRevisionSequenceBeforeSegment != nil}
+  public var hasLastDocumentRevisionSequenceBeforeSegment: Bool {self._lastDocumentRevisionSequenceBeforeSegment != nil}
   /// Clears the value of `lastDocumentRevisionSequenceBeforeSegment`. Subsequent reads from it will return its default value.
   public mutating func clearLastDocumentRevisionSequenceBeforeSegment() {self._lastDocumentRevisionSequenceBeforeSegment = nil}
 
   public var lastDocumentRevisionSequence: Int32 {
-    get {return _lastDocumentRevisionSequence ?? 0}
+    get {_lastDocumentRevisionSequence ?? 0}
     set {_lastDocumentRevisionSequence = newValue}
   }
   /// Returns true if `lastDocumentRevisionSequence` has been explicitly set.
-  public var hasLastDocumentRevisionSequence: Bool {return self._lastDocumentRevisionSequence != nil}
+  public var hasLastDocumentRevisionSequence: Bool {self._lastDocumentRevisionSequence != nil}
   /// Clears the value of `lastDocumentRevisionSequence`. Subsequent reads from it will return its default value.
   public mutating func clearLastDocumentRevisionSequence() {self._lastDocumentRevisionSequence = nil}
 
   public var segmentFirstEntryCreationTime: Double {
-    get {return _segmentFirstEntryCreationTime ?? 0}
+    get {_segmentFirstEntryCreationTime ?? 0}
     set {_segmentFirstEntryCreationTime = newValue}
   }
   /// Returns true if `segmentFirstEntryCreationTime` has been explicitly set.
-  public var hasSegmentFirstEntryCreationTime: Bool {return self._segmentFirstEntryCreationTime != nil}
+  public var hasSegmentFirstEntryCreationTime: Bool {self._segmentFirstEntryCreationTime != nil}
   /// Clears the value of `segmentFirstEntryCreationTime`. Subsequent reads from it will return its default value.
   public mutating func clearSegmentFirstEntryCreationTime() {self._segmentFirstEntryCreationTime = nil}
 
@@ -1025,68 +1025,68 @@ public struct TSCK_OperationStorageEntryArraySegment: Sendable {
   fileprivate var _segmentFirstEntryCreationTime: Double? = nil
 }
 
-public struct TSCK_OperationStorage: Sendable {
+public nonisolated struct TSCK_OperationStorage: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var entries: TSP_Reference {
-    get {return _entries ?? TSP_Reference()}
+    get {_entries ?? TSP_Reference()}
     set {_entries = newValue}
   }
   /// Returns true if `entries` has been explicitly set.
-  public var hasEntries: Bool {return self._entries != nil}
+  public var hasEntries: Bool {self._entries != nil}
   /// Clears the value of `entries`. Subsequent reads from it will return its default value.
   public mutating func clearEntries() {self._entries = nil}
 
   public var operationCount: UInt64 {
-    get {return _operationCount ?? 0}
+    get {_operationCount ?? 0}
     set {_operationCount = newValue}
   }
   /// Returns true if `operationCount` has been explicitly set.
-  public var hasOperationCount: Bool {return self._operationCount != nil}
+  public var hasOperationCount: Bool {self._operationCount != nil}
   /// Clears the value of `operationCount`. Subsequent reads from it will return its default value.
   public mutating func clearOperationCount() {self._operationCount = nil}
 
   public var lastDocumentRevisionSequence: Int32 {
-    get {return _lastDocumentRevisionSequence ?? 0}
+    get {_lastDocumentRevisionSequence ?? 0}
     set {_lastDocumentRevisionSequence = newValue}
   }
   /// Returns true if `lastDocumentRevisionSequence` has been explicitly set.
-  public var hasLastDocumentRevisionSequence: Bool {return self._lastDocumentRevisionSequence != nil}
+  public var hasLastDocumentRevisionSequence: Bool {self._lastDocumentRevisionSequence != nil}
   /// Clears the value of `lastDocumentRevisionSequence`. Subsequent reads from it will return its default value.
   public mutating func clearLastDocumentRevisionSequence() {self._lastDocumentRevisionSequence = nil}
 
   public var lastDocumentRevisionIdentifier: [UInt64] = []
 
   public var lastUnskippableDocumentRevisionBeforeEntriesSequence: Int32 {
-    get {return _lastUnskippableDocumentRevisionBeforeEntriesSequence ?? 0}
+    get {_lastUnskippableDocumentRevisionBeforeEntriesSequence ?? 0}
     set {_lastUnskippableDocumentRevisionBeforeEntriesSequence = newValue}
   }
   /// Returns true if `lastUnskippableDocumentRevisionBeforeEntriesSequence` has been explicitly set.
-  public var hasLastUnskippableDocumentRevisionBeforeEntriesSequence: Bool {return self._lastUnskippableDocumentRevisionBeforeEntriesSequence != nil}
+  public var hasLastUnskippableDocumentRevisionBeforeEntriesSequence: Bool {self._lastUnskippableDocumentRevisionBeforeEntriesSequence != nil}
   /// Clears the value of `lastUnskippableDocumentRevisionBeforeEntriesSequence`. Subsequent reads from it will return its default value.
   public mutating func clearLastUnskippableDocumentRevisionBeforeEntriesSequence() {self._lastUnskippableDocumentRevisionBeforeEntriesSequence = nil}
 
   public var lastUnskippableDocumentRevisionBeforeEntriesIdentifier: [UInt64] = []
 
   public var lastUnskippableDocumentRevisionInEntriesSequence: Int32 {
-    get {return _lastUnskippableDocumentRevisionInEntriesSequence ?? 0}
+    get {_lastUnskippableDocumentRevisionInEntriesSequence ?? 0}
     set {_lastUnskippableDocumentRevisionInEntriesSequence = newValue}
   }
   /// Returns true if `lastUnskippableDocumentRevisionInEntriesSequence` has been explicitly set.
-  public var hasLastUnskippableDocumentRevisionInEntriesSequence: Bool {return self._lastUnskippableDocumentRevisionInEntriesSequence != nil}
+  public var hasLastUnskippableDocumentRevisionInEntriesSequence: Bool {self._lastUnskippableDocumentRevisionInEntriesSequence != nil}
   /// Clears the value of `lastUnskippableDocumentRevisionInEntriesSequence`. Subsequent reads from it will return its default value.
   public mutating func clearLastUnskippableDocumentRevisionInEntriesSequence() {self._lastUnskippableDocumentRevisionInEntriesSequence = nil}
 
   public var lastUnskippableDocumentRevisionInEntriesIdentifier: [UInt64] = []
 
   public var daysWithAnEntry: TSP_IndexSet {
-    get {return _daysWithAnEntry ?? TSP_IndexSet()}
+    get {_daysWithAnEntry ?? TSP_IndexSet()}
     set {_daysWithAnEntry = newValue}
   }
   /// Returns true if `daysWithAnEntry` has been explicitly set.
-  public var hasDaysWithAnEntry: Bool {return self._daysWithAnEntry != nil}
+  public var hasDaysWithAnEntry: Bool {self._daysWithAnEntry != nil}
   /// Clears the value of `daysWithAnEntry`. Subsequent reads from it will return its default value.
   public mutating func clearDaysWithAnEntry() {self._daysWithAnEntry = nil}
 
@@ -1102,17 +1102,17 @@ public struct TSCK_OperationStorage: Sendable {
   fileprivate var _daysWithAnEntry: TSP_IndexSet? = nil
 }
 
-public struct TSCK_OutgoingCommandQueue: Sendable {
+public nonisolated struct TSCK_OutgoingCommandQueue: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeObjectArray: TSP_LargeObjectArray {
-    get {return _largeObjectArray ?? TSP_LargeObjectArray()}
+    get {_largeObjectArray ?? TSP_LargeObjectArray()}
     set {_largeObjectArray = newValue}
   }
   /// Returns true if `largeObjectArray` has been explicitly set.
-  public var hasLargeObjectArray: Bool {return self._largeObjectArray != nil}
+  public var hasLargeObjectArray: Bool {self._largeObjectArray != nil}
   /// Clears the value of `largeObjectArray`. Subsequent reads from it will return its default value.
   public mutating func clearLargeObjectArray() {self._largeObjectArray = nil}
 
@@ -1123,17 +1123,17 @@ public struct TSCK_OutgoingCommandQueue: Sendable {
   fileprivate var _largeObjectArray: TSP_LargeObjectArray? = nil
 }
 
-public struct TSCK_OutgoingCommandQueueSegment: Sendable {
+public nonisolated struct TSCK_OutgoingCommandQueueSegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeObjectArraySegment: TSP_LargeObjectArraySegment {
-    get {return _largeObjectArraySegment ?? TSP_LargeObjectArraySegment()}
+    get {_largeObjectArraySegment ?? TSP_LargeObjectArraySegment()}
     set {_largeObjectArraySegment = newValue}
   }
   /// Returns true if `largeObjectArraySegment` has been explicitly set.
-  public var hasLargeObjectArraySegment: Bool {return self._largeObjectArraySegment != nil}
+  public var hasLargeObjectArraySegment: Bool {self._largeObjectArraySegment != nil}
   /// Clears the value of `largeObjectArraySegment`. Subsequent reads from it will return its default value.
   public mutating func clearLargeObjectArraySegment() {self._largeObjectArraySegment = nil}
 
@@ -1144,62 +1144,62 @@ public struct TSCK_OutgoingCommandQueueSegment: Sendable {
   fileprivate var _largeObjectArraySegment: TSP_LargeObjectArraySegment? = nil
 }
 
-public struct TSCK_CommandAssetChunkArchive: Sendable {
+public nonisolated struct TSCK_CommandAssetChunkArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var digest: String {
-    get {return _digest ?? String()}
+    get {_digest ?? String()}
     set {_digest = newValue}
   }
   /// Returns true if `digest` has been explicitly set.
-  public var hasDigest: Bool {return self._digest != nil}
+  public var hasDigest: Bool {self._digest != nil}
   /// Clears the value of `digest`. Subsequent reads from it will return its default value.
   public mutating func clearDigest() {self._digest = nil}
 
   public var assetChunk: String {
-    get {return _assetChunk ?? String()}
+    get {_assetChunk ?? String()}
     set {_assetChunk = newValue}
   }
   /// Returns true if `assetChunk` has been explicitly set.
-  public var hasAssetChunk: Bool {return self._assetChunk != nil}
+  public var hasAssetChunk: Bool {self._assetChunk != nil}
   /// Clears the value of `assetChunk`. Subsequent reads from it will return its default value.
   public mutating func clearAssetChunk() {self._assetChunk = nil}
 
   public var assetChunkLength: Int64 {
-    get {return _assetChunkLength ?? 0}
+    get {_assetChunkLength ?? 0}
     set {_assetChunkLength = newValue}
   }
   /// Returns true if `assetChunkLength` has been explicitly set.
-  public var hasAssetChunkLength: Bool {return self._assetChunkLength != nil}
+  public var hasAssetChunkLength: Bool {self._assetChunkLength != nil}
   /// Clears the value of `assetChunkLength`. Subsequent reads from it will return its default value.
   public mutating func clearAssetChunkLength() {self._assetChunkLength = nil}
 
   public var resumePosition: Int64 {
-    get {return _resumePosition ?? 0}
+    get {_resumePosition ?? 0}
     set {_resumePosition = newValue}
   }
   /// Returns true if `resumePosition` has been explicitly set.
-  public var hasResumePosition: Bool {return self._resumePosition != nil}
+  public var hasResumePosition: Bool {self._resumePosition != nil}
   /// Clears the value of `resumePosition`. Subsequent reads from it will return its default value.
   public mutating func clearResumePosition() {self._resumePosition = nil}
 
   public var materializedLength: Int64 {
-    get {return _materializedLength ?? 0}
+    get {_materializedLength ?? 0}
     set {_materializedLength = newValue}
   }
   /// Returns true if `materializedLength` has been explicitly set.
-  public var hasMaterializedLength: Bool {return self._materializedLength != nil}
+  public var hasMaterializedLength: Bool {self._materializedLength != nil}
   /// Clears the value of `materializedLength`. Subsequent reads from it will return its default value.
   public mutating func clearMaterializedLength() {self._materializedLength = nil}
 
@@ -1215,17 +1215,17 @@ public struct TSCK_CommandAssetChunkArchive: Sendable {
   fileprivate var _materializedLength: Int64? = nil
 }
 
-public struct TSCK_AssetUploadStatusCommandArchive: Sendable {
+public nonisolated struct TSCK_AssetUploadStatusCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -1233,26 +1233,26 @@ public struct TSCK_AssetUploadStatusCommandArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct AssetUploadStatusInfo: Sendable {
+  public nonisolated struct AssetUploadStatusInfo: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var digest: String {
-      get {return _digest ?? String()}
+      get {_digest ?? String()}
       set {_digest = newValue}
     }
     /// Returns true if `digest` has been explicitly set.
-    public var hasDigest: Bool {return self._digest != nil}
+    public var hasDigest: Bool {self._digest != nil}
     /// Clears the value of `digest`. Subsequent reads from it will return its default value.
     public mutating func clearDigest() {self._digest = nil}
 
     public var uploadStatus: TSP_DataUploadStatus {
-      get {return _uploadStatus ?? .pending}
+      get {_uploadStatus ?? .pending}
       set {_uploadStatus = newValue}
     }
     /// Returns true if `uploadStatus` has been explicitly set.
-    public var hasUploadStatus: Bool {return self._uploadStatus != nil}
+    public var hasUploadStatus: Bool {self._uploadStatus != nil}
     /// Clears the value of `uploadStatus`. Subsequent reads from it will return its default value.
     public mutating func clearUploadStatus() {self._uploadStatus = nil}
 
@@ -1269,17 +1269,17 @@ public struct TSCK_AssetUploadStatusCommandArchive: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSCK_AssetUnmaterializedOnServerCommandArchive: Sendable {
+public nonisolated struct TSCK_AssetUnmaterializedOnServerCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -1292,17 +1292,17 @@ public struct TSCK_AssetUnmaterializedOnServerCommandArchive: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSCK_CollaboratorCursorArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCK_CollaboratorCursorArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var idPath: TSP_UUIDPath {
-    get {return _idPath ?? TSP_UUIDPath()}
+    get {_idPath ?? TSP_UUIDPath()}
     set {_idPath = newValue}
   }
   /// Returns true if `idPath` has been explicitly set.
-  public var hasIDPath: Bool {return self._idPath != nil}
+  public var hasIDPath: Bool {self._idPath != nil}
   /// Clears the value of `idPath`. Subsequent reads from it will return its default value.
   public mutating func clearIDPath() {self._idPath = nil}
 
@@ -1314,71 +1314,71 @@ public struct TSCK_CollaboratorCursorArchive: SwiftProtobuf.ExtensibleMessage, S
   fileprivate var _idPath: TSP_UUIDPath? = nil
 }
 
-public struct TSCK_ActivityStreamArchive: @unchecked Sendable {
+public nonisolated struct TSCK_ActivityStreamArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var acknowledgedActivityArray: TSP_Reference {
-    get {return _storage._acknowledgedActivityArray ?? TSP_Reference()}
+    get {_storage._acknowledgedActivityArray ?? TSP_Reference()}
     set {_uniqueStorage()._acknowledgedActivityArray = newValue}
   }
   /// Returns true if `acknowledgedActivityArray` has been explicitly set.
-  public var hasAcknowledgedActivityArray: Bool {return _storage._acknowledgedActivityArray != nil}
+  public var hasAcknowledgedActivityArray: Bool {_storage._acknowledgedActivityArray != nil}
   /// Clears the value of `acknowledgedActivityArray`. Subsequent reads from it will return its default value.
   public mutating func clearAcknowledgedActivityArray() {_uniqueStorage()._acknowledgedActivityArray = nil}
 
   public var unacknowledgedLocalActivityArray: TSP_Reference {
-    get {return _storage._unacknowledgedLocalActivityArray ?? TSP_Reference()}
+    get {_storage._unacknowledgedLocalActivityArray ?? TSP_Reference()}
     set {_uniqueStorage()._unacknowledgedLocalActivityArray = newValue}
   }
   /// Returns true if `unacknowledgedLocalActivityArray` has been explicitly set.
-  public var hasUnacknowledgedLocalActivityArray: Bool {return _storage._unacknowledgedLocalActivityArray != nil}
+  public var hasUnacknowledgedLocalActivityArray: Bool {_storage._unacknowledgedLocalActivityArray != nil}
   /// Clears the value of `unacknowledgedLocalActivityArray`. Subsequent reads from it will return its default value.
   public mutating func clearUnacknowledgedLocalActivityArray() {_uniqueStorage()._unacknowledgedLocalActivityArray = nil}
 
   public var authorCache: TSP_Reference {
-    get {return _storage._authorCache ?? TSP_Reference()}
+    get {_storage._authorCache ?? TSP_Reference()}
     set {_uniqueStorage()._authorCache = newValue}
   }
   /// Returns true if `authorCache` has been explicitly set.
-  public var hasAuthorCache: Bool {return _storage._authorCache != nil}
+  public var hasAuthorCache: Bool {_storage._authorCache != nil}
   /// Clears the value of `authorCache`. Subsequent reads from it will return its default value.
   public mutating func clearAuthorCache() {_uniqueStorage()._authorCache = nil}
 
   public var unacknowledgedRemoteActivityArray: TSP_Reference {
-    get {return _storage._unacknowledgedRemoteActivityArray ?? TSP_Reference()}
+    get {_storage._unacknowledgedRemoteActivityArray ?? TSP_Reference()}
     set {_uniqueStorage()._unacknowledgedRemoteActivityArray = newValue}
   }
   /// Returns true if `unacknowledgedRemoteActivityArray` has been explicitly set.
-  public var hasUnacknowledgedRemoteActivityArray: Bool {return _storage._unacknowledgedRemoteActivityArray != nil}
+  public var hasUnacknowledgedRemoteActivityArray: Bool {_storage._unacknowledgedRemoteActivityArray != nil}
   /// Clears the value of `unacknowledgedRemoteActivityArray`. Subsequent reads from it will return its default value.
   public mutating func clearUnacknowledgedRemoteActivityArray() {_uniqueStorage()._unacknowledgedRemoteActivityArray = nil}
 
   public var didUpgradeCommentsToActivities: Bool {
-    get {return _storage._didUpgradeCommentsToActivities ?? false}
+    get {_storage._didUpgradeCommentsToActivities ?? false}
     set {_uniqueStorage()._didUpgradeCommentsToActivities = newValue}
   }
   /// Returns true if `didUpgradeCommentsToActivities` has been explicitly set.
-  public var hasDidUpgradeCommentsToActivities: Bool {return _storage._didUpgradeCommentsToActivities != nil}
+  public var hasDidUpgradeCommentsToActivities: Bool {_storage._didUpgradeCommentsToActivities != nil}
   /// Clears the value of `didUpgradeCommentsToActivities`. Subsequent reads from it will return its default value.
   public mutating func clearDidUpgradeCommentsToActivities() {_uniqueStorage()._didUpgradeCommentsToActivities = nil}
 
   public var activityStreamTransformationState: TSCK_ActivityStreamTransformationStateArchive {
-    get {return _storage._activityStreamTransformationState ?? TSCK_ActivityStreamTransformationStateArchive()}
+    get {_storage._activityStreamTransformationState ?? TSCK_ActivityStreamTransformationStateArchive()}
     set {_uniqueStorage()._activityStreamTransformationState = newValue}
   }
   /// Returns true if `activityStreamTransformationState` has been explicitly set.
-  public var hasActivityStreamTransformationState: Bool {return _storage._activityStreamTransformationState != nil}
+  public var hasActivityStreamTransformationState: Bool {_storage._activityStreamTransformationState != nil}
   /// Clears the value of `activityStreamTransformationState`. Subsequent reads from it will return its default value.
   public mutating func clearActivityStreamTransformationState() {_uniqueStorage()._activityStreamTransformationState = nil}
 
   public var activityCounter: TSCK_ActivityStreamActivityCounterArchive {
-    get {return _storage._activityCounter ?? TSCK_ActivityStreamActivityCounterArchive()}
+    get {_storage._activityCounter ?? TSCK_ActivityStreamActivityCounterArchive()}
     set {_uniqueStorage()._activityCounter = newValue}
   }
   /// Returns true if `activityCounter` has been explicitly set.
-  public var hasActivityCounter: Bool {return _storage._activityCounter != nil}
+  public var hasActivityCounter: Bool {_storage._activityCounter != nil}
   /// Clears the value of `activityCounter`. Subsequent reads from it will return its default value.
   public mutating func clearActivityCounter() {_uniqueStorage()._activityCounter = nil}
 
@@ -1389,17 +1389,17 @@ public struct TSCK_ActivityStreamArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCK_ActivityStreamActivityArray: Sendable {
+public nonisolated struct TSCK_ActivityStreamActivityArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArray: TSP_LargeObjectArray {
-    get {return _largeArray ?? TSP_LargeObjectArray()}
+    get {_largeArray ?? TSP_LargeObjectArray()}
     set {_largeArray = newValue}
   }
   /// Returns true if `largeArray` has been explicitly set.
-  public var hasLargeArray: Bool {return self._largeArray != nil}
+  public var hasLargeArray: Bool {self._largeArray != nil}
   /// Clears the value of `largeArray`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArray() {self._largeArray = nil}
 
@@ -1410,17 +1410,17 @@ public struct TSCK_ActivityStreamActivityArray: Sendable {
   fileprivate var _largeArray: TSP_LargeObjectArray? = nil
 }
 
-public struct TSCK_ActivityStreamActivityArraySegment: Sendable {
+public nonisolated struct TSCK_ActivityStreamActivityArraySegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArraySegment: TSP_LargeObjectArraySegment {
-    get {return _largeArraySegment ?? TSP_LargeObjectArraySegment()}
+    get {_largeArraySegment ?? TSP_LargeObjectArraySegment()}
     set {_largeArraySegment = newValue}
   }
   /// Returns true if `largeArraySegment` has been explicitly set.
-  public var hasLargeArraySegment: Bool {return self._largeArraySegment != nil}
+  public var hasLargeArraySegment: Bool {self._largeArraySegment != nil}
   /// Clears the value of `largeArraySegment`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArraySegment() {self._largeArraySegment = nil}
 
@@ -1431,7 +1431,7 @@ public struct TSCK_ActivityStreamActivityArraySegment: Sendable {
   fileprivate var _largeArraySegment: TSP_LargeObjectArraySegment? = nil
 }
 
-public struct TSCK_ActivityArchive: Sendable {
+public nonisolated struct TSCK_ActivityArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1439,92 +1439,92 @@ public struct TSCK_ActivityArchive: Sendable {
   public var cursorCollectionPersistenceWrappers: [TSP_Reference] = []
 
   public var authorIdentifier: TSP_UUID {
-    get {return _authorIdentifier ?? TSP_UUID()}
+    get {_authorIdentifier ?? TSP_UUID()}
     set {_authorIdentifier = newValue}
   }
   /// Returns true if `authorIdentifier` has been explicitly set.
-  public var hasAuthorIdentifier: Bool {return self._authorIdentifier != nil}
+  public var hasAuthorIdentifier: Bool {self._authorIdentifier != nil}
   /// Clears the value of `authorIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearAuthorIdentifier() {self._authorIdentifier = nil}
 
   public var nondirectionalActionType: Int32 {
-    get {return _nondirectionalActionType ?? 0}
+    get {_nondirectionalActionType ?? 0}
     set {_nondirectionalActionType = newValue}
   }
   /// Returns true if `nondirectionalActionType` has been explicitly set.
-  public var hasNondirectionalActionType: Bool {return self._nondirectionalActionType != nil}
+  public var hasNondirectionalActionType: Bool {self._nondirectionalActionType != nil}
   /// Clears the value of `nondirectionalActionType`. Subsequent reads from it will return its default value.
   public mutating func clearNondirectionalActionType() {self._nondirectionalActionType = nil}
 
   public var direction: Int32 {
-    get {return _direction ?? 0}
+    get {_direction ?? 0}
     set {_direction = newValue}
   }
   /// Returns true if `direction` has been explicitly set.
-  public var hasDirection: Bool {return self._direction != nil}
+  public var hasDirection: Bool {self._direction != nil}
   /// Clears the value of `direction`. Subsequent reads from it will return its default value.
   public mutating func clearDirection() {self._direction = nil}
 
   public var shouldSendNotification: Bool {
-    get {return _shouldSendNotification ?? false}
+    get {_shouldSendNotification ?? false}
     set {_shouldSendNotification = newValue}
   }
   /// Returns true if `shouldSendNotification` has been explicitly set.
-  public var hasShouldSendNotification: Bool {return self._shouldSendNotification != nil}
+  public var hasShouldSendNotification: Bool {self._shouldSendNotification != nil}
   /// Clears the value of `shouldSendNotification`. Subsequent reads from it will return its default value.
   public mutating func clearShouldSendNotification() {self._shouldSendNotification = nil}
 
   public var timestamp: TSP_Date {
-    get {return _timestamp ?? TSP_Date()}
+    get {_timestamp ?? TSP_Date()}
     set {_timestamp = newValue}
   }
   /// Returns true if `timestamp` has been explicitly set.
-  public var hasTimestamp: Bool {return self._timestamp != nil}
+  public var hasTimestamp: Bool {self._timestamp != nil}
   /// Clears the value of `timestamp`. Subsequent reads from it will return its default value.
   public mutating func clearTimestamp() {self._timestamp = nil}
 
   public var revisionSequence: Int32 {
-    get {return _revisionSequence ?? 0}
+    get {_revisionSequence ?? 0}
     set {_revisionSequence = newValue}
   }
   /// Returns true if `revisionSequence` has been explicitly set.
-  public var hasRevisionSequence: Bool {return self._revisionSequence != nil}
+  public var hasRevisionSequence: Bool {self._revisionSequence != nil}
   /// Clears the value of `revisionSequence`. Subsequent reads from it will return its default value.
   public mutating func clearRevisionSequence() {self._revisionSequence = nil}
 
   public var additionalNavigationInfo: TSCK_ActivityNavigationInfoArchive {
-    get {return _additionalNavigationInfo ?? TSCK_ActivityNavigationInfoArchive()}
+    get {_additionalNavigationInfo ?? TSCK_ActivityNavigationInfoArchive()}
     set {_additionalNavigationInfo = newValue}
   }
   /// Returns true if `additionalNavigationInfo` has been explicitly set.
-  public var hasAdditionalNavigationInfo: Bool {return self._additionalNavigationInfo != nil}
+  public var hasAdditionalNavigationInfo: Bool {self._additionalNavigationInfo != nil}
   /// Clears the value of `additionalNavigationInfo`. Subsequent reads from it will return its default value.
   public mutating func clearAdditionalNavigationInfo() {self._additionalNavigationInfo = nil}
 
   public var didPrepareSerializedStringOnServer: Bool {
-    get {return _didPrepareSerializedStringOnServer ?? false}
+    get {_didPrepareSerializedStringOnServer ?? false}
     set {_didPrepareSerializedStringOnServer = newValue}
   }
   /// Returns true if `didPrepareSerializedStringOnServer` has been explicitly set.
-  public var hasDidPrepareSerializedStringOnServer: Bool {return self._didPrepareSerializedStringOnServer != nil}
+  public var hasDidPrepareSerializedStringOnServer: Bool {self._didPrepareSerializedStringOnServer != nil}
   /// Clears the value of `didPrepareSerializedStringOnServer`. Subsequent reads from it will return its default value.
   public mutating func clearDidPrepareSerializedStringOnServer() {self._didPrepareSerializedStringOnServer = nil}
 
   public var oldestRevisionSequenceOfNextActivities: Int32 {
-    get {return _oldestRevisionSequenceOfNextActivities ?? 0}
+    get {_oldestRevisionSequenceOfNextActivities ?? 0}
     set {_oldestRevisionSequenceOfNextActivities = newValue}
   }
   /// Returns true if `oldestRevisionSequenceOfNextActivities` has been explicitly set.
-  public var hasOldestRevisionSequenceOfNextActivities: Bool {return self._oldestRevisionSequenceOfNextActivities != nil}
+  public var hasOldestRevisionSequenceOfNextActivities: Bool {self._oldestRevisionSequenceOfNextActivities != nil}
   /// Clears the value of `oldestRevisionSequenceOfNextActivities`. Subsequent reads from it will return its default value.
   public mutating func clearOldestRevisionSequenceOfNextActivities() {self._oldestRevisionSequenceOfNextActivities = nil}
 
   public var actionSubType: Int32 {
-    get {return _actionSubType ?? 0}
+    get {_actionSubType ?? 0}
     set {_actionSubType = newValue}
   }
   /// Returns true if `actionSubType` has been explicitly set.
-  public var hasActionSubType: Bool {return self._actionSubType != nil}
+  public var hasActionSubType: Bool {self._actionSubType != nil}
   /// Clears the value of `actionSubType`. Subsequent reads from it will return its default value.
   public mutating func clearActionSubType() {self._actionSubType = nil}
 
@@ -1546,46 +1546,46 @@ public struct TSCK_ActivityArchive: Sendable {
   fileprivate var _actionSubType: Int32? = nil
 }
 
-public struct TSCK_ActivityAuthorArchive: Sendable {
+public nonisolated struct TSCK_ActivityAuthorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var name: String {
-    get {return _name ?? String()}
+    get {_name ?? String()}
     set {_name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return self._name != nil}
+  public var hasName: Bool {self._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {self._name = nil}
 
   public var color: TSP_Color {
-    get {return _color ?? TSP_Color()}
+    get {_color ?? TSP_Color()}
     set {_color = newValue}
   }
   /// Returns true if `color` has been explicitly set.
-  public var hasColor: Bool {return self._color != nil}
+  public var hasColor: Bool {self._color != nil}
   /// Clears the value of `color`. Subsequent reads from it will return its default value.
   public mutating func clearColor() {self._color = nil}
 
   public var publicIds: [String] = []
 
   public var isPublicAuthor: Bool {
-    get {return _isPublicAuthor ?? false}
+    get {_isPublicAuthor ?? false}
     set {_isPublicAuthor = newValue}
   }
   /// Returns true if `isPublicAuthor` has been explicitly set.
-  public var hasIsPublicAuthor: Bool {return self._isPublicAuthor != nil}
+  public var hasIsPublicAuthor: Bool {self._isPublicAuthor != nil}
   /// Clears the value of `isPublicAuthor`. Subsequent reads from it will return its default value.
   public mutating func clearIsPublicAuthor() {self._isPublicAuthor = nil}
 
   public var shareParticipantID: String {
-    get {return _shareParticipantID ?? String()}
+    get {_shareParticipantID ?? String()}
     set {_shareParticipantID = newValue}
   }
   /// Returns true if `shareParticipantID` has been explicitly set.
-  public var hasShareParticipantID: Bool {return self._shareParticipantID != nil}
+  public var hasShareParticipantID: Bool {self._shareParticipantID != nil}
   /// Clears the value of `shareParticipantID`. Subsequent reads from it will return its default value.
   public mutating func clearShareParticipantID() {self._shareParticipantID = nil}
 
@@ -1599,7 +1599,7 @@ public struct TSCK_ActivityAuthorArchive: Sendable {
   fileprivate var _shareParticipantID: String? = nil
 }
 
-public struct TSCK_CommandActivityBehaviorArchive: Sendable {
+public nonisolated struct TSCK_CommandActivityBehaviorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1607,205 +1607,97 @@ public struct TSCK_CommandActivityBehaviorArchive: Sendable {
   public var selectionPathStorages: [TSP_Reference] = []
 
   public var actionType: TSCK_CommandActivityBehaviorArchive.ActionType {
-    get {return _actionType ?? .unknown}
+    get {_actionType ?? .unknown}
     set {_actionType = newValue}
   }
   /// Returns true if `actionType` has been explicitly set.
-  public var hasActionType: Bool {return self._actionType != nil}
+  public var hasActionType: Bool {self._actionType != nil}
   /// Clears the value of `actionType`. Subsequent reads from it will return its default value.
   public mutating func clearActionType() {self._actionType = nil}
 
   public var shouldSendNotification: Bool {
-    get {return _shouldSendNotification ?? false}
+    get {_shouldSendNotification ?? false}
     set {_shouldSendNotification = newValue}
   }
   /// Returns true if `shouldSendNotification` has been explicitly set.
-  public var hasShouldSendNotification: Bool {return self._shouldSendNotification != nil}
+  public var hasShouldSendNotification: Bool {self._shouldSendNotification != nil}
   /// Clears the value of `shouldSendNotification`. Subsequent reads from it will return its default value.
   public mutating func clearShouldSendNotification() {self._shouldSendNotification = nil}
 
   public var additionalNavigationInfo: TSCK_ActivityNavigationInfoArchive {
-    get {return _additionalNavigationInfo ?? TSCK_ActivityNavigationInfoArchive()}
+    get {_additionalNavigationInfo ?? TSCK_ActivityNavigationInfoArchive()}
     set {_additionalNavigationInfo = newValue}
   }
   /// Returns true if `additionalNavigationInfo` has been explicitly set.
-  public var hasAdditionalNavigationInfo: Bool {return self._additionalNavigationInfo != nil}
+  public var hasAdditionalNavigationInfo: Bool {self._additionalNavigationInfo != nil}
   /// Clears the value of `additionalNavigationInfo`. Subsequent reads from it will return its default value.
   public mutating func clearAdditionalNavigationInfo() {self._additionalNavigationInfo = nil}
 
   public var actionSubType: TSCK_CommandActivityBehaviorArchive.ActionSubType {
-    get {return _actionSubType ?? .none}
+    get {_actionSubType ?? .none}
     set {_actionSubType = newValue}
   }
   /// Returns true if `actionSubType` has been explicitly set.
-  public var hasActionSubType: Bool {return self._actionSubType != nil}
+  public var hasActionSubType: Bool {self._actionSubType != nil}
   /// Clears the value of `actionSubType`. Subsequent reads from it will return its default value.
   public mutating func clearActionSubType() {self._actionSubType = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ActionType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case unknown // = 0
-    case firstJoin // = 1
-    case add // = 2
-    case modify // = 3
-    case comment // = 4
-    case reply // = 5
-    case paste // = 6
-    case password // = 7
-    case restore // = 8
-    case remove // = 9
-    case editText // = 10
-    case group // = 11
-    case ungroup // = 12
-    case replace // = 13
+  public nonisolated enum ActionType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case unknown = 0
+    case firstJoin = 1
+    case add = 2
+    case modify = 3
+    case comment = 4
+    case reply = 5
+    case paste = 6
+    case password = 7
+    case restore = 8
+    case remove = 9
+    case editText = 10
+    case group = 11
+    case ungroup = 12
+    case replace = 13
 
     public init() {
       self = .unknown
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .unknown
-      case 1: self = .firstJoin
-      case 2: self = .add
-      case 3: self = .modify
-      case 4: self = .comment
-      case 5: self = .reply
-      case 6: self = .paste
-      case 7: self = .password
-      case 8: self = .restore
-      case 9: self = .remove
-      case 10: self = .editText
-      case 11: self = .group
-      case 12: self = .ungroup
-      case 13: self = .replace
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .unknown: return 0
-      case .firstJoin: return 1
-      case .add: return 2
-      case .modify: return 3
-      case .comment: return 4
-      case .reply: return 5
-      case .paste: return 6
-      case .password: return 7
-      case .restore: return 8
-      case .remove: return 9
-      case .editText: return 10
-      case .group: return 11
-      case .ungroup: return 12
-      case .replace: return 13
-      }
-    }
-
   }
 
-  public enum ActionSubType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case none // = 0
-    case filterTable // = 1
-    case sortTable // = 2
-    case categorizeTable // = 3
-    case changeTemplateSlide // = 4
-    case changeChartType // = 5
-    case moveDrawable // = 6
-    case resizeDrawable // = 7
-    case addOrRemovePage // = 8
-    case hyperlink // = 9
-    case skipSlide // = 10
-    case unskipSlide // = 11
-    case changeBackground // = 12
-    case changePageTemplate // = 13
-    case insertPageNumber // = 14
-    case refreshPivotTable // = 15
-    case addPassword // = 16
-    case changePassword // = 17
-    case removePassword // = 18
-    case bookmark // = 19
-    case equation // = 20
-    case sectionBreak // = 21
-    case moveColumn // = 22
-    case linkTextbox // = 23
-    case newTextboxThread // = 24
-    case changeTextboxThread // = 25
-    case conditionalHighlightTableCell // = 26
-    case dataFormatTableCell // = 27
+  public nonisolated enum ActionSubType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case none = 0
+    case filterTable = 1
+    case sortTable = 2
+    case categorizeTable = 3
+    case changeTemplateSlide = 4
+    case changeChartType = 5
+    case moveDrawable = 6
+    case resizeDrawable = 7
+    case addOrRemovePage = 8
+    case hyperlink = 9
+    case skipSlide = 10
+    case unskipSlide = 11
+    case changeBackground = 12
+    case changePageTemplate = 13
+    case insertPageNumber = 14
+    case refreshPivotTable = 15
+    case addPassword = 16
+    case changePassword = 17
+    case removePassword = 18
+    case bookmark = 19
+    case equation = 20
+    case sectionBreak = 21
+    case moveColumn = 22
+    case linkTextbox = 23
+    case newTextboxThread = 24
+    case changeTextboxThread = 25
+    case conditionalHighlightTableCell = 26
+    case dataFormatTableCell = 27
 
     public init() {
       self = .none
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .none
-      case 1: self = .filterTable
-      case 2: self = .sortTable
-      case 3: self = .categorizeTable
-      case 4: self = .changeTemplateSlide
-      case 5: self = .changeChartType
-      case 6: self = .moveDrawable
-      case 7: self = .resizeDrawable
-      case 8: self = .addOrRemovePage
-      case 9: self = .hyperlink
-      case 10: self = .skipSlide
-      case 11: self = .unskipSlide
-      case 12: self = .changeBackground
-      case 13: self = .changePageTemplate
-      case 14: self = .insertPageNumber
-      case 15: self = .refreshPivotTable
-      case 16: self = .addPassword
-      case 17: self = .changePassword
-      case 18: self = .removePassword
-      case 19: self = .bookmark
-      case 20: self = .equation
-      case 21: self = .sectionBreak
-      case 22: self = .moveColumn
-      case 23: self = .linkTextbox
-      case 24: self = .newTextboxThread
-      case 25: self = .changeTextboxThread
-      case 26: self = .conditionalHighlightTableCell
-      case 27: self = .dataFormatTableCell
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .none: return 0
-      case .filterTable: return 1
-      case .sortTable: return 2
-      case .categorizeTable: return 3
-      case .changeTemplateSlide: return 4
-      case .changeChartType: return 5
-      case .moveDrawable: return 6
-      case .resizeDrawable: return 7
-      case .addOrRemovePage: return 8
-      case .hyperlink: return 9
-      case .skipSlide: return 10
-      case .unskipSlide: return 11
-      case .changeBackground: return 12
-      case .changePageTemplate: return 13
-      case .insertPageNumber: return 14
-      case .refreshPivotTable: return 15
-      case .addPassword: return 16
-      case .changePassword: return 17
-      case .removePassword: return 18
-      case .bookmark: return 19
-      case .equation: return 20
-      case .sectionBreak: return 21
-      case .moveColumn: return 22
-      case .linkTextbox: return 23
-      case .newTextboxThread: return 24
-      case .changeTextboxThread: return 25
-      case .conditionalHighlightTableCell: return 26
-      case .dataFormatTableCell: return 27
-      }
     }
 
   }
@@ -1818,7 +1710,7 @@ public struct TSCK_CommandActivityBehaviorArchive: Sendable {
   fileprivate var _actionSubType: TSCK_CommandActivityBehaviorArchive.ActionSubType? = nil
 }
 
-public struct TSCK_ActivityCursorCollectionArchive: Sendable {
+public nonisolated struct TSCK_ActivityCursorCollectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1826,47 +1718,47 @@ public struct TSCK_ActivityCursorCollectionArchive: Sendable {
   public var idCursors: [TSCK_CollaboratorCursorArchive] = []
 
   public var textCursor: TSCK_CollaboratorCursorArchive {
-    get {return _textCursor ?? TSCK_CollaboratorCursorArchive()}
+    get {_textCursor ?? TSCK_CollaboratorCursorArchive()}
     set {_textCursor = newValue}
   }
   /// Returns true if `textCursor` has been explicitly set.
-  public var hasTextCursor: Bool {return self._textCursor != nil}
+  public var hasTextCursor: Bool {self._textCursor != nil}
   /// Clears the value of `textCursor`. Subsequent reads from it will return its default value.
   public mutating func clearTextCursor() {self._textCursor = nil}
 
   public var tableCursor: TSCK_CollaboratorCursorArchive {
-    get {return _tableCursor ?? TSCK_CollaboratorCursorArchive()}
+    get {_tableCursor ?? TSCK_CollaboratorCursorArchive()}
     set {_tableCursor = newValue}
   }
   /// Returns true if `tableCursor` has been explicitly set.
-  public var hasTableCursor: Bool {return self._tableCursor != nil}
+  public var hasTableCursor: Bool {self._tableCursor != nil}
   /// Clears the value of `tableCursor`. Subsequent reads from it will return its default value.
   public mutating func clearTableCursor() {self._tableCursor = nil}
 
   public var cdeCursor: TSCK_CollaboratorCursorArchive {
-    get {return _cdeCursor ?? TSCK_CollaboratorCursorArchive()}
+    get {_cdeCursor ?? TSCK_CollaboratorCursorArchive()}
     set {_cdeCursor = newValue}
   }
   /// Returns true if `cdeCursor` has been explicitly set.
-  public var hasCdeCursor: Bool {return self._cdeCursor != nil}
+  public var hasCdeCursor: Bool {self._cdeCursor != nil}
   /// Clears the value of `cdeCursor`. Subsequent reads from it will return its default value.
   public mutating func clearCdeCursor() {self._cdeCursor = nil}
 
   public var chartTitleCursor: TSCK_CollaboratorCursorArchive {
-    get {return _chartTitleCursor ?? TSCK_CollaboratorCursorArchive()}
+    get {_chartTitleCursor ?? TSCK_CollaboratorCursorArchive()}
     set {_chartTitleCursor = newValue}
   }
   /// Returns true if `chartTitleCursor` has been explicitly set.
-  public var hasChartTitleCursor: Bool {return self._chartTitleCursor != nil}
+  public var hasChartTitleCursor: Bool {self._chartTitleCursor != nil}
   /// Clears the value of `chartTitleCursor`. Subsequent reads from it will return its default value.
   public mutating func clearChartTitleCursor() {self._chartTitleCursor = nil}
 
   public var galleryItemCursor: TSCK_CollaboratorCursorArchive {
-    get {return _galleryItemCursor ?? TSCK_CollaboratorCursorArchive()}
+    get {_galleryItemCursor ?? TSCK_CollaboratorCursorArchive()}
     set {_galleryItemCursor = newValue}
   }
   /// Returns true if `galleryItemCursor` has been explicitly set.
-  public var hasGalleryItemCursor: Bool {return self._galleryItemCursor != nil}
+  public var hasGalleryItemCursor: Bool {self._galleryItemCursor != nil}
   /// Clears the value of `galleryItemCursor`. Subsequent reads from it will return its default value.
   public mutating func clearGalleryItemCursor() {self._galleryItemCursor = nil}
 
@@ -1881,17 +1773,17 @@ public struct TSCK_ActivityCursorCollectionArchive: Sendable {
   fileprivate var _galleryItemCursor: TSCK_CollaboratorCursorArchive? = nil
 }
 
-public struct TSCK_ActivityCursorCollectionPersistenceWrapperArchive: Sendable {
+public nonisolated struct TSCK_ActivityCursorCollectionPersistenceWrapperArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var activityCursorCollection: TSCK_ActivityCursorCollectionArchive {
-    get {return _activityCursorCollection ?? TSCK_ActivityCursorCollectionArchive()}
+    get {_activityCursorCollection ?? TSCK_ActivityCursorCollectionArchive()}
     set {_activityCursorCollection = newValue}
   }
   /// Returns true if `activityCursorCollection` has been explicitly set.
-  public var hasActivityCursorCollection: Bool {return self._activityCursorCollection != nil}
+  public var hasActivityCursorCollection: Bool {self._activityCursorCollection != nil}
   /// Clears the value of `activityCursorCollection`. Subsequent reads from it will return its default value.
   public mutating func clearActivityCursorCollection() {self._activityCursorCollection = nil}
 
@@ -1902,7 +1794,7 @@ public struct TSCK_ActivityCursorCollectionPersistenceWrapperArchive: Sendable {
   fileprivate var _activityCursorCollection: TSCK_ActivityCursorCollectionArchive? = nil
 }
 
-public struct TSCK_ActivityNavigationInfoArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCK_ActivityNavigationInfoArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1914,35 +1806,35 @@ public struct TSCK_ActivityNavigationInfoArchive: SwiftProtobuf.ExtensibleMessag
   public var _protobuf_extensionFieldValues = SwiftProtobuf.ExtensionFieldValueSet()
 }
 
-public struct TSCK_CommentActivityNavigationInfoArchive: Sendable {
+public nonisolated struct TSCK_CommentActivityNavigationInfoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var commentID: String {
-    get {return _commentID ?? String()}
+    get {_commentID ?? String()}
     set {_commentID = newValue}
   }
   /// Returns true if `commentID` has been explicitly set.
-  public var hasCommentID: Bool {return self._commentID != nil}
+  public var hasCommentID: Bool {self._commentID != nil}
   /// Clears the value of `commentID`. Subsequent reads from it will return its default value.
   public mutating func clearCommentID() {self._commentID = nil}
 
   public var parentUuid: TSP_UUID {
-    get {return _parentUuid ?? TSP_UUID()}
+    get {_parentUuid ?? TSP_UUID()}
     set {_parentUuid = newValue}
   }
   /// Returns true if `parentUuid` has been explicitly set.
-  public var hasParentUuid: Bool {return self._parentUuid != nil}
+  public var hasParentUuid: Bool {self._parentUuid != nil}
   /// Clears the value of `parentUuid`. Subsequent reads from it will return its default value.
   public mutating func clearParentUuid() {self._parentUuid = nil}
 
   public var storageUuid: TSP_UUID {
-    get {return _storageUuid ?? TSP_UUID()}
+    get {_storageUuid ?? TSP_UUID()}
     set {_storageUuid = newValue}
   }
   /// Returns true if `storageUuid` has been explicitly set.
-  public var hasStorageUuid: Bool {return self._storageUuid != nil}
+  public var hasStorageUuid: Bool {self._storageUuid != nil}
   /// Clears the value of `storageUuid`. Subsequent reads from it will return its default value.
   public mutating func clearStorageUuid() {self._storageUuid = nil}
 
@@ -1955,7 +1847,7 @@ public struct TSCK_CommentActivityNavigationInfoArchive: Sendable {
   fileprivate var _storageUuid: TSP_UUID? = nil
 }
 
-public struct TSCK_ActivityAuthorCacheArchive: Sendable {
+public nonisolated struct TSCK_ActivityAuthorCacheArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1971,11 +1863,11 @@ public struct TSCK_ActivityAuthorCacheArchive: Sendable {
   public var authors: [TSP_Reference] = []
 
   public var lastAuditDate: TSP_Date {
-    get {return _lastAuditDate ?? TSP_Date()}
+    get {_lastAuditDate ?? TSP_Date()}
     set {_lastAuditDate = newValue}
   }
   /// Returns true if `lastAuditDate` has been explicitly set.
-  public var hasLastAuditDate: Bool {return self._lastAuditDate != nil}
+  public var hasLastAuditDate: Bool {self._lastAuditDate != nil}
   /// Clears the value of `lastAuditDate`. Subsequent reads from it will return its default value.
   public mutating func clearLastAuditDate() {self._lastAuditDate = nil}
 
@@ -1983,26 +1875,26 @@ public struct TSCK_ActivityAuthorCacheArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ShareParticipantIDCache: Sendable {
+  public nonisolated struct ShareParticipantIDCache: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var identifier: TSP_UUID {
-      get {return _identifier ?? TSP_UUID()}
+      get {_identifier ?? TSP_UUID()}
       set {_identifier = newValue}
     }
     /// Returns true if `identifier` has been explicitly set.
-    public var hasIdentifier: Bool {return self._identifier != nil}
+    public var hasIdentifier: Bool {self._identifier != nil}
     /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
     public mutating func clearIdentifier() {self._identifier = nil}
 
     public var shareParticipantID: String {
-      get {return _shareParticipantID ?? String()}
+      get {_shareParticipantID ?? String()}
       set {_shareParticipantID = newValue}
     }
     /// Returns true if `shareParticipantID` has been explicitly set.
-    public var hasShareParticipantID: Bool {return self._shareParticipantID != nil}
+    public var hasShareParticipantID: Bool {self._shareParticipantID != nil}
     /// Clears the value of `shareParticipantID`. Subsequent reads from it will return its default value.
     public mutating func clearShareParticipantID() {self._shareParticipantID = nil}
 
@@ -2014,26 +1906,26 @@ public struct TSCK_ActivityAuthorCacheArchive: Sendable {
     fileprivate var _shareParticipantID: String? = nil
   }
 
-  public struct PublicIDCache: Sendable {
+  public nonisolated struct PublicIDCache: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var identifier: TSP_UUID {
-      get {return _identifier ?? TSP_UUID()}
+      get {_identifier ?? TSP_UUID()}
       set {_identifier = newValue}
     }
     /// Returns true if `identifier` has been explicitly set.
-    public var hasIdentifier: Bool {return self._identifier != nil}
+    public var hasIdentifier: Bool {self._identifier != nil}
     /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
     public mutating func clearIdentifier() {self._identifier = nil}
 
     public var publicIdentifier: String {
-      get {return _publicIdentifier ?? String()}
+      get {_publicIdentifier ?? String()}
       set {_publicIdentifier = newValue}
     }
     /// Returns true if `publicIdentifier` has been explicitly set.
-    public var hasPublicIdentifier: Bool {return self._publicIdentifier != nil}
+    public var hasPublicIdentifier: Bool {self._publicIdentifier != nil}
     /// Clears the value of `publicIdentifier`. Subsequent reads from it will return its default value.
     public mutating func clearPublicIdentifier() {self._publicIdentifier = nil}
 
@@ -2045,26 +1937,26 @@ public struct TSCK_ActivityAuthorCacheArchive: Sendable {
     fileprivate var _publicIdentifier: String? = nil
   }
 
-  public struct IndexCache: Sendable {
+  public nonisolated struct IndexCache: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var identifier: TSP_UUID {
-      get {return _identifier ?? TSP_UUID()}
+      get {_identifier ?? TSP_UUID()}
       set {_identifier = newValue}
     }
     /// Returns true if `identifier` has been explicitly set.
-    public var hasIdentifier: Bool {return self._identifier != nil}
+    public var hasIdentifier: Bool {self._identifier != nil}
     /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
     public mutating func clearIdentifier() {self._identifier = nil}
 
     public var authorIndex: UInt64 {
-      get {return _authorIndex ?? 0}
+      get {_authorIndex ?? 0}
       set {_authorIndex = newValue}
     }
     /// Returns true if `authorIndex` has been explicitly set.
-    public var hasAuthorIndex: Bool {return self._authorIndex != nil}
+    public var hasAuthorIndex: Bool {self._authorIndex != nil}
     /// Clears the value of `authorIndex`. Subsequent reads from it will return its default value.
     public mutating func clearAuthorIndex() {self._authorIndex = nil}
 
@@ -2076,26 +1968,26 @@ public struct TSCK_ActivityAuthorCacheArchive: Sendable {
     fileprivate var _authorIndex: UInt64? = nil
   }
 
-  public struct FirstJoinCache: Sendable {
+  public nonisolated struct FirstJoinCache: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var identifier: TSP_UUID {
-      get {return _identifier ?? TSP_UUID()}
+      get {_identifier ?? TSP_UUID()}
       set {_identifier = newValue}
     }
     /// Returns true if `identifier` has been explicitly set.
-    public var hasIdentifier: Bool {return self._identifier != nil}
+    public var hasIdentifier: Bool {self._identifier != nil}
     /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
     public mutating func clearIdentifier() {self._identifier = nil}
 
     public var firstJoinDate: TSP_Date {
-      get {return _firstJoinDate ?? TSP_Date()}
+      get {_firstJoinDate ?? TSP_Date()}
       set {_firstJoinDate = newValue}
     }
     /// Returns true if `firstJoinDate` has been explicitly set.
-    public var hasFirstJoinDate: Bool {return self._firstJoinDate != nil}
+    public var hasFirstJoinDate: Bool {self._firstJoinDate != nil}
     /// Clears the value of `firstJoinDate`. Subsequent reads from it will return its default value.
     public mutating func clearFirstJoinDate() {self._firstJoinDate = nil}
 
@@ -2112,17 +2004,17 @@ public struct TSCK_ActivityAuthorCacheArchive: Sendable {
   fileprivate var _lastAuditDate: TSP_Date? = nil
 }
 
-public struct TSCK_ActivityOnlyCommandArchive: Sendable {
+public nonisolated struct TSCK_ActivityOnlyCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2133,37 +2025,37 @@ public struct TSCK_ActivityOnlyCommandArchive: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSCK_ActivityNotificationItemArchive: Sendable {
+public nonisolated struct TSCK_ActivityNotificationItemArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var type: Int32 {
-    get {return _type ?? 0}
+    get {_type ?? 0}
     set {_type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return self._type != nil}
+  public var hasType: Bool {self._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {self._type = nil}
 
   public var uniqueIdentifier: TSP_UUID {
-    get {return _uniqueIdentifier ?? TSP_UUID()}
+    get {_uniqueIdentifier ?? TSP_UUID()}
     set {_uniqueIdentifier = newValue}
   }
   /// Returns true if `uniqueIdentifier` has been explicitly set.
-  public var hasUniqueIdentifier: Bool {return self._uniqueIdentifier != nil}
+  public var hasUniqueIdentifier: Bool {self._uniqueIdentifier != nil}
   /// Clears the value of `uniqueIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearUniqueIdentifier() {self._uniqueIdentifier = nil}
 
   public var activities: [TSP_Reference] = []
 
   public var firstTimestamp: TSP_Date {
-    get {return _firstTimestamp ?? TSP_Date()}
+    get {_firstTimestamp ?? TSP_Date()}
     set {_firstTimestamp = newValue}
   }
   /// Returns true if `firstTimestamp` has been explicitly set.
-  public var hasFirstTimestamp: Bool {return self._firstTimestamp != nil}
+  public var hasFirstTimestamp: Bool {self._firstTimestamp != nil}
   /// Clears the value of `firstTimestamp`. Subsequent reads from it will return its default value.
   public mutating func clearFirstTimestamp() {self._firstTimestamp = nil}
 
@@ -2176,7 +2068,7 @@ public struct TSCK_ActivityNotificationItemArchive: Sendable {
   fileprivate var _firstTimestamp: TSP_Date? = nil
 }
 
-public struct TSCK_ActivityNotificationParticipantCacheArchive: Sendable {
+public nonisolated struct TSCK_ActivityNotificationParticipantCacheArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2184,56 +2076,56 @@ public struct TSCK_ActivityNotificationParticipantCacheArchive: Sendable {
   public var notificationItems: [TSP_Reference] = []
 
   public var lastEditNotificationItemSentDate: TSP_Date {
-    get {return _lastEditNotificationItemSentDate ?? TSP_Date()}
+    get {_lastEditNotificationItemSentDate ?? TSP_Date()}
     set {_lastEditNotificationItemSentDate = newValue}
   }
   /// Returns true if `lastEditNotificationItemSentDate` has been explicitly set.
-  public var hasLastEditNotificationItemSentDate: Bool {return self._lastEditNotificationItemSentDate != nil}
+  public var hasLastEditNotificationItemSentDate: Bool {self._lastEditNotificationItemSentDate != nil}
   /// Clears the value of `lastEditNotificationItemSentDate`. Subsequent reads from it will return its default value.
   public mutating func clearLastEditNotificationItemSentDate() {self._lastEditNotificationItemSentDate = nil}
 
   public var senderFailedToEnqueueAttempts: [TSCK_ActivityNotificationParticipantCacheArchive.UniqueIdentifierAndAttempts] = []
 
   public var privateID: String {
-    get {return _privateID ?? String()}
+    get {_privateID ?? String()}
     set {_privateID = newValue}
   }
   /// Returns true if `privateID` has been explicitly set.
-  public var hasPrivateID: Bool {return self._privateID != nil}
+  public var hasPrivateID: Bool {self._privateID != nil}
   /// Clears the value of `privateID`. Subsequent reads from it will return its default value.
   public mutating func clearPrivateID() {self._privateID = nil}
 
   public var lastCommentNotificationItemSentDate: TSP_Date {
-    get {return _lastCommentNotificationItemSentDate ?? TSP_Date()}
+    get {_lastCommentNotificationItemSentDate ?? TSP_Date()}
     set {_lastCommentNotificationItemSentDate = newValue}
   }
   /// Returns true if `lastCommentNotificationItemSentDate` has been explicitly set.
-  public var hasLastCommentNotificationItemSentDate: Bool {return self._lastCommentNotificationItemSentDate != nil}
+  public var hasLastCommentNotificationItemSentDate: Bool {self._lastCommentNotificationItemSentDate != nil}
   /// Clears the value of `lastCommentNotificationItemSentDate`. Subsequent reads from it will return its default value.
   public mutating func clearLastCommentNotificationItemSentDate() {self._lastCommentNotificationItemSentDate = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct UniqueIdentifierAndAttempts: Sendable {
+  public nonisolated struct UniqueIdentifierAndAttempts: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var uniqueIdentifier: TSP_UUID {
-      get {return _uniqueIdentifier ?? TSP_UUID()}
+      get {_uniqueIdentifier ?? TSP_UUID()}
       set {_uniqueIdentifier = newValue}
     }
     /// Returns true if `uniqueIdentifier` has been explicitly set.
-    public var hasUniqueIdentifier: Bool {return self._uniqueIdentifier != nil}
+    public var hasUniqueIdentifier: Bool {self._uniqueIdentifier != nil}
     /// Clears the value of `uniqueIdentifier`. Subsequent reads from it will return its default value.
     public mutating func clearUniqueIdentifier() {self._uniqueIdentifier = nil}
 
     public var attempts: UInt32 {
-      get {return _attempts ?? 0}
+      get {_attempts ?? 0}
       set {_attempts = newValue}
     }
     /// Returns true if `attempts` has been explicitly set.
-    public var hasAttempts: Bool {return self._attempts != nil}
+    public var hasAttempts: Bool {self._attempts != nil}
     /// Clears the value of `attempts`. Subsequent reads from it will return its default value.
     public mutating func clearAttempts() {self._attempts = nil}
 
@@ -2252,7 +2144,7 @@ public struct TSCK_ActivityNotificationParticipantCacheArchive: Sendable {
   fileprivate var _lastCommentNotificationItemSentDate: TSP_Date? = nil
 }
 
-public struct TSCK_ActivityNotificationQueueArchive: Sendable {
+public nonisolated struct TSCK_ActivityNotificationQueueArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2268,100 +2160,84 @@ public struct TSCK_ActivityNotificationQueueArchive: Sendable {
   public init() {}
 }
 
-public struct TSCK_ActivityStreamTransformationStateArchive: Sendable {
+public nonisolated struct TSCK_ActivityStreamTransformationStateArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var nextActivityToTransformIndex: Int32 {
-    get {return _nextActivityToTransformIndex ?? 0}
+    get {_nextActivityToTransformIndex ?? 0}
     set {_nextActivityToTransformIndex = newValue}
   }
   /// Returns true if `nextActivityToTransformIndex` has been explicitly set.
-  public var hasNextActivityToTransformIndex: Bool {return self._nextActivityToTransformIndex != nil}
+  public var hasNextActivityToTransformIndex: Bool {self._nextActivityToTransformIndex != nil}
   /// Clears the value of `nextActivityToTransformIndex`. Subsequent reads from it will return its default value.
   public mutating func clearNextActivityToTransformIndex() {self._nextActivityToTransformIndex = nil}
 
   public var oldestRevisionSequenceAfterTransformed: Int32 {
-    get {return _oldestRevisionSequenceAfterTransformed ?? 0}
+    get {_oldestRevisionSequenceAfterTransformed ?? 0}
     set {_oldestRevisionSequenceAfterTransformed = newValue}
   }
   /// Returns true if `oldestRevisionSequenceAfterTransformed` has been explicitly set.
-  public var hasOldestRevisionSequenceAfterTransformed: Bool {return self._oldestRevisionSequenceAfterTransformed != nil}
+  public var hasOldestRevisionSequenceAfterTransformed: Bool {self._oldestRevisionSequenceAfterTransformed != nil}
   /// Clears the value of `oldestRevisionSequenceAfterTransformed`. Subsequent reads from it will return its default value.
   public mutating func clearOldestRevisionSequenceAfterTransformed() {self._oldestRevisionSequenceAfterTransformed = nil}
 
   public var lastActivityCoalescedDate: TSP_Date {
-    get {return _lastActivityCoalescedDate ?? TSP_Date()}
+    get {_lastActivityCoalescedDate ?? TSP_Date()}
     set {_lastActivityCoalescedDate = newValue}
   }
   /// Returns true if `lastActivityCoalescedDate` has been explicitly set.
-  public var hasLastActivityCoalescedDate: Bool {return self._lastActivityCoalescedDate != nil}
+  public var hasLastActivityCoalescedDate: Bool {self._lastActivityCoalescedDate != nil}
   /// Clears the value of `lastActivityCoalescedDate`. Subsequent reads from it will return its default value.
   public mutating func clearLastActivityCoalescedDate() {self._lastActivityCoalescedDate = nil}
 
   public var actionType: TSCK_ActivityStreamTransformationStateArchive.ActionType {
-    get {return _actionType ?? .trasnform}
+    get {_actionType ?? .trasnform}
     set {_actionType = newValue}
   }
   /// Returns true if `actionType` has been explicitly set.
-  public var hasActionType: Bool {return self._actionType != nil}
+  public var hasActionType: Bool {self._actionType != nil}
   /// Clears the value of `actionType`. Subsequent reads from it will return its default value.
   public mutating func clearActionType() {self._actionType = nil}
 
   public var transformToDocumentRevisionSequence: Int32 {
-    get {return _transformToDocumentRevisionSequence ?? 0}
+    get {_transformToDocumentRevisionSequence ?? 0}
     set {_transformToDocumentRevisionSequence = newValue}
   }
   /// Returns true if `transformToDocumentRevisionSequence` has been explicitly set.
-  public var hasTransformToDocumentRevisionSequence: Bool {return self._transformToDocumentRevisionSequence != nil}
+  public var hasTransformToDocumentRevisionSequence: Bool {self._transformToDocumentRevisionSequence != nil}
   /// Clears the value of `transformToDocumentRevisionSequence`. Subsequent reads from it will return its default value.
   public mutating func clearTransformToDocumentRevisionSequence() {self._transformToDocumentRevisionSequence = nil}
 
   public var transformToDocumentRevisionIdentifier: [UInt64] = []
 
   public var timestampOfLastActivityWhenLastActivityCoalescing: Double {
-    get {return _timestampOfLastActivityWhenLastActivityCoalescing ?? 0}
+    get {_timestampOfLastActivityWhenLastActivityCoalescing ?? 0}
     set {_timestampOfLastActivityWhenLastActivityCoalescing = newValue}
   }
   /// Returns true if `timestampOfLastActivityWhenLastActivityCoalescing` has been explicitly set.
-  public var hasTimestampOfLastActivityWhenLastActivityCoalescing: Bool {return self._timestampOfLastActivityWhenLastActivityCoalescing != nil}
+  public var hasTimestampOfLastActivityWhenLastActivityCoalescing: Bool {self._timestampOfLastActivityWhenLastActivityCoalescing != nil}
   /// Clears the value of `timestampOfLastActivityWhenLastActivityCoalescing`. Subsequent reads from it will return its default value.
   public mutating func clearTimestampOfLastActivityWhenLastActivityCoalescing() {self._timestampOfLastActivityWhenLastActivityCoalescing = nil}
 
   public var preservingRevisionSequenceOrder: Bool {
-    get {return _preservingRevisionSequenceOrder ?? false}
+    get {_preservingRevisionSequenceOrder ?? false}
     set {_preservingRevisionSequenceOrder = newValue}
   }
   /// Returns true if `preservingRevisionSequenceOrder` has been explicitly set.
-  public var hasPreservingRevisionSequenceOrder: Bool {return self._preservingRevisionSequenceOrder != nil}
+  public var hasPreservingRevisionSequenceOrder: Bool {self._preservingRevisionSequenceOrder != nil}
   /// Clears the value of `preservingRevisionSequenceOrder`. Subsequent reads from it will return its default value.
   public mutating func clearPreservingRevisionSequenceOrder() {self._preservingRevisionSequenceOrder = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ActionType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case trasnform // = 0
-    case coalesce // = 1
+  public nonisolated enum ActionType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case trasnform = 0
+    case coalesce = 1
 
     public init() {
       self = .trasnform
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .trasnform
-      case 1: self = .coalesce
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .trasnform: return 0
-      case .coalesce: return 1
-      }
     }
 
   }
@@ -2377,7 +2253,7 @@ public struct TSCK_ActivityStreamTransformationStateArchive: Sendable {
   fileprivate var _preservingRevisionSequenceOrder: Bool? = nil
 }
 
-public struct TSCK_ActivityStreamActivityCounterArchive: Sendable {
+public nonisolated struct TSCK_ActivityStreamActivityCounterArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2388,26 +2264,26 @@ public struct TSCK_ActivityStreamActivityCounterArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ActionTypeCounter: Sendable {
+  public nonisolated struct ActionTypeCounter: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var actionType: Int32 {
-      get {return _actionType ?? 0}
+      get {_actionType ?? 0}
       set {_actionType = newValue}
     }
     /// Returns true if `actionType` has been explicitly set.
-    public var hasActionType: Bool {return self._actionType != nil}
+    public var hasActionType: Bool {self._actionType != nil}
     /// Clears the value of `actionType`. Subsequent reads from it will return its default value.
     public mutating func clearActionType() {self._actionType = nil}
 
     public var count: UInt32 {
-      get {return _count ?? 0}
+      get {_count ?? 0}
       set {_count = newValue}
     }
     /// Returns true if `count` has been explicitly set.
-    public var hasCount: Bool {return self._count != nil}
+    public var hasCount: Bool {self._count != nil}
     /// Clears the value of `count`. Subsequent reads from it will return its default value.
     public mutating func clearCount() {self._count = nil}
 
@@ -2419,26 +2295,26 @@ public struct TSCK_ActivityStreamActivityCounterArchive: Sendable {
     fileprivate var _count: UInt32? = nil
   }
 
-  public struct CursorTypeCounter: Sendable {
+  public nonisolated struct CursorTypeCounter: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var cursorType: Int32 {
-      get {return _cursorType ?? 0}
+      get {_cursorType ?? 0}
       set {_cursorType = newValue}
     }
     /// Returns true if `cursorType` has been explicitly set.
-    public var hasCursorType: Bool {return self._cursorType != nil}
+    public var hasCursorType: Bool {self._cursorType != nil}
     /// Clears the value of `cursorType`. Subsequent reads from it will return its default value.
     public mutating func clearCursorType() {self._cursorType = nil}
 
     public var count: UInt32 {
-      get {return _count ?? 0}
+      get {_count ?? 0}
       set {_count = newValue}
     }
     /// Returns true if `count` has been explicitly set.
-    public var hasCount: Bool {return self._count != nil}
+    public var hasCount: Bool {self._count != nil}
     /// Clears the value of `count`. Subsequent reads from it will return its default value.
     public mutating func clearCount() {self._count = nil}
 
@@ -2453,7 +2329,7 @@ public struct TSCK_ActivityStreamActivityCounterArchive: Sendable {
   public init() {}
 }
 
-public struct TSCK_ActivityStreamRemovedAuthorAuditorPendingStateArchive: Sendable {
+public nonisolated struct TSCK_ActivityStreamRemovedAuthorAuditorPendingStateArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2464,26 +2340,26 @@ public struct TSCK_ActivityStreamRemovedAuthorAuditorPendingStateArchive: Sendab
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct DateToAuditAndType: Sendable {
+  public nonisolated struct DateToAuditAndType: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var dateToAudit: TSP_Date {
-      get {return _dateToAudit ?? TSP_Date()}
+      get {_dateToAudit ?? TSP_Date()}
       set {_dateToAudit = newValue}
     }
     /// Returns true if `dateToAudit` has been explicitly set.
-    public var hasDateToAudit: Bool {return self._dateToAudit != nil}
+    public var hasDateToAudit: Bool {self._dateToAudit != nil}
     /// Clears the value of `dateToAudit`. Subsequent reads from it will return its default value.
     public mutating func clearDateToAudit() {self._dateToAudit = nil}
 
     public var type: Int32 {
-      get {return _type ?? 0}
+      get {_type ?? 0}
       set {_type = newValue}
     }
     /// Returns true if `type` has been explicitly set.
-    public var hasType: Bool {return self._type != nil}
+    public var hasType: Bool {self._type != nil}
     /// Clears the value of `type`. Subsequent reads from it will return its default value.
     public mutating func clearType() {self._type = nil}
 
@@ -2507,7 +2383,7 @@ public struct TSCK_ActivityStreamRemovedAuthorAuditorPendingStateArchive: Sendab
 // declaration. To avoid naming collisions, the names are prefixed with the name of
 // the scope where the extend directive occurs.
 
-extension TSCK_ActivityNavigationInfoArchive {
+nonisolated extension TSCK_ActivityNavigationInfoArchive {
 
   public var TSCK_CommentActivityNavigationInfoArchive_commentActivityNavigationInfo: TSCK_CommentActivityNavigationInfoArchive {
     get {return getExtensionValue(ext: TSCK_CommentActivityNavigationInfoArchive.Extensions.comment_activity_navigation_info) ?? TSCK_CommentActivityNavigationInfoArchive()}
@@ -2532,7 +2408,7 @@ extension TSCK_ActivityNavigationInfoArchive {
 /// this .proto file. It can be used any place an `SwiftProtobuf.ExtensionMap` is needed
 /// in parsing, or it can be combined with other `SwiftProtobuf.SimpleExtensionMap`s to create
 /// a larger `SwiftProtobuf.SimpleExtensionMap`.
-public let TSCK_Tsckarchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
+public nonisolated let TSCK_Tsckarchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
   TSCK_CommentActivityNavigationInfoArchive.Extensions.comment_activity_navigation_info
 ]
 
@@ -2540,7 +2416,7 @@ public let TSCK_Tsckarchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
 // constructing a `SimpleExtensionMap`, otherwise, use the above _Extension Properties_
 // accessors for the extension fields on the messages directly.
 
-extension TSCK_CommentActivityNavigationInfoArchive {
+nonisolated extension TSCK_CommentActivityNavigationInfoArchive {
   public enum Extensions {
     public static let comment_activity_navigation_info = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCK_CommentActivityNavigationInfoArchive>, TSCK_ActivityNavigationInfoArchive>(
       _protobuf_fieldNumber: 100,
@@ -2551,13 +2427,11 @@ extension TSCK_CommentActivityNavigationInfoArchive {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSCK"
+fileprivate nonisolated let _protobuf_package = "TSCK"
 
-extension TSCK_CollaborationCommandHistoryArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationCommandHistoryArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaborationCommandHistoryArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array\0")
 
   public var isInitialized: Bool {
     if self._largeArray == nil {return false}
@@ -2595,11 +2469,9 @@ extension TSCK_CollaborationCommandHistoryArray: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSCK_CollaborationCommandHistoryArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationCommandHistoryArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaborationCommandHistoryArraySegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_object_array_segment"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_object_array_segment\0")
 
   public var isInitialized: Bool {
     if self._largeObjectArraySegment == nil {return false}
@@ -2637,13 +2509,9 @@ extension TSCK_CollaborationCommandHistoryArraySegment: SwiftProtobuf.Message, S
   }
 }
 
-extension TSCK_CollaborationCommandHistory: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationCommandHistory: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaborationCommandHistory"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "local_identifier"),
-    2: .standard(proto: "undo_items"),
-    3: .standard(proto: "redo_items"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}local_identifier\0\u{3}undo_items\0\u{3}redo_items\0")
 
   public var isInitialized: Bool {
     if let v = self._localIdentifier, !v.isInitialized {return false}
@@ -2692,12 +2560,9 @@ extension TSCK_CollaborationCommandHistory: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCK_CollaborationCommandHistory.ItemList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationCommandHistory.ItemList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_CollaborationCommandHistory.protoMessageName + ".ItemList"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "items_array"),
-    2: .standard(proto: "transformer_entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}items_array\0\u{3}transformer_entries\0")
 
   public var isInitialized: Bool {
     if let v = self._itemsArray, !v.isInitialized {return false}
@@ -2740,15 +2605,9 @@ extension TSCK_CollaborationCommandHistory.ItemList: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSCK_CollaborationCommandHistoryItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationCommandHistoryItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaborationCommandHistoryItem"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "command"),
-    2: .standard(proto: "action_string"),
-    3: .same(proto: "behavior"),
-    4: .standard(proto: "coalescing_group"),
-    5: .standard(proto: "revision_sequence"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}command\0\u{3}action_string\0\u{1}behavior\0\u{3}coalescing_group\0\u{3}revision_sequence\0")
 
   public var isInitialized: Bool {
     if let v = self._command, !v.isInitialized {return false}
@@ -2807,12 +2666,9 @@ extension TSCK_CollaborationCommandHistoryItem: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCK_CollaborationCommandHistoryCoalescingGroup: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationCommandHistoryCoalescingGroup: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaborationCommandHistoryCoalescingGroup"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "nodes"),
-    2: .standard(proto: "did_coalesce_all_commands"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}nodes\0\u{3}did_coalesce_all_commands\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.nodes) {return false}
@@ -2854,11 +2710,9 @@ extension TSCK_CollaborationCommandHistoryCoalescingGroup: SwiftProtobuf.Message
   }
 }
 
-extension TSCK_CollaborationCommandHistoryCoalescingGroupNode: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationCommandHistoryCoalescingGroupNode: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaborationCommandHistoryCoalescingGroupNode"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "command"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}command\0")
 
   public var isInitialized: Bool {
     if let v = self._command, !v.isInitialized {return false}
@@ -2895,12 +2749,9 @@ extension TSCK_CollaborationCommandHistoryCoalescingGroupNode: SwiftProtobuf.Mes
   }
 }
 
-extension TSCK_CollaborationCommandHistoryOriginatingCommandAcknowledgementObserver: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationCommandHistoryOriginatingCommandAcknowledgementObserver: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaborationCommandHistoryOriginatingCommandAcknowledgementObserver"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "coalescing_group"),
-    2: .same(proto: "node"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}coalescing_group\0\u{1}node\0")
 
   public var isInitialized: Bool {
     if let v = self._coalescingGroup, !v.isInitialized {return false}
@@ -2943,12 +2794,9 @@ extension TSCK_CollaborationCommandHistoryOriginatingCommandAcknowledgementObser
   }
 }
 
-extension TSCK_DocumentSupportCollaborationState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_DocumentSupportCollaborationState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DocumentSupportCollaborationState"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "collaboration_command_history"),
-    2: .standard(proto: "collaboration_session_state"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}collaboration_command_history\0\u{3}collaboration_session_state\0")
 
   public var isInitialized: Bool {
     if let v = self._collaborationCommandHistory, !v.isInitialized {return false}
@@ -2991,14 +2839,9 @@ extension TSCK_DocumentSupportCollaborationState: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCK_SetAnnotationAuthorColorCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_SetAnnotationAuthorColorCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SetAnnotationAuthorColorCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "annotation_author"),
-    3: .same(proto: "color"),
-    4: .standard(proto: "old_color"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}annotation_author\0\u{1}color\0\u{3}old_color\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -3006,15 +2849,11 @@ extension TSCK_SetAnnotationAuthorColorCommandArchive: SwiftProtobuf.Message, Sw
     var _color: TSP_Color? = nil
     var _oldColor: TSP_Color? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3102,14 +2941,9 @@ extension TSCK_SetAnnotationAuthorColorCommandArchive: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSCK_SetActivityAuthorShareParticipantIDCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_SetActivityAuthorShareParticipantIDCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SetActivityAuthorShareParticipantIDCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "activity_author"),
-    3: .standard(proto: "share_participant_id"),
-    4: .standard(proto: "old_share_participant_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}activity_author\0\u{3}share_participant_id\0\u{3}old_share_participant_id\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3163,11 +2997,9 @@ extension TSCK_SetActivityAuthorShareParticipantIDCommandArchive: SwiftProtobuf.
   }
 }
 
-extension TSCK_IdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_IdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".IdOperationArgs"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "id_path"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}id_path\0")
 
   public var isInitialized: Bool {
     if self._idPath == nil {return false}
@@ -3205,12 +3037,9 @@ extension TSCK_IdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSCK_AddIdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_AddIdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AddIdOperationArgs"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}index\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3254,12 +3083,9 @@ extension TSCK_AddIdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSCK_RemoveIdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_RemoveIdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RemoveIdOperationArgs"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}index\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3303,13 +3129,9 @@ extension TSCK_RemoveIdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCK_RearrangeIdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_RearrangeIdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RearrangeIdOperationArgs"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "from_index"),
-    3: .standard(proto: "to_index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}from_index\0\u{3}to_index\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3359,13 +3181,9 @@ extension TSCK_RearrangeIdOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCK_IdPlacementOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_IdPlacementOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".IdPlacementOperationArgs"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "from_index"),
-    3: .standard(proto: "to_index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}from_index\0\u{3}to_index\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3415,14 +3233,9 @@ extension TSCK_IdPlacementOperationArgs: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCK_ActivityCommitCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityCommitCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityCommitCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "activity"),
-    3: .same(proto: "author"),
-    4: .standard(proto: "was_activity_committed"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}activity\0\u{1}author\0\u{3}was_activity_committed\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -3430,15 +3243,11 @@ extension TSCK_ActivityCommitCommandArchive: SwiftProtobuf.Message, SwiftProtobu
     var _author: TSP_Reference? = nil
     var _wasActivityCommitted: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3525,11 +3334,9 @@ extension TSCK_ActivityCommitCommandArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCK_ExecuteTestBetweenRollbackAndReapplyCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ExecuteTestBetweenRollbackAndReapplyCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ExecuteTestBetweenRollbackAndReapplyCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3567,12 +3374,9 @@ extension TSCK_ExecuteTestBetweenRollbackAndReapplyCommandArchive: SwiftProtobuf
   }
 }
 
-extension TSCK_CreateLocalStorageSnapshotCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CreateLocalStorageSnapshotCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CreateLocalStorageSnapshotCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "snapshot_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}snapshot_id\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3615,11 +3419,9 @@ extension TSCK_CreateLocalStorageSnapshotCommandArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCK_BlockDiffsAtCurrentRevisionCommand: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_BlockDiffsAtCurrentRevisionCommand: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".BlockDiffsAtCurrentRevisionCommand"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3657,13 +3459,9 @@ extension TSCK_BlockDiffsAtCurrentRevisionCommand: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSCK_TransformerEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_TransformerEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TransformerEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "sequence"),
-    2: .standard(proto: "creation_time"),
-    3: .same(proto: "transformer"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}sequence\0\u{3}creation_time\0\u{1}transformer\0")
 
   public var isInitialized: Bool {
     if self._sequence == nil {return false}
@@ -3713,15 +3511,9 @@ extension TSCK_TransformerEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSCK_CollaborationAppliedCommandDocumentRevisionMapping: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationAppliedCommandDocumentRevisionMapping: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaborationAppliedCommandDocumentRevisionMapping"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "command"),
-    2: .standard(proto: "document_revision_identifier"),
-    3: .standard(proto: "document_revision_sequence"),
-    4: .standard(proto: "remaining_command_operations"),
-    5: .same(proto: "timestamp"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}command\0\u{3}document_revision_identifier\0\u{3}document_revision_sequence\0\u{3}remaining_command_operations\0\u{1}timestamp\0")
 
   public var isInitialized: Bool {
     if let v = self._command, !v.isInitialized {return false}
@@ -3780,30 +3572,9 @@ extension TSCK_CollaborationAppliedCommandDocumentRevisionMapping: SwiftProtobuf
   }
 }
 
-extension TSCK_CollaborationDocumentSessionState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationDocumentSessionState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaborationDocumentSessionState"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "collaborator_ids"),
-    3: .standard(proto: "rsvp_command_queue_items"),
-    4: .standard(proto: "collaborator_cursor_transformer_entries"),
-    5: .standard(proto: "acknowledged_commands_pending_resume_process_diffs"),
-    6: .standard(proto: "unprocessed_commands_pending_resume_process_diffs"),
-    7: .standard(proto: "command_acknowledgement_observer_entries"),
-    8: .standard(proto: "transformer_from_unprocessed_command_operations_entries"),
-    10: .standard(proto: "mailbox_request_document_revision_sequence"),
-    11: .standard(proto: "mailbox_request_document_revision_identifier"),
-    12: .standard(proto: "last_send_pending_command_queue_item_was_moved_from_rsvp_command_queue"),
-    13: .standard(proto: "last_command_send_marker_sequence"),
-    14: .standard(proto: "last_command_send_marker_identifier"),
-    15: .standard(proto: "skipped_acknowledged_commands_pending_resume_process_diffs"),
-    16: .standard(proto: "last_too_old_command_identifier"),
-    17: .standard(proto: "unprocessed_operation_entries_pending_resume_process_diffs"),
-    18: .standard(proto: "send_pending_command_queue"),
-    19: .standard(proto: "count_of_send_pending_command_queue_items_moved_from_rsvp_queue"),
-    20: .standard(proto: "last_enqueued_document_load_command_identifier"),
-    21: .standard(proto: "applied_command_document_revision_mappings_to_notify_pending_resume_process_diffs"),
-    22: .standard(proto: "count_of_command_queue_items_in_last_outgoing_command_group"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}collaborator_ids\0\u{4}\u{2}rsvp_command_queue_items\0\u{3}collaborator_cursor_transformer_entries\0\u{3}acknowledged_commands_pending_resume_process_diffs\0\u{3}unprocessed_commands_pending_resume_process_diffs\0\u{3}command_acknowledgement_observer_entries\0\u{3}transformer_from_unprocessed_command_operations_entries\0\u{4}\u{2}mailbox_request_document_revision_sequence\0\u{3}mailbox_request_document_revision_identifier\0\u{3}last_send_pending_command_queue_item_was_moved_from_rsvp_command_queue\0\u{3}last_command_send_marker_sequence\0\u{3}last_command_send_marker_identifier\0\u{3}skipped_acknowledged_commands_pending_resume_process_diffs\0\u{3}last_too_old_command_identifier\0\u{3}unprocessed_operation_entries_pending_resume_process_diffs\0\u{3}send_pending_command_queue\0\u{3}count_of_send_pending_command_queue_items_moved_from_rsvp_queue\0\u{3}last_enqueued_document_load_command_identifier\0\u{3}applied_command_document_revision_mappings_to_notify_pending_resume_process_diffs\0\u{3}count_of_command_queue_items_in_last_outgoing_command_group\0")
 
   fileprivate class _StorageClass {
     var _collaboratorIds: [String] = []
@@ -3827,15 +3598,11 @@ extension TSCK_CollaborationDocumentSessionState: SwiftProtobuf.Message, SwiftPr
     var _appliedCommandDocumentRevisionMappingsToNotifyPendingResumeProcessDiffs: [TSCK_CollaborationAppliedCommandDocumentRevisionMapping] = []
     var _countOfCommandQueueItemsInLastOutgoingCommandGroup: UInt64? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4028,12 +3795,9 @@ extension TSCK_CollaborationDocumentSessionState: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCK_CollaborationDocumentSessionState.AcknowledgementObserverEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaborationDocumentSessionState.AcknowledgementObserverEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_CollaborationDocumentSessionState.protoMessageName + ".AcknowledgementObserverEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "command_identifier"),
-    2: .standard(proto: "acknowledgement_observers"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}command_identifier\0\u{3}acknowledgement_observers\0")
 
   public var isInitialized: Bool {
     if self._commandIdentifier == nil {return false}
@@ -4077,11 +3841,9 @@ extension TSCK_CollaborationDocumentSessionState.AcknowledgementObserverEntry: S
   }
 }
 
-extension TSCK_OperationStorageEntryArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_OperationStorageEntryArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OperationStorageEntryArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array\0")
 
   public var isInitialized: Bool {
     if let v = self._largeArray, !v.isInitialized {return false}
@@ -4118,15 +3880,9 @@ extension TSCK_OperationStorageEntryArray: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCK_OperationStorageEntryArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_OperationStorageEntryArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OperationStorageEntryArraySegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array_segment"),
-    2: .same(proto: "elements"),
-    3: .standard(proto: "last_document_revision_sequence_before_segment"),
-    4: .standard(proto: "last_document_revision_sequence"),
-    5: .standard(proto: "segment_first_entry_creation_time"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array_segment\0\u{1}elements\0\u{3}last_document_revision_sequence_before_segment\0\u{3}last_document_revision_sequence\0\u{3}segment_first_entry_creation_time\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -4178,19 +3934,9 @@ extension TSCK_OperationStorageEntryArraySegment: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCK_OperationStorage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_OperationStorage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OperationStorage"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "entries"),
-    2: .standard(proto: "operation_count"),
-    3: .standard(proto: "last_document_revision_sequence"),
-    4: .standard(proto: "last_document_revision_identifier"),
-    5: .standard(proto: "last_unskippable_document_revision_before_entries_sequence"),
-    6: .standard(proto: "last_unskippable_document_revision_before_entries_identifier"),
-    7: .standard(proto: "last_unskippable_document_revision_in_entries_sequence"),
-    8: .standard(proto: "last_unskippable_document_revision_in_entries_identifier"),
-    9: .standard(proto: "days_with_an_entry"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}entries\0\u{3}operation_count\0\u{3}last_document_revision_sequence\0\u{3}last_document_revision_identifier\0\u{3}last_unskippable_document_revision_before_entries_sequence\0\u{3}last_unskippable_document_revision_before_entries_identifier\0\u{3}last_unskippable_document_revision_in_entries_sequence\0\u{3}last_unskippable_document_revision_in_entries_identifier\0\u{3}days_with_an_entry\0")
 
   public var isInitialized: Bool {
     if self._entries == nil {return false}
@@ -4270,11 +4016,9 @@ extension TSCK_OperationStorage: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSCK_OutgoingCommandQueue: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_OutgoingCommandQueue: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OutgoingCommandQueue"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_object_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_object_array\0")
 
   public var isInitialized: Bool {
     if let v = self._largeObjectArray, !v.isInitialized {return false}
@@ -4311,11 +4055,9 @@ extension TSCK_OutgoingCommandQueue: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSCK_OutgoingCommandQueueSegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_OutgoingCommandQueueSegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OutgoingCommandQueueSegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_object_array_segment"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_object_array_segment\0")
 
   public var isInitialized: Bool {
     if let v = self._largeObjectArraySegment, !v.isInitialized {return false}
@@ -4352,16 +4094,9 @@ extension TSCK_OutgoingCommandQueueSegment: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCK_CommandAssetChunkArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CommandAssetChunkArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandAssetChunkArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "digest"),
-    3: .standard(proto: "asset_chunk"),
-    4: .standard(proto: "asset_chunk_length"),
-    5: .standard(proto: "resume_position"),
-    6: .standard(proto: "materialized_length"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}digest\0\u{3}asset_chunk\0\u{3}asset_chunk_length\0\u{3}resume_position\0\u{3}materialized_length\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4427,12 +4162,9 @@ extension TSCK_CommandAssetChunkArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCK_AssetUploadStatusCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_AssetUploadStatusCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AssetUploadStatusCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "info_list"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}info_list\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4475,12 +4207,9 @@ extension TSCK_AssetUploadStatusCommandArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCK_AssetUploadStatusCommandArchive.AssetUploadStatusInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_AssetUploadStatusCommandArchive.AssetUploadStatusInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_AssetUploadStatusCommandArchive.protoMessageName + ".AssetUploadStatusInfo"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "digest"),
-    2: .standard(proto: "upload_status"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}digest\0\u{3}upload_status\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -4517,12 +4246,9 @@ extension TSCK_AssetUploadStatusCommandArchive.AssetUploadStatusInfo: SwiftProto
   }
 }
 
-extension TSCK_AssetUnmaterializedOnServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_AssetUnmaterializedOnServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AssetUnmaterializedOnServerCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "digest_list"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}digest_list\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4565,11 +4291,9 @@ extension TSCK_AssetUnmaterializedOnServerCommandArchive: SwiftProtobuf.Message,
   }
 }
 
-extension TSCK_CollaboratorCursorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CollaboratorCursorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaboratorCursorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "id_path"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}id_path\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -4611,17 +4335,9 @@ extension TSCK_CollaboratorCursorArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSCK_ActivityStreamArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityStreamArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityStreamArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "acknowledged_activity_array"),
-    2: .standard(proto: "unacknowledged_local_activity_array"),
-    3: .standard(proto: "author_cache"),
-    5: .standard(proto: "unacknowledged_remote_activity_array"),
-    6: .standard(proto: "did_upgrade_comments_to_activities"),
-    15: .standard(proto: "activity_stream_transformation_state"),
-    16: .standard(proto: "activity_counter"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}acknowledged_activity_array\0\u{3}unacknowledged_local_activity_array\0\u{3}author_cache\0\u{4}\u{2}unacknowledged_remote_activity_array\0\u{3}did_upgrade_comments_to_activities\0\u{4}\u{9}activity_stream_transformation_state\0\u{3}activity_counter\0")
 
   fileprivate class _StorageClass {
     var _acknowledgedActivityArray: TSP_Reference? = nil
@@ -4632,15 +4348,11 @@ extension TSCK_ActivityStreamArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _activityStreamTransformationState: TSCK_ActivityStreamTransformationStateArchive? = nil
     var _activityCounter: TSCK_ActivityStreamActivityCounterArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4746,11 +4458,9 @@ extension TSCK_ActivityStreamArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCK_ActivityStreamActivityArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityStreamActivityArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityStreamActivityArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array\0")
 
   public var isInitialized: Bool {
     if let v = self._largeArray, !v.isInitialized {return false}
@@ -4787,11 +4497,9 @@ extension TSCK_ActivityStreamActivityArray: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCK_ActivityStreamActivityArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityStreamActivityArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityStreamActivityArraySegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array_segment"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array_segment\0")
 
   public var isInitialized: Bool {
     if let v = self._largeArraySegment, !v.isInitialized {return false}
@@ -4828,22 +4536,9 @@ extension TSCK_ActivityStreamActivityArraySegment: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSCK_ActivityArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cursor_collection_persistence_wrappers"),
-    2: .standard(proto: "author_identifier"),
-    3: .standard(proto: "nondirectional_action_type"),
-    4: .same(proto: "direction"),
-    5: .standard(proto: "should_send_notification"),
-    6: .same(proto: "timestamp"),
-    7: .standard(proto: "revision_sequence"),
-    8: .standard(proto: "additional_navigation_info"),
-    9: .standard(proto: "did_prepare_serialized_string_on_server"),
-    10: .standard(proto: "oldest_revision_sequence_of_next_activities"),
-    11: .standard(proto: "action_sub_type"),
-    12: .standard(proto: "min_updatable_version"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cursor_collection_persistence_wrappers\0\u{3}author_identifier\0\u{3}nondirectional_action_type\0\u{1}direction\0\u{3}should_send_notification\0\u{1}timestamp\0\u{3}revision_sequence\0\u{3}additional_navigation_info\0\u{3}did_prepare_serialized_string_on_server\0\u{3}oldest_revision_sequence_of_next_activities\0\u{3}action_sub_type\0\u{3}min_updatable_version\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.cursorCollectionPersistenceWrappers) {return false}
@@ -4938,15 +4633,9 @@ extension TSCK_ActivityArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSCK_ActivityAuthorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityAuthorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityAuthorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .same(proto: "color"),
-    3: .standard(proto: "public_ids"),
-    4: .standard(proto: "is_public_author"),
-    5: .standard(proto: "share_participant_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{1}color\0\u{3}public_ids\0\u{3}is_public_author\0\u{3}share_participant_id\0")
 
   public var isInitialized: Bool {
     if let v = self._color, !v.isInitialized {return false}
@@ -5003,15 +4692,9 @@ extension TSCK_ActivityAuthorArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCK_CommandActivityBehaviorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CommandActivityBehaviorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandActivityBehaviorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "selection_path_storages"),
-    2: .standard(proto: "action_type"),
-    3: .standard(proto: "should_send_notification"),
-    4: .standard(proto: "additional_navigation_info"),
-    5: .standard(proto: "action_sub_type"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}selection_path_storages\0\u{3}action_type\0\u{3}should_send_notification\0\u{3}additional_navigation_info\0\u{3}action_sub_type\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.selectionPathStorages) {return false}
@@ -5069,68 +4752,17 @@ extension TSCK_CommandActivityBehaviorArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCK_CommandActivityBehaviorArchive.ActionType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "Unknown"),
-    1: .same(proto: "FirstJoin"),
-    2: .same(proto: "Add"),
-    3: .same(proto: "Modify"),
-    4: .same(proto: "Comment"),
-    5: .same(proto: "Reply"),
-    6: .same(proto: "Paste"),
-    7: .same(proto: "Password"),
-    8: .same(proto: "Restore"),
-    9: .same(proto: "Remove"),
-    10: .same(proto: "EditText"),
-    11: .same(proto: "Group"),
-    12: .same(proto: "Ungroup"),
-    13: .same(proto: "Replace"),
-  ]
+nonisolated extension TSCK_CommandActivityBehaviorArchive.ActionType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0Unknown\0\u{1}FirstJoin\0\u{1}Add\0\u{1}Modify\0\u{1}Comment\0\u{1}Reply\0\u{1}Paste\0\u{1}Password\0\u{1}Restore\0\u{1}Remove\0\u{1}EditText\0\u{1}Group\0\u{1}Ungroup\0\u{1}Replace\0")
 }
 
-extension TSCK_CommandActivityBehaviorArchive.ActionSubType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "None"),
-    1: .same(proto: "FilterTable"),
-    2: .same(proto: "SortTable"),
-    3: .same(proto: "CategorizeTable"),
-    4: .same(proto: "ChangeTemplateSlide"),
-    5: .same(proto: "ChangeChartType"),
-    6: .same(proto: "MoveDrawable"),
-    7: .same(proto: "ResizeDrawable"),
-    8: .same(proto: "AddOrRemovePage"),
-    9: .same(proto: "Hyperlink"),
-    10: .same(proto: "SkipSlide"),
-    11: .same(proto: "UnskipSlide"),
-    12: .same(proto: "ChangeBackground"),
-    13: .same(proto: "ChangePageTemplate"),
-    14: .same(proto: "InsertPageNumber"),
-    15: .same(proto: "RefreshPivotTable"),
-    16: .same(proto: "AddPassword"),
-    17: .same(proto: "ChangePassword"),
-    18: .same(proto: "RemovePassword"),
-    19: .same(proto: "Bookmark"),
-    20: .same(proto: "Equation"),
-    21: .same(proto: "SectionBreak"),
-    22: .same(proto: "MoveColumn"),
-    23: .same(proto: "LinkTextbox"),
-    24: .same(proto: "NewTextboxThread"),
-    25: .same(proto: "ChangeTextboxThread"),
-    26: .same(proto: "ConditionalHighlightTableCell"),
-    27: .same(proto: "DataFormatTableCell"),
-  ]
+nonisolated extension TSCK_CommandActivityBehaviorArchive.ActionSubType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0None\0\u{1}FilterTable\0\u{1}SortTable\0\u{1}CategorizeTable\0\u{1}ChangeTemplateSlide\0\u{1}ChangeChartType\0\u{1}MoveDrawable\0\u{1}ResizeDrawable\0\u{1}AddOrRemovePage\0\u{1}Hyperlink\0\u{1}SkipSlide\0\u{1}UnskipSlide\0\u{1}ChangeBackground\0\u{1}ChangePageTemplate\0\u{1}InsertPageNumber\0\u{1}RefreshPivotTable\0\u{1}AddPassword\0\u{1}ChangePassword\0\u{1}RemovePassword\0\u{1}Bookmark\0\u{1}Equation\0\u{1}SectionBreak\0\u{1}MoveColumn\0\u{1}LinkTextbox\0\u{1}NewTextboxThread\0\u{1}ChangeTextboxThread\0\u{1}ConditionalHighlightTableCell\0\u{1}DataFormatTableCell\0")
 }
 
-extension TSCK_ActivityCursorCollectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityCursorCollectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityCursorCollectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "id_cursors"),
-    2: .standard(proto: "text_cursor"),
-    3: .standard(proto: "table_cursor"),
-    4: .standard(proto: "cde_cursor"),
-    5: .standard(proto: "chart_title_cursor"),
-    6: .standard(proto: "gallery_item_cursor"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}id_cursors\0\u{3}text_cursor\0\u{3}table_cursor\0\u{3}cde_cursor\0\u{3}chart_title_cursor\0\u{3}gallery_item_cursor\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.idCursors) {return false}
@@ -5197,11 +4829,9 @@ extension TSCK_ActivityCursorCollectionArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCK_ActivityCursorCollectionPersistenceWrapperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityCursorCollectionPersistenceWrapperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityCursorCollectionPersistenceWrapperArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "activity_cursor_collection"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}activity_cursor_collection\0")
 
   public var isInitialized: Bool {
     if let v = self._activityCursorCollection, !v.isInitialized {return false}
@@ -5238,7 +4868,7 @@ extension TSCK_ActivityCursorCollectionPersistenceWrapperArchive: SwiftProtobuf.
   }
 }
 
-extension TSCK_ActivityNavigationInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityNavigationInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityNavigationInfoArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -5267,13 +4897,9 @@ extension TSCK_ActivityNavigationInfoArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCK_CommentActivityNavigationInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_CommentActivityNavigationInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommentActivityNavigationInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "comment_id"),
-    2: .standard(proto: "parent_uuid"),
-    3: .standard(proto: "storage_uuid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}comment_id\0\u{3}parent_uuid\0\u{3}storage_uuid\0")
 
   public var isInitialized: Bool {
     if self._commentID == nil {return false}
@@ -5324,17 +4950,9 @@ extension TSCK_CommentActivityNavigationInfoArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSCK_ActivityAuthorCacheArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityAuthorCacheArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityAuthorCacheArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "share_participant_id_cache"),
-    3: .standard(proto: "fallback_public_id_cache"),
-    4: .standard(proto: "index_cache"),
-    5: .standard(proto: "first_join_cache"),
-    6: .same(proto: "authors"),
-    7: .standard(proto: "last_audit_date"),
-    8: .standard(proto: "author_identifiers_to_remove"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}share_participant_id_cache\0\u{4}\u{2}fallback_public_id_cache\0\u{3}index_cache\0\u{3}first_join_cache\0\u{1}authors\0\u{3}last_audit_date\0\u{3}author_identifiers_to_remove\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.shareParticipantIDCache) {return false}
@@ -5407,12 +5025,9 @@ extension TSCK_ActivityAuthorCacheArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCK_ActivityAuthorCacheArchive.ShareParticipantIDCache: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityAuthorCacheArchive.ShareParticipantIDCache: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_ActivityAuthorCacheArchive.protoMessageName + ".ShareParticipantIDCache"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .standard(proto: "share_participant_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{3}share_participant_id\0")
 
   public var isInitialized: Bool {
     if self._identifier == nil {return false}
@@ -5456,12 +5071,9 @@ extension TSCK_ActivityAuthorCacheArchive.ShareParticipantIDCache: SwiftProtobuf
   }
 }
 
-extension TSCK_ActivityAuthorCacheArchive.PublicIDCache: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityAuthorCacheArchive.PublicIDCache: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_ActivityAuthorCacheArchive.protoMessageName + ".PublicIDCache"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .standard(proto: "public_identifier"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{3}public_identifier\0")
 
   public var isInitialized: Bool {
     if self._identifier == nil {return false}
@@ -5505,12 +5117,9 @@ extension TSCK_ActivityAuthorCacheArchive.PublicIDCache: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCK_ActivityAuthorCacheArchive.IndexCache: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityAuthorCacheArchive.IndexCache: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_ActivityAuthorCacheArchive.protoMessageName + ".IndexCache"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .standard(proto: "author_index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{3}author_index\0")
 
   public var isInitialized: Bool {
     if self._identifier == nil {return false}
@@ -5554,12 +5163,9 @@ extension TSCK_ActivityAuthorCacheArchive.IndexCache: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSCK_ActivityAuthorCacheArchive.FirstJoinCache: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityAuthorCacheArchive.FirstJoinCache: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_ActivityAuthorCacheArchive.protoMessageName + ".FirstJoinCache"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .standard(proto: "first_join_date"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{3}first_join_date\0")
 
   public var isInitialized: Bool {
     if self._identifier == nil {return false}
@@ -5603,11 +5209,9 @@ extension TSCK_ActivityAuthorCacheArchive.FirstJoinCache: SwiftProtobuf.Message,
   }
 }
 
-extension TSCK_ActivityOnlyCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityOnlyCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityOnlyCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5645,14 +5249,9 @@ extension TSCK_ActivityOnlyCommandArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCK_ActivityNotificationItemArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityNotificationItemArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityNotificationItemArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .standard(proto: "unique_identifier"),
-    3: .same(proto: "activities"),
-    4: .standard(proto: "first_timestamp"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{3}unique_identifier\0\u{1}activities\0\u{3}first_timestamp\0")
 
   public var isInitialized: Bool {
     if self._type == nil {return false}
@@ -5708,15 +5307,9 @@ extension TSCK_ActivityNotificationItemArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCK_ActivityNotificationParticipantCacheArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityNotificationParticipantCacheArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityNotificationParticipantCacheArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "notification_items"),
-    2: .standard(proto: "last_edit_notification_item_sent_date"),
-    3: .standard(proto: "sender_failed_to_enqueue_attempts"),
-    4: .standard(proto: "private_id"),
-    5: .standard(proto: "last_comment_notification_item_sent_date"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}notification_items\0\u{3}last_edit_notification_item_sent_date\0\u{3}sender_failed_to_enqueue_attempts\0\u{3}private_id\0\u{3}last_comment_notification_item_sent_date\0")
 
   public var isInitialized: Bool {
     if self._privateID == nil {return false}
@@ -5777,12 +5370,9 @@ extension TSCK_ActivityNotificationParticipantCacheArchive: SwiftProtobuf.Messag
   }
 }
 
-extension TSCK_ActivityNotificationParticipantCacheArchive.UniqueIdentifierAndAttempts: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityNotificationParticipantCacheArchive.UniqueIdentifierAndAttempts: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_ActivityNotificationParticipantCacheArchive.protoMessageName + ".UniqueIdentifierAndAttempts"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "unique_identifier"),
-    2: .same(proto: "attempts"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}unique_identifier\0\u{1}attempts\0")
 
   public var isInitialized: Bool {
     if self._uniqueIdentifier == nil {return false}
@@ -5826,13 +5416,9 @@ extension TSCK_ActivityNotificationParticipantCacheArchive.UniqueIdentifierAndAt
   }
 }
 
-extension TSCK_ActivityNotificationQueueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityNotificationQueueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityNotificationQueueArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "unprocessed_notification_items"),
-    3: .standard(proto: "pending_participant_caches"),
-    5: .standard(proto: "sent_participant_caches"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}unprocessed_notification_items\0\u{4}\u{2}pending_participant_caches\0\u{4}\u{2}sent_participant_caches\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.unprocessedNotificationItems) {return false}
@@ -5877,18 +5463,9 @@ extension TSCK_ActivityNotificationQueueArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSCK_ActivityStreamTransformationStateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityStreamTransformationStateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityStreamTransformationStateArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "next_activity_to_transform_index"),
-    2: .standard(proto: "oldest_revision_sequence_after_transformed"),
-    3: .standard(proto: "last_activity_coalesced_date"),
-    4: .standard(proto: "action_type"),
-    5: .standard(proto: "transform_to_document_revision_sequence"),
-    6: .standard(proto: "transform_to_document_revision_identifier"),
-    7: .standard(proto: "timestamp_of_last_activity_when_last_activity_coalescing"),
-    8: .standard(proto: "preserving_revision_sequence_order"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}next_activity_to_transform_index\0\u{3}oldest_revision_sequence_after_transformed\0\u{3}last_activity_coalesced_date\0\u{3}action_type\0\u{3}transform_to_document_revision_sequence\0\u{3}transform_to_document_revision_identifier\0\u{3}timestamp_of_last_activity_when_last_activity_coalescing\0\u{3}preserving_revision_sequence_order\0")
 
   public var isInitialized: Bool {
     if self._nextActivityToTransformIndex == nil {return false}
@@ -5961,19 +5538,13 @@ extension TSCK_ActivityStreamTransformationStateArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCK_ActivityStreamTransformationStateArchive.ActionType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "Trasnform"),
-    1: .same(proto: "Coalesce"),
-  ]
+nonisolated extension TSCK_ActivityStreamTransformationStateArchive.ActionType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0Trasnform\0\u{1}Coalesce\0")
 }
 
-extension TSCK_ActivityStreamActivityCounterArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityStreamActivityCounterArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityStreamActivityCounterArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "action_type_counter"),
-    2: .standard(proto: "cursor_type_counter"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}action_type_counter\0\u{3}cursor_type_counter\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6006,12 +5577,9 @@ extension TSCK_ActivityStreamActivityCounterArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSCK_ActivityStreamActivityCounterArchive.ActionTypeCounter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityStreamActivityCounterArchive.ActionTypeCounter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_ActivityStreamActivityCounterArchive.protoMessageName + ".ActionTypeCounter"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "action_type"),
-    2: .same(proto: "count"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}action_type\0\u{1}count\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6048,12 +5616,9 @@ extension TSCK_ActivityStreamActivityCounterArchive.ActionTypeCounter: SwiftProt
   }
 }
 
-extension TSCK_ActivityStreamActivityCounterArchive.CursorTypeCounter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityStreamActivityCounterArchive.CursorTypeCounter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_ActivityStreamActivityCounterArchive.protoMessageName + ".CursorTypeCounter"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cursor_type"),
-    2: .same(proto: "count"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cursor_type\0\u{1}count\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6090,12 +5655,9 @@ extension TSCK_ActivityStreamActivityCounterArchive.CursorTypeCounter: SwiftProt
   }
 }
 
-extension TSCK_ActivityStreamRemovedAuthorAuditorPendingStateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityStreamRemovedAuthorAuditorPendingStateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ActivityStreamRemovedAuthorAuditorPendingStateArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "current_author_identifiers"),
-    3: .standard(proto: "dates_to_audit"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}current_author_identifiers\0\u{4}\u{2}dates_to_audit\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.currentAuthorIdentifiers) {return false}
@@ -6134,12 +5696,9 @@ extension TSCK_ActivityStreamRemovedAuthorAuditorPendingStateArchive: SwiftProto
   }
 }
 
-extension TSCK_ActivityStreamRemovedAuthorAuditorPendingStateArchive.DateToAuditAndType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCK_ActivityStreamRemovedAuthorAuditorPendingStateArchive.DateToAuditAndType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCK_ActivityStreamRemovedAuthorAuditorPendingStateArchive.protoMessageName + ".DateToAuditAndType"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "date_to_audit"),
-    2: .same(proto: "type"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}date_to_audit\0\u{1}type\0")
 
   public var isInitialized: Bool {
     if self._dateToAudit == nil {return false}

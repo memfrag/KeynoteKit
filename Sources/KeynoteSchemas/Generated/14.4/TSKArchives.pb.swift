@@ -15,62 +15,44 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public enum TSK_StructuredTextImportType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case importTypeUnknown // = 0
-  case importTypeDelimited // = 1
-  case importTypeFixedwidth // = 2
+public nonisolated enum TSK_StructuredTextImportType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case importTypeUnknown = 0
+  case importTypeDelimited = 1
+  case importTypeFixedwidth = 2
 
   public init() {
     self = .importTypeUnknown
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .importTypeUnknown
-    case 1: self = .importTypeDelimited
-    case 2: self = .importTypeFixedwidth
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .importTypeUnknown: return 0
-    case .importTypeDelimited: return 1
-    case .importTypeFixedwidth: return 2
-    }
-  }
-
 }
 
-public struct TSK_TreeNode: Sendable {
+public nonisolated struct TSK_TreeNode: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var name: String {
-    get {return _name ?? String()}
+    get {_name ?? String()}
     set {_name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return self._name != nil}
+  public var hasName: Bool {self._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {self._name = nil}
 
   public var children: [TSP_Reference] = []
 
   public var object: TSP_Reference {
-    get {return _object ?? TSP_Reference()}
+    get {_object ?? TSP_Reference()}
     set {_object = newValue}
   }
   /// Returns true if `object` has been explicitly set.
-  public var hasObject: Bool {return self._object != nil}
+  public var hasObject: Bool {self._object != nil}
   /// Clears the value of `object`. Subsequent reads from it will return its default value.
   public mutating func clearObject() {self._object = nil}
 
@@ -82,26 +64,26 @@ public struct TSK_TreeNode: Sendable {
   fileprivate var _object: TSP_Reference? = nil
 }
 
-public struct TSK_LocalCommandHistoryItem: Sendable {
+public nonisolated struct TSK_LocalCommandHistoryItem: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var command: TSP_Reference {
-    get {return _command ?? TSP_Reference()}
+    get {_command ?? TSP_Reference()}
     set {_command = newValue}
   }
   /// Returns true if `command` has been explicitly set.
-  public var hasCommand: Bool {return self._command != nil}
+  public var hasCommand: Bool {self._command != nil}
   /// Clears the value of `command`. Subsequent reads from it will return its default value.
   public mutating func clearCommand() {self._command = nil}
 
   public var behavior: TSP_Reference {
-    get {return _behavior ?? TSP_Reference()}
+    get {_behavior ?? TSP_Reference()}
     set {_behavior = newValue}
   }
   /// Returns true if `behavior` has been explicitly set.
-  public var hasBehavior: Bool {return self._behavior != nil}
+  public var hasBehavior: Bool {self._behavior != nil}
   /// Clears the value of `behavior`. Subsequent reads from it will return its default value.
   public mutating func clearBehavior() {self._behavior = nil}
 
@@ -113,17 +95,17 @@ public struct TSK_LocalCommandHistoryItem: Sendable {
   fileprivate var _behavior: TSP_Reference? = nil
 }
 
-public struct TSK_LocalCommandHistoryArray: Sendable {
+public nonisolated struct TSK_LocalCommandHistoryArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArray: TSP_LargeArray {
-    get {return _largeArray ?? TSP_LargeArray()}
+    get {_largeArray ?? TSP_LargeArray()}
     set {_largeArray = newValue}
   }
   /// Returns true if `largeArray` has been explicitly set.
-  public var hasLargeArray: Bool {return self._largeArray != nil}
+  public var hasLargeArray: Bool {self._largeArray != nil}
   /// Clears the value of `largeArray`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArray() {self._largeArray = nil}
 
@@ -134,17 +116,17 @@ public struct TSK_LocalCommandHistoryArray: Sendable {
   fileprivate var _largeArray: TSP_LargeArray? = nil
 }
 
-public struct TSK_LocalCommandHistoryArraySegment: Sendable {
+public nonisolated struct TSK_LocalCommandHistoryArraySegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeObjectArraySegment: TSP_LargeObjectArraySegment {
-    get {return _largeObjectArraySegment ?? TSP_LargeObjectArraySegment()}
+    get {_largeObjectArraySegment ?? TSP_LargeObjectArraySegment()}
     set {_largeObjectArraySegment = newValue}
   }
   /// Returns true if `largeObjectArraySegment` has been explicitly set.
-  public var hasLargeObjectArraySegment: Bool {return self._largeObjectArraySegment != nil}
+  public var hasLargeObjectArraySegment: Bool {self._largeObjectArraySegment != nil}
   /// Clears the value of `largeObjectArraySegment`. Subsequent reads from it will return its default value.
   public mutating func clearLargeObjectArraySegment() {self._largeObjectArraySegment = nil}
 
@@ -155,35 +137,35 @@ public struct TSK_LocalCommandHistoryArraySegment: Sendable {
   fileprivate var _largeObjectArraySegment: TSP_LargeObjectArraySegment? = nil
 }
 
-public struct TSK_LocalCommandHistory: Sendable {
+public nonisolated struct TSK_LocalCommandHistory: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var undoCount: UInt32 {
-    get {return _undoCount ?? 0}
+    get {_undoCount ?? 0}
     set {_undoCount = newValue}
   }
   /// Returns true if `undoCount` has been explicitly set.
-  public var hasUndoCount: Bool {return self._undoCount != nil}
+  public var hasUndoCount: Bool {self._undoCount != nil}
   /// Clears the value of `undoCount`. Subsequent reads from it will return its default value.
   public mutating func clearUndoCount() {self._undoCount = nil}
 
   public var itemsArray: TSP_Reference {
-    get {return _itemsArray ?? TSP_Reference()}
+    get {_itemsArray ?? TSP_Reference()}
     set {_itemsArray = newValue}
   }
   /// Returns true if `itemsArray` has been explicitly set.
-  public var hasItemsArray: Bool {return self._itemsArray != nil}
+  public var hasItemsArray: Bool {self._itemsArray != nil}
   /// Clears the value of `itemsArray`. Subsequent reads from it will return its default value.
   public mutating func clearItemsArray() {self._itemsArray = nil}
 
   public var fixedRadar13365177: Bool {
-    get {return _fixedRadar13365177 ?? false}
+    get {_fixedRadar13365177 ?? false}
     set {_fixedRadar13365177 = newValue}
   }
   /// Returns true if `fixedRadar13365177` has been explicitly set.
-  public var hasFixedRadar13365177: Bool {return self._fixedRadar13365177 != nil}
+  public var hasFixedRadar13365177: Bool {self._fixedRadar13365177 != nil}
   /// Clears the value of `fixedRadar13365177`. Subsequent reads from it will return its default value.
   public mutating func clearFixedRadar13365177() {self._fixedRadar13365177 = nil}
 
@@ -196,121 +178,121 @@ public struct TSK_LocalCommandHistory: Sendable {
   fileprivate var _fixedRadar13365177: Bool? = nil
 }
 
-public struct TSK_DocumentArchive: @unchecked Sendable {
+public nonisolated struct TSK_DocumentArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var localeIdentifier: String {
-    get {return _storage._localeIdentifier ?? String()}
+    get {_storage._localeIdentifier ?? String()}
     set {_uniqueStorage()._localeIdentifier = newValue}
   }
   /// Returns true if `localeIdentifier` has been explicitly set.
-  public var hasLocaleIdentifier: Bool {return _storage._localeIdentifier != nil}
+  public var hasLocaleIdentifier: Bool {_storage._localeIdentifier != nil}
   /// Clears the value of `localeIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearLocaleIdentifier() {_uniqueStorage()._localeIdentifier = nil}
 
   public var annotationAuthorStorage: TSP_Reference {
-    get {return _storage._annotationAuthorStorage ?? TSP_Reference()}
+    get {_storage._annotationAuthorStorage ?? TSP_Reference()}
     set {_uniqueStorage()._annotationAuthorStorage = newValue}
   }
   /// Returns true if `annotationAuthorStorage` has been explicitly set.
-  public var hasAnnotationAuthorStorage: Bool {return _storage._annotationAuthorStorage != nil}
+  public var hasAnnotationAuthorStorage: Bool {_storage._annotationAuthorStorage != nil}
   /// Clears the value of `annotationAuthorStorage`. Subsequent reads from it will return its default value.
   public mutating func clearAnnotationAuthorStorage() {_uniqueStorage()._annotationAuthorStorage = nil}
 
   public var activityLogEntries: [TSP_Reference] {
-    get {return _storage._activityLogEntries}
+    get {_storage._activityLogEntries}
     set {_uniqueStorage()._activityLogEntries = newValue}
   }
 
   public var creationLocaleIdentifier: String {
-    get {return _storage._creationLocaleIdentifier ?? String()}
+    get {_storage._creationLocaleIdentifier ?? String()}
     set {_uniqueStorage()._creationLocaleIdentifier = newValue}
   }
   /// Returns true if `creationLocaleIdentifier` has been explicitly set.
-  public var hasCreationLocaleIdentifier: Bool {return _storage._creationLocaleIdentifier != nil}
+  public var hasCreationLocaleIdentifier: Bool {_storage._creationLocaleIdentifier != nil}
   /// Clears the value of `creationLocaleIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearCreationLocaleIdentifier() {_uniqueStorage()._creationLocaleIdentifier = nil}
 
   public var preventImageConversionOnOpen: Bool {
-    get {return _storage._preventImageConversionOnOpen ?? false}
+    get {_storage._preventImageConversionOnOpen ?? false}
     set {_uniqueStorage()._preventImageConversionOnOpen = newValue}
   }
   /// Returns true if `preventImageConversionOnOpen` has been explicitly set.
-  public var hasPreventImageConversionOnOpen: Bool {return _storage._preventImageConversionOnOpen != nil}
+  public var hasPreventImageConversionOnOpen: Bool {_storage._preventImageConversionOnOpen != nil}
   /// Clears the value of `preventImageConversionOnOpen`. Subsequent reads from it will return its default value.
   public mutating func clearPreventImageConversionOnOpen() {_uniqueStorage()._preventImageConversionOnOpen = nil}
 
   public var hasFloatingLocale_p: Bool {
-    get {return _storage._hasFloatingLocale_p ?? false}
+    get {_storage._hasFloatingLocale_p ?? false}
     set {_uniqueStorage()._hasFloatingLocale_p = newValue}
   }
   /// Returns true if `hasFloatingLocale_p` has been explicitly set.
-  public var hasHasFloatingLocale_p: Bool {return _storage._hasFloatingLocale_p != nil}
+  public var hasHasFloatingLocale_p: Bool {_storage._hasFloatingLocale_p != nil}
   /// Clears the value of `hasFloatingLocale_p`. Subsequent reads from it will return its default value.
   public mutating func clearHasFloatingLocale_p() {_uniqueStorage()._hasFloatingLocale_p = nil}
 
   public var hasUserDefinedLocale_p: Bool {
-    get {return _storage._hasUserDefinedLocale_p ?? false}
+    get {_storage._hasUserDefinedLocale_p ?? false}
     set {_uniqueStorage()._hasUserDefinedLocale_p = newValue}
   }
   /// Returns true if `hasUserDefinedLocale_p` has been explicitly set.
-  public var hasHasUserDefinedLocale_p: Bool {return _storage._hasUserDefinedLocale_p != nil}
+  public var hasHasUserDefinedLocale_p: Bool {_storage._hasUserDefinedLocale_p != nil}
   /// Clears the value of `hasUserDefinedLocale_p`. Subsequent reads from it will return its default value.
   public mutating func clearHasUserDefinedLocale_p() {_uniqueStorage()._hasUserDefinedLocale_p = nil}
 
   public var collaborationOperationHistory: TSP_Reference {
-    get {return _storage._collaborationOperationHistory ?? TSP_Reference()}
+    get {_storage._collaborationOperationHistory ?? TSP_Reference()}
     set {_uniqueStorage()._collaborationOperationHistory = newValue}
   }
   /// Returns true if `collaborationOperationHistory` has been explicitly set.
-  public var hasCollaborationOperationHistory: Bool {return _storage._collaborationOperationHistory != nil}
+  public var hasCollaborationOperationHistory: Bool {_storage._collaborationOperationHistory != nil}
   /// Clears the value of `collaborationOperationHistory`. Subsequent reads from it will return its default value.
   public mutating func clearCollaborationOperationHistory() {_uniqueStorage()._collaborationOperationHistory = nil}
 
   public var shouldMeasureNegativelyTrackedTextCorrectly: Bool {
-    get {return _storage._shouldMeasureNegativelyTrackedTextCorrectly ?? false}
+    get {_storage._shouldMeasureNegativelyTrackedTextCorrectly ?? false}
     set {_uniqueStorage()._shouldMeasureNegativelyTrackedTextCorrectly = newValue}
   }
   /// Returns true if `shouldMeasureNegativelyTrackedTextCorrectly` has been explicitly set.
-  public var hasShouldMeasureNegativelyTrackedTextCorrectly: Bool {return _storage._shouldMeasureNegativelyTrackedTextCorrectly != nil}
+  public var hasShouldMeasureNegativelyTrackedTextCorrectly: Bool {_storage._shouldMeasureNegativelyTrackedTextCorrectly != nil}
   /// Clears the value of `shouldMeasureNegativelyTrackedTextCorrectly`. Subsequent reads from it will return its default value.
   public mutating func clearShouldMeasureNegativelyTrackedTextCorrectly() {_uniqueStorage()._shouldMeasureNegativelyTrackedTextCorrectly = nil}
 
   public var useOptimizedTextVerticalAlignment: Bool {
-    get {return _storage._useOptimizedTextVerticalAlignment ?? false}
+    get {_storage._useOptimizedTextVerticalAlignment ?? false}
     set {_uniqueStorage()._useOptimizedTextVerticalAlignment = newValue}
   }
   /// Returns true if `useOptimizedTextVerticalAlignment` has been explicitly set.
-  public var hasUseOptimizedTextVerticalAlignment: Bool {return _storage._useOptimizedTextVerticalAlignment != nil}
+  public var hasUseOptimizedTextVerticalAlignment: Bool {_storage._useOptimizedTextVerticalAlignment != nil}
   /// Clears the value of `useOptimizedTextVerticalAlignment`. Subsequent reads from it will return its default value.
   public mutating func clearUseOptimizedTextVerticalAlignment() {_uniqueStorage()._useOptimizedTextVerticalAlignment = nil}
 
   public var shouldAllowLigaturesInMinimallyTrackedText: Bool {
-    get {return _storage._shouldAllowLigaturesInMinimallyTrackedText ?? false}
+    get {_storage._shouldAllowLigaturesInMinimallyTrackedText ?? false}
     set {_uniqueStorage()._shouldAllowLigaturesInMinimallyTrackedText = newValue}
   }
   /// Returns true if `shouldAllowLigaturesInMinimallyTrackedText` has been explicitly set.
-  public var hasShouldAllowLigaturesInMinimallyTrackedText: Bool {return _storage._shouldAllowLigaturesInMinimallyTrackedText != nil}
+  public var hasShouldAllowLigaturesInMinimallyTrackedText: Bool {_storage._shouldAllowLigaturesInMinimallyTrackedText != nil}
   /// Clears the value of `shouldAllowLigaturesInMinimallyTrackedText`. Subsequent reads from it will return its default value.
   public mutating func clearShouldAllowLigaturesInMinimallyTrackedText() {_uniqueStorage()._shouldAllowLigaturesInMinimallyTrackedText = nil}
 
   public var formattingSymbols: TSK_FormattingSymbolsArchive {
-    get {return _storage._formattingSymbols ?? TSK_FormattingSymbolsArchive()}
+    get {_storage._formattingSymbols ?? TSK_FormattingSymbolsArchive()}
     set {_uniqueStorage()._formattingSymbols = newValue}
   }
   /// Returns true if `formattingSymbols` has been explicitly set.
-  public var hasFormattingSymbols: Bool {return _storage._formattingSymbols != nil}
+  public var hasFormattingSymbols: Bool {_storage._formattingSymbols != nil}
   /// Clears the value of `formattingSymbols`. Subsequent reads from it will return its default value.
   public mutating func clearFormattingSymbols() {_uniqueStorage()._formattingSymbols = nil}
 
   public var activityStream: TSP_Reference {
-    get {return _storage._activityStream ?? TSP_Reference()}
+    get {_storage._activityStream ?? TSP_Reference()}
     set {_uniqueStorage()._activityStream = newValue}
   }
   /// Returns true if `activityStream` has been explicitly set.
-  public var hasActivityStream: Bool {return _storage._activityStream != nil}
+  public var hasActivityStream: Bool {_storage._activityStream != nil}
   /// Clears the value of `activityStream`. Subsequent reads from it will return its default value.
   public mutating func clearActivityStream() {_uniqueStorage()._activityStream = nil}
 
@@ -321,389 +303,389 @@ public struct TSK_DocumentArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSK_FormattingSymbolsArchive: @unchecked Sendable {
+public nonisolated struct TSK_FormattingSymbolsArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var version: String {
-    get {return _storage._version ?? String()}
+    get {_storage._version ?? String()}
     set {_uniqueStorage()._version = newValue}
   }
   /// Returns true if `version` has been explicitly set.
-  public var hasVersion: Bool {return _storage._version != nil}
+  public var hasVersion: Bool {_storage._version != nil}
   /// Clears the value of `version`. Subsequent reads from it will return its default value.
   public mutating func clearVersion() {_uniqueStorage()._version = nil}
 
   public var calendar: String {
-    get {return _storage._calendar ?? String()}
+    get {_storage._calendar ?? String()}
     set {_uniqueStorage()._calendar = newValue}
   }
   /// Returns true if `calendar` has been explicitly set.
-  public var hasCalendar: Bool {return _storage._calendar != nil}
+  public var hasCalendar: Bool {_storage._calendar != nil}
   /// Clears the value of `calendar`. Subsequent reads from it will return its default value.
   public mutating func clearCalendar() {_uniqueStorage()._calendar = nil}
 
   public var numberingSystem: String {
-    get {return _storage._numberingSystem ?? String()}
+    get {_storage._numberingSystem ?? String()}
     set {_uniqueStorage()._numberingSystem = newValue}
   }
   /// Returns true if `numberingSystem` has been explicitly set.
-  public var hasNumberingSystem: Bool {return _storage._numberingSystem != nil}
+  public var hasNumberingSystem: Bool {_storage._numberingSystem != nil}
   /// Clears the value of `numberingSystem`. Subsequent reads from it will return its default value.
   public mutating func clearNumberingSystem() {_uniqueStorage()._numberingSystem = nil}
 
   public var months: [String] {
-    get {return _storage._months}
+    get {_storage._months}
     set {_uniqueStorage()._months = newValue}
   }
 
   public var standaloneMonths: [String] {
-    get {return _storage._standaloneMonths}
+    get {_storage._standaloneMonths}
     set {_uniqueStorage()._standaloneMonths = newValue}
   }
 
   public var shortMonths: [String] {
-    get {return _storage._shortMonths}
+    get {_storage._shortMonths}
     set {_uniqueStorage()._shortMonths = newValue}
   }
 
   public var standaloneShortMonths: [String] {
-    get {return _storage._standaloneShortMonths}
+    get {_storage._standaloneShortMonths}
     set {_uniqueStorage()._standaloneShortMonths = newValue}
   }
 
   public var weekdays: [String] {
-    get {return _storage._weekdays}
+    get {_storage._weekdays}
     set {_uniqueStorage()._weekdays = newValue}
   }
 
   public var standaloneWeekdays: [String] {
-    get {return _storage._standaloneWeekdays}
+    get {_storage._standaloneWeekdays}
     set {_uniqueStorage()._standaloneWeekdays = newValue}
   }
 
   public var shortWeekdays: [String] {
-    get {return _storage._shortWeekdays}
+    get {_storage._shortWeekdays}
     set {_uniqueStorage()._shortWeekdays = newValue}
   }
 
   public var standaloneShortWeekdays: [String] {
-    get {return _storage._standaloneShortWeekdays}
+    get {_storage._standaloneShortWeekdays}
     set {_uniqueStorage()._standaloneShortWeekdays = newValue}
   }
 
   public var amSymbol: String {
-    get {return _storage._amSymbol ?? String()}
+    get {_storage._amSymbol ?? String()}
     set {_uniqueStorage()._amSymbol = newValue}
   }
   /// Returns true if `amSymbol` has been explicitly set.
-  public var hasAmSymbol: Bool {return _storage._amSymbol != nil}
+  public var hasAmSymbol: Bool {_storage._amSymbol != nil}
   /// Clears the value of `amSymbol`. Subsequent reads from it will return its default value.
   public mutating func clearAmSymbol() {_uniqueStorage()._amSymbol = nil}
 
   public var pmSymbol: String {
-    get {return _storage._pmSymbol ?? String()}
+    get {_storage._pmSymbol ?? String()}
     set {_uniqueStorage()._pmSymbol = newValue}
   }
   /// Returns true if `pmSymbol` has been explicitly set.
-  public var hasPmSymbol: Bool {return _storage._pmSymbol != nil}
+  public var hasPmSymbol: Bool {_storage._pmSymbol != nil}
   /// Clears the value of `pmSymbol`. Subsequent reads from it will return its default value.
   public mutating func clearPmSymbol() {_uniqueStorage()._pmSymbol = nil}
 
   public var tinyMonths: [String] {
-    get {return _storage._tinyMonths}
+    get {_storage._tinyMonths}
     set {_uniqueStorage()._tinyMonths = newValue}
   }
 
   public var standaloneTinyMonths: [String] {
-    get {return _storage._standaloneTinyMonths}
+    get {_storage._standaloneTinyMonths}
     set {_uniqueStorage()._standaloneTinyMonths = newValue}
   }
 
   public var tinyWeekdays: [String] {
-    get {return _storage._tinyWeekdays}
+    get {_storage._tinyWeekdays}
     set {_uniqueStorage()._tinyWeekdays = newValue}
   }
 
   public var standaloneTinyWeekdays: [String] {
-    get {return _storage._standaloneTinyWeekdays}
+    get {_storage._standaloneTinyWeekdays}
     set {_uniqueStorage()._standaloneTinyWeekdays = newValue}
   }
 
   public var quarters: [String] {
-    get {return _storage._quarters}
+    get {_storage._quarters}
     set {_uniqueStorage()._quarters = newValue}
   }
 
   public var standaloneQuarters: [String] {
-    get {return _storage._standaloneQuarters}
+    get {_storage._standaloneQuarters}
     set {_uniqueStorage()._standaloneQuarters = newValue}
   }
 
   public var shortQuarters: [String] {
-    get {return _storage._shortQuarters}
+    get {_storage._shortQuarters}
     set {_uniqueStorage()._shortQuarters = newValue}
   }
 
   public var standaloneShortQuarters: [String] {
-    get {return _storage._standaloneShortQuarters}
+    get {_storage._standaloneShortQuarters}
     set {_uniqueStorage()._standaloneShortQuarters = newValue}
   }
 
   public var eras: [String] {
-    get {return _storage._eras}
+    get {_storage._eras}
     set {_uniqueStorage()._eras = newValue}
   }
 
   public var longEras: [String] {
-    get {return _storage._longEras}
+    get {_storage._longEras}
     set {_uniqueStorage()._longEras = newValue}
   }
 
   public var shortDatePattern: String {
-    get {return _storage._shortDatePattern ?? String()}
+    get {_storage._shortDatePattern ?? String()}
     set {_uniqueStorage()._shortDatePattern = newValue}
   }
   /// Returns true if `shortDatePattern` has been explicitly set.
-  public var hasShortDatePattern: Bool {return _storage._shortDatePattern != nil}
+  public var hasShortDatePattern: Bool {_storage._shortDatePattern != nil}
   /// Clears the value of `shortDatePattern`. Subsequent reads from it will return its default value.
   public mutating func clearShortDatePattern() {_uniqueStorage()._shortDatePattern = nil}
 
   public var mediumDatePattern: String {
-    get {return _storage._mediumDatePattern ?? String()}
+    get {_storage._mediumDatePattern ?? String()}
     set {_uniqueStorage()._mediumDatePattern = newValue}
   }
   /// Returns true if `mediumDatePattern` has been explicitly set.
-  public var hasMediumDatePattern: Bool {return _storage._mediumDatePattern != nil}
+  public var hasMediumDatePattern: Bool {_storage._mediumDatePattern != nil}
   /// Clears the value of `mediumDatePattern`. Subsequent reads from it will return its default value.
   public mutating func clearMediumDatePattern() {_uniqueStorage()._mediumDatePattern = nil}
 
   public var longDatePattern: String {
-    get {return _storage._longDatePattern ?? String()}
+    get {_storage._longDatePattern ?? String()}
     set {_uniqueStorage()._longDatePattern = newValue}
   }
   /// Returns true if `longDatePattern` has been explicitly set.
-  public var hasLongDatePattern: Bool {return _storage._longDatePattern != nil}
+  public var hasLongDatePattern: Bool {_storage._longDatePattern != nil}
   /// Clears the value of `longDatePattern`. Subsequent reads from it will return its default value.
   public mutating func clearLongDatePattern() {_uniqueStorage()._longDatePattern = nil}
 
   public var fullDatePattern: String {
-    get {return _storage._fullDatePattern ?? String()}
+    get {_storage._fullDatePattern ?? String()}
     set {_uniqueStorage()._fullDatePattern = newValue}
   }
   /// Returns true if `fullDatePattern` has been explicitly set.
-  public var hasFullDatePattern: Bool {return _storage._fullDatePattern != nil}
+  public var hasFullDatePattern: Bool {_storage._fullDatePattern != nil}
   /// Clears the value of `fullDatePattern`. Subsequent reads from it will return its default value.
   public mutating func clearFullDatePattern() {_uniqueStorage()._fullDatePattern = nil}
 
   public var shortTimePattern: String {
-    get {return _storage._shortTimePattern ?? String()}
+    get {_storage._shortTimePattern ?? String()}
     set {_uniqueStorage()._shortTimePattern = newValue}
   }
   /// Returns true if `shortTimePattern` has been explicitly set.
-  public var hasShortTimePattern: Bool {return _storage._shortTimePattern != nil}
+  public var hasShortTimePattern: Bool {_storage._shortTimePattern != nil}
   /// Clears the value of `shortTimePattern`. Subsequent reads from it will return its default value.
   public mutating func clearShortTimePattern() {_uniqueStorage()._shortTimePattern = nil}
 
   public var mediumTimePattern: String {
-    get {return _storage._mediumTimePattern ?? String()}
+    get {_storage._mediumTimePattern ?? String()}
     set {_uniqueStorage()._mediumTimePattern = newValue}
   }
   /// Returns true if `mediumTimePattern` has been explicitly set.
-  public var hasMediumTimePattern: Bool {return _storage._mediumTimePattern != nil}
+  public var hasMediumTimePattern: Bool {_storage._mediumTimePattern != nil}
   /// Clears the value of `mediumTimePattern`. Subsequent reads from it will return its default value.
   public mutating func clearMediumTimePattern() {_uniqueStorage()._mediumTimePattern = nil}
 
   public var longTimePattern: String {
-    get {return _storage._longTimePattern ?? String()}
+    get {_storage._longTimePattern ?? String()}
     set {_uniqueStorage()._longTimePattern = newValue}
   }
   /// Returns true if `longTimePattern` has been explicitly set.
-  public var hasLongTimePattern: Bool {return _storage._longTimePattern != nil}
+  public var hasLongTimePattern: Bool {_storage._longTimePattern != nil}
   /// Clears the value of `longTimePattern`. Subsequent reads from it will return its default value.
   public mutating func clearLongTimePattern() {_uniqueStorage()._longTimePattern = nil}
 
   public var fullTimePattern: String {
-    get {return _storage._fullTimePattern ?? String()}
+    get {_storage._fullTimePattern ?? String()}
     set {_uniqueStorage()._fullTimePattern = newValue}
   }
   /// Returns true if `fullTimePattern` has been explicitly set.
-  public var hasFullTimePattern: Bool {return _storage._fullTimePattern != nil}
+  public var hasFullTimePattern: Bool {_storage._fullTimePattern != nil}
   /// Clears the value of `fullTimePattern`. Subsequent reads from it will return its default value.
   public mutating func clearFullTimePattern() {_uniqueStorage()._fullTimePattern = nil}
 
   public var decimalSeparator: String {
-    get {return _storage._decimalSeparator ?? String()}
+    get {_storage._decimalSeparator ?? String()}
     set {_uniqueStorage()._decimalSeparator = newValue}
   }
   /// Returns true if `decimalSeparator` has been explicitly set.
-  public var hasDecimalSeparator: Bool {return _storage._decimalSeparator != nil}
+  public var hasDecimalSeparator: Bool {_storage._decimalSeparator != nil}
   /// Clears the value of `decimalSeparator`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalSeparator() {_uniqueStorage()._decimalSeparator = nil}
 
   public var groupingSeparator: String {
-    get {return _storage._groupingSeparator ?? String()}
+    get {_storage._groupingSeparator ?? String()}
     set {_uniqueStorage()._groupingSeparator = newValue}
   }
   /// Returns true if `groupingSeparator` has been explicitly set.
-  public var hasGroupingSeparator: Bool {return _storage._groupingSeparator != nil}
+  public var hasGroupingSeparator: Bool {_storage._groupingSeparator != nil}
   /// Clears the value of `groupingSeparator`. Subsequent reads from it will return its default value.
   public mutating func clearGroupingSeparator() {_uniqueStorage()._groupingSeparator = nil}
 
   public var currencyDecimalSeparator: String {
-    get {return _storage._currencyDecimalSeparator ?? String()}
+    get {_storage._currencyDecimalSeparator ?? String()}
     set {_uniqueStorage()._currencyDecimalSeparator = newValue}
   }
   /// Returns true if `currencyDecimalSeparator` has been explicitly set.
-  public var hasCurrencyDecimalSeparator: Bool {return _storage._currencyDecimalSeparator != nil}
+  public var hasCurrencyDecimalSeparator: Bool {_storage._currencyDecimalSeparator != nil}
   /// Clears the value of `currencyDecimalSeparator`. Subsequent reads from it will return its default value.
   public mutating func clearCurrencyDecimalSeparator() {_uniqueStorage()._currencyDecimalSeparator = nil}
 
   public var currencyGroupingSeparator: String {
-    get {return _storage._currencyGroupingSeparator ?? String()}
+    get {_storage._currencyGroupingSeparator ?? String()}
     set {_uniqueStorage()._currencyGroupingSeparator = newValue}
   }
   /// Returns true if `currencyGroupingSeparator` has been explicitly set.
-  public var hasCurrencyGroupingSeparator: Bool {return _storage._currencyGroupingSeparator != nil}
+  public var hasCurrencyGroupingSeparator: Bool {_storage._currencyGroupingSeparator != nil}
   /// Clears the value of `currencyGroupingSeparator`. Subsequent reads from it will return its default value.
   public mutating func clearCurrencyGroupingSeparator() {_uniqueStorage()._currencyGroupingSeparator = nil}
 
   public var plusSign: String {
-    get {return _storage._plusSign ?? String()}
+    get {_storage._plusSign ?? String()}
     set {_uniqueStorage()._plusSign = newValue}
   }
   /// Returns true if `plusSign` has been explicitly set.
-  public var hasPlusSign: Bool {return _storage._plusSign != nil}
+  public var hasPlusSign: Bool {_storage._plusSign != nil}
   /// Clears the value of `plusSign`. Subsequent reads from it will return its default value.
   public mutating func clearPlusSign() {_uniqueStorage()._plusSign = nil}
 
   public var minusSign: String {
-    get {return _storage._minusSign ?? String()}
+    get {_storage._minusSign ?? String()}
     set {_uniqueStorage()._minusSign = newValue}
   }
   /// Returns true if `minusSign` has been explicitly set.
-  public var hasMinusSign: Bool {return _storage._minusSign != nil}
+  public var hasMinusSign: Bool {_storage._minusSign != nil}
   /// Clears the value of `minusSign`. Subsequent reads from it will return its default value.
   public mutating func clearMinusSign() {_uniqueStorage()._minusSign = nil}
 
   public var exponentialSymbol: String {
-    get {return _storage._exponentialSymbol ?? String()}
+    get {_storage._exponentialSymbol ?? String()}
     set {_uniqueStorage()._exponentialSymbol = newValue}
   }
   /// Returns true if `exponentialSymbol` has been explicitly set.
-  public var hasExponentialSymbol: Bool {return _storage._exponentialSymbol != nil}
+  public var hasExponentialSymbol: Bool {_storage._exponentialSymbol != nil}
   /// Clears the value of `exponentialSymbol`. Subsequent reads from it will return its default value.
   public mutating func clearExponentialSymbol() {_uniqueStorage()._exponentialSymbol = nil}
 
   public var percentSymbol: String {
-    get {return _storage._percentSymbol ?? String()}
+    get {_storage._percentSymbol ?? String()}
     set {_uniqueStorage()._percentSymbol = newValue}
   }
   /// Returns true if `percentSymbol` has been explicitly set.
-  public var hasPercentSymbol: Bool {return _storage._percentSymbol != nil}
+  public var hasPercentSymbol: Bool {_storage._percentSymbol != nil}
   /// Clears the value of `percentSymbol`. Subsequent reads from it will return its default value.
   public mutating func clearPercentSymbol() {_uniqueStorage()._percentSymbol = nil}
 
   public var perMilleSymbol: String {
-    get {return _storage._perMilleSymbol ?? String()}
+    get {_storage._perMilleSymbol ?? String()}
     set {_uniqueStorage()._perMilleSymbol = newValue}
   }
   /// Returns true if `perMilleSymbol` has been explicitly set.
-  public var hasPerMilleSymbol: Bool {return _storage._perMilleSymbol != nil}
+  public var hasPerMilleSymbol: Bool {_storage._perMilleSymbol != nil}
   /// Clears the value of `perMilleSymbol`. Subsequent reads from it will return its default value.
   public mutating func clearPerMilleSymbol() {_uniqueStorage()._perMilleSymbol = nil}
 
   public var infinitySymbol: String {
-    get {return _storage._infinitySymbol ?? String()}
+    get {_storage._infinitySymbol ?? String()}
     set {_uniqueStorage()._infinitySymbol = newValue}
   }
   /// Returns true if `infinitySymbol` has been explicitly set.
-  public var hasInfinitySymbol: Bool {return _storage._infinitySymbol != nil}
+  public var hasInfinitySymbol: Bool {_storage._infinitySymbol != nil}
   /// Clears the value of `infinitySymbol`. Subsequent reads from it will return its default value.
   public mutating func clearInfinitySymbol() {_uniqueStorage()._infinitySymbol = nil}
 
   public var nanSymbol: String {
-    get {return _storage._nanSymbol ?? String()}
+    get {_storage._nanSymbol ?? String()}
     set {_uniqueStorage()._nanSymbol = newValue}
   }
   /// Returns true if `nanSymbol` has been explicitly set.
-  public var hasNanSymbol: Bool {return _storage._nanSymbol != nil}
+  public var hasNanSymbol: Bool {_storage._nanSymbol != nil}
   /// Clears the value of `nanSymbol`. Subsequent reads from it will return its default value.
   public mutating func clearNanSymbol() {_uniqueStorage()._nanSymbol = nil}
 
   public var decimalPattern: String {
-    get {return _storage._decimalPattern ?? String()}
+    get {_storage._decimalPattern ?? String()}
     set {_uniqueStorage()._decimalPattern = newValue}
   }
   /// Returns true if `decimalPattern` has been explicitly set.
-  public var hasDecimalPattern: Bool {return _storage._decimalPattern != nil}
+  public var hasDecimalPattern: Bool {_storage._decimalPattern != nil}
   /// Clears the value of `decimalPattern`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalPattern() {_uniqueStorage()._decimalPattern = nil}
 
   public var scientificPattern: String {
-    get {return _storage._scientificPattern ?? String()}
+    get {_storage._scientificPattern ?? String()}
     set {_uniqueStorage()._scientificPattern = newValue}
   }
   /// Returns true if `scientificPattern` has been explicitly set.
-  public var hasScientificPattern: Bool {return _storage._scientificPattern != nil}
+  public var hasScientificPattern: Bool {_storage._scientificPattern != nil}
   /// Clears the value of `scientificPattern`. Subsequent reads from it will return its default value.
   public mutating func clearScientificPattern() {_uniqueStorage()._scientificPattern = nil}
 
   public var percentPattern: String {
-    get {return _storage._percentPattern ?? String()}
+    get {_storage._percentPattern ?? String()}
     set {_uniqueStorage()._percentPattern = newValue}
   }
   /// Returns true if `percentPattern` has been explicitly set.
-  public var hasPercentPattern: Bool {return _storage._percentPattern != nil}
+  public var hasPercentPattern: Bool {_storage._percentPattern != nil}
   /// Clears the value of `percentPattern`. Subsequent reads from it will return its default value.
   public mutating func clearPercentPattern() {_uniqueStorage()._percentPattern = nil}
 
   public var currencyPattern: String {
-    get {return _storage._currencyPattern ?? String()}
+    get {_storage._currencyPattern ?? String()}
     set {_uniqueStorage()._currencyPattern = newValue}
   }
   /// Returns true if `currencyPattern` has been explicitly set.
-  public var hasCurrencyPattern: Bool {return _storage._currencyPattern != nil}
+  public var hasCurrencyPattern: Bool {_storage._currencyPattern != nil}
   /// Clears the value of `currencyPattern`. Subsequent reads from it will return its default value.
   public mutating func clearCurrencyPattern() {_uniqueStorage()._currencyPattern = nil}
 
   public var currencyCode: String {
-    get {return _storage._currencyCode ?? String()}
+    get {_storage._currencyCode ?? String()}
     set {_uniqueStorage()._currencyCode = newValue}
   }
   /// Returns true if `currencyCode` has been explicitly set.
-  public var hasCurrencyCode: Bool {return _storage._currencyCode != nil}
+  public var hasCurrencyCode: Bool {_storage._currencyCode != nil}
   /// Clears the value of `currencyCode`. Subsequent reads from it will return its default value.
   public mutating func clearCurrencyCode() {_uniqueStorage()._currencyCode = nil}
 
   public var currencySymbols: [TSK_FormattingSymbolsArchive.CurrencySymbol] {
-    get {return _storage._currencySymbols}
+    get {_storage._currencySymbols}
     set {_uniqueStorage()._currencySymbols = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct CurrencySymbol: Sendable {
+  public nonisolated struct CurrencySymbol: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var code: String {
-      get {return _code ?? String()}
+      get {_code ?? String()}
       set {_code = newValue}
     }
     /// Returns true if `code` has been explicitly set.
-    public var hasCode: Bool {return self._code != nil}
+    public var hasCode: Bool {self._code != nil}
     /// Clears the value of `code`. Subsequent reads from it will return its default value.
     public mutating func clearCode() {self._code = nil}
 
     public var symbol: String {
-      get {return _symbol ?? String()}
+      get {_symbol ?? String()}
       set {_symbol = newValue}
     }
     /// Returns true if `symbol` has been explicitly set.
-    public var hasSymbol: Bool {return self._symbol != nil}
+    public var hasSymbol: Bool {self._symbol != nil}
     /// Clears the value of `symbol`. Subsequent reads from it will return its default value.
     public mutating func clearSymbol() {self._symbol = nil}
 
@@ -720,147 +702,147 @@ public struct TSK_FormattingSymbolsArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSK_DocumentSupportArchive: @unchecked Sendable {
+public nonisolated struct TSK_DocumentSupportArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var commandHistory: TSP_Reference {
-    get {return _storage._commandHistory ?? TSP_Reference()}
+    get {_storage._commandHistory ?? TSP_Reference()}
     set {_uniqueStorage()._commandHistory = newValue}
   }
   /// Returns true if `commandHistory` has been explicitly set.
-  public var hasCommandHistory: Bool {return _storage._commandHistory != nil}
+  public var hasCommandHistory: Bool {_storage._commandHistory != nil}
   /// Clears the value of `commandHistory`. Subsequent reads from it will return its default value.
   public mutating func clearCommandHistory() {_uniqueStorage()._commandHistory = nil}
 
   public var undoCount: UInt32 {
-    get {return _storage._undoCount ?? 0}
+    get {_storage._undoCount ?? 0}
     set {_uniqueStorage()._undoCount = newValue}
   }
   /// Returns true if `undoCount` has been explicitly set.
-  public var hasUndoCount: Bool {return _storage._undoCount != nil}
+  public var hasUndoCount: Bool {_storage._undoCount != nil}
   /// Clears the value of `undoCount`. Subsequent reads from it will return its default value.
   public mutating func clearUndoCount() {_uniqueStorage()._undoCount = nil}
 
   public var redoCount: UInt32 {
-    get {return _storage._redoCount ?? 0}
+    get {_storage._redoCount ?? 0}
     set {_uniqueStorage()._redoCount = newValue}
   }
   /// Returns true if `redoCount` has been explicitly set.
-  public var hasRedoCount: Bool {return _storage._redoCount != nil}
+  public var hasRedoCount: Bool {_storage._redoCount != nil}
   /// Clears the value of `redoCount`. Subsequent reads from it will return its default value.
   public mutating func clearRedoCount() {_uniqueStorage()._redoCount = nil}
 
   public var undoActionString: String {
-    get {return _storage._undoActionString ?? String()}
+    get {_storage._undoActionString ?? String()}
     set {_uniqueStorage()._undoActionString = newValue}
   }
   /// Returns true if `undoActionString` has been explicitly set.
-  public var hasUndoActionString: Bool {return _storage._undoActionString != nil}
+  public var hasUndoActionString: Bool {_storage._undoActionString != nil}
   /// Clears the value of `undoActionString`. Subsequent reads from it will return its default value.
   public mutating func clearUndoActionString() {_uniqueStorage()._undoActionString = nil}
 
   public var redoActionString: String {
-    get {return _storage._redoActionString ?? String()}
+    get {_storage._redoActionString ?? String()}
     set {_uniqueStorage()._redoActionString = newValue}
   }
   /// Returns true if `redoActionString` has been explicitly set.
-  public var hasRedoActionString: Bool {return _storage._redoActionString != nil}
+  public var hasRedoActionString: Bool {_storage._redoActionString != nil}
   /// Clears the value of `redoActionString`. Subsequent reads from it will return its default value.
   public mutating func clearRedoActionString() {_uniqueStorage()._redoActionString = nil}
 
   public var webState: TSP_Reference {
-    get {return _storage._webState ?? TSP_Reference()}
+    get {_storage._webState ?? TSP_Reference()}
     set {_uniqueStorage()._webState = newValue}
   }
   /// Returns true if `webState` has been explicitly set.
-  public var hasWebState: Bool {return _storage._webState != nil}
+  public var hasWebState: Bool {_storage._webState != nil}
   /// Clears the value of `webState`. Subsequent reads from it will return its default value.
   public mutating func clearWebState() {_uniqueStorage()._webState = nil}
 
   public var isInCollaborationMode: Bool {
-    get {return _storage._isInCollaborationMode ?? false}
+    get {_storage._isInCollaborationMode ?? false}
     set {_uniqueStorage()._isInCollaborationMode = newValue}
   }
   /// Returns true if `isInCollaborationMode` has been explicitly set.
-  public var hasIsInCollaborationMode: Bool {return _storage._isInCollaborationMode != nil}
+  public var hasIsInCollaborationMode: Bool {_storage._isInCollaborationMode != nil}
   /// Clears the value of `isInCollaborationMode`. Subsequent reads from it will return its default value.
   public mutating func clearIsInCollaborationMode() {_uniqueStorage()._isInCollaborationMode = nil}
 
   public var actionStringLocalization: String {
-    get {return _storage._actionStringLocalization ?? String()}
+    get {_storage._actionStringLocalization ?? String()}
     set {_uniqueStorage()._actionStringLocalization = newValue}
   }
   /// Returns true if `actionStringLocalization` has been explicitly set.
-  public var hasActionStringLocalization: Bool {return _storage._actionStringLocalization != nil}
+  public var hasActionStringLocalization: Bool {_storage._actionStringLocalization != nil}
   /// Clears the value of `actionStringLocalization`. Subsequent reads from it will return its default value.
   public mutating func clearActionStringLocalization() {_uniqueStorage()._actionStringLocalization = nil}
 
   public var collaborationState: TSP_Reference {
-    get {return _storage._collaborationState ?? TSP_Reference()}
+    get {_storage._collaborationState ?? TSP_Reference()}
     set {_uniqueStorage()._collaborationState = newValue}
   }
   /// Returns true if `collaborationState` has been explicitly set.
-  public var hasCollaborationState: Bool {return _storage._collaborationState != nil}
+  public var hasCollaborationState: Bool {_storage._collaborationState != nil}
   /// Clears the value of `collaborationState`. Subsequent reads from it will return its default value.
   public mutating func clearCollaborationState() {_uniqueStorage()._collaborationState = nil}
 
   public var activityNotificationMap: TSP_Reference {
-    get {return _storage._activityNotificationMap ?? TSP_Reference()}
+    get {_storage._activityNotificationMap ?? TSP_Reference()}
     set {_uniqueStorage()._activityNotificationMap = newValue}
   }
   /// Returns true if `activityNotificationMap` has been explicitly set.
-  public var hasActivityNotificationMap: Bool {return _storage._activityNotificationMap != nil}
+  public var hasActivityNotificationMap: Bool {_storage._activityNotificationMap != nil}
   /// Clears the value of `activityNotificationMap`. Subsequent reads from it will return its default value.
   public mutating func clearActivityNotificationMap() {_uniqueStorage()._activityNotificationMap = nil}
 
   public var removedAuthorAuditorPendingState: TSP_Reference {
-    get {return _storage._removedAuthorAuditorPendingState ?? TSP_Reference()}
+    get {_storage._removedAuthorAuditorPendingState ?? TSP_Reference()}
     set {_uniqueStorage()._removedAuthorAuditorPendingState = newValue}
   }
   /// Returns true if `removedAuthorAuditorPendingState` has been explicitly set.
-  public var hasRemovedAuthorAuditorPendingState: Bool {return _storage._removedAuthorAuditorPendingState != nil}
+  public var hasRemovedAuthorAuditorPendingState: Bool {_storage._removedAuthorAuditorPendingState != nil}
   /// Clears the value of `removedAuthorAuditorPendingState`. Subsequent reads from it will return its default value.
   public mutating func clearRemovedAuthorAuditorPendingState() {_uniqueStorage()._removedAuthorAuditorPendingState = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var commandSelectionBehaviorHistory: TSP_Reference {
-    get {return _storage._commandSelectionBehaviorHistory ?? TSP_Reference()}
+    get {_storage._commandSelectionBehaviorHistory ?? TSP_Reference()}
     set {_uniqueStorage()._commandSelectionBehaviorHistory = newValue}
   }
   /// Returns true if `commandSelectionBehaviorHistory` has been explicitly set.
-  public var hasCommandSelectionBehaviorHistory: Bool {return _storage._commandSelectionBehaviorHistory != nil}
+  public var hasCommandSelectionBehaviorHistory: Bool {_storage._commandSelectionBehaviorHistory != nil}
   /// Clears the value of `commandSelectionBehaviorHistory`. Subsequent reads from it will return its default value.
   public mutating func clearCommandSelectionBehaviorHistory() {_uniqueStorage()._commandSelectionBehaviorHistory = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var viewState: TSP_Reference {
-    get {return _storage._viewState ?? TSP_Reference()}
+    get {_storage._viewState ?? TSP_Reference()}
     set {_uniqueStorage()._viewState = newValue}
   }
   /// Returns true if `viewState` has been explicitly set.
-  public var hasViewState: Bool {return _storage._viewState != nil}
+  public var hasViewState: Bool {_storage._viewState != nil}
   /// Clears the value of `viewState`. Subsequent reads from it will return its default value.
   public mutating func clearViewState() {_uniqueStorage()._viewState = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var collaborationCommandHistory: TSP_Reference {
-    get {return _storage._collaborationCommandHistory ?? TSP_Reference()}
+    get {_storage._collaborationCommandHistory ?? TSP_Reference()}
     set {_uniqueStorage()._collaborationCommandHistory = newValue}
   }
   /// Returns true if `collaborationCommandHistory` has been explicitly set.
-  public var hasCollaborationCommandHistory: Bool {return _storage._collaborationCommandHistory != nil}
+  public var hasCollaborationCommandHistory: Bool {_storage._collaborationCommandHistory != nil}
   /// Clears the value of `collaborationCommandHistory`. Subsequent reads from it will return its default value.
   public mutating func clearCollaborationCommandHistory() {_uniqueStorage()._collaborationCommandHistory = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var collaborationSessionState: TSP_Reference {
-    get {return _storage._collaborationSessionState ?? TSP_Reference()}
+    get {_storage._collaborationSessionState ?? TSP_Reference()}
     set {_uniqueStorage()._collaborationSessionState = newValue}
   }
   /// Returns true if `collaborationSessionState` has been explicitly set.
-  public var hasCollaborationSessionState: Bool {return _storage._collaborationSessionState != nil}
+  public var hasCollaborationSessionState: Bool {_storage._collaborationSessionState != nil}
   /// Clears the value of `collaborationSessionState`. Subsequent reads from it will return its default value.
   public mutating func clearCollaborationSessionState() {_uniqueStorage()._collaborationSessionState = nil}
 
@@ -871,35 +853,35 @@ public struct TSK_DocumentSupportArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSK_ViewStateArchive: Sendable {
+public nonisolated struct TSK_ViewStateArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var viewStateRoot: TSP_Reference {
-    get {return _viewStateRoot ?? TSP_Reference()}
+    get {_viewStateRoot ?? TSP_Reference()}
     set {_viewStateRoot = newValue}
   }
   /// Returns true if `viewStateRoot` has been explicitly set.
-  public var hasViewStateRoot: Bool {return self._viewStateRoot != nil}
+  public var hasViewStateRoot: Bool {self._viewStateRoot != nil}
   /// Clears the value of `viewStateRoot`. Subsequent reads from it will return its default value.
   public mutating func clearViewStateRoot() {self._viewStateRoot = nil}
 
   public var documentRevisionSequence: Int32 {
-    get {return _documentRevisionSequence ?? 0}
+    get {_documentRevisionSequence ?? 0}
     set {_documentRevisionSequence = newValue}
   }
   /// Returns true if `documentRevisionSequence` has been explicitly set.
-  public var hasDocumentRevisionSequence: Bool {return self._documentRevisionSequence != nil}
+  public var hasDocumentRevisionSequence: Bool {self._documentRevisionSequence != nil}
   /// Clears the value of `documentRevisionSequence`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentRevisionSequence() {self._documentRevisionSequence = nil}
 
   public var documentRevisionIdentifier: String {
-    get {return _documentRevisionIdentifier ?? String()}
+    get {_documentRevisionIdentifier ?? String()}
     set {_documentRevisionIdentifier = newValue}
   }
   /// Returns true if `documentRevisionIdentifier` has been explicitly set.
-  public var hasDocumentRevisionIdentifier: Bool {return self._documentRevisionIdentifier != nil}
+  public var hasDocumentRevisionIdentifier: Bool {self._documentRevisionIdentifier != nil}
   /// Clears the value of `documentRevisionIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentRevisionIdentifier() {self._documentRevisionIdentifier = nil}
 
@@ -912,72 +894,72 @@ public struct TSK_ViewStateArchive: Sendable {
   fileprivate var _documentRevisionIdentifier: String? = nil
 }
 
-public struct TSK_CommandArchive: Sendable {
+public nonisolated struct TSK_CommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var undoRedoState: TSP_Reference {
-    get {return _undoRedoState ?? TSP_Reference()}
+    get {_undoRedoState ?? TSP_Reference()}
     set {_undoRedoState = newValue}
   }
   /// Returns true if `undoRedoState` has been explicitly set.
-  public var hasUndoRedoState: Bool {return self._undoRedoState != nil}
+  public var hasUndoRedoState: Bool {self._undoRedoState != nil}
   /// Clears the value of `undoRedoState`. Subsequent reads from it will return its default value.
   public mutating func clearUndoRedoState() {self._undoRedoState = nil}
 
   public var undoCollection: TSP_Reference {
-    get {return _undoCollection ?? TSP_Reference()}
+    get {_undoCollection ?? TSP_Reference()}
     set {_undoCollection = newValue}
   }
   /// Returns true if `undoCollection` has been explicitly set.
-  public var hasUndoCollection: Bool {return self._undoCollection != nil}
+  public var hasUndoCollection: Bool {self._undoCollection != nil}
   /// Clears the value of `undoCollection`. Subsequent reads from it will return its default value.
   public mutating func clearUndoCollection() {self._undoCollection = nil}
 
   public var shadowedByTransform: Bool {
-    get {return _shadowedByTransform ?? false}
+    get {_shadowedByTransform ?? false}
     set {_shadowedByTransform = newValue}
   }
   /// Returns true if `shadowedByTransform` has been explicitly set.
-  public var hasShadowedByTransform: Bool {return self._shadowedByTransform != nil}
+  public var hasShadowedByTransform: Bool {self._shadowedByTransform != nil}
   /// Clears the value of `shadowedByTransform`. Subsequent reads from it will return its default value.
   public mutating func clearShadowedByTransform() {self._shadowedByTransform = nil}
 
   public var shadowedByCommit: Bool {
-    get {return _shadowedByCommit ?? false}
+    get {_shadowedByCommit ?? false}
     set {_shadowedByCommit = newValue}
   }
   /// Returns true if `shadowedByCommit` has been explicitly set.
-  public var hasShadowedByCommit: Bool {return self._shadowedByCommit != nil}
+  public var hasShadowedByCommit: Bool {self._shadowedByCommit != nil}
   /// Clears the value of `shadowedByCommit`. Subsequent reads from it will return its default value.
   public mutating func clearShadowedByCommit() {self._shadowedByCommit = nil}
 
   public var remote: Bool {
-    get {return _remote ?? false}
+    get {_remote ?? false}
     set {_remote = newValue}
   }
   /// Returns true if `remote` has been explicitly set.
-  public var hasRemote: Bool {return self._remote != nil}
+  public var hasRemote: Bool {self._remote != nil}
   /// Clears the value of `remote`. Subsequent reads from it will return its default value.
   public mutating func clearRemote() {self._remote = nil}
 
   public var shouldHoldUntilGroupCommit: Bool {
-    get {return _shouldHoldUntilGroupCommit ?? false}
+    get {_shouldHoldUntilGroupCommit ?? false}
     set {_shouldHoldUntilGroupCommit = newValue}
   }
   /// Returns true if `shouldHoldUntilGroupCommit` has been explicitly set.
-  public var hasShouldHoldUntilGroupCommit: Bool {return self._shouldHoldUntilGroupCommit != nil}
+  public var hasShouldHoldUntilGroupCommit: Bool {self._shouldHoldUntilGroupCommit != nil}
   /// Clears the value of `shouldHoldUntilGroupCommit`. Subsequent reads from it will return its default value.
   public mutating func clearShouldHoldUntilGroupCommit() {self._shouldHoldUntilGroupCommit = nil}
 
   public var serverOriginated: Bool {
-    get {return _serverOriginated ?? false}
+    get {_serverOriginated ?? false}
     set {_serverOriginated = newValue}
   }
   /// Returns true if `serverOriginated` has been explicitly set.
-  public var hasServerOriginated: Bool {return self._serverOriginated != nil}
+  public var hasServerOriginated: Bool {self._serverOriginated != nil}
   /// Clears the value of `serverOriginated`. Subsequent reads from it will return its default value.
   public mutating func clearServerOriginated() {self._serverOriginated = nil}
 
@@ -994,46 +976,46 @@ public struct TSK_CommandArchive: Sendable {
   fileprivate var _serverOriginated: Bool? = nil
 }
 
-public struct TSK_CommandGroupArchive: Sendable {
+public nonisolated struct TSK_CommandGroupArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var commands: [TSP_Reference] = []
 
   public var processResults: TSP_IndexSet {
-    get {return _processResults ?? TSP_IndexSet()}
+    get {_processResults ?? TSP_IndexSet()}
     set {_processResults = newValue}
   }
   /// Returns true if `processResults` has been explicitly set.
-  public var hasProcessResults: Bool {return self._processResults != nil}
+  public var hasProcessResults: Bool {self._processResults != nil}
   /// Clears the value of `processResults`. Subsequent reads from it will return its default value.
   public mutating func clearProcessResults() {self._processResults = nil}
 
   public var actionString: String {
-    get {return _actionString ?? String()}
+    get {_actionString ?? String()}
     set {_actionString = newValue}
   }
   /// Returns true if `actionString` has been explicitly set.
-  public var hasActionString: Bool {return self._actionString != nil}
+  public var hasActionString: Bool {self._actionString != nil}
   /// Clears the value of `actionString`. Subsequent reads from it will return its default value.
   public mutating func clearActionString() {self._actionString = nil}
 
   public var canCoalesceGroup: Bool {
-    get {return _canCoalesceGroup ?? false}
+    get {_canCoalesceGroup ?? false}
     set {_canCoalesceGroup = newValue}
   }
   /// Returns true if `canCoalesceGroup` has been explicitly set.
-  public var hasCanCoalesceGroup: Bool {return self._canCoalesceGroup != nil}
+  public var hasCanCoalesceGroup: Bool {self._canCoalesceGroup != nil}
   /// Clears the value of `canCoalesceGroup`. Subsequent reads from it will return its default value.
   public mutating func clearCanCoalesceGroup() {self._canCoalesceGroup = nil}
 
@@ -1047,37 +1029,37 @@ public struct TSK_CommandGroupArchive: Sendable {
   fileprivate var _canCoalesceGroup: Bool? = nil
 }
 
-public struct TSK_InducedCommandCollectionArchive: Sendable {
+public nonisolated struct TSK_InducedCommandCollectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var inducingCommand: TSP_Reference {
-    get {return _inducingCommand ?? TSP_Reference()}
+    get {_inducingCommand ?? TSP_Reference()}
     set {_inducingCommand = newValue}
   }
   /// Returns true if `inducingCommand` has been explicitly set.
-  public var hasInducingCommand: Bool {return self._inducingCommand != nil}
+  public var hasInducingCommand: Bool {self._inducingCommand != nil}
   /// Clears the value of `inducingCommand`. Subsequent reads from it will return its default value.
   public mutating func clearInducingCommand() {self._inducingCommand = nil}
 
   public var inducedCommands: [TSP_Reference] = []
 
   public var indexesOfProcessedInducedCommands: TSP_IndexSet {
-    get {return _indexesOfProcessedInducedCommands ?? TSP_IndexSet()}
+    get {_indexesOfProcessedInducedCommands ?? TSP_IndexSet()}
     set {_indexesOfProcessedInducedCommands = newValue}
   }
   /// Returns true if `indexesOfProcessedInducedCommands` has been explicitly set.
-  public var hasIndexesOfProcessedInducedCommands: Bool {return self._indexesOfProcessedInducedCommands != nil}
+  public var hasIndexesOfProcessedInducedCommands: Bool {self._indexesOfProcessedInducedCommands != nil}
   /// Clears the value of `indexesOfProcessedInducedCommands`. Subsequent reads from it will return its default value.
   public mutating func clearIndexesOfProcessedInducedCommands() {self._indexesOfProcessedInducedCommands = nil}
 
@@ -1090,53 +1072,53 @@ public struct TSK_InducedCommandCollectionArchive: Sendable {
   fileprivate var _indexesOfProcessedInducedCommands: TSP_IndexSet? = nil
 }
 
-public struct TSK_PropagatedCommandCollectionArchive: @unchecked Sendable {
+public nonisolated struct TSK_PropagatedCommandCollectionArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var propagatableCommand: TSP_Reference {
-    get {return _storage._propagatableCommand ?? TSP_Reference()}
+    get {_storage._propagatableCommand ?? TSP_Reference()}
     set {_uniqueStorage()._propagatableCommand = newValue}
   }
   /// Returns true if `propagatableCommand` has been explicitly set.
-  public var hasPropagatableCommand: Bool {return _storage._propagatableCommand != nil}
+  public var hasPropagatableCommand: Bool {_storage._propagatableCommand != nil}
   /// Clears the value of `propagatableCommand`. Subsequent reads from it will return its default value.
   public mutating func clearPropagatableCommand() {_uniqueStorage()._propagatableCommand = nil}
 
   public var propagatableCommandProcessResult: Bool {
-    get {return _storage._propagatableCommandProcessResult ?? false}
+    get {_storage._propagatableCommandProcessResult ?? false}
     set {_uniqueStorage()._propagatableCommandProcessResult = newValue}
   }
   /// Returns true if `propagatableCommandProcessResult` has been explicitly set.
-  public var hasPropagatableCommandProcessResult: Bool {return _storage._propagatableCommandProcessResult != nil}
+  public var hasPropagatableCommandProcessResult: Bool {_storage._propagatableCommandProcessResult != nil}
   /// Clears the value of `propagatableCommandProcessResult`. Subsequent reads from it will return its default value.
   public mutating func clearPropagatableCommandProcessResult() {_uniqueStorage()._propagatableCommandProcessResult = nil}
 
   public var propagatingCommand: TSP_Reference {
-    get {return _storage._propagatingCommand ?? TSP_Reference()}
+    get {_storage._propagatingCommand ?? TSP_Reference()}
     set {_uniqueStorage()._propagatingCommand = newValue}
   }
   /// Returns true if `propagatingCommand` has been explicitly set.
-  public var hasPropagatingCommand: Bool {return _storage._propagatingCommand != nil}
+  public var hasPropagatingCommand: Bool {_storage._propagatingCommand != nil}
   /// Clears the value of `propagatingCommand`. Subsequent reads from it will return its default value.
   public mutating func clearPropagatingCommand() {_uniqueStorage()._propagatingCommand = nil}
 
   public var propagatingCommandProcessResult: Bool {
-    get {return _storage._propagatingCommandProcessResult ?? false}
+    get {_storage._propagatingCommandProcessResult ?? false}
     set {_uniqueStorage()._propagatingCommandProcessResult = newValue}
   }
   /// Returns true if `propagatingCommandProcessResult` has been explicitly set.
-  public var hasPropagatingCommandProcessResult: Bool {return _storage._propagatingCommandProcessResult != nil}
+  public var hasPropagatingCommandProcessResult: Bool {_storage._propagatingCommandProcessResult != nil}
   /// Clears the value of `propagatingCommandProcessResult`. Subsequent reads from it will return its default value.
   public mutating func clearPropagatingCommandProcessResult() {_uniqueStorage()._propagatingCommandProcessResult = nil}
 
@@ -1147,53 +1129,53 @@ public struct TSK_PropagatedCommandCollectionArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSK_FinalCommandPairArchive: @unchecked Sendable {
+public nonisolated struct TSK_FinalCommandPairArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var command: TSP_Reference {
-    get {return _storage._command ?? TSP_Reference()}
+    get {_storage._command ?? TSP_Reference()}
     set {_uniqueStorage()._command = newValue}
   }
   /// Returns true if `command` has been explicitly set.
-  public var hasCommand: Bool {return _storage._command != nil}
+  public var hasCommand: Bool {_storage._command != nil}
   /// Clears the value of `command`. Subsequent reads from it will return its default value.
   public mutating func clearCommand() {_uniqueStorage()._command = nil}
 
   public var commandProcessResult: Bool {
-    get {return _storage._commandProcessResult ?? false}
+    get {_storage._commandProcessResult ?? false}
     set {_uniqueStorage()._commandProcessResult = newValue}
   }
   /// Returns true if `commandProcessResult` has been explicitly set.
-  public var hasCommandProcessResult: Bool {return _storage._commandProcessResult != nil}
+  public var hasCommandProcessResult: Bool {_storage._commandProcessResult != nil}
   /// Clears the value of `commandProcessResult`. Subsequent reads from it will return its default value.
   public mutating func clearCommandProcessResult() {_uniqueStorage()._commandProcessResult = nil}
 
   public var finalCommand: TSP_Reference {
-    get {return _storage._finalCommand ?? TSP_Reference()}
+    get {_storage._finalCommand ?? TSP_Reference()}
     set {_uniqueStorage()._finalCommand = newValue}
   }
   /// Returns true if `finalCommand` has been explicitly set.
-  public var hasFinalCommand: Bool {return _storage._finalCommand != nil}
+  public var hasFinalCommand: Bool {_storage._finalCommand != nil}
   /// Clears the value of `finalCommand`. Subsequent reads from it will return its default value.
   public mutating func clearFinalCommand() {_uniqueStorage()._finalCommand = nil}
 
   public var finalCommandProcessResult: Bool {
-    get {return _storage._finalCommandProcessResult ?? false}
+    get {_storage._finalCommandProcessResult ?? false}
     set {_uniqueStorage()._finalCommandProcessResult = newValue}
   }
   /// Returns true if `finalCommandProcessResult` has been explicitly set.
-  public var hasFinalCommandProcessResult: Bool {return _storage._finalCommandProcessResult != nil}
+  public var hasFinalCommandProcessResult: Bool {_storage._finalCommandProcessResult != nil}
   /// Clears the value of `finalCommandProcessResult`. Subsequent reads from it will return its default value.
   public mutating func clearFinalCommandProcessResult() {_uniqueStorage()._finalCommandProcessResult = nil}
 
@@ -1204,7 +1186,7 @@ public struct TSK_FinalCommandPairArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSK_CommandContainerArchive: Sendable {
+public nonisolated struct TSK_CommandContainerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1216,17 +1198,17 @@ public struct TSK_CommandContainerArchive: Sendable {
   public init() {}
 }
 
-public struct TSK_ProgressiveCommandGroupArchive: Sendable {
+public nonisolated struct TSK_ProgressiveCommandGroupArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandGroupArchive {
-    get {return _super ?? TSK_CommandGroupArchive()}
+    get {_super ?? TSK_CommandGroupArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -1237,409 +1219,409 @@ public struct TSK_ProgressiveCommandGroupArchive: Sendable {
   fileprivate var _super: TSK_CommandGroupArchive? = nil
 }
 
-public struct TSK_FormatStructArchive: SwiftProtobuf.ExtensibleMessage, @unchecked Sendable {
+public nonisolated struct TSK_FormatStructArchive: SwiftProtobuf.ExtensibleMessage, @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var formatType: UInt32 {
-    get {return _storage._formatType ?? 0}
+    get {_storage._formatType ?? 0}
     set {_uniqueStorage()._formatType = newValue}
   }
   /// Returns true if `formatType` has been explicitly set.
-  public var hasFormatType: Bool {return _storage._formatType != nil}
+  public var hasFormatType: Bool {_storage._formatType != nil}
   /// Clears the value of `formatType`. Subsequent reads from it will return its default value.
   public mutating func clearFormatType() {_uniqueStorage()._formatType = nil}
 
   public var decimalPlaces: UInt32 {
-    get {return _storage._decimalPlaces ?? 0}
+    get {_storage._decimalPlaces ?? 0}
     set {_uniqueStorage()._decimalPlaces = newValue}
   }
   /// Returns true if `decimalPlaces` has been explicitly set.
-  public var hasDecimalPlaces: Bool {return _storage._decimalPlaces != nil}
+  public var hasDecimalPlaces: Bool {_storage._decimalPlaces != nil}
   /// Clears the value of `decimalPlaces`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalPlaces() {_uniqueStorage()._decimalPlaces = nil}
 
   public var currencyCode: String {
-    get {return _storage._currencyCode ?? String()}
+    get {_storage._currencyCode ?? String()}
     set {_uniqueStorage()._currencyCode = newValue}
   }
   /// Returns true if `currencyCode` has been explicitly set.
-  public var hasCurrencyCode: Bool {return _storage._currencyCode != nil}
+  public var hasCurrencyCode: Bool {_storage._currencyCode != nil}
   /// Clears the value of `currencyCode`. Subsequent reads from it will return its default value.
   public mutating func clearCurrencyCode() {_uniqueStorage()._currencyCode = nil}
 
   public var negativeStyle: UInt32 {
-    get {return _storage._negativeStyle ?? 0}
+    get {_storage._negativeStyle ?? 0}
     set {_uniqueStorage()._negativeStyle = newValue}
   }
   /// Returns true if `negativeStyle` has been explicitly set.
-  public var hasNegativeStyle: Bool {return _storage._negativeStyle != nil}
+  public var hasNegativeStyle: Bool {_storage._negativeStyle != nil}
   /// Clears the value of `negativeStyle`. Subsequent reads from it will return its default value.
   public mutating func clearNegativeStyle() {_uniqueStorage()._negativeStyle = nil}
 
   public var showThousandsSeparator: Bool {
-    get {return _storage._showThousandsSeparator ?? false}
+    get {_storage._showThousandsSeparator ?? false}
     set {_uniqueStorage()._showThousandsSeparator = newValue}
   }
   /// Returns true if `showThousandsSeparator` has been explicitly set.
-  public var hasShowThousandsSeparator: Bool {return _storage._showThousandsSeparator != nil}
+  public var hasShowThousandsSeparator: Bool {_storage._showThousandsSeparator != nil}
   /// Clears the value of `showThousandsSeparator`. Subsequent reads from it will return its default value.
   public mutating func clearShowThousandsSeparator() {_uniqueStorage()._showThousandsSeparator = nil}
 
   public var useAccountingStyle: Bool {
-    get {return _storage._useAccountingStyle ?? false}
+    get {_storage._useAccountingStyle ?? false}
     set {_uniqueStorage()._useAccountingStyle = newValue}
   }
   /// Returns true if `useAccountingStyle` has been explicitly set.
-  public var hasUseAccountingStyle: Bool {return _storage._useAccountingStyle != nil}
+  public var hasUseAccountingStyle: Bool {_storage._useAccountingStyle != nil}
   /// Clears the value of `useAccountingStyle`. Subsequent reads from it will return its default value.
   public mutating func clearUseAccountingStyle() {_uniqueStorage()._useAccountingStyle = nil}
 
   public var durationStyle: UInt32 {
-    get {return _storage._durationStyle ?? 0}
+    get {_storage._durationStyle ?? 0}
     set {_uniqueStorage()._durationStyle = newValue}
   }
   /// Returns true if `durationStyle` has been explicitly set.
-  public var hasDurationStyle: Bool {return _storage._durationStyle != nil}
+  public var hasDurationStyle: Bool {_storage._durationStyle != nil}
   /// Clears the value of `durationStyle`. Subsequent reads from it will return its default value.
   public mutating func clearDurationStyle() {_uniqueStorage()._durationStyle = nil}
 
   public var base: UInt32 {
-    get {return _storage._base ?? 0}
+    get {_storage._base ?? 0}
     set {_uniqueStorage()._base = newValue}
   }
   /// Returns true if `base` has been explicitly set.
-  public var hasBase: Bool {return _storage._base != nil}
+  public var hasBase: Bool {_storage._base != nil}
   /// Clears the value of `base`. Subsequent reads from it will return its default value.
   public mutating func clearBase() {_uniqueStorage()._base = nil}
 
   public var basePlaces: UInt32 {
-    get {return _storage._basePlaces ?? 0}
+    get {_storage._basePlaces ?? 0}
     set {_uniqueStorage()._basePlaces = newValue}
   }
   /// Returns true if `basePlaces` has been explicitly set.
-  public var hasBasePlaces: Bool {return _storage._basePlaces != nil}
+  public var hasBasePlaces: Bool {_storage._basePlaces != nil}
   /// Clears the value of `basePlaces`. Subsequent reads from it will return its default value.
   public mutating func clearBasePlaces() {_uniqueStorage()._basePlaces = nil}
 
   public var baseUseMinusSign: Bool {
-    get {return _storage._baseUseMinusSign ?? false}
+    get {_storage._baseUseMinusSign ?? false}
     set {_uniqueStorage()._baseUseMinusSign = newValue}
   }
   /// Returns true if `baseUseMinusSign` has been explicitly set.
-  public var hasBaseUseMinusSign: Bool {return _storage._baseUseMinusSign != nil}
+  public var hasBaseUseMinusSign: Bool {_storage._baseUseMinusSign != nil}
   /// Clears the value of `baseUseMinusSign`. Subsequent reads from it will return its default value.
   public mutating func clearBaseUseMinusSign() {_uniqueStorage()._baseUseMinusSign = nil}
 
   public var fractionAccuracy: UInt32 {
-    get {return _storage._fractionAccuracy ?? 0}
+    get {_storage._fractionAccuracy ?? 0}
     set {_uniqueStorage()._fractionAccuracy = newValue}
   }
   /// Returns true if `fractionAccuracy` has been explicitly set.
-  public var hasFractionAccuracy: Bool {return _storage._fractionAccuracy != nil}
+  public var hasFractionAccuracy: Bool {_storage._fractionAccuracy != nil}
   /// Clears the value of `fractionAccuracy`. Subsequent reads from it will return its default value.
   public mutating func clearFractionAccuracy() {_uniqueStorage()._fractionAccuracy = nil}
 
   public var suppressDateFormat: Bool {
-    get {return _storage._suppressDateFormat ?? false}
+    get {_storage._suppressDateFormat ?? false}
     set {_uniqueStorage()._suppressDateFormat = newValue}
   }
   /// Returns true if `suppressDateFormat` has been explicitly set.
-  public var hasSuppressDateFormat: Bool {return _storage._suppressDateFormat != nil}
+  public var hasSuppressDateFormat: Bool {_storage._suppressDateFormat != nil}
   /// Clears the value of `suppressDateFormat`. Subsequent reads from it will return its default value.
   public mutating func clearSuppressDateFormat() {_uniqueStorage()._suppressDateFormat = nil}
 
   public var suppressTimeFormat: Bool {
-    get {return _storage._suppressTimeFormat ?? false}
+    get {_storage._suppressTimeFormat ?? false}
     set {_uniqueStorage()._suppressTimeFormat = newValue}
   }
   /// Returns true if `suppressTimeFormat` has been explicitly set.
-  public var hasSuppressTimeFormat: Bool {return _storage._suppressTimeFormat != nil}
+  public var hasSuppressTimeFormat: Bool {_storage._suppressTimeFormat != nil}
   /// Clears the value of `suppressTimeFormat`. Subsequent reads from it will return its default value.
   public mutating func clearSuppressTimeFormat() {_uniqueStorage()._suppressTimeFormat = nil}
 
   public var dateTimeFormat: String {
-    get {return _storage._dateTimeFormat ?? String()}
+    get {_storage._dateTimeFormat ?? String()}
     set {_uniqueStorage()._dateTimeFormat = newValue}
   }
   /// Returns true if `dateTimeFormat` has been explicitly set.
-  public var hasDateTimeFormat: Bool {return _storage._dateTimeFormat != nil}
+  public var hasDateTimeFormat: Bool {_storage._dateTimeFormat != nil}
   /// Clears the value of `dateTimeFormat`. Subsequent reads from it will return its default value.
   public mutating func clearDateTimeFormat() {_uniqueStorage()._dateTimeFormat = nil}
 
   public var durationUnitLargest: UInt32 {
-    get {return _storage._durationUnitLargest ?? 0}
+    get {_storage._durationUnitLargest ?? 0}
     set {_uniqueStorage()._durationUnitLargest = newValue}
   }
   /// Returns true if `durationUnitLargest` has been explicitly set.
-  public var hasDurationUnitLargest: Bool {return _storage._durationUnitLargest != nil}
+  public var hasDurationUnitLargest: Bool {_storage._durationUnitLargest != nil}
   /// Clears the value of `durationUnitLargest`. Subsequent reads from it will return its default value.
   public mutating func clearDurationUnitLargest() {_uniqueStorage()._durationUnitLargest = nil}
 
   public var durationUnitSmallest: UInt32 {
-    get {return _storage._durationUnitSmallest ?? 0}
+    get {_storage._durationUnitSmallest ?? 0}
     set {_uniqueStorage()._durationUnitSmallest = newValue}
   }
   /// Returns true if `durationUnitSmallest` has been explicitly set.
-  public var hasDurationUnitSmallest: Bool {return _storage._durationUnitSmallest != nil}
+  public var hasDurationUnitSmallest: Bool {_storage._durationUnitSmallest != nil}
   /// Clears the value of `durationUnitSmallest`. Subsequent reads from it will return its default value.
   public mutating func clearDurationUnitSmallest() {_uniqueStorage()._durationUnitSmallest = nil}
 
   public var customID: UInt32 {
-    get {return _storage._customID ?? 0}
+    get {_storage._customID ?? 0}
     set {_uniqueStorage()._customID = newValue}
   }
   /// Returns true if `customID` has been explicitly set.
-  public var hasCustomID: Bool {return _storage._customID != nil}
+  public var hasCustomID: Bool {_storage._customID != nil}
   /// Clears the value of `customID`. Subsequent reads from it will return its default value.
   public mutating func clearCustomID() {_uniqueStorage()._customID = nil}
 
   public var customFormatString: String {
-    get {return _storage._customFormatString ?? String()}
+    get {_storage._customFormatString ?? String()}
     set {_uniqueStorage()._customFormatString = newValue}
   }
   /// Returns true if `customFormatString` has been explicitly set.
-  public var hasCustomFormatString: Bool {return _storage._customFormatString != nil}
+  public var hasCustomFormatString: Bool {_storage._customFormatString != nil}
   /// Clears the value of `customFormatString`. Subsequent reads from it will return its default value.
   public mutating func clearCustomFormatString() {_uniqueStorage()._customFormatString = nil}
 
   public var scaleFactor: Double {
-    get {return _storage._scaleFactor ?? 0}
+    get {_storage._scaleFactor ?? 0}
     set {_uniqueStorage()._scaleFactor = newValue}
   }
   /// Returns true if `scaleFactor` has been explicitly set.
-  public var hasScaleFactor: Bool {return _storage._scaleFactor != nil}
+  public var hasScaleFactor: Bool {_storage._scaleFactor != nil}
   /// Clears the value of `scaleFactor`. Subsequent reads from it will return its default value.
   public mutating func clearScaleFactor() {_uniqueStorage()._scaleFactor = nil}
 
   public var requiresFractionReplacement: Bool {
-    get {return _storage._requiresFractionReplacement ?? false}
+    get {_storage._requiresFractionReplacement ?? false}
     set {_uniqueStorage()._requiresFractionReplacement = newValue}
   }
   /// Returns true if `requiresFractionReplacement` has been explicitly set.
-  public var hasRequiresFractionReplacement: Bool {return _storage._requiresFractionReplacement != nil}
+  public var hasRequiresFractionReplacement: Bool {_storage._requiresFractionReplacement != nil}
   /// Clears the value of `requiresFractionReplacement`. Subsequent reads from it will return its default value.
   public mutating func clearRequiresFractionReplacement() {_uniqueStorage()._requiresFractionReplacement = nil}
 
   public var controlMinimum: Double {
-    get {return _storage._controlMinimum ?? 0}
+    get {_storage._controlMinimum ?? 0}
     set {_uniqueStorage()._controlMinimum = newValue}
   }
   /// Returns true if `controlMinimum` has been explicitly set.
-  public var hasControlMinimum: Bool {return _storage._controlMinimum != nil}
+  public var hasControlMinimum: Bool {_storage._controlMinimum != nil}
   /// Clears the value of `controlMinimum`. Subsequent reads from it will return its default value.
   public mutating func clearControlMinimum() {_uniqueStorage()._controlMinimum = nil}
 
   public var controlMaximum: Double {
-    get {return _storage._controlMaximum ?? 0}
+    get {_storage._controlMaximum ?? 0}
     set {_uniqueStorage()._controlMaximum = newValue}
   }
   /// Returns true if `controlMaximum` has been explicitly set.
-  public var hasControlMaximum: Bool {return _storage._controlMaximum != nil}
+  public var hasControlMaximum: Bool {_storage._controlMaximum != nil}
   /// Clears the value of `controlMaximum`. Subsequent reads from it will return its default value.
   public mutating func clearControlMaximum() {_uniqueStorage()._controlMaximum = nil}
 
   public var controlIncrement: Double {
-    get {return _storage._controlIncrement ?? 0}
+    get {_storage._controlIncrement ?? 0}
     set {_uniqueStorage()._controlIncrement = newValue}
   }
   /// Returns true if `controlIncrement` has been explicitly set.
-  public var hasControlIncrement: Bool {return _storage._controlIncrement != nil}
+  public var hasControlIncrement: Bool {_storage._controlIncrement != nil}
   /// Clears the value of `controlIncrement`. Subsequent reads from it will return its default value.
   public mutating func clearControlIncrement() {_uniqueStorage()._controlIncrement = nil}
 
   public var controlFormatType: UInt32 {
-    get {return _storage._controlFormatType ?? 0}
+    get {_storage._controlFormatType ?? 0}
     set {_uniqueStorage()._controlFormatType = newValue}
   }
   /// Returns true if `controlFormatType` has been explicitly set.
-  public var hasControlFormatType: Bool {return _storage._controlFormatType != nil}
+  public var hasControlFormatType: Bool {_storage._controlFormatType != nil}
   /// Clears the value of `controlFormatType`. Subsequent reads from it will return its default value.
   public mutating func clearControlFormatType() {_uniqueStorage()._controlFormatType = nil}
 
   public var sliderOrientation: UInt32 {
-    get {return _storage._sliderOrientation ?? 0}
+    get {_storage._sliderOrientation ?? 0}
     set {_uniqueStorage()._sliderOrientation = newValue}
   }
   /// Returns true if `sliderOrientation` has been explicitly set.
-  public var hasSliderOrientation: Bool {return _storage._sliderOrientation != nil}
+  public var hasSliderOrientation: Bool {_storage._sliderOrientation != nil}
   /// Clears the value of `sliderOrientation`. Subsequent reads from it will return its default value.
   public mutating func clearSliderOrientation() {_uniqueStorage()._sliderOrientation = nil}
 
   public var sliderPosition: UInt32 {
-    get {return _storage._sliderPosition ?? 0}
+    get {_storage._sliderPosition ?? 0}
     set {_uniqueStorage()._sliderPosition = newValue}
   }
   /// Returns true if `sliderPosition` has been explicitly set.
-  public var hasSliderPosition: Bool {return _storage._sliderPosition != nil}
+  public var hasSliderPosition: Bool {_storage._sliderPosition != nil}
   /// Clears the value of `sliderPosition`. Subsequent reads from it will return its default value.
   public mutating func clearSliderPosition() {_uniqueStorage()._sliderPosition = nil}
 
   public var decimalWidth: UInt32 {
-    get {return _storage._decimalWidth ?? 0}
+    get {_storage._decimalWidth ?? 0}
     set {_uniqueStorage()._decimalWidth = newValue}
   }
   /// Returns true if `decimalWidth` has been explicitly set.
-  public var hasDecimalWidth: Bool {return _storage._decimalWidth != nil}
+  public var hasDecimalWidth: Bool {_storage._decimalWidth != nil}
   /// Clears the value of `decimalWidth`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalWidth() {_uniqueStorage()._decimalWidth = nil}
 
   public var minIntegerWidth: UInt32 {
-    get {return _storage._minIntegerWidth ?? 0}
+    get {_storage._minIntegerWidth ?? 0}
     set {_uniqueStorage()._minIntegerWidth = newValue}
   }
   /// Returns true if `minIntegerWidth` has been explicitly set.
-  public var hasMinIntegerWidth: Bool {return _storage._minIntegerWidth != nil}
+  public var hasMinIntegerWidth: Bool {_storage._minIntegerWidth != nil}
   /// Clears the value of `minIntegerWidth`. Subsequent reads from it will return its default value.
   public mutating func clearMinIntegerWidth() {_uniqueStorage()._minIntegerWidth = nil}
 
   public var numNonspaceIntegerDigits: UInt32 {
-    get {return _storage._numNonspaceIntegerDigits ?? 0}
+    get {_storage._numNonspaceIntegerDigits ?? 0}
     set {_uniqueStorage()._numNonspaceIntegerDigits = newValue}
   }
   /// Returns true if `numNonspaceIntegerDigits` has been explicitly set.
-  public var hasNumNonspaceIntegerDigits: Bool {return _storage._numNonspaceIntegerDigits != nil}
+  public var hasNumNonspaceIntegerDigits: Bool {_storage._numNonspaceIntegerDigits != nil}
   /// Clears the value of `numNonspaceIntegerDigits`. Subsequent reads from it will return its default value.
   public mutating func clearNumNonspaceIntegerDigits() {_uniqueStorage()._numNonspaceIntegerDigits = nil}
 
   public var numNonspaceDecimalDigits: UInt32 {
-    get {return _storage._numNonspaceDecimalDigits ?? 0}
+    get {_storage._numNonspaceDecimalDigits ?? 0}
     set {_uniqueStorage()._numNonspaceDecimalDigits = newValue}
   }
   /// Returns true if `numNonspaceDecimalDigits` has been explicitly set.
-  public var hasNumNonspaceDecimalDigits: Bool {return _storage._numNonspaceDecimalDigits != nil}
+  public var hasNumNonspaceDecimalDigits: Bool {_storage._numNonspaceDecimalDigits != nil}
   /// Clears the value of `numNonspaceDecimalDigits`. Subsequent reads from it will return its default value.
   public mutating func clearNumNonspaceDecimalDigits() {_uniqueStorage()._numNonspaceDecimalDigits = nil}
 
   public var indexFromRightLastInteger: UInt32 {
-    get {return _storage._indexFromRightLastInteger ?? 0}
+    get {_storage._indexFromRightLastInteger ?? 0}
     set {_uniqueStorage()._indexFromRightLastInteger = newValue}
   }
   /// Returns true if `indexFromRightLastInteger` has been explicitly set.
-  public var hasIndexFromRightLastInteger: Bool {return _storage._indexFromRightLastInteger != nil}
+  public var hasIndexFromRightLastInteger: Bool {_storage._indexFromRightLastInteger != nil}
   /// Clears the value of `indexFromRightLastInteger`. Subsequent reads from it will return its default value.
   public mutating func clearIndexFromRightLastInteger() {_uniqueStorage()._indexFromRightLastInteger = nil}
 
   public var interstitialStrings: [String] {
-    get {return _storage._interstitialStrings}
+    get {_storage._interstitialStrings}
     set {_uniqueStorage()._interstitialStrings = newValue}
   }
 
   public var intersStrInsertionIndexes: TSP_IndexSet {
-    get {return _storage._intersStrInsertionIndexes ?? TSP_IndexSet()}
+    get {_storage._intersStrInsertionIndexes ?? TSP_IndexSet()}
     set {_uniqueStorage()._intersStrInsertionIndexes = newValue}
   }
   /// Returns true if `intersStrInsertionIndexes` has been explicitly set.
-  public var hasIntersStrInsertionIndexes: Bool {return _storage._intersStrInsertionIndexes != nil}
+  public var hasIntersStrInsertionIndexes: Bool {_storage._intersStrInsertionIndexes != nil}
   /// Clears the value of `intersStrInsertionIndexes`. Subsequent reads from it will return its default value.
   public mutating func clearIntersStrInsertionIndexes() {_uniqueStorage()._intersStrInsertionIndexes = nil}
 
   public var numHashDecimalDigits: UInt32 {
-    get {return _storage._numHashDecimalDigits ?? 0}
+    get {_storage._numHashDecimalDigits ?? 0}
     set {_uniqueStorage()._numHashDecimalDigits = newValue}
   }
   /// Returns true if `numHashDecimalDigits` has been explicitly set.
-  public var hasNumHashDecimalDigits: Bool {return _storage._numHashDecimalDigits != nil}
+  public var hasNumHashDecimalDigits: Bool {_storage._numHashDecimalDigits != nil}
   /// Clears the value of `numHashDecimalDigits`. Subsequent reads from it will return its default value.
   public mutating func clearNumHashDecimalDigits() {_uniqueStorage()._numHashDecimalDigits = nil}
 
   public var totalNumDecimalDigits: UInt32 {
-    get {return _storage._totalNumDecimalDigits ?? 0}
+    get {_storage._totalNumDecimalDigits ?? 0}
     set {_uniqueStorage()._totalNumDecimalDigits = newValue}
   }
   /// Returns true if `totalNumDecimalDigits` has been explicitly set.
-  public var hasTotalNumDecimalDigits: Bool {return _storage._totalNumDecimalDigits != nil}
+  public var hasTotalNumDecimalDigits: Bool {_storage._totalNumDecimalDigits != nil}
   /// Clears the value of `totalNumDecimalDigits`. Subsequent reads from it will return its default value.
   public mutating func clearTotalNumDecimalDigits() {_uniqueStorage()._totalNumDecimalDigits = nil}
 
   public var isComplex: Bool {
-    get {return _storage._isComplex ?? false}
+    get {_storage._isComplex ?? false}
     set {_uniqueStorage()._isComplex = newValue}
   }
   /// Returns true if `isComplex` has been explicitly set.
-  public var hasIsComplex: Bool {return _storage._isComplex != nil}
+  public var hasIsComplex: Bool {_storage._isComplex != nil}
   /// Clears the value of `isComplex`. Subsequent reads from it will return its default value.
   public mutating func clearIsComplex() {_uniqueStorage()._isComplex = nil}
 
   public var containsIntegerToken: Bool {
-    get {return _storage._containsIntegerToken ?? false}
+    get {_storage._containsIntegerToken ?? false}
     set {_uniqueStorage()._containsIntegerToken = newValue}
   }
   /// Returns true if `containsIntegerToken` has been explicitly set.
-  public var hasContainsIntegerToken: Bool {return _storage._containsIntegerToken != nil}
+  public var hasContainsIntegerToken: Bool {_storage._containsIntegerToken != nil}
   /// Clears the value of `containsIntegerToken`. Subsequent reads from it will return its default value.
   public mutating func clearContainsIntegerToken() {_uniqueStorage()._containsIntegerToken = nil}
 
   public var multipleChoiceListInitialValue: UInt32 {
-    get {return _storage._multipleChoiceListInitialValue ?? 0}
+    get {_storage._multipleChoiceListInitialValue ?? 0}
     set {_uniqueStorage()._multipleChoiceListInitialValue = newValue}
   }
   /// Returns true if `multipleChoiceListInitialValue` has been explicitly set.
-  public var hasMultipleChoiceListInitialValue: Bool {return _storage._multipleChoiceListInitialValue != nil}
+  public var hasMultipleChoiceListInitialValue: Bool {_storage._multipleChoiceListInitialValue != nil}
   /// Clears the value of `multipleChoiceListInitialValue`. Subsequent reads from it will return its default value.
   public mutating func clearMultipleChoiceListInitialValue() {_uniqueStorage()._multipleChoiceListInitialValue = nil}
 
   public var multipleChoiceListID: UInt32 {
-    get {return _storage._multipleChoiceListID ?? 0}
+    get {_storage._multipleChoiceListID ?? 0}
     set {_uniqueStorage()._multipleChoiceListID = newValue}
   }
   /// Returns true if `multipleChoiceListID` has been explicitly set.
-  public var hasMultipleChoiceListID: Bool {return _storage._multipleChoiceListID != nil}
+  public var hasMultipleChoiceListID: Bool {_storage._multipleChoiceListID != nil}
   /// Clears the value of `multipleChoiceListID`. Subsequent reads from it will return its default value.
   public mutating func clearMultipleChoiceListID() {_uniqueStorage()._multipleChoiceListID = nil}
 
   public var useAutomaticDurationUnits: Bool {
-    get {return _storage._useAutomaticDurationUnits ?? false}
+    get {_storage._useAutomaticDurationUnits ?? false}
     set {_uniqueStorage()._useAutomaticDurationUnits = newValue}
   }
   /// Returns true if `useAutomaticDurationUnits` has been explicitly set.
-  public var hasUseAutomaticDurationUnits: Bool {return _storage._useAutomaticDurationUnits != nil}
+  public var hasUseAutomaticDurationUnits: Bool {_storage._useAutomaticDurationUnits != nil}
   /// Clears the value of `useAutomaticDurationUnits`. Subsequent reads from it will return its default value.
   public mutating func clearUseAutomaticDurationUnits() {_uniqueStorage()._useAutomaticDurationUnits = nil}
 
   public var customUid: TSP_UUID {
-    get {return _storage._customUid ?? TSP_UUID()}
+    get {_storage._customUid ?? TSP_UUID()}
     set {_uniqueStorage()._customUid = newValue}
   }
   /// Returns true if `customUid` has been explicitly set.
-  public var hasCustomUid: Bool {return _storage._customUid != nil}
+  public var hasCustomUid: Bool {_storage._customUid != nil}
   /// Clears the value of `customUid`. Subsequent reads from it will return its default value.
   public mutating func clearCustomUid() {_uniqueStorage()._customUid = nil}
 
   public var customFormat: TSK_CustomFormatArchive {
-    get {return _storage._customFormat ?? TSK_CustomFormatArchive()}
+    get {_storage._customFormat ?? TSK_CustomFormatArchive()}
     set {_uniqueStorage()._customFormat = newValue}
   }
   /// Returns true if `customFormat` has been explicitly set.
-  public var hasCustomFormat: Bool {return _storage._customFormat != nil}
+  public var hasCustomFormat: Bool {_storage._customFormat != nil}
   /// Clears the value of `customFormat`. Subsequent reads from it will return its default value.
   public mutating func clearCustomFormat() {_uniqueStorage()._customFormat = nil}
 
   public var usesPlusSign: Bool {
-    get {return _storage._usesPlusSign ?? false}
+    get {_storage._usesPlusSign ?? false}
     set {_uniqueStorage()._usesPlusSign = newValue}
   }
   /// Returns true if `usesPlusSign` has been explicitly set.
-  public var hasUsesPlusSign: Bool {return _storage._usesPlusSign != nil}
+  public var hasUsesPlusSign: Bool {_storage._usesPlusSign != nil}
   /// Clears the value of `usesPlusSign`. Subsequent reads from it will return its default value.
   public mutating func clearUsesPlusSign() {_uniqueStorage()._usesPlusSign = nil}
 
   public var boolTrueString: String {
-    get {return _storage._boolTrueString ?? String()}
+    get {_storage._boolTrueString ?? String()}
     set {_uniqueStorage()._boolTrueString = newValue}
   }
   /// Returns true if `boolTrueString` has been explicitly set.
-  public var hasBoolTrueString: Bool {return _storage._boolTrueString != nil}
+  public var hasBoolTrueString: Bool {_storage._boolTrueString != nil}
   /// Clears the value of `boolTrueString`. Subsequent reads from it will return its default value.
   public mutating func clearBoolTrueString() {_uniqueStorage()._boolTrueString = nil}
 
   public var boolFalseString: String {
-    get {return _storage._boolFalseString ?? String()}
+    get {_storage._boolFalseString ?? String()}
     set {_uniqueStorage()._boolFalseString = newValue}
   }
   /// Returns true if `boolFalseString` has been explicitly set.
-  public var hasBoolFalseString: Bool {return _storage._boolFalseString != nil}
+  public var hasBoolFalseString: Bool {_storage._boolFalseString != nil}
   /// Clears the value of `boolFalseString`. Subsequent reads from it will return its default value.
   public mutating func clearBoolFalseString() {_uniqueStorage()._boolFalseString = nil}
 
@@ -1651,92 +1633,92 @@ public struct TSK_FormatStructArchive: SwiftProtobuf.ExtensibleMessage, @uncheck
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSK_CustomFormatArchive: @unchecked Sendable {
+public nonisolated struct TSK_CustomFormatArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var name: String {
-    get {return _storage._name ?? String()}
+    get {_storage._name ?? String()}
     set {_uniqueStorage()._name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return _storage._name != nil}
+  public var hasName: Bool {_storage._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {_uniqueStorage()._name = nil}
 
   public var formatTypePreBnc: UInt32 {
-    get {return _storage._formatTypePreBnc ?? 0}
+    get {_storage._formatTypePreBnc ?? 0}
     set {_uniqueStorage()._formatTypePreBnc = newValue}
   }
   /// Returns true if `formatTypePreBnc` has been explicitly set.
-  public var hasFormatTypePreBnc: Bool {return _storage._formatTypePreBnc != nil}
+  public var hasFormatTypePreBnc: Bool {_storage._formatTypePreBnc != nil}
   /// Clears the value of `formatTypePreBnc`. Subsequent reads from it will return its default value.
   public mutating func clearFormatTypePreBnc() {_uniqueStorage()._formatTypePreBnc = nil}
 
   public var defaultFormat: TSK_FormatStructArchive {
-    get {return _storage._defaultFormat ?? TSK_FormatStructArchive()}
+    get {_storage._defaultFormat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._defaultFormat = newValue}
   }
   /// Returns true if `defaultFormat` has been explicitly set.
-  public var hasDefaultFormat: Bool {return _storage._defaultFormat != nil}
+  public var hasDefaultFormat: Bool {_storage._defaultFormat != nil}
   /// Clears the value of `defaultFormat`. Subsequent reads from it will return its default value.
   public mutating func clearDefaultFormat() {_uniqueStorage()._defaultFormat = nil}
 
   public var conditions: [TSK_CustomFormatArchive.Condition] {
-    get {return _storage._conditions}
+    get {_storage._conditions}
     set {_uniqueStorage()._conditions = newValue}
   }
 
   public var formatType: UInt32 {
-    get {return _storage._formatType ?? 0}
+    get {_storage._formatType ?? 0}
     set {_uniqueStorage()._formatType = newValue}
   }
   /// Returns true if `formatType` has been explicitly set.
-  public var hasFormatType: Bool {return _storage._formatType != nil}
+  public var hasFormatType: Bool {_storage._formatType != nil}
   /// Clears the value of `formatType`. Subsequent reads from it will return its default value.
   public mutating func clearFormatType() {_uniqueStorage()._formatType = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct Condition: Sendable {
+  public nonisolated struct Condition: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var conditionType: UInt32 {
-      get {return _conditionType ?? 0}
+      get {_conditionType ?? 0}
       set {_conditionType = newValue}
     }
     /// Returns true if `conditionType` has been explicitly set.
-    public var hasConditionType: Bool {return self._conditionType != nil}
+    public var hasConditionType: Bool {self._conditionType != nil}
     /// Clears the value of `conditionType`. Subsequent reads from it will return its default value.
     public mutating func clearConditionType() {self._conditionType = nil}
 
     public var conditionValue: Float {
-      get {return _conditionValue ?? 0}
+      get {_conditionValue ?? 0}
       set {_conditionValue = newValue}
     }
     /// Returns true if `conditionValue` has been explicitly set.
-    public var hasConditionValue: Bool {return self._conditionValue != nil}
+    public var hasConditionValue: Bool {self._conditionValue != nil}
     /// Clears the value of `conditionValue`. Subsequent reads from it will return its default value.
     public mutating func clearConditionValue() {self._conditionValue = nil}
 
     public var conditionFormat: TSK_FormatStructArchive {
-      get {return _conditionFormat ?? TSK_FormatStructArchive()}
+      get {_conditionFormat ?? TSK_FormatStructArchive()}
       set {_conditionFormat = newValue}
     }
     /// Returns true if `conditionFormat` has been explicitly set.
-    public var hasConditionFormat: Bool {return self._conditionFormat != nil}
+    public var hasConditionFormat: Bool {self._conditionFormat != nil}
     /// Clears the value of `conditionFormat`. Subsequent reads from it will return its default value.
     public mutating func clearConditionFormat() {self._conditionFormat = nil}
 
     public var conditionValueDbl: Double {
-      get {return _conditionValueDbl ?? 0}
+      get {_conditionValueDbl ?? 0}
       set {_conditionValueDbl = newValue}
     }
     /// Returns true if `conditionValueDbl` has been explicitly set.
-    public var hasConditionValueDbl: Bool {return self._conditionValueDbl != nil}
+    public var hasConditionValueDbl: Bool {self._conditionValueDbl != nil}
     /// Clears the value of `conditionValueDbl`. Subsequent reads from it will return its default value.
     public mutating func clearConditionValueDbl() {self._conditionValueDbl = nil}
 
@@ -1755,7 +1737,7 @@ public struct TSK_CustomFormatArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSK_CustomFormatListArchive: Sendable {
+public nonisolated struct TSK_CustomFormatListArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1769,44 +1751,44 @@ public struct TSK_CustomFormatListArchive: Sendable {
   public init() {}
 }
 
-public struct TSK_AnnotationAuthorArchive: Sendable {
+public nonisolated struct TSK_AnnotationAuthorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var name: String {
-    get {return _name ?? String()}
+    get {_name ?? String()}
     set {_name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return self._name != nil}
+  public var hasName: Bool {self._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {self._name = nil}
 
   public var color: TSP_Color {
-    get {return _color ?? TSP_Color()}
+    get {_color ?? TSP_Color()}
     set {_color = newValue}
   }
   /// Returns true if `color` has been explicitly set.
-  public var hasColor: Bool {return self._color != nil}
+  public var hasColor: Bool {self._color != nil}
   /// Clears the value of `color`. Subsequent reads from it will return its default value.
   public mutating func clearColor() {self._color = nil}
 
   public var publicID: String {
-    get {return _publicID ?? String()}
+    get {_publicID ?? String()}
     set {_publicID = newValue}
   }
   /// Returns true if `publicID` has been explicitly set.
-  public var hasPublicID: Bool {return self._publicID != nil}
+  public var hasPublicID: Bool {self._publicID != nil}
   /// Clears the value of `publicID`. Subsequent reads from it will return its default value.
   public mutating func clearPublicID() {self._publicID = nil}
 
   public var isPublicAuthor: Bool {
-    get {return _isPublicAuthor ?? false}
+    get {_isPublicAuthor ?? false}
     set {_isPublicAuthor = newValue}
   }
   /// Returns true if `isPublicAuthor` has been explicitly set.
-  public var hasIsPublicAuthor: Bool {return self._isPublicAuthor != nil}
+  public var hasIsPublicAuthor: Bool {self._isPublicAuthor != nil}
   /// Clears the value of `isPublicAuthor`. Subsequent reads from it will return its default value.
   public mutating func clearIsPublicAuthor() {self._isPublicAuthor = nil}
 
@@ -1822,26 +1804,26 @@ public struct TSK_AnnotationAuthorArchive: Sendable {
   fileprivate var _isPublicAuthor: Bool? = nil
 }
 
-public struct TSK_DeprecatedChangeAuthorArchive: Sendable {
+public nonisolated struct TSK_DeprecatedChangeAuthorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var name: String {
-    get {return _name ?? String()}
+    get {_name ?? String()}
     set {_name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return self._name != nil}
+  public var hasName: Bool {self._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {self._name = nil}
 
   public var changeColor: TSP_Color {
-    get {return _changeColor ?? TSP_Color()}
+    get {_changeColor ?? TSP_Color()}
     set {_changeColor = newValue}
   }
   /// Returns true if `changeColor` has been explicitly set.
-  public var hasChangeColor: Bool {return self._changeColor != nil}
+  public var hasChangeColor: Bool {self._changeColor != nil}
   /// Clears the value of `changeColor`. Subsequent reads from it will return its default value.
   public mutating func clearChangeColor() {self._changeColor = nil}
 
@@ -1853,7 +1835,7 @@ public struct TSK_DeprecatedChangeAuthorArchive: Sendable {
   fileprivate var _changeColor: TSP_Color? = nil
 }
 
-public struct TSK_AnnotationAuthorStorageArchive: Sendable {
+public nonisolated struct TSK_AnnotationAuthorStorageArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1865,53 +1847,53 @@ public struct TSK_AnnotationAuthorStorageArchive: Sendable {
   public init() {}
 }
 
-public struct TSK_CommandBehaviorSelectionPathStorageArchive: Sendable {
+public nonisolated struct TSK_CommandBehaviorSelectionPathStorageArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var archivedSelection: TSK_SelectionPathArchive {
-    get {return _archivedSelection ?? TSK_SelectionPathArchive()}
+    get {_archivedSelection ?? TSK_SelectionPathArchive()}
     set {_archivedSelection = newValue}
   }
   /// Returns true if `archivedSelection` has been explicitly set.
-  public var hasArchivedSelection: Bool {return self._archivedSelection != nil}
+  public var hasArchivedSelection: Bool {self._archivedSelection != nil}
   /// Clears the value of `archivedSelection`. Subsequent reads from it will return its default value.
   public mutating func clearArchivedSelection() {self._archivedSelection = nil}
 
   public var archivedOldSelection: TSK_SelectionPathArchive {
-    get {return _archivedOldSelection ?? TSK_SelectionPathArchive()}
+    get {_archivedOldSelection ?? TSK_SelectionPathArchive()}
     set {_archivedOldSelection = newValue}
   }
   /// Returns true if `archivedOldSelection` has been explicitly set.
-  public var hasArchivedOldSelection: Bool {return self._archivedOldSelection != nil}
+  public var hasArchivedOldSelection: Bool {self._archivedOldSelection != nil}
   /// Clears the value of `archivedOldSelection`. Subsequent reads from it will return its default value.
   public mutating func clearArchivedOldSelection() {self._archivedOldSelection = nil}
 
   public var archivedNewSelection: TSK_SelectionPathArchive {
-    get {return _archivedNewSelection ?? TSK_SelectionPathArchive()}
+    get {_archivedNewSelection ?? TSK_SelectionPathArchive()}
     set {_archivedNewSelection = newValue}
   }
   /// Returns true if `archivedNewSelection` has been explicitly set.
-  public var hasArchivedNewSelection: Bool {return self._archivedNewSelection != nil}
+  public var hasArchivedNewSelection: Bool {self._archivedNewSelection != nil}
   /// Clears the value of `archivedNewSelection`. Subsequent reads from it will return its default value.
   public mutating func clearArchivedNewSelection() {self._archivedNewSelection = nil}
 
   public var forwardSelectionPathTransformer: TSP_Reference {
-    get {return _forwardSelectionPathTransformer ?? TSP_Reference()}
+    get {_forwardSelectionPathTransformer ?? TSP_Reference()}
     set {_forwardSelectionPathTransformer = newValue}
   }
   /// Returns true if `forwardSelectionPathTransformer` has been explicitly set.
-  public var hasForwardSelectionPathTransformer: Bool {return self._forwardSelectionPathTransformer != nil}
+  public var hasForwardSelectionPathTransformer: Bool {self._forwardSelectionPathTransformer != nil}
   /// Clears the value of `forwardSelectionPathTransformer`. Subsequent reads from it will return its default value.
   public mutating func clearForwardSelectionPathTransformer() {self._forwardSelectionPathTransformer = nil}
 
   public var reverseSelectionPathTransformer: TSP_Reference {
-    get {return _reverseSelectionPathTransformer ?? TSP_Reference()}
+    get {_reverseSelectionPathTransformer ?? TSP_Reference()}
     set {_reverseSelectionPathTransformer = newValue}
   }
   /// Returns true if `reverseSelectionPathTransformer` has been explicitly set.
-  public var hasReverseSelectionPathTransformer: Bool {return self._reverseSelectionPathTransformer != nil}
+  public var hasReverseSelectionPathTransformer: Bool {self._reverseSelectionPathTransformer != nil}
   /// Clears the value of `reverseSelectionPathTransformer`. Subsequent reads from it will return its default value.
   public mutating func clearReverseSelectionPathTransformer() {self._reverseSelectionPathTransformer = nil}
 
@@ -1926,26 +1908,26 @@ public struct TSK_CommandBehaviorSelectionPathStorageArchive: Sendable {
   fileprivate var _reverseSelectionPathTransformer: TSP_Reference? = nil
 }
 
-public struct TSK_CommandBehaviorArchive: Sendable {
+public nonisolated struct TSK_CommandBehaviorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var selectionBehavior: TSP_Reference {
-    get {return _selectionBehavior ?? TSP_Reference()}
+    get {_selectionBehavior ?? TSP_Reference()}
     set {_selectionBehavior = newValue}
   }
   /// Returns true if `selectionBehavior` has been explicitly set.
-  public var hasSelectionBehavior: Bool {return self._selectionBehavior != nil}
+  public var hasSelectionBehavior: Bool {self._selectionBehavior != nil}
   /// Clears the value of `selectionBehavior`. Subsequent reads from it will return its default value.
   public mutating func clearSelectionBehavior() {self._selectionBehavior = nil}
 
   public var activityBehavior: TSP_Reference {
-    get {return _activityBehavior ?? TSP_Reference()}
+    get {_activityBehavior ?? TSP_Reference()}
     set {_activityBehavior = newValue}
   }
   /// Returns true if `activityBehavior` has been explicitly set.
-  public var hasActivityBehavior: Bool {return self._activityBehavior != nil}
+  public var hasActivityBehavior: Bool {self._activityBehavior != nil}
   /// Clears the value of `activityBehavior`. Subsequent reads from it will return its default value.
   public mutating func clearActivityBehavior() {self._activityBehavior = nil}
 
@@ -1957,44 +1939,44 @@ public struct TSK_CommandBehaviorArchive: Sendable {
   fileprivate var _activityBehavior: TSP_Reference? = nil
 }
 
-public struct TSK_CommandSelectionBehaviorArchive: Sendable {
+public nonisolated struct TSK_CommandSelectionBehaviorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var selectionPathStorage: TSP_Reference {
-    get {return _selectionPathStorage ?? TSP_Reference()}
+    get {_selectionPathStorage ?? TSP_Reference()}
     set {_selectionPathStorage = newValue}
   }
   /// Returns true if `selectionPathStorage` has been explicitly set.
-  public var hasSelectionPathStorage: Bool {return self._selectionPathStorage != nil}
+  public var hasSelectionPathStorage: Bool {self._selectionPathStorage != nil}
   /// Clears the value of `selectionPathStorage`. Subsequent reads from it will return its default value.
   public mutating func clearSelectionPathStorage() {self._selectionPathStorage = nil}
 
   public var selectionFlags: UInt64 {
-    get {return _selectionFlags ?? 0}
+    get {_selectionFlags ?? 0}
     set {_selectionFlags = newValue}
   }
   /// Returns true if `selectionFlags` has been explicitly set.
-  public var hasSelectionFlags: Bool {return self._selectionFlags != nil}
+  public var hasSelectionFlags: Bool {self._selectionFlags != nil}
   /// Clears the value of `selectionFlags`. Subsequent reads from it will return its default value.
   public mutating func clearSelectionFlags() {self._selectionFlags = nil}
 
   public var additionalForwardSelectionFlags: UInt64 {
-    get {return _additionalForwardSelectionFlags ?? 0}
+    get {_additionalForwardSelectionFlags ?? 0}
     set {_additionalForwardSelectionFlags = newValue}
   }
   /// Returns true if `additionalForwardSelectionFlags` has been explicitly set.
-  public var hasAdditionalForwardSelectionFlags: Bool {return self._additionalForwardSelectionFlags != nil}
+  public var hasAdditionalForwardSelectionFlags: Bool {self._additionalForwardSelectionFlags != nil}
   /// Clears the value of `additionalForwardSelectionFlags`. Subsequent reads from it will return its default value.
   public mutating func clearAdditionalForwardSelectionFlags() {self._additionalForwardSelectionFlags = nil}
 
   public var additionalReverseSelectionFlags: UInt64 {
-    get {return _additionalReverseSelectionFlags ?? 0}
+    get {_additionalReverseSelectionFlags ?? 0}
     set {_additionalReverseSelectionFlags = newValue}
   }
   /// Returns true if `additionalReverseSelectionFlags` has been explicitly set.
-  public var hasAdditionalReverseSelectionFlags: Bool {return self._additionalReverseSelectionFlags != nil}
+  public var hasAdditionalReverseSelectionFlags: Bool {self._additionalReverseSelectionFlags != nil}
   /// Clears the value of `additionalReverseSelectionFlags`. Subsequent reads from it will return its default value.
   public mutating func clearAdditionalReverseSelectionFlags() {self._additionalReverseSelectionFlags = nil}
 
@@ -2010,7 +1992,7 @@ public struct TSK_CommandSelectionBehaviorArchive: Sendable {
   fileprivate var _additionalReverseSelectionFlags: UInt64? = nil
 }
 
-public struct TSK_SelectionPathTransformerArchive: Sendable {
+public nonisolated struct TSK_SelectionPathTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2022,7 +2004,7 @@ public struct TSK_SelectionPathTransformerArchive: Sendable {
   public init() {}
 }
 
-public struct TSK_SelectionPathArchive: Sendable {
+public nonisolated struct TSK_SelectionPathArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2034,17 +2016,17 @@ public struct TSK_SelectionPathArchive: Sendable {
   public init() {}
 }
 
-public struct TSK_DocumentSelectionArchive: Sendable {
+public nonisolated struct TSK_DocumentSelectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var documentRoot: TSP_Reference {
-    get {return _documentRoot ?? TSP_Reference()}
+    get {_documentRoot ?? TSP_Reference()}
     set {_documentRoot = newValue}
   }
   /// Returns true if `documentRoot` has been explicitly set.
-  public var hasDocumentRoot: Bool {return self._documentRoot != nil}
+  public var hasDocumentRoot: Bool {self._documentRoot != nil}
   /// Clears the value of `documentRoot`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentRoot() {self._documentRoot = nil}
 
@@ -2055,17 +2037,17 @@ public struct TSK_DocumentSelectionArchive: Sendable {
   fileprivate var _documentRoot: TSP_Reference? = nil
 }
 
-public struct TSK_NullCommandArchive: Sendable {
+public nonisolated struct TSK_NullCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2076,26 +2058,26 @@ public struct TSK_NullCommandArchive: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSK_GroupCommitCommandArchive: Sendable {
+public nonisolated struct TSK_GroupCommitCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var canCoalesceGroup: Bool {
-    get {return _canCoalesceGroup ?? false}
+    get {_canCoalesceGroup ?? false}
     set {_canCoalesceGroup = newValue}
   }
   /// Returns true if `canCoalesceGroup` has been explicitly set.
-  public var hasCanCoalesceGroup: Bool {return self._canCoalesceGroup != nil}
+  public var hasCanCoalesceGroup: Bool {self._canCoalesceGroup != nil}
   /// Clears the value of `canCoalesceGroup`. Subsequent reads from it will return its default value.
   public mutating func clearCanCoalesceGroup() {self._canCoalesceGroup = nil}
 
@@ -2107,17 +2089,17 @@ public struct TSK_GroupCommitCommandArchive: Sendable {
   fileprivate var _canCoalesceGroup: Bool? = nil
 }
 
-public struct TSK_UpgradeDocPostProcessingCommandArchive: Sendable {
+public nonisolated struct TSK_UpgradeDocPostProcessingCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2128,17 +2110,17 @@ public struct TSK_UpgradeDocPostProcessingCommandArchive: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSK_InducedCommandCollectionCommitCommandArchive: Sendable {
+public nonisolated struct TSK_InducedCommandCollectionCommitCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2149,65 +2131,47 @@ public struct TSK_InducedCommandCollectionCommitCommandArchive: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSK_ChangeDocumentPackageTypeCommandArchive: Sendable {
+public nonisolated struct TSK_ChangeDocumentPackageTypeCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var newPackageType: TSK_ChangeDocumentPackageTypeCommandArchive.PackageType {
-    get {return _newPackageType ?? .default}
+    get {_newPackageType ?? .default}
     set {_newPackageType = newValue}
   }
   /// Returns true if `newPackageType` has been explicitly set.
-  public var hasNewPackageType: Bool {return self._newPackageType != nil}
+  public var hasNewPackageType: Bool {self._newPackageType != nil}
   /// Clears the value of `newPackageType`. Subsequent reads from it will return its default value.
   public mutating func clearNewPackageType() {self._newPackageType = nil}
 
   public var oldPackageType: TSK_ChangeDocumentPackageTypeCommandArchive.PackageType {
-    get {return _oldPackageType ?? .default}
+    get {_oldPackageType ?? .default}
     set {_oldPackageType = newValue}
   }
   /// Returns true if `oldPackageType` has been explicitly set.
-  public var hasOldPackageType: Bool {return self._oldPackageType != nil}
+  public var hasOldPackageType: Bool {self._oldPackageType != nil}
   /// Clears the value of `oldPackageType`. Subsequent reads from it will return its default value.
   public mutating func clearOldPackageType() {self._oldPackageType = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum PackageType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case `default` // = 0
-    case directory // = 1
-    case singleFile // = 2
+  public nonisolated enum PackageType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case `default` = 0
+    case directory = 1
+    case singleFile = 2
 
     public init() {
       self = .default
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .default
-      case 1: self = .directory
-      case 2: self = .singleFile
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .default: return 0
-      case .directory: return 1
-      case .singleFile: return 2
-      }
     }
 
   }
@@ -2219,7 +2183,7 @@ public struct TSK_ChangeDocumentPackageTypeCommandArchive: Sendable {
   fileprivate var _oldPackageType: TSK_ChangeDocumentPackageTypeCommandArchive.PackageType? = nil
 }
 
-public struct TSK_RangeAddress: Sendable {
+public nonisolated struct TSK_RangeAddress: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2233,153 +2197,127 @@ public struct TSK_RangeAddress: Sendable {
   public init() {}
 }
 
-public struct TSK_Operation: Sendable {
+public nonisolated struct TSK_Operation: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var type: TSK_Operation.OperationType {
-    get {return _type ?? .replaceRange}
+    get {_type ?? .replaceRange}
     set {_type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return self._type != nil}
+  public var hasType: Bool {self._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {self._type = nil}
 
   public var noop: Bool {
-    get {return _noop ?? false}
+    get {_noop ?? false}
     set {_noop = newValue}
   }
   /// Returns true if `noop` has been explicitly set.
-  public var hasNoop: Bool {return self._noop != nil}
+  public var hasNoop: Bool {self._noop != nil}
   /// Clears the value of `noop`. Subsequent reads from it will return its default value.
   public mutating func clearNoop() {self._noop = nil}
 
   public var addressIdentifier: [UInt64] = []
 
   public var insertLength: UInt64 {
-    get {return _insertLength ?? 1}
+    get {_insertLength ?? 1}
     set {_insertLength = newValue}
   }
   /// Returns true if `insertLength` has been explicitly set.
-  public var hasInsertLength: Bool {return self._insertLength != nil}
+  public var hasInsertLength: Bool {self._insertLength != nil}
   /// Clears the value of `insertLength`. Subsequent reads from it will return its default value.
   public mutating func clearInsertLength() {self._insertLength = nil}
 
   public var preserveLowerPriorityLocation: Bool {
-    get {return _preserveLowerPriorityLocation ?? false}
+    get {_preserveLowerPriorityLocation ?? false}
     set {_preserveLowerPriorityLocation = newValue}
   }
   /// Returns true if `preserveLowerPriorityLocation` has been explicitly set.
-  public var hasPreserveLowerPriorityLocation: Bool {return self._preserveLowerPriorityLocation != nil}
+  public var hasPreserveLowerPriorityLocation: Bool {self._preserveLowerPriorityLocation != nil}
   /// Clears the value of `preserveLowerPriorityLocation`. Subsequent reads from it will return its default value.
   public mutating func clearPreserveLowerPriorityLocation() {self._preserveLowerPriorityLocation = nil}
 
   public var rangeList: [UInt32] = []
 
   public var transformBehavior: UInt32 {
-    get {return _transformBehavior ?? 7}
+    get {_transformBehavior ?? 7}
     set {_transformBehavior = newValue}
   }
   /// Returns true if `transformBehavior` has been explicitly set.
-  public var hasTransformBehavior: Bool {return self._transformBehavior != nil}
+  public var hasTransformBehavior: Bool {self._transformBehavior != nil}
   /// Clears the value of `transformBehavior`. Subsequent reads from it will return its default value.
   public mutating func clearTransformBehavior() {self._transformBehavior = nil}
 
   public var propertyID: UInt32 {
-    get {return _propertyID ?? 0}
+    get {_propertyID ?? 0}
     set {_propertyID = newValue}
   }
   /// Returns true if `propertyID` has been explicitly set.
-  public var hasPropertyID: Bool {return self._propertyID != nil}
+  public var hasPropertyID: Bool {self._propertyID != nil}
   /// Clears the value of `propertyID`. Subsequent reads from it will return its default value.
   public mutating func clearPropertyID() {self._propertyID = nil}
 
   public var fromIndex: Int32 {
-    get {return _fromIndex ?? -1}
+    get {_fromIndex ?? -1}
     set {_fromIndex = newValue}
   }
   /// Returns true if `fromIndex` has been explicitly set.
-  public var hasFromIndex: Bool {return self._fromIndex != nil}
+  public var hasFromIndex: Bool {self._fromIndex != nil}
   /// Clears the value of `fromIndex`. Subsequent reads from it will return its default value.
   public mutating func clearFromIndex() {self._fromIndex = nil}
 
   public var toIndex: Int32 {
-    get {return _toIndex ?? -1}
+    get {_toIndex ?? -1}
     set {_toIndex = newValue}
   }
   /// Returns true if `toIndex` has been explicitly set.
-  public var hasToIndex: Bool {return self._toIndex != nil}
+  public var hasToIndex: Bool {self._toIndex != nil}
   /// Clears the value of `toIndex`. Subsequent reads from it will return its default value.
   public mutating func clearToIndex() {self._toIndex = nil}
 
   public var dominating: Bool {
-    get {return _dominating ?? false}
+    get {_dominating ?? false}
     set {_dominating = newValue}
   }
   /// Returns true if `dominating` has been explicitly set.
-  public var hasDominating: Bool {return self._dominating != nil}
+  public var hasDominating: Bool {self._dominating != nil}
   /// Clears the value of `dominating`. Subsequent reads from it will return its default value.
   public mutating func clearDominating() {self._dominating = nil}
 
   public var objectCount: Int32 {
-    get {return _objectCount ?? -1}
+    get {_objectCount ?? -1}
     set {_objectCount = newValue}
   }
   /// Returns true if `objectCount` has been explicitly set.
-  public var hasObjectCount: Bool {return self._objectCount != nil}
+  public var hasObjectCount: Bool {self._objectCount != nil}
   /// Clears the value of `objectCount`. Subsequent reads from it will return its default value.
   public mutating func clearObjectCount() {self._objectCount = nil}
 
   public var objectCounterSpace: Int32 {
-    get {return _objectCounterSpace ?? 0}
+    get {_objectCounterSpace ?? 0}
     set {_objectCounterSpace = newValue}
   }
   /// Returns true if `objectCounterSpace` has been explicitly set.
-  public var hasObjectCounterSpace: Bool {return self._objectCounterSpace != nil}
+  public var hasObjectCounterSpace: Bool {self._objectCounterSpace != nil}
   /// Clears the value of `objectCounterSpace`. Subsequent reads from it will return its default value.
   public mutating func clearObjectCounterSpace() {self._objectCounterSpace = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum OperationType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case add // = 0
-    case remove // = 1
-    case placement // = 2
-    case rearrange // = 3
-    case updateID // = 4
-    case updateRange // = 5
-    case replaceRange // = 6
+  public nonisolated enum OperationType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case add = 0
+    case remove = 1
+    case placement = 2
+    case rearrange = 3
+    case updateID = 4
+    case updateRange = 5
+    case replaceRange = 6
 
     public init() {
       self = .add
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .add
-      case 1: self = .remove
-      case 2: self = .placement
-      case 3: self = .rearrange
-      case 4: self = .updateID
-      case 5: self = .updateRange
-      case 6: self = .replaceRange
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .add: return 0
-      case .remove: return 1
-      case .placement: return 2
-      case .rearrange: return 3
-      case .updateID: return 4
-      case .updateRange: return 5
-      case .replaceRange: return 6
-      }
     }
 
   }
@@ -2399,17 +2337,17 @@ public struct TSK_Operation: Sendable {
   fileprivate var _objectCounterSpace: Int32? = nil
 }
 
-public struct TSK_OperationTransformer: Sendable {
+public nonisolated struct TSK_OperationTransformer: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var higherPriority: Bool {
-    get {return _higherPriority ?? false}
+    get {_higherPriority ?? false}
     set {_higherPriority = newValue}
   }
   /// Returns true if `higherPriority` has been explicitly set.
-  public var hasHigherPriority: Bool {return self._higherPriority != nil}
+  public var hasHigherPriority: Bool {self._higherPriority != nil}
   /// Clears the value of `higherPriority`. Subsequent reads from it will return its default value.
   public mutating func clearHigherPriority() {self._higherPriority = nil}
 
@@ -2422,53 +2360,53 @@ public struct TSK_OperationTransformer: Sendable {
   fileprivate var _higherPriority: Bool? = nil
 }
 
-public struct TSK_OutgoingCommandQueueItem: Sendable {
+public nonisolated struct TSK_OutgoingCommandQueueItem: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var command: TSP_Reference {
-    get {return _command ?? TSP_Reference()}
+    get {_command ?? TSP_Reference()}
     set {_command = newValue}
   }
   /// Returns true if `command` has been explicitly set.
-  public var hasCommand: Bool {return self._command != nil}
+  public var hasCommand: Bool {self._command != nil}
   /// Clears the value of `command`. Subsequent reads from it will return its default value.
   public mutating func clearCommand() {self._command = nil}
 
   public var serializedJsonWithoutDataBase64EncodedString: String {
-    get {return _serializedJsonWithoutDataBase64EncodedString ?? String()}
+    get {_serializedJsonWithoutDataBase64EncodedString ?? String()}
     set {_serializedJsonWithoutDataBase64EncodedString = newValue}
   }
   /// Returns true if `serializedJsonWithoutDataBase64EncodedString` has been explicitly set.
-  public var hasSerializedJsonWithoutDataBase64EncodedString: Bool {return self._serializedJsonWithoutDataBase64EncodedString != nil}
+  public var hasSerializedJsonWithoutDataBase64EncodedString: Bool {self._serializedJsonWithoutDataBase64EncodedString != nil}
   /// Clears the value of `serializedJsonWithoutDataBase64EncodedString`. Subsequent reads from it will return its default value.
   public mutating func clearSerializedJsonWithoutDataBase64EncodedString() {self._serializedJsonWithoutDataBase64EncodedString = nil}
 
   public var serializedJsonWithoutDataBase64EncodedData: TSP_DataReference {
-    get {return _serializedJsonWithoutDataBase64EncodedData ?? TSP_DataReference()}
+    get {_serializedJsonWithoutDataBase64EncodedData ?? TSP_DataReference()}
     set {_serializedJsonWithoutDataBase64EncodedData = newValue}
   }
   /// Returns true if `serializedJsonWithoutDataBase64EncodedData` has been explicitly set.
-  public var hasSerializedJsonWithoutDataBase64EncodedData: Bool {return self._serializedJsonWithoutDataBase64EncodedData != nil}
+  public var hasSerializedJsonWithoutDataBase64EncodedData: Bool {self._serializedJsonWithoutDataBase64EncodedData != nil}
   /// Clears the value of `serializedJsonWithoutDataBase64EncodedData`. Subsequent reads from it will return its default value.
   public mutating func clearSerializedJsonWithoutDataBase64EncodedData() {self._serializedJsonWithoutDataBase64EncodedData = nil}
 
   public var didRollbackReapply: Bool {
-    get {return _didRollbackReapply ?? false}
+    get {_didRollbackReapply ?? false}
     set {_didRollbackReapply = newValue}
   }
   /// Returns true if `didRollbackReapply` has been explicitly set.
-  public var hasDidRollbackReapply: Bool {return self._didRollbackReapply != nil}
+  public var hasDidRollbackReapply: Bool {self._didRollbackReapply != nil}
   /// Clears the value of `didRollbackReapply`. Subsequent reads from it will return its default value.
   public mutating func clearDidRollbackReapply() {self._didRollbackReapply = nil}
 
   public var containsLargePendingUploadData: Bool {
-    get {return _containsLargePendingUploadData ?? false}
+    get {_containsLargePendingUploadData ?? false}
     set {_containsLargePendingUploadData = newValue}
   }
   /// Returns true if `containsLargePendingUploadData` has been explicitly set.
-  public var hasContainsLargePendingUploadData: Bool {return self._containsLargePendingUploadData != nil}
+  public var hasContainsLargePendingUploadData: Bool {self._containsLargePendingUploadData != nil}
   /// Clears the value of `containsLargePendingUploadData`. Subsequent reads from it will return its default value.
   public mutating func clearContainsLargePendingUploadData() {self._containsLargePendingUploadData = nil}
 
@@ -2487,26 +2425,26 @@ public struct TSK_OutgoingCommandQueueItem: Sendable {
   fileprivate var _containsLargePendingUploadData: Bool? = nil
 }
 
-public struct TSK_OutgoingCommandQueueItemUUIDToDataMapEntry: Sendable {
+public nonisolated struct TSK_OutgoingCommandQueueItemUUIDToDataMapEntry: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var uuid: TSP_UUID {
-    get {return _uuid ?? TSP_UUID()}
+    get {_uuid ?? TSP_UUID()}
     set {_uuid = newValue}
   }
   /// Returns true if `uuid` has been explicitly set.
-  public var hasUuid: Bool {return self._uuid != nil}
+  public var hasUuid: Bool {self._uuid != nil}
   /// Clears the value of `uuid`. Subsequent reads from it will return its default value.
   public mutating func clearUuid() {self._uuid = nil}
 
   public var data: TSP_DataReference {
-    get {return _data ?? TSP_DataReference()}
+    get {_data ?? TSP_DataReference()}
     set {_data = newValue}
   }
   /// Returns true if `data` has been explicitly set.
-  public var hasData: Bool {return self._data != nil}
+  public var hasData: Bool {self._data != nil}
   /// Clears the value of `data`. Subsequent reads from it will return its default value.
   public mutating func clearData() {self._data = nil}
 
@@ -2518,35 +2456,35 @@ public struct TSK_OutgoingCommandQueueItemUUIDToDataMapEntry: Sendable {
   fileprivate var _data: TSP_DataReference? = nil
 }
 
-public struct TSK_NativeContentDescription: Sendable {
+public nonisolated struct TSK_NativeContentDescription: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var appName: String {
-    get {return _appName ?? String()}
+    get {_appName ?? String()}
     set {_appName = newValue}
   }
   /// Returns true if `appName` has been explicitly set.
-  public var hasAppName: Bool {return self._appName != nil}
+  public var hasAppName: Bool {self._appName != nil}
   /// Clears the value of `appName`. Subsequent reads from it will return its default value.
   public mutating func clearAppName() {self._appName = nil}
 
   public var appVersion: String {
-    get {return _appVersion ?? String()}
+    get {_appVersion ?? String()}
     set {_appVersion = newValue}
   }
   /// Returns true if `appVersion` has been explicitly set.
-  public var hasAppVersion: Bool {return self._appVersion != nil}
+  public var hasAppVersion: Bool {self._appVersion != nil}
   /// Clears the value of `appVersion`. Subsequent reads from it will return its default value.
   public mutating func clearAppVersion() {self._appVersion = nil}
 
   public var documentID: String {
-    get {return _documentID ?? String()}
+    get {_documentID ?? String()}
     set {_documentID = newValue}
   }
   /// Returns true if `documentID` has been explicitly set.
-  public var hasDocumentID: Bool {return self._documentID != nil}
+  public var hasDocumentID: Bool {self._documentID != nil}
   /// Clears the value of `documentID`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentID() {self._documentID = nil}
 
@@ -2561,26 +2499,26 @@ public struct TSK_NativeContentDescription: Sendable {
   fileprivate var _documentID: String? = nil
 }
 
-public struct TSK_StructuredTextImportSettings: Sendable {
+public nonisolated struct TSK_StructuredTextImportSettings: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var type: TSK_StructuredTextImportType {
-    get {return _type ?? .importTypeUnknown}
+    get {_type ?? .importTypeUnknown}
     set {_type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return self._type != nil}
+  public var hasType: Bool {self._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {self._type = nil}
 
   public var startingRow: Int32 {
-    get {return _startingRow ?? 0}
+    get {_startingRow ?? 0}
     set {_startingRow = newValue}
   }
   /// Returns true if `startingRow` has been explicitly set.
-  public var hasStartingRow: Bool {return self._startingRow != nil}
+  public var hasStartingRow: Bool {self._startingRow != nil}
   /// Clears the value of `startingRow`. Subsequent reads from it will return its default value.
   public mutating func clearStartingRow() {self._startingRow = nil}
 
@@ -2589,11 +2527,11 @@ public struct TSK_StructuredTextImportSettings: Sendable {
   public var thousandsSeparators: [String] = []
 
   public var transposeRowsAndColumns: Bool {
-    get {return _transposeRowsAndColumns ?? false}
+    get {_transposeRowsAndColumns ?? false}
     set {_transposeRowsAndColumns = newValue}
   }
   /// Returns true if `transposeRowsAndColumns` has been explicitly set.
-  public var hasTransposeRowsAndColumns: Bool {return self._transposeRowsAndColumns != nil}
+  public var hasTransposeRowsAndColumns: Bool {self._transposeRowsAndColumns != nil}
   /// Clears the value of `transposeRowsAndColumns`. Subsequent reads from it will return its default value.
   public mutating func clearTransposeRowsAndColumns() {self._transposeRowsAndColumns = nil}
 
@@ -2602,47 +2540,47 @@ public struct TSK_StructuredTextImportSettings: Sendable {
   public var textQualifiers: [String] = []
 
   public var collapseConsecutive: Bool {
-    get {return _collapseConsecutive ?? false}
+    get {_collapseConsecutive ?? false}
     set {_collapseConsecutive = newValue}
   }
   /// Returns true if `collapseConsecutive` has been explicitly set.
-  public var hasCollapseConsecutive: Bool {return self._collapseConsecutive != nil}
+  public var hasCollapseConsecutive: Bool {self._collapseConsecutive != nil}
   /// Clears the value of `collapseConsecutive`. Subsequent reads from it will return its default value.
   public mutating func clearCollapseConsecutive() {self._collapseConsecutive = nil}
 
   public var columnOffsets: TSP_IndexSet {
-    get {return _columnOffsets ?? TSP_IndexSet()}
+    get {_columnOffsets ?? TSP_IndexSet()}
     set {_columnOffsets = newValue}
   }
   /// Returns true if `columnOffsets` has been explicitly set.
-  public var hasColumnOffsets: Bool {return self._columnOffsets != nil}
+  public var hasColumnOffsets: Bool {self._columnOffsets != nil}
   /// Clears the value of `columnOffsets`. Subsequent reads from it will return its default value.
   public mutating func clearColumnOffsets() {self._columnOffsets = nil}
 
   public var automaticDelimiters: Bool {
-    get {return _automaticDelimiters ?? false}
+    get {_automaticDelimiters ?? false}
     set {_automaticDelimiters = newValue}
   }
   /// Returns true if `automaticDelimiters` has been explicitly set.
-  public var hasAutomaticDelimiters: Bool {return self._automaticDelimiters != nil}
+  public var hasAutomaticDelimiters: Bool {self._automaticDelimiters != nil}
   /// Clears the value of `automaticDelimiters`. Subsequent reads from it will return its default value.
   public mutating func clearAutomaticDelimiters() {self._automaticDelimiters = nil}
 
   public var automaticOffsets: Bool {
-    get {return _automaticOffsets ?? false}
+    get {_automaticOffsets ?? false}
     set {_automaticOffsets = newValue}
   }
   /// Returns true if `automaticOffsets` has been explicitly set.
-  public var hasAutomaticOffsets: Bool {return self._automaticOffsets != nil}
+  public var hasAutomaticOffsets: Bool {self._automaticOffsets != nil}
   /// Clears the value of `automaticOffsets`. Subsequent reads from it will return its default value.
   public mutating func clearAutomaticOffsets() {self._automaticOffsets = nil}
 
   public var sourceEncoding: UInt64 {
-    get {return _sourceEncoding ?? 0}
+    get {_sourceEncoding ?? 0}
     set {_sourceEncoding = newValue}
   }
   /// Returns true if `sourceEncoding` has been explicitly set.
-  public var hasSourceEncoding: Bool {return self._sourceEncoding != nil}
+  public var hasSourceEncoding: Bool {self._sourceEncoding != nil}
   /// Clears the value of `sourceEncoding`. Subsequent reads from it will return its default value.
   public mutating func clearSourceEncoding() {self._sourceEncoding = nil}
 
@@ -2660,17 +2598,17 @@ public struct TSK_StructuredTextImportSettings: Sendable {
   fileprivate var _sourceEncoding: UInt64? = nil
 }
 
-public struct TSK_OperationStorageCommandOperationsEntry: Sendable {
+public nonisolated struct TSK_OperationStorageCommandOperationsEntry: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var commandIdentifierSameAsRevisionIdentifier: Bool {
-    get {return _commandIdentifierSameAsRevisionIdentifier ?? false}
+    get {_commandIdentifierSameAsRevisionIdentifier ?? false}
     set {_commandIdentifierSameAsRevisionIdentifier = newValue}
   }
   /// Returns true if `commandIdentifierSameAsRevisionIdentifier` has been explicitly set.
-  public var hasCommandIdentifierSameAsRevisionIdentifier: Bool {return self._commandIdentifierSameAsRevisionIdentifier != nil}
+  public var hasCommandIdentifierSameAsRevisionIdentifier: Bool {self._commandIdentifierSameAsRevisionIdentifier != nil}
   /// Clears the value of `commandIdentifierSameAsRevisionIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearCommandIdentifierSameAsRevisionIdentifier() {self._commandIdentifierSameAsRevisionIdentifier = nil}
 
@@ -2679,20 +2617,20 @@ public struct TSK_OperationStorageCommandOperationsEntry: Sendable {
   public var operations: [TSK_Operation] = []
 
   public var serverOriginated: Bool {
-    get {return _serverOriginated ?? false}
+    get {_serverOriginated ?? false}
     set {_serverOriginated = newValue}
   }
   /// Returns true if `serverOriginated` has been explicitly set.
-  public var hasServerOriginated: Bool {return self._serverOriginated != nil}
+  public var hasServerOriginated: Bool {self._serverOriginated != nil}
   /// Clears the value of `serverOriginated`. Subsequent reads from it will return its default value.
   public mutating func clearServerOriginated() {self._serverOriginated = nil}
 
   public var coalescedCommandEntryCount: UInt64 {
-    get {return _coalescedCommandEntryCount ?? 0}
+    get {_coalescedCommandEntryCount ?? 0}
     set {_coalescedCommandEntryCount = newValue}
   }
   /// Returns true if `coalescedCommandEntryCount` has been explicitly set.
-  public var hasCoalescedCommandEntryCount: Bool {return self._coalescedCommandEntryCount != nil}
+  public var hasCoalescedCommandEntryCount: Bool {self._coalescedCommandEntryCount != nil}
   /// Clears the value of `coalescedCommandEntryCount`. Subsequent reads from it will return its default value.
   public mutating func clearCoalescedCommandEntryCount() {self._coalescedCommandEntryCount = nil}
 
@@ -2705,7 +2643,7 @@ public struct TSK_OperationStorageCommandOperationsEntry: Sendable {
   fileprivate var _coalescedCommandEntryCount: UInt64? = nil
 }
 
-public struct TSK_OperationStorageEntry: Sendable {
+public nonisolated struct TSK_OperationStorageEntry: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2713,31 +2651,31 @@ public struct TSK_OperationStorageEntry: Sendable {
   public var documentRevisionIdentifier: [UInt64] = []
 
   public var documentRevisionSequenceDelta: Int32 {
-    get {return _documentRevisionSequenceDelta ?? 0}
+    get {_documentRevisionSequenceDelta ?? 0}
     set {_documentRevisionSequenceDelta = newValue}
   }
   /// Returns true if `documentRevisionSequenceDelta` has been explicitly set.
-  public var hasDocumentRevisionSequenceDelta: Bool {return self._documentRevisionSequenceDelta != nil}
+  public var hasDocumentRevisionSequenceDelta: Bool {self._documentRevisionSequenceDelta != nil}
   /// Clears the value of `documentRevisionSequenceDelta`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentRevisionSequenceDelta() {self._documentRevisionSequenceDelta = nil}
 
   public var commandOperationEntries: [TSK_OperationStorageCommandOperationsEntry] = []
 
   public var firstEntryCreationTime: Double {
-    get {return _firstEntryCreationTime ?? 0}
+    get {_firstEntryCreationTime ?? 0}
     set {_firstEntryCreationTime = newValue}
   }
   /// Returns true if `firstEntryCreationTime` has been explicitly set.
-  public var hasFirstEntryCreationTime: Bool {return self._firstEntryCreationTime != nil}
+  public var hasFirstEntryCreationTime: Bool {self._firstEntryCreationTime != nil}
   /// Clears the value of `firstEntryCreationTime`. Subsequent reads from it will return its default value.
   public mutating func clearFirstEntryCreationTime() {self._firstEntryCreationTime = nil}
 
   public var creationTimeDiffBucket: Int32 {
-    get {return _creationTimeDiffBucket ?? 0}
+    get {_creationTimeDiffBucket ?? 0}
     set {_creationTimeDiffBucket = newValue}
   }
   /// Returns true if `creationTimeDiffBucket` has been explicitly set.
-  public var hasCreationTimeDiffBucket: Bool {return self._creationTimeDiffBucket != nil}
+  public var hasCreationTimeDiffBucket: Bool {self._creationTimeDiffBucket != nil}
   /// Clears the value of `creationTimeDiffBucket`. Subsequent reads from it will return its default value.
   public mutating func clearCreationTimeDiffBucket() {self._creationTimeDiffBucket = nil}
 
@@ -2752,7 +2690,7 @@ public struct TSK_OperationStorageEntry: Sendable {
   fileprivate var _creationTimeDiffBucket: Int32? = nil
 }
 
-public struct TSK_DataReferenceRecord: Sendable {
+public nonisolated struct TSK_DataReferenceRecord: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2765,35 +2703,35 @@ public struct TSK_DataReferenceRecord: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ContainerUUIDToReferencedDataPair: Sendable {
+  public nonisolated struct ContainerUUIDToReferencedDataPair: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var containerUuid: TSP_UUID {
-      get {return _containerUuid ?? TSP_UUID()}
+      get {_containerUuid ?? TSP_UUID()}
       set {_containerUuid = newValue}
     }
     /// Returns true if `containerUuid` has been explicitly set.
-    public var hasContainerUuid: Bool {return self._containerUuid != nil}
+    public var hasContainerUuid: Bool {self._containerUuid != nil}
     /// Clears the value of `containerUuid`. Subsequent reads from it will return its default value.
     public mutating func clearContainerUuid() {self._containerUuid = nil}
 
     public var referencedData: TSP_DataReference {
-      get {return _referencedData ?? TSP_DataReference()}
+      get {_referencedData ?? TSP_DataReference()}
       set {_referencedData = newValue}
     }
     /// Returns true if `referencedData` has been explicitly set.
-    public var hasReferencedData: Bool {return self._referencedData != nil}
+    public var hasReferencedData: Bool {self._referencedData != nil}
     /// Clears the value of `referencedData`. Subsequent reads from it will return its default value.
     public mutating func clearReferencedData() {self._referencedData = nil}
 
     public var referenceCount: UInt32 {
-      get {return _referenceCount ?? 0}
+      get {_referenceCount ?? 0}
       set {_referenceCount = newValue}
     }
     /// Returns true if `referenceCount` has been explicitly set.
-    public var hasReferenceCount: Bool {return self._referenceCount != nil}
+    public var hasReferenceCount: Bool {self._referenceCount != nil}
     /// Clears the value of `referenceCount`. Subsequent reads from it will return its default value.
     public mutating func clearReferenceCount() {self._referenceCount = nil}
 
@@ -2809,98 +2747,82 @@ public struct TSK_DataReferenceRecord: Sendable {
   public init() {}
 }
 
-public struct TSK_PencilAnnotationUIState: @unchecked Sendable {
+public nonisolated struct TSK_PencilAnnotationUIState: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var currentToolType: TSK_PencilAnnotationUIState.PencilAnnotationToolType {
-    get {return _storage._currentToolType ?? .pen}
+    get {_storage._currentToolType ?? .pen}
     set {_uniqueStorage()._currentToolType = newValue}
   }
   /// Returns true if `currentToolType` has been explicitly set.
-  public var hasCurrentToolType: Bool {return _storage._currentToolType != nil}
+  public var hasCurrentToolType: Bool {_storage._currentToolType != nil}
   /// Clears the value of `currentToolType`. Subsequent reads from it will return its default value.
   public mutating func clearCurrentToolType() {_uniqueStorage()._currentToolType = nil}
 
   public var penToolColor: TSP_Color {
-    get {return _storage._penToolColor ?? TSP_Color()}
+    get {_storage._penToolColor ?? TSP_Color()}
     set {_uniqueStorage()._penToolColor = newValue}
   }
   /// Returns true if `penToolColor` has been explicitly set.
-  public var hasPenToolColor: Bool {return _storage._penToolColor != nil}
+  public var hasPenToolColor: Bool {_storage._penToolColor != nil}
   /// Clears the value of `penToolColor`. Subsequent reads from it will return its default value.
   public mutating func clearPenToolColor() {_uniqueStorage()._penToolColor = nil}
 
   public var penToolOpacity: Float {
-    get {return _storage._penToolOpacity ?? 0}
+    get {_storage._penToolOpacity ?? 0}
     set {_uniqueStorage()._penToolOpacity = newValue}
   }
   /// Returns true if `penToolOpacity` has been explicitly set.
-  public var hasPenToolOpacity: Bool {return _storage._penToolOpacity != nil}
+  public var hasPenToolOpacity: Bool {_storage._penToolOpacity != nil}
   /// Clears the value of `penToolOpacity`. Subsequent reads from it will return its default value.
   public mutating func clearPenToolOpacity() {_uniqueStorage()._penToolOpacity = nil}
 
   public var penToolWidth: Float {
-    get {return _storage._penToolWidth ?? 0}
+    get {_storage._penToolWidth ?? 0}
     set {_uniqueStorage()._penToolWidth = newValue}
   }
   /// Returns true if `penToolWidth` has been explicitly set.
-  public var hasPenToolWidth: Bool {return _storage._penToolWidth != nil}
+  public var hasPenToolWidth: Bool {_storage._penToolWidth != nil}
   /// Clears the value of `penToolWidth`. Subsequent reads from it will return its default value.
   public mutating func clearPenToolWidth() {_uniqueStorage()._penToolWidth = nil}
 
   public var highlighterToolColor: TSP_Color {
-    get {return _storage._highlighterToolColor ?? TSP_Color()}
+    get {_storage._highlighterToolColor ?? TSP_Color()}
     set {_uniqueStorage()._highlighterToolColor = newValue}
   }
   /// Returns true if `highlighterToolColor` has been explicitly set.
-  public var hasHighlighterToolColor: Bool {return _storage._highlighterToolColor != nil}
+  public var hasHighlighterToolColor: Bool {_storage._highlighterToolColor != nil}
   /// Clears the value of `highlighterToolColor`. Subsequent reads from it will return its default value.
   public mutating func clearHighlighterToolColor() {_uniqueStorage()._highlighterToolColor = nil}
 
   public var highlighterToolOpacity: Float {
-    get {return _storage._highlighterToolOpacity ?? 0}
+    get {_storage._highlighterToolOpacity ?? 0}
     set {_uniqueStorage()._highlighterToolOpacity = newValue}
   }
   /// Returns true if `highlighterToolOpacity` has been explicitly set.
-  public var hasHighlighterToolOpacity: Bool {return _storage._highlighterToolOpacity != nil}
+  public var hasHighlighterToolOpacity: Bool {_storage._highlighterToolOpacity != nil}
   /// Clears the value of `highlighterToolOpacity`. Subsequent reads from it will return its default value.
   public mutating func clearHighlighterToolOpacity() {_uniqueStorage()._highlighterToolOpacity = nil}
 
   public var highlighterToolWidth: Float {
-    get {return _storage._highlighterToolWidth ?? 0}
+    get {_storage._highlighterToolWidth ?? 0}
     set {_uniqueStorage()._highlighterToolWidth = newValue}
   }
   /// Returns true if `highlighterToolWidth` has been explicitly set.
-  public var hasHighlighterToolWidth: Bool {return _storage._highlighterToolWidth != nil}
+  public var hasHighlighterToolWidth: Bool {_storage._highlighterToolWidth != nil}
   /// Clears the value of `highlighterToolWidth`. Subsequent reads from it will return its default value.
   public mutating func clearHighlighterToolWidth() {_uniqueStorage()._highlighterToolWidth = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum PencilAnnotationToolType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case pen // = 0
-    case highlighter // = 1
+  public nonisolated enum PencilAnnotationToolType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case pen = 0
+    case highlighter = 1
 
     public init() {
       self = .pen
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .pen
-      case 1: self = .highlighter
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .pen: return 0
-      case .highlighter: return 1
-      }
     }
 
   }
@@ -2912,23 +2834,15 @@ public struct TSK_PencilAnnotationUIState: @unchecked Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSK"
+fileprivate nonisolated let _protobuf_package = "TSK"
 
-extension TSK_StructuredTextImportType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "ImportType_UNKNOWN"),
-    1: .same(proto: "ImportType_DELIMITED"),
-    2: .same(proto: "ImportType_FIXEDWIDTH"),
-  ]
+nonisolated extension TSK_StructuredTextImportType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0ImportType_UNKNOWN\0\u{1}ImportType_DELIMITED\0\u{1}ImportType_FIXEDWIDTH\0")
 }
 
-extension TSK_TreeNode: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_TreeNode: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TreeNode"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .same(proto: "children"),
-    3: .same(proto: "object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{1}children\0\u{1}object\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.children) {return false}
@@ -2976,12 +2890,9 @@ extension TSK_TreeNode: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   }
 }
 
-extension TSK_LocalCommandHistoryItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_LocalCommandHistoryItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LocalCommandHistoryItem"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "command"),
-    2: .same(proto: "behavior"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}command\0\u{1}behavior\0")
 
   public var isInitialized: Bool {
     if let v = self._command, !v.isInitialized {return false}
@@ -3024,11 +2935,9 @@ extension TSK_LocalCommandHistoryItem: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSK_LocalCommandHistoryArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_LocalCommandHistoryArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LocalCommandHistoryArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array\0")
 
   public var isInitialized: Bool {
     if self._largeArray == nil {return false}
@@ -3066,11 +2975,9 @@ extension TSK_LocalCommandHistoryArray: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSK_LocalCommandHistoryArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_LocalCommandHistoryArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LocalCommandHistoryArraySegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_object_array_segment"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_object_array_segment\0")
 
   public var isInitialized: Bool {
     if self._largeObjectArraySegment == nil {return false}
@@ -3108,13 +3015,9 @@ extension TSK_LocalCommandHistoryArraySegment: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSK_LocalCommandHistory: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_LocalCommandHistory: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LocalCommandHistory"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "undo_count"),
-    2: .standard(proto: "items_array"),
-    10: .standard(proto: "fixed_radar_13365177"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}undo_count\0\u{3}items_array\0\u{4}\u{8}fixed_radar_13365177\0")
 
   public var isInitialized: Bool {
     if self._undoCount == nil {return false}
@@ -3162,23 +3065,9 @@ extension TSK_LocalCommandHistory: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSK_DocumentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_DocumentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DocumentArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    4: .standard(proto: "locale_identifier"),
-    7: .standard(proto: "annotation_author_storage"),
-    8: .standard(proto: "activity_log_entries"),
-    9: .standard(proto: "creation_locale_identifier"),
-    10: .standard(proto: "prevent_image_conversion_on_open"),
-    11: .standard(proto: "has_floating_locale"),
-    12: .standard(proto: "has_user_defined_locale"),
-    14: .standard(proto: "collaboration_operation_history"),
-    15: .standard(proto: "should_measure_negatively_tracked_text_correctly"),
-    16: .standard(proto: "use_optimized_text_vertical_alignment"),
-    18: .standard(proto: "should_allow_ligatures_in_minimally_tracked_text"),
-    17: .standard(proto: "formatting_symbols"),
-    199: .standard(proto: "activity_stream"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{4}\u{4}locale_identifier\0\u{4}\u{3}annotation_author_storage\0\u{3}activity_log_entries\0\u{3}creation_locale_identifier\0\u{3}prevent_image_conversion_on_open\0\u{3}has_floating_locale\0\u{3}has_user_defined_locale\0\u{4}\u{2}collaboration_operation_history\0\u{3}should_measure_negatively_tracked_text_correctly\0\u{3}use_optimized_text_vertical_alignment\0\u{3}formatting_symbols\0\u{3}should_allow_ligatures_in_minimally_tracked_text\0\u{4}u\u{2}activity_stream\0")
 
   fileprivate class _StorageClass {
     var _localeIdentifier: String? = nil
@@ -3195,15 +3084,11 @@ extension TSK_DocumentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     var _formattingSymbols: TSK_FormattingSymbolsArchive? = nil
     var _activityStream: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3345,58 +3230,9 @@ extension TSK_DocumentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSK_FormattingSymbolsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_FormattingSymbolsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormattingSymbolsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "version"),
-    2: .same(proto: "calendar"),
-    3: .standard(proto: "numbering_system"),
-    4: .same(proto: "months"),
-    5: .standard(proto: "standalone_months"),
-    6: .standard(proto: "short_months"),
-    7: .standard(proto: "standalone_short_months"),
-    8: .same(proto: "weekdays"),
-    9: .standard(proto: "standalone_weekdays"),
-    10: .standard(proto: "short_weekdays"),
-    11: .standard(proto: "standalone_short_weekdays"),
-    12: .standard(proto: "am_symbol"),
-    13: .standard(proto: "pm_symbol"),
-    14: .standard(proto: "tiny_months"),
-    15: .standard(proto: "standalone_tiny_months"),
-    16: .standard(proto: "tiny_weekdays"),
-    17: .standard(proto: "standalone_tiny_weekdays"),
-    18: .same(proto: "quarters"),
-    19: .standard(proto: "standalone_quarters"),
-    20: .standard(proto: "short_quarters"),
-    21: .standard(proto: "standalone_short_quarters"),
-    22: .same(proto: "eras"),
-    23: .standard(proto: "long_eras"),
-    24: .standard(proto: "short_date_pattern"),
-    25: .standard(proto: "medium_date_pattern"),
-    26: .standard(proto: "long_date_pattern"),
-    27: .standard(proto: "full_date_pattern"),
-    28: .standard(proto: "short_time_pattern"),
-    29: .standard(proto: "medium_time_pattern"),
-    30: .standard(proto: "long_time_pattern"),
-    31: .standard(proto: "full_time_pattern"),
-    32: .standard(proto: "decimal_separator"),
-    33: .standard(proto: "grouping_separator"),
-    34: .standard(proto: "currency_decimal_separator"),
-    35: .standard(proto: "currency_grouping_separator"),
-    36: .standard(proto: "plus_sign"),
-    37: .standard(proto: "minus_sign"),
-    38: .standard(proto: "exponential_symbol"),
-    39: .standard(proto: "percent_symbol"),
-    40: .standard(proto: "per_mille_symbol"),
-    41: .standard(proto: "infinity_symbol"),
-    42: .standard(proto: "nan_symbol"),
-    43: .standard(proto: "decimal_pattern"),
-    44: .standard(proto: "scientific_pattern"),
-    45: .standard(proto: "percent_pattern"),
-    46: .standard(proto: "currency_pattern"),
-    47: .standard(proto: "currency_code"),
-    48: .standard(proto: "currency_symbols"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}version\0\u{1}calendar\0\u{3}numbering_system\0\u{1}months\0\u{3}standalone_months\0\u{3}short_months\0\u{3}standalone_short_months\0\u{1}weekdays\0\u{3}standalone_weekdays\0\u{3}short_weekdays\0\u{3}standalone_short_weekdays\0\u{3}am_symbol\0\u{3}pm_symbol\0\u{3}tiny_months\0\u{3}standalone_tiny_months\0\u{3}tiny_weekdays\0\u{3}standalone_tiny_weekdays\0\u{1}quarters\0\u{3}standalone_quarters\0\u{3}short_quarters\0\u{3}standalone_short_quarters\0\u{1}eras\0\u{3}long_eras\0\u{3}short_date_pattern\0\u{3}medium_date_pattern\0\u{3}long_date_pattern\0\u{3}full_date_pattern\0\u{3}short_time_pattern\0\u{3}medium_time_pattern\0\u{3}long_time_pattern\0\u{3}full_time_pattern\0\u{3}decimal_separator\0\u{3}grouping_separator\0\u{3}currency_decimal_separator\0\u{3}currency_grouping_separator\0\u{3}plus_sign\0\u{3}minus_sign\0\u{3}exponential_symbol\0\u{3}percent_symbol\0\u{3}per_mille_symbol\0\u{3}infinity_symbol\0\u{3}nan_symbol\0\u{3}decimal_pattern\0\u{3}scientific_pattern\0\u{3}percent_pattern\0\u{3}currency_pattern\0\u{3}currency_code\0\u{3}currency_symbols\0")
 
   fileprivate class _StorageClass {
     var _version: String? = nil
@@ -3448,15 +3284,11 @@ extension TSK_FormattingSymbolsArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _currencyCode: String? = nil
     var _currencySymbols: [TSK_FormattingSymbolsArchive.CurrencySymbol] = []
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3804,12 +3636,9 @@ extension TSK_FormattingSymbolsArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSK_FormattingSymbolsArchive.CurrencySymbol: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_FormattingSymbolsArchive.CurrencySymbol: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSK_FormattingSymbolsArchive.protoMessageName + ".CurrencySymbol"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "code"),
-    2: .same(proto: "symbol"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}code\0\u{1}symbol\0")
 
   public var isInitialized: Bool {
     if self._code == nil {return false}
@@ -3852,25 +3681,9 @@ extension TSK_FormattingSymbolsArchive.CurrencySymbol: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSK_DocumentSupportArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_DocumentSupportArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DocumentSupportArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "command_history"),
-    4: .standard(proto: "undo_count"),
-    5: .standard(proto: "redo_count"),
-    6: .standard(proto: "undo_action_string"),
-    7: .standard(proto: "redo_action_string"),
-    8: .standard(proto: "web_state"),
-    9: .standard(proto: "is_in_collaboration_mode"),
-    12: .standard(proto: "action_string_localization"),
-    13: .standard(proto: "collaboration_state"),
-    14: .standard(proto: "activity_notification_map"),
-    15: .standard(proto: "removed_author_auditor_pending_state"),
-    2: .standard(proto: "command_selection_behavior_history"),
-    3: .standard(proto: "view_state"),
-    10: .standard(proto: "collaboration_command_history"),
-    11: .standard(proto: "collaboration_session_state"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}command_history\0\u{3}command_selection_behavior_history\0\u{3}view_state\0\u{3}undo_count\0\u{3}redo_count\0\u{3}undo_action_string\0\u{3}redo_action_string\0\u{3}web_state\0\u{3}is_in_collaboration_mode\0\u{3}collaboration_command_history\0\u{3}collaboration_session_state\0\u{3}action_string_localization\0\u{3}collaboration_state\0\u{3}activity_notification_map\0\u{3}removed_author_auditor_pending_state\0")
 
   fileprivate class _StorageClass {
     var _commandHistory: TSP_Reference? = nil
@@ -3889,15 +3702,11 @@ extension TSK_DocumentSupportArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _collaborationCommandHistory: TSP_Reference? = nil
     var _collaborationSessionState: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4055,13 +3864,9 @@ extension TSK_DocumentSupportArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSK_ViewStateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_ViewStateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ViewStateArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "view_state_root"),
-    2: .standard(proto: "document_revision_sequence"),
-    3: .standard(proto: "document_revision_identifier"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}view_state_root\0\u{3}document_revision_sequence\0\u{3}document_revision_identifier\0")
 
   public var isInitialized: Bool {
     if self._viewStateRoot == nil {return false}
@@ -4109,17 +3914,9 @@ extension TSK_ViewStateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSK_CommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_CommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "undoRedoState"),
-    2: .same(proto: "undoCollection"),
-    3: .standard(proto: "shadowed_by_transform"),
-    4: .standard(proto: "shadowed_by_commit"),
-    5: .same(proto: "remote"),
-    6: .standard(proto: "should_hold_until_group_commit"),
-    7: .standard(proto: "server_originated"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}undoRedoState\0\u{1}undoCollection\0\u{3}shadowed_by_transform\0\u{3}shadowed_by_commit\0\u{1}remote\0\u{3}should_hold_until_group_commit\0\u{3}server_originated\0")
 
   public var isInitialized: Bool {
     if let v = self._undoRedoState, !v.isInitialized {return false}
@@ -4187,15 +3984,9 @@ extension TSK_CommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension TSK_CommandGroupArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_CommandGroupArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandGroupArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "commands"),
-    3: .standard(proto: "process_results"),
-    4: .standard(proto: "action_string"),
-    5: .standard(proto: "can_coalesce_group"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}commands\0\u{3}process_results\0\u{3}action_string\0\u{3}can_coalesce_group\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4255,14 +4046,9 @@ extension TSK_CommandGroupArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSK_InducedCommandCollectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_InducedCommandCollectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InducedCommandCollectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "inducing_command"),
-    3: .standard(proto: "induced_commands"),
-    4: .standard(proto: "indexes_of_processed_induced_commands"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}inducing_command\0\u{3}induced_commands\0\u{3}indexes_of_processed_induced_commands\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4318,15 +4104,9 @@ extension TSK_InducedCommandCollectionArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSK_PropagatedCommandCollectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_PropagatedCommandCollectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PropagatedCommandCollectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "propagatable_command"),
-    3: .standard(proto: "propagatable_command_process_result"),
-    4: .standard(proto: "propagating_command"),
-    5: .standard(proto: "propagating_command_process_result"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}propagatable_command\0\u{3}propagatable_command_process_result\0\u{3}propagating_command\0\u{3}propagating_command_process_result\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -4335,15 +4115,11 @@ extension TSK_PropagatedCommandCollectionArchive: SwiftProtobuf.Message, SwiftPr
     var _propagatingCommand: TSP_Reference? = nil
     var _propagatingCommandProcessResult: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4438,15 +4214,9 @@ extension TSK_PropagatedCommandCollectionArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSK_FinalCommandPairArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_FinalCommandPairArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FinalCommandPairArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "command"),
-    3: .standard(proto: "command_process_result"),
-    4: .standard(proto: "final_command"),
-    5: .standard(proto: "final_command_process_result"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}command\0\u{3}command_process_result\0\u{3}final_command\0\u{3}final_command_process_result\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -4455,15 +4225,11 @@ extension TSK_FinalCommandPairArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _finalCommand: TSP_Reference? = nil
     var _finalCommandProcessResult: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4558,11 +4324,9 @@ extension TSK_FinalCommandPairArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSK_CommandContainerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_CommandContainerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandContainerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "commands"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}commands\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.commands) {return false}
@@ -4595,11 +4359,9 @@ extension TSK_CommandContainerArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSK_ProgressiveCommandGroupArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_ProgressiveCommandGroupArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ProgressiveCommandGroupArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4637,55 +4399,9 @@ extension TSK_ProgressiveCommandGroupArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSK_FormatStructArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_FormatStructArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormatStructArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "format_type"),
-    2: .standard(proto: "decimal_places"),
-    3: .standard(proto: "currency_code"),
-    4: .standard(proto: "negative_style"),
-    5: .standard(proto: "show_thousands_separator"),
-    6: .standard(proto: "use_accounting_style"),
-    7: .standard(proto: "duration_style"),
-    8: .same(proto: "base"),
-    9: .standard(proto: "base_places"),
-    10: .standard(proto: "base_use_minus_sign"),
-    11: .standard(proto: "fraction_accuracy"),
-    12: .standard(proto: "suppress_date_format"),
-    13: .standard(proto: "suppress_time_format"),
-    14: .standard(proto: "date_time_format"),
-    15: .standard(proto: "duration_unit_largest"),
-    16: .standard(proto: "duration_unit_smallest"),
-    17: .standard(proto: "custom_id"),
-    18: .standard(proto: "custom_format_string"),
-    19: .standard(proto: "scale_factor"),
-    20: .standard(proto: "requires_fraction_replacement"),
-    21: .standard(proto: "control_minimum"),
-    22: .standard(proto: "control_maximum"),
-    23: .standard(proto: "control_increment"),
-    24: .standard(proto: "control_format_type"),
-    25: .standard(proto: "slider_orientation"),
-    26: .standard(proto: "slider_position"),
-    27: .standard(proto: "decimal_width"),
-    28: .standard(proto: "min_integer_width"),
-    29: .standard(proto: "num_nonspace_integer_digits"),
-    30: .standard(proto: "num_nonspace_decimal_digits"),
-    31: .standard(proto: "index_from_right_last_integer"),
-    32: .standard(proto: "interstitial_strings"),
-    33: .standard(proto: "inters_str_insertion_indexes"),
-    34: .standard(proto: "num_hash_decimal_digits"),
-    35: .standard(proto: "total_num_decimal_digits"),
-    36: .standard(proto: "is_complex"),
-    37: .standard(proto: "contains_integer_token"),
-    38: .standard(proto: "multiple_choice_list_initial_value"),
-    39: .standard(proto: "multiple_choice_list_id"),
-    40: .standard(proto: "use_automatic_duration_units"),
-    41: .standard(proto: "custom_uid"),
-    42: .standard(proto: "custom_format"),
-    43: .standard(proto: "uses_plus_sign"),
-    44: .standard(proto: "bool_true_string"),
-    45: .standard(proto: "bool_false_string"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}format_type\0\u{3}decimal_places\0\u{3}currency_code\0\u{3}negative_style\0\u{3}show_thousands_separator\0\u{3}use_accounting_style\0\u{3}duration_style\0\u{1}base\0\u{3}base_places\0\u{3}base_use_minus_sign\0\u{3}fraction_accuracy\0\u{3}suppress_date_format\0\u{3}suppress_time_format\0\u{3}date_time_format\0\u{3}duration_unit_largest\0\u{3}duration_unit_smallest\0\u{3}custom_id\0\u{3}custom_format_string\0\u{3}scale_factor\0\u{3}requires_fraction_replacement\0\u{3}control_minimum\0\u{3}control_maximum\0\u{3}control_increment\0\u{3}control_format_type\0\u{3}slider_orientation\0\u{3}slider_position\0\u{3}decimal_width\0\u{3}min_integer_width\0\u{3}num_nonspace_integer_digits\0\u{3}num_nonspace_decimal_digits\0\u{3}index_from_right_last_integer\0\u{3}interstitial_strings\0\u{3}inters_str_insertion_indexes\0\u{3}num_hash_decimal_digits\0\u{3}total_num_decimal_digits\0\u{3}is_complex\0\u{3}contains_integer_token\0\u{3}multiple_choice_list_initial_value\0\u{3}multiple_choice_list_id\0\u{3}use_automatic_duration_units\0\u{3}custom_uid\0\u{3}custom_format\0\u{3}uses_plus_sign\0\u{3}bool_true_string\0\u{3}bool_false_string\0")
 
   fileprivate class _StorageClass {
     var _formatType: UInt32? = nil
@@ -4734,15 +4450,11 @@ extension TSK_FormatStructArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
     var _boolTrueString: String? = nil
     var _boolFalseString: String? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5079,15 +4791,9 @@ extension TSK_FormatStructArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSK_CustomFormatArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_CustomFormatArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CustomFormatArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .standard(proto: "format_type_pre_bnc"),
-    3: .standard(proto: "default_format"),
-    4: .same(proto: "conditions"),
-    5: .standard(proto: "format_type"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{3}format_type_pre_bnc\0\u{3}default_format\0\u{1}conditions\0\u{3}format_type\0")
 
   fileprivate class _StorageClass {
     var _name: String? = nil
@@ -5096,15 +4802,11 @@ extension TSK_CustomFormatArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
     var _conditions: [TSK_CustomFormatArchive.Condition] = []
     var _formatType: UInt32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5198,14 +4900,9 @@ extension TSK_CustomFormatArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSK_CustomFormatArchive.Condition: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_CustomFormatArchive.Condition: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSK_CustomFormatArchive.protoMessageName + ".Condition"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "condition_type"),
-    2: .standard(proto: "condition_value"),
-    3: .standard(proto: "condition_format"),
-    4: .standard(proto: "condition_value_dbl"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}condition_type\0\u{3}condition_value\0\u{3}condition_format\0\u{3}condition_value_dbl\0")
 
   public var isInitialized: Bool {
     if self._conditionType == nil {return false}
@@ -5259,12 +4956,9 @@ extension TSK_CustomFormatArchive.Condition: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSK_CustomFormatListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_CustomFormatListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CustomFormatListArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuids"),
-    2: .standard(proto: "custom_formats"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uuids\0\u{3}custom_formats\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.uuids) {return false}
@@ -5303,15 +4997,9 @@ extension TSK_CustomFormatListArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSK_AnnotationAuthorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_AnnotationAuthorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AnnotationAuthorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .same(proto: "color"),
-    3: .standard(proto: "public_id"),
-    4: .standard(proto: "is_public_author"),
-    5: .standard(proto: "public_ids"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{1}color\0\u{3}public_id\0\u{3}is_public_author\0\u{3}public_ids\0")
 
   public var isInitialized: Bool {
     if let v = self._color, !v.isInitialized {return false}
@@ -5368,12 +5056,9 @@ extension TSK_AnnotationAuthorArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSK_DeprecatedChangeAuthorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_DeprecatedChangeAuthorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DeprecatedChangeAuthorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .standard(proto: "change_color"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{3}change_color\0")
 
   public var isInitialized: Bool {
     if let v = self._changeColor, !v.isInitialized {return false}
@@ -5415,11 +5100,9 @@ extension TSK_DeprecatedChangeAuthorArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSK_AnnotationAuthorStorageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_AnnotationAuthorStorageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AnnotationAuthorStorageArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "annotation_author"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}annotation_author\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.annotationAuthor) {return false}
@@ -5452,15 +5135,9 @@ extension TSK_AnnotationAuthorStorageArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSK_CommandBehaviorSelectionPathStorageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_CommandBehaviorSelectionPathStorageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandBehaviorSelectionPathStorageArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "archived_selection"),
-    2: .standard(proto: "archived_old_selection"),
-    3: .standard(proto: "archived_new_selection"),
-    4: .standard(proto: "forward_selection_path_transformer"),
-    5: .standard(proto: "reverse_selection_path_transformer"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}archived_selection\0\u{3}archived_old_selection\0\u{3}archived_new_selection\0\u{3}forward_selection_path_transformer\0\u{3}reverse_selection_path_transformer\0")
 
   public var isInitialized: Bool {
     if let v = self._archivedSelection, !v.isInitialized {return false}
@@ -5521,12 +5198,9 @@ extension TSK_CommandBehaviorSelectionPathStorageArchive: SwiftProtobuf.Message,
   }
 }
 
-extension TSK_CommandBehaviorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_CommandBehaviorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandBehaviorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "selection_behavior"),
-    2: .standard(proto: "activity_behavior"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}selection_behavior\0\u{3}activity_behavior\0")
 
   public var isInitialized: Bool {
     if let v = self._selectionBehavior, !v.isInitialized {return false}
@@ -5569,15 +5243,9 @@ extension TSK_CommandBehaviorArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSK_CommandSelectionBehaviorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_CommandSelectionBehaviorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSelectionBehaviorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "selection_path_storage"),
-    2: .standard(proto: "selection_flags"),
-    3: .standard(proto: "additional_forward_selection_flags"),
-    4: .standard(proto: "additional_reverse_selection_flags"),
-    5: .standard(proto: "additional_selection_behaviors"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}selection_path_storage\0\u{3}selection_flags\0\u{3}additional_forward_selection_flags\0\u{3}additional_reverse_selection_flags\0\u{3}additional_selection_behaviors\0")
 
   public var isInitialized: Bool {
     if let v = self._selectionPathStorage, !v.isInitialized {return false}
@@ -5635,11 +5303,9 @@ extension TSK_CommandSelectionBehaviorArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSK_SelectionPathTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_SelectionPathTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SelectionPathTransformerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "selection_transformers"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}selection_transformers\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.selectionTransformers) {return false}
@@ -5672,11 +5338,9 @@ extension TSK_SelectionPathTransformerArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSK_SelectionPathArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_SelectionPathArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SelectionPathArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "ordered_selections"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}ordered_selections\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.orderedSelections) {return false}
@@ -5709,11 +5373,9 @@ extension TSK_SelectionPathArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSK_DocumentSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_DocumentSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DocumentSelectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "document_root"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}document_root\0")
 
   public var isInitialized: Bool {
     if let v = self._documentRoot, !v.isInitialized {return false}
@@ -5750,11 +5412,9 @@ extension TSK_DocumentSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSK_NullCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_NullCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".NullCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5792,12 +5452,9 @@ extension TSK_NullCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSK_GroupCommitCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_GroupCommitCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GroupCommitCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "can_coalesce_group"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}can_coalesce_group\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5840,11 +5497,9 @@ extension TSK_GroupCommitCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSK_UpgradeDocPostProcessingCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_UpgradeDocPostProcessingCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UpgradeDocPostProcessingCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5882,11 +5537,9 @@ extension TSK_UpgradeDocPostProcessingCommandArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSK_InducedCommandCollectionCommitCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_InducedCommandCollectionCommitCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InducedCommandCollectionCommitCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5924,13 +5577,9 @@ extension TSK_InducedCommandCollectionCommitCommandArchive: SwiftProtobuf.Messag
   }
 }
 
-extension TSK_ChangeDocumentPackageTypeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_ChangeDocumentPackageTypeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChangeDocumentPackageTypeCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "new_package_type"),
-    3: .standard(proto: "old_package_type"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}new_package_type\0\u{3}old_package_type\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5980,20 +5629,13 @@ extension TSK_ChangeDocumentPackageTypeCommandArchive: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSK_ChangeDocumentPackageTypeCommandArchive.PackageType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "Default"),
-    1: .same(proto: "Directory"),
-    2: .same(proto: "SingleFile"),
-  ]
+nonisolated extension TSK_ChangeDocumentPackageTypeCommandArchive.PackageType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0Default\0\u{1}Directory\0\u{1}SingleFile\0")
 }
 
-extension TSK_RangeAddress: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_RangeAddress: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RangeAddress"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "address_identifier"),
-    2: .standard(proto: "range_list"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}address_identifier\0\u{3}range_list\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6026,23 +5668,9 @@ extension TSK_RangeAddress: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension TSK_Operation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_Operation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Operation"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .same(proto: "noop"),
-    3: .standard(proto: "address_identifier"),
-    4: .standard(proto: "insert_length"),
-    5: .standard(proto: "preserve_lower_priority_location"),
-    6: .standard(proto: "range_list"),
-    7: .standard(proto: "transform_behavior"),
-    8: .standard(proto: "property_id"),
-    9: .standard(proto: "from_index"),
-    10: .standard(proto: "to_index"),
-    11: .same(proto: "dominating"),
-    12: .standard(proto: "object_count"),
-    13: .standard(proto: "object_counter_space"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}noop\0\u{3}address_identifier\0\u{3}insert_length\0\u{3}preserve_lower_priority_location\0\u{3}range_list\0\u{3}transform_behavior\0\u{3}property_id\0\u{3}from_index\0\u{3}to_index\0\u{1}dominating\0\u{3}object_count\0\u{3}object_counter_space\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6134,24 +5762,13 @@ extension TSK_Operation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 }
 
-extension TSK_Operation.OperationType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "Add"),
-    1: .same(proto: "Remove"),
-    2: .same(proto: "Placement"),
-    3: .same(proto: "Rearrange"),
-    4: .same(proto: "UpdateId"),
-    5: .same(proto: "UpdateRange"),
-    6: .same(proto: "ReplaceRange"),
-  ]
+nonisolated extension TSK_Operation.OperationType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0Add\0\u{1}Remove\0\u{1}Placement\0\u{1}Rearrange\0\u{1}UpdateId\0\u{1}UpdateRange\0\u{1}ReplaceRange\0")
 }
 
-extension TSK_OperationTransformer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_OperationTransformer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OperationTransformer"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "higher_priority"),
-    2: .same(proto: "operations"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}higher_priority\0\u{1}operations\0")
 
   public var isInitialized: Bool {
     if self._higherPriority == nil {return false}
@@ -6193,17 +5810,9 @@ extension TSK_OperationTransformer: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSK_OutgoingCommandQueueItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_OutgoingCommandQueueItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OutgoingCommandQueueItem"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "command"),
-    2: .standard(proto: "serialized_json_without_data_base64_encoded_string"),
-    4: .standard(proto: "serialized_json_without_data_base64_encoded_data"),
-    6: .standard(proto: "did_rollback_reapply"),
-    7: .standard(proto: "contains_large_pending_upload_data"),
-    3: .standard(proto: "uuid_to_data_map_entries"),
-    5: .standard(proto: "large_data_list"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}command\0\u{3}serialized_json_without_data_base64_encoded_string\0\u{3}uuid_to_data_map_entries\0\u{3}serialized_json_without_data_base64_encoded_data\0\u{3}large_data_list\0\u{3}did_rollback_reapply\0\u{3}contains_large_pending_upload_data\0")
 
   public var isInitialized: Bool {
     if let v = self._command, !v.isInitialized {return false}
@@ -6273,12 +5882,9 @@ extension TSK_OutgoingCommandQueueItem: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSK_OutgoingCommandQueueItemUUIDToDataMapEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_OutgoingCommandQueueItemUUIDToDataMapEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OutgoingCommandQueueItemUUIDToDataMapEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuid"),
-    2: .same(proto: "data"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uuid\0\u{1}data\0")
 
   public var isInitialized: Bool {
     if self._uuid == nil {return false}
@@ -6323,14 +5929,9 @@ extension TSK_OutgoingCommandQueueItemUUIDToDataMapEntry: SwiftProtobuf.Message,
   }
 }
 
-extension TSK_NativeContentDescription: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_NativeContentDescription: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".NativeContentDescription"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "app_name"),
-    2: .standard(proto: "app_version"),
-    3: .standard(proto: "document_id"),
-    4: .standard(proto: "drawable_descriptions"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}app_name\0\u{3}app_version\0\u{3}document_id\0\u{3}drawable_descriptions\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.drawableDescriptions) {return false}
@@ -6382,22 +5983,9 @@ extension TSK_NativeContentDescription: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSK_StructuredTextImportSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_StructuredTextImportSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StructuredTextImportSettings"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .standard(proto: "starting_row"),
-    3: .standard(proto: "decimal_separators"),
-    4: .standard(proto: "thousands_separators"),
-    5: .standard(proto: "transpose_rows_and_columns"),
-    6: .same(proto: "delimiters"),
-    7: .standard(proto: "text_qualifiers"),
-    8: .standard(proto: "collapse_consecutive"),
-    9: .standard(proto: "column_offsets"),
-    10: .standard(proto: "automatic_delimiters"),
-    11: .standard(proto: "automatic_offsets"),
-    12: .standard(proto: "source_encoding"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{3}starting_row\0\u{3}decimal_separators\0\u{3}thousands_separators\0\u{3}transpose_rows_and_columns\0\u{1}delimiters\0\u{3}text_qualifiers\0\u{3}collapse_consecutive\0\u{3}column_offsets\0\u{3}automatic_delimiters\0\u{3}automatic_offsets\0\u{3}source_encoding\0")
 
   public var isInitialized: Bool {
     if self._type == nil {return false}
@@ -6491,15 +6079,9 @@ extension TSK_StructuredTextImportSettings: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSK_OperationStorageCommandOperationsEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_OperationStorageCommandOperationsEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OperationStorageCommandOperationsEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "command_identifier_same_as_revision_identifier"),
-    2: .standard(proto: "command_identifier"),
-    3: .same(proto: "operations"),
-    4: .standard(proto: "server_originated"),
-    5: .standard(proto: "coalesced_command_entry_count"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}command_identifier_same_as_revision_identifier\0\u{3}command_identifier\0\u{1}operations\0\u{3}server_originated\0\u{3}coalesced_command_entry_count\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6551,16 +6133,9 @@ extension TSK_OperationStorageCommandOperationsEntry: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSK_OperationStorageEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_OperationStorageEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OperationStorageEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "document_revision_identifier"),
-    2: .standard(proto: "document_revision_sequence_delta"),
-    3: .standard(proto: "command_operation_entries"),
-    4: .standard(proto: "first_entry_creation_time"),
-    5: .standard(proto: "creation_time_diff_bucket"),
-    6: .standard(proto: "file_format_version"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}document_revision_identifier\0\u{3}document_revision_sequence_delta\0\u{3}command_operation_entries\0\u{3}first_entry_creation_time\0\u{3}creation_time_diff_bucket\0\u{3}file_format_version\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -6617,13 +6192,9 @@ extension TSK_OperationStorageEntry: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSK_DataReferenceRecord: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_DataReferenceRecord: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DataReferenceRecord"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "added_container_uuid_to_referenced_data_pairs"),
-    2: .standard(proto: "removed_container_uuid_to_referenced_data_pairs"),
-    3: .standard(proto: "unbounded_referenced_datas"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}added_container_uuid_to_referenced_data_pairs\0\u{3}removed_container_uuid_to_referenced_data_pairs\0\u{3}unbounded_referenced_datas\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.addedContainerUuidToReferencedDataPairs) {return false}
@@ -6668,13 +6239,9 @@ extension TSK_DataReferenceRecord: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSK_DataReferenceRecord.ContainerUUIDToReferencedDataPair: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_DataReferenceRecord.ContainerUUIDToReferencedDataPair: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSK_DataReferenceRecord.protoMessageName + ".ContainerUUIDToReferencedDataPair"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "container_uuid"),
-    2: .standard(proto: "referenced_data"),
-    3: .standard(proto: "reference_count"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}container_uuid\0\u{3}referenced_data\0\u{3}reference_count\0")
 
   public var isInitialized: Bool {
     if self._containerUuid == nil {return false}
@@ -6725,17 +6292,9 @@ extension TSK_DataReferenceRecord.ContainerUUIDToReferencedDataPair: SwiftProtob
   }
 }
 
-extension TSK_PencilAnnotationUIState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSK_PencilAnnotationUIState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PencilAnnotationUIState"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "current_tool_type"),
-    2: .standard(proto: "pen_tool_color"),
-    3: .standard(proto: "pen_tool_opacity"),
-    4: .standard(proto: "pen_tool_width"),
-    5: .standard(proto: "highlighter_tool_color"),
-    6: .standard(proto: "highlighter_tool_opacity"),
-    7: .standard(proto: "highlighter_tool_width"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}current_tool_type\0\u{3}pen_tool_color\0\u{3}pen_tool_opacity\0\u{3}pen_tool_width\0\u{3}highlighter_tool_color\0\u{3}highlighter_tool_opacity\0\u{3}highlighter_tool_width\0")
 
   fileprivate class _StorageClass {
     var _currentToolType: TSK_PencilAnnotationUIState.PencilAnnotationToolType? = nil
@@ -6746,15 +6305,11 @@ extension TSK_PencilAnnotationUIState: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _highlighterToolOpacity: Float? = nil
     var _highlighterToolWidth: Float? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -6857,9 +6412,6 @@ extension TSK_PencilAnnotationUIState: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSK_PencilAnnotationUIState.PencilAnnotationToolType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "Pen"),
-    1: .same(proto: "Highlighter"),
-  ]
+nonisolated extension TSK_PencilAnnotationUIState.PencilAnnotationToolType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0Pen\0\u{1}Highlighter\0")
 }

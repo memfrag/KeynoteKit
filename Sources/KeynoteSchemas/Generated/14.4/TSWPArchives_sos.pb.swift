@@ -15,31 +15,31 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSWPSOS_SpecSetCharacterStyleArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetCharacterStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var characterStyle: TSP_Reference {
-    get {return _characterStyle ?? TSP_Reference()}
+    get {_characterStyle ?? TSP_Reference()}
     set {_characterStyle = newValue}
   }
   /// Returns true if `characterStyle` has been explicitly set.
-  public var hasCharacterStyle: Bool {return self._characterStyle != nil}
+  public var hasCharacterStyle: Bool {self._characterStyle != nil}
   /// Clears the value of `characterStyle`. Subsequent reads from it will return its default value.
   public mutating func clearCharacterStyle() {self._characterStyle = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -51,26 +51,26 @@ public struct TSWPSOS_SpecSetCharacterStyleArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetColumnsArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetColumnsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var columns: TSWP_ColumnsArchive {
-    get {return _columns ?? TSWP_ColumnsArchive()}
+    get {_columns ?? TSWP_ColumnsArchive()}
     set {_columns = newValue}
   }
   /// Returns true if `columns` has been explicitly set.
-  public var hasColumns: Bool {return self._columns != nil}
+  public var hasColumns: Bool {self._columns != nil}
   /// Clears the value of `columns`. Subsequent reads from it will return its default value.
   public mutating func clearColumns() {self._columns = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -82,26 +82,26 @@ public struct TSWPSOS_SpecSetColumnsArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetDropCapArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetDropCapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var dropCap: TSWP_DropCapArchive {
-    get {return _dropCap ?? TSWP_DropCapArchive()}
+    get {_dropCap ?? TSWP_DropCapArchive()}
     set {_dropCap = newValue}
   }
   /// Returns true if `dropCap` has been explicitly set.
-  public var hasDropCap: Bool {return self._dropCap != nil}
+  public var hasDropCap: Bool {self._dropCap != nil}
   /// Clears the value of `dropCap`. Subsequent reads from it will return its default value.
   public mutating func clearDropCap() {self._dropCap = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -113,7 +113,7 @@ public struct TSWPSOS_SpecSetDropCapArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetFontFeaturesArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetFontFeaturesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -121,20 +121,20 @@ public struct TSWPSOS_SpecSetFontFeaturesArchive: Sendable {
   public var fontFeatures: [TSWP_FontFeatureArchive] = []
 
   public var fontFeaturesUndefined: Bool {
-    get {return _fontFeaturesUndefined ?? false}
+    get {_fontFeaturesUndefined ?? false}
     set {_fontFeaturesUndefined = newValue}
   }
   /// Returns true if `fontFeaturesUndefined` has been explicitly set.
-  public var hasFontFeaturesUndefined: Bool {return self._fontFeaturesUndefined != nil}
+  public var hasFontFeaturesUndefined: Bool {self._fontFeaturesUndefined != nil}
   /// Clears the value of `fontFeaturesUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFontFeaturesUndefined() {self._fontFeaturesUndefined = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -146,26 +146,26 @@ public struct TSWPSOS_SpecSetFontFeaturesArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetLineSpacingArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetLineSpacingArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var lineSpacing: TSWP_LineSpacingArchive {
-    get {return _lineSpacing ?? TSWP_LineSpacingArchive()}
+    get {_lineSpacing ?? TSWP_LineSpacingArchive()}
     set {_lineSpacing = newValue}
   }
   /// Returns true if `lineSpacing` has been explicitly set.
-  public var hasLineSpacing: Bool {return self._lineSpacing != nil}
+  public var hasLineSpacing: Bool {self._lineSpacing != nil}
   /// Clears the value of `lineSpacing`. Subsequent reads from it will return its default value.
   public mutating func clearLineSpacing() {self._lineSpacing = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -177,26 +177,26 @@ public struct TSWPSOS_SpecSetLineSpacingArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetListStyleArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetListStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var listStyle: TSP_Reference {
-    get {return _listStyle ?? TSP_Reference()}
+    get {_listStyle ?? TSP_Reference()}
     set {_listStyle = newValue}
   }
   /// Returns true if `listStyle` has been explicitly set.
-  public var hasListStyle: Bool {return self._listStyle != nil}
+  public var hasListStyle: Bool {self._listStyle != nil}
   /// Clears the value of `listStyle`. Subsequent reads from it will return its default value.
   public mutating func clearListStyle() {self._listStyle = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -208,7 +208,7 @@ public struct TSWPSOS_SpecSetListStyleArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetListStyleBoolArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetListStyleBoolArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -216,20 +216,20 @@ public struct TSWPSOS_SpecSetListStyleBoolArrayArchive: Sendable {
   public var listStyleBoolArray: [Bool] = []
 
   public var listStyleBoolArrayUndefined: Bool {
-    get {return _listStyleBoolArrayUndefined ?? false}
+    get {_listStyleBoolArrayUndefined ?? false}
     set {_listStyleBoolArrayUndefined = newValue}
   }
   /// Returns true if `listStyleBoolArrayUndefined` has been explicitly set.
-  public var hasListStyleBoolArrayUndefined: Bool {return self._listStyleBoolArrayUndefined != nil}
+  public var hasListStyleBoolArrayUndefined: Bool {self._listStyleBoolArrayUndefined != nil}
   /// Clears the value of `listStyleBoolArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListStyleBoolArrayUndefined() {self._listStyleBoolArrayUndefined = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -241,7 +241,7 @@ public struct TSWPSOS_SpecSetListStyleBoolArrayArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetListStyleFloatArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetListStyleFloatArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -249,20 +249,20 @@ public struct TSWPSOS_SpecSetListStyleFloatArrayArchive: Sendable {
   public var listStyleFloatArray: [Float] = []
 
   public var listStyleFloatArrayUndefined: Bool {
-    get {return _listStyleFloatArrayUndefined ?? false}
+    get {_listStyleFloatArrayUndefined ?? false}
     set {_listStyleFloatArrayUndefined = newValue}
   }
   /// Returns true if `listStyleFloatArrayUndefined` has been explicitly set.
-  public var hasListStyleFloatArrayUndefined: Bool {return self._listStyleFloatArrayUndefined != nil}
+  public var hasListStyleFloatArrayUndefined: Bool {self._listStyleFloatArrayUndefined != nil}
   /// Clears the value of `listStyleFloatArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListStyleFloatArrayUndefined() {self._listStyleFloatArrayUndefined = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -274,7 +274,7 @@ public struct TSWPSOS_SpecSetListStyleFloatArrayArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetListStyleImageDataArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetListStyleImageDataArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -282,20 +282,20 @@ public struct TSWPSOS_SpecSetListStyleImageDataArrayArchive: Sendable {
   public var listStyleImageDataArray: [TSWP_ListStyleArchive.LabelImage] = []
 
   public var listStyleImageDataArrayUndefined: Bool {
-    get {return _listStyleImageDataArrayUndefined ?? false}
+    get {_listStyleImageDataArrayUndefined ?? false}
     set {_listStyleImageDataArrayUndefined = newValue}
   }
   /// Returns true if `listStyleImageDataArrayUndefined` has been explicitly set.
-  public var hasListStyleImageDataArrayUndefined: Bool {return self._listStyleImageDataArrayUndefined != nil}
+  public var hasListStyleImageDataArrayUndefined: Bool {self._listStyleImageDataArrayUndefined != nil}
   /// Clears the value of `listStyleImageDataArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListStyleImageDataArrayUndefined() {self._listStyleImageDataArrayUndefined = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -307,7 +307,7 @@ public struct TSWPSOS_SpecSetListStyleImageDataArrayArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -315,20 +315,20 @@ public struct TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive: Sendable {
   public var listStyleListLabelGeometryArray: [TSWP_ListStyleArchive.LabelGeometry] = []
 
   public var listStyleListLabelGeometryArrayUndefined: Bool {
-    get {return _listStyleListLabelGeometryArrayUndefined ?? false}
+    get {_listStyleListLabelGeometryArrayUndefined ?? false}
     set {_listStyleListLabelGeometryArrayUndefined = newValue}
   }
   /// Returns true if `listStyleListLabelGeometryArrayUndefined` has been explicitly set.
-  public var hasListStyleListLabelGeometryArrayUndefined: Bool {return self._listStyleListLabelGeometryArrayUndefined != nil}
+  public var hasListStyleListLabelGeometryArrayUndefined: Bool {self._listStyleListLabelGeometryArrayUndefined != nil}
   /// Clears the value of `listStyleListLabelGeometryArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListStyleListLabelGeometryArrayUndefined() {self._listStyleListLabelGeometryArrayUndefined = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -340,7 +340,7 @@ public struct TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -348,20 +348,20 @@ public struct TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive: Sendable {
   public var listStyleListLabelTypeArray: [TSWP_ListStyleArchive.LabelType] = []
 
   public var listStyleListLabelTypeArrayUndefined: Bool {
-    get {return _listStyleListLabelTypeArrayUndefined ?? false}
+    get {_listStyleListLabelTypeArrayUndefined ?? false}
     set {_listStyleListLabelTypeArrayUndefined = newValue}
   }
   /// Returns true if `listStyleListLabelTypeArrayUndefined` has been explicitly set.
-  public var hasListStyleListLabelTypeArrayUndefined: Bool {return self._listStyleListLabelTypeArrayUndefined != nil}
+  public var hasListStyleListLabelTypeArrayUndefined: Bool {self._listStyleListLabelTypeArrayUndefined != nil}
   /// Clears the value of `listStyleListLabelTypeArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListStyleListLabelTypeArrayUndefined() {self._listStyleListLabelTypeArrayUndefined = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -373,7 +373,7 @@ public struct TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -381,20 +381,20 @@ public struct TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive: Sendable {
   public var listStyleListNumberTypeArray: [TSWP_ListStyleArchive.NumberType] = []
 
   public var listStyleListNumberTypeArrayUndefined: Bool {
-    get {return _listStyleListNumberTypeArrayUndefined ?? false}
+    get {_listStyleListNumberTypeArrayUndefined ?? false}
     set {_listStyleListNumberTypeArrayUndefined = newValue}
   }
   /// Returns true if `listStyleListNumberTypeArrayUndefined` has been explicitly set.
-  public var hasListStyleListNumberTypeArrayUndefined: Bool {return self._listStyleListNumberTypeArrayUndefined != nil}
+  public var hasListStyleListNumberTypeArrayUndefined: Bool {self._listStyleListNumberTypeArrayUndefined != nil}
   /// Clears the value of `listStyleListNumberTypeArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListStyleListNumberTypeArrayUndefined() {self._listStyleListNumberTypeArrayUndefined = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -406,7 +406,7 @@ public struct TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetListStyleStringArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetListStyleStringArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -414,20 +414,20 @@ public struct TSWPSOS_SpecSetListStyleStringArrayArchive: Sendable {
   public var listStyleStringArray: [String] = []
 
   public var listStyleStringArrayUndefined: Bool {
-    get {return _listStyleStringArrayUndefined ?? false}
+    get {_listStyleStringArrayUndefined ?? false}
     set {_listStyleStringArrayUndefined = newValue}
   }
   /// Returns true if `listStyleStringArrayUndefined` has been explicitly set.
-  public var hasListStyleStringArrayUndefined: Bool {return self._listStyleStringArrayUndefined != nil}
+  public var hasListStyleStringArrayUndefined: Bool {self._listStyleStringArrayUndefined != nil}
   /// Clears the value of `listStyleStringArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListStyleStringArrayUndefined() {self._listStyleStringArrayUndefined = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -439,26 +439,26 @@ public struct TSWPSOS_SpecSetListStyleStringArrayArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetPaddingArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetPaddingArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var padding: TSWP_PaddingArchive {
-    get {return _padding ?? TSWP_PaddingArchive()}
+    get {_padding ?? TSWP_PaddingArchive()}
     set {_padding = newValue}
   }
   /// Returns true if `padding` has been explicitly set.
-  public var hasPadding: Bool {return self._padding != nil}
+  public var hasPadding: Bool {self._padding != nil}
   /// Clears the value of `padding`. Subsequent reads from it will return its default value.
   public mutating func clearPadding() {self._padding = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -470,26 +470,26 @@ public struct TSWPSOS_SpecSetPaddingArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetParagraphStyleArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetParagraphStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var paragraphStyle: TSP_Reference {
-    get {return _paragraphStyle ?? TSP_Reference()}
+    get {_paragraphStyle ?? TSP_Reference()}
     set {_paragraphStyle = newValue}
   }
   /// Returns true if `paragraphStyle` has been explicitly set.
-  public var hasParagraphStyle: Bool {return self._paragraphStyle != nil}
+  public var hasParagraphStyle: Bool {self._paragraphStyle != nil}
   /// Clears the value of `paragraphStyle`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphStyle() {self._paragraphStyle = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -501,26 +501,26 @@ public struct TSWPSOS_SpecSetParagraphStyleArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetRuleOffsetArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetRuleOffsetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var ruleOffset: TSP_Point {
-    get {return _ruleOffset ?? TSP_Point()}
+    get {_ruleOffset ?? TSP_Point()}
     set {_ruleOffset = newValue}
   }
   /// Returns true if `ruleOffset` has been explicitly set.
-  public var hasRuleOffset: Bool {return self._ruleOffset != nil}
+  public var hasRuleOffset: Bool {self._ruleOffset != nil}
   /// Clears the value of `ruleOffset`. Subsequent reads from it will return its default value.
   public mutating func clearRuleOffset() {self._ruleOffset = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -532,26 +532,26 @@ public struct TSWPSOS_SpecSetRuleOffsetArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecSetTabsArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecSetTabsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tabs: TSWP_TabsArchive {
-    get {return _tabs ?? TSWP_TabsArchive()}
+    get {_tabs ?? TSWP_TabsArchive()}
     set {_tabs = newValue}
   }
   /// Returns true if `tabs` has been explicitly set.
-  public var hasTabs: Bool {return self._tabs != nil}
+  public var hasTabs: Bool {self._tabs != nil}
   /// Clears the value of `tabs`. Subsequent reads from it will return its default value.
   public mutating func clearTabs() {self._tabs = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -563,17 +563,17 @@ public struct TSWPSOS_SpecSetTabsArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSWPSOS_SpecCharacterStyleArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecCharacterStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetCharacterStyle: TSWPSOS_SpecSetCharacterStyleArchive {
-    get {return _specSetCharacterStyle ?? TSWPSOS_SpecSetCharacterStyleArchive()}
+    get {_specSetCharacterStyle ?? TSWPSOS_SpecSetCharacterStyleArchive()}
     set {_specSetCharacterStyle = newValue}
   }
   /// Returns true if `specSetCharacterStyle` has been explicitly set.
-  public var hasSpecSetCharacterStyle: Bool {return self._specSetCharacterStyle != nil}
+  public var hasSpecSetCharacterStyle: Bool {self._specSetCharacterStyle != nil}
   /// Clears the value of `specSetCharacterStyle`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetCharacterStyle() {self._specSetCharacterStyle = nil}
 
@@ -584,17 +584,17 @@ public struct TSWPSOS_SpecCharacterStyleArchive: Sendable {
   fileprivate var _specSetCharacterStyle: TSWPSOS_SpecSetCharacterStyleArchive? = nil
 }
 
-public struct TSWPSOS_SpecColumnsArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecColumnsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetColumns: TSWPSOS_SpecSetColumnsArchive {
-    get {return _specSetColumns ?? TSWPSOS_SpecSetColumnsArchive()}
+    get {_specSetColumns ?? TSWPSOS_SpecSetColumnsArchive()}
     set {_specSetColumns = newValue}
   }
   /// Returns true if `specSetColumns` has been explicitly set.
-  public var hasSpecSetColumns: Bool {return self._specSetColumns != nil}
+  public var hasSpecSetColumns: Bool {self._specSetColumns != nil}
   /// Clears the value of `specSetColumns`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetColumns() {self._specSetColumns = nil}
 
@@ -605,17 +605,17 @@ public struct TSWPSOS_SpecColumnsArchive: Sendable {
   fileprivate var _specSetColumns: TSWPSOS_SpecSetColumnsArchive? = nil
 }
 
-public struct TSWPSOS_SpecDropCapArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecDropCapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetDropCap: TSWPSOS_SpecSetDropCapArchive {
-    get {return _specSetDropCap ?? TSWPSOS_SpecSetDropCapArchive()}
+    get {_specSetDropCap ?? TSWPSOS_SpecSetDropCapArchive()}
     set {_specSetDropCap = newValue}
   }
   /// Returns true if `specSetDropCap` has been explicitly set.
-  public var hasSpecSetDropCap: Bool {return self._specSetDropCap != nil}
+  public var hasSpecSetDropCap: Bool {self._specSetDropCap != nil}
   /// Clears the value of `specSetDropCap`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetDropCap() {self._specSetDropCap = nil}
 
@@ -626,17 +626,17 @@ public struct TSWPSOS_SpecDropCapArchive: Sendable {
   fileprivate var _specSetDropCap: TSWPSOS_SpecSetDropCapArchive? = nil
 }
 
-public struct TSWPSOS_SpecFontFeaturesArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecFontFeaturesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetFontFeatures: TSWPSOS_SpecSetFontFeaturesArchive {
-    get {return _specSetFontFeatures ?? TSWPSOS_SpecSetFontFeaturesArchive()}
+    get {_specSetFontFeatures ?? TSWPSOS_SpecSetFontFeaturesArchive()}
     set {_specSetFontFeatures = newValue}
   }
   /// Returns true if `specSetFontFeatures` has been explicitly set.
-  public var hasSpecSetFontFeatures: Bool {return self._specSetFontFeatures != nil}
+  public var hasSpecSetFontFeatures: Bool {self._specSetFontFeatures != nil}
   /// Clears the value of `specSetFontFeatures`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetFontFeatures() {self._specSetFontFeatures = nil}
 
@@ -647,17 +647,17 @@ public struct TSWPSOS_SpecFontFeaturesArchive: Sendable {
   fileprivate var _specSetFontFeatures: TSWPSOS_SpecSetFontFeaturesArchive? = nil
 }
 
-public struct TSWPSOS_SpecLineSpacingArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecLineSpacingArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetLineSpacing: TSWPSOS_SpecSetLineSpacingArchive {
-    get {return _specSetLineSpacing ?? TSWPSOS_SpecSetLineSpacingArchive()}
+    get {_specSetLineSpacing ?? TSWPSOS_SpecSetLineSpacingArchive()}
     set {_specSetLineSpacing = newValue}
   }
   /// Returns true if `specSetLineSpacing` has been explicitly set.
-  public var hasSpecSetLineSpacing: Bool {return self._specSetLineSpacing != nil}
+  public var hasSpecSetLineSpacing: Bool {self._specSetLineSpacing != nil}
   /// Clears the value of `specSetLineSpacing`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetLineSpacing() {self._specSetLineSpacing = nil}
 
@@ -668,17 +668,17 @@ public struct TSWPSOS_SpecLineSpacingArchive: Sendable {
   fileprivate var _specSetLineSpacing: TSWPSOS_SpecSetLineSpacingArchive? = nil
 }
 
-public struct TSWPSOS_SpecListStyleArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecListStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetListStyle: TSWPSOS_SpecSetListStyleArchive {
-    get {return _specSetListStyle ?? TSWPSOS_SpecSetListStyleArchive()}
+    get {_specSetListStyle ?? TSWPSOS_SpecSetListStyleArchive()}
     set {_specSetListStyle = newValue}
   }
   /// Returns true if `specSetListStyle` has been explicitly set.
-  public var hasSpecSetListStyle: Bool {return self._specSetListStyle != nil}
+  public var hasSpecSetListStyle: Bool {self._specSetListStyle != nil}
   /// Clears the value of `specSetListStyle`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetListStyle() {self._specSetListStyle = nil}
 
@@ -689,17 +689,17 @@ public struct TSWPSOS_SpecListStyleArchive: Sendable {
   fileprivate var _specSetListStyle: TSWPSOS_SpecSetListStyleArchive? = nil
 }
 
-public struct TSWPSOS_SpecListStyleBoolArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecListStyleBoolArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetListStyleBoolArray: TSWPSOS_SpecSetListStyleBoolArrayArchive {
-    get {return _specSetListStyleBoolArray ?? TSWPSOS_SpecSetListStyleBoolArrayArchive()}
+    get {_specSetListStyleBoolArray ?? TSWPSOS_SpecSetListStyleBoolArrayArchive()}
     set {_specSetListStyleBoolArray = newValue}
   }
   /// Returns true if `specSetListStyleBoolArray` has been explicitly set.
-  public var hasSpecSetListStyleBoolArray: Bool {return self._specSetListStyleBoolArray != nil}
+  public var hasSpecSetListStyleBoolArray: Bool {self._specSetListStyleBoolArray != nil}
   /// Clears the value of `specSetListStyleBoolArray`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetListStyleBoolArray() {self._specSetListStyleBoolArray = nil}
 
@@ -710,17 +710,17 @@ public struct TSWPSOS_SpecListStyleBoolArrayArchive: Sendable {
   fileprivate var _specSetListStyleBoolArray: TSWPSOS_SpecSetListStyleBoolArrayArchive? = nil
 }
 
-public struct TSWPSOS_SpecListStyleFloatArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecListStyleFloatArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetListStyleFloatArray: TSWPSOS_SpecSetListStyleFloatArrayArchive {
-    get {return _specSetListStyleFloatArray ?? TSWPSOS_SpecSetListStyleFloatArrayArchive()}
+    get {_specSetListStyleFloatArray ?? TSWPSOS_SpecSetListStyleFloatArrayArchive()}
     set {_specSetListStyleFloatArray = newValue}
   }
   /// Returns true if `specSetListStyleFloatArray` has been explicitly set.
-  public var hasSpecSetListStyleFloatArray: Bool {return self._specSetListStyleFloatArray != nil}
+  public var hasSpecSetListStyleFloatArray: Bool {self._specSetListStyleFloatArray != nil}
   /// Clears the value of `specSetListStyleFloatArray`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetListStyleFloatArray() {self._specSetListStyleFloatArray = nil}
 
@@ -731,17 +731,17 @@ public struct TSWPSOS_SpecListStyleFloatArrayArchive: Sendable {
   fileprivate var _specSetListStyleFloatArray: TSWPSOS_SpecSetListStyleFloatArrayArchive? = nil
 }
 
-public struct TSWPSOS_SpecListStyleImageDataArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecListStyleImageDataArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetListStyleImageDataArray: TSWPSOS_SpecSetListStyleImageDataArrayArchive {
-    get {return _specSetListStyleImageDataArray ?? TSWPSOS_SpecSetListStyleImageDataArrayArchive()}
+    get {_specSetListStyleImageDataArray ?? TSWPSOS_SpecSetListStyleImageDataArrayArchive()}
     set {_specSetListStyleImageDataArray = newValue}
   }
   /// Returns true if `specSetListStyleImageDataArray` has been explicitly set.
-  public var hasSpecSetListStyleImageDataArray: Bool {return self._specSetListStyleImageDataArray != nil}
+  public var hasSpecSetListStyleImageDataArray: Bool {self._specSetListStyleImageDataArray != nil}
   /// Clears the value of `specSetListStyleImageDataArray`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetListStyleImageDataArray() {self._specSetListStyleImageDataArray = nil}
 
@@ -752,17 +752,17 @@ public struct TSWPSOS_SpecListStyleImageDataArrayArchive: Sendable {
   fileprivate var _specSetListStyleImageDataArray: TSWPSOS_SpecSetListStyleImageDataArrayArchive? = nil
 }
 
-public struct TSWPSOS_SpecListStyleListLabelGeometryArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecListStyleListLabelGeometryArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetListStyleListLabelGeometryArray: TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive {
-    get {return _specSetListStyleListLabelGeometryArray ?? TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive()}
+    get {_specSetListStyleListLabelGeometryArray ?? TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive()}
     set {_specSetListStyleListLabelGeometryArray = newValue}
   }
   /// Returns true if `specSetListStyleListLabelGeometryArray` has been explicitly set.
-  public var hasSpecSetListStyleListLabelGeometryArray: Bool {return self._specSetListStyleListLabelGeometryArray != nil}
+  public var hasSpecSetListStyleListLabelGeometryArray: Bool {self._specSetListStyleListLabelGeometryArray != nil}
   /// Clears the value of `specSetListStyleListLabelGeometryArray`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetListStyleListLabelGeometryArray() {self._specSetListStyleListLabelGeometryArray = nil}
 
@@ -773,17 +773,17 @@ public struct TSWPSOS_SpecListStyleListLabelGeometryArrayArchive: Sendable {
   fileprivate var _specSetListStyleListLabelGeometryArray: TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive? = nil
 }
 
-public struct TSWPSOS_SpecListStyleListLabelTypeArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecListStyleListLabelTypeArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetListStyleListLabelTypeArray: TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive {
-    get {return _specSetListStyleListLabelTypeArray ?? TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive()}
+    get {_specSetListStyleListLabelTypeArray ?? TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive()}
     set {_specSetListStyleListLabelTypeArray = newValue}
   }
   /// Returns true if `specSetListStyleListLabelTypeArray` has been explicitly set.
-  public var hasSpecSetListStyleListLabelTypeArray: Bool {return self._specSetListStyleListLabelTypeArray != nil}
+  public var hasSpecSetListStyleListLabelTypeArray: Bool {self._specSetListStyleListLabelTypeArray != nil}
   /// Clears the value of `specSetListStyleListLabelTypeArray`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetListStyleListLabelTypeArray() {self._specSetListStyleListLabelTypeArray = nil}
 
@@ -794,17 +794,17 @@ public struct TSWPSOS_SpecListStyleListLabelTypeArrayArchive: Sendable {
   fileprivate var _specSetListStyleListLabelTypeArray: TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive? = nil
 }
 
-public struct TSWPSOS_SpecListStyleListNumberTypeArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecListStyleListNumberTypeArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetListStyleListNumberTypeArray: TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive {
-    get {return _specSetListStyleListNumberTypeArray ?? TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive()}
+    get {_specSetListStyleListNumberTypeArray ?? TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive()}
     set {_specSetListStyleListNumberTypeArray = newValue}
   }
   /// Returns true if `specSetListStyleListNumberTypeArray` has been explicitly set.
-  public var hasSpecSetListStyleListNumberTypeArray: Bool {return self._specSetListStyleListNumberTypeArray != nil}
+  public var hasSpecSetListStyleListNumberTypeArray: Bool {self._specSetListStyleListNumberTypeArray != nil}
   /// Clears the value of `specSetListStyleListNumberTypeArray`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetListStyleListNumberTypeArray() {self._specSetListStyleListNumberTypeArray = nil}
 
@@ -815,17 +815,17 @@ public struct TSWPSOS_SpecListStyleListNumberTypeArrayArchive: Sendable {
   fileprivate var _specSetListStyleListNumberTypeArray: TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive? = nil
 }
 
-public struct TSWPSOS_SpecListStyleStringArrayArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecListStyleStringArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetListStyleStringArray: TSWPSOS_SpecSetListStyleStringArrayArchive {
-    get {return _specSetListStyleStringArray ?? TSWPSOS_SpecSetListStyleStringArrayArchive()}
+    get {_specSetListStyleStringArray ?? TSWPSOS_SpecSetListStyleStringArrayArchive()}
     set {_specSetListStyleStringArray = newValue}
   }
   /// Returns true if `specSetListStyleStringArray` has been explicitly set.
-  public var hasSpecSetListStyleStringArray: Bool {return self._specSetListStyleStringArray != nil}
+  public var hasSpecSetListStyleStringArray: Bool {self._specSetListStyleStringArray != nil}
   /// Clears the value of `specSetListStyleStringArray`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetListStyleStringArray() {self._specSetListStyleStringArray = nil}
 
@@ -836,17 +836,17 @@ public struct TSWPSOS_SpecListStyleStringArrayArchive: Sendable {
   fileprivate var _specSetListStyleStringArray: TSWPSOS_SpecSetListStyleStringArrayArchive? = nil
 }
 
-public struct TSWPSOS_SpecPaddingArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecPaddingArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetPadding: TSWPSOS_SpecSetPaddingArchive {
-    get {return _specSetPadding ?? TSWPSOS_SpecSetPaddingArchive()}
+    get {_specSetPadding ?? TSWPSOS_SpecSetPaddingArchive()}
     set {_specSetPadding = newValue}
   }
   /// Returns true if `specSetPadding` has been explicitly set.
-  public var hasSpecSetPadding: Bool {return self._specSetPadding != nil}
+  public var hasSpecSetPadding: Bool {self._specSetPadding != nil}
   /// Clears the value of `specSetPadding`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetPadding() {self._specSetPadding = nil}
 
@@ -857,17 +857,17 @@ public struct TSWPSOS_SpecPaddingArchive: Sendable {
   fileprivate var _specSetPadding: TSWPSOS_SpecSetPaddingArchive? = nil
 }
 
-public struct TSWPSOS_SpecParagraphStyleArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecParagraphStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetParagraphStyle: TSWPSOS_SpecSetParagraphStyleArchive {
-    get {return _specSetParagraphStyle ?? TSWPSOS_SpecSetParagraphStyleArchive()}
+    get {_specSetParagraphStyle ?? TSWPSOS_SpecSetParagraphStyleArchive()}
     set {_specSetParagraphStyle = newValue}
   }
   /// Returns true if `specSetParagraphStyle` has been explicitly set.
-  public var hasSpecSetParagraphStyle: Bool {return self._specSetParagraphStyle != nil}
+  public var hasSpecSetParagraphStyle: Bool {self._specSetParagraphStyle != nil}
   /// Clears the value of `specSetParagraphStyle`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetParagraphStyle() {self._specSetParagraphStyle = nil}
 
@@ -878,17 +878,17 @@ public struct TSWPSOS_SpecParagraphStyleArchive: Sendable {
   fileprivate var _specSetParagraphStyle: TSWPSOS_SpecSetParagraphStyleArchive? = nil
 }
 
-public struct TSWPSOS_SpecRuleOffsetArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecRuleOffsetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetRuleOffset: TSWPSOS_SpecSetRuleOffsetArchive {
-    get {return _specSetRuleOffset ?? TSWPSOS_SpecSetRuleOffsetArchive()}
+    get {_specSetRuleOffset ?? TSWPSOS_SpecSetRuleOffsetArchive()}
     set {_specSetRuleOffset = newValue}
   }
   /// Returns true if `specSetRuleOffset` has been explicitly set.
-  public var hasSpecSetRuleOffset: Bool {return self._specSetRuleOffset != nil}
+  public var hasSpecSetRuleOffset: Bool {self._specSetRuleOffset != nil}
   /// Clears the value of `specSetRuleOffset`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetRuleOffset() {self._specSetRuleOffset = nil}
 
@@ -899,17 +899,17 @@ public struct TSWPSOS_SpecRuleOffsetArchive: Sendable {
   fileprivate var _specSetRuleOffset: TSWPSOS_SpecSetRuleOffsetArchive? = nil
 }
 
-public struct TSWPSOS_SpecTabsArchive: Sendable {
+public nonisolated struct TSWPSOS_SpecTabsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetTabs: TSWPSOS_SpecSetTabsArchive {
-    get {return _specSetTabs ?? TSWPSOS_SpecSetTabsArchive()}
+    get {_specSetTabs ?? TSWPSOS_SpecSetTabsArchive()}
     set {_specSetTabs = newValue}
   }
   /// Returns true if `specSetTabs` has been explicitly set.
-  public var hasSpecSetTabs: Bool {return self._specSetTabs != nil}
+  public var hasSpecSetTabs: Bool {self._specSetTabs != nil}
   /// Clears the value of `specSetTabs`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetTabs() {self._specSetTabs = nil}
 
@@ -920,566 +920,566 @@ public struct TSWPSOS_SpecTabsArchive: Sendable {
   fileprivate var _specSetTabs: TSWPSOS_SpecSetTabsArchive? = nil
 }
 
-public struct TSWPSOS_CharacterStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSWPSOS_CharacterStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var baselineShift: TSSSOS_SpecDoubleArchive {
-    get {return _storage._baselineShift ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._baselineShift ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._baselineShift = newValue}
   }
   /// Returns true if `baselineShift` has been explicitly set.
-  public var hasBaselineShift: Bool {return _storage._baselineShift != nil}
+  public var hasBaselineShift: Bool {_storage._baselineShift != nil}
   /// Clears the value of `baselineShift`. Subsequent reads from it will return its default value.
   public mutating func clearBaselineShift() {_uniqueStorage()._baselineShift = nil}
 
   public var baselineShiftUndefined: Bool {
-    get {return _storage._baselineShiftUndefined ?? false}
+    get {_storage._baselineShiftUndefined ?? false}
     set {_uniqueStorage()._baselineShiftUndefined = newValue}
   }
   /// Returns true if `baselineShiftUndefined` has been explicitly set.
-  public var hasBaselineShiftUndefined: Bool {return _storage._baselineShiftUndefined != nil}
+  public var hasBaselineShiftUndefined: Bool {_storage._baselineShiftUndefined != nil}
   /// Clears the value of `baselineShiftUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBaselineShiftUndefined() {_uniqueStorage()._baselineShiftUndefined = nil}
 
   public var capitalization: TSSSOS_SpecIntegerArchive {
-    get {return _storage._capitalization ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._capitalization ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._capitalization = newValue}
   }
   /// Returns true if `capitalization` has been explicitly set.
-  public var hasCapitalization: Bool {return _storage._capitalization != nil}
+  public var hasCapitalization: Bool {_storage._capitalization != nil}
   /// Clears the value of `capitalization`. Subsequent reads from it will return its default value.
   public mutating func clearCapitalization() {_uniqueStorage()._capitalization = nil}
 
   public var capitalizationUndefined: Bool {
-    get {return _storage._capitalizationUndefined ?? false}
+    get {_storage._capitalizationUndefined ?? false}
     set {_uniqueStorage()._capitalizationUndefined = newValue}
   }
   /// Returns true if `capitalizationUndefined` has been explicitly set.
-  public var hasCapitalizationUndefined: Bool {return _storage._capitalizationUndefined != nil}
+  public var hasCapitalizationUndefined: Bool {_storage._capitalizationUndefined != nil}
   /// Clears the value of `capitalizationUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCapitalizationUndefined() {_uniqueStorage()._capitalizationUndefined = nil}
 
   public var compatibilityFontName: TSSSOS_SpecStringArchive {
-    get {return _storage._compatibilityFontName ?? TSSSOS_SpecStringArchive()}
+    get {_storage._compatibilityFontName ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._compatibilityFontName = newValue}
   }
   /// Returns true if `compatibilityFontName` has been explicitly set.
-  public var hasCompatibilityFontName: Bool {return _storage._compatibilityFontName != nil}
+  public var hasCompatibilityFontName: Bool {_storage._compatibilityFontName != nil}
   /// Clears the value of `compatibilityFontName`. Subsequent reads from it will return its default value.
   public mutating func clearCompatibilityFontName() {_uniqueStorage()._compatibilityFontName = nil}
 
   public var compatibilityFontNameUndefined: Bool {
-    get {return _storage._compatibilityFontNameUndefined ?? false}
+    get {_storage._compatibilityFontNameUndefined ?? false}
     set {_uniqueStorage()._compatibilityFontNameUndefined = newValue}
   }
   /// Returns true if `compatibilityFontNameUndefined` has been explicitly set.
-  public var hasCompatibilityFontNameUndefined: Bool {return _storage._compatibilityFontNameUndefined != nil}
+  public var hasCompatibilityFontNameUndefined: Bool {_storage._compatibilityFontNameUndefined != nil}
   /// Clears the value of `compatibilityFontNameUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCompatibilityFontNameUndefined() {_uniqueStorage()._compatibilityFontNameUndefined = nil}
 
   public var emphasisMarks: TSSSOS_SpecStringArchive {
-    get {return _storage._emphasisMarks ?? TSSSOS_SpecStringArchive()}
+    get {_storage._emphasisMarks ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._emphasisMarks = newValue}
   }
   /// Returns true if `emphasisMarks` has been explicitly set.
-  public var hasEmphasisMarks: Bool {return _storage._emphasisMarks != nil}
+  public var hasEmphasisMarks: Bool {_storage._emphasisMarks != nil}
   /// Clears the value of `emphasisMarks`. Subsequent reads from it will return its default value.
   public mutating func clearEmphasisMarks() {_uniqueStorage()._emphasisMarks = nil}
 
   public var emphasisMarksUndefined: Bool {
-    get {return _storage._emphasisMarksUndefined ?? false}
+    get {_storage._emphasisMarksUndefined ?? false}
     set {_uniqueStorage()._emphasisMarksUndefined = newValue}
   }
   /// Returns true if `emphasisMarksUndefined` has been explicitly set.
-  public var hasEmphasisMarksUndefined: Bool {return _storage._emphasisMarksUndefined != nil}
+  public var hasEmphasisMarksUndefined: Bool {_storage._emphasisMarksUndefined != nil}
   /// Clears the value of `emphasisMarksUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearEmphasisMarksUndefined() {_uniqueStorage()._emphasisMarksUndefined = nil}
 
   public var bold: TSSSOS_SpecBoolArchive {
-    get {return _storage._bold ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._bold ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._bold = newValue}
   }
   /// Returns true if `bold` has been explicitly set.
-  public var hasBold: Bool {return _storage._bold != nil}
+  public var hasBold: Bool {_storage._bold != nil}
   /// Clears the value of `bold`. Subsequent reads from it will return its default value.
   public mutating func clearBold() {_uniqueStorage()._bold = nil}
 
   public var boldUndefined: Bool {
-    get {return _storage._boldUndefined ?? false}
+    get {_storage._boldUndefined ?? false}
     set {_uniqueStorage()._boldUndefined = newValue}
   }
   /// Returns true if `boldUndefined` has been explicitly set.
-  public var hasBoldUndefined: Bool {return _storage._boldUndefined != nil}
+  public var hasBoldUndefined: Bool {_storage._boldUndefined != nil}
   /// Clears the value of `boldUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBoldUndefined() {_uniqueStorage()._boldUndefined = nil}
 
   public var italic: TSSSOS_SpecBoolArchive {
-    get {return _storage._italic ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._italic ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._italic = newValue}
   }
   /// Returns true if `italic` has been explicitly set.
-  public var hasItalic: Bool {return _storage._italic != nil}
+  public var hasItalic: Bool {_storage._italic != nil}
   /// Clears the value of `italic`. Subsequent reads from it will return its default value.
   public mutating func clearItalic() {_uniqueStorage()._italic = nil}
 
   public var italicUndefined: Bool {
-    get {return _storage._italicUndefined ?? false}
+    get {_storage._italicUndefined ?? false}
     set {_uniqueStorage()._italicUndefined = newValue}
   }
   /// Returns true if `italicUndefined` has been explicitly set.
-  public var hasItalicUndefined: Bool {return _storage._italicUndefined != nil}
+  public var hasItalicUndefined: Bool {_storage._italicUndefined != nil}
   /// Clears the value of `italicUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearItalicUndefined() {_uniqueStorage()._italicUndefined = nil}
 
   public var fontFeatures: TSWPSOS_SpecFontFeaturesArchive {
-    get {return _storage._fontFeatures ?? TSWPSOS_SpecFontFeaturesArchive()}
+    get {_storage._fontFeatures ?? TSWPSOS_SpecFontFeaturesArchive()}
     set {_uniqueStorage()._fontFeatures = newValue}
   }
   /// Returns true if `fontFeatures` has been explicitly set.
-  public var hasFontFeatures: Bool {return _storage._fontFeatures != nil}
+  public var hasFontFeatures: Bool {_storage._fontFeatures != nil}
   /// Clears the value of `fontFeatures`. Subsequent reads from it will return its default value.
   public mutating func clearFontFeatures() {_uniqueStorage()._fontFeatures = nil}
 
   public var fontFeaturesUndefined: Bool {
-    get {return _storage._fontFeaturesUndefined ?? false}
+    get {_storage._fontFeaturesUndefined ?? false}
     set {_uniqueStorage()._fontFeaturesUndefined = newValue}
   }
   /// Returns true if `fontFeaturesUndefined` has been explicitly set.
-  public var hasFontFeaturesUndefined: Bool {return _storage._fontFeaturesUndefined != nil}
+  public var hasFontFeaturesUndefined: Bool {_storage._fontFeaturesUndefined != nil}
   /// Clears the value of `fontFeaturesUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFontFeaturesUndefined() {_uniqueStorage()._fontFeaturesUndefined = nil}
 
   public var fontName: TSSSOS_SpecStringArchive {
-    get {return _storage._fontName ?? TSSSOS_SpecStringArchive()}
+    get {_storage._fontName ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._fontName = newValue}
   }
   /// Returns true if `fontName` has been explicitly set.
-  public var hasFontName: Bool {return _storage._fontName != nil}
+  public var hasFontName: Bool {_storage._fontName != nil}
   /// Clears the value of `fontName`. Subsequent reads from it will return its default value.
   public mutating func clearFontName() {_uniqueStorage()._fontName = nil}
 
   public var fontNameUndefined: Bool {
-    get {return _storage._fontNameUndefined ?? false}
+    get {_storage._fontNameUndefined ?? false}
     set {_uniqueStorage()._fontNameUndefined = newValue}
   }
   /// Returns true if `fontNameUndefined` has been explicitly set.
-  public var hasFontNameUndefined: Bool {return _storage._fontNameUndefined != nil}
+  public var hasFontNameUndefined: Bool {_storage._fontNameUndefined != nil}
   /// Clears the value of `fontNameUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFontNameUndefined() {_uniqueStorage()._fontNameUndefined = nil}
 
   public var fontSize: TSSSOS_SpecDoubleArchive {
-    get {return _storage._fontSize ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._fontSize ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._fontSize = newValue}
   }
   /// Returns true if `fontSize` has been explicitly set.
-  public var hasFontSize: Bool {return _storage._fontSize != nil}
+  public var hasFontSize: Bool {_storage._fontSize != nil}
   /// Clears the value of `fontSize`. Subsequent reads from it will return its default value.
   public mutating func clearFontSize() {_uniqueStorage()._fontSize = nil}
 
   public var fontSizeUndefined: Bool {
-    get {return _storage._fontSizeUndefined ?? false}
+    get {_storage._fontSizeUndefined ?? false}
     set {_uniqueStorage()._fontSizeUndefined = newValue}
   }
   /// Returns true if `fontSizeUndefined` has been explicitly set.
-  public var hasFontSizeUndefined: Bool {return _storage._fontSizeUndefined != nil}
+  public var hasFontSizeUndefined: Bool {_storage._fontSizeUndefined != nil}
   /// Clears the value of `fontSizeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFontSizeUndefined() {_uniqueStorage()._fontSizeUndefined = nil}
 
   public var fontSizeDelta: TSSSOS_SpecDoubleArchive {
-    get {return _storage._fontSizeDelta ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._fontSizeDelta ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._fontSizeDelta = newValue}
   }
   /// Returns true if `fontSizeDelta` has been explicitly set.
-  public var hasFontSizeDelta: Bool {return _storage._fontSizeDelta != nil}
+  public var hasFontSizeDelta: Bool {_storage._fontSizeDelta != nil}
   /// Clears the value of `fontSizeDelta`. Subsequent reads from it will return its default value.
   public mutating func clearFontSizeDelta() {_uniqueStorage()._fontSizeDelta = nil}
 
   public var fontSizeDeltaUndefined: Bool {
-    get {return _storage._fontSizeDeltaUndefined ?? false}
+    get {_storage._fontSizeDeltaUndefined ?? false}
     set {_uniqueStorage()._fontSizeDeltaUndefined = newValue}
   }
   /// Returns true if `fontSizeDeltaUndefined` has been explicitly set.
-  public var hasFontSizeDeltaUndefined: Bool {return _storage._fontSizeDeltaUndefined != nil}
+  public var hasFontSizeDeltaUndefined: Bool {_storage._fontSizeDeltaUndefined != nil}
   /// Clears the value of `fontSizeDeltaUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFontSizeDeltaUndefined() {_uniqueStorage()._fontSizeDeltaUndefined = nil}
 
   public var kerning: TSSSOS_SpecDoubleArchive {
-    get {return _storage._kerning ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._kerning ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._kerning = newValue}
   }
   /// Returns true if `kerning` has been explicitly set.
-  public var hasKerning: Bool {return _storage._kerning != nil}
+  public var hasKerning: Bool {_storage._kerning != nil}
   /// Clears the value of `kerning`. Subsequent reads from it will return its default value.
   public mutating func clearKerning() {_uniqueStorage()._kerning = nil}
 
   public var kerningUndefined: Bool {
-    get {return _storage._kerningUndefined ?? false}
+    get {_storage._kerningUndefined ?? false}
     set {_uniqueStorage()._kerningUndefined = newValue}
   }
   /// Returns true if `kerningUndefined` has been explicitly set.
-  public var hasKerningUndefined: Bool {return _storage._kerningUndefined != nil}
+  public var hasKerningUndefined: Bool {_storage._kerningUndefined != nil}
   /// Clears the value of `kerningUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearKerningUndefined() {_uniqueStorage()._kerningUndefined = nil}
 
   public var language: TSSSOS_SpecStringArchive {
-    get {return _storage._language ?? TSSSOS_SpecStringArchive()}
+    get {_storage._language ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._language = newValue}
   }
   /// Returns true if `language` has been explicitly set.
-  public var hasLanguage: Bool {return _storage._language != nil}
+  public var hasLanguage: Bool {_storage._language != nil}
   /// Clears the value of `language`. Subsequent reads from it will return its default value.
   public mutating func clearLanguage() {_uniqueStorage()._language = nil}
 
   public var languageUndefined: Bool {
-    get {return _storage._languageUndefined ?? false}
+    get {_storage._languageUndefined ?? false}
     set {_uniqueStorage()._languageUndefined = newValue}
   }
   /// Returns true if `languageUndefined` has been explicitly set.
-  public var hasLanguageUndefined: Bool {return _storage._languageUndefined != nil}
+  public var hasLanguageUndefined: Bool {_storage._languageUndefined != nil}
   /// Clears the value of `languageUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLanguageUndefined() {_uniqueStorage()._languageUndefined = nil}
 
   public var ligatures: TSSSOS_SpecIntegerArchive {
-    get {return _storage._ligatures ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._ligatures ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._ligatures = newValue}
   }
   /// Returns true if `ligatures` has been explicitly set.
-  public var hasLigatures: Bool {return _storage._ligatures != nil}
+  public var hasLigatures: Bool {_storage._ligatures != nil}
   /// Clears the value of `ligatures`. Subsequent reads from it will return its default value.
   public mutating func clearLigatures() {_uniqueStorage()._ligatures = nil}
 
   public var ligaturesUndefined: Bool {
-    get {return _storage._ligaturesUndefined ?? false}
+    get {_storage._ligaturesUndefined ?? false}
     set {_uniqueStorage()._ligaturesUndefined = newValue}
   }
   /// Returns true if `ligaturesUndefined` has been explicitly set.
-  public var hasLigaturesUndefined: Bool {return _storage._ligaturesUndefined != nil}
+  public var hasLigaturesUndefined: Bool {_storage._ligaturesUndefined != nil}
   /// Clears the value of `ligaturesUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLigaturesUndefined() {_uniqueStorage()._ligaturesUndefined = nil}
 
   public var textShadow: TSDSOS_SpecShadowArchive {
-    get {return _storage._textShadow ?? TSDSOS_SpecShadowArchive()}
+    get {_storage._textShadow ?? TSDSOS_SpecShadowArchive()}
     set {_uniqueStorage()._textShadow = newValue}
   }
   /// Returns true if `textShadow` has been explicitly set.
-  public var hasTextShadow: Bool {return _storage._textShadow != nil}
+  public var hasTextShadow: Bool {_storage._textShadow != nil}
   /// Clears the value of `textShadow`. Subsequent reads from it will return its default value.
   public mutating func clearTextShadow() {_uniqueStorage()._textShadow = nil}
 
   public var textShadowUndefined: Bool {
-    get {return _storage._textShadowUndefined ?? false}
+    get {_storage._textShadowUndefined ?? false}
     set {_uniqueStorage()._textShadowUndefined = newValue}
   }
   /// Returns true if `textShadowUndefined` has been explicitly set.
-  public var hasTextShadowUndefined: Bool {return _storage._textShadowUndefined != nil}
+  public var hasTextShadowUndefined: Bool {_storage._textShadowUndefined != nil}
   /// Clears the value of `textShadowUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTextShadowUndefined() {_uniqueStorage()._textShadowUndefined = nil}
 
   public var strikethruColor: TSSSOS_SpecColorArchive {
-    get {return _storage._strikethruColor ?? TSSSOS_SpecColorArchive()}
+    get {_storage._strikethruColor ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._strikethruColor = newValue}
   }
   /// Returns true if `strikethruColor` has been explicitly set.
-  public var hasStrikethruColor: Bool {return _storage._strikethruColor != nil}
+  public var hasStrikethruColor: Bool {_storage._strikethruColor != nil}
   /// Clears the value of `strikethruColor`. Subsequent reads from it will return its default value.
   public mutating func clearStrikethruColor() {_uniqueStorage()._strikethruColor = nil}
 
   public var strikethruColorUndefined: Bool {
-    get {return _storage._strikethruColorUndefined ?? false}
+    get {_storage._strikethruColorUndefined ?? false}
     set {_uniqueStorage()._strikethruColorUndefined = newValue}
   }
   /// Returns true if `strikethruColorUndefined` has been explicitly set.
-  public var hasStrikethruColorUndefined: Bool {return _storage._strikethruColorUndefined != nil}
+  public var hasStrikethruColorUndefined: Bool {_storage._strikethruColorUndefined != nil}
   /// Clears the value of `strikethruColorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearStrikethruColorUndefined() {_uniqueStorage()._strikethruColorUndefined = nil}
 
   public var strikethru: TSSSOS_SpecIntegerArchive {
-    get {return _storage._strikethru ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._strikethru ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._strikethru = newValue}
   }
   /// Returns true if `strikethru` has been explicitly set.
-  public var hasStrikethru: Bool {return _storage._strikethru != nil}
+  public var hasStrikethru: Bool {_storage._strikethru != nil}
   /// Clears the value of `strikethru`. Subsequent reads from it will return its default value.
   public mutating func clearStrikethru() {_uniqueStorage()._strikethru = nil}
 
   public var strikethruUndefined: Bool {
-    get {return _storage._strikethruUndefined ?? false}
+    get {_storage._strikethruUndefined ?? false}
     set {_uniqueStorage()._strikethruUndefined = newValue}
   }
   /// Returns true if `strikethruUndefined` has been explicitly set.
-  public var hasStrikethruUndefined: Bool {return _storage._strikethruUndefined != nil}
+  public var hasStrikethruUndefined: Bool {_storage._strikethruUndefined != nil}
   /// Clears the value of `strikethruUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearStrikethruUndefined() {_uniqueStorage()._strikethruUndefined = nil}
 
   public var strikethruWidth: TSSSOS_SpecDoubleArchive {
-    get {return _storage._strikethruWidth ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._strikethruWidth ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._strikethruWidth = newValue}
   }
   /// Returns true if `strikethruWidth` has been explicitly set.
-  public var hasStrikethruWidth: Bool {return _storage._strikethruWidth != nil}
+  public var hasStrikethruWidth: Bool {_storage._strikethruWidth != nil}
   /// Clears the value of `strikethruWidth`. Subsequent reads from it will return its default value.
   public mutating func clearStrikethruWidth() {_uniqueStorage()._strikethruWidth = nil}
 
   public var strikethruWidthUndefined: Bool {
-    get {return _storage._strikethruWidthUndefined ?? false}
+    get {_storage._strikethruWidthUndefined ?? false}
     set {_uniqueStorage()._strikethruWidthUndefined = newValue}
   }
   /// Returns true if `strikethruWidthUndefined` has been explicitly set.
-  public var hasStrikethruWidthUndefined: Bool {return _storage._strikethruWidthUndefined != nil}
+  public var hasStrikethruWidthUndefined: Bool {_storage._strikethruWidthUndefined != nil}
   /// Clears the value of `strikethruWidthUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearStrikethruWidthUndefined() {_uniqueStorage()._strikethruWidthUndefined = nil}
 
   public var superscript: TSSSOS_SpecIntegerArchive {
-    get {return _storage._superscript ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._superscript ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._superscript = newValue}
   }
   /// Returns true if `superscript` has been explicitly set.
-  public var hasSuperscript: Bool {return _storage._superscript != nil}
+  public var hasSuperscript: Bool {_storage._superscript != nil}
   /// Clears the value of `superscript`. Subsequent reads from it will return its default value.
   public mutating func clearSuperscript() {_uniqueStorage()._superscript = nil}
 
   public var superscriptUndefined: Bool {
-    get {return _storage._superscriptUndefined ?? false}
+    get {_storage._superscriptUndefined ?? false}
     set {_uniqueStorage()._superscriptUndefined = newValue}
   }
   /// Returns true if `superscriptUndefined` has been explicitly set.
-  public var hasSuperscriptUndefined: Bool {return _storage._superscriptUndefined != nil}
+  public var hasSuperscriptUndefined: Bool {_storage._superscriptUndefined != nil}
   /// Clears the value of `superscriptUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSuperscriptUndefined() {_uniqueStorage()._superscriptUndefined = nil}
 
   public var textBackground: TSSSOS_SpecColorArchive {
-    get {return _storage._textBackground ?? TSSSOS_SpecColorArchive()}
+    get {_storage._textBackground ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._textBackground = newValue}
   }
   /// Returns true if `textBackground` has been explicitly set.
-  public var hasTextBackground: Bool {return _storage._textBackground != nil}
+  public var hasTextBackground: Bool {_storage._textBackground != nil}
   /// Clears the value of `textBackground`. Subsequent reads from it will return its default value.
   public mutating func clearTextBackground() {_uniqueStorage()._textBackground = nil}
 
   public var textBackgroundUndefined: Bool {
-    get {return _storage._textBackgroundUndefined ?? false}
+    get {_storage._textBackgroundUndefined ?? false}
     set {_uniqueStorage()._textBackgroundUndefined = newValue}
   }
   /// Returns true if `textBackgroundUndefined` has been explicitly set.
-  public var hasTextBackgroundUndefined: Bool {return _storage._textBackgroundUndefined != nil}
+  public var hasTextBackgroundUndefined: Bool {_storage._textBackgroundUndefined != nil}
   /// Clears the value of `textBackgroundUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTextBackgroundUndefined() {_uniqueStorage()._textBackgroundUndefined = nil}
 
   public var tracking: TSSSOS_SpecDoubleArchive {
-    get {return _storage._tracking ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._tracking ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._tracking = newValue}
   }
   /// Returns true if `tracking` has been explicitly set.
-  public var hasTracking: Bool {return _storage._tracking != nil}
+  public var hasTracking: Bool {_storage._tracking != nil}
   /// Clears the value of `tracking`. Subsequent reads from it will return its default value.
   public mutating func clearTracking() {_uniqueStorage()._tracking = nil}
 
   public var trackingUndefined: Bool {
-    get {return _storage._trackingUndefined ?? false}
+    get {_storage._trackingUndefined ?? false}
     set {_uniqueStorage()._trackingUndefined = newValue}
   }
   /// Returns true if `trackingUndefined` has been explicitly set.
-  public var hasTrackingUndefined: Bool {return _storage._trackingUndefined != nil}
+  public var hasTrackingUndefined: Bool {_storage._trackingUndefined != nil}
   /// Clears the value of `trackingUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTrackingUndefined() {_uniqueStorage()._trackingUndefined = nil}
 
   public var underlineColor: TSSSOS_SpecColorArchive {
-    get {return _storage._underlineColor ?? TSSSOS_SpecColorArchive()}
+    get {_storage._underlineColor ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._underlineColor = newValue}
   }
   /// Returns true if `underlineColor` has been explicitly set.
-  public var hasUnderlineColor: Bool {return _storage._underlineColor != nil}
+  public var hasUnderlineColor: Bool {_storage._underlineColor != nil}
   /// Clears the value of `underlineColor`. Subsequent reads from it will return its default value.
   public mutating func clearUnderlineColor() {_uniqueStorage()._underlineColor = nil}
 
   public var underlineColorUndefined: Bool {
-    get {return _storage._underlineColorUndefined ?? false}
+    get {_storage._underlineColorUndefined ?? false}
     set {_uniqueStorage()._underlineColorUndefined = newValue}
   }
   /// Returns true if `underlineColorUndefined` has been explicitly set.
-  public var hasUnderlineColorUndefined: Bool {return _storage._underlineColorUndefined != nil}
+  public var hasUnderlineColorUndefined: Bool {_storage._underlineColorUndefined != nil}
   /// Clears the value of `underlineColorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearUnderlineColorUndefined() {_uniqueStorage()._underlineColorUndefined = nil}
 
   public var underline: TSSSOS_SpecIntegerArchive {
-    get {return _storage._underline ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._underline ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._underline = newValue}
   }
   /// Returns true if `underline` has been explicitly set.
-  public var hasUnderline: Bool {return _storage._underline != nil}
+  public var hasUnderline: Bool {_storage._underline != nil}
   /// Clears the value of `underline`. Subsequent reads from it will return its default value.
   public mutating func clearUnderline() {_uniqueStorage()._underline = nil}
 
   public var underlineUndefined: Bool {
-    get {return _storage._underlineUndefined ?? false}
+    get {_storage._underlineUndefined ?? false}
     set {_uniqueStorage()._underlineUndefined = newValue}
   }
   /// Returns true if `underlineUndefined` has been explicitly set.
-  public var hasUnderlineUndefined: Bool {return _storage._underlineUndefined != nil}
+  public var hasUnderlineUndefined: Bool {_storage._underlineUndefined != nil}
   /// Clears the value of `underlineUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearUnderlineUndefined() {_uniqueStorage()._underlineUndefined = nil}
 
   public var underlineWidth: TSSSOS_SpecDoubleArchive {
-    get {return _storage._underlineWidth ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._underlineWidth ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._underlineWidth = newValue}
   }
   /// Returns true if `underlineWidth` has been explicitly set.
-  public var hasUnderlineWidth: Bool {return _storage._underlineWidth != nil}
+  public var hasUnderlineWidth: Bool {_storage._underlineWidth != nil}
   /// Clears the value of `underlineWidth`. Subsequent reads from it will return its default value.
   public mutating func clearUnderlineWidth() {_uniqueStorage()._underlineWidth = nil}
 
   public var underlineWidthUndefined: Bool {
-    get {return _storage._underlineWidthUndefined ?? false}
+    get {_storage._underlineWidthUndefined ?? false}
     set {_uniqueStorage()._underlineWidthUndefined = newValue}
   }
   /// Returns true if `underlineWidthUndefined` has been explicitly set.
-  public var hasUnderlineWidthUndefined: Bool {return _storage._underlineWidthUndefined != nil}
+  public var hasUnderlineWidthUndefined: Bool {_storage._underlineWidthUndefined != nil}
   /// Clears the value of `underlineWidthUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearUnderlineWidthUndefined() {_uniqueStorage()._underlineWidthUndefined = nil}
 
   public var wordStrikethru: TSSSOS_SpecBoolArchive {
-    get {return _storage._wordStrikethru ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._wordStrikethru ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._wordStrikethru = newValue}
   }
   /// Returns true if `wordStrikethru` has been explicitly set.
-  public var hasWordStrikethru: Bool {return _storage._wordStrikethru != nil}
+  public var hasWordStrikethru: Bool {_storage._wordStrikethru != nil}
   /// Clears the value of `wordStrikethru`. Subsequent reads from it will return its default value.
   public mutating func clearWordStrikethru() {_uniqueStorage()._wordStrikethru = nil}
 
   public var wordStrikethruUndefined: Bool {
-    get {return _storage._wordStrikethruUndefined ?? false}
+    get {_storage._wordStrikethruUndefined ?? false}
     set {_uniqueStorage()._wordStrikethruUndefined = newValue}
   }
   /// Returns true if `wordStrikethruUndefined` has been explicitly set.
-  public var hasWordStrikethruUndefined: Bool {return _storage._wordStrikethruUndefined != nil}
+  public var hasWordStrikethruUndefined: Bool {_storage._wordStrikethruUndefined != nil}
   /// Clears the value of `wordStrikethruUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearWordStrikethruUndefined() {_uniqueStorage()._wordStrikethruUndefined = nil}
 
   public var wordUnderline: TSSSOS_SpecBoolArchive {
-    get {return _storage._wordUnderline ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._wordUnderline ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._wordUnderline = newValue}
   }
   /// Returns true if `wordUnderline` has been explicitly set.
-  public var hasWordUnderline: Bool {return _storage._wordUnderline != nil}
+  public var hasWordUnderline: Bool {_storage._wordUnderline != nil}
   /// Clears the value of `wordUnderline`. Subsequent reads from it will return its default value.
   public mutating func clearWordUnderline() {_uniqueStorage()._wordUnderline = nil}
 
   public var wordUnderlineUndefined: Bool {
-    get {return _storage._wordUnderlineUndefined ?? false}
+    get {_storage._wordUnderlineUndefined ?? false}
     set {_uniqueStorage()._wordUnderlineUndefined = newValue}
   }
   /// Returns true if `wordUnderlineUndefined` has been explicitly set.
-  public var hasWordUnderlineUndefined: Bool {return _storage._wordUnderlineUndefined != nil}
+  public var hasWordUnderlineUndefined: Bool {_storage._wordUnderlineUndefined != nil}
   /// Clears the value of `wordUnderlineUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearWordUnderlineUndefined() {_uniqueStorage()._wordUnderlineUndefined = nil}
 
   public var writingDirection: TSSSOS_SpecIntegerArchive {
-    get {return _storage._writingDirection ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._writingDirection ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._writingDirection = newValue}
   }
   /// Returns true if `writingDirection` has been explicitly set.
-  public var hasWritingDirection: Bool {return _storage._writingDirection != nil}
+  public var hasWritingDirection: Bool {_storage._writingDirection != nil}
   /// Clears the value of `writingDirection`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirection() {_uniqueStorage()._writingDirection = nil}
 
   public var writingDirectionUndefined: Bool {
-    get {return _storage._writingDirectionUndefined ?? false}
+    get {_storage._writingDirectionUndefined ?? false}
     set {_uniqueStorage()._writingDirectionUndefined = newValue}
   }
   /// Returns true if `writingDirectionUndefined` has been explicitly set.
-  public var hasWritingDirectionUndefined: Bool {return _storage._writingDirectionUndefined != nil}
+  public var hasWritingDirectionUndefined: Bool {_storage._writingDirectionUndefined != nil}
   /// Clears the value of `writingDirectionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirectionUndefined() {_uniqueStorage()._writingDirectionUndefined = nil}
 
   public var isNamedPointSize: TSSSOS_SpecBoolArchive {
-    get {return _storage._isNamedPointSize ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._isNamedPointSize ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._isNamedPointSize = newValue}
   }
   /// Returns true if `isNamedPointSize` has been explicitly set.
-  public var hasIsNamedPointSize: Bool {return _storage._isNamedPointSize != nil}
+  public var hasIsNamedPointSize: Bool {_storage._isNamedPointSize != nil}
   /// Clears the value of `isNamedPointSize`. Subsequent reads from it will return its default value.
   public mutating func clearIsNamedPointSize() {_uniqueStorage()._isNamedPointSize = nil}
 
   public var isNamedPointSizeUndefined: Bool {
-    get {return _storage._isNamedPointSizeUndefined ?? false}
+    get {_storage._isNamedPointSizeUndefined ?? false}
     set {_uniqueStorage()._isNamedPointSizeUndefined = newValue}
   }
   /// Returns true if `isNamedPointSizeUndefined` has been explicitly set.
-  public var hasIsNamedPointSizeUndefined: Bool {return _storage._isNamedPointSizeUndefined != nil}
+  public var hasIsNamedPointSizeUndefined: Bool {_storage._isNamedPointSizeUndefined != nil}
   /// Clears the value of `isNamedPointSizeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearIsNamedPointSizeUndefined() {_uniqueStorage()._isNamedPointSizeUndefined = nil}
 
   public var capitalizationUsesLinguistics: TSSSOS_SpecBoolArchive {
-    get {return _storage._capitalizationUsesLinguistics ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._capitalizationUsesLinguistics ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._capitalizationUsesLinguistics = newValue}
   }
   /// Returns true if `capitalizationUsesLinguistics` has been explicitly set.
-  public var hasCapitalizationUsesLinguistics: Bool {return _storage._capitalizationUsesLinguistics != nil}
+  public var hasCapitalizationUsesLinguistics: Bool {_storage._capitalizationUsesLinguistics != nil}
   /// Clears the value of `capitalizationUsesLinguistics`. Subsequent reads from it will return its default value.
   public mutating func clearCapitalizationUsesLinguistics() {_uniqueStorage()._capitalizationUsesLinguistics = nil}
 
   public var capitalizationUsesLinguisticsUndefined: Bool {
-    get {return _storage._capitalizationUsesLinguisticsUndefined ?? false}
+    get {_storage._capitalizationUsesLinguisticsUndefined ?? false}
     set {_uniqueStorage()._capitalizationUsesLinguisticsUndefined = newValue}
   }
   /// Returns true if `capitalizationUsesLinguisticsUndefined` has been explicitly set.
-  public var hasCapitalizationUsesLinguisticsUndefined: Bool {return _storage._capitalizationUsesLinguisticsUndefined != nil}
+  public var hasCapitalizationUsesLinguisticsUndefined: Bool {_storage._capitalizationUsesLinguisticsUndefined != nil}
   /// Clears the value of `capitalizationUsesLinguisticsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCapitalizationUsesLinguisticsUndefined() {_uniqueStorage()._capitalizationUsesLinguisticsUndefined = nil}
 
   public var characterStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._characterStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._characterStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._characterStroke = newValue}
   }
   /// Returns true if `characterStroke` has been explicitly set.
-  public var hasCharacterStroke: Bool {return _storage._characterStroke != nil}
+  public var hasCharacterStroke: Bool {_storage._characterStroke != nil}
   /// Clears the value of `characterStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCharacterStroke() {_uniqueStorage()._characterStroke = nil}
 
   public var characterStrokeUndefined: Bool {
-    get {return _storage._characterStrokeUndefined ?? false}
+    get {_storage._characterStrokeUndefined ?? false}
     set {_uniqueStorage()._characterStrokeUndefined = newValue}
   }
   /// Returns true if `characterStrokeUndefined` has been explicitly set.
-  public var hasCharacterStrokeUndefined: Bool {return _storage._characterStrokeUndefined != nil}
+  public var hasCharacterStrokeUndefined: Bool {_storage._characterStrokeUndefined != nil}
   /// Clears the value of `characterStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCharacterStrokeUndefined() {_uniqueStorage()._characterStrokeUndefined = nil}
 
   public var characterFill: TSDSOS_SpecFillArchive {
-    get {return _storage._characterFill ?? TSDSOS_SpecFillArchive()}
+    get {_storage._characterFill ?? TSDSOS_SpecFillArchive()}
     set {_uniqueStorage()._characterFill = newValue}
   }
   /// Returns true if `characterFill` has been explicitly set.
-  public var hasCharacterFill: Bool {return _storage._characterFill != nil}
+  public var hasCharacterFill: Bool {_storage._characterFill != nil}
   /// Clears the value of `characterFill`. Subsequent reads from it will return its default value.
   public mutating func clearCharacterFill() {_uniqueStorage()._characterFill = nil}
 
   public var characterFillUndefined: Bool {
-    get {return _storage._characterFillUndefined ?? false}
+    get {_storage._characterFillUndefined ?? false}
     set {_uniqueStorage()._characterFillUndefined = newValue}
   }
   /// Returns true if `characterFillUndefined` has been explicitly set.
-  public var hasCharacterFillUndefined: Bool {return _storage._characterFillUndefined != nil}
+  public var hasCharacterFillUndefined: Bool {_storage._characterFillUndefined != nil}
   /// Clears the value of `characterFillUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCharacterFillUndefined() {_uniqueStorage()._characterFillUndefined = nil}
 
   public var characterFillShouldFillTextContainer: TSSSOS_SpecBoolArchive {
-    get {return _storage._characterFillShouldFillTextContainer ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._characterFillShouldFillTextContainer ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._characterFillShouldFillTextContainer = newValue}
   }
   /// Returns true if `characterFillShouldFillTextContainer` has been explicitly set.
-  public var hasCharacterFillShouldFillTextContainer: Bool {return _storage._characterFillShouldFillTextContainer != nil}
+  public var hasCharacterFillShouldFillTextContainer: Bool {_storage._characterFillShouldFillTextContainer != nil}
   /// Clears the value of `characterFillShouldFillTextContainer`. Subsequent reads from it will return its default value.
   public mutating func clearCharacterFillShouldFillTextContainer() {_uniqueStorage()._characterFillShouldFillTextContainer = nil}
 
   public var characterFillShouldFillTextContainerUndefined: Bool {
-    get {return _storage._characterFillShouldFillTextContainerUndefined ?? false}
+    get {_storage._characterFillShouldFillTextContainerUndefined ?? false}
     set {_uniqueStorage()._characterFillShouldFillTextContainerUndefined = newValue}
   }
   /// Returns true if `characterFillShouldFillTextContainerUndefined` has been explicitly set.
-  public var hasCharacterFillShouldFillTextContainerUndefined: Bool {return _storage._characterFillShouldFillTextContainerUndefined != nil}
+  public var hasCharacterFillShouldFillTextContainerUndefined: Bool {_storage._characterFillShouldFillTextContainerUndefined != nil}
   /// Clears the value of `characterFillShouldFillTextContainerUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCharacterFillShouldFillTextContainerUndefined() {_uniqueStorage()._characterFillShouldFillTextContainerUndefined = nil}
 
@@ -1490,170 +1490,170 @@ public struct TSWPSOS_CharacterStylePropertyChangeSetArchive: @unchecked Sendabl
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWPSOS_ColumnStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSWPSOS_ColumnStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var columns: TSWPSOS_SpecColumnsArchive {
-    get {return _storage._columns ?? TSWPSOS_SpecColumnsArchive()}
+    get {_storage._columns ?? TSWPSOS_SpecColumnsArchive()}
     set {_uniqueStorage()._columns = newValue}
   }
   /// Returns true if `columns` has been explicitly set.
-  public var hasColumns: Bool {return _storage._columns != nil}
+  public var hasColumns: Bool {_storage._columns != nil}
   /// Clears the value of `columns`. Subsequent reads from it will return its default value.
   public mutating func clearColumns() {_uniqueStorage()._columns = nil}
 
   public var columnsUndefined: Bool {
-    get {return _storage._columnsUndefined ?? false}
+    get {_storage._columnsUndefined ?? false}
     set {_uniqueStorage()._columnsUndefined = newValue}
   }
   /// Returns true if `columnsUndefined` has been explicitly set.
-  public var hasColumnsUndefined: Bool {return _storage._columnsUndefined != nil}
+  public var hasColumnsUndefined: Bool {_storage._columnsUndefined != nil}
   /// Clears the value of `columnsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColumnsUndefined() {_uniqueStorage()._columnsUndefined = nil}
 
   public var continuous: TSSSOS_SpecBoolArchive {
-    get {return _storage._continuous ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._continuous ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._continuous = newValue}
   }
   /// Returns true if `continuous` has been explicitly set.
-  public var hasContinuous: Bool {return _storage._continuous != nil}
+  public var hasContinuous: Bool {_storage._continuous != nil}
   /// Clears the value of `continuous`. Subsequent reads from it will return its default value.
   public mutating func clearContinuous() {_uniqueStorage()._continuous = nil}
 
   public var continuousUndefined: Bool {
-    get {return _storage._continuousUndefined ?? false}
+    get {_storage._continuousUndefined ?? false}
     set {_uniqueStorage()._continuousUndefined = newValue}
   }
   /// Returns true if `continuousUndefined` has been explicitly set.
-  public var hasContinuousUndefined: Bool {return _storage._continuousUndefined != nil}
+  public var hasContinuousUndefined: Bool {_storage._continuousUndefined != nil}
   /// Clears the value of `continuousUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearContinuousUndefined() {_uniqueStorage()._continuousUndefined = nil}
 
   public var margins: TSWPSOS_SpecPaddingArchive {
-    get {return _storage._margins ?? TSWPSOS_SpecPaddingArchive()}
+    get {_storage._margins ?? TSWPSOS_SpecPaddingArchive()}
     set {_uniqueStorage()._margins = newValue}
   }
   /// Returns true if `margins` has been explicitly set.
-  public var hasMargins: Bool {return _storage._margins != nil}
+  public var hasMargins: Bool {_storage._margins != nil}
   /// Clears the value of `margins`. Subsequent reads from it will return its default value.
   public mutating func clearMargins() {_uniqueStorage()._margins = nil}
 
   public var marginsUndefined: Bool {
-    get {return _storage._marginsUndefined ?? false}
+    get {_storage._marginsUndefined ?? false}
     set {_uniqueStorage()._marginsUndefined = newValue}
   }
   /// Returns true if `marginsUndefined` has been explicitly set.
-  public var hasMarginsUndefined: Bool {return _storage._marginsUndefined != nil}
+  public var hasMarginsUndefined: Bool {_storage._marginsUndefined != nil}
   /// Clears the value of `marginsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearMarginsUndefined() {_uniqueStorage()._marginsUndefined = nil}
 
   public var minHorizontalInset: TSSSOS_SpecDoubleArchive {
-    get {return _storage._minHorizontalInset ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._minHorizontalInset ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._minHorizontalInset = newValue}
   }
   /// Returns true if `minHorizontalInset` has been explicitly set.
-  public var hasMinHorizontalInset: Bool {return _storage._minHorizontalInset != nil}
+  public var hasMinHorizontalInset: Bool {_storage._minHorizontalInset != nil}
   /// Clears the value of `minHorizontalInset`. Subsequent reads from it will return its default value.
   public mutating func clearMinHorizontalInset() {_uniqueStorage()._minHorizontalInset = nil}
 
   public var minHorizontalInsetUndefined: Bool {
-    get {return _storage._minHorizontalInsetUndefined ?? false}
+    get {_storage._minHorizontalInsetUndefined ?? false}
     set {_uniqueStorage()._minHorizontalInsetUndefined = newValue}
   }
   /// Returns true if `minHorizontalInsetUndefined` has been explicitly set.
-  public var hasMinHorizontalInsetUndefined: Bool {return _storage._minHorizontalInsetUndefined != nil}
+  public var hasMinHorizontalInsetUndefined: Bool {_storage._minHorizontalInsetUndefined != nil}
   /// Clears the value of `minHorizontalInsetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearMinHorizontalInsetUndefined() {_uniqueStorage()._minHorizontalInsetUndefined = nil}
 
   public var padding: TSWPSOS_SpecPaddingArchive {
-    get {return _storage._padding ?? TSWPSOS_SpecPaddingArchive()}
+    get {_storage._padding ?? TSWPSOS_SpecPaddingArchive()}
     set {_uniqueStorage()._padding = newValue}
   }
   /// Returns true if `padding` has been explicitly set.
-  public var hasPadding: Bool {return _storage._padding != nil}
+  public var hasPadding: Bool {_storage._padding != nil}
   /// Clears the value of `padding`. Subsequent reads from it will return its default value.
   public mutating func clearPadding() {_uniqueStorage()._padding = nil}
 
   public var paddingUndefined: Bool {
-    get {return _storage._paddingUndefined ?? false}
+    get {_storage._paddingUndefined ?? false}
     set {_uniqueStorage()._paddingUndefined = newValue}
   }
   /// Returns true if `paddingUndefined` has been explicitly set.
-  public var hasPaddingUndefined: Bool {return _storage._paddingUndefined != nil}
+  public var hasPaddingUndefined: Bool {_storage._paddingUndefined != nil}
   /// Clears the value of `paddingUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearPaddingUndefined() {_uniqueStorage()._paddingUndefined = nil}
 
   public var shrinkToFit: TSSSOS_SpecBoolArchive {
-    get {return _storage._shrinkToFit ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._shrinkToFit ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._shrinkToFit = newValue}
   }
   /// Returns true if `shrinkToFit` has been explicitly set.
-  public var hasShrinkToFit: Bool {return _storage._shrinkToFit != nil}
+  public var hasShrinkToFit: Bool {_storage._shrinkToFit != nil}
   /// Clears the value of `shrinkToFit`. Subsequent reads from it will return its default value.
   public mutating func clearShrinkToFit() {_uniqueStorage()._shrinkToFit = nil}
 
   public var shrinkToFitUndefined: Bool {
-    get {return _storage._shrinkToFitUndefined ?? false}
+    get {_storage._shrinkToFitUndefined ?? false}
     set {_uniqueStorage()._shrinkToFitUndefined = newValue}
   }
   /// Returns true if `shrinkToFitUndefined` has been explicitly set.
-  public var hasShrinkToFitUndefined: Bool {return _storage._shrinkToFitUndefined != nil}
+  public var hasShrinkToFitUndefined: Bool {_storage._shrinkToFitUndefined != nil}
   /// Clears the value of `shrinkToFitUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShrinkToFitUndefined() {_uniqueStorage()._shrinkToFitUndefined = nil}
 
   public var verticalAlignment: TSSSOS_SpecIntegerArchive {
-    get {return _storage._verticalAlignment ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._verticalAlignment ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._verticalAlignment = newValue}
   }
   /// Returns true if `verticalAlignment` has been explicitly set.
-  public var hasVerticalAlignment: Bool {return _storage._verticalAlignment != nil}
+  public var hasVerticalAlignment: Bool {_storage._verticalAlignment != nil}
   /// Clears the value of `verticalAlignment`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalAlignment() {_uniqueStorage()._verticalAlignment = nil}
 
   public var verticalAlignmentUndefined: Bool {
-    get {return _storage._verticalAlignmentUndefined ?? false}
+    get {_storage._verticalAlignmentUndefined ?? false}
     set {_uniqueStorage()._verticalAlignmentUndefined = newValue}
   }
   /// Returns true if `verticalAlignmentUndefined` has been explicitly set.
-  public var hasVerticalAlignmentUndefined: Bool {return _storage._verticalAlignmentUndefined != nil}
+  public var hasVerticalAlignmentUndefined: Bool {_storage._verticalAlignmentUndefined != nil}
   /// Clears the value of `verticalAlignmentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalAlignmentUndefined() {_uniqueStorage()._verticalAlignmentUndefined = nil}
 
   public var verticalText: TSSSOS_SpecBoolArchive {
-    get {return _storage._verticalText ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._verticalText ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._verticalText = newValue}
   }
   /// Returns true if `verticalText` has been explicitly set.
-  public var hasVerticalText: Bool {return _storage._verticalText != nil}
+  public var hasVerticalText: Bool {_storage._verticalText != nil}
   /// Clears the value of `verticalText`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalText() {_uniqueStorage()._verticalText = nil}
 
   public var verticalTextUndefined: Bool {
-    get {return _storage._verticalTextUndefined ?? false}
+    get {_storage._verticalTextUndefined ?? false}
     set {_uniqueStorage()._verticalTextUndefined = newValue}
   }
   /// Returns true if `verticalTextUndefined` has been explicitly set.
-  public var hasVerticalTextUndefined: Bool {return _storage._verticalTextUndefined != nil}
+  public var hasVerticalTextUndefined: Bool {_storage._verticalTextUndefined != nil}
   /// Clears the value of `verticalTextUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalTextUndefined() {_uniqueStorage()._verticalTextUndefined = nil}
 
   public var writingDirection: TSSSOS_SpecIntegerArchive {
-    get {return _storage._writingDirection ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._writingDirection ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._writingDirection = newValue}
   }
   /// Returns true if `writingDirection` has been explicitly set.
-  public var hasWritingDirection: Bool {return _storage._writingDirection != nil}
+  public var hasWritingDirection: Bool {_storage._writingDirection != nil}
   /// Clears the value of `writingDirection`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirection() {_uniqueStorage()._writingDirection = nil}
 
   public var writingDirectionUndefined: Bool {
-    get {return _storage._writingDirectionUndefined ?? false}
+    get {_storage._writingDirectionUndefined ?? false}
     set {_uniqueStorage()._writingDirectionUndefined = newValue}
   }
   /// Returns true if `writingDirectionUndefined` has been explicitly set.
-  public var hasWritingDirectionUndefined: Bool {return _storage._writingDirectionUndefined != nil}
+  public var hasWritingDirectionUndefined: Bool {_storage._writingDirectionUndefined != nil}
   /// Clears the value of `writingDirectionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirectionUndefined() {_uniqueStorage()._writingDirectionUndefined = nil}
 
@@ -1664,62 +1664,62 @@ public struct TSWPSOS_ColumnStylePropertyChangeSetArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWPSOS_DropCapSpecificStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSWPSOS_DropCapSpecificStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var dropCapModel: TSWPSOS_SpecDropCapArchive {
-    get {return _storage._dropCapModel ?? TSWPSOS_SpecDropCapArchive()}
+    get {_storage._dropCapModel ?? TSWPSOS_SpecDropCapArchive()}
     set {_uniqueStorage()._dropCapModel = newValue}
   }
   /// Returns true if `dropCapModel` has been explicitly set.
-  public var hasDropCapModel: Bool {return _storage._dropCapModel != nil}
+  public var hasDropCapModel: Bool {_storage._dropCapModel != nil}
   /// Clears the value of `dropCapModel`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapModel() {_uniqueStorage()._dropCapModel = nil}
 
   public var dropCapModelUndefined: Bool {
-    get {return _storage._dropCapModelUndefined ?? false}
+    get {_storage._dropCapModelUndefined ?? false}
     set {_uniqueStorage()._dropCapModelUndefined = newValue}
   }
   /// Returns true if `dropCapModelUndefined` has been explicitly set.
-  public var hasDropCapModelUndefined: Bool {return _storage._dropCapModelUndefined != nil}
+  public var hasDropCapModelUndefined: Bool {_storage._dropCapModelUndefined != nil}
   /// Clears the value of `dropCapModelUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapModelUndefined() {_uniqueStorage()._dropCapModelUndefined = nil}
 
   public var dropCapShapeStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._dropCapShapeStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._dropCapShapeStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._dropCapShapeStroke = newValue}
   }
   /// Returns true if `dropCapShapeStroke` has been explicitly set.
-  public var hasDropCapShapeStroke: Bool {return _storage._dropCapShapeStroke != nil}
+  public var hasDropCapShapeStroke: Bool {_storage._dropCapShapeStroke != nil}
   /// Clears the value of `dropCapShapeStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeStroke() {_uniqueStorage()._dropCapShapeStroke = nil}
 
   public var dropCapShapeStrokeUndefined: Bool {
-    get {return _storage._dropCapShapeStrokeUndefined ?? false}
+    get {_storage._dropCapShapeStrokeUndefined ?? false}
     set {_uniqueStorage()._dropCapShapeStrokeUndefined = newValue}
   }
   /// Returns true if `dropCapShapeStrokeUndefined` has been explicitly set.
-  public var hasDropCapShapeStrokeUndefined: Bool {return _storage._dropCapShapeStrokeUndefined != nil}
+  public var hasDropCapShapeStrokeUndefined: Bool {_storage._dropCapShapeStrokeUndefined != nil}
   /// Clears the value of `dropCapShapeStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeStrokeUndefined() {_uniqueStorage()._dropCapShapeStrokeUndefined = nil}
 
   public var dropCapShapeFill: TSDSOS_SpecFillArchive {
-    get {return _storage._dropCapShapeFill ?? TSDSOS_SpecFillArchive()}
+    get {_storage._dropCapShapeFill ?? TSDSOS_SpecFillArchive()}
     set {_uniqueStorage()._dropCapShapeFill = newValue}
   }
   /// Returns true if `dropCapShapeFill` has been explicitly set.
-  public var hasDropCapShapeFill: Bool {return _storage._dropCapShapeFill != nil}
+  public var hasDropCapShapeFill: Bool {_storage._dropCapShapeFill != nil}
   /// Clears the value of `dropCapShapeFill`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeFill() {_uniqueStorage()._dropCapShapeFill = nil}
 
   public var dropCapShapeFillUndefined: Bool {
-    get {return _storage._dropCapShapeFillUndefined ?? false}
+    get {_storage._dropCapShapeFillUndefined ?? false}
     set {_uniqueStorage()._dropCapShapeFillUndefined = newValue}
   }
   /// Returns true if `dropCapShapeFillUndefined` has been explicitly set.
-  public var hasDropCapShapeFillUndefined: Bool {return _storage._dropCapShapeFillUndefined != nil}
+  public var hasDropCapShapeFillUndefined: Bool {_storage._dropCapShapeFillUndefined != nil}
   /// Clears the value of `dropCapShapeFillUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeFillUndefined() {_uniqueStorage()._dropCapShapeFillUndefined = nil}
 
@@ -1730,71 +1730,71 @@ public struct TSWPSOS_DropCapSpecificStylePropertyChangeSetArchive: @unchecked S
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWPSOS_DropCapStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSWPSOS_DropCapStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWPSOS_CharacterStylePropertyChangeSetArchive {
-    get {return _storage._super ?? TSWPSOS_CharacterStylePropertyChangeSetArchive()}
+    get {_storage._super ?? TSWPSOS_CharacterStylePropertyChangeSetArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var dropCapModel: TSWPSOS_SpecDropCapArchive {
-    get {return _storage._dropCapModel ?? TSWPSOS_SpecDropCapArchive()}
+    get {_storage._dropCapModel ?? TSWPSOS_SpecDropCapArchive()}
     set {_uniqueStorage()._dropCapModel = newValue}
   }
   /// Returns true if `dropCapModel` has been explicitly set.
-  public var hasDropCapModel: Bool {return _storage._dropCapModel != nil}
+  public var hasDropCapModel: Bool {_storage._dropCapModel != nil}
   /// Clears the value of `dropCapModel`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapModel() {_uniqueStorage()._dropCapModel = nil}
 
   public var dropCapModelUndefined: Bool {
-    get {return _storage._dropCapModelUndefined ?? false}
+    get {_storage._dropCapModelUndefined ?? false}
     set {_uniqueStorage()._dropCapModelUndefined = newValue}
   }
   /// Returns true if `dropCapModelUndefined` has been explicitly set.
-  public var hasDropCapModelUndefined: Bool {return _storage._dropCapModelUndefined != nil}
+  public var hasDropCapModelUndefined: Bool {_storage._dropCapModelUndefined != nil}
   /// Clears the value of `dropCapModelUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapModelUndefined() {_uniqueStorage()._dropCapModelUndefined = nil}
 
   public var dropCapShapeStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._dropCapShapeStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._dropCapShapeStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._dropCapShapeStroke = newValue}
   }
   /// Returns true if `dropCapShapeStroke` has been explicitly set.
-  public var hasDropCapShapeStroke: Bool {return _storage._dropCapShapeStroke != nil}
+  public var hasDropCapShapeStroke: Bool {_storage._dropCapShapeStroke != nil}
   /// Clears the value of `dropCapShapeStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeStroke() {_uniqueStorage()._dropCapShapeStroke = nil}
 
   public var dropCapShapeStrokeUndefined: Bool {
-    get {return _storage._dropCapShapeStrokeUndefined ?? false}
+    get {_storage._dropCapShapeStrokeUndefined ?? false}
     set {_uniqueStorage()._dropCapShapeStrokeUndefined = newValue}
   }
   /// Returns true if `dropCapShapeStrokeUndefined` has been explicitly set.
-  public var hasDropCapShapeStrokeUndefined: Bool {return _storage._dropCapShapeStrokeUndefined != nil}
+  public var hasDropCapShapeStrokeUndefined: Bool {_storage._dropCapShapeStrokeUndefined != nil}
   /// Clears the value of `dropCapShapeStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeStrokeUndefined() {_uniqueStorage()._dropCapShapeStrokeUndefined = nil}
 
   public var dropCapShapeFill: TSDSOS_SpecFillArchive {
-    get {return _storage._dropCapShapeFill ?? TSDSOS_SpecFillArchive()}
+    get {_storage._dropCapShapeFill ?? TSDSOS_SpecFillArchive()}
     set {_uniqueStorage()._dropCapShapeFill = newValue}
   }
   /// Returns true if `dropCapShapeFill` has been explicitly set.
-  public var hasDropCapShapeFill: Bool {return _storage._dropCapShapeFill != nil}
+  public var hasDropCapShapeFill: Bool {_storage._dropCapShapeFill != nil}
   /// Clears the value of `dropCapShapeFill`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeFill() {_uniqueStorage()._dropCapShapeFill = nil}
 
   public var dropCapShapeFillUndefined: Bool {
-    get {return _storage._dropCapShapeFillUndefined ?? false}
+    get {_storage._dropCapShapeFillUndefined ?? false}
     set {_uniqueStorage()._dropCapShapeFillUndefined = newValue}
   }
   /// Returns true if `dropCapShapeFillUndefined` has been explicitly set.
-  public var hasDropCapShapeFillUndefined: Bool {return _storage._dropCapShapeFillUndefined != nil}
+  public var hasDropCapShapeFillUndefined: Bool {_storage._dropCapShapeFillUndefined != nil}
   /// Clears the value of `dropCapShapeFillUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeFillUndefined() {_uniqueStorage()._dropCapShapeFillUndefined = nil}
 
@@ -1805,242 +1805,242 @@ public struct TSWPSOS_DropCapStylePropertyChangeSetArchive: @unchecked Sendable 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWPSOS_ListStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSWPSOS_ListStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var listFontColor: TSSSOS_SpecColorArchive {
-    get {return _storage._listFontColor ?? TSSSOS_SpecColorArchive()}
+    get {_storage._listFontColor ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._listFontColor = newValue}
   }
   /// Returns true if `listFontColor` has been explicitly set.
-  public var hasListFontColor: Bool {return _storage._listFontColor != nil}
+  public var hasListFontColor: Bool {_storage._listFontColor != nil}
   /// Clears the value of `listFontColor`. Subsequent reads from it will return its default value.
   public mutating func clearListFontColor() {_uniqueStorage()._listFontColor = nil}
 
   public var listFontColorUndefined: Bool {
-    get {return _storage._listFontColorUndefined ?? false}
+    get {_storage._listFontColorUndefined ?? false}
     set {_uniqueStorage()._listFontColorUndefined = newValue}
   }
   /// Returns true if `listFontColorUndefined` has been explicitly set.
-  public var hasListFontColorUndefined: Bool {return _storage._listFontColorUndefined != nil}
+  public var hasListFontColorUndefined: Bool {_storage._listFontColorUndefined != nil}
   /// Clears the value of `listFontColorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListFontColorUndefined() {_uniqueStorage()._listFontColorUndefined = nil}
 
   public var fontName: TSSSOS_SpecStringArchive {
-    get {return _storage._fontName ?? TSSSOS_SpecStringArchive()}
+    get {_storage._fontName ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._fontName = newValue}
   }
   /// Returns true if `fontName` has been explicitly set.
-  public var hasFontName: Bool {return _storage._fontName != nil}
+  public var hasFontName: Bool {_storage._fontName != nil}
   /// Clears the value of `fontName`. Subsequent reads from it will return its default value.
   public mutating func clearFontName() {_uniqueStorage()._fontName = nil}
 
   public var fontNameUndefined: Bool {
-    get {return _storage._fontNameUndefined ?? false}
+    get {_storage._fontNameUndefined ?? false}
     set {_uniqueStorage()._fontNameUndefined = newValue}
   }
   /// Returns true if `fontNameUndefined` has been explicitly set.
-  public var hasFontNameUndefined: Bool {return _storage._fontNameUndefined != nil}
+  public var hasFontNameUndefined: Bool {_storage._fontNameUndefined != nil}
   /// Clears the value of `fontNameUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFontNameUndefined() {_uniqueStorage()._fontNameUndefined = nil}
 
   public var listClassicTextIndentArray: TSWPSOS_SpecListStyleFloatArrayArchive {
-    get {return _storage._listClassicTextIndentArray ?? TSWPSOS_SpecListStyleFloatArrayArchive()}
+    get {_storage._listClassicTextIndentArray ?? TSWPSOS_SpecListStyleFloatArrayArchive()}
     set {_uniqueStorage()._listClassicTextIndentArray = newValue}
   }
   /// Returns true if `listClassicTextIndentArray` has been explicitly set.
-  public var hasListClassicTextIndentArray: Bool {return _storage._listClassicTextIndentArray != nil}
+  public var hasListClassicTextIndentArray: Bool {_storage._listClassicTextIndentArray != nil}
   /// Clears the value of `listClassicTextIndentArray`. Subsequent reads from it will return its default value.
   public mutating func clearListClassicTextIndentArray() {_uniqueStorage()._listClassicTextIndentArray = nil}
 
   public var listClassicTextIndentArrayUndefined: Bool {
-    get {return _storage._listClassicTextIndentArrayUndefined ?? false}
+    get {_storage._listClassicTextIndentArrayUndefined ?? false}
     set {_uniqueStorage()._listClassicTextIndentArrayUndefined = newValue}
   }
   /// Returns true if `listClassicTextIndentArrayUndefined` has been explicitly set.
-  public var hasListClassicTextIndentArrayUndefined: Bool {return _storage._listClassicTextIndentArrayUndefined != nil}
+  public var hasListClassicTextIndentArrayUndefined: Bool {_storage._listClassicTextIndentArrayUndefined != nil}
   /// Clears the value of `listClassicTextIndentArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListClassicTextIndentArrayUndefined() {_uniqueStorage()._listClassicTextIndentArrayUndefined = nil}
 
   public var listLabelGeometryArray: TSWPSOS_SpecListStyleListLabelGeometryArrayArchive {
-    get {return _storage._listLabelGeometryArray ?? TSWPSOS_SpecListStyleListLabelGeometryArrayArchive()}
+    get {_storage._listLabelGeometryArray ?? TSWPSOS_SpecListStyleListLabelGeometryArrayArchive()}
     set {_uniqueStorage()._listLabelGeometryArray = newValue}
   }
   /// Returns true if `listLabelGeometryArray` has been explicitly set.
-  public var hasListLabelGeometryArray: Bool {return _storage._listLabelGeometryArray != nil}
+  public var hasListLabelGeometryArray: Bool {_storage._listLabelGeometryArray != nil}
   /// Clears the value of `listLabelGeometryArray`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelGeometryArray() {_uniqueStorage()._listLabelGeometryArray = nil}
 
   public var listLabelGeometryArrayUndefined: Bool {
-    get {return _storage._listLabelGeometryArrayUndefined ?? false}
+    get {_storage._listLabelGeometryArrayUndefined ?? false}
     set {_uniqueStorage()._listLabelGeometryArrayUndefined = newValue}
   }
   /// Returns true if `listLabelGeometryArrayUndefined` has been explicitly set.
-  public var hasListLabelGeometryArrayUndefined: Bool {return _storage._listLabelGeometryArrayUndefined != nil}
+  public var hasListLabelGeometryArrayUndefined: Bool {_storage._listLabelGeometryArrayUndefined != nil}
   /// Clears the value of `listLabelGeometryArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelGeometryArrayUndefined() {_uniqueStorage()._listLabelGeometryArrayUndefined = nil}
 
   public var listLabelImageDataArray: TSWPSOS_SpecListStyleImageDataArrayArchive {
-    get {return _storage._listLabelImageDataArray ?? TSWPSOS_SpecListStyleImageDataArrayArchive()}
+    get {_storage._listLabelImageDataArray ?? TSWPSOS_SpecListStyleImageDataArrayArchive()}
     set {_uniqueStorage()._listLabelImageDataArray = newValue}
   }
   /// Returns true if `listLabelImageDataArray` has been explicitly set.
-  public var hasListLabelImageDataArray: Bool {return _storage._listLabelImageDataArray != nil}
+  public var hasListLabelImageDataArray: Bool {_storage._listLabelImageDataArray != nil}
   /// Clears the value of `listLabelImageDataArray`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelImageDataArray() {_uniqueStorage()._listLabelImageDataArray = nil}
 
   public var listLabelImageDataArrayUndefined: Bool {
-    get {return _storage._listLabelImageDataArrayUndefined ?? false}
+    get {_storage._listLabelImageDataArrayUndefined ?? false}
     set {_uniqueStorage()._listLabelImageDataArrayUndefined = newValue}
   }
   /// Returns true if `listLabelImageDataArrayUndefined` has been explicitly set.
-  public var hasListLabelImageDataArrayUndefined: Bool {return _storage._listLabelImageDataArrayUndefined != nil}
+  public var hasListLabelImageDataArrayUndefined: Bool {_storage._listLabelImageDataArrayUndefined != nil}
   /// Clears the value of `listLabelImageDataArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelImageDataArrayUndefined() {_uniqueStorage()._listLabelImageDataArrayUndefined = nil}
 
   public var listLabelIndentArray: TSWPSOS_SpecListStyleFloatArrayArchive {
-    get {return _storage._listLabelIndentArray ?? TSWPSOS_SpecListStyleFloatArrayArchive()}
+    get {_storage._listLabelIndentArray ?? TSWPSOS_SpecListStyleFloatArrayArchive()}
     set {_uniqueStorage()._listLabelIndentArray = newValue}
   }
   /// Returns true if `listLabelIndentArray` has been explicitly set.
-  public var hasListLabelIndentArray: Bool {return _storage._listLabelIndentArray != nil}
+  public var hasListLabelIndentArray: Bool {_storage._listLabelIndentArray != nil}
   /// Clears the value of `listLabelIndentArray`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelIndentArray() {_uniqueStorage()._listLabelIndentArray = nil}
 
   public var listLabelIndentArrayUndefined: Bool {
-    get {return _storage._listLabelIndentArrayUndefined ?? false}
+    get {_storage._listLabelIndentArrayUndefined ?? false}
     set {_uniqueStorage()._listLabelIndentArrayUndefined = newValue}
   }
   /// Returns true if `listLabelIndentArrayUndefined` has been explicitly set.
-  public var hasListLabelIndentArrayUndefined: Bool {return _storage._listLabelIndentArrayUndefined != nil}
+  public var hasListLabelIndentArrayUndefined: Bool {_storage._listLabelIndentArrayUndefined != nil}
   /// Clears the value of `listLabelIndentArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelIndentArrayUndefined() {_uniqueStorage()._listLabelIndentArrayUndefined = nil}
 
   public var listLabelNumberArray: TSWPSOS_SpecListStyleListNumberTypeArrayArchive {
-    get {return _storage._listLabelNumberArray ?? TSWPSOS_SpecListStyleListNumberTypeArrayArchive()}
+    get {_storage._listLabelNumberArray ?? TSWPSOS_SpecListStyleListNumberTypeArrayArchive()}
     set {_uniqueStorage()._listLabelNumberArray = newValue}
   }
   /// Returns true if `listLabelNumberArray` has been explicitly set.
-  public var hasListLabelNumberArray: Bool {return _storage._listLabelNumberArray != nil}
+  public var hasListLabelNumberArray: Bool {_storage._listLabelNumberArray != nil}
   /// Clears the value of `listLabelNumberArray`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelNumberArray() {_uniqueStorage()._listLabelNumberArray = nil}
 
   public var listLabelNumberArrayUndefined: Bool {
-    get {return _storage._listLabelNumberArrayUndefined ?? false}
+    get {_storage._listLabelNumberArrayUndefined ?? false}
     set {_uniqueStorage()._listLabelNumberArrayUndefined = newValue}
   }
   /// Returns true if `listLabelNumberArrayUndefined` has been explicitly set.
-  public var hasListLabelNumberArrayUndefined: Bool {return _storage._listLabelNumberArrayUndefined != nil}
+  public var hasListLabelNumberArrayUndefined: Bool {_storage._listLabelNumberArrayUndefined != nil}
   /// Clears the value of `listLabelNumberArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelNumberArrayUndefined() {_uniqueStorage()._listLabelNumberArrayUndefined = nil}
 
   public var listLabelTieredNumberArray: TSWPSOS_SpecListStyleBoolArrayArchive {
-    get {return _storage._listLabelTieredNumberArray ?? TSWPSOS_SpecListStyleBoolArrayArchive()}
+    get {_storage._listLabelTieredNumberArray ?? TSWPSOS_SpecListStyleBoolArrayArchive()}
     set {_uniqueStorage()._listLabelTieredNumberArray = newValue}
   }
   /// Returns true if `listLabelTieredNumberArray` has been explicitly set.
-  public var hasListLabelTieredNumberArray: Bool {return _storage._listLabelTieredNumberArray != nil}
+  public var hasListLabelTieredNumberArray: Bool {_storage._listLabelTieredNumberArray != nil}
   /// Clears the value of `listLabelTieredNumberArray`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelTieredNumberArray() {_uniqueStorage()._listLabelTieredNumberArray = nil}
 
   public var listLabelTieredNumberArrayUndefined: Bool {
-    get {return _storage._listLabelTieredNumberArrayUndefined ?? false}
+    get {_storage._listLabelTieredNumberArrayUndefined ?? false}
     set {_uniqueStorage()._listLabelTieredNumberArrayUndefined = newValue}
   }
   /// Returns true if `listLabelTieredNumberArrayUndefined` has been explicitly set.
-  public var hasListLabelTieredNumberArrayUndefined: Bool {return _storage._listLabelTieredNumberArrayUndefined != nil}
+  public var hasListLabelTieredNumberArrayUndefined: Bool {_storage._listLabelTieredNumberArrayUndefined != nil}
   /// Clears the value of `listLabelTieredNumberArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelTieredNumberArrayUndefined() {_uniqueStorage()._listLabelTieredNumberArrayUndefined = nil}
 
   public var textShadow: TSDSOS_SpecShadowArchive {
-    get {return _storage._textShadow ?? TSDSOS_SpecShadowArchive()}
+    get {_storage._textShadow ?? TSDSOS_SpecShadowArchive()}
     set {_uniqueStorage()._textShadow = newValue}
   }
   /// Returns true if `textShadow` has been explicitly set.
-  public var hasTextShadow: Bool {return _storage._textShadow != nil}
+  public var hasTextShadow: Bool {_storage._textShadow != nil}
   /// Clears the value of `textShadow`. Subsequent reads from it will return its default value.
   public mutating func clearTextShadow() {_uniqueStorage()._textShadow = nil}
 
   public var textShadowUndefined: Bool {
-    get {return _storage._textShadowUndefined ?? false}
+    get {_storage._textShadowUndefined ?? false}
     set {_uniqueStorage()._textShadowUndefined = newValue}
   }
   /// Returns true if `textShadowUndefined` has been explicitly set.
-  public var hasTextShadowUndefined: Bool {return _storage._textShadowUndefined != nil}
+  public var hasTextShadowUndefined: Bool {_storage._textShadowUndefined != nil}
   /// Clears the value of `textShadowUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTextShadowUndefined() {_uniqueStorage()._textShadowUndefined = nil}
 
   public var listLabelStringArray: TSWPSOS_SpecListStyleStringArrayArchive {
-    get {return _storage._listLabelStringArray ?? TSWPSOS_SpecListStyleStringArrayArchive()}
+    get {_storage._listLabelStringArray ?? TSWPSOS_SpecListStyleStringArrayArchive()}
     set {_uniqueStorage()._listLabelStringArray = newValue}
   }
   /// Returns true if `listLabelStringArray` has been explicitly set.
-  public var hasListLabelStringArray: Bool {return _storage._listLabelStringArray != nil}
+  public var hasListLabelStringArray: Bool {_storage._listLabelStringArray != nil}
   /// Clears the value of `listLabelStringArray`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelStringArray() {_uniqueStorage()._listLabelStringArray = nil}
 
   public var listLabelStringArrayUndefined: Bool {
-    get {return _storage._listLabelStringArrayUndefined ?? false}
+    get {_storage._listLabelStringArrayUndefined ?? false}
     set {_uniqueStorage()._listLabelStringArrayUndefined = newValue}
   }
   /// Returns true if `listLabelStringArrayUndefined` has been explicitly set.
-  public var hasListLabelStringArrayUndefined: Bool {return _storage._listLabelStringArrayUndefined != nil}
+  public var hasListLabelStringArrayUndefined: Bool {_storage._listLabelStringArrayUndefined != nil}
   /// Clears the value of `listLabelStringArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelStringArrayUndefined() {_uniqueStorage()._listLabelStringArrayUndefined = nil}
 
   public var listTextIndentArray: TSWPSOS_SpecListStyleFloatArrayArchive {
-    get {return _storage._listTextIndentArray ?? TSWPSOS_SpecListStyleFloatArrayArchive()}
+    get {_storage._listTextIndentArray ?? TSWPSOS_SpecListStyleFloatArrayArchive()}
     set {_uniqueStorage()._listTextIndentArray = newValue}
   }
   /// Returns true if `listTextIndentArray` has been explicitly set.
-  public var hasListTextIndentArray: Bool {return _storage._listTextIndentArray != nil}
+  public var hasListTextIndentArray: Bool {_storage._listTextIndentArray != nil}
   /// Clears the value of `listTextIndentArray`. Subsequent reads from it will return its default value.
   public mutating func clearListTextIndentArray() {_uniqueStorage()._listTextIndentArray = nil}
 
   public var listTextIndentArrayUndefined: Bool {
-    get {return _storage._listTextIndentArrayUndefined ?? false}
+    get {_storage._listTextIndentArrayUndefined ?? false}
     set {_uniqueStorage()._listTextIndentArrayUndefined = newValue}
   }
   /// Returns true if `listTextIndentArrayUndefined` has been explicitly set.
-  public var hasListTextIndentArrayUndefined: Bool {return _storage._listTextIndentArrayUndefined != nil}
+  public var hasListTextIndentArrayUndefined: Bool {_storage._listTextIndentArrayUndefined != nil}
   /// Clears the value of `listTextIndentArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListTextIndentArrayUndefined() {_uniqueStorage()._listTextIndentArrayUndefined = nil}
 
   public var listLabelTypeArray: TSWPSOS_SpecListStyleListLabelTypeArrayArchive {
-    get {return _storage._listLabelTypeArray ?? TSWPSOS_SpecListStyleListLabelTypeArrayArchive()}
+    get {_storage._listLabelTypeArray ?? TSWPSOS_SpecListStyleListLabelTypeArrayArchive()}
     set {_uniqueStorage()._listLabelTypeArray = newValue}
   }
   /// Returns true if `listLabelTypeArray` has been explicitly set.
-  public var hasListLabelTypeArray: Bool {return _storage._listLabelTypeArray != nil}
+  public var hasListLabelTypeArray: Bool {_storage._listLabelTypeArray != nil}
   /// Clears the value of `listLabelTypeArray`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelTypeArray() {_uniqueStorage()._listLabelTypeArray = nil}
 
   public var listLabelTypeArrayUndefined: Bool {
-    get {return _storage._listLabelTypeArrayUndefined ?? false}
+    get {_storage._listLabelTypeArrayUndefined ?? false}
     set {_uniqueStorage()._listLabelTypeArrayUndefined = newValue}
   }
   /// Returns true if `listLabelTypeArrayUndefined` has been explicitly set.
-  public var hasListLabelTypeArrayUndefined: Bool {return _storage._listLabelTypeArrayUndefined != nil}
+  public var hasListLabelTypeArrayUndefined: Bool {_storage._listLabelTypeArrayUndefined != nil}
   /// Clears the value of `listLabelTypeArrayUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearListLabelTypeArrayUndefined() {_uniqueStorage()._listLabelTypeArrayUndefined = nil}
 
   public var writingDirection: TSSSOS_SpecIntegerArchive {
-    get {return _storage._writingDirection ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._writingDirection ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._writingDirection = newValue}
   }
   /// Returns true if `writingDirection` has been explicitly set.
-  public var hasWritingDirection: Bool {return _storage._writingDirection != nil}
+  public var hasWritingDirection: Bool {_storage._writingDirection != nil}
   /// Clears the value of `writingDirection`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirection() {_uniqueStorage()._writingDirection = nil}
 
   public var writingDirectionUndefined: Bool {
-    get {return _storage._writingDirectionUndefined ?? false}
+    get {_storage._writingDirectionUndefined ?? false}
     set {_uniqueStorage()._writingDirectionUndefined = newValue}
   }
   /// Returns true if `writingDirectionUndefined` has been explicitly set.
-  public var hasWritingDirectionUndefined: Bool {return _storage._writingDirectionUndefined != nil}
+  public var hasWritingDirectionUndefined: Bool {_storage._writingDirectionUndefined != nil}
   /// Clears the value of `writingDirectionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirectionUndefined() {_uniqueStorage()._writingDirectionUndefined = nil}
 
@@ -2051,494 +2051,494 @@ public struct TSWPSOS_ListStylePropertyChangeSetArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWPSOS_ParagraphSpecificStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSWPSOS_ParagraphSpecificStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var alignment: TSSSOS_SpecIntegerArchive {
-    get {return _storage._alignment ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._alignment ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._alignment = newValue}
   }
   /// Returns true if `alignment` has been explicitly set.
-  public var hasAlignment: Bool {return _storage._alignment != nil}
+  public var hasAlignment: Bool {_storage._alignment != nil}
   /// Clears the value of `alignment`. Subsequent reads from it will return its default value.
   public mutating func clearAlignment() {_uniqueStorage()._alignment = nil}
 
   public var alignmentUndefined: Bool {
-    get {return _storage._alignmentUndefined ?? false}
+    get {_storage._alignmentUndefined ?? false}
     set {_uniqueStorage()._alignmentUndefined = newValue}
   }
   /// Returns true if `alignmentUndefined` has been explicitly set.
-  public var hasAlignmentUndefined: Bool {return _storage._alignmentUndefined != nil}
+  public var hasAlignmentUndefined: Bool {_storage._alignmentUndefined != nil}
   /// Clears the value of `alignmentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearAlignmentUndefined() {_uniqueStorage()._alignmentUndefined = nil}
 
   public var decimalTab: TSSSOS_SpecStringArchive {
-    get {return _storage._decimalTab ?? TSSSOS_SpecStringArchive()}
+    get {_storage._decimalTab ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._decimalTab = newValue}
   }
   /// Returns true if `decimalTab` has been explicitly set.
-  public var hasDecimalTab: Bool {return _storage._decimalTab != nil}
+  public var hasDecimalTab: Bool {_storage._decimalTab != nil}
   /// Clears the value of `decimalTab`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalTab() {_uniqueStorage()._decimalTab = nil}
 
   public var decimalTabUndefined: Bool {
-    get {return _storage._decimalTabUndefined ?? false}
+    get {_storage._decimalTabUndefined ?? false}
     set {_uniqueStorage()._decimalTabUndefined = newValue}
   }
   /// Returns true if `decimalTabUndefined` has been explicitly set.
-  public var hasDecimalTabUndefined: Bool {return _storage._decimalTabUndefined != nil}
+  public var hasDecimalTabUndefined: Bool {_storage._decimalTabUndefined != nil}
   /// Clears the value of `decimalTabUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalTabUndefined() {_uniqueStorage()._decimalTabUndefined = nil}
 
   public var defaultTabStops: TSSSOS_SpecDoubleArchive {
-    get {return _storage._defaultTabStops ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._defaultTabStops ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._defaultTabStops = newValue}
   }
   /// Returns true if `defaultTabStops` has been explicitly set.
-  public var hasDefaultTabStops: Bool {return _storage._defaultTabStops != nil}
+  public var hasDefaultTabStops: Bool {_storage._defaultTabStops != nil}
   /// Clears the value of `defaultTabStops`. Subsequent reads from it will return its default value.
   public mutating func clearDefaultTabStops() {_uniqueStorage()._defaultTabStops = nil}
 
   public var defaultTabStopsUndefined: Bool {
-    get {return _storage._defaultTabStopsUndefined ?? false}
+    get {_storage._defaultTabStopsUndefined ?? false}
     set {_uniqueStorage()._defaultTabStopsUndefined = newValue}
   }
   /// Returns true if `defaultTabStopsUndefined` has been explicitly set.
-  public var hasDefaultTabStopsUndefined: Bool {return _storage._defaultTabStopsUndefined != nil}
+  public var hasDefaultTabStopsUndefined: Bool {_storage._defaultTabStopsUndefined != nil}
   /// Clears the value of `defaultTabStopsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDefaultTabStopsUndefined() {_uniqueStorage()._defaultTabStopsUndefined = nil}
 
   public var paragraphFill: TSSSOS_SpecColorArchive {
-    get {return _storage._paragraphFill ?? TSSSOS_SpecColorArchive()}
+    get {_storage._paragraphFill ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._paragraphFill = newValue}
   }
   /// Returns true if `paragraphFill` has been explicitly set.
-  public var hasParagraphFill: Bool {return _storage._paragraphFill != nil}
+  public var hasParagraphFill: Bool {_storage._paragraphFill != nil}
   /// Clears the value of `paragraphFill`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphFill() {_uniqueStorage()._paragraphFill = nil}
 
   public var paragraphFillUndefined: Bool {
-    get {return _storage._paragraphFillUndefined ?? false}
+    get {_storage._paragraphFillUndefined ?? false}
     set {_uniqueStorage()._paragraphFillUndefined = newValue}
   }
   /// Returns true if `paragraphFillUndefined` has been explicitly set.
-  public var hasParagraphFillUndefined: Bool {return _storage._paragraphFillUndefined != nil}
+  public var hasParagraphFillUndefined: Bool {_storage._paragraphFillUndefined != nil}
   /// Clears the value of `paragraphFillUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphFillUndefined() {_uniqueStorage()._paragraphFillUndefined = nil}
 
   public var firstLineIndent: TSSSOS_SpecDoubleArchive {
-    get {return _storage._firstLineIndent ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._firstLineIndent ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._firstLineIndent = newValue}
   }
   /// Returns true if `firstLineIndent` has been explicitly set.
-  public var hasFirstLineIndent: Bool {return _storage._firstLineIndent != nil}
+  public var hasFirstLineIndent: Bool {_storage._firstLineIndent != nil}
   /// Clears the value of `firstLineIndent`. Subsequent reads from it will return its default value.
   public mutating func clearFirstLineIndent() {_uniqueStorage()._firstLineIndent = nil}
 
   public var firstLineIndentUndefined: Bool {
-    get {return _storage._firstLineIndentUndefined ?? false}
+    get {_storage._firstLineIndentUndefined ?? false}
     set {_uniqueStorage()._firstLineIndentUndefined = newValue}
   }
   /// Returns true if `firstLineIndentUndefined` has been explicitly set.
-  public var hasFirstLineIndentUndefined: Bool {return _storage._firstLineIndentUndefined != nil}
+  public var hasFirstLineIndentUndefined: Bool {_storage._firstLineIndentUndefined != nil}
   /// Clears the value of `firstLineIndentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFirstLineIndentUndefined() {_uniqueStorage()._firstLineIndentUndefined = nil}
 
   public var followingParagraphStyle: TSWPSOS_SpecParagraphStyleArchive {
-    get {return _storage._followingParagraphStyle ?? TSWPSOS_SpecParagraphStyleArchive()}
+    get {_storage._followingParagraphStyle ?? TSWPSOS_SpecParagraphStyleArchive()}
     set {_uniqueStorage()._followingParagraphStyle = newValue}
   }
   /// Returns true if `followingParagraphStyle` has been explicitly set.
-  public var hasFollowingParagraphStyle: Bool {return _storage._followingParagraphStyle != nil}
+  public var hasFollowingParagraphStyle: Bool {_storage._followingParagraphStyle != nil}
   /// Clears the value of `followingParagraphStyle`. Subsequent reads from it will return its default value.
   public mutating func clearFollowingParagraphStyle() {_uniqueStorage()._followingParagraphStyle = nil}
 
   public var followingParagraphStyleUndefined: Bool {
-    get {return _storage._followingParagraphStyleUndefined ?? false}
+    get {_storage._followingParagraphStyleUndefined ?? false}
     set {_uniqueStorage()._followingParagraphStyleUndefined = newValue}
   }
   /// Returns true if `followingParagraphStyleUndefined` has been explicitly set.
-  public var hasFollowingParagraphStyleUndefined: Bool {return _storage._followingParagraphStyleUndefined != nil}
+  public var hasFollowingParagraphStyleUndefined: Bool {_storage._followingParagraphStyleUndefined != nil}
   /// Clears the value of `followingParagraphStyleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFollowingParagraphStyleUndefined() {_uniqueStorage()._followingParagraphStyleUndefined = nil}
 
   public var hyphenate: TSSSOS_SpecBoolArchive {
-    get {return _storage._hyphenate ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._hyphenate ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._hyphenate = newValue}
   }
   /// Returns true if `hyphenate` has been explicitly set.
-  public var hasHyphenate: Bool {return _storage._hyphenate != nil}
+  public var hasHyphenate: Bool {_storage._hyphenate != nil}
   /// Clears the value of `hyphenate`. Subsequent reads from it will return its default value.
   public mutating func clearHyphenate() {_uniqueStorage()._hyphenate = nil}
 
   public var hyphenateUndefined: Bool {
-    get {return _storage._hyphenateUndefined ?? false}
+    get {_storage._hyphenateUndefined ?? false}
     set {_uniqueStorage()._hyphenateUndefined = newValue}
   }
   /// Returns true if `hyphenateUndefined` has been explicitly set.
-  public var hasHyphenateUndefined: Bool {return _storage._hyphenateUndefined != nil}
+  public var hasHyphenateUndefined: Bool {_storage._hyphenateUndefined != nil}
   /// Clears the value of `hyphenateUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHyphenateUndefined() {_uniqueStorage()._hyphenateUndefined = nil}
 
   public var initialListStyle: TSWPSOS_SpecListStyleArchive {
-    get {return _storage._initialListStyle ?? TSWPSOS_SpecListStyleArchive()}
+    get {_storage._initialListStyle ?? TSWPSOS_SpecListStyleArchive()}
     set {_uniqueStorage()._initialListStyle = newValue}
   }
   /// Returns true if `initialListStyle` has been explicitly set.
-  public var hasInitialListStyle: Bool {return _storage._initialListStyle != nil}
+  public var hasInitialListStyle: Bool {_storage._initialListStyle != nil}
   /// Clears the value of `initialListStyle`. Subsequent reads from it will return its default value.
   public mutating func clearInitialListStyle() {_uniqueStorage()._initialListStyle = nil}
 
   public var initialListStyleUndefined: Bool {
-    get {return _storage._initialListStyleUndefined ?? false}
+    get {_storage._initialListStyleUndefined ?? false}
     set {_uniqueStorage()._initialListStyleUndefined = newValue}
   }
   /// Returns true if `initialListStyleUndefined` has been explicitly set.
-  public var hasInitialListStyleUndefined: Bool {return _storage._initialListStyleUndefined != nil}
+  public var hasInitialListStyleUndefined: Bool {_storage._initialListStyleUndefined != nil}
   /// Clears the value of `initialListStyleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearInitialListStyleUndefined() {_uniqueStorage()._initialListStyleUndefined = nil}
 
   public var keepLinesTogether: TSSSOS_SpecBoolArchive {
-    get {return _storage._keepLinesTogether ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._keepLinesTogether ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._keepLinesTogether = newValue}
   }
   /// Returns true if `keepLinesTogether` has been explicitly set.
-  public var hasKeepLinesTogether: Bool {return _storage._keepLinesTogether != nil}
+  public var hasKeepLinesTogether: Bool {_storage._keepLinesTogether != nil}
   /// Clears the value of `keepLinesTogether`. Subsequent reads from it will return its default value.
   public mutating func clearKeepLinesTogether() {_uniqueStorage()._keepLinesTogether = nil}
 
   public var keepLinesTogetherUndefined: Bool {
-    get {return _storage._keepLinesTogetherUndefined ?? false}
+    get {_storage._keepLinesTogetherUndefined ?? false}
     set {_uniqueStorage()._keepLinesTogetherUndefined = newValue}
   }
   /// Returns true if `keepLinesTogetherUndefined` has been explicitly set.
-  public var hasKeepLinesTogetherUndefined: Bool {return _storage._keepLinesTogetherUndefined != nil}
+  public var hasKeepLinesTogetherUndefined: Bool {_storage._keepLinesTogetherUndefined != nil}
   /// Clears the value of `keepLinesTogetherUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearKeepLinesTogetherUndefined() {_uniqueStorage()._keepLinesTogetherUndefined = nil}
 
   public var keepWithNext: TSSSOS_SpecBoolArchive {
-    get {return _storage._keepWithNext ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._keepWithNext ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._keepWithNext = newValue}
   }
   /// Returns true if `keepWithNext` has been explicitly set.
-  public var hasKeepWithNext: Bool {return _storage._keepWithNext != nil}
+  public var hasKeepWithNext: Bool {_storage._keepWithNext != nil}
   /// Clears the value of `keepWithNext`. Subsequent reads from it will return its default value.
   public mutating func clearKeepWithNext() {_uniqueStorage()._keepWithNext = nil}
 
   public var keepWithNextUndefined: Bool {
-    get {return _storage._keepWithNextUndefined ?? false}
+    get {_storage._keepWithNextUndefined ?? false}
     set {_uniqueStorage()._keepWithNextUndefined = newValue}
   }
   /// Returns true if `keepWithNextUndefined` has been explicitly set.
-  public var hasKeepWithNextUndefined: Bool {return _storage._keepWithNextUndefined != nil}
+  public var hasKeepWithNextUndefined: Bool {_storage._keepWithNextUndefined != nil}
   /// Clears the value of `keepWithNextUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearKeepWithNextUndefined() {_uniqueStorage()._keepWithNextUndefined = nil}
 
   public var leftIndent: TSSSOS_SpecDoubleArchive {
-    get {return _storage._leftIndent ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._leftIndent ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._leftIndent = newValue}
   }
   /// Returns true if `leftIndent` has been explicitly set.
-  public var hasLeftIndent: Bool {return _storage._leftIndent != nil}
+  public var hasLeftIndent: Bool {_storage._leftIndent != nil}
   /// Clears the value of `leftIndent`. Subsequent reads from it will return its default value.
   public mutating func clearLeftIndent() {_uniqueStorage()._leftIndent = nil}
 
   public var leftIndentUndefined: Bool {
-    get {return _storage._leftIndentUndefined ?? false}
+    get {_storage._leftIndentUndefined ?? false}
     set {_uniqueStorage()._leftIndentUndefined = newValue}
   }
   /// Returns true if `leftIndentUndefined` has been explicitly set.
-  public var hasLeftIndentUndefined: Bool {return _storage._leftIndentUndefined != nil}
+  public var hasLeftIndentUndefined: Bool {_storage._leftIndentUndefined != nil}
   /// Clears the value of `leftIndentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLeftIndentUndefined() {_uniqueStorage()._leftIndentUndefined = nil}
 
   public var lineSpacing: TSWPSOS_SpecLineSpacingArchive {
-    get {return _storage._lineSpacing ?? TSWPSOS_SpecLineSpacingArchive()}
+    get {_storage._lineSpacing ?? TSWPSOS_SpecLineSpacingArchive()}
     set {_uniqueStorage()._lineSpacing = newValue}
   }
   /// Returns true if `lineSpacing` has been explicitly set.
-  public var hasLineSpacing: Bool {return _storage._lineSpacing != nil}
+  public var hasLineSpacing: Bool {_storage._lineSpacing != nil}
   /// Clears the value of `lineSpacing`. Subsequent reads from it will return its default value.
   public mutating func clearLineSpacing() {_uniqueStorage()._lineSpacing = nil}
 
   public var lineSpacingUndefined: Bool {
-    get {return _storage._lineSpacingUndefined ?? false}
+    get {_storage._lineSpacingUndefined ?? false}
     set {_uniqueStorage()._lineSpacingUndefined = newValue}
   }
   /// Returns true if `lineSpacingUndefined` has been explicitly set.
-  public var hasLineSpacingUndefined: Bool {return _storage._lineSpacingUndefined != nil}
+  public var hasLineSpacingUndefined: Bool {_storage._lineSpacingUndefined != nil}
   /// Clears the value of `lineSpacingUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLineSpacingUndefined() {_uniqueStorage()._lineSpacingUndefined = nil}
 
   public var outlineLevel: TSSSOS_SpecIntegerArchive {
-    get {return _storage._outlineLevel ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._outlineLevel ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._outlineLevel = newValue}
   }
   /// Returns true if `outlineLevel` has been explicitly set.
-  public var hasOutlineLevel: Bool {return _storage._outlineLevel != nil}
+  public var hasOutlineLevel: Bool {_storage._outlineLevel != nil}
   /// Clears the value of `outlineLevel`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineLevel() {_uniqueStorage()._outlineLevel = nil}
 
   public var outlineLevelUndefined: Bool {
-    get {return _storage._outlineLevelUndefined ?? false}
+    get {_storage._outlineLevelUndefined ?? false}
     set {_uniqueStorage()._outlineLevelUndefined = newValue}
   }
   /// Returns true if `outlineLevelUndefined` has been explicitly set.
-  public var hasOutlineLevelUndefined: Bool {return _storage._outlineLevelUndefined != nil}
+  public var hasOutlineLevelUndefined: Bool {_storage._outlineLevelUndefined != nil}
   /// Clears the value of `outlineLevelUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineLevelUndefined() {_uniqueStorage()._outlineLevelUndefined = nil}
 
   public var outlineStyleType: TSSSOS_SpecIntegerArchive {
-    get {return _storage._outlineStyleType ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._outlineStyleType ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._outlineStyleType = newValue}
   }
   /// Returns true if `outlineStyleType` has been explicitly set.
-  public var hasOutlineStyleType: Bool {return _storage._outlineStyleType != nil}
+  public var hasOutlineStyleType: Bool {_storage._outlineStyleType != nil}
   /// Clears the value of `outlineStyleType`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineStyleType() {_uniqueStorage()._outlineStyleType = nil}
 
   public var outlineStyleTypeUndefined: Bool {
-    get {return _storage._outlineStyleTypeUndefined ?? false}
+    get {_storage._outlineStyleTypeUndefined ?? false}
     set {_uniqueStorage()._outlineStyleTypeUndefined = newValue}
   }
   /// Returns true if `outlineStyleTypeUndefined` has been explicitly set.
-  public var hasOutlineStyleTypeUndefined: Bool {return _storage._outlineStyleTypeUndefined != nil}
+  public var hasOutlineStyleTypeUndefined: Bool {_storage._outlineStyleTypeUndefined != nil}
   /// Clears the value of `outlineStyleTypeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineStyleTypeUndefined() {_uniqueStorage()._outlineStyleTypeUndefined = nil}
 
   public var pageBreakBefore: TSSSOS_SpecBoolArchive {
-    get {return _storage._pageBreakBefore ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._pageBreakBefore ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._pageBreakBefore = newValue}
   }
   /// Returns true if `pageBreakBefore` has been explicitly set.
-  public var hasPageBreakBefore: Bool {return _storage._pageBreakBefore != nil}
+  public var hasPageBreakBefore: Bool {_storage._pageBreakBefore != nil}
   /// Clears the value of `pageBreakBefore`. Subsequent reads from it will return its default value.
   public mutating func clearPageBreakBefore() {_uniqueStorage()._pageBreakBefore = nil}
 
   public var pageBreakBeforeUndefined: Bool {
-    get {return _storage._pageBreakBeforeUndefined ?? false}
+    get {_storage._pageBreakBeforeUndefined ?? false}
     set {_uniqueStorage()._pageBreakBeforeUndefined = newValue}
   }
   /// Returns true if `pageBreakBeforeUndefined` has been explicitly set.
-  public var hasPageBreakBeforeUndefined: Bool {return _storage._pageBreakBeforeUndefined != nil}
+  public var hasPageBreakBeforeUndefined: Bool {_storage._pageBreakBeforeUndefined != nil}
   /// Clears the value of `pageBreakBeforeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearPageBreakBeforeUndefined() {_uniqueStorage()._pageBreakBeforeUndefined = nil}
 
   public var borderPositions: TSSSOS_SpecIntegerArchive {
-    get {return _storage._borderPositions ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._borderPositions ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._borderPositions = newValue}
   }
   /// Returns true if `borderPositions` has been explicitly set.
-  public var hasBorderPositions: Bool {return _storage._borderPositions != nil}
+  public var hasBorderPositions: Bool {_storage._borderPositions != nil}
   /// Clears the value of `borderPositions`. Subsequent reads from it will return its default value.
   public mutating func clearBorderPositions() {_uniqueStorage()._borderPositions = nil}
 
   public var borderPositionsUndefined: Bool {
-    get {return _storage._borderPositionsUndefined ?? false}
+    get {_storage._borderPositionsUndefined ?? false}
     set {_uniqueStorage()._borderPositionsUndefined = newValue}
   }
   /// Returns true if `borderPositionsUndefined` has been explicitly set.
-  public var hasBorderPositionsUndefined: Bool {return _storage._borderPositionsUndefined != nil}
+  public var hasBorderPositionsUndefined: Bool {_storage._borderPositionsUndefined != nil}
   /// Clears the value of `borderPositionsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBorderPositionsUndefined() {_uniqueStorage()._borderPositionsUndefined = nil}
 
   public var paragraphRuleOffset: TSWPSOS_SpecRuleOffsetArchive {
-    get {return _storage._paragraphRuleOffset ?? TSWPSOS_SpecRuleOffsetArchive()}
+    get {_storage._paragraphRuleOffset ?? TSWPSOS_SpecRuleOffsetArchive()}
     set {_uniqueStorage()._paragraphRuleOffset = newValue}
   }
   /// Returns true if `paragraphRuleOffset` has been explicitly set.
-  public var hasParagraphRuleOffset: Bool {return _storage._paragraphRuleOffset != nil}
+  public var hasParagraphRuleOffset: Bool {_storage._paragraphRuleOffset != nil}
   /// Clears the value of `paragraphRuleOffset`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphRuleOffset() {_uniqueStorage()._paragraphRuleOffset = nil}
 
   public var paragraphRuleOffsetUndefined: Bool {
-    get {return _storage._paragraphRuleOffsetUndefined ?? false}
+    get {_storage._paragraphRuleOffsetUndefined ?? false}
     set {_uniqueStorage()._paragraphRuleOffsetUndefined = newValue}
   }
   /// Returns true if `paragraphRuleOffsetUndefined` has been explicitly set.
-  public var hasParagraphRuleOffsetUndefined: Bool {return _storage._paragraphRuleOffsetUndefined != nil}
+  public var hasParagraphRuleOffsetUndefined: Bool {_storage._paragraphRuleOffsetUndefined != nil}
   /// Clears the value of `paragraphRuleOffsetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphRuleOffsetUndefined() {_uniqueStorage()._paragraphRuleOffsetUndefined = nil}
 
   public var roundedCorners: TSSSOS_SpecBoolArchive {
-    get {return _storage._roundedCorners ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._roundedCorners ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._roundedCorners = newValue}
   }
   /// Returns true if `roundedCorners` has been explicitly set.
-  public var hasRoundedCorners: Bool {return _storage._roundedCorners != nil}
+  public var hasRoundedCorners: Bool {_storage._roundedCorners != nil}
   /// Clears the value of `roundedCorners`. Subsequent reads from it will return its default value.
   public mutating func clearRoundedCorners() {_uniqueStorage()._roundedCorners = nil}
 
   public var roundedCornersUndefined: Bool {
-    get {return _storage._roundedCornersUndefined ?? false}
+    get {_storage._roundedCornersUndefined ?? false}
     set {_uniqueStorage()._roundedCornersUndefined = newValue}
   }
   /// Returns true if `roundedCornersUndefined` has been explicitly set.
-  public var hasRoundedCornersUndefined: Bool {return _storage._roundedCornersUndefined != nil}
+  public var hasRoundedCornersUndefined: Bool {_storage._roundedCornersUndefined != nil}
   /// Clears the value of `roundedCornersUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearRoundedCornersUndefined() {_uniqueStorage()._roundedCornersUndefined = nil}
 
   public var paragraphRuleWidth: TSSSOS_SpecDoubleArchive {
-    get {return _storage._paragraphRuleWidth ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._paragraphRuleWidth ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._paragraphRuleWidth = newValue}
   }
   /// Returns true if `paragraphRuleWidth` has been explicitly set.
-  public var hasParagraphRuleWidth: Bool {return _storage._paragraphRuleWidth != nil}
+  public var hasParagraphRuleWidth: Bool {_storage._paragraphRuleWidth != nil}
   /// Clears the value of `paragraphRuleWidth`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphRuleWidth() {_uniqueStorage()._paragraphRuleWidth = nil}
 
   public var paragraphRuleWidthUndefined: Bool {
-    get {return _storage._paragraphRuleWidthUndefined ?? false}
+    get {_storage._paragraphRuleWidthUndefined ?? false}
     set {_uniqueStorage()._paragraphRuleWidthUndefined = newValue}
   }
   /// Returns true if `paragraphRuleWidthUndefined` has been explicitly set.
-  public var hasParagraphRuleWidthUndefined: Bool {return _storage._paragraphRuleWidthUndefined != nil}
+  public var hasParagraphRuleWidthUndefined: Bool {_storage._paragraphRuleWidthUndefined != nil}
   /// Clears the value of `paragraphRuleWidthUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphRuleWidthUndefined() {_uniqueStorage()._paragraphRuleWidthUndefined = nil}
 
   public var rightIndent: TSSSOS_SpecDoubleArchive {
-    get {return _storage._rightIndent ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._rightIndent ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._rightIndent = newValue}
   }
   /// Returns true if `rightIndent` has been explicitly set.
-  public var hasRightIndent: Bool {return _storage._rightIndent != nil}
+  public var hasRightIndent: Bool {_storage._rightIndent != nil}
   /// Clears the value of `rightIndent`. Subsequent reads from it will return its default value.
   public mutating func clearRightIndent() {_uniqueStorage()._rightIndent = nil}
 
   public var rightIndentUndefined: Bool {
-    get {return _storage._rightIndentUndefined ?? false}
+    get {_storage._rightIndentUndefined ?? false}
     set {_uniqueStorage()._rightIndentUndefined = newValue}
   }
   /// Returns true if `rightIndentUndefined` has been explicitly set.
-  public var hasRightIndentUndefined: Bool {return _storage._rightIndentUndefined != nil}
+  public var hasRightIndentUndefined: Bool {_storage._rightIndentUndefined != nil}
   /// Clears the value of `rightIndentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearRightIndentUndefined() {_uniqueStorage()._rightIndentUndefined = nil}
 
   public var spaceAfter: TSSSOS_SpecDoubleArchive {
-    get {return _storage._spaceAfter ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._spaceAfter ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._spaceAfter = newValue}
   }
   /// Returns true if `spaceAfter` has been explicitly set.
-  public var hasSpaceAfter: Bool {return _storage._spaceAfter != nil}
+  public var hasSpaceAfter: Bool {_storage._spaceAfter != nil}
   /// Clears the value of `spaceAfter`. Subsequent reads from it will return its default value.
   public mutating func clearSpaceAfter() {_uniqueStorage()._spaceAfter = nil}
 
   public var spaceAfterUndefined: Bool {
-    get {return _storage._spaceAfterUndefined ?? false}
+    get {_storage._spaceAfterUndefined ?? false}
     set {_uniqueStorage()._spaceAfterUndefined = newValue}
   }
   /// Returns true if `spaceAfterUndefined` has been explicitly set.
-  public var hasSpaceAfterUndefined: Bool {return _storage._spaceAfterUndefined != nil}
+  public var hasSpaceAfterUndefined: Bool {_storage._spaceAfterUndefined != nil}
   /// Clears the value of `spaceAfterUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSpaceAfterUndefined() {_uniqueStorage()._spaceAfterUndefined = nil}
 
   public var spaceBefore: TSSSOS_SpecDoubleArchive {
-    get {return _storage._spaceBefore ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._spaceBefore ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._spaceBefore = newValue}
   }
   /// Returns true if `spaceBefore` has been explicitly set.
-  public var hasSpaceBefore: Bool {return _storage._spaceBefore != nil}
+  public var hasSpaceBefore: Bool {_storage._spaceBefore != nil}
   /// Clears the value of `spaceBefore`. Subsequent reads from it will return its default value.
   public mutating func clearSpaceBefore() {_uniqueStorage()._spaceBefore = nil}
 
   public var spaceBeforeUndefined: Bool {
-    get {return _storage._spaceBeforeUndefined ?? false}
+    get {_storage._spaceBeforeUndefined ?? false}
     set {_uniqueStorage()._spaceBeforeUndefined = newValue}
   }
   /// Returns true if `spaceBeforeUndefined` has been explicitly set.
-  public var hasSpaceBeforeUndefined: Bool {return _storage._spaceBeforeUndefined != nil}
+  public var hasSpaceBeforeUndefined: Bool {_storage._spaceBeforeUndefined != nil}
   /// Clears the value of `spaceBeforeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSpaceBeforeUndefined() {_uniqueStorage()._spaceBeforeUndefined = nil}
 
   public var paragraphStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._paragraphStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._paragraphStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._paragraphStroke = newValue}
   }
   /// Returns true if `paragraphStroke` has been explicitly set.
-  public var hasParagraphStroke: Bool {return _storage._paragraphStroke != nil}
+  public var hasParagraphStroke: Bool {_storage._paragraphStroke != nil}
   /// Clears the value of `paragraphStroke`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphStroke() {_uniqueStorage()._paragraphStroke = nil}
 
   public var paragraphStrokeUndefined: Bool {
-    get {return _storage._paragraphStrokeUndefined ?? false}
+    get {_storage._paragraphStrokeUndefined ?? false}
     set {_uniqueStorage()._paragraphStrokeUndefined = newValue}
   }
   /// Returns true if `paragraphStrokeUndefined` has been explicitly set.
-  public var hasParagraphStrokeUndefined: Bool {return _storage._paragraphStrokeUndefined != nil}
+  public var hasParagraphStrokeUndefined: Bool {_storage._paragraphStrokeUndefined != nil}
   /// Clears the value of `paragraphStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphStrokeUndefined() {_uniqueStorage()._paragraphStrokeUndefined = nil}
 
   public var tabs: TSWPSOS_SpecTabsArchive {
-    get {return _storage._tabs ?? TSWPSOS_SpecTabsArchive()}
+    get {_storage._tabs ?? TSWPSOS_SpecTabsArchive()}
     set {_uniqueStorage()._tabs = newValue}
   }
   /// Returns true if `tabs` has been explicitly set.
-  public var hasTabs: Bool {return _storage._tabs != nil}
+  public var hasTabs: Bool {_storage._tabs != nil}
   /// Clears the value of `tabs`. Subsequent reads from it will return its default value.
   public mutating func clearTabs() {_uniqueStorage()._tabs = nil}
 
   public var tabsUndefined: Bool {
-    get {return _storage._tabsUndefined ?? false}
+    get {_storage._tabsUndefined ?? false}
     set {_uniqueStorage()._tabsUndefined = newValue}
   }
   /// Returns true if `tabsUndefined` has been explicitly set.
-  public var hasTabsUndefined: Bool {return _storage._tabsUndefined != nil}
+  public var hasTabsUndefined: Bool {_storage._tabsUndefined != nil}
   /// Clears the value of `tabsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTabsUndefined() {_uniqueStorage()._tabsUndefined = nil}
 
   public var widowControl: TSSSOS_SpecIntegerArchive {
-    get {return _storage._widowControl ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._widowControl ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._widowControl = newValue}
   }
   /// Returns true if `widowControl` has been explicitly set.
-  public var hasWidowControl: Bool {return _storage._widowControl != nil}
+  public var hasWidowControl: Bool {_storage._widowControl != nil}
   /// Clears the value of `widowControl`. Subsequent reads from it will return its default value.
   public mutating func clearWidowControl() {_uniqueStorage()._widowControl = nil}
 
   public var widowControlUndefined: Bool {
-    get {return _storage._widowControlUndefined ?? false}
+    get {_storage._widowControlUndefined ?? false}
     set {_uniqueStorage()._widowControlUndefined = newValue}
   }
   /// Returns true if `widowControlUndefined` has been explicitly set.
-  public var hasWidowControlUndefined: Bool {return _storage._widowControlUndefined != nil}
+  public var hasWidowControlUndefined: Bool {_storage._widowControlUndefined != nil}
   /// Clears the value of `widowControlUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearWidowControlUndefined() {_uniqueStorage()._widowControlUndefined = nil}
 
   public var showInBookmarksList: TSSSOS_SpecBoolArchive {
-    get {return _storage._showInBookmarksList ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._showInBookmarksList ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._showInBookmarksList = newValue}
   }
   /// Returns true if `showInBookmarksList` has been explicitly set.
-  public var hasShowInBookmarksList: Bool {return _storage._showInBookmarksList != nil}
+  public var hasShowInBookmarksList: Bool {_storage._showInBookmarksList != nil}
   /// Clears the value of `showInBookmarksList`. Subsequent reads from it will return its default value.
   public mutating func clearShowInBookmarksList() {_uniqueStorage()._showInBookmarksList = nil}
 
   public var showInBookmarksListUndefined: Bool {
-    get {return _storage._showInBookmarksListUndefined ?? false}
+    get {_storage._showInBookmarksListUndefined ?? false}
     set {_uniqueStorage()._showInBookmarksListUndefined = newValue}
   }
   /// Returns true if `showInBookmarksListUndefined` has been explicitly set.
-  public var hasShowInBookmarksListUndefined: Bool {return _storage._showInBookmarksListUndefined != nil}
+  public var hasShowInBookmarksListUndefined: Bool {_storage._showInBookmarksListUndefined != nil}
   /// Clears the value of `showInBookmarksListUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShowInBookmarksListUndefined() {_uniqueStorage()._showInBookmarksListUndefined = nil}
 
   public var showInTOCNavigator: TSSSOS_SpecBoolArchive {
-    get {return _storage._showInTOCNavigator ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._showInTOCNavigator ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._showInTOCNavigator = newValue}
   }
   /// Returns true if `showInTOCNavigator` has been explicitly set.
-  public var hasShowInTOCNavigator: Bool {return _storage._showInTOCNavigator != nil}
+  public var hasShowInTOCNavigator: Bool {_storage._showInTOCNavigator != nil}
   /// Clears the value of `showInTOCNavigator`. Subsequent reads from it will return its default value.
   public mutating func clearShowInTOCNavigator() {_uniqueStorage()._showInTOCNavigator = nil}
 
   public var showInTOCNavigatorUndefined: Bool {
-    get {return _storage._showInTOCNavigatorUndefined ?? false}
+    get {_storage._showInTOCNavigatorUndefined ?? false}
     set {_uniqueStorage()._showInTOCNavigatorUndefined = newValue}
   }
   /// Returns true if `showInTOCNavigatorUndefined` has been explicitly set.
-  public var hasShowInTOCNavigatorUndefined: Bool {return _storage._showInTOCNavigatorUndefined != nil}
+  public var hasShowInTOCNavigatorUndefined: Bool {_storage._showInTOCNavigatorUndefined != nil}
   /// Clears the value of `showInTOCNavigatorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShowInTOCNavigatorUndefined() {_uniqueStorage()._showInTOCNavigatorUndefined = nil}
 
@@ -2549,503 +2549,503 @@ public struct TSWPSOS_ParagraphSpecificStylePropertyChangeSetArchive: @unchecked
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWPSOS_ParagraphStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSWPSOS_ParagraphStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWPSOS_CharacterStylePropertyChangeSetArchive {
-    get {return _storage._super ?? TSWPSOS_CharacterStylePropertyChangeSetArchive()}
+    get {_storage._super ?? TSWPSOS_CharacterStylePropertyChangeSetArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var alignment: TSSSOS_SpecIntegerArchive {
-    get {return _storage._alignment ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._alignment ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._alignment = newValue}
   }
   /// Returns true if `alignment` has been explicitly set.
-  public var hasAlignment: Bool {return _storage._alignment != nil}
+  public var hasAlignment: Bool {_storage._alignment != nil}
   /// Clears the value of `alignment`. Subsequent reads from it will return its default value.
   public mutating func clearAlignment() {_uniqueStorage()._alignment = nil}
 
   public var alignmentUndefined: Bool {
-    get {return _storage._alignmentUndefined ?? false}
+    get {_storage._alignmentUndefined ?? false}
     set {_uniqueStorage()._alignmentUndefined = newValue}
   }
   /// Returns true if `alignmentUndefined` has been explicitly set.
-  public var hasAlignmentUndefined: Bool {return _storage._alignmentUndefined != nil}
+  public var hasAlignmentUndefined: Bool {_storage._alignmentUndefined != nil}
   /// Clears the value of `alignmentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearAlignmentUndefined() {_uniqueStorage()._alignmentUndefined = nil}
 
   public var decimalTab: TSSSOS_SpecStringArchive {
-    get {return _storage._decimalTab ?? TSSSOS_SpecStringArchive()}
+    get {_storage._decimalTab ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._decimalTab = newValue}
   }
   /// Returns true if `decimalTab` has been explicitly set.
-  public var hasDecimalTab: Bool {return _storage._decimalTab != nil}
+  public var hasDecimalTab: Bool {_storage._decimalTab != nil}
   /// Clears the value of `decimalTab`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalTab() {_uniqueStorage()._decimalTab = nil}
 
   public var decimalTabUndefined: Bool {
-    get {return _storage._decimalTabUndefined ?? false}
+    get {_storage._decimalTabUndefined ?? false}
     set {_uniqueStorage()._decimalTabUndefined = newValue}
   }
   /// Returns true if `decimalTabUndefined` has been explicitly set.
-  public var hasDecimalTabUndefined: Bool {return _storage._decimalTabUndefined != nil}
+  public var hasDecimalTabUndefined: Bool {_storage._decimalTabUndefined != nil}
   /// Clears the value of `decimalTabUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalTabUndefined() {_uniqueStorage()._decimalTabUndefined = nil}
 
   public var defaultTabStops: TSSSOS_SpecDoubleArchive {
-    get {return _storage._defaultTabStops ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._defaultTabStops ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._defaultTabStops = newValue}
   }
   /// Returns true if `defaultTabStops` has been explicitly set.
-  public var hasDefaultTabStops: Bool {return _storage._defaultTabStops != nil}
+  public var hasDefaultTabStops: Bool {_storage._defaultTabStops != nil}
   /// Clears the value of `defaultTabStops`. Subsequent reads from it will return its default value.
   public mutating func clearDefaultTabStops() {_uniqueStorage()._defaultTabStops = nil}
 
   public var defaultTabStopsUndefined: Bool {
-    get {return _storage._defaultTabStopsUndefined ?? false}
+    get {_storage._defaultTabStopsUndefined ?? false}
     set {_uniqueStorage()._defaultTabStopsUndefined = newValue}
   }
   /// Returns true if `defaultTabStopsUndefined` has been explicitly set.
-  public var hasDefaultTabStopsUndefined: Bool {return _storage._defaultTabStopsUndefined != nil}
+  public var hasDefaultTabStopsUndefined: Bool {_storage._defaultTabStopsUndefined != nil}
   /// Clears the value of `defaultTabStopsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDefaultTabStopsUndefined() {_uniqueStorage()._defaultTabStopsUndefined = nil}
 
   public var paragraphFill: TSSSOS_SpecColorArchive {
-    get {return _storage._paragraphFill ?? TSSSOS_SpecColorArchive()}
+    get {_storage._paragraphFill ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._paragraphFill = newValue}
   }
   /// Returns true if `paragraphFill` has been explicitly set.
-  public var hasParagraphFill: Bool {return _storage._paragraphFill != nil}
+  public var hasParagraphFill: Bool {_storage._paragraphFill != nil}
   /// Clears the value of `paragraphFill`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphFill() {_uniqueStorage()._paragraphFill = nil}
 
   public var paragraphFillUndefined: Bool {
-    get {return _storage._paragraphFillUndefined ?? false}
+    get {_storage._paragraphFillUndefined ?? false}
     set {_uniqueStorage()._paragraphFillUndefined = newValue}
   }
   /// Returns true if `paragraphFillUndefined` has been explicitly set.
-  public var hasParagraphFillUndefined: Bool {return _storage._paragraphFillUndefined != nil}
+  public var hasParagraphFillUndefined: Bool {_storage._paragraphFillUndefined != nil}
   /// Clears the value of `paragraphFillUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphFillUndefined() {_uniqueStorage()._paragraphFillUndefined = nil}
 
   public var firstLineIndent: TSSSOS_SpecDoubleArchive {
-    get {return _storage._firstLineIndent ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._firstLineIndent ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._firstLineIndent = newValue}
   }
   /// Returns true if `firstLineIndent` has been explicitly set.
-  public var hasFirstLineIndent: Bool {return _storage._firstLineIndent != nil}
+  public var hasFirstLineIndent: Bool {_storage._firstLineIndent != nil}
   /// Clears the value of `firstLineIndent`. Subsequent reads from it will return its default value.
   public mutating func clearFirstLineIndent() {_uniqueStorage()._firstLineIndent = nil}
 
   public var firstLineIndentUndefined: Bool {
-    get {return _storage._firstLineIndentUndefined ?? false}
+    get {_storage._firstLineIndentUndefined ?? false}
     set {_uniqueStorage()._firstLineIndentUndefined = newValue}
   }
   /// Returns true if `firstLineIndentUndefined` has been explicitly set.
-  public var hasFirstLineIndentUndefined: Bool {return _storage._firstLineIndentUndefined != nil}
+  public var hasFirstLineIndentUndefined: Bool {_storage._firstLineIndentUndefined != nil}
   /// Clears the value of `firstLineIndentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFirstLineIndentUndefined() {_uniqueStorage()._firstLineIndentUndefined = nil}
 
   public var followingParagraphStyle: TSWPSOS_SpecParagraphStyleArchive {
-    get {return _storage._followingParagraphStyle ?? TSWPSOS_SpecParagraphStyleArchive()}
+    get {_storage._followingParagraphStyle ?? TSWPSOS_SpecParagraphStyleArchive()}
     set {_uniqueStorage()._followingParagraphStyle = newValue}
   }
   /// Returns true if `followingParagraphStyle` has been explicitly set.
-  public var hasFollowingParagraphStyle: Bool {return _storage._followingParagraphStyle != nil}
+  public var hasFollowingParagraphStyle: Bool {_storage._followingParagraphStyle != nil}
   /// Clears the value of `followingParagraphStyle`. Subsequent reads from it will return its default value.
   public mutating func clearFollowingParagraphStyle() {_uniqueStorage()._followingParagraphStyle = nil}
 
   public var followingParagraphStyleUndefined: Bool {
-    get {return _storage._followingParagraphStyleUndefined ?? false}
+    get {_storage._followingParagraphStyleUndefined ?? false}
     set {_uniqueStorage()._followingParagraphStyleUndefined = newValue}
   }
   /// Returns true if `followingParagraphStyleUndefined` has been explicitly set.
-  public var hasFollowingParagraphStyleUndefined: Bool {return _storage._followingParagraphStyleUndefined != nil}
+  public var hasFollowingParagraphStyleUndefined: Bool {_storage._followingParagraphStyleUndefined != nil}
   /// Clears the value of `followingParagraphStyleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFollowingParagraphStyleUndefined() {_uniqueStorage()._followingParagraphStyleUndefined = nil}
 
   public var hyphenate: TSSSOS_SpecBoolArchive {
-    get {return _storage._hyphenate ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._hyphenate ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._hyphenate = newValue}
   }
   /// Returns true if `hyphenate` has been explicitly set.
-  public var hasHyphenate: Bool {return _storage._hyphenate != nil}
+  public var hasHyphenate: Bool {_storage._hyphenate != nil}
   /// Clears the value of `hyphenate`. Subsequent reads from it will return its default value.
   public mutating func clearHyphenate() {_uniqueStorage()._hyphenate = nil}
 
   public var hyphenateUndefined: Bool {
-    get {return _storage._hyphenateUndefined ?? false}
+    get {_storage._hyphenateUndefined ?? false}
     set {_uniqueStorage()._hyphenateUndefined = newValue}
   }
   /// Returns true if `hyphenateUndefined` has been explicitly set.
-  public var hasHyphenateUndefined: Bool {return _storage._hyphenateUndefined != nil}
+  public var hasHyphenateUndefined: Bool {_storage._hyphenateUndefined != nil}
   /// Clears the value of `hyphenateUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHyphenateUndefined() {_uniqueStorage()._hyphenateUndefined = nil}
 
   public var initialListStyle: TSWPSOS_SpecListStyleArchive {
-    get {return _storage._initialListStyle ?? TSWPSOS_SpecListStyleArchive()}
+    get {_storage._initialListStyle ?? TSWPSOS_SpecListStyleArchive()}
     set {_uniqueStorage()._initialListStyle = newValue}
   }
   /// Returns true if `initialListStyle` has been explicitly set.
-  public var hasInitialListStyle: Bool {return _storage._initialListStyle != nil}
+  public var hasInitialListStyle: Bool {_storage._initialListStyle != nil}
   /// Clears the value of `initialListStyle`. Subsequent reads from it will return its default value.
   public mutating func clearInitialListStyle() {_uniqueStorage()._initialListStyle = nil}
 
   public var initialListStyleUndefined: Bool {
-    get {return _storage._initialListStyleUndefined ?? false}
+    get {_storage._initialListStyleUndefined ?? false}
     set {_uniqueStorage()._initialListStyleUndefined = newValue}
   }
   /// Returns true if `initialListStyleUndefined` has been explicitly set.
-  public var hasInitialListStyleUndefined: Bool {return _storage._initialListStyleUndefined != nil}
+  public var hasInitialListStyleUndefined: Bool {_storage._initialListStyleUndefined != nil}
   /// Clears the value of `initialListStyleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearInitialListStyleUndefined() {_uniqueStorage()._initialListStyleUndefined = nil}
 
   public var keepLinesTogether: TSSSOS_SpecBoolArchive {
-    get {return _storage._keepLinesTogether ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._keepLinesTogether ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._keepLinesTogether = newValue}
   }
   /// Returns true if `keepLinesTogether` has been explicitly set.
-  public var hasKeepLinesTogether: Bool {return _storage._keepLinesTogether != nil}
+  public var hasKeepLinesTogether: Bool {_storage._keepLinesTogether != nil}
   /// Clears the value of `keepLinesTogether`. Subsequent reads from it will return its default value.
   public mutating func clearKeepLinesTogether() {_uniqueStorage()._keepLinesTogether = nil}
 
   public var keepLinesTogetherUndefined: Bool {
-    get {return _storage._keepLinesTogetherUndefined ?? false}
+    get {_storage._keepLinesTogetherUndefined ?? false}
     set {_uniqueStorage()._keepLinesTogetherUndefined = newValue}
   }
   /// Returns true if `keepLinesTogetherUndefined` has been explicitly set.
-  public var hasKeepLinesTogetherUndefined: Bool {return _storage._keepLinesTogetherUndefined != nil}
+  public var hasKeepLinesTogetherUndefined: Bool {_storage._keepLinesTogetherUndefined != nil}
   /// Clears the value of `keepLinesTogetherUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearKeepLinesTogetherUndefined() {_uniqueStorage()._keepLinesTogetherUndefined = nil}
 
   public var keepWithNext: TSSSOS_SpecBoolArchive {
-    get {return _storage._keepWithNext ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._keepWithNext ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._keepWithNext = newValue}
   }
   /// Returns true if `keepWithNext` has been explicitly set.
-  public var hasKeepWithNext: Bool {return _storage._keepWithNext != nil}
+  public var hasKeepWithNext: Bool {_storage._keepWithNext != nil}
   /// Clears the value of `keepWithNext`. Subsequent reads from it will return its default value.
   public mutating func clearKeepWithNext() {_uniqueStorage()._keepWithNext = nil}
 
   public var keepWithNextUndefined: Bool {
-    get {return _storage._keepWithNextUndefined ?? false}
+    get {_storage._keepWithNextUndefined ?? false}
     set {_uniqueStorage()._keepWithNextUndefined = newValue}
   }
   /// Returns true if `keepWithNextUndefined` has been explicitly set.
-  public var hasKeepWithNextUndefined: Bool {return _storage._keepWithNextUndefined != nil}
+  public var hasKeepWithNextUndefined: Bool {_storage._keepWithNextUndefined != nil}
   /// Clears the value of `keepWithNextUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearKeepWithNextUndefined() {_uniqueStorage()._keepWithNextUndefined = nil}
 
   public var leftIndent: TSSSOS_SpecDoubleArchive {
-    get {return _storage._leftIndent ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._leftIndent ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._leftIndent = newValue}
   }
   /// Returns true if `leftIndent` has been explicitly set.
-  public var hasLeftIndent: Bool {return _storage._leftIndent != nil}
+  public var hasLeftIndent: Bool {_storage._leftIndent != nil}
   /// Clears the value of `leftIndent`. Subsequent reads from it will return its default value.
   public mutating func clearLeftIndent() {_uniqueStorage()._leftIndent = nil}
 
   public var leftIndentUndefined: Bool {
-    get {return _storage._leftIndentUndefined ?? false}
+    get {_storage._leftIndentUndefined ?? false}
     set {_uniqueStorage()._leftIndentUndefined = newValue}
   }
   /// Returns true if `leftIndentUndefined` has been explicitly set.
-  public var hasLeftIndentUndefined: Bool {return _storage._leftIndentUndefined != nil}
+  public var hasLeftIndentUndefined: Bool {_storage._leftIndentUndefined != nil}
   /// Clears the value of `leftIndentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLeftIndentUndefined() {_uniqueStorage()._leftIndentUndefined = nil}
 
   public var lineSpacing: TSWPSOS_SpecLineSpacingArchive {
-    get {return _storage._lineSpacing ?? TSWPSOS_SpecLineSpacingArchive()}
+    get {_storage._lineSpacing ?? TSWPSOS_SpecLineSpacingArchive()}
     set {_uniqueStorage()._lineSpacing = newValue}
   }
   /// Returns true if `lineSpacing` has been explicitly set.
-  public var hasLineSpacing: Bool {return _storage._lineSpacing != nil}
+  public var hasLineSpacing: Bool {_storage._lineSpacing != nil}
   /// Clears the value of `lineSpacing`. Subsequent reads from it will return its default value.
   public mutating func clearLineSpacing() {_uniqueStorage()._lineSpacing = nil}
 
   public var lineSpacingUndefined: Bool {
-    get {return _storage._lineSpacingUndefined ?? false}
+    get {_storage._lineSpacingUndefined ?? false}
     set {_uniqueStorage()._lineSpacingUndefined = newValue}
   }
   /// Returns true if `lineSpacingUndefined` has been explicitly set.
-  public var hasLineSpacingUndefined: Bool {return _storage._lineSpacingUndefined != nil}
+  public var hasLineSpacingUndefined: Bool {_storage._lineSpacingUndefined != nil}
   /// Clears the value of `lineSpacingUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLineSpacingUndefined() {_uniqueStorage()._lineSpacingUndefined = nil}
 
   public var outlineLevel: TSSSOS_SpecIntegerArchive {
-    get {return _storage._outlineLevel ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._outlineLevel ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._outlineLevel = newValue}
   }
   /// Returns true if `outlineLevel` has been explicitly set.
-  public var hasOutlineLevel: Bool {return _storage._outlineLevel != nil}
+  public var hasOutlineLevel: Bool {_storage._outlineLevel != nil}
   /// Clears the value of `outlineLevel`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineLevel() {_uniqueStorage()._outlineLevel = nil}
 
   public var outlineLevelUndefined: Bool {
-    get {return _storage._outlineLevelUndefined ?? false}
+    get {_storage._outlineLevelUndefined ?? false}
     set {_uniqueStorage()._outlineLevelUndefined = newValue}
   }
   /// Returns true if `outlineLevelUndefined` has been explicitly set.
-  public var hasOutlineLevelUndefined: Bool {return _storage._outlineLevelUndefined != nil}
+  public var hasOutlineLevelUndefined: Bool {_storage._outlineLevelUndefined != nil}
   /// Clears the value of `outlineLevelUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineLevelUndefined() {_uniqueStorage()._outlineLevelUndefined = nil}
 
   public var outlineStyleType: TSSSOS_SpecIntegerArchive {
-    get {return _storage._outlineStyleType ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._outlineStyleType ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._outlineStyleType = newValue}
   }
   /// Returns true if `outlineStyleType` has been explicitly set.
-  public var hasOutlineStyleType: Bool {return _storage._outlineStyleType != nil}
+  public var hasOutlineStyleType: Bool {_storage._outlineStyleType != nil}
   /// Clears the value of `outlineStyleType`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineStyleType() {_uniqueStorage()._outlineStyleType = nil}
 
   public var outlineStyleTypeUndefined: Bool {
-    get {return _storage._outlineStyleTypeUndefined ?? false}
+    get {_storage._outlineStyleTypeUndefined ?? false}
     set {_uniqueStorage()._outlineStyleTypeUndefined = newValue}
   }
   /// Returns true if `outlineStyleTypeUndefined` has been explicitly set.
-  public var hasOutlineStyleTypeUndefined: Bool {return _storage._outlineStyleTypeUndefined != nil}
+  public var hasOutlineStyleTypeUndefined: Bool {_storage._outlineStyleTypeUndefined != nil}
   /// Clears the value of `outlineStyleTypeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineStyleTypeUndefined() {_uniqueStorage()._outlineStyleTypeUndefined = nil}
 
   public var pageBreakBefore: TSSSOS_SpecBoolArchive {
-    get {return _storage._pageBreakBefore ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._pageBreakBefore ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._pageBreakBefore = newValue}
   }
   /// Returns true if `pageBreakBefore` has been explicitly set.
-  public var hasPageBreakBefore: Bool {return _storage._pageBreakBefore != nil}
+  public var hasPageBreakBefore: Bool {_storage._pageBreakBefore != nil}
   /// Clears the value of `pageBreakBefore`. Subsequent reads from it will return its default value.
   public mutating func clearPageBreakBefore() {_uniqueStorage()._pageBreakBefore = nil}
 
   public var pageBreakBeforeUndefined: Bool {
-    get {return _storage._pageBreakBeforeUndefined ?? false}
+    get {_storage._pageBreakBeforeUndefined ?? false}
     set {_uniqueStorage()._pageBreakBeforeUndefined = newValue}
   }
   /// Returns true if `pageBreakBeforeUndefined` has been explicitly set.
-  public var hasPageBreakBeforeUndefined: Bool {return _storage._pageBreakBeforeUndefined != nil}
+  public var hasPageBreakBeforeUndefined: Bool {_storage._pageBreakBeforeUndefined != nil}
   /// Clears the value of `pageBreakBeforeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearPageBreakBeforeUndefined() {_uniqueStorage()._pageBreakBeforeUndefined = nil}
 
   public var borderPositions: TSSSOS_SpecIntegerArchive {
-    get {return _storage._borderPositions ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._borderPositions ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._borderPositions = newValue}
   }
   /// Returns true if `borderPositions` has been explicitly set.
-  public var hasBorderPositions: Bool {return _storage._borderPositions != nil}
+  public var hasBorderPositions: Bool {_storage._borderPositions != nil}
   /// Clears the value of `borderPositions`. Subsequent reads from it will return its default value.
   public mutating func clearBorderPositions() {_uniqueStorage()._borderPositions = nil}
 
   public var borderPositionsUndefined: Bool {
-    get {return _storage._borderPositionsUndefined ?? false}
+    get {_storage._borderPositionsUndefined ?? false}
     set {_uniqueStorage()._borderPositionsUndefined = newValue}
   }
   /// Returns true if `borderPositionsUndefined` has been explicitly set.
-  public var hasBorderPositionsUndefined: Bool {return _storage._borderPositionsUndefined != nil}
+  public var hasBorderPositionsUndefined: Bool {_storage._borderPositionsUndefined != nil}
   /// Clears the value of `borderPositionsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBorderPositionsUndefined() {_uniqueStorage()._borderPositionsUndefined = nil}
 
   public var paragraphRuleOffset: TSWPSOS_SpecRuleOffsetArchive {
-    get {return _storage._paragraphRuleOffset ?? TSWPSOS_SpecRuleOffsetArchive()}
+    get {_storage._paragraphRuleOffset ?? TSWPSOS_SpecRuleOffsetArchive()}
     set {_uniqueStorage()._paragraphRuleOffset = newValue}
   }
   /// Returns true if `paragraphRuleOffset` has been explicitly set.
-  public var hasParagraphRuleOffset: Bool {return _storage._paragraphRuleOffset != nil}
+  public var hasParagraphRuleOffset: Bool {_storage._paragraphRuleOffset != nil}
   /// Clears the value of `paragraphRuleOffset`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphRuleOffset() {_uniqueStorage()._paragraphRuleOffset = nil}
 
   public var paragraphRuleOffsetUndefined: Bool {
-    get {return _storage._paragraphRuleOffsetUndefined ?? false}
+    get {_storage._paragraphRuleOffsetUndefined ?? false}
     set {_uniqueStorage()._paragraphRuleOffsetUndefined = newValue}
   }
   /// Returns true if `paragraphRuleOffsetUndefined` has been explicitly set.
-  public var hasParagraphRuleOffsetUndefined: Bool {return _storage._paragraphRuleOffsetUndefined != nil}
+  public var hasParagraphRuleOffsetUndefined: Bool {_storage._paragraphRuleOffsetUndefined != nil}
   /// Clears the value of `paragraphRuleOffsetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphRuleOffsetUndefined() {_uniqueStorage()._paragraphRuleOffsetUndefined = nil}
 
   public var roundedCorners: TSSSOS_SpecBoolArchive {
-    get {return _storage._roundedCorners ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._roundedCorners ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._roundedCorners = newValue}
   }
   /// Returns true if `roundedCorners` has been explicitly set.
-  public var hasRoundedCorners: Bool {return _storage._roundedCorners != nil}
+  public var hasRoundedCorners: Bool {_storage._roundedCorners != nil}
   /// Clears the value of `roundedCorners`. Subsequent reads from it will return its default value.
   public mutating func clearRoundedCorners() {_uniqueStorage()._roundedCorners = nil}
 
   public var roundedCornersUndefined: Bool {
-    get {return _storage._roundedCornersUndefined ?? false}
+    get {_storage._roundedCornersUndefined ?? false}
     set {_uniqueStorage()._roundedCornersUndefined = newValue}
   }
   /// Returns true if `roundedCornersUndefined` has been explicitly set.
-  public var hasRoundedCornersUndefined: Bool {return _storage._roundedCornersUndefined != nil}
+  public var hasRoundedCornersUndefined: Bool {_storage._roundedCornersUndefined != nil}
   /// Clears the value of `roundedCornersUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearRoundedCornersUndefined() {_uniqueStorage()._roundedCornersUndefined = nil}
 
   public var paragraphRuleWidth: TSSSOS_SpecDoubleArchive {
-    get {return _storage._paragraphRuleWidth ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._paragraphRuleWidth ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._paragraphRuleWidth = newValue}
   }
   /// Returns true if `paragraphRuleWidth` has been explicitly set.
-  public var hasParagraphRuleWidth: Bool {return _storage._paragraphRuleWidth != nil}
+  public var hasParagraphRuleWidth: Bool {_storage._paragraphRuleWidth != nil}
   /// Clears the value of `paragraphRuleWidth`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphRuleWidth() {_uniqueStorage()._paragraphRuleWidth = nil}
 
   public var paragraphRuleWidthUndefined: Bool {
-    get {return _storage._paragraphRuleWidthUndefined ?? false}
+    get {_storage._paragraphRuleWidthUndefined ?? false}
     set {_uniqueStorage()._paragraphRuleWidthUndefined = newValue}
   }
   /// Returns true if `paragraphRuleWidthUndefined` has been explicitly set.
-  public var hasParagraphRuleWidthUndefined: Bool {return _storage._paragraphRuleWidthUndefined != nil}
+  public var hasParagraphRuleWidthUndefined: Bool {_storage._paragraphRuleWidthUndefined != nil}
   /// Clears the value of `paragraphRuleWidthUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphRuleWidthUndefined() {_uniqueStorage()._paragraphRuleWidthUndefined = nil}
 
   public var rightIndent: TSSSOS_SpecDoubleArchive {
-    get {return _storage._rightIndent ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._rightIndent ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._rightIndent = newValue}
   }
   /// Returns true if `rightIndent` has been explicitly set.
-  public var hasRightIndent: Bool {return _storage._rightIndent != nil}
+  public var hasRightIndent: Bool {_storage._rightIndent != nil}
   /// Clears the value of `rightIndent`. Subsequent reads from it will return its default value.
   public mutating func clearRightIndent() {_uniqueStorage()._rightIndent = nil}
 
   public var rightIndentUndefined: Bool {
-    get {return _storage._rightIndentUndefined ?? false}
+    get {_storage._rightIndentUndefined ?? false}
     set {_uniqueStorage()._rightIndentUndefined = newValue}
   }
   /// Returns true if `rightIndentUndefined` has been explicitly set.
-  public var hasRightIndentUndefined: Bool {return _storage._rightIndentUndefined != nil}
+  public var hasRightIndentUndefined: Bool {_storage._rightIndentUndefined != nil}
   /// Clears the value of `rightIndentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearRightIndentUndefined() {_uniqueStorage()._rightIndentUndefined = nil}
 
   public var spaceAfter: TSSSOS_SpecDoubleArchive {
-    get {return _storage._spaceAfter ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._spaceAfter ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._spaceAfter = newValue}
   }
   /// Returns true if `spaceAfter` has been explicitly set.
-  public var hasSpaceAfter: Bool {return _storage._spaceAfter != nil}
+  public var hasSpaceAfter: Bool {_storage._spaceAfter != nil}
   /// Clears the value of `spaceAfter`. Subsequent reads from it will return its default value.
   public mutating func clearSpaceAfter() {_uniqueStorage()._spaceAfter = nil}
 
   public var spaceAfterUndefined: Bool {
-    get {return _storage._spaceAfterUndefined ?? false}
+    get {_storage._spaceAfterUndefined ?? false}
     set {_uniqueStorage()._spaceAfterUndefined = newValue}
   }
   /// Returns true if `spaceAfterUndefined` has been explicitly set.
-  public var hasSpaceAfterUndefined: Bool {return _storage._spaceAfterUndefined != nil}
+  public var hasSpaceAfterUndefined: Bool {_storage._spaceAfterUndefined != nil}
   /// Clears the value of `spaceAfterUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSpaceAfterUndefined() {_uniqueStorage()._spaceAfterUndefined = nil}
 
   public var spaceBefore: TSSSOS_SpecDoubleArchive {
-    get {return _storage._spaceBefore ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._spaceBefore ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._spaceBefore = newValue}
   }
   /// Returns true if `spaceBefore` has been explicitly set.
-  public var hasSpaceBefore: Bool {return _storage._spaceBefore != nil}
+  public var hasSpaceBefore: Bool {_storage._spaceBefore != nil}
   /// Clears the value of `spaceBefore`. Subsequent reads from it will return its default value.
   public mutating func clearSpaceBefore() {_uniqueStorage()._spaceBefore = nil}
 
   public var spaceBeforeUndefined: Bool {
-    get {return _storage._spaceBeforeUndefined ?? false}
+    get {_storage._spaceBeforeUndefined ?? false}
     set {_uniqueStorage()._spaceBeforeUndefined = newValue}
   }
   /// Returns true if `spaceBeforeUndefined` has been explicitly set.
-  public var hasSpaceBeforeUndefined: Bool {return _storage._spaceBeforeUndefined != nil}
+  public var hasSpaceBeforeUndefined: Bool {_storage._spaceBeforeUndefined != nil}
   /// Clears the value of `spaceBeforeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSpaceBeforeUndefined() {_uniqueStorage()._spaceBeforeUndefined = nil}
 
   public var paragraphStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._paragraphStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._paragraphStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._paragraphStroke = newValue}
   }
   /// Returns true if `paragraphStroke` has been explicitly set.
-  public var hasParagraphStroke: Bool {return _storage._paragraphStroke != nil}
+  public var hasParagraphStroke: Bool {_storage._paragraphStroke != nil}
   /// Clears the value of `paragraphStroke`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphStroke() {_uniqueStorage()._paragraphStroke = nil}
 
   public var paragraphStrokeUndefined: Bool {
-    get {return _storage._paragraphStrokeUndefined ?? false}
+    get {_storage._paragraphStrokeUndefined ?? false}
     set {_uniqueStorage()._paragraphStrokeUndefined = newValue}
   }
   /// Returns true if `paragraphStrokeUndefined` has been explicitly set.
-  public var hasParagraphStrokeUndefined: Bool {return _storage._paragraphStrokeUndefined != nil}
+  public var hasParagraphStrokeUndefined: Bool {_storage._paragraphStrokeUndefined != nil}
   /// Clears the value of `paragraphStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphStrokeUndefined() {_uniqueStorage()._paragraphStrokeUndefined = nil}
 
   public var tabs: TSWPSOS_SpecTabsArchive {
-    get {return _storage._tabs ?? TSWPSOS_SpecTabsArchive()}
+    get {_storage._tabs ?? TSWPSOS_SpecTabsArchive()}
     set {_uniqueStorage()._tabs = newValue}
   }
   /// Returns true if `tabs` has been explicitly set.
-  public var hasTabs: Bool {return _storage._tabs != nil}
+  public var hasTabs: Bool {_storage._tabs != nil}
   /// Clears the value of `tabs`. Subsequent reads from it will return its default value.
   public mutating func clearTabs() {_uniqueStorage()._tabs = nil}
 
   public var tabsUndefined: Bool {
-    get {return _storage._tabsUndefined ?? false}
+    get {_storage._tabsUndefined ?? false}
     set {_uniqueStorage()._tabsUndefined = newValue}
   }
   /// Returns true if `tabsUndefined` has been explicitly set.
-  public var hasTabsUndefined: Bool {return _storage._tabsUndefined != nil}
+  public var hasTabsUndefined: Bool {_storage._tabsUndefined != nil}
   /// Clears the value of `tabsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTabsUndefined() {_uniqueStorage()._tabsUndefined = nil}
 
   public var widowControl: TSSSOS_SpecIntegerArchive {
-    get {return _storage._widowControl ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._widowControl ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._widowControl = newValue}
   }
   /// Returns true if `widowControl` has been explicitly set.
-  public var hasWidowControl: Bool {return _storage._widowControl != nil}
+  public var hasWidowControl: Bool {_storage._widowControl != nil}
   /// Clears the value of `widowControl`. Subsequent reads from it will return its default value.
   public mutating func clearWidowControl() {_uniqueStorage()._widowControl = nil}
 
   public var widowControlUndefined: Bool {
-    get {return _storage._widowControlUndefined ?? false}
+    get {_storage._widowControlUndefined ?? false}
     set {_uniqueStorage()._widowControlUndefined = newValue}
   }
   /// Returns true if `widowControlUndefined` has been explicitly set.
-  public var hasWidowControlUndefined: Bool {return _storage._widowControlUndefined != nil}
+  public var hasWidowControlUndefined: Bool {_storage._widowControlUndefined != nil}
   /// Clears the value of `widowControlUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearWidowControlUndefined() {_uniqueStorage()._widowControlUndefined = nil}
 
   public var showInBookmarksList: TSSSOS_SpecBoolArchive {
-    get {return _storage._showInBookmarksList ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._showInBookmarksList ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._showInBookmarksList = newValue}
   }
   /// Returns true if `showInBookmarksList` has been explicitly set.
-  public var hasShowInBookmarksList: Bool {return _storage._showInBookmarksList != nil}
+  public var hasShowInBookmarksList: Bool {_storage._showInBookmarksList != nil}
   /// Clears the value of `showInBookmarksList`. Subsequent reads from it will return its default value.
   public mutating func clearShowInBookmarksList() {_uniqueStorage()._showInBookmarksList = nil}
 
   public var showInBookmarksListUndefined: Bool {
-    get {return _storage._showInBookmarksListUndefined ?? false}
+    get {_storage._showInBookmarksListUndefined ?? false}
     set {_uniqueStorage()._showInBookmarksListUndefined = newValue}
   }
   /// Returns true if `showInBookmarksListUndefined` has been explicitly set.
-  public var hasShowInBookmarksListUndefined: Bool {return _storage._showInBookmarksListUndefined != nil}
+  public var hasShowInBookmarksListUndefined: Bool {_storage._showInBookmarksListUndefined != nil}
   /// Clears the value of `showInBookmarksListUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShowInBookmarksListUndefined() {_uniqueStorage()._showInBookmarksListUndefined = nil}
 
   public var showInTOCNavigator: TSSSOS_SpecBoolArchive {
-    get {return _storage._showInTOCNavigator ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._showInTOCNavigator ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._showInTOCNavigator = newValue}
   }
   /// Returns true if `showInTOCNavigator` has been explicitly set.
-  public var hasShowInTOCNavigator: Bool {return _storage._showInTOCNavigator != nil}
+  public var hasShowInTOCNavigator: Bool {_storage._showInTOCNavigator != nil}
   /// Clears the value of `showInTOCNavigator`. Subsequent reads from it will return its default value.
   public mutating func clearShowInTOCNavigator() {_uniqueStorage()._showInTOCNavigator = nil}
 
   public var showInTOCNavigatorUndefined: Bool {
-    get {return _storage._showInTOCNavigatorUndefined ?? false}
+    get {_storage._showInTOCNavigatorUndefined ?? false}
     set {_uniqueStorage()._showInTOCNavigatorUndefined = newValue}
   }
   /// Returns true if `showInTOCNavigatorUndefined` has been explicitly set.
-  public var hasShowInTOCNavigatorUndefined: Bool {return _storage._showInTOCNavigatorUndefined != nil}
+  public var hasShowInTOCNavigatorUndefined: Bool {_storage._showInTOCNavigatorUndefined != nil}
   /// Clears the value of `showInTOCNavigatorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShowInTOCNavigatorUndefined() {_uniqueStorage()._showInTOCNavigatorUndefined = nil}
 
@@ -3056,125 +3056,125 @@ public struct TSWPSOS_ParagraphStylePropertyChangeSetArchive: @unchecked Sendabl
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWPSOS_ShapeStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSWPSOS_ShapeStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSDSOS_BaseShapeStylePropertyChangeSetArchive {
-    get {return _storage._super ?? TSDSOS_BaseShapeStylePropertyChangeSetArchive()}
+    get {_storage._super ?? TSDSOS_BaseShapeStylePropertyChangeSetArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var columns: TSWPSOS_SpecColumnsArchive {
-    get {return _storage._columns ?? TSWPSOS_SpecColumnsArchive()}
+    get {_storage._columns ?? TSWPSOS_SpecColumnsArchive()}
     set {_uniqueStorage()._columns = newValue}
   }
   /// Returns true if `columns` has been explicitly set.
-  public var hasColumns: Bool {return _storage._columns != nil}
+  public var hasColumns: Bool {_storage._columns != nil}
   /// Clears the value of `columns`. Subsequent reads from it will return its default value.
   public mutating func clearColumns() {_uniqueStorage()._columns = nil}
 
   public var columnsUndefined: Bool {
-    get {return _storage._columnsUndefined ?? false}
+    get {_storage._columnsUndefined ?? false}
     set {_uniqueStorage()._columnsUndefined = newValue}
   }
   /// Returns true if `columnsUndefined` has been explicitly set.
-  public var hasColumnsUndefined: Bool {return _storage._columnsUndefined != nil}
+  public var hasColumnsUndefined: Bool {_storage._columnsUndefined != nil}
   /// Clears the value of `columnsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColumnsUndefined() {_uniqueStorage()._columnsUndefined = nil}
 
   public var padding: TSWPSOS_SpecPaddingArchive {
-    get {return _storage._padding ?? TSWPSOS_SpecPaddingArchive()}
+    get {_storage._padding ?? TSWPSOS_SpecPaddingArchive()}
     set {_uniqueStorage()._padding = newValue}
   }
   /// Returns true if `padding` has been explicitly set.
-  public var hasPadding: Bool {return _storage._padding != nil}
+  public var hasPadding: Bool {_storage._padding != nil}
   /// Clears the value of `padding`. Subsequent reads from it will return its default value.
   public mutating func clearPadding() {_uniqueStorage()._padding = nil}
 
   public var paddingUndefined: Bool {
-    get {return _storage._paddingUndefined ?? false}
+    get {_storage._paddingUndefined ?? false}
     set {_uniqueStorage()._paddingUndefined = newValue}
   }
   /// Returns true if `paddingUndefined` has been explicitly set.
-  public var hasPaddingUndefined: Bool {return _storage._paddingUndefined != nil}
+  public var hasPaddingUndefined: Bool {_storage._paddingUndefined != nil}
   /// Clears the value of `paddingUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearPaddingUndefined() {_uniqueStorage()._paddingUndefined = nil}
 
   public var shrinkTextToFit: TSSSOS_SpecBoolArchive {
-    get {return _storage._shrinkTextToFit ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._shrinkTextToFit ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._shrinkTextToFit = newValue}
   }
   /// Returns true if `shrinkTextToFit` has been explicitly set.
-  public var hasShrinkTextToFit: Bool {return _storage._shrinkTextToFit != nil}
+  public var hasShrinkTextToFit: Bool {_storage._shrinkTextToFit != nil}
   /// Clears the value of `shrinkTextToFit`. Subsequent reads from it will return its default value.
   public mutating func clearShrinkTextToFit() {_uniqueStorage()._shrinkTextToFit = nil}
 
   public var shrinkTextToFitUndefined: Bool {
-    get {return _storage._shrinkTextToFitUndefined ?? false}
+    get {_storage._shrinkTextToFitUndefined ?? false}
     set {_uniqueStorage()._shrinkTextToFitUndefined = newValue}
   }
   /// Returns true if `shrinkTextToFitUndefined` has been explicitly set.
-  public var hasShrinkTextToFitUndefined: Bool {return _storage._shrinkTextToFitUndefined != nil}
+  public var hasShrinkTextToFitUndefined: Bool {_storage._shrinkTextToFitUndefined != nil}
   /// Clears the value of `shrinkTextToFitUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShrinkTextToFitUndefined() {_uniqueStorage()._shrinkTextToFitUndefined = nil}
 
   public var verticalAlignment: TSSSOS_SpecIntegerArchive {
-    get {return _storage._verticalAlignment ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._verticalAlignment ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._verticalAlignment = newValue}
   }
   /// Returns true if `verticalAlignment` has been explicitly set.
-  public var hasVerticalAlignment: Bool {return _storage._verticalAlignment != nil}
+  public var hasVerticalAlignment: Bool {_storage._verticalAlignment != nil}
   /// Clears the value of `verticalAlignment`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalAlignment() {_uniqueStorage()._verticalAlignment = nil}
 
   public var verticalAlignmentUndefined: Bool {
-    get {return _storage._verticalAlignmentUndefined ?? false}
+    get {_storage._verticalAlignmentUndefined ?? false}
     set {_uniqueStorage()._verticalAlignmentUndefined = newValue}
   }
   /// Returns true if `verticalAlignmentUndefined` has been explicitly set.
-  public var hasVerticalAlignmentUndefined: Bool {return _storage._verticalAlignmentUndefined != nil}
+  public var hasVerticalAlignmentUndefined: Bool {_storage._verticalAlignmentUndefined != nil}
   /// Clears the value of `verticalAlignmentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalAlignmentUndefined() {_uniqueStorage()._verticalAlignmentUndefined = nil}
 
   public var verticalText: TSSSOS_SpecBoolArchive {
-    get {return _storage._verticalText ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._verticalText ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._verticalText = newValue}
   }
   /// Returns true if `verticalText` has been explicitly set.
-  public var hasVerticalText: Bool {return _storage._verticalText != nil}
+  public var hasVerticalText: Bool {_storage._verticalText != nil}
   /// Clears the value of `verticalText`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalText() {_uniqueStorage()._verticalText = nil}
 
   public var verticalTextUndefined: Bool {
-    get {return _storage._verticalTextUndefined ?? false}
+    get {_storage._verticalTextUndefined ?? false}
     set {_uniqueStorage()._verticalTextUndefined = newValue}
   }
   /// Returns true if `verticalTextUndefined` has been explicitly set.
-  public var hasVerticalTextUndefined: Bool {return _storage._verticalTextUndefined != nil}
+  public var hasVerticalTextUndefined: Bool {_storage._verticalTextUndefined != nil}
   /// Clears the value of `verticalTextUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalTextUndefined() {_uniqueStorage()._verticalTextUndefined = nil}
 
   public var defaultParagraphStyle: TSWPSOS_SpecParagraphStyleArchive {
-    get {return _storage._defaultParagraphStyle ?? TSWPSOS_SpecParagraphStyleArchive()}
+    get {_storage._defaultParagraphStyle ?? TSWPSOS_SpecParagraphStyleArchive()}
     set {_uniqueStorage()._defaultParagraphStyle = newValue}
   }
   /// Returns true if `defaultParagraphStyle` has been explicitly set.
-  public var hasDefaultParagraphStyle: Bool {return _storage._defaultParagraphStyle != nil}
+  public var hasDefaultParagraphStyle: Bool {_storage._defaultParagraphStyle != nil}
   /// Clears the value of `defaultParagraphStyle`. Subsequent reads from it will return its default value.
   public mutating func clearDefaultParagraphStyle() {_uniqueStorage()._defaultParagraphStyle = nil}
 
   public var defaultParagraphStyleUndefined: Bool {
-    get {return _storage._defaultParagraphStyleUndefined ?? false}
+    get {_storage._defaultParagraphStyleUndefined ?? false}
     set {_uniqueStorage()._defaultParagraphStyleUndefined = newValue}
   }
   /// Returns true if `defaultParagraphStyleUndefined` has been explicitly set.
-  public var hasDefaultParagraphStyleUndefined: Bool {return _storage._defaultParagraphStyleUndefined != nil}
+  public var hasDefaultParagraphStyleUndefined: Bool {_storage._defaultParagraphStyleUndefined != nil}
   /// Clears the value of `defaultParagraphStyleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDefaultParagraphStyleUndefined() {_uniqueStorage()._defaultParagraphStyleUndefined = nil}
 
@@ -3185,53 +3185,53 @@ public struct TSWPSOS_ShapeStylePropertyChangeSetArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWPSOS_TOCEntryStylePropertyChangeSetArchive: Sendable {
+public nonisolated struct TSWPSOS_TOCEntryStylePropertyChangeSetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWPSOS_ParagraphStylePropertyChangeSetArchive {
-    get {return _super ?? TSWPSOS_ParagraphStylePropertyChangeSetArchive()}
+    get {_super ?? TSWPSOS_ParagraphStylePropertyChangeSetArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var tocShowPageNumber: TSSSOS_SpecBoolArchive {
-    get {return _tocShowPageNumber ?? TSSSOS_SpecBoolArchive()}
+    get {_tocShowPageNumber ?? TSSSOS_SpecBoolArchive()}
     set {_tocShowPageNumber = newValue}
   }
   /// Returns true if `tocShowPageNumber` has been explicitly set.
-  public var hasTocShowPageNumber: Bool {return self._tocShowPageNumber != nil}
+  public var hasTocShowPageNumber: Bool {self._tocShowPageNumber != nil}
   /// Clears the value of `tocShowPageNumber`. Subsequent reads from it will return its default value.
   public mutating func clearTocShowPageNumber() {self._tocShowPageNumber = nil}
 
   public var tocShowPageNumberUndefined: Bool {
-    get {return _tocShowPageNumberUndefined ?? false}
+    get {_tocShowPageNumberUndefined ?? false}
     set {_tocShowPageNumberUndefined = newValue}
   }
   /// Returns true if `tocShowPageNumberUndefined` has been explicitly set.
-  public var hasTocShowPageNumberUndefined: Bool {return self._tocShowPageNumberUndefined != nil}
+  public var hasTocShowPageNumberUndefined: Bool {self._tocShowPageNumberUndefined != nil}
   /// Clears the value of `tocShowPageNumberUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTocShowPageNumberUndefined() {self._tocShowPageNumberUndefined = nil}
 
   public var tocPageNumberStyle: TSWPSOS_SpecCharacterStyleArchive {
-    get {return _tocPageNumberStyle ?? TSWPSOS_SpecCharacterStyleArchive()}
+    get {_tocPageNumberStyle ?? TSWPSOS_SpecCharacterStyleArchive()}
     set {_tocPageNumberStyle = newValue}
   }
   /// Returns true if `tocPageNumberStyle` has been explicitly set.
-  public var hasTocPageNumberStyle: Bool {return self._tocPageNumberStyle != nil}
+  public var hasTocPageNumberStyle: Bool {self._tocPageNumberStyle != nil}
   /// Clears the value of `tocPageNumberStyle`. Subsequent reads from it will return its default value.
   public mutating func clearTocPageNumberStyle() {self._tocPageNumberStyle = nil}
 
   public var tocPageNumberStyleUndefined: Bool {
-    get {return _tocPageNumberStyleUndefined ?? false}
+    get {_tocPageNumberStyleUndefined ?? false}
     set {_tocPageNumberStyleUndefined = newValue}
   }
   /// Returns true if `tocPageNumberStyleUndefined` has been explicitly set.
-  public var hasTocPageNumberStyleUndefined: Bool {return self._tocPageNumberStyleUndefined != nil}
+  public var hasTocPageNumberStyleUndefined: Bool {self._tocPageNumberStyleUndefined != nil}
   /// Clears the value of `tocPageNumberStyleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTocPageNumberStyleUndefined() {self._tocPageNumberStyleUndefined = nil}
 
@@ -3246,44 +3246,44 @@ public struct TSWPSOS_TOCEntryStylePropertyChangeSetArchive: Sendable {
   fileprivate var _tocPageNumberStyleUndefined: Bool? = nil
 }
 
-public struct TSWPSOS_StyleDiffArchive: Sendable {
+public nonisolated struct TSWPSOS_StyleDiffArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var style: TSP_Reference {
-    get {return _style ?? TSP_Reference()}
+    get {_style ?? TSP_Reference()}
     set {_style = newValue}
   }
   /// Returns true if `style` has been explicitly set.
-  public var hasStyle: Bool {return self._style != nil}
+  public var hasStyle: Bool {self._style != nil}
   /// Clears the value of `style`. Subsequent reads from it will return its default value.
   public mutating func clearStyle() {self._style = nil}
 
   public var characterChangeSet: TSWPSOS_CharacterStylePropertyChangeSetArchive {
-    get {return _characterChangeSet ?? TSWPSOS_CharacterStylePropertyChangeSetArchive()}
+    get {_characterChangeSet ?? TSWPSOS_CharacterStylePropertyChangeSetArchive()}
     set {_characterChangeSet = newValue}
   }
   /// Returns true if `characterChangeSet` has been explicitly set.
-  public var hasCharacterChangeSet: Bool {return self._characterChangeSet != nil}
+  public var hasCharacterChangeSet: Bool {self._characterChangeSet != nil}
   /// Clears the value of `characterChangeSet`. Subsequent reads from it will return its default value.
   public mutating func clearCharacterChangeSet() {self._characterChangeSet = nil}
 
   public var paragraphChangeSet: TSWPSOS_ParagraphStylePropertyChangeSetArchive {
-    get {return _paragraphChangeSet ?? TSWPSOS_ParagraphStylePropertyChangeSetArchive()}
+    get {_paragraphChangeSet ?? TSWPSOS_ParagraphStylePropertyChangeSetArchive()}
     set {_paragraphChangeSet = newValue}
   }
   /// Returns true if `paragraphChangeSet` has been explicitly set.
-  public var hasParagraphChangeSet: Bool {return self._paragraphChangeSet != nil}
+  public var hasParagraphChangeSet: Bool {self._paragraphChangeSet != nil}
   /// Clears the value of `paragraphChangeSet`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphChangeSet() {self._paragraphChangeSet = nil}
 
   public var shapeChangeSet: TSWPSOS_ShapeStylePropertyChangeSetArchive {
-    get {return _shapeChangeSet ?? TSWPSOS_ShapeStylePropertyChangeSetArchive()}
+    get {_shapeChangeSet ?? TSWPSOS_ShapeStylePropertyChangeSetArchive()}
     set {_shapeChangeSet = newValue}
   }
   /// Returns true if `shapeChangeSet` has been explicitly set.
-  public var hasShapeChangeSet: Bool {return self._shapeChangeSet != nil}
+  public var hasShapeChangeSet: Bool {self._shapeChangeSet != nil}
   /// Clears the value of `shapeChangeSet`. Subsequent reads from it will return its default value.
   public mutating func clearShapeChangeSet() {self._shapeChangeSet = nil}
 
@@ -3299,14 +3299,11 @@ public struct TSWPSOS_StyleDiffArchive: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSWPSOS"
+fileprivate nonisolated let _protobuf_package = "TSWPSOS"
 
-extension TSWPSOS_SpecSetCharacterStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetCharacterStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetCharacterStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "character_style"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}character_style\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3349,12 +3346,9 @@ extension TSWPSOS_SpecSetCharacterStyleArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSWPSOS_SpecSetColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetColumnsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "columns"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}columns\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3397,12 +3391,9 @@ extension TSWPSOS_SpecSetColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSWPSOS_SpecSetDropCapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetDropCapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetDropCapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "drop_cap"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}drop_cap\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3444,13 +3435,9 @@ extension TSWPSOS_SpecSetDropCapArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSWPSOS_SpecSetFontFeaturesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetFontFeaturesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetFontFeaturesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "font_features"),
-    2: .standard(proto: "font_features_undefined"),
-    3: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}font_features\0\u{3}font_features_undefined\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3498,12 +3485,9 @@ extension TSWPSOS_SpecSetFontFeaturesArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSWPSOS_SpecSetLineSpacingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetLineSpacingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetLineSpacingArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "line_spacing"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}line_spacing\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3545,12 +3529,9 @@ extension TSWPSOS_SpecSetLineSpacingArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSWPSOS_SpecSetListStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetListStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetListStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "list_style"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}list_style\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3593,13 +3574,9 @@ extension TSWPSOS_SpecSetListStyleArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSWPSOS_SpecSetListStyleBoolArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetListStyleBoolArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetListStyleBoolArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "list_style_bool_array"),
-    2: .standard(proto: "list_style_bool_array_undefined"),
-    3: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}list_style_bool_array\0\u{3}list_style_bool_array_undefined\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3646,13 +3623,9 @@ extension TSWPSOS_SpecSetListStyleBoolArrayArchive: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSWPSOS_SpecSetListStyleFloatArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetListStyleFloatArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetListStyleFloatArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "list_style_float_array"),
-    2: .standard(proto: "list_style_float_array_undefined"),
-    3: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}list_style_float_array\0\u{3}list_style_float_array_undefined\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3699,13 +3672,9 @@ extension TSWPSOS_SpecSetListStyleFloatArrayArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSWPSOS_SpecSetListStyleImageDataArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetListStyleImageDataArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetListStyleImageDataArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "list_style_image_data_array"),
-    2: .standard(proto: "list_style_image_data_array_undefined"),
-    3: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}list_style_image_data_array\0\u{3}list_style_image_data_array_undefined\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3753,13 +3722,9 @@ extension TSWPSOS_SpecSetListStyleImageDataArrayArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetListStyleListLabelGeometryArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "list_style_list_label_geometry_array"),
-    2: .standard(proto: "list_style_list_label_geometry_array_undefined"),
-    3: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}list_style_list_label_geometry_array\0\u{3}list_style_list_label_geometry_array_undefined\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3806,13 +3771,9 @@ extension TSWPSOS_SpecSetListStyleListLabelGeometryArrayArchive: SwiftProtobuf.M
   }
 }
 
-extension TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetListStyleListLabelTypeArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "list_style_list_label_type_array"),
-    2: .standard(proto: "list_style_list_label_type_array_undefined"),
-    3: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}list_style_list_label_type_array\0\u{3}list_style_list_label_type_array_undefined\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3859,13 +3820,9 @@ extension TSWPSOS_SpecSetListStyleListLabelTypeArrayArchive: SwiftProtobuf.Messa
   }
 }
 
-extension TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetListStyleListNumberTypeArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "list_style_list_number_type_array"),
-    2: .standard(proto: "list_style_list_number_type_array_undefined"),
-    3: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}list_style_list_number_type_array\0\u{3}list_style_list_number_type_array_undefined\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3912,13 +3869,9 @@ extension TSWPSOS_SpecSetListStyleListNumberTypeArrayArchive: SwiftProtobuf.Mess
   }
 }
 
-extension TSWPSOS_SpecSetListStyleStringArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetListStyleStringArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetListStyleStringArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "list_style_string_array"),
-    2: .standard(proto: "list_style_string_array_undefined"),
-    3: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}list_style_string_array\0\u{3}list_style_string_array_undefined\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -3965,12 +3918,9 @@ extension TSWPSOS_SpecSetListStyleStringArrayArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSWPSOS_SpecSetPaddingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetPaddingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetPaddingArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "padding"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}padding\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -4012,12 +3962,9 @@ extension TSWPSOS_SpecSetPaddingArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSWPSOS_SpecSetParagraphStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetParagraphStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetParagraphStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "paragraph_style"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}paragraph_style\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -4060,12 +4007,9 @@ extension TSWPSOS_SpecSetParagraphStyleArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSWPSOS_SpecSetRuleOffsetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetRuleOffsetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetRuleOffsetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "rule_offset"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}rule_offset\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -4108,12 +4052,9 @@ extension TSWPSOS_SpecSetRuleOffsetArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSWPSOS_SpecSetTabsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecSetTabsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetTabsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tabs"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tabs\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -4155,11 +4096,9 @@ extension TSWPSOS_SpecSetTabsArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSWPSOS_SpecCharacterStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecCharacterStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecCharacterStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_character_style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_character_style\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetCharacterStyle, !v.isInitialized {return false}
@@ -4196,11 +4135,9 @@ extension TSWPSOS_SpecCharacterStyleArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSWPSOS_SpecColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecColumnsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_columns"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_columns\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetColumns, !v.isInitialized {return false}
@@ -4237,11 +4174,9 @@ extension TSWPSOS_SpecColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSWPSOS_SpecDropCapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecDropCapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecDropCapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_drop_cap"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_drop_cap\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetDropCap, !v.isInitialized {return false}
@@ -4278,11 +4213,9 @@ extension TSWPSOS_SpecDropCapArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSWPSOS_SpecFontFeaturesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecFontFeaturesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecFontFeaturesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_font_features"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_font_features\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetFontFeatures, !v.isInitialized {return false}
@@ -4319,11 +4252,9 @@ extension TSWPSOS_SpecFontFeaturesArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSWPSOS_SpecLineSpacingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecLineSpacingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecLineSpacingArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_line_spacing"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_line_spacing\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetLineSpacing, !v.isInitialized {return false}
@@ -4360,11 +4291,9 @@ extension TSWPSOS_SpecLineSpacingArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSWPSOS_SpecListStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecListStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecListStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_list_style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_list_style\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetListStyle, !v.isInitialized {return false}
@@ -4401,11 +4330,9 @@ extension TSWPSOS_SpecListStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSWPSOS_SpecListStyleBoolArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecListStyleBoolArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecListStyleBoolArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_list_style_bool_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_list_style_bool_array\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetListStyleBoolArray, !v.isInitialized {return false}
@@ -4442,11 +4369,9 @@ extension TSWPSOS_SpecListStyleBoolArrayArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSWPSOS_SpecListStyleFloatArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecListStyleFloatArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecListStyleFloatArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_list_style_float_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_list_style_float_array\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetListStyleFloatArray, !v.isInitialized {return false}
@@ -4483,11 +4408,9 @@ extension TSWPSOS_SpecListStyleFloatArrayArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSWPSOS_SpecListStyleImageDataArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecListStyleImageDataArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecListStyleImageDataArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_list_style_image_data_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_list_style_image_data_array\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetListStyleImageDataArray, !v.isInitialized {return false}
@@ -4524,11 +4447,9 @@ extension TSWPSOS_SpecListStyleImageDataArrayArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSWPSOS_SpecListStyleListLabelGeometryArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecListStyleListLabelGeometryArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecListStyleListLabelGeometryArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_list_style_list_label_geometry_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_list_style_list_label_geometry_array\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetListStyleListLabelGeometryArray, !v.isInitialized {return false}
@@ -4565,11 +4486,9 @@ extension TSWPSOS_SpecListStyleListLabelGeometryArrayArchive: SwiftProtobuf.Mess
   }
 }
 
-extension TSWPSOS_SpecListStyleListLabelTypeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecListStyleListLabelTypeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecListStyleListLabelTypeArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_list_style_list_label_type_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_list_style_list_label_type_array\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetListStyleListLabelTypeArray, !v.isInitialized {return false}
@@ -4606,11 +4525,9 @@ extension TSWPSOS_SpecListStyleListLabelTypeArrayArchive: SwiftProtobuf.Message,
   }
 }
 
-extension TSWPSOS_SpecListStyleListNumberTypeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecListStyleListNumberTypeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecListStyleListNumberTypeArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_list_style_list_number_type_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_list_style_list_number_type_array\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetListStyleListNumberTypeArray, !v.isInitialized {return false}
@@ -4647,11 +4564,9 @@ extension TSWPSOS_SpecListStyleListNumberTypeArrayArchive: SwiftProtobuf.Message
   }
 }
 
-extension TSWPSOS_SpecListStyleStringArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecListStyleStringArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecListStyleStringArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_list_style_string_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_list_style_string_array\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetListStyleStringArray, !v.isInitialized {return false}
@@ -4688,11 +4603,9 @@ extension TSWPSOS_SpecListStyleStringArrayArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSWPSOS_SpecPaddingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecPaddingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecPaddingArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_padding"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_padding\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetPadding, !v.isInitialized {return false}
@@ -4729,11 +4642,9 @@ extension TSWPSOS_SpecPaddingArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSWPSOS_SpecParagraphStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecParagraphStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecParagraphStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_paragraph_style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_paragraph_style\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetParagraphStyle, !v.isInitialized {return false}
@@ -4770,11 +4681,9 @@ extension TSWPSOS_SpecParagraphStyleArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSWPSOS_SpecRuleOffsetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecRuleOffsetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecRuleOffsetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_rule_offset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_rule_offset\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetRuleOffset, !v.isInitialized {return false}
@@ -4811,11 +4720,9 @@ extension TSWPSOS_SpecRuleOffsetArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSWPSOS_SpecTabsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_SpecTabsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecTabsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_tabs"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_tabs\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetTabs, !v.isInitialized {return false}
@@ -4852,72 +4759,9 @@ extension TSWPSOS_SpecTabsArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSWPSOS_CharacterStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_CharacterStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CharacterStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "baseline_shift"),
-    2: .standard(proto: "baseline_shift_undefined"),
-    3: .same(proto: "capitalization"),
-    4: .standard(proto: "capitalization_undefined"),
-    5: .standard(proto: "compatibility_font_name"),
-    6: .standard(proto: "compatibility_font_name_undefined"),
-    7: .standard(proto: "emphasis_marks"),
-    8: .standard(proto: "emphasis_marks_undefined"),
-    9: .same(proto: "bold"),
-    10: .standard(proto: "bold_undefined"),
-    11: .same(proto: "italic"),
-    12: .standard(proto: "italic_undefined"),
-    13: .standard(proto: "font_features"),
-    14: .standard(proto: "font_features_undefined"),
-    15: .standard(proto: "font_name"),
-    16: .standard(proto: "font_name_undefined"),
-    17: .standard(proto: "font_size"),
-    18: .standard(proto: "font_size_undefined"),
-    19: .standard(proto: "font_size_delta"),
-    20: .standard(proto: "font_size_delta_undefined"),
-    21: .same(proto: "kerning"),
-    22: .standard(proto: "kerning_undefined"),
-    23: .same(proto: "language"),
-    24: .standard(proto: "language_undefined"),
-    25: .same(proto: "ligatures"),
-    26: .standard(proto: "ligatures_undefined"),
-    27: .standard(proto: "text_shadow"),
-    28: .standard(proto: "text_shadow_undefined"),
-    29: .standard(proto: "strikethru_color"),
-    30: .standard(proto: "strikethru_color_undefined"),
-    31: .same(proto: "strikethru"),
-    32: .standard(proto: "strikethru_undefined"),
-    33: .standard(proto: "strikethru_width"),
-    34: .standard(proto: "strikethru_width_undefined"),
-    35: .same(proto: "superscript"),
-    36: .standard(proto: "superscript_undefined"),
-    37: .standard(proto: "text_background"),
-    38: .standard(proto: "text_background_undefined"),
-    39: .same(proto: "tracking"),
-    40: .standard(proto: "tracking_undefined"),
-    41: .standard(proto: "underline_color"),
-    42: .standard(proto: "underline_color_undefined"),
-    43: .same(proto: "underline"),
-    44: .standard(proto: "underline_undefined"),
-    45: .standard(proto: "underline_width"),
-    46: .standard(proto: "underline_width_undefined"),
-    47: .standard(proto: "word_strikethru"),
-    48: .standard(proto: "word_strikethru_undefined"),
-    49: .standard(proto: "word_underline"),
-    50: .standard(proto: "word_underline_undefined"),
-    51: .standard(proto: "writing_direction"),
-    52: .standard(proto: "writing_direction_undefined"),
-    53: .standard(proto: "is_named_point_size"),
-    54: .standard(proto: "is_named_point_size_undefined"),
-    55: .standard(proto: "capitalization_uses_linguistics"),
-    56: .standard(proto: "capitalization_uses_linguistics_undefined"),
-    57: .standard(proto: "character_stroke"),
-    58: .standard(proto: "character_stroke_undefined"),
-    59: .standard(proto: "character_fill"),
-    60: .standard(proto: "character_fill_undefined"),
-    61: .standard(proto: "character_fill_should_fill_text_container"),
-    62: .standard(proto: "character_fill_should_fill_text_container_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}baseline_shift\0\u{3}baseline_shift_undefined\0\u{1}capitalization\0\u{3}capitalization_undefined\0\u{3}compatibility_font_name\0\u{3}compatibility_font_name_undefined\0\u{3}emphasis_marks\0\u{3}emphasis_marks_undefined\0\u{1}bold\0\u{3}bold_undefined\0\u{1}italic\0\u{3}italic_undefined\0\u{3}font_features\0\u{3}font_features_undefined\0\u{3}font_name\0\u{3}font_name_undefined\0\u{3}font_size\0\u{3}font_size_undefined\0\u{3}font_size_delta\0\u{3}font_size_delta_undefined\0\u{1}kerning\0\u{3}kerning_undefined\0\u{1}language\0\u{3}language_undefined\0\u{1}ligatures\0\u{3}ligatures_undefined\0\u{3}text_shadow\0\u{3}text_shadow_undefined\0\u{3}strikethru_color\0\u{3}strikethru_color_undefined\0\u{1}strikethru\0\u{3}strikethru_undefined\0\u{3}strikethru_width\0\u{3}strikethru_width_undefined\0\u{1}superscript\0\u{3}superscript_undefined\0\u{3}text_background\0\u{3}text_background_undefined\0\u{1}tracking\0\u{3}tracking_undefined\0\u{3}underline_color\0\u{3}underline_color_undefined\0\u{1}underline\0\u{3}underline_undefined\0\u{3}underline_width\0\u{3}underline_width_undefined\0\u{3}word_strikethru\0\u{3}word_strikethru_undefined\0\u{3}word_underline\0\u{3}word_underline_undefined\0\u{3}writing_direction\0\u{3}writing_direction_undefined\0\u{3}is_named_point_size\0\u{3}is_named_point_size_undefined\0\u{3}capitalization_uses_linguistics\0\u{3}capitalization_uses_linguistics_undefined\0\u{3}character_stroke\0\u{3}character_stroke_undefined\0\u{3}character_fill\0\u{3}character_fill_undefined\0\u{3}character_fill_should_fill_text_container\0\u{3}character_fill_should_fill_text_container_undefined\0")
 
   fileprivate class _StorageClass {
     var _baselineShift: TSSSOS_SpecDoubleArchive? = nil
@@ -4983,15 +4827,11 @@ extension TSWPSOS_CharacterStylePropertyChangeSetArchive: SwiftProtobuf.Message,
     var _characterFillShouldFillTextContainer: TSSSOS_SpecBoolArchive? = nil
     var _characterFillShouldFillTextContainerUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5453,28 +5293,9 @@ extension TSWPSOS_CharacterStylePropertyChangeSetArchive: SwiftProtobuf.Message,
   }
 }
 
-extension TSWPSOS_ColumnStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_ColumnStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ColumnStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "columns"),
-    2: .standard(proto: "columns_undefined"),
-    3: .same(proto: "continuous"),
-    4: .standard(proto: "continuous_undefined"),
-    5: .same(proto: "margins"),
-    6: .standard(proto: "margins_undefined"),
-    7: .standard(proto: "min_horizontal_inset"),
-    8: .standard(proto: "min_horizontal_inset_undefined"),
-    9: .same(proto: "padding"),
-    10: .standard(proto: "padding_undefined"),
-    11: .standard(proto: "shrink_to_fit"),
-    12: .standard(proto: "shrink_to_fit_undefined"),
-    13: .standard(proto: "vertical_alignment"),
-    14: .standard(proto: "vertical_alignment_undefined"),
-    15: .standard(proto: "vertical_text"),
-    16: .standard(proto: "vertical_text_undefined"),
-    17: .standard(proto: "writing_direction"),
-    18: .standard(proto: "writing_direction_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}columns\0\u{3}columns_undefined\0\u{1}continuous\0\u{3}continuous_undefined\0\u{1}margins\0\u{3}margins_undefined\0\u{3}min_horizontal_inset\0\u{3}min_horizontal_inset_undefined\0\u{1}padding\0\u{3}padding_undefined\0\u{3}shrink_to_fit\0\u{3}shrink_to_fit_undefined\0\u{3}vertical_alignment\0\u{3}vertical_alignment_undefined\0\u{3}vertical_text\0\u{3}vertical_text_undefined\0\u{3}writing_direction\0\u{3}writing_direction_undefined\0")
 
   fileprivate class _StorageClass {
     var _columns: TSWPSOS_SpecColumnsArchive? = nil
@@ -5496,15 +5317,11 @@ extension TSWPSOS_ColumnStylePropertyChangeSetArchive: SwiftProtobuf.Message, Sw
     var _writingDirection: TSSSOS_SpecIntegerArchive? = nil
     var _writingDirectionUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5680,16 +5497,9 @@ extension TSWPSOS_ColumnStylePropertyChangeSetArchive: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSWPSOS_DropCapSpecificStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_DropCapSpecificStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DropCapSpecificStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "drop_cap_model"),
-    2: .standard(proto: "drop_cap_model_undefined"),
-    3: .standard(proto: "drop_cap_shape_stroke"),
-    4: .standard(proto: "drop_cap_shape_stroke_undefined"),
-    5: .standard(proto: "drop_cap_shape_fill"),
-    6: .standard(proto: "drop_cap_shape_fill_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}drop_cap_model\0\u{3}drop_cap_model_undefined\0\u{3}drop_cap_shape_stroke\0\u{3}drop_cap_shape_stroke_undefined\0\u{3}drop_cap_shape_fill\0\u{3}drop_cap_shape_fill_undefined\0")
 
   fileprivate class _StorageClass {
     var _dropCapModel: TSWPSOS_SpecDropCapArchive? = nil
@@ -5699,15 +5509,11 @@ extension TSWPSOS_DropCapSpecificStylePropertyChangeSetArchive: SwiftProtobuf.Me
     var _dropCapShapeFill: TSDSOS_SpecFillArchive? = nil
     var _dropCapShapeFillUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5805,17 +5611,9 @@ extension TSWPSOS_DropCapSpecificStylePropertyChangeSetArchive: SwiftProtobuf.Me
   }
 }
 
-extension TSWPSOS_DropCapStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_DropCapStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DropCapStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "drop_cap_model"),
-    3: .standard(proto: "drop_cap_model_undefined"),
-    4: .standard(proto: "drop_cap_shape_stroke"),
-    5: .standard(proto: "drop_cap_shape_stroke_undefined"),
-    6: .standard(proto: "drop_cap_shape_fill"),
-    7: .standard(proto: "drop_cap_shape_fill_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}drop_cap_model\0\u{3}drop_cap_model_undefined\0\u{3}drop_cap_shape_stroke\0\u{3}drop_cap_shape_stroke_undefined\0\u{3}drop_cap_shape_fill\0\u{3}drop_cap_shape_fill_undefined\0")
 
   fileprivate class _StorageClass {
     var _super: TSWPSOS_CharacterStylePropertyChangeSetArchive? = nil
@@ -5826,15 +5624,11 @@ extension TSWPSOS_DropCapStylePropertyChangeSetArchive: SwiftProtobuf.Message, S
     var _dropCapShapeFill: TSDSOS_SpecFillArchive? = nil
     var _dropCapShapeFillUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5940,36 +5734,9 @@ extension TSWPSOS_DropCapStylePropertyChangeSetArchive: SwiftProtobuf.Message, S
   }
 }
 
-extension TSWPSOS_ListStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_ListStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ListStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "list_font_color"),
-    2: .standard(proto: "list_font_color_undefined"),
-    3: .standard(proto: "font_name"),
-    4: .standard(proto: "font_name_undefined"),
-    5: .standard(proto: "list_classic_text_indent_array"),
-    6: .standard(proto: "list_classic_text_indent_array_undefined"),
-    7: .standard(proto: "list_label_geometry_array"),
-    8: .standard(proto: "list_label_geometry_array_undefined"),
-    9: .standard(proto: "list_label_image_data_array"),
-    10: .standard(proto: "list_label_image_data_array_undefined"),
-    11: .standard(proto: "list_label_indent_array"),
-    12: .standard(proto: "list_label_indent_array_undefined"),
-    13: .standard(proto: "list_label_number_array"),
-    14: .standard(proto: "list_label_number_array_undefined"),
-    15: .standard(proto: "list_label_tiered_number_array"),
-    16: .standard(proto: "list_label_tiered_number_array_undefined"),
-    17: .standard(proto: "text_shadow"),
-    18: .standard(proto: "text_shadow_undefined"),
-    19: .standard(proto: "list_label_string_array"),
-    20: .standard(proto: "list_label_string_array_undefined"),
-    21: .standard(proto: "list_text_indent_array"),
-    22: .standard(proto: "list_text_indent_array_undefined"),
-    23: .standard(proto: "list_label_type_array"),
-    24: .standard(proto: "list_label_type_array_undefined"),
-    25: .standard(proto: "writing_direction"),
-    26: .standard(proto: "writing_direction_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}list_font_color\0\u{3}list_font_color_undefined\0\u{3}font_name\0\u{3}font_name_undefined\0\u{3}list_classic_text_indent_array\0\u{3}list_classic_text_indent_array_undefined\0\u{3}list_label_geometry_array\0\u{3}list_label_geometry_array_undefined\0\u{3}list_label_image_data_array\0\u{3}list_label_image_data_array_undefined\0\u{3}list_label_indent_array\0\u{3}list_label_indent_array_undefined\0\u{3}list_label_number_array\0\u{3}list_label_number_array_undefined\0\u{3}list_label_tiered_number_array\0\u{3}list_label_tiered_number_array_undefined\0\u{3}text_shadow\0\u{3}text_shadow_undefined\0\u{3}list_label_string_array\0\u{3}list_label_string_array_undefined\0\u{3}list_text_indent_array\0\u{3}list_text_indent_array_undefined\0\u{3}list_label_type_array\0\u{3}list_label_type_array_undefined\0\u{3}writing_direction\0\u{3}writing_direction_undefined\0")
 
   fileprivate class _StorageClass {
     var _listFontColor: TSSSOS_SpecColorArchive? = nil
@@ -5999,15 +5766,11 @@ extension TSWPSOS_ListStylePropertyChangeSetArchive: SwiftProtobuf.Message, Swif
     var _writingDirection: TSSSOS_SpecIntegerArchive? = nil
     var _writingDirectionUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -6235,64 +5998,9 @@ extension TSWPSOS_ListStylePropertyChangeSetArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSWPSOS_ParagraphSpecificStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_ParagraphSpecificStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ParagraphSpecificStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "alignment"),
-    2: .standard(proto: "alignment_undefined"),
-    3: .standard(proto: "decimal_tab"),
-    4: .standard(proto: "decimal_tab_undefined"),
-    5: .standard(proto: "default_tab_stops"),
-    6: .standard(proto: "default_tab_stops_undefined"),
-    7: .standard(proto: "paragraph_fill"),
-    8: .standard(proto: "paragraph_fill_undefined"),
-    9: .standard(proto: "first_line_indent"),
-    10: .standard(proto: "first_line_indent_undefined"),
-    11: .standard(proto: "following_paragraph_style"),
-    12: .standard(proto: "following_paragraph_style_undefined"),
-    13: .same(proto: "hyphenate"),
-    14: .standard(proto: "hyphenate_undefined"),
-    15: .standard(proto: "initial_list_style"),
-    16: .standard(proto: "initial_list_style_undefined"),
-    17: .standard(proto: "keep_lines_together"),
-    18: .standard(proto: "keep_lines_together_undefined"),
-    19: .standard(proto: "keep_with_next"),
-    20: .standard(proto: "keep_with_next_undefined"),
-    21: .standard(proto: "left_indent"),
-    22: .standard(proto: "left_indent_undefined"),
-    23: .standard(proto: "line_spacing"),
-    24: .standard(proto: "line_spacing_undefined"),
-    25: .standard(proto: "outline_level"),
-    26: .standard(proto: "outline_level_undefined"),
-    27: .standard(proto: "outline_style_type"),
-    28: .standard(proto: "outline_style_type_undefined"),
-    29: .standard(proto: "page_break_before"),
-    30: .standard(proto: "page_break_before_undefined"),
-    31: .standard(proto: "border_positions"),
-    32: .standard(proto: "border_positions_undefined"),
-    33: .standard(proto: "paragraph_rule_offset"),
-    34: .standard(proto: "paragraph_rule_offset_undefined"),
-    35: .standard(proto: "rounded_corners"),
-    36: .standard(proto: "rounded_corners_undefined"),
-    37: .standard(proto: "paragraph_rule_width"),
-    38: .standard(proto: "paragraph_rule_width_undefined"),
-    39: .standard(proto: "right_indent"),
-    40: .standard(proto: "right_indent_undefined"),
-    41: .standard(proto: "space_after"),
-    42: .standard(proto: "space_after_undefined"),
-    43: .standard(proto: "space_before"),
-    44: .standard(proto: "space_before_undefined"),
-    45: .standard(proto: "paragraph_stroke"),
-    46: .standard(proto: "paragraph_stroke_undefined"),
-    47: .same(proto: "tabs"),
-    48: .standard(proto: "tabs_undefined"),
-    49: .standard(proto: "widow_control"),
-    50: .standard(proto: "widow_control_undefined"),
-    51: .standard(proto: "show_in_bookmarks_list"),
-    52: .standard(proto: "show_in_bookmarks_list_undefined"),
-    53: .standard(proto: "show_in_t_o_c_navigator"),
-    54: .standard(proto: "show_in_t_o_c_navigator_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}alignment\0\u{3}alignment_undefined\0\u{3}decimal_tab\0\u{3}decimal_tab_undefined\0\u{3}default_tab_stops\0\u{3}default_tab_stops_undefined\0\u{3}paragraph_fill\0\u{3}paragraph_fill_undefined\0\u{3}first_line_indent\0\u{3}first_line_indent_undefined\0\u{3}following_paragraph_style\0\u{3}following_paragraph_style_undefined\0\u{1}hyphenate\0\u{3}hyphenate_undefined\0\u{3}initial_list_style\0\u{3}initial_list_style_undefined\0\u{3}keep_lines_together\0\u{3}keep_lines_together_undefined\0\u{3}keep_with_next\0\u{3}keep_with_next_undefined\0\u{3}left_indent\0\u{3}left_indent_undefined\0\u{3}line_spacing\0\u{3}line_spacing_undefined\0\u{3}outline_level\0\u{3}outline_level_undefined\0\u{3}outline_style_type\0\u{3}outline_style_type_undefined\0\u{3}page_break_before\0\u{3}page_break_before_undefined\0\u{3}border_positions\0\u{3}border_positions_undefined\0\u{3}paragraph_rule_offset\0\u{3}paragraph_rule_offset_undefined\0\u{3}rounded_corners\0\u{3}rounded_corners_undefined\0\u{3}paragraph_rule_width\0\u{3}paragraph_rule_width_undefined\0\u{3}right_indent\0\u{3}right_indent_undefined\0\u{3}space_after\0\u{3}space_after_undefined\0\u{3}space_before\0\u{3}space_before_undefined\0\u{3}paragraph_stroke\0\u{3}paragraph_stroke_undefined\0\u{1}tabs\0\u{3}tabs_undefined\0\u{3}widow_control\0\u{3}widow_control_undefined\0\u{3}show_in_bookmarks_list\0\u{3}show_in_bookmarks_list_undefined\0\u{3}show_in_t_o_c_navigator\0\u{3}show_in_t_o_c_navigator_undefined\0")
 
   fileprivate class _StorageClass {
     var _alignment: TSSSOS_SpecIntegerArchive? = nil
@@ -6350,15 +6058,11 @@ extension TSWPSOS_ParagraphSpecificStylePropertyChangeSetArchive: SwiftProtobuf.
     var _showInTOCNavigator: TSSSOS_SpecBoolArchive? = nil
     var _showInTOCNavigatorUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -6768,65 +6472,9 @@ extension TSWPSOS_ParagraphSpecificStylePropertyChangeSetArchive: SwiftProtobuf.
   }
 }
 
-extension TSWPSOS_ParagraphStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_ParagraphStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ParagraphStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "alignment"),
-    3: .standard(proto: "alignment_undefined"),
-    4: .standard(proto: "decimal_tab"),
-    5: .standard(proto: "decimal_tab_undefined"),
-    6: .standard(proto: "default_tab_stops"),
-    7: .standard(proto: "default_tab_stops_undefined"),
-    8: .standard(proto: "paragraph_fill"),
-    9: .standard(proto: "paragraph_fill_undefined"),
-    10: .standard(proto: "first_line_indent"),
-    11: .standard(proto: "first_line_indent_undefined"),
-    12: .standard(proto: "following_paragraph_style"),
-    13: .standard(proto: "following_paragraph_style_undefined"),
-    14: .same(proto: "hyphenate"),
-    15: .standard(proto: "hyphenate_undefined"),
-    16: .standard(proto: "initial_list_style"),
-    17: .standard(proto: "initial_list_style_undefined"),
-    18: .standard(proto: "keep_lines_together"),
-    19: .standard(proto: "keep_lines_together_undefined"),
-    20: .standard(proto: "keep_with_next"),
-    21: .standard(proto: "keep_with_next_undefined"),
-    22: .standard(proto: "left_indent"),
-    23: .standard(proto: "left_indent_undefined"),
-    24: .standard(proto: "line_spacing"),
-    25: .standard(proto: "line_spacing_undefined"),
-    26: .standard(proto: "outline_level"),
-    27: .standard(proto: "outline_level_undefined"),
-    28: .standard(proto: "outline_style_type"),
-    29: .standard(proto: "outline_style_type_undefined"),
-    30: .standard(proto: "page_break_before"),
-    31: .standard(proto: "page_break_before_undefined"),
-    32: .standard(proto: "border_positions"),
-    33: .standard(proto: "border_positions_undefined"),
-    34: .standard(proto: "paragraph_rule_offset"),
-    35: .standard(proto: "paragraph_rule_offset_undefined"),
-    36: .standard(proto: "rounded_corners"),
-    37: .standard(proto: "rounded_corners_undefined"),
-    38: .standard(proto: "paragraph_rule_width"),
-    39: .standard(proto: "paragraph_rule_width_undefined"),
-    40: .standard(proto: "right_indent"),
-    41: .standard(proto: "right_indent_undefined"),
-    42: .standard(proto: "space_after"),
-    43: .standard(proto: "space_after_undefined"),
-    44: .standard(proto: "space_before"),
-    45: .standard(proto: "space_before_undefined"),
-    46: .standard(proto: "paragraph_stroke"),
-    47: .standard(proto: "paragraph_stroke_undefined"),
-    48: .same(proto: "tabs"),
-    49: .standard(proto: "tabs_undefined"),
-    50: .standard(proto: "widow_control"),
-    51: .standard(proto: "widow_control_undefined"),
-    52: .standard(proto: "show_in_bookmarks_list"),
-    53: .standard(proto: "show_in_bookmarks_list_undefined"),
-    54: .standard(proto: "show_in_t_o_c_navigator"),
-    55: .standard(proto: "show_in_t_o_c_navigator_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}alignment\0\u{3}alignment_undefined\0\u{3}decimal_tab\0\u{3}decimal_tab_undefined\0\u{3}default_tab_stops\0\u{3}default_tab_stops_undefined\0\u{3}paragraph_fill\0\u{3}paragraph_fill_undefined\0\u{3}first_line_indent\0\u{3}first_line_indent_undefined\0\u{3}following_paragraph_style\0\u{3}following_paragraph_style_undefined\0\u{1}hyphenate\0\u{3}hyphenate_undefined\0\u{3}initial_list_style\0\u{3}initial_list_style_undefined\0\u{3}keep_lines_together\0\u{3}keep_lines_together_undefined\0\u{3}keep_with_next\0\u{3}keep_with_next_undefined\0\u{3}left_indent\0\u{3}left_indent_undefined\0\u{3}line_spacing\0\u{3}line_spacing_undefined\0\u{3}outline_level\0\u{3}outline_level_undefined\0\u{3}outline_style_type\0\u{3}outline_style_type_undefined\0\u{3}page_break_before\0\u{3}page_break_before_undefined\0\u{3}border_positions\0\u{3}border_positions_undefined\0\u{3}paragraph_rule_offset\0\u{3}paragraph_rule_offset_undefined\0\u{3}rounded_corners\0\u{3}rounded_corners_undefined\0\u{3}paragraph_rule_width\0\u{3}paragraph_rule_width_undefined\0\u{3}right_indent\0\u{3}right_indent_undefined\0\u{3}space_after\0\u{3}space_after_undefined\0\u{3}space_before\0\u{3}space_before_undefined\0\u{3}paragraph_stroke\0\u{3}paragraph_stroke_undefined\0\u{1}tabs\0\u{3}tabs_undefined\0\u{3}widow_control\0\u{3}widow_control_undefined\0\u{3}show_in_bookmarks_list\0\u{3}show_in_bookmarks_list_undefined\0\u{3}show_in_t_o_c_navigator\0\u{3}show_in_t_o_c_navigator_undefined\0")
 
   fileprivate class _StorageClass {
     var _super: TSWPSOS_CharacterStylePropertyChangeSetArchive? = nil
@@ -6885,15 +6533,11 @@ extension TSWPSOS_ParagraphStylePropertyChangeSetArchive: SwiftProtobuf.Message,
     var _showInTOCNavigator: TSSSOS_SpecBoolArchive? = nil
     var _showInTOCNavigatorUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -7311,23 +6955,9 @@ extension TSWPSOS_ParagraphStylePropertyChangeSetArchive: SwiftProtobuf.Message,
   }
 }
 
-extension TSWPSOS_ShapeStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_ShapeStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ShapeStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "columns"),
-    3: .standard(proto: "columns_undefined"),
-    4: .same(proto: "padding"),
-    5: .standard(proto: "padding_undefined"),
-    6: .standard(proto: "shrink_text_to_fit"),
-    7: .standard(proto: "shrink_text_to_fit_undefined"),
-    8: .standard(proto: "vertical_alignment"),
-    9: .standard(proto: "vertical_alignment_undefined"),
-    10: .standard(proto: "vertical_text"),
-    11: .standard(proto: "vertical_text_undefined"),
-    12: .standard(proto: "default_paragraph_style"),
-    13: .standard(proto: "default_paragraph_style_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}columns\0\u{3}columns_undefined\0\u{1}padding\0\u{3}padding_undefined\0\u{3}shrink_text_to_fit\0\u{3}shrink_text_to_fit_undefined\0\u{3}vertical_alignment\0\u{3}vertical_alignment_undefined\0\u{3}vertical_text\0\u{3}vertical_text_undefined\0\u{3}default_paragraph_style\0\u{3}default_paragraph_style_undefined\0")
 
   fileprivate class _StorageClass {
     var _super: TSDSOS_BaseShapeStylePropertyChangeSetArchive? = nil
@@ -7344,15 +6974,11 @@ extension TSWPSOS_ShapeStylePropertyChangeSetArchive: SwiftProtobuf.Message, Swi
     var _defaultParagraphStyle: TSWPSOS_SpecParagraphStyleArchive? = nil
     var _defaultParagraphStyleUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -7497,15 +7123,9 @@ extension TSWPSOS_ShapeStylePropertyChangeSetArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSWPSOS_TOCEntryStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_TOCEntryStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TOCEntryStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "toc_show_page_number"),
-    3: .standard(proto: "toc_show_page_number_undefined"),
-    4: .standard(proto: "toc_page_number_style"),
-    5: .standard(proto: "toc_page_number_style_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}toc_show_page_number\0\u{3}toc_show_page_number_undefined\0\u{3}toc_page_number_style\0\u{3}toc_page_number_style_undefined\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -7565,14 +7185,9 @@ extension TSWPSOS_TOCEntryStylePropertyChangeSetArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSWPSOS_StyleDiffArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWPSOS_StyleDiffArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StyleDiffArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "style"),
-    2: .standard(proto: "character_change_set"),
-    3: .standard(proto: "paragraph_change_set"),
-    4: .standard(proto: "shape_change_set"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}style\0\u{3}character_change_set\0\u{3}paragraph_change_set\0\u{3}shape_change_set\0")
 
   public var isInitialized: Bool {
     if let v = self._style, !v.isInitialized {return false}

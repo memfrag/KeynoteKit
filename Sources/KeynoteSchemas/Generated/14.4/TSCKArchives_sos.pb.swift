@@ -15,33 +15,33 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSCKSOS_FixCorruptedDataCommandArchive: Sendable {
+public nonisolated struct TSCKSOS_FixCorruptedDataCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var corruptedDigestList: [String] = []
 
   public var corruptedDigestListUndefined: Bool {
-    get {return _corruptedDigestListUndefined ?? false}
+    get {_corruptedDigestListUndefined ?? false}
     set {_corruptedDigestListUndefined = newValue}
   }
   /// Returns true if `corruptedDigestListUndefined` has been explicitly set.
-  public var hasCorruptedDigestListUndefined: Bool {return self._corruptedDigestListUndefined != nil}
+  public var hasCorruptedDigestListUndefined: Bool {self._corruptedDigestListUndefined != nil}
   /// Clears the value of `corruptedDigestListUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCorruptedDigestListUndefined() {self._corruptedDigestListUndefined = nil}
 
@@ -53,28 +53,28 @@ public struct TSCKSOS_FixCorruptedDataCommandArchive: Sendable {
   fileprivate var _corruptedDigestListUndefined: Bool? = nil
 }
 
-public struct TSCKSOS_RemoveAuthorIdentifiersCommandArchive: Sendable {
+public nonisolated struct TSCKSOS_RemoveAuthorIdentifiersCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var authorIdentifiers: [TSP_UUID] = []
 
   public var authorIdentifiersUndefined: Bool {
-    get {return _authorIdentifiersUndefined ?? false}
+    get {_authorIdentifiersUndefined ?? false}
     set {_authorIdentifiersUndefined = newValue}
   }
   /// Returns true if `authorIdentifiersUndefined` has been explicitly set.
-  public var hasAuthorIdentifiersUndefined: Bool {return self._authorIdentifiersUndefined != nil}
+  public var hasAuthorIdentifiersUndefined: Bool {self._authorIdentifiersUndefined != nil}
   /// Clears the value of `authorIdentifiersUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearAuthorIdentifiersUndefined() {self._authorIdentifiersUndefined = nil}
 
@@ -86,17 +86,17 @@ public struct TSCKSOS_RemoveAuthorIdentifiersCommandArchive: Sendable {
   fileprivate var _authorIdentifiersUndefined: Bool? = nil
 }
 
-public struct TSCKSOS_ResetActivityStreamCommandArchive: Sendable {
+public nonisolated struct TSCKSOS_ResetActivityStreamCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -109,15 +109,11 @@ public struct TSCKSOS_ResetActivityStreamCommandArchive: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSCKSOS"
+fileprivate nonisolated let _protobuf_package = "TSCKSOS"
 
-extension TSCKSOS_FixCorruptedDataCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCKSOS_FixCorruptedDataCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FixCorruptedDataCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "corrupted_digest_list"),
-    3: .standard(proto: "corrupted_digest_list_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}corrupted_digest_list\0\u{3}corrupted_digest_list_undefined\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -165,13 +161,9 @@ extension TSCKSOS_FixCorruptedDataCommandArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCKSOS_RemoveAuthorIdentifiersCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCKSOS_RemoveAuthorIdentifiersCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RemoveAuthorIdentifiersCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "author_identifiers"),
-    3: .standard(proto: "author_identifiers_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}author_identifiers\0\u{3}author_identifiers_undefined\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -220,11 +212,9 @@ extension TSCKSOS_RemoveAuthorIdentifiersCommandArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCKSOS_ResetActivityStreamCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCKSOS_ResetActivityStreamCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ResetActivityStreamCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}

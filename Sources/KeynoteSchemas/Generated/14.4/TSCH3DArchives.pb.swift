@@ -15,221 +15,91 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public enum TSCH_TextureTilingMode: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case none // = 0
-  case tallest // = 1
+public nonisolated enum TSCH_TextureTilingMode: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case none = 0
+  case tallest = 1
 
   public init() {
     self = .none
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .none
-    case 1: self = .tallest
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .none: return 0
-    case .tallest: return 1
-    }
-  }
-
 }
 
-public enum TSCH_TextureTilingFace: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case all // = 0
-  case topAndBottom // = 1
-  case side // = 2
+public nonisolated enum TSCH_TextureTilingFace: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case all = 0
+  case topAndBottom = 1
+  case side = 2
 
   public init() {
     self = .all
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .all
-    case 1: self = .topAndBottom
-    case 2: self = .side
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .all: return 0
-    case .topAndBottom: return 1
-    case .side: return 2
-    }
-  }
-
 }
 
-public enum TSCH_TextureTilingWrap: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case projected // = 0
-  case faceWrap // = 1
+public nonisolated enum TSCH_TextureTilingWrap: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case projected = 0
+  case faceWrap = 1
 
   public init() {
     self = .projected
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .projected
-    case 1: self = .faceWrap
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .projected: return 0
-    case .faceWrap: return 1
-    }
-  }
-
 }
 
-public enum TSCH_TextureTilingXPosition: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case left // = 0
-  case center // = 1
-  case right // = 2
+public nonisolated enum TSCH_TextureTilingXPosition: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case left = 0
+  case center = 1
+  case right = 2
 
   public init() {
     self = .left
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .left
-    case 1: self = .center
-    case 2: self = .right
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .left: return 0
-    case .center: return 1
-    case .right: return 2
-    }
-  }
-
 }
 
-public enum TSCH_TextureTilingYPosition: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case top // = 0
-  case middle // = 1
-  case bottom // = 2
+public nonisolated enum TSCH_TextureTilingYPosition: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case top = 0
+  case middle = 1
+  case bottom = 2
 
   public init() {
     self = .top
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .top
-    case 1: self = .middle
-    case 2: self = .bottom
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .top: return 0
-    case .middle: return 1
-    case .bottom: return 2
-    }
-  }
-
 }
 
-public enum TSCH_TextureTilingContinuity: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case none // = 0
-  case global // = 1
-  case series // = 2
-  case jittered // = 3
+public nonisolated enum TSCH_TextureTilingContinuity: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case none = 0
+  case global = 1
+  case series = 2
+  case jittered = 3
 
   public init() {
     self = .none
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .none
-    case 1: self = .global
-    case 2: self = .series
-    case 3: self = .jittered
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .none: return 0
-    case .global: return 1
-    case .series: return 2
-    case .jittered: return 3
-    }
-  }
-
 }
 
-public enum TSCH_FillPropertyType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case undefined // = 0
-  case area // = 1
-  case bar // = 2
-  case column // = 3
-  case line // = 4
-  case pie // = 5
+public nonisolated enum TSCH_FillPropertyType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case undefined = 0
+  case area = 1
+  case bar = 2
+  case column = 3
+  case line = 4
+  case pie = 5
 
   public init() {
     self = .undefined
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .undefined
-    case 1: self = .area
-    case 2: self = .bar
-    case 3: self = .column
-    case 4: self = .line
-    case 5: self = .pie
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .undefined: return 0
-    case .area: return 1
-    case .bar: return 2
-    case .column: return 3
-    case .line: return 4
-    case .pie: return 5
-    }
-  }
-
 }
 
-public struct TSCH_Chart3DEnvironmentPackageArchive: Sendable {
+public nonisolated struct TSCH_Chart3DEnvironmentPackageArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -241,44 +111,44 @@ public struct TSCH_Chart3DEnvironmentPackageArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_Chart3DFillArchive: Sendable {
+public nonisolated struct TSCH_Chart3DFillArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var lightingmodel: TSCH_Chart3DLightingModelArchive {
-    get {return _lightingmodel ?? TSCH_Chart3DLightingModelArchive()}
+    get {_lightingmodel ?? TSCH_Chart3DLightingModelArchive()}
     set {_lightingmodel = newValue}
   }
   /// Returns true if `lightingmodel` has been explicitly set.
-  public var hasLightingmodel: Bool {return self._lightingmodel != nil}
+  public var hasLightingmodel: Bool {self._lightingmodel != nil}
   /// Clears the value of `lightingmodel`. Subsequent reads from it will return its default value.
   public mutating func clearLightingmodel() {self._lightingmodel = nil}
 
   public var texturesetID: String {
-    get {return _texturesetID ?? String()}
+    get {_texturesetID ?? String()}
     set {_texturesetID = newValue}
   }
   /// Returns true if `texturesetID` has been explicitly set.
-  public var hasTexturesetID: Bool {return self._texturesetID != nil}
+  public var hasTexturesetID: Bool {self._texturesetID != nil}
   /// Clears the value of `texturesetID`. Subsequent reads from it will return its default value.
   public mutating func clearTexturesetID() {self._texturesetID = nil}
 
   public var fillType: TSCH_FillPropertyType {
-    get {return _fillType ?? .undefined}
+    get {_fillType ?? .undefined}
     set {_fillType = newValue}
   }
   /// Returns true if `fillType` has been explicitly set.
-  public var hasFillType: Bool {return self._fillType != nil}
+  public var hasFillType: Bool {self._fillType != nil}
   /// Clears the value of `fillType`. Subsequent reads from it will return its default value.
   public mutating func clearFillType() {self._fillType = nil}
 
   public var seriesIndex: UInt32 {
-    get {return _seriesIndex ?? 0}
+    get {_seriesIndex ?? 0}
     set {_seriesIndex = newValue}
   }
   /// Returns true if `seriesIndex` has been explicitly set.
-  public var hasSeriesIndex: Bool {return self._seriesIndex != nil}
+  public var hasSeriesIndex: Bool {self._seriesIndex != nil}
   /// Clears the value of `seriesIndex`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesIndex() {self._seriesIndex = nil}
 
@@ -292,17 +162,17 @@ public struct TSCH_Chart3DFillArchive: Sendable {
   fileprivate var _seriesIndex: UInt32? = nil
 }
 
-public struct TSCH_Chart3DPointLightArchive: Sendable {
+public nonisolated struct TSCH_Chart3DPointLightArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var position: TSCH_Chart3DVectorArchive {
-    get {return _position ?? TSCH_Chart3DVectorArchive()}
+    get {_position ?? TSCH_Chart3DVectorArchive()}
     set {_position = newValue}
   }
   /// Returns true if `position` has been explicitly set.
-  public var hasPosition: Bool {return self._position != nil}
+  public var hasPosition: Bool {self._position != nil}
   /// Clears the value of `position`. Subsequent reads from it will return its default value.
   public mutating func clearPosition() {self._position = nil}
 
@@ -313,17 +183,17 @@ public struct TSCH_Chart3DPointLightArchive: Sendable {
   fileprivate var _position: TSCH_Chart3DVectorArchive? = nil
 }
 
-public struct TSCH_Chart3DDirectionalLightArchive: Sendable {
+public nonisolated struct TSCH_Chart3DDirectionalLightArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var direction: TSCH_Chart3DVectorArchive {
-    get {return _direction ?? TSCH_Chart3DVectorArchive()}
+    get {_direction ?? TSCH_Chart3DVectorArchive()}
     set {_direction = newValue}
   }
   /// Returns true if `direction` has been explicitly set.
-  public var hasDirection: Bool {return self._direction != nil}
+  public var hasDirection: Bool {self._direction != nil}
   /// Clears the value of `direction`. Subsequent reads from it will return its default value.
   public mutating func clearDirection() {self._direction = nil}
 
@@ -334,44 +204,44 @@ public struct TSCH_Chart3DDirectionalLightArchive: Sendable {
   fileprivate var _direction: TSCH_Chart3DVectorArchive? = nil
 }
 
-public struct TSCH_Chart3DSpotLightArchive: Sendable {
+public nonisolated struct TSCH_Chart3DSpotLightArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var position: TSCH_Chart3DVectorArchive {
-    get {return _position ?? TSCH_Chart3DVectorArchive()}
+    get {_position ?? TSCH_Chart3DVectorArchive()}
     set {_position = newValue}
   }
   /// Returns true if `position` has been explicitly set.
-  public var hasPosition: Bool {return self._position != nil}
+  public var hasPosition: Bool {self._position != nil}
   /// Clears the value of `position`. Subsequent reads from it will return its default value.
   public mutating func clearPosition() {self._position = nil}
 
   public var direction: TSCH_Chart3DVectorArchive {
-    get {return _direction ?? TSCH_Chart3DVectorArchive()}
+    get {_direction ?? TSCH_Chart3DVectorArchive()}
     set {_direction = newValue}
   }
   /// Returns true if `direction` has been explicitly set.
-  public var hasDirection: Bool {return self._direction != nil}
+  public var hasDirection: Bool {self._direction != nil}
   /// Clears the value of `direction`. Subsequent reads from it will return its default value.
   public mutating func clearDirection() {self._direction = nil}
 
   public var cutoff: Float {
-    get {return _cutoff ?? 0}
+    get {_cutoff ?? 0}
     set {_cutoff = newValue}
   }
   /// Returns true if `cutoff` has been explicitly set.
-  public var hasCutoff: Bool {return self._cutoff != nil}
+  public var hasCutoff: Bool {self._cutoff != nil}
   /// Clears the value of `cutoff`. Subsequent reads from it will return its default value.
   public mutating func clearCutoff() {self._cutoff = nil}
 
   public var dropoff: Float {
-    get {return _dropoff ?? 0}
+    get {_dropoff ?? 0}
     set {_dropoff = newValue}
   }
   /// Returns true if `dropoff` has been explicitly set.
-  public var hasDropoff: Bool {return self._dropoff != nil}
+  public var hasDropoff: Bool {self._dropoff != nil}
   /// Clears the value of `dropoff`. Subsequent reads from it will return its default value.
   public mutating func clearDropoff() {self._dropoff = nil}
 
@@ -385,107 +255,107 @@ public struct TSCH_Chart3DSpotLightArchive: Sendable {
   fileprivate var _dropoff: Float? = nil
 }
 
-public struct TSCH_Chart3DLightArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Chart3DLightArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var name: String {
-    get {return _storage._name ?? String()}
+    get {_storage._name ?? String()}
     set {_uniqueStorage()._name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return _storage._name != nil}
+  public var hasName: Bool {_storage._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {_uniqueStorage()._name = nil}
 
   public var ambientColor: TSCH_Chart3DVectorArchive {
-    get {return _storage._ambientColor ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._ambientColor ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._ambientColor = newValue}
   }
   /// Returns true if `ambientColor` has been explicitly set.
-  public var hasAmbientColor: Bool {return _storage._ambientColor != nil}
+  public var hasAmbientColor: Bool {_storage._ambientColor != nil}
   /// Clears the value of `ambientColor`. Subsequent reads from it will return its default value.
   public mutating func clearAmbientColor() {_uniqueStorage()._ambientColor = nil}
 
   public var diffuseColor: TSCH_Chart3DVectorArchive {
-    get {return _storage._diffuseColor ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._diffuseColor ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._diffuseColor = newValue}
   }
   /// Returns true if `diffuseColor` has been explicitly set.
-  public var hasDiffuseColor: Bool {return _storage._diffuseColor != nil}
+  public var hasDiffuseColor: Bool {_storage._diffuseColor != nil}
   /// Clears the value of `diffuseColor`. Subsequent reads from it will return its default value.
   public mutating func clearDiffuseColor() {_uniqueStorage()._diffuseColor = nil}
 
   public var specularColor: TSCH_Chart3DVectorArchive {
-    get {return _storage._specularColor ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._specularColor ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._specularColor = newValue}
   }
   /// Returns true if `specularColor` has been explicitly set.
-  public var hasSpecularColor: Bool {return _storage._specularColor != nil}
+  public var hasSpecularColor: Bool {_storage._specularColor != nil}
   /// Clears the value of `specularColor`. Subsequent reads from it will return its default value.
   public mutating func clearSpecularColor() {_uniqueStorage()._specularColor = nil}
 
   public var intensity: Float {
-    get {return _storage._intensity ?? 0}
+    get {_storage._intensity ?? 0}
     set {_uniqueStorage()._intensity = newValue}
   }
   /// Returns true if `intensity` has been explicitly set.
-  public var hasIntensity: Bool {return _storage._intensity != nil}
+  public var hasIntensity: Bool {_storage._intensity != nil}
   /// Clears the value of `intensity`. Subsequent reads from it will return its default value.
   public mutating func clearIntensity() {_uniqueStorage()._intensity = nil}
 
   public var attenuation: TSCH_Chart3DVectorArchive {
-    get {return _storage._attenuation ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._attenuation ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._attenuation = newValue}
   }
   /// Returns true if `attenuation` has been explicitly set.
-  public var hasAttenuation: Bool {return _storage._attenuation != nil}
+  public var hasAttenuation: Bool {_storage._attenuation != nil}
   /// Clears the value of `attenuation`. Subsequent reads from it will return its default value.
   public mutating func clearAttenuation() {_uniqueStorage()._attenuation = nil}
 
   public var coordinateSpace: UInt32 {
-    get {return _storage._coordinateSpace ?? 0}
+    get {_storage._coordinateSpace ?? 0}
     set {_uniqueStorage()._coordinateSpace = newValue}
   }
   /// Returns true if `coordinateSpace` has been explicitly set.
-  public var hasCoordinateSpace: Bool {return _storage._coordinateSpace != nil}
+  public var hasCoordinateSpace: Bool {_storage._coordinateSpace != nil}
   /// Clears the value of `coordinateSpace`. Subsequent reads from it will return its default value.
   public mutating func clearCoordinateSpace() {_uniqueStorage()._coordinateSpace = nil}
 
   public var enabled: Bool {
-    get {return _storage._enabled ?? false}
+    get {_storage._enabled ?? false}
     set {_uniqueStorage()._enabled = newValue}
   }
   /// Returns true if `enabled` has been explicitly set.
-  public var hasEnabled: Bool {return _storage._enabled != nil}
+  public var hasEnabled: Bool {_storage._enabled != nil}
   /// Clears the value of `enabled`. Subsequent reads from it will return its default value.
   public mutating func clearEnabled() {_uniqueStorage()._enabled = nil}
 
   public var pointLight: TSCH_Chart3DPointLightArchive {
-    get {return _storage._pointLight ?? TSCH_Chart3DPointLightArchive()}
+    get {_storage._pointLight ?? TSCH_Chart3DPointLightArchive()}
     set {_uniqueStorage()._pointLight = newValue}
   }
   /// Returns true if `pointLight` has been explicitly set.
-  public var hasPointLight: Bool {return _storage._pointLight != nil}
+  public var hasPointLight: Bool {_storage._pointLight != nil}
   /// Clears the value of `pointLight`. Subsequent reads from it will return its default value.
   public mutating func clearPointLight() {_uniqueStorage()._pointLight = nil}
 
   public var directionalLight: TSCH_Chart3DDirectionalLightArchive {
-    get {return _storage._directionalLight ?? TSCH_Chart3DDirectionalLightArchive()}
+    get {_storage._directionalLight ?? TSCH_Chart3DDirectionalLightArchive()}
     set {_uniqueStorage()._directionalLight = newValue}
   }
   /// Returns true if `directionalLight` has been explicitly set.
-  public var hasDirectionalLight: Bool {return _storage._directionalLight != nil}
+  public var hasDirectionalLight: Bool {_storage._directionalLight != nil}
   /// Clears the value of `directionalLight`. Subsequent reads from it will return its default value.
   public mutating func clearDirectionalLight() {_uniqueStorage()._directionalLight = nil}
 
   public var spotLight: TSCH_Chart3DSpotLightArchive {
-    get {return _storage._spotLight ?? TSCH_Chart3DSpotLightArchive()}
+    get {_storage._spotLight ?? TSCH_Chart3DSpotLightArchive()}
     set {_uniqueStorage()._spotLight = newValue}
   }
   /// Returns true if `spotLight` has been explicitly set.
-  public var hasSpotLight: Bool {return _storage._spotLight != nil}
+  public var hasSpotLight: Bool {_storage._spotLight != nil}
   /// Clears the value of `spotLight`. Subsequent reads from it will return its default value.
   public mutating func clearSpotLight() {_uniqueStorage()._spotLight = nil}
 
@@ -496,35 +366,35 @@ public struct TSCH_Chart3DLightArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Chart3DLightingModelArchive: Sendable {
+public nonisolated struct TSCH_Chart3DLightingModelArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var phong: TSCH_Chart3DPhongLightingModelArchive {
-    get {return _phong ?? TSCH_Chart3DPhongLightingModelArchive()}
+    get {_phong ?? TSCH_Chart3DPhongLightingModelArchive()}
     set {_phong = newValue}
   }
   /// Returns true if `phong` has been explicitly set.
-  public var hasPhong: Bool {return self._phong != nil}
+  public var hasPhong: Bool {self._phong != nil}
   /// Clears the value of `phong`. Subsequent reads from it will return its default value.
   public mutating func clearPhong() {self._phong = nil}
 
   public var fixedFunction: TSCH_Chart3DFixedFunctionLightingModelArchive {
-    get {return _fixedFunction ?? TSCH_Chart3DFixedFunctionLightingModelArchive()}
+    get {_fixedFunction ?? TSCH_Chart3DFixedFunctionLightingModelArchive()}
     set {_fixedFunction = newValue}
   }
   /// Returns true if `fixedFunction` has been explicitly set.
-  public var hasFixedFunction: Bool {return self._fixedFunction != nil}
+  public var hasFixedFunction: Bool {self._fixedFunction != nil}
   /// Clears the value of `fixedFunction`. Subsequent reads from it will return its default value.
   public mutating func clearFixedFunction() {self._fixedFunction = nil}
 
   public var environment: TSCH_Chart3DEnvironmentPackageArchive {
-    get {return _environment ?? TSCH_Chart3DEnvironmentPackageArchive()}
+    get {_environment ?? TSCH_Chart3DEnvironmentPackageArchive()}
     set {_environment = newValue}
   }
   /// Returns true if `environment` has been explicitly set.
-  public var hasEnvironment: Bool {return self._environment != nil}
+  public var hasEnvironment: Bool {self._environment != nil}
   /// Clears the value of `environment`. Subsequent reads from it will return its default value.
   public mutating func clearEnvironment() {self._environment = nil}
 
@@ -537,17 +407,17 @@ public struct TSCH_Chart3DLightingModelArchive: Sendable {
   fileprivate var _environment: TSCH_Chart3DEnvironmentPackageArchive? = nil
 }
 
-public struct TSCH_Chart3DLightingPackageArchive: Sendable {
+public nonisolated struct TSCH_Chart3DLightingPackageArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var name: String {
-    get {return _name ?? String()}
+    get {_name ?? String()}
     set {_name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return self._name != nil}
+  public var hasName: Bool {self._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {self._name = nil}
 
@@ -560,17 +430,17 @@ public struct TSCH_Chart3DLightingPackageArchive: Sendable {
   fileprivate var _name: String? = nil
 }
 
-public struct TSCH_Chart3DTexturesMaterialArchive: Sendable {
+public nonisolated struct TSCH_Chart3DTexturesMaterialArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var color: TSCH_Chart3DVectorArchive {
-    get {return _color ?? TSCH_Chart3DVectorArchive()}
+    get {_color ?? TSCH_Chart3DVectorArchive()}
     set {_color = newValue}
   }
   /// Returns true if `color` has been explicitly set.
-  public var hasColor: Bool {return self._color != nil}
+  public var hasColor: Bool {self._color != nil}
   /// Clears the value of `color`. Subsequent reads from it will return its default value.
   public mutating func clearColor() {self._color = nil}
 
@@ -583,17 +453,17 @@ public struct TSCH_Chart3DTexturesMaterialArchive: Sendable {
   fileprivate var _color: TSCH_Chart3DVectorArchive? = nil
 }
 
-public struct TSCH_Chart3DEmissiveMaterialArchive: Sendable {
+public nonisolated struct TSCH_Chart3DEmissiveMaterialArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_Chart3DTexturesMaterialArchive {
-    get {return _super ?? TSCH_Chart3DTexturesMaterialArchive()}
+    get {_super ?? TSCH_Chart3DTexturesMaterialArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -606,17 +476,17 @@ public struct TSCH_Chart3DEmissiveMaterialArchive: Sendable {
   fileprivate var _super: TSCH_Chart3DTexturesMaterialArchive? = nil
 }
 
-public struct TSCH_Chart3DDiffuseMaterialArchive: Sendable {
+public nonisolated struct TSCH_Chart3DDiffuseMaterialArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_Chart3DTexturesMaterialArchive {
-    get {return _super ?? TSCH_Chart3DTexturesMaterialArchive()}
+    get {_super ?? TSCH_Chart3DTexturesMaterialArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -629,17 +499,17 @@ public struct TSCH_Chart3DDiffuseMaterialArchive: Sendable {
   fileprivate var _super: TSCH_Chart3DTexturesMaterialArchive? = nil
 }
 
-public struct TSCH_Chart3DModulateMaterialArchive: Sendable {
+public nonisolated struct TSCH_Chart3DModulateMaterialArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_Chart3DTexturesMaterialArchive {
-    get {return _super ?? TSCH_Chart3DTexturesMaterialArchive()}
+    get {_super ?? TSCH_Chart3DTexturesMaterialArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -652,17 +522,17 @@ public struct TSCH_Chart3DModulateMaterialArchive: Sendable {
   fileprivate var _super: TSCH_Chart3DTexturesMaterialArchive? = nil
 }
 
-public struct TSCH_Chart3DSpecularMaterialArchive: Sendable {
+public nonisolated struct TSCH_Chart3DSpecularMaterialArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_Chart3DTexturesMaterialArchive {
-    get {return _super ?? TSCH_Chart3DTexturesMaterialArchive()}
+    get {_super ?? TSCH_Chart3DTexturesMaterialArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -675,17 +545,17 @@ public struct TSCH_Chart3DSpecularMaterialArchive: Sendable {
   fileprivate var _super: TSCH_Chart3DTexturesMaterialArchive? = nil
 }
 
-public struct TSCH_Chart3DShininessMaterialArchive: Sendable {
+public nonisolated struct TSCH_Chart3DShininessMaterialArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_Chart3DTexturesMaterialArchive {
-    get {return _super ?? TSCH_Chart3DTexturesMaterialArchive()}
+    get {_super ?? TSCH_Chart3DTexturesMaterialArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -698,28 +568,28 @@ public struct TSCH_Chart3DShininessMaterialArchive: Sendable {
   fileprivate var _super: TSCH_Chart3DTexturesMaterialArchive? = nil
 }
 
-public struct TSCH_Chart3DEnvironmentMaterialArchive: Sendable {
+public nonisolated struct TSCH_Chart3DEnvironmentMaterialArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_Chart3DTexturesMaterialArchive {
-    get {return _super ?? TSCH_Chart3DTexturesMaterialArchive()}
+    get {_super ?? TSCH_Chart3DTexturesMaterialArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var obsoleteTilings: [TSCH_Chart3DBaseImageTextureTilingArchive] = []
 
   public var decalMode: Bool {
-    get {return _decalMode ?? false}
+    get {_decalMode ?? false}
     set {_decalMode = newValue}
   }
   /// Returns true if `decalMode` has been explicitly set.
-  public var hasDecalMode: Bool {return self._decalMode != nil}
+  public var hasDecalMode: Bool {self._decalMode != nil}
   /// Clears the value of `decalMode`. Subsequent reads from it will return its default value.
   public mutating func clearDecalMode() {self._decalMode = nil}
 
@@ -733,17 +603,17 @@ public struct TSCH_Chart3DEnvironmentMaterialArchive: Sendable {
   fileprivate var _decalMode: Bool? = nil
 }
 
-public struct TSCH_Chart3DFixedFunctionLightingModelArchive: Sendable {
+public nonisolated struct TSCH_Chart3DFixedFunctionLightingModelArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var materials: TSCH_Chart3DPhongMaterialPackageArchive {
-    get {return _materials ?? TSCH_Chart3DPhongMaterialPackageArchive()}
+    get {_materials ?? TSCH_Chart3DPhongMaterialPackageArchive()}
     set {_materials = newValue}
   }
   /// Returns true if `materials` has been explicitly set.
-  public var hasMaterials: Bool {return self._materials != nil}
+  public var hasMaterials: Bool {self._materials != nil}
   /// Clears the value of `materials`. Subsequent reads from it will return its default value.
   public mutating func clearMaterials() {self._materials = nil}
 
@@ -754,17 +624,17 @@ public struct TSCH_Chart3DFixedFunctionLightingModelArchive: Sendable {
   fileprivate var _materials: TSCH_Chart3DPhongMaterialPackageArchive? = nil
 }
 
-public struct TSCH_Chart3DPhongLightingModelArchive: Sendable {
+public nonisolated struct TSCH_Chart3DPhongLightingModelArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var materials: TSCH_Chart3DPhongMaterialPackageArchive {
-    get {return _materials ?? TSCH_Chart3DPhongMaterialPackageArchive()}
+    get {_materials ?? TSCH_Chart3DPhongMaterialPackageArchive()}
     set {_materials = newValue}
   }
   /// Returns true if `materials` has been explicitly set.
-  public var hasMaterials: Bool {return self._materials != nil}
+  public var hasMaterials: Bool {self._materials != nil}
   /// Clears the value of `materials`. Subsequent reads from it will return its default value.
   public mutating func clearMaterials() {self._materials = nil}
 
@@ -775,53 +645,53 @@ public struct TSCH_Chart3DPhongLightingModelArchive: Sendable {
   fileprivate var _materials: TSCH_Chart3DPhongMaterialPackageArchive? = nil
 }
 
-public struct TSCH_Chart3DPhongMaterialPackageArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Chart3DPhongMaterialPackageArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var emissive: TSCH_Chart3DEmissiveMaterialArchive {
-    get {return _storage._emissive ?? TSCH_Chart3DEmissiveMaterialArchive()}
+    get {_storage._emissive ?? TSCH_Chart3DEmissiveMaterialArchive()}
     set {_uniqueStorage()._emissive = newValue}
   }
   /// Returns true if `emissive` has been explicitly set.
-  public var hasEmissive: Bool {return _storage._emissive != nil}
+  public var hasEmissive: Bool {_storage._emissive != nil}
   /// Clears the value of `emissive`. Subsequent reads from it will return its default value.
   public mutating func clearEmissive() {_uniqueStorage()._emissive = nil}
 
   public var diffuse: TSCH_Chart3DDiffuseMaterialArchive {
-    get {return _storage._diffuse ?? TSCH_Chart3DDiffuseMaterialArchive()}
+    get {_storage._diffuse ?? TSCH_Chart3DDiffuseMaterialArchive()}
     set {_uniqueStorage()._diffuse = newValue}
   }
   /// Returns true if `diffuse` has been explicitly set.
-  public var hasDiffuse: Bool {return _storage._diffuse != nil}
+  public var hasDiffuse: Bool {_storage._diffuse != nil}
   /// Clears the value of `diffuse`. Subsequent reads from it will return its default value.
   public mutating func clearDiffuse() {_uniqueStorage()._diffuse = nil}
 
   public var modulate: TSCH_Chart3DModulateMaterialArchive {
-    get {return _storage._modulate ?? TSCH_Chart3DModulateMaterialArchive()}
+    get {_storage._modulate ?? TSCH_Chart3DModulateMaterialArchive()}
     set {_uniqueStorage()._modulate = newValue}
   }
   /// Returns true if `modulate` has been explicitly set.
-  public var hasModulate: Bool {return _storage._modulate != nil}
+  public var hasModulate: Bool {_storage._modulate != nil}
   /// Clears the value of `modulate`. Subsequent reads from it will return its default value.
   public mutating func clearModulate() {_uniqueStorage()._modulate = nil}
 
   public var specular: TSCH_Chart3DSpecularMaterialArchive {
-    get {return _storage._specular ?? TSCH_Chart3DSpecularMaterialArchive()}
+    get {_storage._specular ?? TSCH_Chart3DSpecularMaterialArchive()}
     set {_uniqueStorage()._specular = newValue}
   }
   /// Returns true if `specular` has been explicitly set.
-  public var hasSpecular: Bool {return _storage._specular != nil}
+  public var hasSpecular: Bool {_storage._specular != nil}
   /// Clears the value of `specular`. Subsequent reads from it will return its default value.
   public mutating func clearSpecular() {_uniqueStorage()._specular = nil}
 
   public var shininess: TSCH_Chart3DShininessMaterialArchive {
-    get {return _storage._shininess ?? TSCH_Chart3DShininessMaterialArchive()}
+    get {_storage._shininess ?? TSCH_Chart3DShininessMaterialArchive()}
     set {_uniqueStorage()._shininess = newValue}
   }
   /// Returns true if `shininess` has been explicitly set.
-  public var hasShininess: Bool {return _storage._shininess != nil}
+  public var hasShininess: Bool {_storage._shininess != nil}
   /// Clears the value of `shininess`. Subsequent reads from it will return its default value.
   public mutating func clearShininess() {_uniqueStorage()._shininess = nil}
 
@@ -832,44 +702,44 @@ public struct TSCH_Chart3DPhongMaterialPackageArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Chart3DTSPImageDataTextureArchive: Sendable {
+public nonisolated struct TSCH_Chart3DTSPImageDataTextureArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var data: TSP_DataReference {
-    get {return _data ?? TSP_DataReference()}
+    get {_data ?? TSP_DataReference()}
     set {_data = newValue}
   }
   /// Returns true if `data` has been explicitly set.
-  public var hasData: Bool {return self._data != nil}
+  public var hasData: Bool {self._data != nil}
   /// Clears the value of `data`. Subsequent reads from it will return its default value.
   public mutating func clearData() {self._data = nil}
 
   public var mipmapdata: TSP_DataReference {
-    get {return _mipmapdata ?? TSP_DataReference()}
+    get {_mipmapdata ?? TSP_DataReference()}
     set {_mipmapdata = newValue}
   }
   /// Returns true if `mipmapdata` has been explicitly set.
-  public var hasMipmapdata: Bool {return self._mipmapdata != nil}
+  public var hasMipmapdata: Bool {self._mipmapdata != nil}
   /// Clears the value of `mipmapdata`. Subsequent reads from it will return its default value.
   public mutating func clearMipmapdata() {self._mipmapdata = nil}
 
   public var databaseData: TSP_Reference {
-    get {return _databaseData ?? TSP_Reference()}
+    get {_databaseData ?? TSP_Reference()}
     set {_databaseData = newValue}
   }
   /// Returns true if `databaseData` has been explicitly set.
-  public var hasDatabaseData: Bool {return self._databaseData != nil}
+  public var hasDatabaseData: Bool {self._databaseData != nil}
   /// Clears the value of `databaseData`. Subsequent reads from it will return its default value.
   public mutating func clearDatabaseData() {self._databaseData = nil}
 
   public var databaseMipmapdata: TSP_Reference {
-    get {return _databaseMipmapdata ?? TSP_Reference()}
+    get {_databaseMipmapdata ?? TSP_Reference()}
     set {_databaseMipmapdata = newValue}
   }
   /// Returns true if `databaseMipmapdata` has been explicitly set.
-  public var hasDatabaseMipmapdata: Bool {return self._databaseMipmapdata != nil}
+  public var hasDatabaseMipmapdata: Bool {self._databaseMipmapdata != nil}
   /// Clears the value of `databaseMipmapdata`. Subsequent reads from it will return its default value.
   public mutating func clearDatabaseMipmapdata() {self._databaseMipmapdata = nil}
 
@@ -883,26 +753,26 @@ public struct TSCH_Chart3DTSPImageDataTextureArchive: Sendable {
   fileprivate var _databaseMipmapdata: TSP_Reference? = nil
 }
 
-public struct TSCH_Chart3DBaseImageTextureTilingArchive: Sendable {
+public nonisolated struct TSCH_Chart3DBaseImageTextureTilingArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var scale: TSCH_Chart3DVectorArchive {
-    get {return _scale ?? TSCH_Chart3DVectorArchive()}
+    get {_scale ?? TSCH_Chart3DVectorArchive()}
     set {_scale = newValue}
   }
   /// Returns true if `scale` has been explicitly set.
-  public var hasScale: Bool {return self._scale != nil}
+  public var hasScale: Bool {self._scale != nil}
   /// Clears the value of `scale`. Subsequent reads from it will return its default value.
   public mutating func clearScale() {self._scale = nil}
 
   public var rotation: Float {
-    get {return _rotation ?? 0}
+    get {_rotation ?? 0}
     set {_rotation = newValue}
   }
   /// Returns true if `rotation` has been explicitly set.
-  public var hasRotation: Bool {return self._rotation != nil}
+  public var hasRotation: Bool {self._rotation != nil}
   /// Clears the value of `rotation`. Subsequent reads from it will return its default value.
   public mutating func clearRotation() {self._rotation = nil}
 
@@ -914,89 +784,89 @@ public struct TSCH_Chart3DBaseImageTextureTilingArchive: Sendable {
   fileprivate var _rotation: Float? = nil
 }
 
-public struct TSCH_Chart3DImageTextureTilingArchive: Sendable {
+public nonisolated struct TSCH_Chart3DImageTextureTilingArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_Chart3DBaseImageTextureTilingArchive {
-    get {return _super ?? TSCH_Chart3DBaseImageTextureTilingArchive()}
+    get {_super ?? TSCH_Chart3DBaseImageTextureTilingArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var mode: TSCH_TextureTilingMode {
-    get {return _mode ?? .none}
+    get {_mode ?? .none}
     set {_mode = newValue}
   }
   /// Returns true if `mode` has been explicitly set.
-  public var hasMode: Bool {return self._mode != nil}
+  public var hasMode: Bool {self._mode != nil}
   /// Clears the value of `mode`. Subsequent reads from it will return its default value.
   public mutating func clearMode() {self._mode = nil}
 
   public var wrap: TSCH_TextureTilingWrap {
-    get {return _wrap ?? .projected}
+    get {_wrap ?? .projected}
     set {_wrap = newValue}
   }
   /// Returns true if `wrap` has been explicitly set.
-  public var hasWrap: Bool {return self._wrap != nil}
+  public var hasWrap: Bool {self._wrap != nil}
   /// Clears the value of `wrap`. Subsequent reads from it will return its default value.
   public mutating func clearWrap() {self._wrap = nil}
 
   public var face: TSCH_TextureTilingFace {
-    get {return _face ?? .all}
+    get {_face ?? .all}
     set {_face = newValue}
   }
   /// Returns true if `face` has been explicitly set.
-  public var hasFace: Bool {return self._face != nil}
+  public var hasFace: Bool {self._face != nil}
   /// Clears the value of `face`. Subsequent reads from it will return its default value.
   public mutating func clearFace() {self._face = nil}
 
   public var xposition: TSCH_TextureTilingXPosition {
-    get {return _xposition ?? .left}
+    get {_xposition ?? .left}
     set {_xposition = newValue}
   }
   /// Returns true if `xposition` has been explicitly set.
-  public var hasXposition: Bool {return self._xposition != nil}
+  public var hasXposition: Bool {self._xposition != nil}
   /// Clears the value of `xposition`. Subsequent reads from it will return its default value.
   public mutating func clearXposition() {self._xposition = nil}
 
   public var yposition: TSCH_TextureTilingYPosition {
-    get {return _yposition ?? .top}
+    get {_yposition ?? .top}
     set {_yposition = newValue}
   }
   /// Returns true if `yposition` has been explicitly set.
-  public var hasYposition: Bool {return self._yposition != nil}
+  public var hasYposition: Bool {self._yposition != nil}
   /// Clears the value of `yposition`. Subsequent reads from it will return its default value.
   public mutating func clearYposition() {self._yposition = nil}
 
   public var scontinuity: TSCH_TextureTilingContinuity {
-    get {return _scontinuity ?? .none}
+    get {_scontinuity ?? .none}
     set {_scontinuity = newValue}
   }
   /// Returns true if `scontinuity` has been explicitly set.
-  public var hasScontinuity: Bool {return self._scontinuity != nil}
+  public var hasScontinuity: Bool {self._scontinuity != nil}
   /// Clears the value of `scontinuity`. Subsequent reads from it will return its default value.
   public mutating func clearScontinuity() {self._scontinuity = nil}
 
   public var tcontinuity: TSCH_TextureTilingContinuity {
-    get {return _tcontinuity ?? .none}
+    get {_tcontinuity ?? .none}
     set {_tcontinuity = newValue}
   }
   /// Returns true if `tcontinuity` has been explicitly set.
-  public var hasTcontinuity: Bool {return self._tcontinuity != nil}
+  public var hasTcontinuity: Bool {self._tcontinuity != nil}
   /// Clears the value of `tcontinuity`. Subsequent reads from it will return its default value.
   public mutating func clearTcontinuity() {self._tcontinuity = nil}
 
   public var reveal: Bool {
-    get {return _reveal ?? false}
+    get {_reveal ?? false}
     set {_reveal = newValue}
   }
   /// Returns true if `reveal` has been explicitly set.
-  public var hasReveal: Bool {return self._reveal != nil}
+  public var hasReveal: Bool {self._reveal != nil}
   /// Clears the value of `reveal`. Subsequent reads from it will return its default value.
   public mutating func clearReveal() {self._reveal = nil}
 
@@ -1015,44 +885,44 @@ public struct TSCH_Chart3DImageTextureTilingArchive: Sendable {
   fileprivate var _reveal: Bool? = nil
 }
 
-public struct TSCH_Chart3DVectorArchive: Sendable {
+public nonisolated struct TSCH_Chart3DVectorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var x: Float {
-    get {return _x ?? 0}
+    get {_x ?? 0}
     set {_x = newValue}
   }
   /// Returns true if `x` has been explicitly set.
-  public var hasX: Bool {return self._x != nil}
+  public var hasX: Bool {self._x != nil}
   /// Clears the value of `x`. Subsequent reads from it will return its default value.
   public mutating func clearX() {self._x = nil}
 
   public var y: Float {
-    get {return _y ?? 0}
+    get {_y ?? 0}
     set {_y = newValue}
   }
   /// Returns true if `y` has been explicitly set.
-  public var hasY: Bool {return self._y != nil}
+  public var hasY: Bool {self._y != nil}
   /// Clears the value of `y`. Subsequent reads from it will return its default value.
   public mutating func clearY() {self._y = nil}
 
   public var z: Float {
-    get {return _z ?? 0}
+    get {_z ?? 0}
     set {_z = newValue}
   }
   /// Returns true if `z` has been explicitly set.
-  public var hasZ: Bool {return self._z != nil}
+  public var hasZ: Bool {self._z != nil}
   /// Clears the value of `z`. Subsequent reads from it will return its default value.
   public mutating func clearZ() {self._z = nil}
 
   public var w: Float {
-    get {return _w ?? 0}
+    get {_w ?? 0}
     set {_w = newValue}
   }
   /// Returns true if `w` has been explicitly set.
-  public var hasW: Bool {return self._w != nil}
+  public var hasW: Bool {self._w != nil}
   /// Clears the value of `w`. Subsequent reads from it will return its default value.
   public mutating func clearW() {self._w = nil}
 
@@ -1075,7 +945,7 @@ public struct TSCH_Chart3DVectorArchive: Sendable {
 // declaration. To avoid naming collisions, the names are prefixed with the name of
 // the scope where the extend directive occurs.
 
-extension TSD_FillArchive {
+nonisolated extension TSD_FillArchive {
 
   public var TSCH_fill3D: TSCH_Chart3DFillArchive {
     get {return getExtensionValue(ext: TSCH_Extensions_fill3d) ?? TSCH_Chart3DFillArchive()}
@@ -1100,7 +970,7 @@ extension TSD_FillArchive {
 /// this .proto file. It can be used any place an `SwiftProtobuf.ExtensionMap` is needed
 /// in parsing, or it can be combined with other `SwiftProtobuf.SimpleExtensionMap`s to create
 /// a larger `SwiftProtobuf.SimpleExtensionMap`.
-public let TSCH_Tsch3Darchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
+public nonisolated let TSCH_Tsch3Darchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
   TSCH_Extensions_fill3d
 ]
 
@@ -1108,78 +978,46 @@ public let TSCH_Tsch3Darchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
 // constructing a `SimpleExtensionMap`, otherwise, use the above _Extension Properties_
 // accessors for the extension fields on the messages directly.
 
-public let TSCH_Extensions_fill3d = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Chart3DFillArchive>, TSD_FillArchive>(
+public nonisolated let TSCH_Extensions_fill3d = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Chart3DFillArchive>, TSD_FillArchive>(
   _protobuf_fieldNumber: 100,
   fieldName: "TSCH.fill3d"
 )
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSCH"
+fileprivate nonisolated let _protobuf_package = "TSCH"
 
-extension TSCH_TextureTilingMode: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "textureTilingModeNone"),
-    1: .same(proto: "textureTilingModeTallest"),
-  ]
+nonisolated extension TSCH_TextureTilingMode: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0textureTilingModeNone\0\u{1}textureTilingModeTallest\0")
 }
 
-extension TSCH_TextureTilingFace: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "textureTilingFaceAll"),
-    1: .same(proto: "textureTilingFaceTopAndBottom"),
-    2: .same(proto: "textureTilingFaceSide"),
-  ]
+nonisolated extension TSCH_TextureTilingFace: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0textureTilingFaceAll\0\u{1}textureTilingFaceTopAndBottom\0\u{1}textureTilingFaceSide\0")
 }
 
-extension TSCH_TextureTilingWrap: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "textureTilingWrapProjected"),
-    1: .same(proto: "textureTilingWrapFaceWrap"),
-  ]
+nonisolated extension TSCH_TextureTilingWrap: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0textureTilingWrapProjected\0\u{1}textureTilingWrapFaceWrap\0")
 }
 
-extension TSCH_TextureTilingXPosition: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "textureTilingXPositionLeft"),
-    1: .same(proto: "textureTilingXPositionCenter"),
-    2: .same(proto: "textureTilingXPositionRight"),
-  ]
+nonisolated extension TSCH_TextureTilingXPosition: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0textureTilingXPositionLeft\0\u{1}textureTilingXPositionCenter\0\u{1}textureTilingXPositionRight\0")
 }
 
-extension TSCH_TextureTilingYPosition: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "textureTilingYPositionTop"),
-    1: .same(proto: "textureTilingYPositionMiddle"),
-    2: .same(proto: "textureTilingYPositionBottom"),
-  ]
+nonisolated extension TSCH_TextureTilingYPosition: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0textureTilingYPositionTop\0\u{1}textureTilingYPositionMiddle\0\u{1}textureTilingYPositionBottom\0")
 }
 
-extension TSCH_TextureTilingContinuity: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "textureTilingContinuityNone"),
-    1: .same(proto: "textureTilingContinuityGlobal"),
-    2: .same(proto: "textureTilingContinuitySeries"),
-    3: .same(proto: "textureTilingContinuityJittered"),
-  ]
+nonisolated extension TSCH_TextureTilingContinuity: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0textureTilingContinuityNone\0\u{1}textureTilingContinuityGlobal\0\u{1}textureTilingContinuitySeries\0\u{1}textureTilingContinuityJittered\0")
 }
 
-extension TSCH_FillPropertyType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "fillPropertyTypeUndefined"),
-    1: .same(proto: "fillPropertyTypeArea"),
-    2: .same(proto: "fillPropertyTypeBar"),
-    3: .same(proto: "fillPropertyTypeColumn"),
-    4: .same(proto: "fillPropertyTypeLine"),
-    5: .same(proto: "fillPropertyTypePie"),
-  ]
+nonisolated extension TSCH_FillPropertyType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0fillPropertyTypeUndefined\0\u{1}fillPropertyTypeArea\0\u{1}fillPropertyTypeBar\0\u{1}fillPropertyTypeColumn\0\u{1}fillPropertyTypeLine\0\u{1}fillPropertyTypePie\0")
 }
 
-extension TSCH_Chart3DEnvironmentPackageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DEnvironmentPackageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DEnvironmentPackageArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "materials"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}materials\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.materials) {return false}
@@ -1212,14 +1050,9 @@ extension TSCH_Chart3DEnvironmentPackageArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSCH_Chart3DFillArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DFillArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DFillArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "lightingmodel"),
-    2: .standard(proto: "textureset_id"),
-    3: .standard(proto: "fill_type"),
-    4: .standard(proto: "series_index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}lightingmodel\0\u{3}textureset_id\0\u{3}fill_type\0\u{3}series_index\0")
 
   public var isInitialized: Bool {
     if let v = self._lightingmodel, !v.isInitialized {return false}
@@ -1271,11 +1104,9 @@ extension TSCH_Chart3DFillArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSCH_Chart3DPointLightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DPointLightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DPointLightArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "position"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}position\0")
 
   public var isInitialized: Bool {
     if self._position == nil {return false}
@@ -1313,11 +1144,9 @@ extension TSCH_Chart3DPointLightArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCH_Chart3DDirectionalLightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DDirectionalLightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DDirectionalLightArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "direction"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}direction\0")
 
   public var isInitialized: Bool {
     if self._direction == nil {return false}
@@ -1355,14 +1184,9 @@ extension TSCH_Chart3DDirectionalLightArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_Chart3DSpotLightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DSpotLightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DSpotLightArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "position"),
-    2: .same(proto: "direction"),
-    3: .same(proto: "cutoff"),
-    4: .same(proto: "dropoff"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}position\0\u{1}direction\0\u{1}cutoff\0\u{1}dropoff\0")
 
   public var isInitialized: Bool {
     if self._position == nil {return false}
@@ -1419,21 +1243,9 @@ extension TSCH_Chart3DSpotLightArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSCH_Chart3DLightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DLightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DLightArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .standard(proto: "ambient_color"),
-    3: .standard(proto: "diffuse_color"),
-    4: .standard(proto: "specular_color"),
-    5: .same(proto: "intensity"),
-    6: .same(proto: "attenuation"),
-    7: .standard(proto: "coordinate_space"),
-    8: .same(proto: "enabled"),
-    9: .standard(proto: "point_light"),
-    10: .standard(proto: "directional_light"),
-    11: .standard(proto: "spot_light"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{3}ambient_color\0\u{3}diffuse_color\0\u{3}specular_color\0\u{1}intensity\0\u{1}attenuation\0\u{3}coordinate_space\0\u{1}enabled\0\u{3}point_light\0\u{3}directional_light\0\u{3}spot_light\0")
 
   fileprivate class _StorageClass {
     var _name: String? = nil
@@ -1448,15 +1260,11 @@ extension TSCH_Chart3DLightArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
     var _directionalLight: TSCH_Chart3DDirectionalLightArchive? = nil
     var _spotLight: TSCH_Chart3DSpotLightArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -1596,13 +1404,9 @@ extension TSCH_Chart3DLightArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSCH_Chart3DLightingModelArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DLightingModelArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DLightingModelArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "phong"),
-    2: .standard(proto: "fixed_function"),
-    3: .same(proto: "environment"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}phong\0\u{3}fixed_function\0\u{1}environment\0")
 
   public var isInitialized: Bool {
     if let v = self._phong, !v.isInitialized {return false}
@@ -1651,12 +1455,9 @@ extension TSCH_Chart3DLightingModelArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCH_Chart3DLightingPackageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DLightingPackageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DLightingPackageArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .same(proto: "lights"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{1}lights\0")
 
   public var isInitialized: Bool {
     if self._name == nil {return false}
@@ -1699,12 +1500,9 @@ extension TSCH_Chart3DLightingPackageArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCH_Chart3DTexturesMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DTexturesMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DTexturesMaterialArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "color"),
-    2: .same(proto: "textures"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}color\0\u{1}textures\0")
 
   public var isInitialized: Bool {
     if self._color == nil {return false}
@@ -1748,12 +1546,9 @@ extension TSCH_Chart3DTexturesMaterialArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_Chart3DEmissiveMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DEmissiveMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DEmissiveMaterialArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "tilings"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}tilings\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -1797,12 +1592,9 @@ extension TSCH_Chart3DEmissiveMaterialArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_Chart3DDiffuseMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DDiffuseMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DDiffuseMaterialArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "tilings"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}tilings\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -1846,12 +1638,9 @@ extension TSCH_Chart3DDiffuseMaterialArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCH_Chart3DModulateMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DModulateMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DModulateMaterialArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "tilings"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}tilings\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -1895,12 +1684,9 @@ extension TSCH_Chart3DModulateMaterialArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_Chart3DSpecularMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DSpecularMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DSpecularMaterialArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "tilings"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}tilings\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -1944,12 +1730,9 @@ extension TSCH_Chart3DSpecularMaterialArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_Chart3DShininessMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DShininessMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DShininessMaterialArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "tilings"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}tilings\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -1993,14 +1776,9 @@ extension TSCH_Chart3DShininessMaterialArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCH_Chart3DEnvironmentMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DEnvironmentMaterialArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DEnvironmentMaterialArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "OBSOLETE_tilings"),
-    3: .same(proto: "decalMode"),
-    4: .same(proto: "tilings"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}OBSOLETE_tilings\0\u{1}decalMode\0\u{1}tilings\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -2055,11 +1833,9 @@ extension TSCH_Chart3DEnvironmentMaterialArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCH_Chart3DFixedFunctionLightingModelArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DFixedFunctionLightingModelArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DFixedFunctionLightingModelArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "materials"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}materials\0")
 
   public var isInitialized: Bool {
     if self._materials == nil {return false}
@@ -2097,11 +1873,9 @@ extension TSCH_Chart3DFixedFunctionLightingModelArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCH_Chart3DPhongLightingModelArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DPhongLightingModelArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DPhongLightingModelArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "materials"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}materials\0")
 
   public var isInitialized: Bool {
     if self._materials == nil {return false}
@@ -2139,15 +1913,9 @@ extension TSCH_Chart3DPhongLightingModelArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSCH_Chart3DPhongMaterialPackageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DPhongMaterialPackageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DPhongMaterialPackageArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "emissive"),
-    2: .same(proto: "diffuse"),
-    3: .same(proto: "modulate"),
-    4: .same(proto: "specular"),
-    5: .same(proto: "shininess"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}emissive\0\u{1}diffuse\0\u{1}modulate\0\u{1}specular\0\u{1}shininess\0")
 
   fileprivate class _StorageClass {
     var _emissive: TSCH_Chart3DEmissiveMaterialArchive? = nil
@@ -2156,15 +1924,11 @@ extension TSCH_Chart3DPhongMaterialPackageArchive: SwiftProtobuf.Message, SwiftP
     var _specular: TSCH_Chart3DSpecularMaterialArchive? = nil
     var _shininess: TSCH_Chart3DShininessMaterialArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -2258,14 +2022,9 @@ extension TSCH_Chart3DPhongMaterialPackageArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSCH_Chart3DTSPImageDataTextureArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DTSPImageDataTextureArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DTSPImageDataTextureArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    3: .same(proto: "data"),
-    4: .same(proto: "mipmapdata"),
-    1: .standard(proto: "database_data"),
-    2: .standard(proto: "database_mipmapdata"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}database_data\0\u{3}database_mipmapdata\0\u{1}data\0\u{1}mipmapdata\0")
 
   public var isInitialized: Bool {
     if let v = self._data, !v.isInitialized {return false}
@@ -2320,12 +2079,9 @@ extension TSCH_Chart3DTSPImageDataTextureArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCH_Chart3DBaseImageTextureTilingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DBaseImageTextureTilingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DBaseImageTextureTilingArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "scale"),
-    2: .same(proto: "rotation"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}scale\0\u{1}rotation\0")
 
   public var isInitialized: Bool {
     if let v = self._scale, !v.isInitialized {return false}
@@ -2367,19 +2123,9 @@ extension TSCH_Chart3DBaseImageTextureTilingArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSCH_Chart3DImageTextureTilingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DImageTextureTilingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DImageTextureTilingArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "mode"),
-    3: .same(proto: "wrap"),
-    4: .same(proto: "face"),
-    5: .same(proto: "xposition"),
-    6: .same(proto: "yposition"),
-    7: .same(proto: "scontinuity"),
-    8: .same(proto: "tcontinuity"),
-    9: .same(proto: "reveal"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}mode\0\u{1}wrap\0\u{1}face\0\u{1}xposition\0\u{1}yposition\0\u{1}scontinuity\0\u{1}tcontinuity\0\u{1}reveal\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -2457,14 +2203,9 @@ extension TSCH_Chart3DImageTextureTilingArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSCH_Chart3DVectorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Chart3DVectorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Chart3DVectorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "x"),
-    2: .same(proto: "y"),
-    3: .same(proto: "z"),
-    4: .same(proto: "w"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}x\0\u{1}y\0\u{1}z\0\u{1}w\0")
 
   public var isInitialized: Bool {
     if self._x == nil {return false}

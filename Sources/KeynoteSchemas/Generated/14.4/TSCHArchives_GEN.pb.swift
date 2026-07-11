@@ -15,265 +15,265 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSCH_Generated_ChartStyleArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Generated_ChartStyleArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschchartinfodefault3Dchartopacity: Float {
-    get {return _storage._tschchartinfodefault3Dchartopacity ?? 0}
+    get {_storage._tschchartinfodefault3Dchartopacity ?? 0}
     set {_uniqueStorage()._tschchartinfodefault3Dchartopacity = newValue}
   }
   /// Returns true if `tschchartinfodefault3Dchartopacity` has been explicitly set.
-  public var hasTschchartinfodefault3Dchartopacity: Bool {return _storage._tschchartinfodefault3Dchartopacity != nil}
+  public var hasTschchartinfodefault3Dchartopacity: Bool {_storage._tschchartinfodefault3Dchartopacity != nil}
   /// Clears the value of `tschchartinfodefault3Dchartopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefault3Dchartopacity() {_uniqueStorage()._tschchartinfodefault3Dchartopacity = nil}
 
   public var tschchartinfoarea3Dlightingpackage: TSCH_Chart3DLightingPackageArchive {
-    get {return _storage._tschchartinfoarea3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
+    get {_storage._tschchartinfoarea3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
     set {_uniqueStorage()._tschchartinfoarea3Dlightingpackage = newValue}
   }
   /// Returns true if `tschchartinfoarea3Dlightingpackage` has been explicitly set.
-  public var hasTschchartinfoarea3Dlightingpackage: Bool {return _storage._tschchartinfoarea3Dlightingpackage != nil}
+  public var hasTschchartinfoarea3Dlightingpackage: Bool {_storage._tschchartinfoarea3Dlightingpackage != nil}
   /// Clears the value of `tschchartinfoarea3Dlightingpackage`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoarea3Dlightingpackage() {_uniqueStorage()._tschchartinfoarea3Dlightingpackage = nil}
 
   public var tschchartinfobar3Dlightingpackage: TSCH_Chart3DLightingPackageArchive {
-    get {return _storage._tschchartinfobar3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
+    get {_storage._tschchartinfobar3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
     set {_uniqueStorage()._tschchartinfobar3Dlightingpackage = newValue}
   }
   /// Returns true if `tschchartinfobar3Dlightingpackage` has been explicitly set.
-  public var hasTschchartinfobar3Dlightingpackage: Bool {return _storage._tschchartinfobar3Dlightingpackage != nil}
+  public var hasTschchartinfobar3Dlightingpackage: Bool {_storage._tschchartinfobar3Dlightingpackage != nil}
   /// Clears the value of `tschchartinfobar3Dlightingpackage`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfobar3Dlightingpackage() {_uniqueStorage()._tschchartinfobar3Dlightingpackage = nil}
 
   public var tschchartinfocolumn3Dlightingpackage: TSCH_Chart3DLightingPackageArchive {
-    get {return _storage._tschchartinfocolumn3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
+    get {_storage._tschchartinfocolumn3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
     set {_uniqueStorage()._tschchartinfocolumn3Dlightingpackage = newValue}
   }
   /// Returns true if `tschchartinfocolumn3Dlightingpackage` has been explicitly set.
-  public var hasTschchartinfocolumn3Dlightingpackage: Bool {return _storage._tschchartinfocolumn3Dlightingpackage != nil}
+  public var hasTschchartinfocolumn3Dlightingpackage: Bool {_storage._tschchartinfocolumn3Dlightingpackage != nil}
   /// Clears the value of `tschchartinfocolumn3Dlightingpackage`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfocolumn3Dlightingpackage() {_uniqueStorage()._tschchartinfocolumn3Dlightingpackage = nil}
 
   public var tschchartinfodefault3Dlightingpackage: TSCH_Chart3DLightingPackageArchive {
-    get {return _storage._tschchartinfodefault3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
+    get {_storage._tschchartinfodefault3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
     set {_uniqueStorage()._tschchartinfodefault3Dlightingpackage = newValue}
   }
   /// Returns true if `tschchartinfodefault3Dlightingpackage` has been explicitly set.
-  public var hasTschchartinfodefault3Dlightingpackage: Bool {return _storage._tschchartinfodefault3Dlightingpackage != nil}
+  public var hasTschchartinfodefault3Dlightingpackage: Bool {_storage._tschchartinfodefault3Dlightingpackage != nil}
   /// Clears the value of `tschchartinfodefault3Dlightingpackage`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefault3Dlightingpackage() {_uniqueStorage()._tschchartinfodefault3Dlightingpackage = nil}
 
   public var tschchartinfoline3Dlightingpackage: TSCH_Chart3DLightingPackageArchive {
-    get {return _storage._tschchartinfoline3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
+    get {_storage._tschchartinfoline3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
     set {_uniqueStorage()._tschchartinfoline3Dlightingpackage = newValue}
   }
   /// Returns true if `tschchartinfoline3Dlightingpackage` has been explicitly set.
-  public var hasTschchartinfoline3Dlightingpackage: Bool {return _storage._tschchartinfoline3Dlightingpackage != nil}
+  public var hasTschchartinfoline3Dlightingpackage: Bool {_storage._tschchartinfoline3Dlightingpackage != nil}
   /// Clears the value of `tschchartinfoline3Dlightingpackage`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoline3Dlightingpackage() {_uniqueStorage()._tschchartinfoline3Dlightingpackage = nil}
 
   public var tschchartinfopie3Dlightingpackage: TSCH_Chart3DLightingPackageArchive {
-    get {return _storage._tschchartinfopie3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
+    get {_storage._tschchartinfopie3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
     set {_uniqueStorage()._tschchartinfopie3Dlightingpackage = newValue}
   }
   /// Returns true if `tschchartinfopie3Dlightingpackage` has been explicitly set.
-  public var hasTschchartinfopie3Dlightingpackage: Bool {return _storage._tschchartinfopie3Dlightingpackage != nil}
+  public var hasTschchartinfopie3Dlightingpackage: Bool {_storage._tschchartinfopie3Dlightingpackage != nil}
   /// Clears the value of `tschchartinfopie3Dlightingpackage`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfopie3Dlightingpackage() {_uniqueStorage()._tschchartinfopie3Dlightingpackage = nil}
 
   public var tschchartinfodefaultaxisanchorlabelatends: Bool {
-    get {return _storage._tschchartinfodefaultaxisanchorlabelatends ?? false}
+    get {_storage._tschchartinfodefaultaxisanchorlabelatends ?? false}
     set {_uniqueStorage()._tschchartinfodefaultaxisanchorlabelatends = newValue}
   }
   /// Returns true if `tschchartinfodefaultaxisanchorlabelatends` has been explicitly set.
-  public var hasTschchartinfodefaultaxisanchorlabelatends: Bool {return _storage._tschchartinfodefaultaxisanchorlabelatends != nil}
+  public var hasTschchartinfodefaultaxisanchorlabelatends: Bool {_storage._tschchartinfodefaultaxisanchorlabelatends != nil}
   /// Clears the value of `tschchartinfodefaultaxisanchorlabelatends`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultaxisanchorlabelatends() {_uniqueStorage()._tschchartinfodefaultaxisanchorlabelatends = nil}
 
   public var tschchartinfodefaultbackgroundfill: TSD_FillArchive {
-    get {return _storage._tschchartinfodefaultbackgroundfill ?? TSD_FillArchive()}
+    get {_storage._tschchartinfodefaultbackgroundfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartinfodefaultbackgroundfill = newValue}
   }
   /// Returns true if `tschchartinfodefaultbackgroundfill` has been explicitly set.
-  public var hasTschchartinfodefaultbackgroundfill: Bool {return _storage._tschchartinfodefaultbackgroundfill != nil}
+  public var hasTschchartinfodefaultbackgroundfill: Bool {_storage._tschchartinfodefaultbackgroundfill != nil}
   /// Clears the value of `tschchartinfodefaultbackgroundfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultbackgroundfill() {_uniqueStorage()._tschchartinfodefaultbackgroundfill = nil}
 
   public var tschchartinfodefaultbackgroundstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartinfodefaultbackgroundstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartinfodefaultbackgroundstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartinfodefaultbackgroundstroke = newValue}
   }
   /// Returns true if `tschchartinfodefaultbackgroundstroke` has been explicitly set.
-  public var hasTschchartinfodefaultbackgroundstroke: Bool {return _storage._tschchartinfodefaultbackgroundstroke != nil}
+  public var hasTschchartinfodefaultbackgroundstroke: Bool {_storage._tschchartinfodefaultbackgroundstroke != nil}
   /// Clears the value of `tschchartinfodefaultbackgroundstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultbackgroundstroke() {_uniqueStorage()._tschchartinfodefaultbackgroundstroke = nil}
 
   public var tschchartinfodefaultborderopacity: Float {
-    get {return _storage._tschchartinfodefaultborderopacity ?? 0}
+    get {_storage._tschchartinfodefaultborderopacity ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultborderopacity = newValue}
   }
   /// Returns true if `tschchartinfodefaultborderopacity` has been explicitly set.
-  public var hasTschchartinfodefaultborderopacity: Bool {return _storage._tschchartinfodefaultborderopacity != nil}
+  public var hasTschchartinfodefaultborderopacity: Bool {_storage._tschchartinfodefaultborderopacity != nil}
   /// Clears the value of `tschchartinfodefaultborderopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultborderopacity() {_uniqueStorage()._tschchartinfodefaultborderopacity = nil}
 
   public var tschchartinfodefaultbordershadow: TSD_ShadowArchive {
-    get {return _storage._tschchartinfodefaultbordershadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartinfodefaultbordershadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartinfodefaultbordershadow = newValue}
   }
   /// Returns true if `tschchartinfodefaultbordershadow` has been explicitly set.
-  public var hasTschchartinfodefaultbordershadow: Bool {return _storage._tschchartinfodefaultbordershadow != nil}
+  public var hasTschchartinfodefaultbordershadow: Bool {_storage._tschchartinfodefaultbordershadow != nil}
   /// Clears the value of `tschchartinfodefaultbordershadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultbordershadow() {_uniqueStorage()._tschchartinfodefaultbordershadow = nil}
 
   public var tschchartinfodefaultborderstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartinfodefaultborderstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartinfodefaultborderstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartinfodefaultborderstroke = newValue}
   }
   /// Returns true if `tschchartinfodefaultborderstroke` has been explicitly set.
-  public var hasTschchartinfodefaultborderstroke: Bool {return _storage._tschchartinfodefaultborderstroke != nil}
+  public var hasTschchartinfodefaultborderstroke: Bool {_storage._tschchartinfodefaultborderstroke != nil}
   /// Clears the value of `tschchartinfodefaultborderstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultborderstroke() {_uniqueStorage()._tschchartinfodefaultborderstroke = nil}
 
   public var tschchartinfodefaultcombinelayers: Bool {
-    get {return _storage._tschchartinfodefaultcombinelayers ?? false}
+    get {_storage._tschchartinfodefaultcombinelayers ?? false}
     set {_uniqueStorage()._tschchartinfodefaultcombinelayers = newValue}
   }
   /// Returns true if `tschchartinfodefaultcombinelayers` has been explicitly set.
-  public var hasTschchartinfodefaultcombinelayers: Bool {return _storage._tschchartinfodefaultcombinelayers != nil}
+  public var hasTschchartinfodefaultcombinelayers: Bool {_storage._tschchartinfodefaultcombinelayers != nil}
   /// Clears the value of `tschchartinfodefaultcombinelayers`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultcombinelayers() {_uniqueStorage()._tschchartinfodefaultcombinelayers = nil}
 
   public var tschchartinfodefaultdatasetnameparagraphstyleindex: Int32 {
-    get {return _storage._tschchartinfodefaultdatasetnameparagraphstyleindex ?? 0}
+    get {_storage._tschchartinfodefaultdatasetnameparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultdatasetnameparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartinfodefaultdatasetnameparagraphstyleindex` has been explicitly set.
-  public var hasTschchartinfodefaultdatasetnameparagraphstyleindex: Bool {return _storage._tschchartinfodefaultdatasetnameparagraphstyleindex != nil}
+  public var hasTschchartinfodefaultdatasetnameparagraphstyleindex: Bool {_storage._tschchartinfodefaultdatasetnameparagraphstyleindex != nil}
   /// Clears the value of `tschchartinfodefaultdatasetnameparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultdatasetnameparagraphstyleindex() {_uniqueStorage()._tschchartinfodefaultdatasetnameparagraphstyleindex = nil}
 
   public var tschchartinfodefaultgridbackgroundfill: TSD_FillArchive {
-    get {return _storage._tschchartinfodefaultgridbackgroundfill ?? TSD_FillArchive()}
+    get {_storage._tschchartinfodefaultgridbackgroundfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartinfodefaultgridbackgroundfill = newValue}
   }
   /// Returns true if `tschchartinfodefaultgridbackgroundfill` has been explicitly set.
-  public var hasTschchartinfodefaultgridbackgroundfill: Bool {return _storage._tschchartinfodefaultgridbackgroundfill != nil}
+  public var hasTschchartinfodefaultgridbackgroundfill: Bool {_storage._tschchartinfodefaultgridbackgroundfill != nil}
   /// Clears the value of `tschchartinfodefaultgridbackgroundfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultgridbackgroundfill() {_uniqueStorage()._tschchartinfodefaultgridbackgroundfill = nil}
 
   public var tschchartinfodefaultgridbackgroundopacity: Float {
-    get {return _storage._tschchartinfodefaultgridbackgroundopacity ?? 0}
+    get {_storage._tschchartinfodefaultgridbackgroundopacity ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultgridbackgroundopacity = newValue}
   }
   /// Returns true if `tschchartinfodefaultgridbackgroundopacity` has been explicitly set.
-  public var hasTschchartinfodefaultgridbackgroundopacity: Bool {return _storage._tschchartinfodefaultgridbackgroundopacity != nil}
+  public var hasTschchartinfodefaultgridbackgroundopacity: Bool {_storage._tschchartinfodefaultgridbackgroundopacity != nil}
   /// Clears the value of `tschchartinfodefaultgridbackgroundopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultgridbackgroundopacity() {_uniqueStorage()._tschchartinfodefaultgridbackgroundopacity = nil}
 
   public var tschchartinfodefaultinterbargap: Float {
-    get {return _storage._tschchartinfodefaultinterbargap ?? 0}
+    get {_storage._tschchartinfodefaultinterbargap ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultinterbargap = newValue}
   }
   /// Returns true if `tschchartinfodefaultinterbargap` has been explicitly set.
-  public var hasTschchartinfodefaultinterbargap: Bool {return _storage._tschchartinfodefaultinterbargap != nil}
+  public var hasTschchartinfodefaultinterbargap: Bool {_storage._tschchartinfodefaultinterbargap != nil}
   /// Clears the value of `tschchartinfodefaultinterbargap`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultinterbargap() {_uniqueStorage()._tschchartinfodefaultinterbargap = nil}
 
   public var tschchartinfodefaultintersetgap: Float {
-    get {return _storage._tschchartinfodefaultintersetgap ?? 0}
+    get {_storage._tschchartinfodefaultintersetgap ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultintersetgap = newValue}
   }
   /// Returns true if `tschchartinfodefaultintersetgap` has been explicitly set.
-  public var hasTschchartinfodefaultintersetgap: Bool {return _storage._tschchartinfodefaultintersetgap != nil}
+  public var hasTschchartinfodefaultintersetgap: Bool {_storage._tschchartinfodefaultintersetgap != nil}
   /// Clears the value of `tschchartinfodefaultintersetgap`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultintersetgap() {_uniqueStorage()._tschchartinfodefaultintersetgap = nil}
 
   public var tschchartinfodefaultradarradiusgridlinecurve: Bool {
-    get {return _storage._tschchartinfodefaultradarradiusgridlinecurve ?? false}
+    get {_storage._tschchartinfodefaultradarradiusgridlinecurve ?? false}
     set {_uniqueStorage()._tschchartinfodefaultradarradiusgridlinecurve = newValue}
   }
   /// Returns true if `tschchartinfodefaultradarradiusgridlinecurve` has been explicitly set.
-  public var hasTschchartinfodefaultradarradiusgridlinecurve: Bool {return _storage._tschchartinfodefaultradarradiusgridlinecurve != nil}
+  public var hasTschchartinfodefaultradarradiusgridlinecurve: Bool {_storage._tschchartinfodefaultradarradiusgridlinecurve != nil}
   /// Clears the value of `tschchartinfodefaultradarradiusgridlinecurve`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultradarradiusgridlinecurve() {_uniqueStorage()._tschchartinfodefaultradarradiusgridlinecurve = nil}
 
   public var tschchartinfodefaultroundedcornerouterendonly: Bool {
-    get {return _storage._tschchartinfodefaultroundedcornerouterendonly ?? false}
+    get {_storage._tschchartinfodefaultroundedcornerouterendonly ?? false}
     set {_uniqueStorage()._tschchartinfodefaultroundedcornerouterendonly = newValue}
   }
   /// Returns true if `tschchartinfodefaultroundedcornerouterendonly` has been explicitly set.
-  public var hasTschchartinfodefaultroundedcornerouterendonly: Bool {return _storage._tschchartinfodefaultroundedcornerouterendonly != nil}
+  public var hasTschchartinfodefaultroundedcornerouterendonly: Bool {_storage._tschchartinfodefaultroundedcornerouterendonly != nil}
   /// Clears the value of `tschchartinfodefaultroundedcornerouterendonly`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultroundedcornerouterendonly() {_uniqueStorage()._tschchartinfodefaultroundedcornerouterendonly = nil}
 
   public var tschchartinfodefaultroundedcornerradius: Float {
-    get {return _storage._tschchartinfodefaultroundedcornerradius ?? 0}
+    get {_storage._tschchartinfodefaultroundedcornerradius ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultroundedcornerradius = newValue}
   }
   /// Returns true if `tschchartinfodefaultroundedcornerradius` has been explicitly set.
-  public var hasTschchartinfodefaultroundedcornerradius: Bool {return _storage._tschchartinfodefaultroundedcornerradius != nil}
+  public var hasTschchartinfodefaultroundedcornerradius: Bool {_storage._tschchartinfodefaultroundedcornerradius != nil}
   /// Clears the value of `tschchartinfodefaultroundedcornerradius`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultroundedcornerradius() {_uniqueStorage()._tschchartinfodefaultroundedcornerradius = nil}
 
   public var tschchartinfodefaultshowborder: Bool {
-    get {return _storage._tschchartinfodefaultshowborder ?? false}
+    get {_storage._tschchartinfodefaultshowborder ?? false}
     set {_uniqueStorage()._tschchartinfodefaultshowborder = newValue}
   }
   /// Returns true if `tschchartinfodefaultshowborder` has been explicitly set.
-  public var hasTschchartinfodefaultshowborder: Bool {return _storage._tschchartinfodefaultshowborder != nil}
+  public var hasTschchartinfodefaultshowborder: Bool {_storage._tschchartinfodefaultshowborder != nil}
   /// Clears the value of `tschchartinfodefaultshowborder`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultshowborder() {_uniqueStorage()._tschchartinfodefaultshowborder = nil}
 
   public var tschchartinfodefaultsummarylabeloffset: Float {
-    get {return _storage._tschchartinfodefaultsummarylabeloffset ?? 0}
+    get {_storage._tschchartinfodefaultsummarylabeloffset ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultsummarylabeloffset = newValue}
   }
   /// Returns true if `tschchartinfodefaultsummarylabeloffset` has been explicitly set.
-  public var hasTschchartinfodefaultsummarylabeloffset: Bool {return _storage._tschchartinfodefaultsummarylabeloffset != nil}
+  public var hasTschchartinfodefaultsummarylabeloffset: Bool {_storage._tschchartinfodefaultsummarylabeloffset != nil}
   /// Clears the value of `tschchartinfodefaultsummarylabeloffset`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultsummarylabeloffset() {_uniqueStorage()._tschchartinfodefaultsummarylabeloffset = nil}
 
   public var tschchartinfodefaultsummarylabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartinfodefaultsummarylabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartinfodefaultsummarylabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultsummarylabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartinfodefaultsummarylabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartinfodefaultsummarylabelparagraphstyleindex: Bool {return _storage._tschchartinfodefaultsummarylabelparagraphstyleindex != nil}
+  public var hasTschchartinfodefaultsummarylabelparagraphstyleindex: Bool {_storage._tschchartinfodefaultsummarylabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartinfodefaultsummarylabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultsummarylabelparagraphstyleindex() {_uniqueStorage()._tschchartinfodefaultsummarylabelparagraphstyleindex = nil}
 
   public var tschchartinfodefaultsummarylabelvaluelabelspacing: Int32 {
-    get {return _storage._tschchartinfodefaultsummarylabelvaluelabelspacing ?? 0}
+    get {_storage._tschchartinfodefaultsummarylabelvaluelabelspacing ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultsummarylabelvaluelabelspacing = newValue}
   }
   /// Returns true if `tschchartinfodefaultsummarylabelvaluelabelspacing` has been explicitly set.
-  public var hasTschchartinfodefaultsummarylabelvaluelabelspacing: Bool {return _storage._tschchartinfodefaultsummarylabelvaluelabelspacing != nil}
+  public var hasTschchartinfodefaultsummarylabelvaluelabelspacing: Bool {_storage._tschchartinfodefaultsummarylabelvaluelabelspacing != nil}
   /// Clears the value of `tschchartinfodefaultsummarylabelvaluelabelspacing`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultsummarylabelvaluelabelspacing() {_uniqueStorage()._tschchartinfodefaultsummarylabelvaluelabelspacing = nil}
 
   public var tschchartinfodefaulttitlecolor: TSP_Color {
-    get {return _storage._tschchartinfodefaulttitlecolor ?? TSP_Color()}
+    get {_storage._tschchartinfodefaulttitlecolor ?? TSP_Color()}
     set {_uniqueStorage()._tschchartinfodefaulttitlecolor = newValue}
   }
   /// Returns true if `tschchartinfodefaulttitlecolor` has been explicitly set.
-  public var hasTschchartinfodefaulttitlecolor: Bool {return _storage._tschchartinfodefaulttitlecolor != nil}
+  public var hasTschchartinfodefaulttitlecolor: Bool {_storage._tschchartinfodefaulttitlecolor != nil}
   /// Clears the value of `tschchartinfodefaulttitlecolor`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaulttitlecolor() {_uniqueStorage()._tschchartinfodefaulttitlecolor = nil}
 
   public var tschchartinfodefaulttitleparagraphstyleindex: Int32 {
-    get {return _storage._tschchartinfodefaulttitleparagraphstyleindex ?? 0}
+    get {_storage._tschchartinfodefaulttitleparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartinfodefaulttitleparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartinfodefaulttitleparagraphstyleindex` has been explicitly set.
-  public var hasTschchartinfodefaulttitleparagraphstyleindex: Bool {return _storage._tschchartinfodefaulttitleparagraphstyleindex != nil}
+  public var hasTschchartinfodefaulttitleparagraphstyleindex: Bool {_storage._tschchartinfodefaulttitleparagraphstyleindex != nil}
   /// Clears the value of `tschchartinfodefaulttitleparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaulttitleparagraphstyleindex() {_uniqueStorage()._tschchartinfodefaulttitleparagraphstyleindex = nil}
 
@@ -284,341 +284,341 @@ public struct TSCH_Generated_ChartStyleArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Generated_ChartNonStyleArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Generated_ChartNonStyleArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschchartinfodefault3Dbarshape: Int32 {
-    get {return _storage._tschchartinfodefault3Dbarshape ?? 0}
+    get {_storage._tschchartinfodefault3Dbarshape ?? 0}
     set {_uniqueStorage()._tschchartinfodefault3Dbarshape = newValue}
   }
   /// Returns true if `tschchartinfodefault3Dbarshape` has been explicitly set.
-  public var hasTschchartinfodefault3Dbarshape: Bool {return _storage._tschchartinfodefault3Dbarshape != nil}
+  public var hasTschchartinfodefault3Dbarshape: Bool {_storage._tschchartinfodefault3Dbarshape != nil}
   /// Clears the value of `tschchartinfodefault3Dbarshape`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefault3Dbarshape() {_uniqueStorage()._tschchartinfodefault3Dbarshape = nil}
 
   public var tschchartinfodefault3Dbeveledges: Bool {
-    get {return _storage._tschchartinfodefault3Dbeveledges ?? false}
+    get {_storage._tschchartinfodefault3Dbeveledges ?? false}
     set {_uniqueStorage()._tschchartinfodefault3Dbeveledges = newValue}
   }
   /// Returns true if `tschchartinfodefault3Dbeveledges` has been explicitly set.
-  public var hasTschchartinfodefault3Dbeveledges: Bool {return _storage._tschchartinfodefault3Dbeveledges != nil}
+  public var hasTschchartinfodefault3Dbeveledges: Bool {_storage._tschchartinfodefault3Dbeveledges != nil}
   /// Clears the value of `tschchartinfodefault3Dbeveledges`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefault3Dbeveledges() {_uniqueStorage()._tschchartinfodefault3Dbeveledges = nil}
 
   public var tschchartinfodefault3Dintersetdepthgap: Float {
-    get {return _storage._tschchartinfodefault3Dintersetdepthgap ?? 0}
+    get {_storage._tschchartinfodefault3Dintersetdepthgap ?? 0}
     set {_uniqueStorage()._tschchartinfodefault3Dintersetdepthgap = newValue}
   }
   /// Returns true if `tschchartinfodefault3Dintersetdepthgap` has been explicitly set.
-  public var hasTschchartinfodefault3Dintersetdepthgap: Bool {return _storage._tschchartinfodefault3Dintersetdepthgap != nil}
+  public var hasTschchartinfodefault3Dintersetdepthgap: Bool {_storage._tschchartinfodefault3Dintersetdepthgap != nil}
   /// Clears the value of `tschchartinfodefault3Dintersetdepthgap`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefault3Dintersetdepthgap() {_uniqueStorage()._tschchartinfodefault3Dintersetdepthgap = nil}
 
   public var tschchartinfodefault3Drotation: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfodefault3Drotation ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfodefault3Drotation ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfodefault3Drotation = newValue}
   }
   /// Returns true if `tschchartinfodefault3Drotation` has been explicitly set.
-  public var hasTschchartinfodefault3Drotation: Bool {return _storage._tschchartinfodefault3Drotation != nil}
+  public var hasTschchartinfodefault3Drotation: Bool {_storage._tschchartinfodefault3Drotation != nil}
   /// Clears the value of `tschchartinfodefault3Drotation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefault3Drotation() {_uniqueStorage()._tschchartinfodefault3Drotation = nil}
 
   public var tschchartinfoarea3Dscale: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfoarea3Dscale ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfoarea3Dscale ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfoarea3Dscale = newValue}
   }
   /// Returns true if `tschchartinfoarea3Dscale` has been explicitly set.
-  public var hasTschchartinfoarea3Dscale: Bool {return _storage._tschchartinfoarea3Dscale != nil}
+  public var hasTschchartinfoarea3Dscale: Bool {_storage._tschchartinfoarea3Dscale != nil}
   /// Clears the value of `tschchartinfoarea3Dscale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoarea3Dscale() {_uniqueStorage()._tschchartinfoarea3Dscale = nil}
 
   public var tschchartinfobar3Dscale: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfobar3Dscale ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfobar3Dscale ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfobar3Dscale = newValue}
   }
   /// Returns true if `tschchartinfobar3Dscale` has been explicitly set.
-  public var hasTschchartinfobar3Dscale: Bool {return _storage._tschchartinfobar3Dscale != nil}
+  public var hasTschchartinfobar3Dscale: Bool {_storage._tschchartinfobar3Dscale != nil}
   /// Clears the value of `tschchartinfobar3Dscale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfobar3Dscale() {_uniqueStorage()._tschchartinfobar3Dscale = nil}
 
   public var tschchartinfocolumn3Dscale: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfocolumn3Dscale ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfocolumn3Dscale ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfocolumn3Dscale = newValue}
   }
   /// Returns true if `tschchartinfocolumn3Dscale` has been explicitly set.
-  public var hasTschchartinfocolumn3Dscale: Bool {return _storage._tschchartinfocolumn3Dscale != nil}
+  public var hasTschchartinfocolumn3Dscale: Bool {_storage._tschchartinfocolumn3Dscale != nil}
   /// Clears the value of `tschchartinfocolumn3Dscale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfocolumn3Dscale() {_uniqueStorage()._tschchartinfocolumn3Dscale = nil}
 
   public var tschchartinfodefault3Dscale: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfodefault3Dscale ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfodefault3Dscale ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfodefault3Dscale = newValue}
   }
   /// Returns true if `tschchartinfodefault3Dscale` has been explicitly set.
-  public var hasTschchartinfodefault3Dscale: Bool {return _storage._tschchartinfodefault3Dscale != nil}
+  public var hasTschchartinfodefault3Dscale: Bool {_storage._tschchartinfodefault3Dscale != nil}
   /// Clears the value of `tschchartinfodefault3Dscale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefault3Dscale() {_uniqueStorage()._tschchartinfodefault3Dscale = nil}
 
   public var tschchartinfoline3Dscale: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfoline3Dscale ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfoline3Dscale ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfoline3Dscale = newValue}
   }
   /// Returns true if `tschchartinfoline3Dscale` has been explicitly set.
-  public var hasTschchartinfoline3Dscale: Bool {return _storage._tschchartinfoline3Dscale != nil}
+  public var hasTschchartinfoline3Dscale: Bool {_storage._tschchartinfoline3Dscale != nil}
   /// Clears the value of `tschchartinfoline3Dscale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoline3Dscale() {_uniqueStorage()._tschchartinfoline3Dscale = nil}
 
   public var tschchartinfopie3Dscale: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfopie3Dscale ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfopie3Dscale ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfopie3Dscale = newValue}
   }
   /// Returns true if `tschchartinfopie3Dscale` has been explicitly set.
-  public var hasTschchartinfopie3Dscale: Bool {return _storage._tschchartinfopie3Dscale != nil}
+  public var hasTschchartinfopie3Dscale: Bool {_storage._tschchartinfopie3Dscale != nil}
   /// Clears the value of `tschchartinfopie3Dscale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfopie3Dscale() {_uniqueStorage()._tschchartinfopie3Dscale = nil}
 
   public var tschchartinfodefault3Dviewport: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfodefault3Dviewport ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfodefault3Dviewport ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfodefault3Dviewport = newValue}
   }
   /// Returns true if `tschchartinfodefault3Dviewport` has been explicitly set.
-  public var hasTschchartinfodefault3Dviewport: Bool {return _storage._tschchartinfodefault3Dviewport != nil}
+  public var hasTschchartinfodefault3Dviewport: Bool {_storage._tschchartinfodefault3Dviewport != nil}
   /// Clears the value of `tschchartinfodefault3Dviewport`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefault3Dviewport() {_uniqueStorage()._tschchartinfodefault3Dviewport = nil}
 
   public var tschchartinfoareacalloutlinetype: Int32 {
-    get {return _storage._tschchartinfoareacalloutlinetype ?? 0}
+    get {_storage._tschchartinfoareacalloutlinetype ?? 0}
     set {_uniqueStorage()._tschchartinfoareacalloutlinetype = newValue}
   }
   /// Returns true if `tschchartinfoareacalloutlinetype` has been explicitly set.
-  public var hasTschchartinfoareacalloutlinetype: Bool {return _storage._tschchartinfoareacalloutlinetype != nil}
+  public var hasTschchartinfoareacalloutlinetype: Bool {_storage._tschchartinfoareacalloutlinetype != nil}
   /// Clears the value of `tschchartinfoareacalloutlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoareacalloutlinetype() {_uniqueStorage()._tschchartinfoareacalloutlinetype = nil}
 
   public var tschchartinfobarcalloutlinetype: Int32 {
-    get {return _storage._tschchartinfobarcalloutlinetype ?? 0}
+    get {_storage._tschchartinfobarcalloutlinetype ?? 0}
     set {_uniqueStorage()._tschchartinfobarcalloutlinetype = newValue}
   }
   /// Returns true if `tschchartinfobarcalloutlinetype` has been explicitly set.
-  public var hasTschchartinfobarcalloutlinetype: Bool {return _storage._tschchartinfobarcalloutlinetype != nil}
+  public var hasTschchartinfobarcalloutlinetype: Bool {_storage._tschchartinfobarcalloutlinetype != nil}
   /// Clears the value of `tschchartinfobarcalloutlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfobarcalloutlinetype() {_uniqueStorage()._tschchartinfobarcalloutlinetype = nil}
 
   public var tschchartinfobubblecalloutlinetype: Int32 {
-    get {return _storage._tschchartinfobubblecalloutlinetype ?? 0}
+    get {_storage._tschchartinfobubblecalloutlinetype ?? 0}
     set {_uniqueStorage()._tschchartinfobubblecalloutlinetype = newValue}
   }
   /// Returns true if `tschchartinfobubblecalloutlinetype` has been explicitly set.
-  public var hasTschchartinfobubblecalloutlinetype: Bool {return _storage._tschchartinfobubblecalloutlinetype != nil}
+  public var hasTschchartinfobubblecalloutlinetype: Bool {_storage._tschchartinfobubblecalloutlinetype != nil}
   /// Clears the value of `tschchartinfobubblecalloutlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfobubblecalloutlinetype() {_uniqueStorage()._tschchartinfobubblecalloutlinetype = nil}
 
   public var tschchartinfodefaultcalloutlinetype: Int32 {
-    get {return _storage._tschchartinfodefaultcalloutlinetype ?? 0}
+    get {_storage._tschchartinfodefaultcalloutlinetype ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultcalloutlinetype = newValue}
   }
   /// Returns true if `tschchartinfodefaultcalloutlinetype` has been explicitly set.
-  public var hasTschchartinfodefaultcalloutlinetype: Bool {return _storage._tschchartinfodefaultcalloutlinetype != nil}
+  public var hasTschchartinfodefaultcalloutlinetype: Bool {_storage._tschchartinfodefaultcalloutlinetype != nil}
   /// Clears the value of `tschchartinfodefaultcalloutlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultcalloutlinetype() {_uniqueStorage()._tschchartinfodefaultcalloutlinetype = nil}
 
   public var tschchartinfolinecalloutlinetype: Int32 {
-    get {return _storage._tschchartinfolinecalloutlinetype ?? 0}
+    get {_storage._tschchartinfolinecalloutlinetype ?? 0}
     set {_uniqueStorage()._tschchartinfolinecalloutlinetype = newValue}
   }
   /// Returns true if `tschchartinfolinecalloutlinetype` has been explicitly set.
-  public var hasTschchartinfolinecalloutlinetype: Bool {return _storage._tschchartinfolinecalloutlinetype != nil}
+  public var hasTschchartinfolinecalloutlinetype: Bool {_storage._tschchartinfolinecalloutlinetype != nil}
   /// Clears the value of `tschchartinfolinecalloutlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfolinecalloutlinetype() {_uniqueStorage()._tschchartinfolinecalloutlinetype = nil}
 
   public var tschchartinfopiecalloutlinetype: Int32 {
-    get {return _storage._tschchartinfopiecalloutlinetype ?? 0}
+    get {_storage._tschchartinfopiecalloutlinetype ?? 0}
     set {_uniqueStorage()._tschchartinfopiecalloutlinetype = newValue}
   }
   /// Returns true if `tschchartinfopiecalloutlinetype` has been explicitly set.
-  public var hasTschchartinfopiecalloutlinetype: Bool {return _storage._tschchartinfopiecalloutlinetype != nil}
+  public var hasTschchartinfopiecalloutlinetype: Bool {_storage._tschchartinfopiecalloutlinetype != nil}
   /// Clears the value of `tschchartinfopiecalloutlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfopiecalloutlinetype() {_uniqueStorage()._tschchartinfopiecalloutlinetype = nil}
 
   public var tschchartinfoscattercalloutlinetype: Int32 {
-    get {return _storage._tschchartinfoscattercalloutlinetype ?? 0}
+    get {_storage._tschchartinfoscattercalloutlinetype ?? 0}
     set {_uniqueStorage()._tschchartinfoscattercalloutlinetype = newValue}
   }
   /// Returns true if `tschchartinfoscattercalloutlinetype` has been explicitly set.
-  public var hasTschchartinfoscattercalloutlinetype: Bool {return _storage._tschchartinfoscattercalloutlinetype != nil}
+  public var hasTschchartinfoscattercalloutlinetype: Bool {_storage._tschchartinfoscattercalloutlinetype != nil}
   /// Clears the value of `tschchartinfoscattercalloutlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoscattercalloutlinetype() {_uniqueStorage()._tschchartinfoscattercalloutlinetype = nil}
 
   public var tschchartinfostackedareacalloutlinetype: Int32 {
-    get {return _storage._tschchartinfostackedareacalloutlinetype ?? 0}
+    get {_storage._tschchartinfostackedareacalloutlinetype ?? 0}
     set {_uniqueStorage()._tschchartinfostackedareacalloutlinetype = newValue}
   }
   /// Returns true if `tschchartinfostackedareacalloutlinetype` has been explicitly set.
-  public var hasTschchartinfostackedareacalloutlinetype: Bool {return _storage._tschchartinfostackedareacalloutlinetype != nil}
+  public var hasTschchartinfostackedareacalloutlinetype: Bool {_storage._tschchartinfostackedareacalloutlinetype != nil}
   /// Clears the value of `tschchartinfostackedareacalloutlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfostackedareacalloutlinetype() {_uniqueStorage()._tschchartinfostackedareacalloutlinetype = nil}
 
   public var tschchartinfostackedbarcalloutlinetype: Int32 {
-    get {return _storage._tschchartinfostackedbarcalloutlinetype ?? 0}
+    get {_storage._tschchartinfostackedbarcalloutlinetype ?? 0}
     set {_uniqueStorage()._tschchartinfostackedbarcalloutlinetype = newValue}
   }
   /// Returns true if `tschchartinfostackedbarcalloutlinetype` has been explicitly set.
-  public var hasTschchartinfostackedbarcalloutlinetype: Bool {return _storage._tschchartinfostackedbarcalloutlinetype != nil}
+  public var hasTschchartinfostackedbarcalloutlinetype: Bool {_storage._tschchartinfostackedbarcalloutlinetype != nil}
   /// Clears the value of `tschchartinfostackedbarcalloutlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfostackedbarcalloutlinetype() {_uniqueStorage()._tschchartinfostackedbarcalloutlinetype = nil}
 
   public var tschchartinfodefaultdeprecatedroundedcornerouterendonly: Bool {
-    get {return _storage._tschchartinfodefaultdeprecatedroundedcornerouterendonly ?? false}
+    get {_storage._tschchartinfodefaultdeprecatedroundedcornerouterendonly ?? false}
     set {_uniqueStorage()._tschchartinfodefaultdeprecatedroundedcornerouterendonly = newValue}
   }
   /// Returns true if `tschchartinfodefaultdeprecatedroundedcornerouterendonly` has been explicitly set.
-  public var hasTschchartinfodefaultdeprecatedroundedcornerouterendonly: Bool {return _storage._tschchartinfodefaultdeprecatedroundedcornerouterendonly != nil}
+  public var hasTschchartinfodefaultdeprecatedroundedcornerouterendonly: Bool {_storage._tschchartinfodefaultdeprecatedroundedcornerouterendonly != nil}
   /// Clears the value of `tschchartinfodefaultdeprecatedroundedcornerouterendonly`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultdeprecatedroundedcornerouterendonly() {_uniqueStorage()._tschchartinfodefaultdeprecatedroundedcornerouterendonly = nil}
 
   public var tschchartinfodefaultdeprecatedroundedcornerradius: Float {
-    get {return _storage._tschchartinfodefaultdeprecatedroundedcornerradius ?? 0}
+    get {_storage._tschchartinfodefaultdeprecatedroundedcornerradius ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultdeprecatedroundedcornerradius = newValue}
   }
   /// Returns true if `tschchartinfodefaultdeprecatedroundedcornerradius` has been explicitly set.
-  public var hasTschchartinfodefaultdeprecatedroundedcornerradius: Bool {return _storage._tschchartinfodefaultdeprecatedroundedcornerradius != nil}
+  public var hasTschchartinfodefaultdeprecatedroundedcornerradius: Bool {_storage._tschchartinfodefaultdeprecatedroundedcornerradius != nil}
   /// Clears the value of `tschchartinfodefaultdeprecatedroundedcornerradius`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultdeprecatedroundedcornerradius() {_uniqueStorage()._tschchartinfodefaultdeprecatedroundedcornerradius = nil}
 
   public var tschchartinfodefaultdatasetnamelocation: Int32 {
-    get {return _storage._tschchartinfodefaultdatasetnamelocation ?? 0}
+    get {_storage._tschchartinfodefaultdatasetnamelocation ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultdatasetnamelocation = newValue}
   }
   /// Returns true if `tschchartinfodefaultdatasetnamelocation` has been explicitly set.
-  public var hasTschchartinfodefaultdatasetnamelocation: Bool {return _storage._tschchartinfodefaultdatasetnamelocation != nil}
+  public var hasTschchartinfodefaultdatasetnamelocation: Bool {_storage._tschchartinfodefaultdatasetnamelocation != nil}
   /// Clears the value of `tschchartinfodefaultdatasetnamelocation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultdatasetnamelocation() {_uniqueStorage()._tschchartinfodefaultdatasetnamelocation = nil}
 
   public var tschchartinfodefaultdonutplacetitleatcenter: Bool {
-    get {return _storage._tschchartinfodefaultdonutplacetitleatcenter ?? false}
+    get {_storage._tschchartinfodefaultdonutplacetitleatcenter ?? false}
     set {_uniqueStorage()._tschchartinfodefaultdonutplacetitleatcenter = newValue}
   }
   /// Returns true if `tschchartinfodefaultdonutplacetitleatcenter` has been explicitly set.
-  public var hasTschchartinfodefaultdonutplacetitleatcenter: Bool {return _storage._tschchartinfodefaultdonutplacetitleatcenter != nil}
+  public var hasTschchartinfodefaultdonutplacetitleatcenter: Bool {_storage._tschchartinfodefaultdonutplacetitleatcenter != nil}
   /// Clears the value of `tschchartinfodefaultdonutplacetitleatcenter`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultdonutplacetitleatcenter() {_uniqueStorage()._tschchartinfodefaultdonutplacetitleatcenter = nil}
 
   public var tschchartinfodefaultinnerradius: Float {
-    get {return _storage._tschchartinfodefaultinnerradius ?? 0}
+    get {_storage._tschchartinfodefaultinnerradius ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultinnerradius = newValue}
   }
   /// Returns true if `tschchartinfodefaultinnerradius` has been explicitly set.
-  public var hasTschchartinfodefaultinnerradius: Bool {return _storage._tschchartinfodefaultinnerradius != nil}
+  public var hasTschchartinfodefaultinnerradius: Bool {_storage._tschchartinfodefaultinnerradius != nil}
   /// Clears the value of `tschchartinfodefaultinnerradius`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultinnerradius() {_uniqueStorage()._tschchartinfodefaultinnerradius = nil}
 
   public var tschchartinfodefaultmultidatacontroltype: Int32 {
-    get {return _storage._tschchartinfodefaultmultidatacontroltype ?? 0}
+    get {_storage._tschchartinfodefaultmultidatacontroltype ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultmultidatacontroltype = newValue}
   }
   /// Returns true if `tschchartinfodefaultmultidatacontroltype` has been explicitly set.
-  public var hasTschchartinfodefaultmultidatacontroltype: Bool {return _storage._tschchartinfodefaultmultidatacontroltype != nil}
+  public var hasTschchartinfodefaultmultidatacontroltype: Bool {_storage._tschchartinfodefaultmultidatacontroltype != nil}
   /// Clears the value of `tschchartinfodefaultmultidatacontroltype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultmultidatacontroltype() {_uniqueStorage()._tschchartinfodefaultmultidatacontroltype = nil}
 
   public var tschchartinfodefaultpiestartangle: Float {
-    get {return _storage._tschchartinfodefaultpiestartangle ?? 0}
+    get {_storage._tschchartinfodefaultpiestartangle ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultpiestartangle = newValue}
   }
   /// Returns true if `tschchartinfodefaultpiestartangle` has been explicitly set.
-  public var hasTschchartinfodefaultpiestartangle: Bool {return _storage._tschchartinfodefaultpiestartangle != nil}
+  public var hasTschchartinfodefaultpiestartangle: Bool {_storage._tschchartinfodefaultpiestartangle != nil}
   /// Clears the value of `tschchartinfodefaultpiestartangle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultpiestartangle() {_uniqueStorage()._tschchartinfodefaultpiestartangle = nil}
 
   public var tschchartinfodefaultradarstartangle: Float {
-    get {return _storage._tschchartinfodefaultradarstartangle ?? 0}
+    get {_storage._tschchartinfodefaultradarstartangle ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultradarstartangle = newValue}
   }
   /// Returns true if `tschchartinfodefaultradarstartangle` has been explicitly set.
-  public var hasTschchartinfodefaultradarstartangle: Bool {return _storage._tschchartinfodefaultradarstartangle != nil}
+  public var hasTschchartinfodefaultradarstartangle: Bool {_storage._tschchartinfodefaultradarstartangle != nil}
   /// Clears the value of `tschchartinfodefaultradarstartangle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultradarstartangle() {_uniqueStorage()._tschchartinfodefaultradarstartangle = nil}
 
   public var tschchartinfodefaultshowlegend: Bool {
-    get {return _storage._tschchartinfodefaultshowlegend ?? false}
+    get {_storage._tschchartinfodefaultshowlegend ?? false}
     set {_uniqueStorage()._tschchartinfodefaultshowlegend = newValue}
   }
   /// Returns true if `tschchartinfodefaultshowlegend` has been explicitly set.
-  public var hasTschchartinfodefaultshowlegend: Bool {return _storage._tschchartinfodefaultshowlegend != nil}
+  public var hasTschchartinfodefaultshowlegend: Bool {_storage._tschchartinfodefaultshowlegend != nil}
   /// Clears the value of `tschchartinfodefaultshowlegend`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultshowlegend() {_uniqueStorage()._tschchartinfodefaultshowlegend = nil}
 
   public var tschchartinfodefaultshowtitle: Bool {
-    get {return _storage._tschchartinfodefaultshowtitle ?? false}
+    get {_storage._tschchartinfodefaultshowtitle ?? false}
     set {_uniqueStorage()._tschchartinfodefaultshowtitle = newValue}
   }
   /// Returns true if `tschchartinfodefaultshowtitle` has been explicitly set.
-  public var hasTschchartinfodefaultshowtitle: Bool {return _storage._tschchartinfodefaultshowtitle != nil}
+  public var hasTschchartinfodefaultshowtitle: Bool {_storage._tschchartinfodefaultshowtitle != nil}
   /// Clears the value of `tschchartinfodefaultshowtitle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultshowtitle() {_uniqueStorage()._tschchartinfodefaultshowtitle = nil}
 
   public var tschchartinfodefaultskiphiddendata: Bool {
-    get {return _storage._tschchartinfodefaultskiphiddendata ?? false}
+    get {_storage._tschchartinfodefaultskiphiddendata ?? false}
     set {_uniqueStorage()._tschchartinfodefaultskiphiddendata = newValue}
   }
   /// Returns true if `tschchartinfodefaultskiphiddendata` has been explicitly set.
-  public var hasTschchartinfodefaultskiphiddendata: Bool {return _storage._tschchartinfodefaultskiphiddendata != nil}
+  public var hasTschchartinfodefaultskiphiddendata: Bool {_storage._tschchartinfodefaultskiphiddendata != nil}
   /// Clears the value of `tschchartinfodefaultskiphiddendata`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultskiphiddendata() {_uniqueStorage()._tschchartinfodefaultskiphiddendata = nil}
 
   public var tschchartinfodefaultsummarylabeldateformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartinfodefaultsummarylabeldateformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartinfodefaultsummarylabeldateformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartinfodefaultsummarylabeldateformat = newValue}
   }
   /// Returns true if `tschchartinfodefaultsummarylabeldateformat` has been explicitly set.
-  public var hasTschchartinfodefaultsummarylabeldateformat: Bool {return _storage._tschchartinfodefaultsummarylabeldateformat != nil}
+  public var hasTschchartinfodefaultsummarylabeldateformat: Bool {_storage._tschchartinfodefaultsummarylabeldateformat != nil}
   /// Clears the value of `tschchartinfodefaultsummarylabeldateformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultsummarylabeldateformat() {_uniqueStorage()._tschchartinfodefaultsummarylabeldateformat = nil}
 
   public var tschchartinfodefaultsummarylabeldurationformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartinfodefaultsummarylabeldurationformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartinfodefaultsummarylabeldurationformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartinfodefaultsummarylabeldurationformat = newValue}
   }
   /// Returns true if `tschchartinfodefaultsummarylabeldurationformat` has been explicitly set.
-  public var hasTschchartinfodefaultsummarylabeldurationformat: Bool {return _storage._tschchartinfodefaultsummarylabeldurationformat != nil}
+  public var hasTschchartinfodefaultsummarylabeldurationformat: Bool {_storage._tschchartinfodefaultsummarylabeldurationformat != nil}
   /// Clears the value of `tschchartinfodefaultsummarylabeldurationformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultsummarylabeldurationformat() {_uniqueStorage()._tschchartinfodefaultsummarylabeldurationformat = nil}
 
   public var tschchartinfodefaultsummarylabelnumberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartinfodefaultsummarylabelnumberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartinfodefaultsummarylabelnumberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartinfodefaultsummarylabelnumberformat = newValue}
   }
   /// Returns true if `tschchartinfodefaultsummarylabelnumberformat` has been explicitly set.
-  public var hasTschchartinfodefaultsummarylabelnumberformat: Bool {return _storage._tschchartinfodefaultsummarylabelnumberformat != nil}
+  public var hasTschchartinfodefaultsummarylabelnumberformat: Bool {_storage._tschchartinfodefaultsummarylabelnumberformat != nil}
   /// Clears the value of `tschchartinfodefaultsummarylabelnumberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultsummarylabelnumberformat() {_uniqueStorage()._tschchartinfodefaultsummarylabelnumberformat = nil}
 
   public var tschchartinfodefaultsummarylabelnumberformattype: Int32 {
-    get {return _storage._tschchartinfodefaultsummarylabelnumberformattype ?? 0}
+    get {_storage._tschchartinfodefaultsummarylabelnumberformattype ?? 0}
     set {_uniqueStorage()._tschchartinfodefaultsummarylabelnumberformattype = newValue}
   }
   /// Returns true if `tschchartinfodefaultsummarylabelnumberformattype` has been explicitly set.
-  public var hasTschchartinfodefaultsummarylabelnumberformattype: Bool {return _storage._tschchartinfodefaultsummarylabelnumberformattype != nil}
+  public var hasTschchartinfodefaultsummarylabelnumberformattype: Bool {_storage._tschchartinfodefaultsummarylabelnumberformattype != nil}
   /// Clears the value of `tschchartinfodefaultsummarylabelnumberformattype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultsummarylabelnumberformattype() {_uniqueStorage()._tschchartinfodefaultsummarylabelnumberformattype = nil}
 
   public var tschchartinfodefaultsummarylabelshowlabels: Bool {
-    get {return _storage._tschchartinfodefaultsummarylabelshowlabels ?? false}
+    get {_storage._tschchartinfodefaultsummarylabelshowlabels ?? false}
     set {_uniqueStorage()._tschchartinfodefaultsummarylabelshowlabels = newValue}
   }
   /// Returns true if `tschchartinfodefaultsummarylabelshowlabels` has been explicitly set.
-  public var hasTschchartinfodefaultsummarylabelshowlabels: Bool {return _storage._tschchartinfodefaultsummarylabelshowlabels != nil}
+  public var hasTschchartinfodefaultsummarylabelshowlabels: Bool {_storage._tschchartinfodefaultsummarylabelshowlabels != nil}
   /// Clears the value of `tschchartinfodefaultsummarylabelshowlabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaultsummarylabelshowlabels() {_uniqueStorage()._tschchartinfodefaultsummarylabelshowlabels = nil}
 
   public var tschchartinfodefaulttitle: String {
-    get {return _storage._tschchartinfodefaulttitle ?? String()}
+    get {_storage._tschchartinfodefaulttitle ?? String()}
     set {_uniqueStorage()._tschchartinfodefaulttitle = newValue}
   }
   /// Returns true if `tschchartinfodefaulttitle` has been explicitly set.
-  public var hasTschchartinfodefaulttitle: Bool {return _storage._tschchartinfodefaulttitle != nil}
+  public var hasTschchartinfodefaulttitle: Bool {_storage._tschchartinfodefaulttitle != nil}
   /// Clears the value of `tschchartinfodefaulttitle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodefaulttitle() {_uniqueStorage()._tschchartinfodefaulttitle = nil}
 
@@ -629,53 +629,53 @@ public struct TSCH_Generated_ChartNonStyleArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Generated_LegendStyleArchive: Sendable {
+public nonisolated struct TSCH_Generated_LegendStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschlegendmodeldefaultfill: TSD_FillArchive {
-    get {return _tschlegendmodeldefaultfill ?? TSD_FillArchive()}
+    get {_tschlegendmodeldefaultfill ?? TSD_FillArchive()}
     set {_tschlegendmodeldefaultfill = newValue}
   }
   /// Returns true if `tschlegendmodeldefaultfill` has been explicitly set.
-  public var hasTschlegendmodeldefaultfill: Bool {return self._tschlegendmodeldefaultfill != nil}
+  public var hasTschlegendmodeldefaultfill: Bool {self._tschlegendmodeldefaultfill != nil}
   /// Clears the value of `tschlegendmodeldefaultfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschlegendmodeldefaultfill() {self._tschlegendmodeldefaultfill = nil}
 
   public var tschlegendmodeldefaultlabelparagraphstyleindex: Int32 {
-    get {return _tschlegendmodeldefaultlabelparagraphstyleindex ?? 0}
+    get {_tschlegendmodeldefaultlabelparagraphstyleindex ?? 0}
     set {_tschlegendmodeldefaultlabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschlegendmodeldefaultlabelparagraphstyleindex` has been explicitly set.
-  public var hasTschlegendmodeldefaultlabelparagraphstyleindex: Bool {return self._tschlegendmodeldefaultlabelparagraphstyleindex != nil}
+  public var hasTschlegendmodeldefaultlabelparagraphstyleindex: Bool {self._tschlegendmodeldefaultlabelparagraphstyleindex != nil}
   /// Clears the value of `tschlegendmodeldefaultlabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschlegendmodeldefaultlabelparagraphstyleindex() {self._tschlegendmodeldefaultlabelparagraphstyleindex = nil}
 
   public var tschlegendmodeldefaultopacity: Float {
-    get {return _tschlegendmodeldefaultopacity ?? 0}
+    get {_tschlegendmodeldefaultopacity ?? 0}
     set {_tschlegendmodeldefaultopacity = newValue}
   }
   /// Returns true if `tschlegendmodeldefaultopacity` has been explicitly set.
-  public var hasTschlegendmodeldefaultopacity: Bool {return self._tschlegendmodeldefaultopacity != nil}
+  public var hasTschlegendmodeldefaultopacity: Bool {self._tschlegendmodeldefaultopacity != nil}
   /// Clears the value of `tschlegendmodeldefaultopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschlegendmodeldefaultopacity() {self._tschlegendmodeldefaultopacity = nil}
 
   public var tschlegendmodeldefaultshadow: TSD_ShadowArchive {
-    get {return _tschlegendmodeldefaultshadow ?? TSD_ShadowArchive()}
+    get {_tschlegendmodeldefaultshadow ?? TSD_ShadowArchive()}
     set {_tschlegendmodeldefaultshadow = newValue}
   }
   /// Returns true if `tschlegendmodeldefaultshadow` has been explicitly set.
-  public var hasTschlegendmodeldefaultshadow: Bool {return self._tschlegendmodeldefaultshadow != nil}
+  public var hasTschlegendmodeldefaultshadow: Bool {self._tschlegendmodeldefaultshadow != nil}
   /// Clears the value of `tschlegendmodeldefaultshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschlegendmodeldefaultshadow() {self._tschlegendmodeldefaultshadow = nil}
 
   public var tschlegendmodeldefaultstroke: TSD_StrokeArchive {
-    get {return _tschlegendmodeldefaultstroke ?? TSD_StrokeArchive()}
+    get {_tschlegendmodeldefaultstroke ?? TSD_StrokeArchive()}
     set {_tschlegendmodeldefaultstroke = newValue}
   }
   /// Returns true if `tschlegendmodeldefaultstroke` has been explicitly set.
-  public var hasTschlegendmodeldefaultstroke: Bool {return self._tschlegendmodeldefaultstroke != nil}
+  public var hasTschlegendmodeldefaultstroke: Bool {self._tschlegendmodeldefaultstroke != nil}
   /// Clears the value of `tschlegendmodeldefaultstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschlegendmodeldefaultstroke() {self._tschlegendmodeldefaultstroke = nil}
 
@@ -690,7 +690,7 @@ public struct TSCH_Generated_LegendStyleArchive: Sendable {
   fileprivate var _tschlegendmodeldefaultstroke: TSD_StrokeArchive? = nil
 }
 
-public struct TSCH_Generated_LegendNonStyleArchive: Sendable {
+public nonisolated struct TSCH_Generated_LegendNonStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -700,422 +700,422 @@ public struct TSCH_Generated_LegendNonStyleArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_Generated_ChartAxisStyleArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Generated_ChartAxisStyleArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschchartaxiscategory3Dgridlineopacity: Float {
-    get {return _storage._tschchartaxiscategory3Dgridlineopacity ?? 0}
+    get {_storage._tschchartaxiscategory3Dgridlineopacity ?? 0}
     set {_uniqueStorage()._tschchartaxiscategory3Dgridlineopacity = newValue}
   }
   /// Returns true if `tschchartaxiscategory3Dgridlineopacity` has been explicitly set.
-  public var hasTschchartaxiscategory3Dgridlineopacity: Bool {return _storage._tschchartaxiscategory3Dgridlineopacity != nil}
+  public var hasTschchartaxiscategory3Dgridlineopacity: Bool {_storage._tschchartaxiscategory3Dgridlineopacity != nil}
   /// Clears the value of `tschchartaxiscategory3Dgridlineopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategory3Dgridlineopacity() {_uniqueStorage()._tschchartaxiscategory3Dgridlineopacity = nil}
 
   public var tschchartaxisvalue3Dgridlineopacity: Float {
-    get {return _storage._tschchartaxisvalue3Dgridlineopacity ?? 0}
+    get {_storage._tschchartaxisvalue3Dgridlineopacity ?? 0}
     set {_uniqueStorage()._tschchartaxisvalue3Dgridlineopacity = newValue}
   }
   /// Returns true if `tschchartaxisvalue3Dgridlineopacity` has been explicitly set.
-  public var hasTschchartaxisvalue3Dgridlineopacity: Bool {return _storage._tschchartaxisvalue3Dgridlineopacity != nil}
+  public var hasTschchartaxisvalue3Dgridlineopacity: Bool {_storage._tschchartaxisvalue3Dgridlineopacity != nil}
   /// Clears the value of `tschchartaxisvalue3Dgridlineopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalue3Dgridlineopacity() {_uniqueStorage()._tschchartaxisvalue3Dgridlineopacity = nil}
 
   public var tschchartaxiscategory3Dgridlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartaxiscategory3Dgridlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartaxiscategory3Dgridlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartaxiscategory3Dgridlinestroke = newValue}
   }
   /// Returns true if `tschchartaxiscategory3Dgridlinestroke` has been explicitly set.
-  public var hasTschchartaxiscategory3Dgridlinestroke: Bool {return _storage._tschchartaxiscategory3Dgridlinestroke != nil}
+  public var hasTschchartaxiscategory3Dgridlinestroke: Bool {_storage._tschchartaxiscategory3Dgridlinestroke != nil}
   /// Clears the value of `tschchartaxiscategory3Dgridlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategory3Dgridlinestroke() {_uniqueStorage()._tschchartaxiscategory3Dgridlinestroke = nil}
 
   public var tschchartaxisvalue3Dgridlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartaxisvalue3Dgridlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartaxisvalue3Dgridlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartaxisvalue3Dgridlinestroke = newValue}
   }
   /// Returns true if `tschchartaxisvalue3Dgridlinestroke` has been explicitly set.
-  public var hasTschchartaxisvalue3Dgridlinestroke: Bool {return _storage._tschchartaxisvalue3Dgridlinestroke != nil}
+  public var hasTschchartaxisvalue3Dgridlinestroke: Bool {_storage._tschchartaxisvalue3Dgridlinestroke != nil}
   /// Clears the value of `tschchartaxisvalue3Dgridlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalue3Dgridlinestroke() {_uniqueStorage()._tschchartaxisvalue3Dgridlinestroke = nil}
 
   public var tschchartaxiscategoryhorizontalspacing: Int32 {
-    get {return _storage._tschchartaxiscategoryhorizontalspacing ?? 0}
+    get {_storage._tschchartaxiscategoryhorizontalspacing ?? 0}
     set {_uniqueStorage()._tschchartaxiscategoryhorizontalspacing = newValue}
   }
   /// Returns true if `tschchartaxiscategoryhorizontalspacing` has been explicitly set.
-  public var hasTschchartaxiscategoryhorizontalspacing: Bool {return _storage._tschchartaxiscategoryhorizontalspacing != nil}
+  public var hasTschchartaxiscategoryhorizontalspacing: Bool {_storage._tschchartaxiscategoryhorizontalspacing != nil}
   /// Clears the value of `tschchartaxiscategoryhorizontalspacing`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryhorizontalspacing() {_uniqueStorage()._tschchartaxiscategoryhorizontalspacing = nil}
 
   public var tschchartaxisdefaultlabelanglebaselinedirection: Int32 {
-    get {return _storage._tschchartaxisdefaultlabelanglebaselinedirection ?? 0}
+    get {_storage._tschchartaxisdefaultlabelanglebaselinedirection ?? 0}
     set {_uniqueStorage()._tschchartaxisdefaultlabelanglebaselinedirection = newValue}
   }
   /// Returns true if `tschchartaxisdefaultlabelanglebaselinedirection` has been explicitly set.
-  public var hasTschchartaxisdefaultlabelanglebaselinedirection: Bool {return _storage._tschchartaxisdefaultlabelanglebaselinedirection != nil}
+  public var hasTschchartaxisdefaultlabelanglebaselinedirection: Bool {_storage._tschchartaxisdefaultlabelanglebaselinedirection != nil}
   /// Clears the value of `tschchartaxisdefaultlabelanglebaselinedirection`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultlabelanglebaselinedirection() {_uniqueStorage()._tschchartaxisdefaultlabelanglebaselinedirection = nil}
 
   public var tschchartaxiscategorylabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartaxiscategorylabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartaxiscategorylabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartaxiscategorylabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartaxiscategorylabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartaxiscategorylabelparagraphstyleindex: Bool {return _storage._tschchartaxiscategorylabelparagraphstyleindex != nil}
+  public var hasTschchartaxiscategorylabelparagraphstyleindex: Bool {_storage._tschchartaxiscategorylabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartaxiscategorylabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategorylabelparagraphstyleindex() {_uniqueStorage()._tschchartaxiscategorylabelparagraphstyleindex = nil}
 
   public var tschchartaxisdefaultlabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartaxisdefaultlabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartaxisdefaultlabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartaxisdefaultlabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartaxisdefaultlabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartaxisdefaultlabelparagraphstyleindex: Bool {return _storage._tschchartaxisdefaultlabelparagraphstyleindex != nil}
+  public var hasTschchartaxisdefaultlabelparagraphstyleindex: Bool {_storage._tschchartaxisdefaultlabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartaxisdefaultlabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultlabelparagraphstyleindex() {_uniqueStorage()._tschchartaxisdefaultlabelparagraphstyleindex = nil}
 
   public var tschchartaxisvaluelabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartaxisvaluelabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartaxisvaluelabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartaxisvaluelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartaxisvaluelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartaxisvaluelabelparagraphstyleindex: Bool {return _storage._tschchartaxisvaluelabelparagraphstyleindex != nil}
+  public var hasTschchartaxisvaluelabelparagraphstyleindex: Bool {_storage._tschchartaxisvaluelabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartaxisvaluelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluelabelparagraphstyleindex() {_uniqueStorage()._tschchartaxisvaluelabelparagraphstyleindex = nil}
 
   public var tschchartaxiscategorylabelsorientation: Float {
-    get {return _storage._tschchartaxiscategorylabelsorientation ?? 0}
+    get {_storage._tschchartaxiscategorylabelsorientation ?? 0}
     set {_uniqueStorage()._tschchartaxiscategorylabelsorientation = newValue}
   }
   /// Returns true if `tschchartaxiscategorylabelsorientation` has been explicitly set.
-  public var hasTschchartaxiscategorylabelsorientation: Bool {return _storage._tschchartaxiscategorylabelsorientation != nil}
+  public var hasTschchartaxiscategorylabelsorientation: Bool {_storage._tschchartaxiscategorylabelsorientation != nil}
   /// Clears the value of `tschchartaxiscategorylabelsorientation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategorylabelsorientation() {_uniqueStorage()._tschchartaxiscategorylabelsorientation = nil}
 
   public var tschchartaxisdefaultlabelsorientation: Float {
-    get {return _storage._tschchartaxisdefaultlabelsorientation ?? 0}
+    get {_storage._tschchartaxisdefaultlabelsorientation ?? 0}
     set {_uniqueStorage()._tschchartaxisdefaultlabelsorientation = newValue}
   }
   /// Returns true if `tschchartaxisdefaultlabelsorientation` has been explicitly set.
-  public var hasTschchartaxisdefaultlabelsorientation: Bool {return _storage._tschchartaxisdefaultlabelsorientation != nil}
+  public var hasTschchartaxisdefaultlabelsorientation: Bool {_storage._tschchartaxisdefaultlabelsorientation != nil}
   /// Clears the value of `tschchartaxisdefaultlabelsorientation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultlabelsorientation() {_uniqueStorage()._tschchartaxisdefaultlabelsorientation = nil}
 
   public var tschchartaxisvaluelabelsorientation: Float {
-    get {return _storage._tschchartaxisvaluelabelsorientation ?? 0}
+    get {_storage._tschchartaxisvaluelabelsorientation ?? 0}
     set {_uniqueStorage()._tschchartaxisvaluelabelsorientation = newValue}
   }
   /// Returns true if `tschchartaxisvaluelabelsorientation` has been explicitly set.
-  public var hasTschchartaxisvaluelabelsorientation: Bool {return _storage._tschchartaxisvaluelabelsorientation != nil}
+  public var hasTschchartaxisvaluelabelsorientation: Bool {_storage._tschchartaxisvaluelabelsorientation != nil}
   /// Clears the value of `tschchartaxisvaluelabelsorientation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluelabelsorientation() {_uniqueStorage()._tschchartaxisvaluelabelsorientation = nil}
 
   public var tschchartaxiscategorymajorgridlineopacity: Float {
-    get {return _storage._tschchartaxiscategorymajorgridlineopacity ?? 0}
+    get {_storage._tschchartaxiscategorymajorgridlineopacity ?? 0}
     set {_uniqueStorage()._tschchartaxiscategorymajorgridlineopacity = newValue}
   }
   /// Returns true if `tschchartaxiscategorymajorgridlineopacity` has been explicitly set.
-  public var hasTschchartaxiscategorymajorgridlineopacity: Bool {return _storage._tschchartaxiscategorymajorgridlineopacity != nil}
+  public var hasTschchartaxiscategorymajorgridlineopacity: Bool {_storage._tschchartaxiscategorymajorgridlineopacity != nil}
   /// Clears the value of `tschchartaxiscategorymajorgridlineopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategorymajorgridlineopacity() {_uniqueStorage()._tschchartaxiscategorymajorgridlineopacity = nil}
 
   public var tschchartaxisvaluemajorgridlineopacity: Float {
-    get {return _storage._tschchartaxisvaluemajorgridlineopacity ?? 0}
+    get {_storage._tschchartaxisvaluemajorgridlineopacity ?? 0}
     set {_uniqueStorage()._tschchartaxisvaluemajorgridlineopacity = newValue}
   }
   /// Returns true if `tschchartaxisvaluemajorgridlineopacity` has been explicitly set.
-  public var hasTschchartaxisvaluemajorgridlineopacity: Bool {return _storage._tschchartaxisvaluemajorgridlineopacity != nil}
+  public var hasTschchartaxisvaluemajorgridlineopacity: Bool {_storage._tschchartaxisvaluemajorgridlineopacity != nil}
   /// Clears the value of `tschchartaxisvaluemajorgridlineopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluemajorgridlineopacity() {_uniqueStorage()._tschchartaxisvaluemajorgridlineopacity = nil}
 
   public var tschchartaxiscategorymajorgridlineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartaxiscategorymajorgridlineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartaxiscategorymajorgridlineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartaxiscategorymajorgridlineshadow = newValue}
   }
   /// Returns true if `tschchartaxiscategorymajorgridlineshadow` has been explicitly set.
-  public var hasTschchartaxiscategorymajorgridlineshadow: Bool {return _storage._tschchartaxiscategorymajorgridlineshadow != nil}
+  public var hasTschchartaxiscategorymajorgridlineshadow: Bool {_storage._tschchartaxiscategorymajorgridlineshadow != nil}
   /// Clears the value of `tschchartaxiscategorymajorgridlineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategorymajorgridlineshadow() {_uniqueStorage()._tschchartaxiscategorymajorgridlineshadow = nil}
 
   public var tschchartaxisvaluemajorgridlineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartaxisvaluemajorgridlineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartaxisvaluemajorgridlineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartaxisvaluemajorgridlineshadow = newValue}
   }
   /// Returns true if `tschchartaxisvaluemajorgridlineshadow` has been explicitly set.
-  public var hasTschchartaxisvaluemajorgridlineshadow: Bool {return _storage._tschchartaxisvaluemajorgridlineshadow != nil}
+  public var hasTschchartaxisvaluemajorgridlineshadow: Bool {_storage._tschchartaxisvaluemajorgridlineshadow != nil}
   /// Clears the value of `tschchartaxisvaluemajorgridlineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluemajorgridlineshadow() {_uniqueStorage()._tschchartaxisvaluemajorgridlineshadow = nil}
 
   public var tschchartaxiscategorymajorgridlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartaxiscategorymajorgridlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartaxiscategorymajorgridlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartaxiscategorymajorgridlinestroke = newValue}
   }
   /// Returns true if `tschchartaxiscategorymajorgridlinestroke` has been explicitly set.
-  public var hasTschchartaxiscategorymajorgridlinestroke: Bool {return _storage._tschchartaxiscategorymajorgridlinestroke != nil}
+  public var hasTschchartaxiscategorymajorgridlinestroke: Bool {_storage._tschchartaxiscategorymajorgridlinestroke != nil}
   /// Clears the value of `tschchartaxiscategorymajorgridlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategorymajorgridlinestroke() {_uniqueStorage()._tschchartaxiscategorymajorgridlinestroke = nil}
 
   public var tschchartaxisvaluemajorgridlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartaxisvaluemajorgridlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartaxisvaluemajorgridlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartaxisvaluemajorgridlinestroke = newValue}
   }
   /// Returns true if `tschchartaxisvaluemajorgridlinestroke` has been explicitly set.
-  public var hasTschchartaxisvaluemajorgridlinestroke: Bool {return _storage._tschchartaxisvaluemajorgridlinestroke != nil}
+  public var hasTschchartaxisvaluemajorgridlinestroke: Bool {_storage._tschchartaxisvaluemajorgridlinestroke != nil}
   /// Clears the value of `tschchartaxisvaluemajorgridlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluemajorgridlinestroke() {_uniqueStorage()._tschchartaxisvaluemajorgridlinestroke = nil}
 
   public var tschchartaxiscategoryminorgridlineopacity: Float {
-    get {return _storage._tschchartaxiscategoryminorgridlineopacity ?? 0}
+    get {_storage._tschchartaxiscategoryminorgridlineopacity ?? 0}
     set {_uniqueStorage()._tschchartaxiscategoryminorgridlineopacity = newValue}
   }
   /// Returns true if `tschchartaxiscategoryminorgridlineopacity` has been explicitly set.
-  public var hasTschchartaxiscategoryminorgridlineopacity: Bool {return _storage._tschchartaxiscategoryminorgridlineopacity != nil}
+  public var hasTschchartaxiscategoryminorgridlineopacity: Bool {_storage._tschchartaxiscategoryminorgridlineopacity != nil}
   /// Clears the value of `tschchartaxiscategoryminorgridlineopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryminorgridlineopacity() {_uniqueStorage()._tschchartaxiscategoryminorgridlineopacity = nil}
 
   public var tschchartaxisvalueminorgridlineopacity: Float {
-    get {return _storage._tschchartaxisvalueminorgridlineopacity ?? 0}
+    get {_storage._tschchartaxisvalueminorgridlineopacity ?? 0}
     set {_uniqueStorage()._tschchartaxisvalueminorgridlineopacity = newValue}
   }
   /// Returns true if `tschchartaxisvalueminorgridlineopacity` has been explicitly set.
-  public var hasTschchartaxisvalueminorgridlineopacity: Bool {return _storage._tschchartaxisvalueminorgridlineopacity != nil}
+  public var hasTschchartaxisvalueminorgridlineopacity: Bool {_storage._tschchartaxisvalueminorgridlineopacity != nil}
   /// Clears the value of `tschchartaxisvalueminorgridlineopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueminorgridlineopacity() {_uniqueStorage()._tschchartaxisvalueminorgridlineopacity = nil}
 
   public var tschchartaxiscategoryminorgridlineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartaxiscategoryminorgridlineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartaxiscategoryminorgridlineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartaxiscategoryminorgridlineshadow = newValue}
   }
   /// Returns true if `tschchartaxiscategoryminorgridlineshadow` has been explicitly set.
-  public var hasTschchartaxiscategoryminorgridlineshadow: Bool {return _storage._tschchartaxiscategoryminorgridlineshadow != nil}
+  public var hasTschchartaxiscategoryminorgridlineshadow: Bool {_storage._tschchartaxiscategoryminorgridlineshadow != nil}
   /// Clears the value of `tschchartaxiscategoryminorgridlineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryminorgridlineshadow() {_uniqueStorage()._tschchartaxiscategoryminorgridlineshadow = nil}
 
   public var tschchartaxisvalueminorgridlineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartaxisvalueminorgridlineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartaxisvalueminorgridlineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartaxisvalueminorgridlineshadow = newValue}
   }
   /// Returns true if `tschchartaxisvalueminorgridlineshadow` has been explicitly set.
-  public var hasTschchartaxisvalueminorgridlineshadow: Bool {return _storage._tschchartaxisvalueminorgridlineshadow != nil}
+  public var hasTschchartaxisvalueminorgridlineshadow: Bool {_storage._tschchartaxisvalueminorgridlineshadow != nil}
   /// Clears the value of `tschchartaxisvalueminorgridlineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueminorgridlineshadow() {_uniqueStorage()._tschchartaxisvalueminorgridlineshadow = nil}
 
   public var tschchartaxiscategoryminorgridlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartaxiscategoryminorgridlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartaxiscategoryminorgridlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartaxiscategoryminorgridlinestroke = newValue}
   }
   /// Returns true if `tschchartaxiscategoryminorgridlinestroke` has been explicitly set.
-  public var hasTschchartaxiscategoryminorgridlinestroke: Bool {return _storage._tschchartaxiscategoryminorgridlinestroke != nil}
+  public var hasTschchartaxiscategoryminorgridlinestroke: Bool {_storage._tschchartaxiscategoryminorgridlinestroke != nil}
   /// Clears the value of `tschchartaxiscategoryminorgridlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryminorgridlinestroke() {_uniqueStorage()._tschchartaxiscategoryminorgridlinestroke = nil}
 
   public var tschchartaxisvalueminorgridlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartaxisvalueminorgridlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartaxisvalueminorgridlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartaxisvalueminorgridlinestroke = newValue}
   }
   /// Returns true if `tschchartaxisvalueminorgridlinestroke` has been explicitly set.
-  public var hasTschchartaxisvalueminorgridlinestroke: Bool {return _storage._tschchartaxisvalueminorgridlinestroke != nil}
+  public var hasTschchartaxisvalueminorgridlinestroke: Bool {_storage._tschchartaxisvalueminorgridlinestroke != nil}
   /// Clears the value of `tschchartaxisvalueminorgridlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueminorgridlinestroke() {_uniqueStorage()._tschchartaxisvalueminorgridlinestroke = nil}
 
   public var tschchartaxiscategoryshowaxis: Bool {
-    get {return _storage._tschchartaxiscategoryshowaxis ?? false}
+    get {_storage._tschchartaxiscategoryshowaxis ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryshowaxis = newValue}
   }
   /// Returns true if `tschchartaxiscategoryshowaxis` has been explicitly set.
-  public var hasTschchartaxiscategoryshowaxis: Bool {return _storage._tschchartaxiscategoryshowaxis != nil}
+  public var hasTschchartaxiscategoryshowaxis: Bool {_storage._tschchartaxiscategoryshowaxis != nil}
   /// Clears the value of `tschchartaxiscategoryshowaxis`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryshowaxis() {_uniqueStorage()._tschchartaxiscategoryshowaxis = nil}
 
   public var tschchartaxisvalueshowaxis: Bool {
-    get {return _storage._tschchartaxisvalueshowaxis ?? false}
+    get {_storage._tschchartaxisvalueshowaxis ?? false}
     set {_uniqueStorage()._tschchartaxisvalueshowaxis = newValue}
   }
   /// Returns true if `tschchartaxisvalueshowaxis` has been explicitly set.
-  public var hasTschchartaxisvalueshowaxis: Bool {return _storage._tschchartaxisvalueshowaxis != nil}
+  public var hasTschchartaxisvalueshowaxis: Bool {_storage._tschchartaxisvalueshowaxis != nil}
   /// Clears the value of `tschchartaxisvalueshowaxis`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueshowaxis() {_uniqueStorage()._tschchartaxisvalueshowaxis = nil}
 
   public var tschchartaxisdefaultshowextensionlines: Bool {
-    get {return _storage._tschchartaxisdefaultshowextensionlines ?? false}
+    get {_storage._tschchartaxisdefaultshowextensionlines ?? false}
     set {_uniqueStorage()._tschchartaxisdefaultshowextensionlines = newValue}
   }
   /// Returns true if `tschchartaxisdefaultshowextensionlines` has been explicitly set.
-  public var hasTschchartaxisdefaultshowextensionlines: Bool {return _storage._tschchartaxisdefaultshowextensionlines != nil}
+  public var hasTschchartaxisdefaultshowextensionlines: Bool {_storage._tschchartaxisdefaultshowextensionlines != nil}
   /// Clears the value of `tschchartaxisdefaultshowextensionlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultshowextensionlines() {_uniqueStorage()._tschchartaxisdefaultshowextensionlines = nil}
 
   public var tschchartaxiscategoryshowgridlinetickmarks: Bool {
-    get {return _storage._tschchartaxiscategoryshowgridlinetickmarks ?? false}
+    get {_storage._tschchartaxiscategoryshowgridlinetickmarks ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryshowgridlinetickmarks = newValue}
   }
   /// Returns true if `tschchartaxiscategoryshowgridlinetickmarks` has been explicitly set.
-  public var hasTschchartaxiscategoryshowgridlinetickmarks: Bool {return _storage._tschchartaxiscategoryshowgridlinetickmarks != nil}
+  public var hasTschchartaxiscategoryshowgridlinetickmarks: Bool {_storage._tschchartaxiscategoryshowgridlinetickmarks != nil}
   /// Clears the value of `tschchartaxiscategoryshowgridlinetickmarks`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryshowgridlinetickmarks() {_uniqueStorage()._tschchartaxiscategoryshowgridlinetickmarks = nil}
 
   public var tschchartaxisvalueshowgridlinetickmarks: Bool {
-    get {return _storage._tschchartaxisvalueshowgridlinetickmarks ?? false}
+    get {_storage._tschchartaxisvalueshowgridlinetickmarks ?? false}
     set {_uniqueStorage()._tschchartaxisvalueshowgridlinetickmarks = newValue}
   }
   /// Returns true if `tschchartaxisvalueshowgridlinetickmarks` has been explicitly set.
-  public var hasTschchartaxisvalueshowgridlinetickmarks: Bool {return _storage._tschchartaxisvalueshowgridlinetickmarks != nil}
+  public var hasTschchartaxisvalueshowgridlinetickmarks: Bool {_storage._tschchartaxisvalueshowgridlinetickmarks != nil}
   /// Clears the value of `tschchartaxisvalueshowgridlinetickmarks`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueshowgridlinetickmarks() {_uniqueStorage()._tschchartaxisvalueshowgridlinetickmarks = nil}
 
   public var tschchartaxiscategoryshowlastlabel: Bool {
-    get {return _storage._tschchartaxiscategoryshowlastlabel ?? false}
+    get {_storage._tschchartaxiscategoryshowlastlabel ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryshowlastlabel = newValue}
   }
   /// Returns true if `tschchartaxiscategoryshowlastlabel` has been explicitly set.
-  public var hasTschchartaxiscategoryshowlastlabel: Bool {return _storage._tschchartaxiscategoryshowlastlabel != nil}
+  public var hasTschchartaxiscategoryshowlastlabel: Bool {_storage._tschchartaxiscategoryshowlastlabel != nil}
   /// Clears the value of `tschchartaxiscategoryshowlastlabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryshowlastlabel() {_uniqueStorage()._tschchartaxiscategoryshowlastlabel = nil}
 
   public var tschchartaxiscategoryshowmajorgridlines: Bool {
-    get {return _storage._tschchartaxiscategoryshowmajorgridlines ?? false}
+    get {_storage._tschchartaxiscategoryshowmajorgridlines ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryshowmajorgridlines = newValue}
   }
   /// Returns true if `tschchartaxiscategoryshowmajorgridlines` has been explicitly set.
-  public var hasTschchartaxiscategoryshowmajorgridlines: Bool {return _storage._tschchartaxiscategoryshowmajorgridlines != nil}
+  public var hasTschchartaxiscategoryshowmajorgridlines: Bool {_storage._tschchartaxiscategoryshowmajorgridlines != nil}
   /// Clears the value of `tschchartaxiscategoryshowmajorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryshowmajorgridlines() {_uniqueStorage()._tschchartaxiscategoryshowmajorgridlines = nil}
 
   public var tschchartaxispolarcategoryshowmajorgridlines: Bool {
-    get {return _storage._tschchartaxispolarcategoryshowmajorgridlines ?? false}
+    get {_storage._tschchartaxispolarcategoryshowmajorgridlines ?? false}
     set {_uniqueStorage()._tschchartaxispolarcategoryshowmajorgridlines = newValue}
   }
   /// Returns true if `tschchartaxispolarcategoryshowmajorgridlines` has been explicitly set.
-  public var hasTschchartaxispolarcategoryshowmajorgridlines: Bool {return _storage._tschchartaxispolarcategoryshowmajorgridlines != nil}
+  public var hasTschchartaxispolarcategoryshowmajorgridlines: Bool {_storage._tschchartaxispolarcategoryshowmajorgridlines != nil}
   /// Clears the value of `tschchartaxispolarcategoryshowmajorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxispolarcategoryshowmajorgridlines() {_uniqueStorage()._tschchartaxispolarcategoryshowmajorgridlines = nil}
 
   public var tschchartaxisvalueshowmajorgridlines: Bool {
-    get {return _storage._tschchartaxisvalueshowmajorgridlines ?? false}
+    get {_storage._tschchartaxisvalueshowmajorgridlines ?? false}
     set {_uniqueStorage()._tschchartaxisvalueshowmajorgridlines = newValue}
   }
   /// Returns true if `tschchartaxisvalueshowmajorgridlines` has been explicitly set.
-  public var hasTschchartaxisvalueshowmajorgridlines: Bool {return _storage._tschchartaxisvalueshowmajorgridlines != nil}
+  public var hasTschchartaxisvalueshowmajorgridlines: Bool {_storage._tschchartaxisvalueshowmajorgridlines != nil}
   /// Clears the value of `tschchartaxisvalueshowmajorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueshowmajorgridlines() {_uniqueStorage()._tschchartaxisvalueshowmajorgridlines = nil}
 
   public var tschchartaxiscategoryshowmajortickmarks: Bool {
-    get {return _storage._tschchartaxiscategoryshowmajortickmarks ?? false}
+    get {_storage._tschchartaxiscategoryshowmajortickmarks ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryshowmajortickmarks = newValue}
   }
   /// Returns true if `tschchartaxiscategoryshowmajortickmarks` has been explicitly set.
-  public var hasTschchartaxiscategoryshowmajortickmarks: Bool {return _storage._tschchartaxiscategoryshowmajortickmarks != nil}
+  public var hasTschchartaxiscategoryshowmajortickmarks: Bool {_storage._tschchartaxiscategoryshowmajortickmarks != nil}
   /// Clears the value of `tschchartaxiscategoryshowmajortickmarks`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryshowmajortickmarks() {_uniqueStorage()._tschchartaxiscategoryshowmajortickmarks = nil}
 
   public var tschchartaxisvalueshowmajortickmarks: Bool {
-    get {return _storage._tschchartaxisvalueshowmajortickmarks ?? false}
+    get {_storage._tschchartaxisvalueshowmajortickmarks ?? false}
     set {_uniqueStorage()._tschchartaxisvalueshowmajortickmarks = newValue}
   }
   /// Returns true if `tschchartaxisvalueshowmajortickmarks` has been explicitly set.
-  public var hasTschchartaxisvalueshowmajortickmarks: Bool {return _storage._tschchartaxisvalueshowmajortickmarks != nil}
+  public var hasTschchartaxisvalueshowmajortickmarks: Bool {_storage._tschchartaxisvalueshowmajortickmarks != nil}
   /// Clears the value of `tschchartaxisvalueshowmajortickmarks`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueshowmajortickmarks() {_uniqueStorage()._tschchartaxisvalueshowmajortickmarks = nil}
 
   public var tschchartaxisvalueshowminimumlabel: Bool {
-    get {return _storage._tschchartaxisvalueshowminimumlabel ?? false}
+    get {_storage._tschchartaxisvalueshowminimumlabel ?? false}
     set {_uniqueStorage()._tschchartaxisvalueshowminimumlabel = newValue}
   }
   /// Returns true if `tschchartaxisvalueshowminimumlabel` has been explicitly set.
-  public var hasTschchartaxisvalueshowminimumlabel: Bool {return _storage._tschchartaxisvalueshowminimumlabel != nil}
+  public var hasTschchartaxisvalueshowminimumlabel: Bool {_storage._tschchartaxisvalueshowminimumlabel != nil}
   /// Clears the value of `tschchartaxisvalueshowminimumlabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueshowminimumlabel() {_uniqueStorage()._tschchartaxisvalueshowminimumlabel = nil}
 
   public var tschchartaxiscategoryshowminorgridlines: Bool {
-    get {return _storage._tschchartaxiscategoryshowminorgridlines ?? false}
+    get {_storage._tschchartaxiscategoryshowminorgridlines ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryshowminorgridlines = newValue}
   }
   /// Returns true if `tschchartaxiscategoryshowminorgridlines` has been explicitly set.
-  public var hasTschchartaxiscategoryshowminorgridlines: Bool {return _storage._tschchartaxiscategoryshowminorgridlines != nil}
+  public var hasTschchartaxiscategoryshowminorgridlines: Bool {_storage._tschchartaxiscategoryshowminorgridlines != nil}
   /// Clears the value of `tschchartaxiscategoryshowminorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryshowminorgridlines() {_uniqueStorage()._tschchartaxiscategoryshowminorgridlines = nil}
 
   public var tschchartaxisvalueshowminorgridlines: Bool {
-    get {return _storage._tschchartaxisvalueshowminorgridlines ?? false}
+    get {_storage._tschchartaxisvalueshowminorgridlines ?? false}
     set {_uniqueStorage()._tschchartaxisvalueshowminorgridlines = newValue}
   }
   /// Returns true if `tschchartaxisvalueshowminorgridlines` has been explicitly set.
-  public var hasTschchartaxisvalueshowminorgridlines: Bool {return _storage._tschchartaxisvalueshowminorgridlines != nil}
+  public var hasTschchartaxisvalueshowminorgridlines: Bool {_storage._tschchartaxisvalueshowminorgridlines != nil}
   /// Clears the value of `tschchartaxisvalueshowminorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueshowminorgridlines() {_uniqueStorage()._tschchartaxisvalueshowminorgridlines = nil}
 
   public var tschchartaxiscategoryshowminortickmarks: Bool {
-    get {return _storage._tschchartaxiscategoryshowminortickmarks ?? false}
+    get {_storage._tschchartaxiscategoryshowminortickmarks ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryshowminortickmarks = newValue}
   }
   /// Returns true if `tschchartaxiscategoryshowminortickmarks` has been explicitly set.
-  public var hasTschchartaxiscategoryshowminortickmarks: Bool {return _storage._tschchartaxiscategoryshowminortickmarks != nil}
+  public var hasTschchartaxiscategoryshowminortickmarks: Bool {_storage._tschchartaxiscategoryshowminortickmarks != nil}
   /// Clears the value of `tschchartaxiscategoryshowminortickmarks`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryshowminortickmarks() {_uniqueStorage()._tschchartaxiscategoryshowminortickmarks = nil}
 
   public var tschchartaxisvalueshowminortickmarks: Bool {
-    get {return _storage._tschchartaxisvalueshowminortickmarks ?? false}
+    get {_storage._tschchartaxisvalueshowminortickmarks ?? false}
     set {_uniqueStorage()._tschchartaxisvalueshowminortickmarks = newValue}
   }
   /// Returns true if `tschchartaxisvalueshowminortickmarks` has been explicitly set.
-  public var hasTschchartaxisvalueshowminortickmarks: Bool {return _storage._tschchartaxisvalueshowminortickmarks != nil}
+  public var hasTschchartaxisvalueshowminortickmarks: Bool {_storage._tschchartaxisvalueshowminortickmarks != nil}
   /// Clears the value of `tschchartaxisvalueshowminortickmarks`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueshowminortickmarks() {_uniqueStorage()._tschchartaxisvalueshowminortickmarks = nil}
 
   public var tschchartaxiscategorytickmarklocation: Int32 {
-    get {return _storage._tschchartaxiscategorytickmarklocation ?? 0}
+    get {_storage._tschchartaxiscategorytickmarklocation ?? 0}
     set {_uniqueStorage()._tschchartaxiscategorytickmarklocation = newValue}
   }
   /// Returns true if `tschchartaxiscategorytickmarklocation` has been explicitly set.
-  public var hasTschchartaxiscategorytickmarklocation: Bool {return _storage._tschchartaxiscategorytickmarklocation != nil}
+  public var hasTschchartaxiscategorytickmarklocation: Bool {_storage._tschchartaxiscategorytickmarklocation != nil}
   /// Clears the value of `tschchartaxiscategorytickmarklocation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategorytickmarklocation() {_uniqueStorage()._tschchartaxiscategorytickmarklocation = nil}
 
   public var tschchartaxisvaluetickmarklocation: Int32 {
-    get {return _storage._tschchartaxisvaluetickmarklocation ?? 0}
+    get {_storage._tschchartaxisvaluetickmarklocation ?? 0}
     set {_uniqueStorage()._tschchartaxisvaluetickmarklocation = newValue}
   }
   /// Returns true if `tschchartaxisvaluetickmarklocation` has been explicitly set.
-  public var hasTschchartaxisvaluetickmarklocation: Bool {return _storage._tschchartaxisvaluetickmarklocation != nil}
+  public var hasTschchartaxisvaluetickmarklocation: Bool {_storage._tschchartaxisvaluetickmarklocation != nil}
   /// Clears the value of `tschchartaxisvaluetickmarklocation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluetickmarklocation() {_uniqueStorage()._tschchartaxisvaluetickmarklocation = nil}
 
   public var tschchartaxiscategorytitleparagraphstyleindex: Int32 {
-    get {return _storage._tschchartaxiscategorytitleparagraphstyleindex ?? 0}
+    get {_storage._tschchartaxiscategorytitleparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartaxiscategorytitleparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartaxiscategorytitleparagraphstyleindex` has been explicitly set.
-  public var hasTschchartaxiscategorytitleparagraphstyleindex: Bool {return _storage._tschchartaxiscategorytitleparagraphstyleindex != nil}
+  public var hasTschchartaxiscategorytitleparagraphstyleindex: Bool {_storage._tschchartaxiscategorytitleparagraphstyleindex != nil}
   /// Clears the value of `tschchartaxiscategorytitleparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategorytitleparagraphstyleindex() {_uniqueStorage()._tschchartaxiscategorytitleparagraphstyleindex = nil}
 
   public var tschchartaxisdefaulttitleparagraphstyleindex: Int32 {
-    get {return _storage._tschchartaxisdefaulttitleparagraphstyleindex ?? 0}
+    get {_storage._tschchartaxisdefaulttitleparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartaxisdefaulttitleparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartaxisdefaulttitleparagraphstyleindex` has been explicitly set.
-  public var hasTschchartaxisdefaulttitleparagraphstyleindex: Bool {return _storage._tschchartaxisdefaulttitleparagraphstyleindex != nil}
+  public var hasTschchartaxisdefaulttitleparagraphstyleindex: Bool {_storage._tschchartaxisdefaulttitleparagraphstyleindex != nil}
   /// Clears the value of `tschchartaxisdefaulttitleparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaulttitleparagraphstyleindex() {_uniqueStorage()._tschchartaxisdefaulttitleparagraphstyleindex = nil}
 
   public var tschchartaxisvaluetitleparagraphstyleindex: Int32 {
-    get {return _storage._tschchartaxisvaluetitleparagraphstyleindex ?? 0}
+    get {_storage._tschchartaxisvaluetitleparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartaxisvaluetitleparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartaxisvaluetitleparagraphstyleindex` has been explicitly set.
-  public var hasTschchartaxisvaluetitleparagraphstyleindex: Bool {return _storage._tschchartaxisvaluetitleparagraphstyleindex != nil}
+  public var hasTschchartaxisvaluetitleparagraphstyleindex: Bool {_storage._tschchartaxisvaluetitleparagraphstyleindex != nil}
   /// Clears the value of `tschchartaxisvaluetitleparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluetitleparagraphstyleindex() {_uniqueStorage()._tschchartaxisvaluetitleparagraphstyleindex = nil}
 
   public var tschchartaxiscategoryverticalspacing: Int32 {
-    get {return _storage._tschchartaxiscategoryverticalspacing ?? 0}
+    get {_storage._tschchartaxiscategoryverticalspacing ?? 0}
     set {_uniqueStorage()._tschchartaxiscategoryverticalspacing = newValue}
   }
   /// Returns true if `tschchartaxiscategoryverticalspacing` has been explicitly set.
-  public var hasTschchartaxiscategoryverticalspacing: Bool {return _storage._tschchartaxiscategoryverticalspacing != nil}
+  public var hasTschchartaxiscategoryverticalspacing: Bool {_storage._tschchartaxiscategoryverticalspacing != nil}
   /// Clears the value of `tschchartaxiscategoryverticalspacing`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryverticalspacing() {_uniqueStorage()._tschchartaxiscategoryverticalspacing = nil}
 
@@ -1126,224 +1126,224 @@ public struct TSCH_Generated_ChartAxisStyleArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Generated_ChartAxisNonStyleArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Generated_ChartAxisNonStyleArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschchartaxisdefault10Dateformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartaxisdefault10Dateformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartaxisdefault10Dateformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartaxisdefault10Dateformat = newValue}
   }
   /// Returns true if `tschchartaxisdefault10Dateformat` has been explicitly set.
-  public var hasTschchartaxisdefault10Dateformat: Bool {return _storage._tschchartaxisdefault10Dateformat != nil}
+  public var hasTschchartaxisdefault10Dateformat: Bool {_storage._tschchartaxisdefault10Dateformat != nil}
   /// Clears the value of `tschchartaxisdefault10Dateformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefault10Dateformat() {_uniqueStorage()._tschchartaxisdefault10Dateformat = nil}
 
   public var tschchartaxisdefault10Numberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartaxisdefault10Numberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartaxisdefault10Numberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartaxisdefault10Numberformat = newValue}
   }
   /// Returns true if `tschchartaxisdefault10Numberformat` has been explicitly set.
-  public var hasTschchartaxisdefault10Numberformat: Bool {return _storage._tschchartaxisdefault10Numberformat != nil}
+  public var hasTschchartaxisdefault10Numberformat: Bool {_storage._tschchartaxisdefault10Numberformat != nil}
   /// Clears the value of `tschchartaxisdefault10Numberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefault10Numberformat() {_uniqueStorage()._tschchartaxisdefault10Numberformat = nil}
 
   public var tschchartaxisdefault3Dlabelposition: Int32 {
-    get {return _storage._tschchartaxisdefault3Dlabelposition ?? 0}
+    get {_storage._tschchartaxisdefault3Dlabelposition ?? 0}
     set {_uniqueStorage()._tschchartaxisdefault3Dlabelposition = newValue}
   }
   /// Returns true if `tschchartaxisdefault3Dlabelposition` has been explicitly set.
-  public var hasTschchartaxisdefault3Dlabelposition: Bool {return _storage._tschchartaxisdefault3Dlabelposition != nil}
+  public var hasTschchartaxisdefault3Dlabelposition: Bool {_storage._tschchartaxisdefault3Dlabelposition != nil}
   /// Clears the value of `tschchartaxisdefault3Dlabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefault3Dlabelposition() {_uniqueStorage()._tschchartaxisdefault3Dlabelposition = nil}
 
   public var tschchartaxisdefaultdateformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartaxisdefaultdateformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartaxisdefaultdateformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartaxisdefaultdateformat = newValue}
   }
   /// Returns true if `tschchartaxisdefaultdateformat` has been explicitly set.
-  public var hasTschchartaxisdefaultdateformat: Bool {return _storage._tschchartaxisdefaultdateformat != nil}
+  public var hasTschchartaxisdefaultdateformat: Bool {_storage._tschchartaxisdefaultdateformat != nil}
   /// Clears the value of `tschchartaxisdefaultdateformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultdateformat() {_uniqueStorage()._tschchartaxisdefaultdateformat = nil}
 
   public var tschchartaxisdefaultdurationformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartaxisdefaultdurationformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartaxisdefaultdurationformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartaxisdefaultdurationformat = newValue}
   }
   /// Returns true if `tschchartaxisdefaultdurationformat` has been explicitly set.
-  public var hasTschchartaxisdefaultdurationformat: Bool {return _storage._tschchartaxisdefaultdurationformat != nil}
+  public var hasTschchartaxisdefaultdurationformat: Bool {_storage._tschchartaxisdefaultdurationformat != nil}
   /// Clears the value of `tschchartaxisdefaultdurationformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultdurationformat() {_uniqueStorage()._tschchartaxisdefaultdurationformat = nil}
 
   public var tschchartaxisdefaultlabelexplosion: Float {
-    get {return _storage._tschchartaxisdefaultlabelexplosion ?? 0}
+    get {_storage._tschchartaxisdefaultlabelexplosion ?? 0}
     set {_uniqueStorage()._tschchartaxisdefaultlabelexplosion = newValue}
   }
   /// Returns true if `tschchartaxisdefaultlabelexplosion` has been explicitly set.
-  public var hasTschchartaxisdefaultlabelexplosion: Bool {return _storage._tschchartaxisdefaultlabelexplosion != nil}
+  public var hasTschchartaxisdefaultlabelexplosion: Bool {_storage._tschchartaxisdefaultlabelexplosion != nil}
   /// Clears the value of `tschchartaxisdefaultlabelexplosion`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultlabelexplosion() {_uniqueStorage()._tschchartaxisdefaultlabelexplosion = nil}
 
   public var tschchartaxisdefaultnumberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartaxisdefaultnumberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartaxisdefaultnumberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartaxisdefaultnumberformat = newValue}
   }
   /// Returns true if `tschchartaxisdefaultnumberformat` has been explicitly set.
-  public var hasTschchartaxisdefaultnumberformat: Bool {return _storage._tschchartaxisdefaultnumberformat != nil}
+  public var hasTschchartaxisdefaultnumberformat: Bool {_storage._tschchartaxisdefaultnumberformat != nil}
   /// Clears the value of `tschchartaxisdefaultnumberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultnumberformat() {_uniqueStorage()._tschchartaxisdefaultnumberformat = nil}
 
   public var tschchartaxisdefaultnumberformattype: Int32 {
-    get {return _storage._tschchartaxisdefaultnumberformattype ?? 0}
+    get {_storage._tschchartaxisdefaultnumberformattype ?? 0}
     set {_uniqueStorage()._tschchartaxisdefaultnumberformattype = newValue}
   }
   /// Returns true if `tschchartaxisdefaultnumberformattype` has been explicitly set.
-  public var hasTschchartaxisdefaultnumberformattype: Bool {return _storage._tschchartaxisdefaultnumberformattype != nil}
+  public var hasTschchartaxisdefaultnumberformattype: Bool {_storage._tschchartaxisdefaultnumberformattype != nil}
   /// Clears the value of `tschchartaxisdefaultnumberformattype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultnumberformattype() {_uniqueStorage()._tschchartaxisdefaultnumberformattype = nil}
 
   public var tschchartaxisvaluenumberofdecades: Int32 {
-    get {return _storage._tschchartaxisvaluenumberofdecades ?? 0}
+    get {_storage._tschchartaxisvaluenumberofdecades ?? 0}
     set {_uniqueStorage()._tschchartaxisvaluenumberofdecades = newValue}
   }
   /// Returns true if `tschchartaxisvaluenumberofdecades` has been explicitly set.
-  public var hasTschchartaxisvaluenumberofdecades: Bool {return _storage._tschchartaxisvaluenumberofdecades != nil}
+  public var hasTschchartaxisvaluenumberofdecades: Bool {_storage._tschchartaxisvaluenumberofdecades != nil}
   /// Clears the value of `tschchartaxisvaluenumberofdecades`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluenumberofdecades() {_uniqueStorage()._tschchartaxisvaluenumberofdecades = nil}
 
   public var tschchartaxisvaluenumberofmajorgridlines: Int32 {
-    get {return _storage._tschchartaxisvaluenumberofmajorgridlines ?? 0}
+    get {_storage._tschchartaxisvaluenumberofmajorgridlines ?? 0}
     set {_uniqueStorage()._tschchartaxisvaluenumberofmajorgridlines = newValue}
   }
   /// Returns true if `tschchartaxisvaluenumberofmajorgridlines` has been explicitly set.
-  public var hasTschchartaxisvaluenumberofmajorgridlines: Bool {return _storage._tschchartaxisvaluenumberofmajorgridlines != nil}
+  public var hasTschchartaxisvaluenumberofmajorgridlines: Bool {_storage._tschchartaxisvaluenumberofmajorgridlines != nil}
   /// Clears the value of `tschchartaxisvaluenumberofmajorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluenumberofmajorgridlines() {_uniqueStorage()._tschchartaxisvaluenumberofmajorgridlines = nil}
 
   public var tschchartaxisvaluenumberofminorgridlines: Int32 {
-    get {return _storage._tschchartaxisvaluenumberofminorgridlines ?? 0}
+    get {_storage._tschchartaxisvaluenumberofminorgridlines ?? 0}
     set {_uniqueStorage()._tschchartaxisvaluenumberofminorgridlines = newValue}
   }
   /// Returns true if `tschchartaxisvaluenumberofminorgridlines` has been explicitly set.
-  public var hasTschchartaxisvaluenumberofminorgridlines: Bool {return _storage._tschchartaxisvaluenumberofminorgridlines != nil}
+  public var hasTschchartaxisvaluenumberofminorgridlines: Bool {_storage._tschchartaxisvaluenumberofminorgridlines != nil}
   /// Clears the value of `tschchartaxisvaluenumberofminorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluenumberofminorgridlines() {_uniqueStorage()._tschchartaxisvaluenumberofminorgridlines = nil}
 
   public var tschchartaxiscategoryplottoedges: Bool {
-    get {return _storage._tschchartaxiscategoryplottoedges ?? false}
+    get {_storage._tschchartaxiscategoryplottoedges ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryplottoedges = newValue}
   }
   /// Returns true if `tschchartaxiscategoryplottoedges` has been explicitly set.
-  public var hasTschchartaxiscategoryplottoedges: Bool {return _storage._tschchartaxiscategoryplottoedges != nil}
+  public var hasTschchartaxiscategoryplottoedges: Bool {_storage._tschchartaxiscategoryplottoedges != nil}
   /// Clears the value of `tschchartaxiscategoryplottoedges`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryplottoedges() {_uniqueStorage()._tschchartaxiscategoryplottoedges = nil}
 
   public var tschchartaxisvaluescale: Int32 {
-    get {return _storage._tschchartaxisvaluescale ?? 0}
+    get {_storage._tschchartaxisvaluescale ?? 0}
     set {_uniqueStorage()._tschchartaxisvaluescale = newValue}
   }
   /// Returns true if `tschchartaxisvaluescale` has been explicitly set.
-  public var hasTschchartaxisvaluescale: Bool {return _storage._tschchartaxisvaluescale != nil}
+  public var hasTschchartaxisvaluescale: Bool {_storage._tschchartaxisvaluescale != nil}
   /// Clears the value of `tschchartaxisvaluescale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluescale() {_uniqueStorage()._tschchartaxisvaluescale = nil}
 
   public var tschchartaxiscategoryshowlabels: Bool {
-    get {return _storage._tschchartaxiscategoryshowlabels ?? false}
+    get {_storage._tschchartaxiscategoryshowlabels ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryshowlabels = newValue}
   }
   /// Returns true if `tschchartaxiscategoryshowlabels` has been explicitly set.
-  public var hasTschchartaxiscategoryshowlabels: Bool {return _storage._tschchartaxiscategoryshowlabels != nil}
+  public var hasTschchartaxiscategoryshowlabels: Bool {_storage._tschchartaxiscategoryshowlabels != nil}
   /// Clears the value of `tschchartaxiscategoryshowlabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryshowlabels() {_uniqueStorage()._tschchartaxiscategoryshowlabels = nil}
 
   public var tschchartaxisdefaultshowlabels: Bool {
-    get {return _storage._tschchartaxisdefaultshowlabels ?? false}
+    get {_storage._tschchartaxisdefaultshowlabels ?? false}
     set {_uniqueStorage()._tschchartaxisdefaultshowlabels = newValue}
   }
   /// Returns true if `tschchartaxisdefaultshowlabels` has been explicitly set.
-  public var hasTschchartaxisdefaultshowlabels: Bool {return _storage._tschchartaxisdefaultshowlabels != nil}
+  public var hasTschchartaxisdefaultshowlabels: Bool {_storage._tschchartaxisdefaultshowlabels != nil}
   /// Clears the value of `tschchartaxisdefaultshowlabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultshowlabels() {_uniqueStorage()._tschchartaxisdefaultshowlabels = nil}
 
   public var tschchartaxisvalueshowlabels: Bool {
-    get {return _storage._tschchartaxisvalueshowlabels ?? false}
+    get {_storage._tschchartaxisvalueshowlabels ?? false}
     set {_uniqueStorage()._tschchartaxisvalueshowlabels = newValue}
   }
   /// Returns true if `tschchartaxisvalueshowlabels` has been explicitly set.
-  public var hasTschchartaxisvalueshowlabels: Bool {return _storage._tschchartaxisvalueshowlabels != nil}
+  public var hasTschchartaxisvalueshowlabels: Bool {_storage._tschchartaxisvalueshowlabels != nil}
   /// Clears the value of `tschchartaxisvalueshowlabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueshowlabels() {_uniqueStorage()._tschchartaxisvalueshowlabels = nil}
 
   public var tschchartaxiscategoryshowserieslabels: Bool {
-    get {return _storage._tschchartaxiscategoryshowserieslabels ?? false}
+    get {_storage._tschchartaxiscategoryshowserieslabels ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryshowserieslabels = newValue}
   }
   /// Returns true if `tschchartaxiscategoryshowserieslabels` has been explicitly set.
-  public var hasTschchartaxiscategoryshowserieslabels: Bool {return _storage._tschchartaxiscategoryshowserieslabels != nil}
+  public var hasTschchartaxiscategoryshowserieslabels: Bool {_storage._tschchartaxiscategoryshowserieslabels != nil}
   /// Clears the value of `tschchartaxiscategoryshowserieslabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryshowserieslabels() {_uniqueStorage()._tschchartaxiscategoryshowserieslabels = nil}
 
   public var tschchartaxismultidatashowserieslabels: Bool {
-    get {return _storage._tschchartaxismultidatashowserieslabels ?? false}
+    get {_storage._tschchartaxismultidatashowserieslabels ?? false}
     set {_uniqueStorage()._tschchartaxismultidatashowserieslabels = newValue}
   }
   /// Returns true if `tschchartaxismultidatashowserieslabels` has been explicitly set.
-  public var hasTschchartaxismultidatashowserieslabels: Bool {return _storage._tschchartaxismultidatashowserieslabels != nil}
+  public var hasTschchartaxismultidatashowserieslabels: Bool {_storage._tschchartaxismultidatashowserieslabels != nil}
   /// Clears the value of `tschchartaxismultidatashowserieslabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxismultidatashowserieslabels() {_uniqueStorage()._tschchartaxismultidatashowserieslabels = nil}
 
   public var tschchartaxiscategoryshowtitle: Bool {
-    get {return _storage._tschchartaxiscategoryshowtitle ?? false}
+    get {_storage._tschchartaxiscategoryshowtitle ?? false}
     set {_uniqueStorage()._tschchartaxiscategoryshowtitle = newValue}
   }
   /// Returns true if `tschchartaxiscategoryshowtitle` has been explicitly set.
-  public var hasTschchartaxiscategoryshowtitle: Bool {return _storage._tschchartaxiscategoryshowtitle != nil}
+  public var hasTschchartaxiscategoryshowtitle: Bool {_storage._tschchartaxiscategoryshowtitle != nil}
   /// Clears the value of `tschchartaxiscategoryshowtitle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategoryshowtitle() {_uniqueStorage()._tschchartaxiscategoryshowtitle = nil}
 
   public var tschchartaxisvalueshowtitle: Bool {
-    get {return _storage._tschchartaxisvalueshowtitle ?? false}
+    get {_storage._tschchartaxisvalueshowtitle ?? false}
     set {_uniqueStorage()._tschchartaxisvalueshowtitle = newValue}
   }
   /// Returns true if `tschchartaxisvalueshowtitle` has been explicitly set.
-  public var hasTschchartaxisvalueshowtitle: Bool {return _storage._tschchartaxisvalueshowtitle != nil}
+  public var hasTschchartaxisvalueshowtitle: Bool {_storage._tschchartaxisvalueshowtitle != nil}
   /// Clears the value of `tschchartaxisvalueshowtitle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvalueshowtitle() {_uniqueStorage()._tschchartaxisvalueshowtitle = nil}
 
   public var tschchartaxiscategorytitle: String {
-    get {return _storage._tschchartaxiscategorytitle ?? String()}
+    get {_storage._tschchartaxiscategorytitle ?? String()}
     set {_uniqueStorage()._tschchartaxiscategorytitle = newValue}
   }
   /// Returns true if `tschchartaxiscategorytitle` has been explicitly set.
-  public var hasTschchartaxiscategorytitle: Bool {return _storage._tschchartaxiscategorytitle != nil}
+  public var hasTschchartaxiscategorytitle: Bool {_storage._tschchartaxiscategorytitle != nil}
   /// Clears the value of `tschchartaxiscategorytitle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxiscategorytitle() {_uniqueStorage()._tschchartaxiscategorytitle = nil}
 
   public var tschchartaxisvaluetitle: String {
-    get {return _storage._tschchartaxisvaluetitle ?? String()}
+    get {_storage._tschchartaxisvaluetitle ?? String()}
     set {_uniqueStorage()._tschchartaxisvaluetitle = newValue}
   }
   /// Returns true if `tschchartaxisvaluetitle` has been explicitly set.
-  public var hasTschchartaxisvaluetitle: Bool {return _storage._tschchartaxisvaluetitle != nil}
+  public var hasTschchartaxisvaluetitle: Bool {_storage._tschchartaxisvaluetitle != nil}
   /// Clears the value of `tschchartaxisvaluetitle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisvaluetitle() {_uniqueStorage()._tschchartaxisvaluetitle = nil}
 
   public var tschchartaxisdefaultusermax: TSCH_ChartsNSNumberDoubleArchive {
-    get {return _storage._tschchartaxisdefaultusermax ?? TSCH_ChartsNSNumberDoubleArchive()}
+    get {_storage._tschchartaxisdefaultusermax ?? TSCH_ChartsNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartaxisdefaultusermax = newValue}
   }
   /// Returns true if `tschchartaxisdefaultusermax` has been explicitly set.
-  public var hasTschchartaxisdefaultusermax: Bool {return _storage._tschchartaxisdefaultusermax != nil}
+  public var hasTschchartaxisdefaultusermax: Bool {_storage._tschchartaxisdefaultusermax != nil}
   /// Clears the value of `tschchartaxisdefaultusermax`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultusermax() {_uniqueStorage()._tschchartaxisdefaultusermax = nil}
 
   public var tschchartaxisdefaultusermin: TSCH_ChartsNSNumberDoubleArchive {
-    get {return _storage._tschchartaxisdefaultusermin ?? TSCH_ChartsNSNumberDoubleArchive()}
+    get {_storage._tschchartaxisdefaultusermin ?? TSCH_ChartsNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartaxisdefaultusermin = newValue}
   }
   /// Returns true if `tschchartaxisdefaultusermin` has been explicitly set.
-  public var hasTschchartaxisdefaultusermin: Bool {return _storage._tschchartaxisdefaultusermin != nil}
+  public var hasTschchartaxisdefaultusermin: Bool {_storage._tschchartaxisdefaultusermin != nil}
   /// Clears the value of `tschchartaxisdefaultusermin`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdefaultusermin() {_uniqueStorage()._tschchartaxisdefaultusermin = nil}
 
@@ -1354,1070 +1354,1070 @@ public struct TSCH_Generated_ChartAxisNonStyleArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Generated_ChartSeriesStyleArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Generated_ChartSeriesStyleArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschchartseriesdefaultcalloutlineendlineend: TSD_LineEndArchive {
-    get {return _storage._tschchartseriesdefaultcalloutlineendlineend ?? TSD_LineEndArchive()}
+    get {_storage._tschchartseriesdefaultcalloutlineendlineend ?? TSD_LineEndArchive()}
     set {_uniqueStorage()._tschchartseriesdefaultcalloutlineendlineend = newValue}
   }
   /// Returns true if `tschchartseriesdefaultcalloutlineendlineend` has been explicitly set.
-  public var hasTschchartseriesdefaultcalloutlineendlineend: Bool {return _storage._tschchartseriesdefaultcalloutlineendlineend != nil}
+  public var hasTschchartseriesdefaultcalloutlineendlineend: Bool {_storage._tschchartseriesdefaultcalloutlineendlineend != nil}
   /// Clears the value of `tschchartseriesdefaultcalloutlineendlineend`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultcalloutlineendlineend() {_uniqueStorage()._tschchartseriesdefaultcalloutlineendlineend = nil}
 
   public var tschchartseriesdefaultcalloutlinestartlineend: TSD_LineEndArchive {
-    get {return _storage._tschchartseriesdefaultcalloutlinestartlineend ?? TSD_LineEndArchive()}
+    get {_storage._tschchartseriesdefaultcalloutlinestartlineend ?? TSD_LineEndArchive()}
     set {_uniqueStorage()._tschchartseriesdefaultcalloutlinestartlineend = newValue}
   }
   /// Returns true if `tschchartseriesdefaultcalloutlinestartlineend` has been explicitly set.
-  public var hasTschchartseriesdefaultcalloutlinestartlineend: Bool {return _storage._tschchartseriesdefaultcalloutlinestartlineend != nil}
+  public var hasTschchartseriesdefaultcalloutlinestartlineend: Bool {_storage._tschchartseriesdefaultcalloutlinestartlineend != nil}
   /// Clears the value of `tschchartseriesdefaultcalloutlinestartlineend`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultcalloutlinestartlineend() {_uniqueStorage()._tschchartseriesdefaultcalloutlinestartlineend = nil}
 
   public var tschchartseriesdefaultcalloutlinestrokestyle: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesdefaultcalloutlinestrokestyle ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesdefaultcalloutlinestrokestyle ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesdefaultcalloutlinestrokestyle = newValue}
   }
   /// Returns true if `tschchartseriesdefaultcalloutlinestrokestyle` has been explicitly set.
-  public var hasTschchartseriesdefaultcalloutlinestrokestyle: Bool {return _storage._tschchartseriesdefaultcalloutlinestrokestyle != nil}
+  public var hasTschchartseriesdefaultcalloutlinestrokestyle: Bool {_storage._tschchartseriesdefaultcalloutlinestrokestyle != nil}
   /// Clears the value of `tschchartseriesdefaultcalloutlinestrokestyle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultcalloutlinestrokestyle() {_uniqueStorage()._tschchartseriesdefaultcalloutlinestrokestyle = nil}
 
   public var tschchartseriesdefaulterrorbarlineend: TSD_LineEndArchive {
-    get {return _storage._tschchartseriesdefaulterrorbarlineend ?? TSD_LineEndArchive()}
+    get {_storage._tschchartseriesdefaulterrorbarlineend ?? TSD_LineEndArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarlineend = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarlineend` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarlineend: Bool {return _storage._tschchartseriesdefaulterrorbarlineend != nil}
+  public var hasTschchartseriesdefaulterrorbarlineend: Bool {_storage._tschchartseriesdefaulterrorbarlineend != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarlineend`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarlineend() {_uniqueStorage()._tschchartseriesdefaulterrorbarlineend = nil}
 
   public var tschchartseriesdefaulterrorbarlineendscatterx: TSD_LineEndArchive {
-    get {return _storage._tschchartseriesdefaulterrorbarlineendscatterx ?? TSD_LineEndArchive()}
+    get {_storage._tschchartseriesdefaulterrorbarlineendscatterx ?? TSD_LineEndArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarlineendscatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarlineendscatterx` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarlineendscatterx: Bool {return _storage._tschchartseriesdefaulterrorbarlineendscatterx != nil}
+  public var hasTschchartseriesdefaulterrorbarlineendscatterx: Bool {_storage._tschchartseriesdefaulterrorbarlineendscatterx != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarlineendscatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarlineendscatterx() {_uniqueStorage()._tschchartseriesdefaulterrorbarlineendscatterx = nil}
 
   public var tschchartseriesdefaulterrorbarshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesdefaulterrorbarshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesdefaulterrorbarshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarshadow = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarshadow` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarshadow: Bool {return _storage._tschchartseriesdefaulterrorbarshadow != nil}
+  public var hasTschchartseriesdefaulterrorbarshadow: Bool {_storage._tschchartseriesdefaulterrorbarshadow != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarshadow() {_uniqueStorage()._tschchartseriesdefaulterrorbarshadow = nil}
 
   public var tschchartseriesdefaulterrorbarspacing: Int32 {
-    get {return _storage._tschchartseriesdefaulterrorbarspacing ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbarspacing ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarspacing = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarspacing` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarspacing: Bool {return _storage._tschchartseriesdefaulterrorbarspacing != nil}
+  public var hasTschchartseriesdefaulterrorbarspacing: Bool {_storage._tschchartseriesdefaulterrorbarspacing != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarspacing`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarspacing() {_uniqueStorage()._tschchartseriesdefaulterrorbarspacing = nil}
 
   public var tschchartseriesdefaulterrorbarspacingscatterx: Int32 {
-    get {return _storage._tschchartseriesdefaulterrorbarspacingscatterx ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbarspacingscatterx ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarspacingscatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarspacingscatterx` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarspacingscatterx: Bool {return _storage._tschchartseriesdefaulterrorbarspacingscatterx != nil}
+  public var hasTschchartseriesdefaulterrorbarspacingscatterx: Bool {_storage._tschchartseriesdefaulterrorbarspacingscatterx != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarspacingscatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarspacingscatterx() {_uniqueStorage()._tschchartseriesdefaulterrorbarspacingscatterx = nil}
 
   public var tschchartseriesdefaulterrorbarstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesdefaulterrorbarstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesdefaulterrorbarstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarstroke = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarstroke` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarstroke: Bool {return _storage._tschchartseriesdefaulterrorbarstroke != nil}
+  public var hasTschchartseriesdefaulterrorbarstroke: Bool {_storage._tschchartseriesdefaulterrorbarstroke != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarstroke() {_uniqueStorage()._tschchartseriesdefaulterrorbarstroke = nil}
 
   public var tschchartseriesdefaulterrorbarstrokescatterx: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesdefaulterrorbarstrokescatterx ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesdefaulterrorbarstrokescatterx ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarstrokescatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarstrokescatterx` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarstrokescatterx: Bool {return _storage._tschchartseriesdefaulterrorbarstrokescatterx != nil}
+  public var hasTschchartseriesdefaulterrorbarstrokescatterx: Bool {_storage._tschchartseriesdefaulterrorbarstrokescatterx != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarstrokescatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarstrokescatterx() {_uniqueStorage()._tschchartseriesdefaulterrorbarstrokescatterx = nil}
 
   public var tschchartseries3Dareafill: TSD_FillArchive {
-    get {return _storage._tschchartseries3Dareafill ?? TSD_FillArchive()}
+    get {_storage._tschchartseries3Dareafill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseries3Dareafill = newValue}
   }
   /// Returns true if `tschchartseries3Dareafill` has been explicitly set.
-  public var hasTschchartseries3Dareafill: Bool {return _storage._tschchartseries3Dareafill != nil}
+  public var hasTschchartseries3Dareafill: Bool {_storage._tschchartseries3Dareafill != nil}
   /// Clears the value of `tschchartseries3Dareafill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries3Dareafill() {_uniqueStorage()._tschchartseries3Dareafill = nil}
 
   public var tschchartseries3Dbarfill: TSD_FillArchive {
-    get {return _storage._tschchartseries3Dbarfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseries3Dbarfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseries3Dbarfill = newValue}
   }
   /// Returns true if `tschchartseries3Dbarfill` has been explicitly set.
-  public var hasTschchartseries3Dbarfill: Bool {return _storage._tschchartseries3Dbarfill != nil}
+  public var hasTschchartseries3Dbarfill: Bool {_storage._tschchartseries3Dbarfill != nil}
   /// Clears the value of `tschchartseries3Dbarfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries3Dbarfill() {_uniqueStorage()._tschchartseries3Dbarfill = nil}
 
   public var tschchartseries3Dcolumnfill: TSD_FillArchive {
-    get {return _storage._tschchartseries3Dcolumnfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseries3Dcolumnfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseries3Dcolumnfill = newValue}
   }
   /// Returns true if `tschchartseries3Dcolumnfill` has been explicitly set.
-  public var hasTschchartseries3Dcolumnfill: Bool {return _storage._tschchartseries3Dcolumnfill != nil}
+  public var hasTschchartseries3Dcolumnfill: Bool {_storage._tschchartseries3Dcolumnfill != nil}
   /// Clears the value of `tschchartseries3Dcolumnfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries3Dcolumnfill() {_uniqueStorage()._tschchartseries3Dcolumnfill = nil}
 
   public var tschchartseries3Dlinefill: TSD_FillArchive {
-    get {return _storage._tschchartseries3Dlinefill ?? TSD_FillArchive()}
+    get {_storage._tschchartseries3Dlinefill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseries3Dlinefill = newValue}
   }
   /// Returns true if `tschchartseries3Dlinefill` has been explicitly set.
-  public var hasTschchartseries3Dlinefill: Bool {return _storage._tschchartseries3Dlinefill != nil}
+  public var hasTschchartseries3Dlinefill: Bool {_storage._tschchartseries3Dlinefill != nil}
   /// Clears the value of `tschchartseries3Dlinefill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries3Dlinefill() {_uniqueStorage()._tschchartseries3Dlinefill = nil}
 
   public var tschchartseries3Dpiefill: TSD_FillArchive {
-    get {return _storage._tschchartseries3Dpiefill ?? TSD_FillArchive()}
+    get {_storage._tschchartseries3Dpiefill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseries3Dpiefill = newValue}
   }
   /// Returns true if `tschchartseries3Dpiefill` has been explicitly set.
-  public var hasTschchartseries3Dpiefill: Bool {return _storage._tschchartseries3Dpiefill != nil}
+  public var hasTschchartseries3Dpiefill: Bool {_storage._tschchartseries3Dpiefill != nil}
   /// Clears the value of `tschchartseries3Dpiefill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries3Dpiefill() {_uniqueStorage()._tschchartseries3Dpiefill = nil}
 
   public var tschchartseriesareafill: TSD_FillArchive {
-    get {return _storage._tschchartseriesareafill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesareafill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesareafill = newValue}
   }
   /// Returns true if `tschchartseriesareafill` has been explicitly set.
-  public var hasTschchartseriesareafill: Bool {return _storage._tschchartseriesareafill != nil}
+  public var hasTschchartseriesareafill: Bool {_storage._tschchartseriesareafill != nil}
   /// Clears the value of `tschchartseriesareafill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareafill() {_uniqueStorage()._tschchartseriesareafill = nil}
 
   public var tschchartseriesbarfill: TSD_FillArchive {
-    get {return _storage._tschchartseriesbarfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesbarfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesbarfill = newValue}
   }
   /// Returns true if `tschchartseriesbarfill` has been explicitly set.
-  public var hasTschchartseriesbarfill: Bool {return _storage._tschchartseriesbarfill != nil}
+  public var hasTschchartseriesbarfill: Bool {_storage._tschchartseriesbarfill != nil}
   /// Clears the value of `tschchartseriesbarfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbarfill() {_uniqueStorage()._tschchartseriesbarfill = nil}
 
   public var tschchartseriescolumnfill: TSD_FillArchive {
-    get {return _storage._tschchartseriescolumnfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriescolumnfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriescolumnfill = newValue}
   }
   /// Returns true if `tschchartseriescolumnfill` has been explicitly set.
-  public var hasTschchartseriescolumnfill: Bool {return _storage._tschchartseriescolumnfill != nil}
+  public var hasTschchartseriescolumnfill: Bool {_storage._tschchartseriescolumnfill != nil}
   /// Clears the value of `tschchartseriescolumnfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriescolumnfill() {_uniqueStorage()._tschchartseriescolumnfill = nil}
 
   public var tschchartseriesdefaultfill: TSD_FillArchive {
-    get {return _storage._tschchartseriesdefaultfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesdefaultfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesdefaultfill = newValue}
   }
   /// Returns true if `tschchartseriesdefaultfill` has been explicitly set.
-  public var hasTschchartseriesdefaultfill: Bool {return _storage._tschchartseriesdefaultfill != nil}
+  public var hasTschchartseriesdefaultfill: Bool {_storage._tschchartseriesdefaultfill != nil}
   /// Clears the value of `tschchartseriesdefaultfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultfill() {_uniqueStorage()._tschchartseriesdefaultfill = nil}
 
   public var tschchartseriesmixedareafill: TSD_FillArchive {
-    get {return _storage._tschchartseriesmixedareafill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesmixedareafill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesmixedareafill = newValue}
   }
   /// Returns true if `tschchartseriesmixedareafill` has been explicitly set.
-  public var hasTschchartseriesmixedareafill: Bool {return _storage._tschchartseriesmixedareafill != nil}
+  public var hasTschchartseriesmixedareafill: Bool {_storage._tschchartseriesmixedareafill != nil}
   /// Clears the value of `tschchartseriesmixedareafill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareafill() {_uniqueStorage()._tschchartseriesmixedareafill = nil}
 
   public var tschchartseriesmixedcolumnfill: TSD_FillArchive {
-    get {return _storage._tschchartseriesmixedcolumnfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesmixedcolumnfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesmixedcolumnfill = newValue}
   }
   /// Returns true if `tschchartseriesmixedcolumnfill` has been explicitly set.
-  public var hasTschchartseriesmixedcolumnfill: Bool {return _storage._tschchartseriesmixedcolumnfill != nil}
+  public var hasTschchartseriesmixedcolumnfill: Bool {_storage._tschchartseriesmixedcolumnfill != nil}
   /// Clears the value of `tschchartseriesmixedcolumnfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedcolumnfill() {_uniqueStorage()._tschchartseriesmixedcolumnfill = nil}
 
   public var tschchartseriespiefill: TSD_FillArchive {
-    get {return _storage._tschchartseriespiefill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriespiefill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriespiefill = newValue}
   }
   /// Returns true if `tschchartseriespiefill` has been explicitly set.
-  public var hasTschchartseriespiefill: Bool {return _storage._tschchartseriespiefill != nil}
+  public var hasTschchartseriespiefill: Bool {_storage._tschchartseriespiefill != nil}
   /// Clears the value of `tschchartseriespiefill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespiefill() {_uniqueStorage()._tschchartseriespiefill = nil}
 
   public var tschchartseriesradarareafill: TSD_FillArchive {
-    get {return _storage._tschchartseriesradarareafill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesradarareafill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesradarareafill = newValue}
   }
   /// Returns true if `tschchartseriesradarareafill` has been explicitly set.
-  public var hasTschchartseriesradarareafill: Bool {return _storage._tschchartseriesradarareafill != nil}
+  public var hasTschchartseriesradarareafill: Bool {_storage._tschchartseriesradarareafill != nil}
   /// Clears the value of `tschchartseriesradarareafill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareafill() {_uniqueStorage()._tschchartseriesradarareafill = nil}
 
   public var tschchartseriesradarareafilluseseriesstrokealphamultiplier: Float {
-    get {return _storage._tschchartseriesradarareafilluseseriesstrokealphamultiplier ?? 0}
+    get {_storage._tschchartseriesradarareafilluseseriesstrokealphamultiplier ?? 0}
     set {_uniqueStorage()._tschchartseriesradarareafilluseseriesstrokealphamultiplier = newValue}
   }
   /// Returns true if `tschchartseriesradarareafilluseseriesstrokealphamultiplier` has been explicitly set.
-  public var hasTschchartseriesradarareafilluseseriesstrokealphamultiplier: Bool {return _storage._tschchartseriesradarareafilluseseriesstrokealphamultiplier != nil}
+  public var hasTschchartseriesradarareafilluseseriesstrokealphamultiplier: Bool {_storage._tschchartseriesradarareafilluseseriesstrokealphamultiplier != nil}
   /// Clears the value of `tschchartseriesradarareafilluseseriesstrokealphamultiplier`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareafilluseseriesstrokealphamultiplier() {_uniqueStorage()._tschchartseriesradarareafilluseseriesstrokealphamultiplier = nil}
 
   public var tschchartseriesradarareafilluseseriesstroke: Bool {
-    get {return _storage._tschchartseriesradarareafilluseseriesstroke ?? false}
+    get {_storage._tschchartseriesradarareafilluseseriesstroke ?? false}
     set {_uniqueStorage()._tschchartseriesradarareafilluseseriesstroke = newValue}
   }
   /// Returns true if `tschchartseriesradarareafilluseseriesstroke` has been explicitly set.
-  public var hasTschchartseriesradarareafilluseseriesstroke: Bool {return _storage._tschchartseriesradarareafilluseseriesstroke != nil}
+  public var hasTschchartseriesradarareafilluseseriesstroke: Bool {_storage._tschchartseriesradarareafilluseseriesstroke != nil}
   /// Clears the value of `tschchartseriesradarareafilluseseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareafilluseseriesstroke() {_uniqueStorage()._tschchartseriesradarareafilluseseriesstroke = nil}
 
   public var tschchartseriesarealabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesarealabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesarealabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesarealabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesarealabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesarealabelparagraphstyleindex: Bool {return _storage._tschchartseriesarealabelparagraphstyleindex != nil}
+  public var hasTschchartseriesarealabelparagraphstyleindex: Bool {_storage._tschchartseriesarealabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesarealabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesarealabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesarealabelparagraphstyleindex = nil}
 
   public var tschchartseriesbarlabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesbarlabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesbarlabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesbarlabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesbarlabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesbarlabelparagraphstyleindex: Bool {return _storage._tschchartseriesbarlabelparagraphstyleindex != nil}
+  public var hasTschchartseriesbarlabelparagraphstyleindex: Bool {_storage._tschchartseriesbarlabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesbarlabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbarlabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesbarlabelparagraphstyleindex = nil}
 
   public var tschchartseriesdefaultlabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesdefaultlabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesdefaultlabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaultlabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesdefaultlabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesdefaultlabelparagraphstyleindex: Bool {return _storage._tschchartseriesdefaultlabelparagraphstyleindex != nil}
+  public var hasTschchartseriesdefaultlabelparagraphstyleindex: Bool {_storage._tschchartseriesdefaultlabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesdefaultlabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultlabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesdefaultlabelparagraphstyleindex = nil}
 
   public var tschchartseriesdonutlabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesdonutlabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesdonutlabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesdonutlabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesdonutlabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesdonutlabelparagraphstyleindex: Bool {return _storage._tschchartseriesdonutlabelparagraphstyleindex != nil}
+  public var hasTschchartseriesdonutlabelparagraphstyleindex: Bool {_storage._tschchartseriesdonutlabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesdonutlabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdonutlabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesdonutlabelparagraphstyleindex = nil}
 
   public var tschchartserieslinelabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartserieslinelabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartserieslinelabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartserieslinelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartserieslinelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartserieslinelabelparagraphstyleindex: Bool {return _storage._tschchartserieslinelabelparagraphstyleindex != nil}
+  public var hasTschchartserieslinelabelparagraphstyleindex: Bool {_storage._tschchartserieslinelabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartserieslinelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinelabelparagraphstyleindex() {_uniqueStorage()._tschchartserieslinelabelparagraphstyleindex = nil}
 
   public var tschchartseriesmixedlabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesmixedlabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesmixedlabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesmixedlabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesmixedlabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesmixedlabelparagraphstyleindex: Bool {return _storage._tschchartseriesmixedlabelparagraphstyleindex != nil}
+  public var hasTschchartseriesmixedlabelparagraphstyleindex: Bool {_storage._tschchartseriesmixedlabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesmixedlabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesmixedlabelparagraphstyleindex = nil}
 
   public var tschchartseriespielabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriespielabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriespielabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriespielabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriespielabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriespielabelparagraphstyleindex: Bool {return _storage._tschchartseriespielabelparagraphstyleindex != nil}
+  public var hasTschchartseriespielabelparagraphstyleindex: Bool {_storage._tschchartseriespielabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriespielabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespielabelparagraphstyleindex() {_uniqueStorage()._tschchartseriespielabelparagraphstyleindex = nil}
 
   public var tschchartseriesradarlabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesradarlabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesradarlabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesradarlabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesradarlabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesradarlabelparagraphstyleindex: Bool {return _storage._tschchartseriesradarlabelparagraphstyleindex != nil}
+  public var hasTschchartseriesradarlabelparagraphstyleindex: Bool {_storage._tschchartseriesradarlabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesradarlabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarlabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesradarlabelparagraphstyleindex = nil}
 
   public var tschchartseriesdefaultopacity: Float {
-    get {return _storage._tschchartseriesdefaultopacity ?? 0}
+    get {_storage._tschchartseriesdefaultopacity ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaultopacity = newValue}
   }
   /// Returns true if `tschchartseriesdefaultopacity` has been explicitly set.
-  public var hasTschchartseriesdefaultopacity: Bool {return _storage._tschchartseriesdefaultopacity != nil}
+  public var hasTschchartseriesdefaultopacity: Bool {_storage._tschchartseriesdefaultopacity != nil}
   /// Clears the value of `tschchartseriesdefaultopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultopacity() {_uniqueStorage()._tschchartseriesdefaultopacity = nil}
 
   public var tschchartseriesareaoutsidelabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesareaoutsidelabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesareaoutsidelabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesareaoutsidelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesareaoutsidelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesareaoutsidelabelparagraphstyleindex: Bool {return _storage._tschchartseriesareaoutsidelabelparagraphstyleindex != nil}
+  public var hasTschchartseriesareaoutsidelabelparagraphstyleindex: Bool {_storage._tschchartseriesareaoutsidelabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesareaoutsidelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareaoutsidelabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesareaoutsidelabelparagraphstyleindex = nil}
 
   public var tschchartseriesbaroutsidelabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesbaroutsidelabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesbaroutsidelabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesbaroutsidelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesbaroutsidelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesbaroutsidelabelparagraphstyleindex: Bool {return _storage._tschchartseriesbaroutsidelabelparagraphstyleindex != nil}
+  public var hasTschchartseriesbaroutsidelabelparagraphstyleindex: Bool {_storage._tschchartseriesbaroutsidelabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesbaroutsidelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbaroutsidelabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesbaroutsidelabelparagraphstyleindex = nil}
 
   public var tschchartseriesdefaultoutsidelabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesdefaultoutsidelabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesdefaultoutsidelabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaultoutsidelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesdefaultoutsidelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesdefaultoutsidelabelparagraphstyleindex: Bool {return _storage._tschchartseriesdefaultoutsidelabelparagraphstyleindex != nil}
+  public var hasTschchartseriesdefaultoutsidelabelparagraphstyleindex: Bool {_storage._tschchartseriesdefaultoutsidelabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesdefaultoutsidelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultoutsidelabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesdefaultoutsidelabelparagraphstyleindex = nil}
 
   public var tschchartseriesdonutoutsidelabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesdonutoutsidelabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesdonutoutsidelabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesdonutoutsidelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesdonutoutsidelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesdonutoutsidelabelparagraphstyleindex: Bool {return _storage._tschchartseriesdonutoutsidelabelparagraphstyleindex != nil}
+  public var hasTschchartseriesdonutoutsidelabelparagraphstyleindex: Bool {_storage._tschchartseriesdonutoutsidelabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesdonutoutsidelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdonutoutsidelabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesdonutoutsidelabelparagraphstyleindex = nil}
 
   public var tschchartseriesmixedoutsidelabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesmixedoutsidelabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesmixedoutsidelabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesmixedoutsidelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesmixedoutsidelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesmixedoutsidelabelparagraphstyleindex: Bool {return _storage._tschchartseriesmixedoutsidelabelparagraphstyleindex != nil}
+  public var hasTschchartseriesmixedoutsidelabelparagraphstyleindex: Bool {_storage._tschchartseriesmixedoutsidelabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesmixedoutsidelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedoutsidelabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesmixedoutsidelabelparagraphstyleindex = nil}
 
   public var tschchartseriespieoutsidelabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriespieoutsidelabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriespieoutsidelabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriespieoutsidelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriespieoutsidelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriespieoutsidelabelparagraphstyleindex: Bool {return _storage._tschchartseriespieoutsidelabelparagraphstyleindex != nil}
+  public var hasTschchartseriespieoutsidelabelparagraphstyleindex: Bool {_storage._tschchartseriespieoutsidelabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriespieoutsidelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespieoutsidelabelparagraphstyleindex() {_uniqueStorage()._tschchartseriespieoutsidelabelparagraphstyleindex = nil}
 
   public var tschchartseriesradaroutsidelabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesradaroutsidelabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesradaroutsidelabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesradaroutsidelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesradaroutsidelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesradaroutsidelabelparagraphstyleindex: Bool {return _storage._tschchartseriesradaroutsidelabelparagraphstyleindex != nil}
+  public var hasTschchartseriesradaroutsidelabelparagraphstyleindex: Bool {_storage._tschchartseriesradaroutsidelabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesradaroutsidelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradaroutsidelabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesradaroutsidelabelparagraphstyleindex = nil}
 
   public var tschchartseries3Dareashadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseries3Dareashadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseries3Dareashadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseries3Dareashadow = newValue}
   }
   /// Returns true if `tschchartseries3Dareashadow` has been explicitly set.
-  public var hasTschchartseries3Dareashadow: Bool {return _storage._tschchartseries3Dareashadow != nil}
+  public var hasTschchartseries3Dareashadow: Bool {_storage._tschchartseries3Dareashadow != nil}
   /// Clears the value of `tschchartseries3Dareashadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries3Dareashadow() {_uniqueStorage()._tschchartseries3Dareashadow = nil}
 
   public var tschchartseries3Dbarshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseries3Dbarshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseries3Dbarshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseries3Dbarshadow = newValue}
   }
   /// Returns true if `tschchartseries3Dbarshadow` has been explicitly set.
-  public var hasTschchartseries3Dbarshadow: Bool {return _storage._tschchartseries3Dbarshadow != nil}
+  public var hasTschchartseries3Dbarshadow: Bool {_storage._tschchartseries3Dbarshadow != nil}
   /// Clears the value of `tschchartseries3Dbarshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries3Dbarshadow() {_uniqueStorage()._tschchartseries3Dbarshadow = nil}
 
   public var tschchartseries3Dcolumnshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseries3Dcolumnshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseries3Dcolumnshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseries3Dcolumnshadow = newValue}
   }
   /// Returns true if `tschchartseries3Dcolumnshadow` has been explicitly set.
-  public var hasTschchartseries3Dcolumnshadow: Bool {return _storage._tschchartseries3Dcolumnshadow != nil}
+  public var hasTschchartseries3Dcolumnshadow: Bool {_storage._tschchartseries3Dcolumnshadow != nil}
   /// Clears the value of `tschchartseries3Dcolumnshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries3Dcolumnshadow() {_uniqueStorage()._tschchartseries3Dcolumnshadow = nil}
 
   public var tschchartseries3Dlineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseries3Dlineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseries3Dlineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseries3Dlineshadow = newValue}
   }
   /// Returns true if `tschchartseries3Dlineshadow` has been explicitly set.
-  public var hasTschchartseries3Dlineshadow: Bool {return _storage._tschchartseries3Dlineshadow != nil}
+  public var hasTschchartseries3Dlineshadow: Bool {_storage._tschchartseries3Dlineshadow != nil}
   /// Clears the value of `tschchartseries3Dlineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries3Dlineshadow() {_uniqueStorage()._tschchartseries3Dlineshadow = nil}
 
   public var tschchartseries3Dpieshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseries3Dpieshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseries3Dpieshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseries3Dpieshadow = newValue}
   }
   /// Returns true if `tschchartseries3Dpieshadow` has been explicitly set.
-  public var hasTschchartseries3Dpieshadow: Bool {return _storage._tschchartseries3Dpieshadow != nil}
+  public var hasTschchartseries3Dpieshadow: Bool {_storage._tschchartseries3Dpieshadow != nil}
   /// Clears the value of `tschchartseries3Dpieshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries3Dpieshadow() {_uniqueStorage()._tschchartseries3Dpieshadow = nil}
 
   public var tschchartseriesareashadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesareashadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesareashadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesareashadow = newValue}
   }
   /// Returns true if `tschchartseriesareashadow` has been explicitly set.
-  public var hasTschchartseriesareashadow: Bool {return _storage._tschchartseriesareashadow != nil}
+  public var hasTschchartseriesareashadow: Bool {_storage._tschchartseriesareashadow != nil}
   /// Clears the value of `tschchartseriesareashadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareashadow() {_uniqueStorage()._tschchartseriesareashadow = nil}
 
   public var tschchartseriesbarshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesbarshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesbarshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesbarshadow = newValue}
   }
   /// Returns true if `tschchartseriesbarshadow` has been explicitly set.
-  public var hasTschchartseriesbarshadow: Bool {return _storage._tschchartseriesbarshadow != nil}
+  public var hasTschchartseriesbarshadow: Bool {_storage._tschchartseriesbarshadow != nil}
   /// Clears the value of `tschchartseriesbarshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbarshadow() {_uniqueStorage()._tschchartseriesbarshadow = nil}
 
   public var tschchartseriesbubbleshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesbubbleshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesbubbleshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesbubbleshadow = newValue}
   }
   /// Returns true if `tschchartseriesbubbleshadow` has been explicitly set.
-  public var hasTschchartseriesbubbleshadow: Bool {return _storage._tschchartseriesbubbleshadow != nil}
+  public var hasTschchartseriesbubbleshadow: Bool {_storage._tschchartseriesbubbleshadow != nil}
   /// Clears the value of `tschchartseriesbubbleshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubbleshadow() {_uniqueStorage()._tschchartseriesbubbleshadow = nil}
 
   public var tschchartseriesdefaultshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesdefaultshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesdefaultshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesdefaultshadow = newValue}
   }
   /// Returns true if `tschchartseriesdefaultshadow` has been explicitly set.
-  public var hasTschchartseriesdefaultshadow: Bool {return _storage._tschchartseriesdefaultshadow != nil}
+  public var hasTschchartseriesdefaultshadow: Bool {_storage._tschchartseriesdefaultshadow != nil}
   /// Clears the value of `tschchartseriesdefaultshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultshadow() {_uniqueStorage()._tschchartseriesdefaultshadow = nil}
 
   public var tschchartserieslineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartserieslineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartserieslineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartserieslineshadow = newValue}
   }
   /// Returns true if `tschchartserieslineshadow` has been explicitly set.
-  public var hasTschchartserieslineshadow: Bool {return _storage._tschchartserieslineshadow != nil}
+  public var hasTschchartserieslineshadow: Bool {_storage._tschchartserieslineshadow != nil}
   /// Clears the value of `tschchartserieslineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslineshadow() {_uniqueStorage()._tschchartserieslineshadow = nil}
 
   public var tschchartseriesmixedareashadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesmixedareashadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesmixedareashadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesmixedareashadow = newValue}
   }
   /// Returns true if `tschchartseriesmixedareashadow` has been explicitly set.
-  public var hasTschchartseriesmixedareashadow: Bool {return _storage._tschchartseriesmixedareashadow != nil}
+  public var hasTschchartseriesmixedareashadow: Bool {_storage._tschchartseriesmixedareashadow != nil}
   /// Clears the value of `tschchartseriesmixedareashadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareashadow() {_uniqueStorage()._tschchartseriesmixedareashadow = nil}
 
   public var tschchartseriesmixedcolumnshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesmixedcolumnshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesmixedcolumnshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesmixedcolumnshadow = newValue}
   }
   /// Returns true if `tschchartseriesmixedcolumnshadow` has been explicitly set.
-  public var hasTschchartseriesmixedcolumnshadow: Bool {return _storage._tschchartseriesmixedcolumnshadow != nil}
+  public var hasTschchartseriesmixedcolumnshadow: Bool {_storage._tschchartseriesmixedcolumnshadow != nil}
   /// Clears the value of `tschchartseriesmixedcolumnshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedcolumnshadow() {_uniqueStorage()._tschchartseriesmixedcolumnshadow = nil}
 
   public var tschchartseriesmixedlineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesmixedlineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesmixedlineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesmixedlineshadow = newValue}
   }
   /// Returns true if `tschchartseriesmixedlineshadow` has been explicitly set.
-  public var hasTschchartseriesmixedlineshadow: Bool {return _storage._tschchartseriesmixedlineshadow != nil}
+  public var hasTschchartseriesmixedlineshadow: Bool {_storage._tschchartseriesmixedlineshadow != nil}
   /// Clears the value of `tschchartseriesmixedlineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlineshadow() {_uniqueStorage()._tschchartseriesmixedlineshadow = nil}
 
   public var tschchartseriespieshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriespieshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriespieshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriespieshadow = newValue}
   }
   /// Returns true if `tschchartseriespieshadow` has been explicitly set.
-  public var hasTschchartseriespieshadow: Bool {return _storage._tschchartseriespieshadow != nil}
+  public var hasTschchartseriespieshadow: Bool {_storage._tschchartseriespieshadow != nil}
   /// Clears the value of `tschchartseriespieshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespieshadow() {_uniqueStorage()._tschchartseriespieshadow = nil}
 
   public var tschchartseriesradarareashadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesradarareashadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesradarareashadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesradarareashadow = newValue}
   }
   /// Returns true if `tschchartseriesradarareashadow` has been explicitly set.
-  public var hasTschchartseriesradarareashadow: Bool {return _storage._tschchartseriesradarareashadow != nil}
+  public var hasTschchartseriesradarareashadow: Bool {_storage._tschchartseriesradarareashadow != nil}
   /// Clears the value of `tschchartseriesradarareashadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareashadow() {_uniqueStorage()._tschchartseriesradarareashadow = nil}
 
   public var tschchartseriesscattershadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesscattershadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesscattershadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesscattershadow = newValue}
   }
   /// Returns true if `tschchartseriesscattershadow` has been explicitly set.
-  public var hasTschchartseriesscattershadow: Bool {return _storage._tschchartseriesscattershadow != nil}
+  public var hasTschchartseriesscattershadow: Bool {_storage._tschchartseriesscattershadow != nil}
   /// Clears the value of `tschchartseriesscattershadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattershadow() {_uniqueStorage()._tschchartseriesscattershadow = nil}
 
   public var tschchartseriesareastroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesareastroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesareastroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesareastroke = newValue}
   }
   /// Returns true if `tschchartseriesareastroke` has been explicitly set.
-  public var hasTschchartseriesareastroke: Bool {return _storage._tschchartseriesareastroke != nil}
+  public var hasTschchartseriesareastroke: Bool {_storage._tschchartseriesareastroke != nil}
   /// Clears the value of `tschchartseriesareastroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareastroke() {_uniqueStorage()._tschchartseriesareastroke = nil}
 
   public var tschchartseriesbarstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesbarstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesbarstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesbarstroke = newValue}
   }
   /// Returns true if `tschchartseriesbarstroke` has been explicitly set.
-  public var hasTschchartseriesbarstroke: Bool {return _storage._tschchartseriesbarstroke != nil}
+  public var hasTschchartseriesbarstroke: Bool {_storage._tschchartseriesbarstroke != nil}
   /// Clears the value of `tschchartseriesbarstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbarstroke() {_uniqueStorage()._tschchartseriesbarstroke = nil}
 
   public var tschchartseriesbubblestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesbubblestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesbubblestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesbubblestroke = newValue}
   }
   /// Returns true if `tschchartseriesbubblestroke` has been explicitly set.
-  public var hasTschchartseriesbubblestroke: Bool {return _storage._tschchartseriesbubblestroke != nil}
+  public var hasTschchartseriesbubblestroke: Bool {_storage._tschchartseriesbubblestroke != nil}
   /// Clears the value of `tschchartseriesbubblestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubblestroke() {_uniqueStorage()._tschchartseriesbubblestroke = nil}
 
   public var tschchartserieslinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartserieslinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartserieslinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartserieslinestroke = newValue}
   }
   /// Returns true if `tschchartserieslinestroke` has been explicitly set.
-  public var hasTschchartserieslinestroke: Bool {return _storage._tschchartserieslinestroke != nil}
+  public var hasTschchartserieslinestroke: Bool {_storage._tschchartserieslinestroke != nil}
   /// Clears the value of `tschchartserieslinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinestroke() {_uniqueStorage()._tschchartserieslinestroke = nil}
 
   public var tschchartseriesmixedareastroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesmixedareastroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesmixedareastroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesmixedareastroke = newValue}
   }
   /// Returns true if `tschchartseriesmixedareastroke` has been explicitly set.
-  public var hasTschchartseriesmixedareastroke: Bool {return _storage._tschchartseriesmixedareastroke != nil}
+  public var hasTschchartseriesmixedareastroke: Bool {_storage._tschchartseriesmixedareastroke != nil}
   /// Clears the value of `tschchartseriesmixedareastroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareastroke() {_uniqueStorage()._tschchartseriesmixedareastroke = nil}
 
   public var tschchartseriesmixedcolumnstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesmixedcolumnstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesmixedcolumnstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesmixedcolumnstroke = newValue}
   }
   /// Returns true if `tschchartseriesmixedcolumnstroke` has been explicitly set.
-  public var hasTschchartseriesmixedcolumnstroke: Bool {return _storage._tschchartseriesmixedcolumnstroke != nil}
+  public var hasTschchartseriesmixedcolumnstroke: Bool {_storage._tschchartseriesmixedcolumnstroke != nil}
   /// Clears the value of `tschchartseriesmixedcolumnstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedcolumnstroke() {_uniqueStorage()._tschchartseriesmixedcolumnstroke = nil}
 
   public var tschchartseriesmixedlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesmixedlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesmixedlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesmixedlinestroke = newValue}
   }
   /// Returns true if `tschchartseriesmixedlinestroke` has been explicitly set.
-  public var hasTschchartseriesmixedlinestroke: Bool {return _storage._tschchartseriesmixedlinestroke != nil}
+  public var hasTschchartseriesmixedlinestroke: Bool {_storage._tschchartseriesmixedlinestroke != nil}
   /// Clears the value of `tschchartseriesmixedlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlinestroke() {_uniqueStorage()._tschchartseriesmixedlinestroke = nil}
 
   public var tschchartseriespiestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriespiestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriespiestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriespiestroke = newValue}
   }
   /// Returns true if `tschchartseriespiestroke` has been explicitly set.
-  public var hasTschchartseriespiestroke: Bool {return _storage._tschchartseriespiestroke != nil}
+  public var hasTschchartseriespiestroke: Bool {_storage._tschchartseriespiestroke != nil}
   /// Clears the value of `tschchartseriespiestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespiestroke() {_uniqueStorage()._tschchartseriespiestroke = nil}
 
   public var tschchartseriesradarareastroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesradarareastroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesradarareastroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesradarareastroke = newValue}
   }
   /// Returns true if `tschchartseriesradarareastroke` has been explicitly set.
-  public var hasTschchartseriesradarareastroke: Bool {return _storage._tschchartseriesradarareastroke != nil}
+  public var hasTschchartseriesradarareastroke: Bool {_storage._tschchartseriesradarareastroke != nil}
   /// Clears the value of `tschchartseriesradarareastroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareastroke() {_uniqueStorage()._tschchartseriesradarareastroke = nil}
 
   public var tschchartseriesscatterstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesscatterstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesscatterstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesscatterstroke = newValue}
   }
   /// Returns true if `tschchartseriesscatterstroke` has been explicitly set.
-  public var hasTschchartseriesscatterstroke: Bool {return _storage._tschchartseriesscatterstroke != nil}
+  public var hasTschchartseriesscatterstroke: Bool {_storage._tschchartseriesscatterstroke != nil}
   /// Clears the value of `tschchartseriesscatterstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscatterstroke() {_uniqueStorage()._tschchartseriesscatterstroke = nil}
 
   public var tschchartseriesareasymbolfill: TSD_FillArchive {
-    get {return _storage._tschchartseriesareasymbolfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesareasymbolfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesareasymbolfill = newValue}
   }
   /// Returns true if `tschchartseriesareasymbolfill` has been explicitly set.
-  public var hasTschchartseriesareasymbolfill: Bool {return _storage._tschchartseriesareasymbolfill != nil}
+  public var hasTschchartseriesareasymbolfill: Bool {_storage._tschchartseriesareasymbolfill != nil}
   /// Clears the value of `tschchartseriesareasymbolfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareasymbolfill() {_uniqueStorage()._tschchartseriesareasymbolfill = nil}
 
   public var tschchartseriesbubblesymbolfill: TSD_FillArchive {
-    get {return _storage._tschchartseriesbubblesymbolfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesbubblesymbolfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesbubblesymbolfill = newValue}
   }
   /// Returns true if `tschchartseriesbubblesymbolfill` has been explicitly set.
-  public var hasTschchartseriesbubblesymbolfill: Bool {return _storage._tschchartseriesbubblesymbolfill != nil}
+  public var hasTschchartseriesbubblesymbolfill: Bool {_storage._tschchartseriesbubblesymbolfill != nil}
   /// Clears the value of `tschchartseriesbubblesymbolfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubblesymbolfill() {_uniqueStorage()._tschchartseriesbubblesymbolfill = nil}
 
   public var tschchartserieslinesymbolfill: TSD_FillArchive {
-    get {return _storage._tschchartserieslinesymbolfill ?? TSD_FillArchive()}
+    get {_storage._tschchartserieslinesymbolfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartserieslinesymbolfill = newValue}
   }
   /// Returns true if `tschchartserieslinesymbolfill` has been explicitly set.
-  public var hasTschchartserieslinesymbolfill: Bool {return _storage._tschchartserieslinesymbolfill != nil}
+  public var hasTschchartserieslinesymbolfill: Bool {_storage._tschchartserieslinesymbolfill != nil}
   /// Clears the value of `tschchartserieslinesymbolfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinesymbolfill() {_uniqueStorage()._tschchartserieslinesymbolfill = nil}
 
   public var tschchartseriesmixedareasymbolfill: TSD_FillArchive {
-    get {return _storage._tschchartseriesmixedareasymbolfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesmixedareasymbolfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesmixedareasymbolfill = newValue}
   }
   /// Returns true if `tschchartseriesmixedareasymbolfill` has been explicitly set.
-  public var hasTschchartseriesmixedareasymbolfill: Bool {return _storage._tschchartseriesmixedareasymbolfill != nil}
+  public var hasTschchartseriesmixedareasymbolfill: Bool {_storage._tschchartseriesmixedareasymbolfill != nil}
   /// Clears the value of `tschchartseriesmixedareasymbolfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareasymbolfill() {_uniqueStorage()._tschchartseriesmixedareasymbolfill = nil}
 
   public var tschchartseriesmixedlinesymbolfill: TSD_FillArchive {
-    get {return _storage._tschchartseriesmixedlinesymbolfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesmixedlinesymbolfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesmixedlinesymbolfill = newValue}
   }
   /// Returns true if `tschchartseriesmixedlinesymbolfill` has been explicitly set.
-  public var hasTschchartseriesmixedlinesymbolfill: Bool {return _storage._tschchartseriesmixedlinesymbolfill != nil}
+  public var hasTschchartseriesmixedlinesymbolfill: Bool {_storage._tschchartseriesmixedlinesymbolfill != nil}
   /// Clears the value of `tschchartseriesmixedlinesymbolfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlinesymbolfill() {_uniqueStorage()._tschchartseriesmixedlinesymbolfill = nil}
 
   public var tschchartseriesradarareasymbolfill: TSD_FillArchive {
-    get {return _storage._tschchartseriesradarareasymbolfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesradarareasymbolfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesradarareasymbolfill = newValue}
   }
   /// Returns true if `tschchartseriesradarareasymbolfill` has been explicitly set.
-  public var hasTschchartseriesradarareasymbolfill: Bool {return _storage._tschchartseriesradarareasymbolfill != nil}
+  public var hasTschchartseriesradarareasymbolfill: Bool {_storage._tschchartseriesradarareasymbolfill != nil}
   /// Clears the value of `tschchartseriesradarareasymbolfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareasymbolfill() {_uniqueStorage()._tschchartseriesradarareasymbolfill = nil}
 
   public var tschchartseriesscattersymbolfill: TSD_FillArchive {
-    get {return _storage._tschchartseriesscattersymbolfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesscattersymbolfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesscattersymbolfill = newValue}
   }
   /// Returns true if `tschchartseriesscattersymbolfill` has been explicitly set.
-  public var hasTschchartseriesscattersymbolfill: Bool {return _storage._tschchartseriesscattersymbolfill != nil}
+  public var hasTschchartseriesscattersymbolfill: Bool {_storage._tschchartseriesscattersymbolfill != nil}
   /// Clears the value of `tschchartseriesscattersymbolfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattersymbolfill() {_uniqueStorage()._tschchartseriesscattersymbolfill = nil}
 
   public var tschchartseriesareasymbolfilluseseriesfill: Bool {
-    get {return _storage._tschchartseriesareasymbolfilluseseriesfill ?? false}
+    get {_storage._tschchartseriesareasymbolfilluseseriesfill ?? false}
     set {_uniqueStorage()._tschchartseriesareasymbolfilluseseriesfill = newValue}
   }
   /// Returns true if `tschchartseriesareasymbolfilluseseriesfill` has been explicitly set.
-  public var hasTschchartseriesareasymbolfilluseseriesfill: Bool {return _storage._tschchartseriesareasymbolfilluseseriesfill != nil}
+  public var hasTschchartseriesareasymbolfilluseseriesfill: Bool {_storage._tschchartseriesareasymbolfilluseseriesfill != nil}
   /// Clears the value of `tschchartseriesareasymbolfilluseseriesfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareasymbolfilluseseriesfill() {_uniqueStorage()._tschchartseriesareasymbolfilluseseriesfill = nil}
 
   public var tschchartserieslinesymbolfilluseseriesfill: Bool {
-    get {return _storage._tschchartserieslinesymbolfilluseseriesfill ?? false}
+    get {_storage._tschchartserieslinesymbolfilluseseriesfill ?? false}
     set {_uniqueStorage()._tschchartserieslinesymbolfilluseseriesfill = newValue}
   }
   /// Returns true if `tschchartserieslinesymbolfilluseseriesfill` has been explicitly set.
-  public var hasTschchartserieslinesymbolfilluseseriesfill: Bool {return _storage._tschchartserieslinesymbolfilluseseriesfill != nil}
+  public var hasTschchartserieslinesymbolfilluseseriesfill: Bool {_storage._tschchartserieslinesymbolfilluseseriesfill != nil}
   /// Clears the value of `tschchartserieslinesymbolfilluseseriesfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinesymbolfilluseseriesfill() {_uniqueStorage()._tschchartserieslinesymbolfilluseseriesfill = nil}
 
   public var tschchartseriesmixedareasymbolfilluseseriesfill: Bool {
-    get {return _storage._tschchartseriesmixedareasymbolfilluseseriesfill ?? false}
+    get {_storage._tschchartseriesmixedareasymbolfilluseseriesfill ?? false}
     set {_uniqueStorage()._tschchartseriesmixedareasymbolfilluseseriesfill = newValue}
   }
   /// Returns true if `tschchartseriesmixedareasymbolfilluseseriesfill` has been explicitly set.
-  public var hasTschchartseriesmixedareasymbolfilluseseriesfill: Bool {return _storage._tschchartseriesmixedareasymbolfilluseseriesfill != nil}
+  public var hasTschchartseriesmixedareasymbolfilluseseriesfill: Bool {_storage._tschchartseriesmixedareasymbolfilluseseriesfill != nil}
   /// Clears the value of `tschchartseriesmixedareasymbolfilluseseriesfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareasymbolfilluseseriesfill() {_uniqueStorage()._tschchartseriesmixedareasymbolfilluseseriesfill = nil}
 
   public var tschchartseriesmixedlinesymbolfilluseseriesfill: Bool {
-    get {return _storage._tschchartseriesmixedlinesymbolfilluseseriesfill ?? false}
+    get {_storage._tschchartseriesmixedlinesymbolfilluseseriesfill ?? false}
     set {_uniqueStorage()._tschchartseriesmixedlinesymbolfilluseseriesfill = newValue}
   }
   /// Returns true if `tschchartseriesmixedlinesymbolfilluseseriesfill` has been explicitly set.
-  public var hasTschchartseriesmixedlinesymbolfilluseseriesfill: Bool {return _storage._tschchartseriesmixedlinesymbolfilluseseriesfill != nil}
+  public var hasTschchartseriesmixedlinesymbolfilluseseriesfill: Bool {_storage._tschchartseriesmixedlinesymbolfilluseseriesfill != nil}
   /// Clears the value of `tschchartseriesmixedlinesymbolfilluseseriesfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlinesymbolfilluseseriesfill() {_uniqueStorage()._tschchartseriesmixedlinesymbolfilluseseriesfill = nil}
 
   public var tschchartseriesradarareasymbolfilluseseriesfill: Bool {
-    get {return _storage._tschchartseriesradarareasymbolfilluseseriesfill ?? false}
+    get {_storage._tschchartseriesradarareasymbolfilluseseriesfill ?? false}
     set {_uniqueStorage()._tschchartseriesradarareasymbolfilluseseriesfill = newValue}
   }
   /// Returns true if `tschchartseriesradarareasymbolfilluseseriesfill` has been explicitly set.
-  public var hasTschchartseriesradarareasymbolfilluseseriesfill: Bool {return _storage._tschchartseriesradarareasymbolfilluseseriesfill != nil}
+  public var hasTschchartseriesradarareasymbolfilluseseriesfill: Bool {_storage._tschchartseriesradarareasymbolfilluseseriesfill != nil}
   /// Clears the value of `tschchartseriesradarareasymbolfilluseseriesfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareasymbolfilluseseriesfill() {_uniqueStorage()._tschchartseriesradarareasymbolfilluseseriesfill = nil}
 
   public var tschchartseriesareasymbolfilluseseriesstroke: Bool {
-    get {return _storage._tschchartseriesareasymbolfilluseseriesstroke ?? false}
+    get {_storage._tschchartseriesareasymbolfilluseseriesstroke ?? false}
     set {_uniqueStorage()._tschchartseriesareasymbolfilluseseriesstroke = newValue}
   }
   /// Returns true if `tschchartseriesareasymbolfilluseseriesstroke` has been explicitly set.
-  public var hasTschchartseriesareasymbolfilluseseriesstroke: Bool {return _storage._tschchartseriesareasymbolfilluseseriesstroke != nil}
+  public var hasTschchartseriesareasymbolfilluseseriesstroke: Bool {_storage._tschchartseriesareasymbolfilluseseriesstroke != nil}
   /// Clears the value of `tschchartseriesareasymbolfilluseseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareasymbolfilluseseriesstroke() {_uniqueStorage()._tschchartseriesareasymbolfilluseseriesstroke = nil}
 
   public var tschchartseriesbubblesymbolfilluseseriesstroke: Bool {
-    get {return _storage._tschchartseriesbubblesymbolfilluseseriesstroke ?? false}
+    get {_storage._tschchartseriesbubblesymbolfilluseseriesstroke ?? false}
     set {_uniqueStorage()._tschchartseriesbubblesymbolfilluseseriesstroke = newValue}
   }
   /// Returns true if `tschchartseriesbubblesymbolfilluseseriesstroke` has been explicitly set.
-  public var hasTschchartseriesbubblesymbolfilluseseriesstroke: Bool {return _storage._tschchartseriesbubblesymbolfilluseseriesstroke != nil}
+  public var hasTschchartseriesbubblesymbolfilluseseriesstroke: Bool {_storage._tschchartseriesbubblesymbolfilluseseriesstroke != nil}
   /// Clears the value of `tschchartseriesbubblesymbolfilluseseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubblesymbolfilluseseriesstroke() {_uniqueStorage()._tschchartseriesbubblesymbolfilluseseriesstroke = nil}
 
   public var tschchartserieslinesymbolfilluseseriesstroke: Bool {
-    get {return _storage._tschchartserieslinesymbolfilluseseriesstroke ?? false}
+    get {_storage._tschchartserieslinesymbolfilluseseriesstroke ?? false}
     set {_uniqueStorage()._tschchartserieslinesymbolfilluseseriesstroke = newValue}
   }
   /// Returns true if `tschchartserieslinesymbolfilluseseriesstroke` has been explicitly set.
-  public var hasTschchartserieslinesymbolfilluseseriesstroke: Bool {return _storage._tschchartserieslinesymbolfilluseseriesstroke != nil}
+  public var hasTschchartserieslinesymbolfilluseseriesstroke: Bool {_storage._tschchartserieslinesymbolfilluseseriesstroke != nil}
   /// Clears the value of `tschchartserieslinesymbolfilluseseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinesymbolfilluseseriesstroke() {_uniqueStorage()._tschchartserieslinesymbolfilluseseriesstroke = nil}
 
   public var tschchartseriesmixedareasymbolfilluseseriesstroke: Bool {
-    get {return _storage._tschchartseriesmixedareasymbolfilluseseriesstroke ?? false}
+    get {_storage._tschchartseriesmixedareasymbolfilluseseriesstroke ?? false}
     set {_uniqueStorage()._tschchartseriesmixedareasymbolfilluseseriesstroke = newValue}
   }
   /// Returns true if `tschchartseriesmixedareasymbolfilluseseriesstroke` has been explicitly set.
-  public var hasTschchartseriesmixedareasymbolfilluseseriesstroke: Bool {return _storage._tschchartseriesmixedareasymbolfilluseseriesstroke != nil}
+  public var hasTschchartseriesmixedareasymbolfilluseseriesstroke: Bool {_storage._tschchartseriesmixedareasymbolfilluseseriesstroke != nil}
   /// Clears the value of `tschchartseriesmixedareasymbolfilluseseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareasymbolfilluseseriesstroke() {_uniqueStorage()._tschchartseriesmixedareasymbolfilluseseriesstroke = nil}
 
   public var tschchartseriesmixedlinesymbolfilluseseriesstroke: Bool {
-    get {return _storage._tschchartseriesmixedlinesymbolfilluseseriesstroke ?? false}
+    get {_storage._tschchartseriesmixedlinesymbolfilluseseriesstroke ?? false}
     set {_uniqueStorage()._tschchartseriesmixedlinesymbolfilluseseriesstroke = newValue}
   }
   /// Returns true if `tschchartseriesmixedlinesymbolfilluseseriesstroke` has been explicitly set.
-  public var hasTschchartseriesmixedlinesymbolfilluseseriesstroke: Bool {return _storage._tschchartseriesmixedlinesymbolfilluseseriesstroke != nil}
+  public var hasTschchartseriesmixedlinesymbolfilluseseriesstroke: Bool {_storage._tschchartseriesmixedlinesymbolfilluseseriesstroke != nil}
   /// Clears the value of `tschchartseriesmixedlinesymbolfilluseseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlinesymbolfilluseseriesstroke() {_uniqueStorage()._tschchartseriesmixedlinesymbolfilluseseriesstroke = nil}
 
   public var tschchartseriesradarareasymbolfilluseseriesstroke: Bool {
-    get {return _storage._tschchartseriesradarareasymbolfilluseseriesstroke ?? false}
+    get {_storage._tschchartseriesradarareasymbolfilluseseriesstroke ?? false}
     set {_uniqueStorage()._tschchartseriesradarareasymbolfilluseseriesstroke = newValue}
   }
   /// Returns true if `tschchartseriesradarareasymbolfilluseseriesstroke` has been explicitly set.
-  public var hasTschchartseriesradarareasymbolfilluseseriesstroke: Bool {return _storage._tschchartseriesradarareasymbolfilluseseriesstroke != nil}
+  public var hasTschchartseriesradarareasymbolfilluseseriesstroke: Bool {_storage._tschchartseriesradarareasymbolfilluseseriesstroke != nil}
   /// Clears the value of `tschchartseriesradarareasymbolfilluseseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareasymbolfilluseseriesstroke() {_uniqueStorage()._tschchartseriesradarareasymbolfilluseseriesstroke = nil}
 
   public var tschchartseriesscattersymbolfilluseseriesstroke: Bool {
-    get {return _storage._tschchartseriesscattersymbolfilluseseriesstroke ?? false}
+    get {_storage._tschchartseriesscattersymbolfilluseseriesstroke ?? false}
     set {_uniqueStorage()._tschchartseriesscattersymbolfilluseseriesstroke = newValue}
   }
   /// Returns true if `tschchartseriesscattersymbolfilluseseriesstroke` has been explicitly set.
-  public var hasTschchartseriesscattersymbolfilluseseriesstroke: Bool {return _storage._tschchartseriesscattersymbolfilluseseriesstroke != nil}
+  public var hasTschchartseriesscattersymbolfilluseseriesstroke: Bool {_storage._tschchartseriesscattersymbolfilluseseriesstroke != nil}
   /// Clears the value of `tschchartseriesscattersymbolfilluseseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattersymbolfilluseseriesstroke() {_uniqueStorage()._tschchartseriesscattersymbolfilluseseriesstroke = nil}
 
   public var tschchartseriesareasymbolsize: Float {
-    get {return _storage._tschchartseriesareasymbolsize ?? 0}
+    get {_storage._tschchartseriesareasymbolsize ?? 0}
     set {_uniqueStorage()._tschchartseriesareasymbolsize = newValue}
   }
   /// Returns true if `tschchartseriesareasymbolsize` has been explicitly set.
-  public var hasTschchartseriesareasymbolsize: Bool {return _storage._tschchartseriesareasymbolsize != nil}
+  public var hasTschchartseriesareasymbolsize: Bool {_storage._tschchartseriesareasymbolsize != nil}
   /// Clears the value of `tschchartseriesareasymbolsize`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareasymbolsize() {_uniqueStorage()._tschchartseriesareasymbolsize = nil}
 
   public var tschchartserieslinesymbolsize: Float {
-    get {return _storage._tschchartserieslinesymbolsize ?? 0}
+    get {_storage._tschchartserieslinesymbolsize ?? 0}
     set {_uniqueStorage()._tschchartserieslinesymbolsize = newValue}
   }
   /// Returns true if `tschchartserieslinesymbolsize` has been explicitly set.
-  public var hasTschchartserieslinesymbolsize: Bool {return _storage._tschchartserieslinesymbolsize != nil}
+  public var hasTschchartserieslinesymbolsize: Bool {_storage._tschchartserieslinesymbolsize != nil}
   /// Clears the value of `tschchartserieslinesymbolsize`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinesymbolsize() {_uniqueStorage()._tschchartserieslinesymbolsize = nil}
 
   public var tschchartseriesmixedareasymbolsize: Float {
-    get {return _storage._tschchartseriesmixedareasymbolsize ?? 0}
+    get {_storage._tschchartseriesmixedareasymbolsize ?? 0}
     set {_uniqueStorage()._tschchartseriesmixedareasymbolsize = newValue}
   }
   /// Returns true if `tschchartseriesmixedareasymbolsize` has been explicitly set.
-  public var hasTschchartseriesmixedareasymbolsize: Bool {return _storage._tschchartseriesmixedareasymbolsize != nil}
+  public var hasTschchartseriesmixedareasymbolsize: Bool {_storage._tschchartseriesmixedareasymbolsize != nil}
   /// Clears the value of `tschchartseriesmixedareasymbolsize`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareasymbolsize() {_uniqueStorage()._tschchartseriesmixedareasymbolsize = nil}
 
   public var tschchartseriesmixedlinesymbolsize: Float {
-    get {return _storage._tschchartseriesmixedlinesymbolsize ?? 0}
+    get {_storage._tschchartseriesmixedlinesymbolsize ?? 0}
     set {_uniqueStorage()._tschchartseriesmixedlinesymbolsize = newValue}
   }
   /// Returns true if `tschchartseriesmixedlinesymbolsize` has been explicitly set.
-  public var hasTschchartseriesmixedlinesymbolsize: Bool {return _storage._tschchartseriesmixedlinesymbolsize != nil}
+  public var hasTschchartseriesmixedlinesymbolsize: Bool {_storage._tschchartseriesmixedlinesymbolsize != nil}
   /// Clears the value of `tschchartseriesmixedlinesymbolsize`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlinesymbolsize() {_uniqueStorage()._tschchartseriesmixedlinesymbolsize = nil}
 
   public var tschchartseriesradarareasymbolsize: Float {
-    get {return _storage._tschchartseriesradarareasymbolsize ?? 0}
+    get {_storage._tschchartseriesradarareasymbolsize ?? 0}
     set {_uniqueStorage()._tschchartseriesradarareasymbolsize = newValue}
   }
   /// Returns true if `tschchartseriesradarareasymbolsize` has been explicitly set.
-  public var hasTschchartseriesradarareasymbolsize: Bool {return _storage._tschchartseriesradarareasymbolsize != nil}
+  public var hasTschchartseriesradarareasymbolsize: Bool {_storage._tschchartseriesradarareasymbolsize != nil}
   /// Clears the value of `tschchartseriesradarareasymbolsize`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareasymbolsize() {_uniqueStorage()._tschchartseriesradarareasymbolsize = nil}
 
   public var tschchartseriesscattersymbolsize: Float {
-    get {return _storage._tschchartseriesscattersymbolsize ?? 0}
+    get {_storage._tschchartseriesscattersymbolsize ?? 0}
     set {_uniqueStorage()._tschchartseriesscattersymbolsize = newValue}
   }
   /// Returns true if `tschchartseriesscattersymbolsize` has been explicitly set.
-  public var hasTschchartseriesscattersymbolsize: Bool {return _storage._tschchartseriesscattersymbolsize != nil}
+  public var hasTschchartseriesscattersymbolsize: Bool {_storage._tschchartseriesscattersymbolsize != nil}
   /// Clears the value of `tschchartseriesscattersymbolsize`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattersymbolsize() {_uniqueStorage()._tschchartseriesscattersymbolsize = nil}
 
   public var tschchartseriesareasymbolstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesareasymbolstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesareasymbolstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesareasymbolstroke = newValue}
   }
   /// Returns true if `tschchartseriesareasymbolstroke` has been explicitly set.
-  public var hasTschchartseriesareasymbolstroke: Bool {return _storage._tschchartseriesareasymbolstroke != nil}
+  public var hasTschchartseriesareasymbolstroke: Bool {_storage._tschchartseriesareasymbolstroke != nil}
   /// Clears the value of `tschchartseriesareasymbolstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareasymbolstroke() {_uniqueStorage()._tschchartseriesareasymbolstroke = nil}
 
   public var tschchartseriesbubblesymbolstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesbubblesymbolstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesbubblesymbolstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesbubblesymbolstroke = newValue}
   }
   /// Returns true if `tschchartseriesbubblesymbolstroke` has been explicitly set.
-  public var hasTschchartseriesbubblesymbolstroke: Bool {return _storage._tschchartseriesbubblesymbolstroke != nil}
+  public var hasTschchartseriesbubblesymbolstroke: Bool {_storage._tschchartseriesbubblesymbolstroke != nil}
   /// Clears the value of `tschchartseriesbubblesymbolstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubblesymbolstroke() {_uniqueStorage()._tschchartseriesbubblesymbolstroke = nil}
 
   public var tschchartserieslinesymbolstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartserieslinesymbolstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartserieslinesymbolstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartserieslinesymbolstroke = newValue}
   }
   /// Returns true if `tschchartserieslinesymbolstroke` has been explicitly set.
-  public var hasTschchartserieslinesymbolstroke: Bool {return _storage._tschchartserieslinesymbolstroke != nil}
+  public var hasTschchartserieslinesymbolstroke: Bool {_storage._tschchartserieslinesymbolstroke != nil}
   /// Clears the value of `tschchartserieslinesymbolstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinesymbolstroke() {_uniqueStorage()._tschchartserieslinesymbolstroke = nil}
 
   public var tschchartseriesmixedareasymbolstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesmixedareasymbolstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesmixedareasymbolstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesmixedareasymbolstroke = newValue}
   }
   /// Returns true if `tschchartseriesmixedareasymbolstroke` has been explicitly set.
-  public var hasTschchartseriesmixedareasymbolstroke: Bool {return _storage._tschchartseriesmixedareasymbolstroke != nil}
+  public var hasTschchartseriesmixedareasymbolstroke: Bool {_storage._tschchartseriesmixedareasymbolstroke != nil}
   /// Clears the value of `tschchartseriesmixedareasymbolstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareasymbolstroke() {_uniqueStorage()._tschchartseriesmixedareasymbolstroke = nil}
 
   public var tschchartseriesmixedlinesymbolstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesmixedlinesymbolstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesmixedlinesymbolstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesmixedlinesymbolstroke = newValue}
   }
   /// Returns true if `tschchartseriesmixedlinesymbolstroke` has been explicitly set.
-  public var hasTschchartseriesmixedlinesymbolstroke: Bool {return _storage._tschchartseriesmixedlinesymbolstroke != nil}
+  public var hasTschchartseriesmixedlinesymbolstroke: Bool {_storage._tschchartseriesmixedlinesymbolstroke != nil}
   /// Clears the value of `tschchartseriesmixedlinesymbolstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlinesymbolstroke() {_uniqueStorage()._tschchartseriesmixedlinesymbolstroke = nil}
 
   public var tschchartseriesradarareasymbolstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesradarareasymbolstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesradarareasymbolstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesradarareasymbolstroke = newValue}
   }
   /// Returns true if `tschchartseriesradarareasymbolstroke` has been explicitly set.
-  public var hasTschchartseriesradarareasymbolstroke: Bool {return _storage._tschchartseriesradarareasymbolstroke != nil}
+  public var hasTschchartseriesradarareasymbolstroke: Bool {_storage._tschchartseriesradarareasymbolstroke != nil}
   /// Clears the value of `tschchartseriesradarareasymbolstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareasymbolstroke() {_uniqueStorage()._tschchartseriesradarareasymbolstroke = nil}
 
   public var tschchartseriesscattersymbolstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesscattersymbolstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesscattersymbolstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesscattersymbolstroke = newValue}
   }
   /// Returns true if `tschchartseriesscattersymbolstroke` has been explicitly set.
-  public var hasTschchartseriesscattersymbolstroke: Bool {return _storage._tschchartseriesscattersymbolstroke != nil}
+  public var hasTschchartseriesscattersymbolstroke: Bool {_storage._tschchartseriesscattersymbolstroke != nil}
   /// Clears the value of `tschchartseriesscattersymbolstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattersymbolstroke() {_uniqueStorage()._tschchartseriesscattersymbolstroke = nil}
 
   public var tschchartseriesdefaulttrendlineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesdefaulttrendlineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesdefaulttrendlineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlineshadow = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlineshadow` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlineshadow: Bool {return _storage._tschchartseriesdefaulttrendlineshadow != nil}
+  public var hasTschchartseriesdefaulttrendlineshadow: Bool {_storage._tschchartseriesdefaulttrendlineshadow != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlineshadow() {_uniqueStorage()._tschchartseriesdefaulttrendlineshadow = nil}
 
   public var tschchartseriesdefaulttrendlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesdefaulttrendlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesdefaulttrendlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlinestroke = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlinestroke` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlinestroke: Bool {return _storage._tschchartseriesdefaulttrendlinestroke != nil}
+  public var hasTschchartseriesdefaulttrendlinestroke: Bool {_storage._tschchartseriesdefaulttrendlinestroke != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlinestroke() {_uniqueStorage()._tschchartseriesdefaulttrendlinestroke = nil}
 
   public var tschchartseriesdefaulttrendlineequationopacity: Float {
-    get {return _storage._tschchartseriesdefaulttrendlineequationopacity ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlineequationopacity ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlineequationopacity = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlineequationopacity` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlineequationopacity: Bool {return _storage._tschchartseriesdefaulttrendlineequationopacity != nil}
+  public var hasTschchartseriesdefaulttrendlineequationopacity: Bool {_storage._tschchartseriesdefaulttrendlineequationopacity != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlineequationopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlineequationopacity() {_uniqueStorage()._tschchartseriesdefaulttrendlineequationopacity = nil}
 
   public var tschchartseriesdefaulttrendlineequationparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesdefaulttrendlineequationparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlineequationparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlineequationparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlineequationparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlineequationparagraphstyleindex: Bool {return _storage._tschchartseriesdefaulttrendlineequationparagraphstyleindex != nil}
+  public var hasTschchartseriesdefaulttrendlineequationparagraphstyleindex: Bool {_storage._tschchartseriesdefaulttrendlineequationparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlineequationparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlineequationparagraphstyleindex() {_uniqueStorage()._tschchartseriesdefaulttrendlineequationparagraphstyleindex = nil}
 
   public var tschchartseriesdefaulttrendlinersquaredopacity: Float {
-    get {return _storage._tschchartseriesdefaulttrendlinersquaredopacity ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlinersquaredopacity ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlinersquaredopacity = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlinersquaredopacity` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlinersquaredopacity: Bool {return _storage._tschchartseriesdefaulttrendlinersquaredopacity != nil}
+  public var hasTschchartseriesdefaulttrendlinersquaredopacity: Bool {_storage._tschchartseriesdefaulttrendlinersquaredopacity != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlinersquaredopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlinersquaredopacity() {_uniqueStorage()._tschchartseriesdefaulttrendlinersquaredopacity = nil}
 
   public var tschchartseriesdefaulttrendlinersquaredparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesdefaulttrendlinersquaredparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlinersquaredparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlinersquaredparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlinersquaredparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlinersquaredparagraphstyleindex: Bool {return _storage._tschchartseriesdefaulttrendlinersquaredparagraphstyleindex != nil}
+  public var hasTschchartseriesdefaulttrendlinersquaredparagraphstyleindex: Bool {_storage._tschchartseriesdefaulttrendlinersquaredparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlinersquaredparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlinersquaredparagraphstyleindex() {_uniqueStorage()._tschchartseriesdefaulttrendlinersquaredparagraphstyleindex = nil}
 
   public var tschchartseriesareavaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesareavaluelabelposition ?? 0}
+    get {_storage._tschchartseriesareavaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesareavaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesareavaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesareavaluelabelposition: Bool {return _storage._tschchartseriesareavaluelabelposition != nil}
+  public var hasTschchartseriesareavaluelabelposition: Bool {_storage._tschchartseriesareavaluelabelposition != nil}
   /// Clears the value of `tschchartseriesareavaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareavaluelabelposition() {_uniqueStorage()._tschchartseriesareavaluelabelposition = nil}
 
   public var tschchartseriesbarvaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesbarvaluelabelposition ?? 0}
+    get {_storage._tschchartseriesbarvaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesbarvaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesbarvaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesbarvaluelabelposition: Bool {return _storage._tschchartseriesbarvaluelabelposition != nil}
+  public var hasTschchartseriesbarvaluelabelposition: Bool {_storage._tschchartseriesbarvaluelabelposition != nil}
   /// Clears the value of `tschchartseriesbarvaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbarvaluelabelposition() {_uniqueStorage()._tschchartseriesbarvaluelabelposition = nil}
 
   public var tschchartseriesbubblevaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesbubblevaluelabelposition ?? 0}
+    get {_storage._tschchartseriesbubblevaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesbubblevaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesbubblevaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesbubblevaluelabelposition: Bool {return _storage._tschchartseriesbubblevaluelabelposition != nil}
+  public var hasTschchartseriesbubblevaluelabelposition: Bool {_storage._tschchartseriesbubblevaluelabelposition != nil}
   /// Clears the value of `tschchartseriesbubblevaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubblevaluelabelposition() {_uniqueStorage()._tschchartseriesbubblevaluelabelposition = nil}
 
   public var tschchartseriesdefaultvaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesdefaultvaluelabelposition ?? 0}
+    get {_storage._tschchartseriesdefaultvaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaultvaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesdefaultvaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesdefaultvaluelabelposition: Bool {return _storage._tschchartseriesdefaultvaluelabelposition != nil}
+  public var hasTschchartseriesdefaultvaluelabelposition: Bool {_storage._tschchartseriesdefaultvaluelabelposition != nil}
   /// Clears the value of `tschchartseriesdefaultvaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultvaluelabelposition() {_uniqueStorage()._tschchartseriesdefaultvaluelabelposition = nil}
 
   public var tschchartserieslinevaluelabelposition: Int32 {
-    get {return _storage._tschchartserieslinevaluelabelposition ?? 0}
+    get {_storage._tschchartserieslinevaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartserieslinevaluelabelposition = newValue}
   }
   /// Returns true if `tschchartserieslinevaluelabelposition` has been explicitly set.
-  public var hasTschchartserieslinevaluelabelposition: Bool {return _storage._tschchartserieslinevaluelabelposition != nil}
+  public var hasTschchartserieslinevaluelabelposition: Bool {_storage._tschchartserieslinevaluelabelposition != nil}
   /// Clears the value of `tschchartserieslinevaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinevaluelabelposition() {_uniqueStorage()._tschchartserieslinevaluelabelposition = nil}
 
   public var tschchartseriesmixedareavaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesmixedareavaluelabelposition ?? 0}
+    get {_storage._tschchartseriesmixedareavaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesmixedareavaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesmixedareavaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesmixedareavaluelabelposition: Bool {return _storage._tschchartseriesmixedareavaluelabelposition != nil}
+  public var hasTschchartseriesmixedareavaluelabelposition: Bool {_storage._tschchartseriesmixedareavaluelabelposition != nil}
   /// Clears the value of `tschchartseriesmixedareavaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareavaluelabelposition() {_uniqueStorage()._tschchartseriesmixedareavaluelabelposition = nil}
 
   public var tschchartseriesmixedcolumnvaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesmixedcolumnvaluelabelposition ?? 0}
+    get {_storage._tschchartseriesmixedcolumnvaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesmixedcolumnvaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesmixedcolumnvaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesmixedcolumnvaluelabelposition: Bool {return _storage._tschchartseriesmixedcolumnvaluelabelposition != nil}
+  public var hasTschchartseriesmixedcolumnvaluelabelposition: Bool {_storage._tschchartseriesmixedcolumnvaluelabelposition != nil}
   /// Clears the value of `tschchartseriesmixedcolumnvaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedcolumnvaluelabelposition() {_uniqueStorage()._tschchartseriesmixedcolumnvaluelabelposition = nil}
 
   public var tschchartseriesmixedlinevaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesmixedlinevaluelabelposition ?? 0}
+    get {_storage._tschchartseriesmixedlinevaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesmixedlinevaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesmixedlinevaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesmixedlinevaluelabelposition: Bool {return _storage._tschchartseriesmixedlinevaluelabelposition != nil}
+  public var hasTschchartseriesmixedlinevaluelabelposition: Bool {_storage._tschchartseriesmixedlinevaluelabelposition != nil}
   /// Clears the value of `tschchartseriesmixedlinevaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlinevaluelabelposition() {_uniqueStorage()._tschchartseriesmixedlinevaluelabelposition = nil}
 
   public var tschchartseriesradarareavaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesradarareavaluelabelposition ?? 0}
+    get {_storage._tschchartseriesradarareavaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesradarareavaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesradarareavaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesradarareavaluelabelposition: Bool {return _storage._tschchartseriesradarareavaluelabelposition != nil}
+  public var hasTschchartseriesradarareavaluelabelposition: Bool {_storage._tschchartseriesradarareavaluelabelposition != nil}
   /// Clears the value of `tschchartseriesradarareavaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareavaluelabelposition() {_uniqueStorage()._tschchartseriesradarareavaluelabelposition = nil}
 
   public var tschchartseriesscattervaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesscattervaluelabelposition ?? 0}
+    get {_storage._tschchartseriesscattervaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesscattervaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesscattervaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesscattervaluelabelposition: Bool {return _storage._tschchartseriesscattervaluelabelposition != nil}
+  public var hasTschchartseriesscattervaluelabelposition: Bool {_storage._tschchartseriesscattervaluelabelposition != nil}
   /// Clears the value of `tschchartseriesscattervaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattervaluelabelposition() {_uniqueStorage()._tschchartseriesscattervaluelabelposition = nil}
 
   public var tschchartseriesstackedareavaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesstackedareavaluelabelposition ?? 0}
+    get {_storage._tschchartseriesstackedareavaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesstackedareavaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesstackedareavaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesstackedareavaluelabelposition: Bool {return _storage._tschchartseriesstackedareavaluelabelposition != nil}
+  public var hasTschchartseriesstackedareavaluelabelposition: Bool {_storage._tschchartseriesstackedareavaluelabelposition != nil}
   /// Clears the value of `tschchartseriesstackedareavaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesstackedareavaluelabelposition() {_uniqueStorage()._tschchartseriesstackedareavaluelabelposition = nil}
 
   public var tschchartseriesstackedbarvaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesstackedbarvaluelabelposition ?? 0}
+    get {_storage._tschchartseriesstackedbarvaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesstackedbarvaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesstackedbarvaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesstackedbarvaluelabelposition: Bool {return _storage._tschchartseriesstackedbarvaluelabelposition != nil}
+  public var hasTschchartseriesstackedbarvaluelabelposition: Bool {_storage._tschchartseriesstackedbarvaluelabelposition != nil}
   /// Clears the value of `tschchartseriesstackedbarvaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesstackedbarvaluelabelposition() {_uniqueStorage()._tschchartseriesstackedbarvaluelabelposition = nil}
 
   public var tschchartseriesdefaultvaluelabelspacing: Int32 {
-    get {return _storage._tschchartseriesdefaultvaluelabelspacing ?? 0}
+    get {_storage._tschchartseriesdefaultvaluelabelspacing ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaultvaluelabelspacing = newValue}
   }
   /// Returns true if `tschchartseriesdefaultvaluelabelspacing` has been explicitly set.
-  public var hasTschchartseriesdefaultvaluelabelspacing: Bool {return _storage._tschchartseriesdefaultvaluelabelspacing != nil}
+  public var hasTschchartseriesdefaultvaluelabelspacing: Bool {_storage._tschchartseriesdefaultvaluelabelspacing != nil}
   /// Clears the value of `tschchartseriesdefaultvaluelabelspacing`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultvaluelabelspacing() {_uniqueStorage()._tschchartseriesdefaultvaluelabelspacing = nil}
 
@@ -2428,890 +2428,890 @@ public struct TSCH_Generated_ChartSeriesStyleArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Generated_ChartSeriesNonStyleArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Generated_ChartSeriesNonStyleArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschchartseriesdefault10Dateformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriesdefault10Dateformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriesdefault10Dateformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriesdefault10Dateformat = newValue}
   }
   /// Returns true if `tschchartseriesdefault10Dateformat` has been explicitly set.
-  public var hasTschchartseriesdefault10Dateformat: Bool {return _storage._tschchartseriesdefault10Dateformat != nil}
+  public var hasTschchartseriesdefault10Dateformat: Bool {_storage._tschchartseriesdefault10Dateformat != nil}
   /// Clears the value of `tschchartseriesdefault10Dateformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefault10Dateformat() {_uniqueStorage()._tschchartseriesdefault10Dateformat = nil}
 
   public var tschchartseriesdefault10Numberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriesdefault10Numberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriesdefault10Numberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriesdefault10Numberformat = newValue}
   }
   /// Returns true if `tschchartseriesdefault10Numberformat` has been explicitly set.
-  public var hasTschchartseriesdefault10Numberformat: Bool {return _storage._tschchartseriesdefault10Numberformat != nil}
+  public var hasTschchartseriesdefault10Numberformat: Bool {_storage._tschchartseriesdefault10Numberformat != nil}
   /// Clears the value of `tschchartseriesdefault10Numberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefault10Numberformat() {_uniqueStorage()._tschchartseriesdefault10Numberformat = nil}
 
   public var tschchartseriespie10Numberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriespie10Numberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriespie10Numberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriespie10Numberformat = newValue}
   }
   /// Returns true if `tschchartseriespie10Numberformat` has been explicitly set.
-  public var hasTschchartseriespie10Numberformat: Bool {return _storage._tschchartseriespie10Numberformat != nil}
+  public var hasTschchartseriespie10Numberformat: Bool {_storage._tschchartseriespie10Numberformat != nil}
   /// Clears the value of `tschchartseriespie10Numberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespie10Numberformat() {_uniqueStorage()._tschchartseriespie10Numberformat = nil}
 
   public var tschchartseriespie23Labelexplosion: Float {
-    get {return _storage._tschchartseriespie23Labelexplosion ?? 0}
+    get {_storage._tschchartseriespie23Labelexplosion ?? 0}
     set {_uniqueStorage()._tschchartseriespie23Labelexplosion = newValue}
   }
   /// Returns true if `tschchartseriespie23Labelexplosion` has been explicitly set.
-  public var hasTschchartseriespie23Labelexplosion: Bool {return _storage._tschchartseriespie23Labelexplosion != nil}
+  public var hasTschchartseriespie23Labelexplosion: Bool {_storage._tschchartseriespie23Labelexplosion != nil}
   /// Clears the value of `tschchartseriespie23Labelexplosion`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespie23Labelexplosion() {_uniqueStorage()._tschchartseriespie23Labelexplosion = nil}
 
   public var tschchartseriesbubbleadjustmentscale: Float {
-    get {return _storage._tschchartseriesbubbleadjustmentscale ?? 0}
+    get {_storage._tschchartseriesbubbleadjustmentscale ?? 0}
     set {_uniqueStorage()._tschchartseriesbubbleadjustmentscale = newValue}
   }
   /// Returns true if `tschchartseriesbubbleadjustmentscale` has been explicitly set.
-  public var hasTschchartseriesbubbleadjustmentscale: Bool {return _storage._tschchartseriesbubbleadjustmentscale != nil}
+  public var hasTschchartseriesbubbleadjustmentscale: Bool {_storage._tschchartseriesbubbleadjustmentscale != nil}
   /// Clears the value of `tschchartseriesbubbleadjustmentscale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubbleadjustmentscale() {_uniqueStorage()._tschchartseriesbubbleadjustmentscale = nil}
 
   public var tschchartseriesdefaultdateformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriesdefaultdateformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriesdefaultdateformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriesdefaultdateformat = newValue}
   }
   /// Returns true if `tschchartseriesdefaultdateformat` has been explicitly set.
-  public var hasTschchartseriesdefaultdateformat: Bool {return _storage._tschchartseriesdefaultdateformat != nil}
+  public var hasTschchartseriesdefaultdateformat: Bool {_storage._tschchartseriesdefaultdateformat != nil}
   /// Clears the value of `tschchartseriesdefaultdateformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultdateformat() {_uniqueStorage()._tschchartseriesdefaultdateformat = nil}
 
   public var tschchartseriesdefaultdurationformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriesdefaultdurationformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriesdefaultdurationformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriesdefaultdurationformat = newValue}
   }
   /// Returns true if `tschchartseriesdefaultdurationformat` has been explicitly set.
-  public var hasTschchartseriesdefaultdurationformat: Bool {return _storage._tschchartseriesdefaultdurationformat != nil}
+  public var hasTschchartseriesdefaultdurationformat: Bool {_storage._tschchartseriesdefaultdurationformat != nil}
   /// Clears the value of `tschchartseriesdefaultdurationformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultdurationformat() {_uniqueStorage()._tschchartseriesdefaultdurationformat = nil}
 
   public var tschchartseriesareaenablecalloutline: Int32 {
-    get {return _storage._tschchartseriesareaenablecalloutline ?? 0}
+    get {_storage._tschchartseriesareaenablecalloutline ?? 0}
     set {_uniqueStorage()._tschchartseriesareaenablecalloutline = newValue}
   }
   /// Returns true if `tschchartseriesareaenablecalloutline` has been explicitly set.
-  public var hasTschchartseriesareaenablecalloutline: Bool {return _storage._tschchartseriesareaenablecalloutline != nil}
+  public var hasTschchartseriesareaenablecalloutline: Bool {_storage._tschchartseriesareaenablecalloutline != nil}
   /// Clears the value of `tschchartseriesareaenablecalloutline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareaenablecalloutline() {_uniqueStorage()._tschchartseriesareaenablecalloutline = nil}
 
   public var tschchartseriesbarenablecalloutline: Int32 {
-    get {return _storage._tschchartseriesbarenablecalloutline ?? 0}
+    get {_storage._tschchartseriesbarenablecalloutline ?? 0}
     set {_uniqueStorage()._tschchartseriesbarenablecalloutline = newValue}
   }
   /// Returns true if `tschchartseriesbarenablecalloutline` has been explicitly set.
-  public var hasTschchartseriesbarenablecalloutline: Bool {return _storage._tschchartseriesbarenablecalloutline != nil}
+  public var hasTschchartseriesbarenablecalloutline: Bool {_storage._tschchartseriesbarenablecalloutline != nil}
   /// Clears the value of `tschchartseriesbarenablecalloutline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbarenablecalloutline() {_uniqueStorage()._tschchartseriesbarenablecalloutline = nil}
 
   public var tschchartseriesbubbleenablecalloutline: Int32 {
-    get {return _storage._tschchartseriesbubbleenablecalloutline ?? 0}
+    get {_storage._tschchartseriesbubbleenablecalloutline ?? 0}
     set {_uniqueStorage()._tschchartseriesbubbleenablecalloutline = newValue}
   }
   /// Returns true if `tschchartseriesbubbleenablecalloutline` has been explicitly set.
-  public var hasTschchartseriesbubbleenablecalloutline: Bool {return _storage._tschchartseriesbubbleenablecalloutline != nil}
+  public var hasTschchartseriesbubbleenablecalloutline: Bool {_storage._tschchartseriesbubbleenablecalloutline != nil}
   /// Clears the value of `tschchartseriesbubbleenablecalloutline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubbleenablecalloutline() {_uniqueStorage()._tschchartseriesbubbleenablecalloutline = nil}
 
   public var tschchartseriesdefaultenablecalloutline: Int32 {
-    get {return _storage._tschchartseriesdefaultenablecalloutline ?? 0}
+    get {_storage._tschchartseriesdefaultenablecalloutline ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaultenablecalloutline = newValue}
   }
   /// Returns true if `tschchartseriesdefaultenablecalloutline` has been explicitly set.
-  public var hasTschchartseriesdefaultenablecalloutline: Bool {return _storage._tschchartseriesdefaultenablecalloutline != nil}
+  public var hasTschchartseriesdefaultenablecalloutline: Bool {_storage._tschchartseriesdefaultenablecalloutline != nil}
   /// Clears the value of `tschchartseriesdefaultenablecalloutline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultenablecalloutline() {_uniqueStorage()._tschchartseriesdefaultenablecalloutline = nil}
 
   public var tschchartserieslineenablecalloutline: Int32 {
-    get {return _storage._tschchartserieslineenablecalloutline ?? 0}
+    get {_storage._tschchartserieslineenablecalloutline ?? 0}
     set {_uniqueStorage()._tschchartserieslineenablecalloutline = newValue}
   }
   /// Returns true if `tschchartserieslineenablecalloutline` has been explicitly set.
-  public var hasTschchartserieslineenablecalloutline: Bool {return _storage._tschchartserieslineenablecalloutline != nil}
+  public var hasTschchartserieslineenablecalloutline: Bool {_storage._tschchartserieslineenablecalloutline != nil}
   /// Clears the value of `tschchartserieslineenablecalloutline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslineenablecalloutline() {_uniqueStorage()._tschchartserieslineenablecalloutline = nil}
 
   public var tschchartseriespieenablecalloutline: Int32 {
-    get {return _storage._tschchartseriespieenablecalloutline ?? 0}
+    get {_storage._tschchartseriespieenablecalloutline ?? 0}
     set {_uniqueStorage()._tschchartseriespieenablecalloutline = newValue}
   }
   /// Returns true if `tschchartseriespieenablecalloutline` has been explicitly set.
-  public var hasTschchartseriespieenablecalloutline: Bool {return _storage._tschchartseriespieenablecalloutline != nil}
+  public var hasTschchartseriespieenablecalloutline: Bool {_storage._tschchartseriespieenablecalloutline != nil}
   /// Clears the value of `tschchartseriespieenablecalloutline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespieenablecalloutline() {_uniqueStorage()._tschchartseriespieenablecalloutline = nil}
 
   public var tschchartseriesscatterenablecalloutline: Int32 {
-    get {return _storage._tschchartseriesscatterenablecalloutline ?? 0}
+    get {_storage._tschchartseriesscatterenablecalloutline ?? 0}
     set {_uniqueStorage()._tschchartseriesscatterenablecalloutline = newValue}
   }
   /// Returns true if `tschchartseriesscatterenablecalloutline` has been explicitly set.
-  public var hasTschchartseriesscatterenablecalloutline: Bool {return _storage._tschchartseriesscatterenablecalloutline != nil}
+  public var hasTschchartseriesscatterenablecalloutline: Bool {_storage._tschchartseriesscatterenablecalloutline != nil}
   /// Clears the value of `tschchartseriesscatterenablecalloutline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscatterenablecalloutline() {_uniqueStorage()._tschchartseriesscatterenablecalloutline = nil}
 
   public var tschchartseriesstackedareaenablecalloutline: Int32 {
-    get {return _storage._tschchartseriesstackedareaenablecalloutline ?? 0}
+    get {_storage._tschchartseriesstackedareaenablecalloutline ?? 0}
     set {_uniqueStorage()._tschchartseriesstackedareaenablecalloutline = newValue}
   }
   /// Returns true if `tschchartseriesstackedareaenablecalloutline` has been explicitly set.
-  public var hasTschchartseriesstackedareaenablecalloutline: Bool {return _storage._tschchartseriesstackedareaenablecalloutline != nil}
+  public var hasTschchartseriesstackedareaenablecalloutline: Bool {_storage._tschchartseriesstackedareaenablecalloutline != nil}
   /// Clears the value of `tschchartseriesstackedareaenablecalloutline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesstackedareaenablecalloutline() {_uniqueStorage()._tschchartseriesstackedareaenablecalloutline = nil}
 
   public var tschchartseriesstackedbarenablecalloutline: Int32 {
-    get {return _storage._tschchartseriesstackedbarenablecalloutline ?? 0}
+    get {_storage._tschchartseriesstackedbarenablecalloutline ?? 0}
     set {_uniqueStorage()._tschchartseriesstackedbarenablecalloutline = newValue}
   }
   /// Returns true if `tschchartseriesstackedbarenablecalloutline` has been explicitly set.
-  public var hasTschchartseriesstackedbarenablecalloutline: Bool {return _storage._tschchartseriesstackedbarenablecalloutline != nil}
+  public var hasTschchartseriesstackedbarenablecalloutline: Bool {_storage._tschchartseriesstackedbarenablecalloutline != nil}
   /// Clears the value of `tschchartseriesstackedbarenablecalloutline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesstackedbarenablecalloutline() {_uniqueStorage()._tschchartseriesstackedbarenablecalloutline = nil}
 
   public var tschchartseriesdefaulterrorbarcustomnegativedata: TSCH_ChartsNSArrayOfNSNumberDoubleArchive {
-    get {return _storage._tschchartseriesdefaulterrorbarcustomnegativedata ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
+    get {_storage._tschchartseriesdefaulterrorbarcustomnegativedata ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarcustomnegativedata = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarcustomnegativedata` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarcustomnegativedata: Bool {return _storage._tschchartseriesdefaulterrorbarcustomnegativedata != nil}
+  public var hasTschchartseriesdefaulterrorbarcustomnegativedata: Bool {_storage._tschchartseriesdefaulterrorbarcustomnegativedata != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarcustomnegativedata`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarcustomnegativedata() {_uniqueStorage()._tschchartseriesdefaulterrorbarcustomnegativedata = nil}
 
   public var tschchartseriesdefaulterrorbarcustomnegativedatascatterx: TSCH_ChartsNSArrayOfNSNumberDoubleArchive {
-    get {return _storage._tschchartseriesdefaulterrorbarcustomnegativedatascatterx ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
+    get {_storage._tschchartseriesdefaulterrorbarcustomnegativedatascatterx ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarcustomnegativedatascatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarcustomnegativedatascatterx` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarcustomnegativedatascatterx: Bool {return _storage._tschchartseriesdefaulterrorbarcustomnegativedatascatterx != nil}
+  public var hasTschchartseriesdefaulterrorbarcustomnegativedatascatterx: Bool {_storage._tschchartseriesdefaulterrorbarcustomnegativedatascatterx != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarcustomnegativedatascatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarcustomnegativedatascatterx() {_uniqueStorage()._tschchartseriesdefaulterrorbarcustomnegativedatascatterx = nil}
 
   public var tschchartseriesdefaulterrorbarcustompositivedata: TSCH_ChartsNSArrayOfNSNumberDoubleArchive {
-    get {return _storage._tschchartseriesdefaulterrorbarcustompositivedata ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
+    get {_storage._tschchartseriesdefaulterrorbarcustompositivedata ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarcustompositivedata = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarcustompositivedata` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarcustompositivedata: Bool {return _storage._tschchartseriesdefaulterrorbarcustompositivedata != nil}
+  public var hasTschchartseriesdefaulterrorbarcustompositivedata: Bool {_storage._tschchartseriesdefaulterrorbarcustompositivedata != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarcustompositivedata`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarcustompositivedata() {_uniqueStorage()._tschchartseriesdefaulterrorbarcustompositivedata = nil}
 
   public var tschchartseriesdefaulterrorbarcustompositivedatascatterx: TSCH_ChartsNSArrayOfNSNumberDoubleArchive {
-    get {return _storage._tschchartseriesdefaulterrorbarcustompositivedatascatterx ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
+    get {_storage._tschchartseriesdefaulterrorbarcustompositivedatascatterx ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarcustompositivedatascatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarcustompositivedatascatterx` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarcustompositivedatascatterx: Bool {return _storage._tschchartseriesdefaulterrorbarcustompositivedatascatterx != nil}
+  public var hasTschchartseriesdefaulterrorbarcustompositivedatascatterx: Bool {_storage._tschchartseriesdefaulterrorbarcustompositivedatascatterx != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarcustompositivedatascatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarcustompositivedatascatterx() {_uniqueStorage()._tschchartseriesdefaulterrorbarcustompositivedatascatterx = nil}
 
   public var tschchartseriesdefaulterrorbarfixedvalue: Float {
-    get {return _storage._tschchartseriesdefaulterrorbarfixedvalue ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbarfixedvalue ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarfixedvalue = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarfixedvalue` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarfixedvalue: Bool {return _storage._tschchartseriesdefaulterrorbarfixedvalue != nil}
+  public var hasTschchartseriesdefaulterrorbarfixedvalue: Bool {_storage._tschchartseriesdefaulterrorbarfixedvalue != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarfixedvalue`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarfixedvalue() {_uniqueStorage()._tschchartseriesdefaulterrorbarfixedvalue = nil}
 
   public var tschchartseriesdefaulterrorbarfixedvaluescatterx: Float {
-    get {return _storage._tschchartseriesdefaulterrorbarfixedvaluescatterx ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbarfixedvaluescatterx ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarfixedvaluescatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarfixedvaluescatterx` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarfixedvaluescatterx: Bool {return _storage._tschchartseriesdefaulterrorbarfixedvaluescatterx != nil}
+  public var hasTschchartseriesdefaulterrorbarfixedvaluescatterx: Bool {_storage._tschchartseriesdefaulterrorbarfixedvaluescatterx != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarfixedvaluescatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarfixedvaluescatterx() {_uniqueStorage()._tschchartseriesdefaulterrorbarfixedvaluescatterx = nil}
 
   public var tschchartseriesdefaulterrorbarpercentvalue: Float {
-    get {return _storage._tschchartseriesdefaulterrorbarpercentvalue ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbarpercentvalue ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarpercentvalue = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarpercentvalue` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarpercentvalue: Bool {return _storage._tschchartseriesdefaulterrorbarpercentvalue != nil}
+  public var hasTschchartseriesdefaulterrorbarpercentvalue: Bool {_storage._tschchartseriesdefaulterrorbarpercentvalue != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarpercentvalue`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarpercentvalue() {_uniqueStorage()._tschchartseriesdefaulterrorbarpercentvalue = nil}
 
   public var tschchartseriesdefaulterrorbarpercentvaluescatterx: Float {
-    get {return _storage._tschchartseriesdefaulterrorbarpercentvaluescatterx ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbarpercentvaluescatterx ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarpercentvaluescatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarpercentvaluescatterx` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarpercentvaluescatterx: Bool {return _storage._tschchartseriesdefaulterrorbarpercentvaluescatterx != nil}
+  public var hasTschchartseriesdefaulterrorbarpercentvaluescatterx: Bool {_storage._tschchartseriesdefaulterrorbarpercentvaluescatterx != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarpercentvaluescatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarpercentvaluescatterx() {_uniqueStorage()._tschchartseriesdefaulterrorbarpercentvaluescatterx = nil}
 
   public var tschchartseriesdefaulterrorbarsetting: Int32 {
-    get {return _storage._tschchartseriesdefaulterrorbarsetting ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbarsetting ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarsetting = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarsetting` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarsetting: Bool {return _storage._tschchartseriesdefaulterrorbarsetting != nil}
+  public var hasTschchartseriesdefaulterrorbarsetting: Bool {_storage._tschchartseriesdefaulterrorbarsetting != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarsetting`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarsetting() {_uniqueStorage()._tschchartseriesdefaulterrorbarsetting = nil}
 
   public var tschchartseriesdefaulterrorbarsettingscatterx: Int32 {
-    get {return _storage._tschchartseriesdefaulterrorbarsettingscatterx ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbarsettingscatterx ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarsettingscatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarsettingscatterx` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarsettingscatterx: Bool {return _storage._tschchartseriesdefaulterrorbarsettingscatterx != nil}
+  public var hasTschchartseriesdefaulterrorbarsettingscatterx: Bool {_storage._tschchartseriesdefaulterrorbarsettingscatterx != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarsettingscatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarsettingscatterx() {_uniqueStorage()._tschchartseriesdefaulterrorbarsettingscatterx = nil}
 
   public var tschchartseriesdefaulterrorbarstddevvalue: Float {
-    get {return _storage._tschchartseriesdefaulterrorbarstddevvalue ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbarstddevvalue ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarstddevvalue = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarstddevvalue` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarstddevvalue: Bool {return _storage._tschchartseriesdefaulterrorbarstddevvalue != nil}
+  public var hasTschchartseriesdefaulterrorbarstddevvalue: Bool {_storage._tschchartseriesdefaulterrorbarstddevvalue != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarstddevvalue`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarstddevvalue() {_uniqueStorage()._tschchartseriesdefaulterrorbarstddevvalue = nil}
 
   public var tschchartseriesdefaulterrorbarstddevvaluescatterx: Float {
-    get {return _storage._tschchartseriesdefaulterrorbarstddevvaluescatterx ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbarstddevvaluescatterx ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbarstddevvaluescatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbarstddevvaluescatterx` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbarstddevvaluescatterx: Bool {return _storage._tschchartseriesdefaulterrorbarstddevvaluescatterx != nil}
+  public var hasTschchartseriesdefaulterrorbarstddevvaluescatterx: Bool {_storage._tschchartseriesdefaulterrorbarstddevvaluescatterx != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbarstddevvaluescatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbarstddevvaluescatterx() {_uniqueStorage()._tschchartseriesdefaulterrorbarstddevvaluescatterx = nil}
 
   public var tschchartseriesdefaulterrorbartype: Int32 {
-    get {return _storage._tschchartseriesdefaulterrorbartype ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbartype ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbartype = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbartype` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbartype: Bool {return _storage._tschchartseriesdefaulterrorbartype != nil}
+  public var hasTschchartseriesdefaulterrorbartype: Bool {_storage._tschchartseriesdefaulterrorbartype != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbartype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbartype() {_uniqueStorage()._tschchartseriesdefaulterrorbartype = nil}
 
   public var tschchartseriesdefaulterrorbartypescatterx: Int32 {
-    get {return _storage._tschchartseriesdefaulterrorbartypescatterx ?? 0}
+    get {_storage._tschchartseriesdefaulterrorbartypescatterx ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulterrorbartypescatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulterrorbartypescatterx` has been explicitly set.
-  public var hasTschchartseriesdefaulterrorbartypescatterx: Bool {return _storage._tschchartseriesdefaulterrorbartypescatterx != nil}
+  public var hasTschchartseriesdefaulterrorbartypescatterx: Bool {_storage._tschchartseriesdefaulterrorbartypescatterx != nil}
   /// Clears the value of `tschchartseriesdefaulterrorbartypescatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulterrorbartypescatterx() {_uniqueStorage()._tschchartseriesdefaulterrorbartypescatterx = nil}
 
   public var tschchartseriespielabelexplosion: Float {
-    get {return _storage._tschchartseriespielabelexplosion ?? 0}
+    get {_storage._tschchartseriespielabelexplosion ?? 0}
     set {_uniqueStorage()._tschchartseriespielabelexplosion = newValue}
   }
   /// Returns true if `tschchartseriespielabelexplosion` has been explicitly set.
-  public var hasTschchartseriespielabelexplosion: Bool {return _storage._tschchartseriespielabelexplosion != nil}
+  public var hasTschchartseriespielabelexplosion: Bool {_storage._tschchartseriespielabelexplosion != nil}
   /// Clears the value of `tschchartseriespielabelexplosion`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespielabelexplosion() {_uniqueStorage()._tschchartseriespielabelexplosion = nil}
 
   public var tschchartseriesbubblelinetype: Int32 {
-    get {return _storage._tschchartseriesbubblelinetype ?? 0}
+    get {_storage._tschchartseriesbubblelinetype ?? 0}
     set {_uniqueStorage()._tschchartseriesbubblelinetype = newValue}
   }
   /// Returns true if `tschchartseriesbubblelinetype` has been explicitly set.
-  public var hasTschchartseriesbubblelinetype: Bool {return _storage._tschchartseriesbubblelinetype != nil}
+  public var hasTschchartseriesbubblelinetype: Bool {_storage._tschchartseriesbubblelinetype != nil}
   /// Clears the value of `tschchartseriesbubblelinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubblelinetype() {_uniqueStorage()._tschchartseriesbubblelinetype = nil}
 
   public var tschchartserieslinelinetype: Int32 {
-    get {return _storage._tschchartserieslinelinetype ?? 0}
+    get {_storage._tschchartserieslinelinetype ?? 0}
     set {_uniqueStorage()._tschchartserieslinelinetype = newValue}
   }
   /// Returns true if `tschchartserieslinelinetype` has been explicitly set.
-  public var hasTschchartserieslinelinetype: Bool {return _storage._tschchartserieslinelinetype != nil}
+  public var hasTschchartserieslinelinetype: Bool {_storage._tschchartserieslinelinetype != nil}
   /// Clears the value of `tschchartserieslinelinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinelinetype() {_uniqueStorage()._tschchartserieslinelinetype = nil}
 
   public var tschchartseriesmixedlinelinetype: Int32 {
-    get {return _storage._tschchartseriesmixedlinelinetype ?? 0}
+    get {_storage._tschchartseriesmixedlinelinetype ?? 0}
     set {_uniqueStorage()._tschchartseriesmixedlinelinetype = newValue}
   }
   /// Returns true if `tschchartseriesmixedlinelinetype` has been explicitly set.
-  public var hasTschchartseriesmixedlinelinetype: Bool {return _storage._tschchartseriesmixedlinelinetype != nil}
+  public var hasTschchartseriesmixedlinelinetype: Bool {_storage._tschchartseriesmixedlinelinetype != nil}
   /// Clears the value of `tschchartseriesmixedlinelinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlinelinetype() {_uniqueStorage()._tschchartseriesmixedlinelinetype = nil}
 
   public var tschchartseriesradararealinetype: Int32 {
-    get {return _storage._tschchartseriesradararealinetype ?? 0}
+    get {_storage._tschchartseriesradararealinetype ?? 0}
     set {_uniqueStorage()._tschchartseriesradararealinetype = newValue}
   }
   /// Returns true if `tschchartseriesradararealinetype` has been explicitly set.
-  public var hasTschchartseriesradararealinetype: Bool {return _storage._tschchartseriesradararealinetype != nil}
+  public var hasTschchartseriesradararealinetype: Bool {_storage._tschchartseriesradararealinetype != nil}
   /// Clears the value of `tschchartseriesradararealinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradararealinetype() {_uniqueStorage()._tschchartseriesradararealinetype = nil}
 
   public var tschchartseriesscatterlinetype: Int32 {
-    get {return _storage._tschchartseriesscatterlinetype ?? 0}
+    get {_storage._tschchartseriesscatterlinetype ?? 0}
     set {_uniqueStorage()._tschchartseriesscatterlinetype = newValue}
   }
   /// Returns true if `tschchartseriesscatterlinetype` has been explicitly set.
-  public var hasTschchartseriesscatterlinetype: Bool {return _storage._tschchartseriesscatterlinetype != nil}
+  public var hasTschchartseriesscatterlinetype: Bool {_storage._tschchartseriesscatterlinetype != nil}
   /// Clears the value of `tschchartseriesscatterlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscatterlinetype() {_uniqueStorage()._tschchartseriesscatterlinetype = nil}
 
   public var tschchartseriesdefaultnumberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriesdefaultnumberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriesdefaultnumberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriesdefaultnumberformat = newValue}
   }
   /// Returns true if `tschchartseriesdefaultnumberformat` has been explicitly set.
-  public var hasTschchartseriesdefaultnumberformat: Bool {return _storage._tschchartseriesdefaultnumberformat != nil}
+  public var hasTschchartseriesdefaultnumberformat: Bool {_storage._tschchartseriesdefaultnumberformat != nil}
   /// Clears the value of `tschchartseriesdefaultnumberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultnumberformat() {_uniqueStorage()._tschchartseriesdefaultnumberformat = nil}
 
   public var tschchartseriespienumberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriespienumberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriespienumberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriespienumberformat = newValue}
   }
   /// Returns true if `tschchartseriespienumberformat` has been explicitly set.
-  public var hasTschchartseriespienumberformat: Bool {return _storage._tschchartseriespienumberformat != nil}
+  public var hasTschchartseriespienumberformat: Bool {_storage._tschchartseriespienumberformat != nil}
   /// Clears the value of `tschchartseriespienumberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespienumberformat() {_uniqueStorage()._tschchartseriespienumberformat = nil}
 
   public var tschchartseriesdefaultnumberformattype: Int32 {
-    get {return _storage._tschchartseriesdefaultnumberformattype ?? 0}
+    get {_storage._tschchartseriesdefaultnumberformattype ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaultnumberformattype = newValue}
   }
   /// Returns true if `tschchartseriesdefaultnumberformattype` has been explicitly set.
-  public var hasTschchartseriesdefaultnumberformattype: Bool {return _storage._tschchartseriesdefaultnumberformattype != nil}
+  public var hasTschchartseriesdefaultnumberformattype: Bool {_storage._tschchartseriesdefaultnumberformattype != nil}
   /// Clears the value of `tschchartseriesdefaultnumberformattype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultnumberformattype() {_uniqueStorage()._tschchartseriesdefaultnumberformattype = nil}
 
   public var tschchartseriespienumberformattype: Int32 {
-    get {return _storage._tschchartseriespienumberformattype ?? 0}
+    get {_storage._tschchartseriespienumberformattype ?? 0}
     set {_uniqueStorage()._tschchartseriespienumberformattype = newValue}
   }
   /// Returns true if `tschchartseriespienumberformattype` has been explicitly set.
-  public var hasTschchartseriespienumberformattype: Bool {return _storage._tschchartseriespienumberformattype != nil}
+  public var hasTschchartseriespienumberformattype: Bool {_storage._tschchartseriespienumberformattype != nil}
   /// Clears the value of `tschchartseriespienumberformattype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespienumberformattype() {_uniqueStorage()._tschchartseriespienumberformattype = nil}
 
   public var tschchartseriesstackedpercentnumberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriesstackedpercentnumberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriesstackedpercentnumberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriesstackedpercentnumberformat = newValue}
   }
   /// Returns true if `tschchartseriesstackedpercentnumberformat` has been explicitly set.
-  public var hasTschchartseriesstackedpercentnumberformat: Bool {return _storage._tschchartseriesstackedpercentnumberformat != nil}
+  public var hasTschchartseriesstackedpercentnumberformat: Bool {_storage._tschchartseriesstackedpercentnumberformat != nil}
   /// Clears the value of `tschchartseriesstackedpercentnumberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesstackedpercentnumberformat() {_uniqueStorage()._tschchartseriesstackedpercentnumberformat = nil}
 
   public var tschchartseriesdefaultseriestype: Int32 {
-    get {return _storage._tschchartseriesdefaultseriestype ?? 0}
+    get {_storage._tschchartseriesdefaultseriestype ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaultseriestype = newValue}
   }
   /// Returns true if `tschchartseriesdefaultseriestype` has been explicitly set.
-  public var hasTschchartseriesdefaultseriestype: Bool {return _storage._tschchartseriesdefaultseriestype != nil}
+  public var hasTschchartseriesdefaultseriestype: Bool {_storage._tschchartseriesdefaultseriestype != nil}
   /// Clears the value of `tschchartseriesdefaultseriestype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultseriestype() {_uniqueStorage()._tschchartseriesdefaultseriestype = nil}
 
   public var tschchartseriesdefaultshowerrorbar: Bool {
-    get {return _storage._tschchartseriesdefaultshowerrorbar ?? false}
+    get {_storage._tschchartseriesdefaultshowerrorbar ?? false}
     set {_uniqueStorage()._tschchartseriesdefaultshowerrorbar = newValue}
   }
   /// Returns true if `tschchartseriesdefaultshowerrorbar` has been explicitly set.
-  public var hasTschchartseriesdefaultshowerrorbar: Bool {return _storage._tschchartseriesdefaultshowerrorbar != nil}
+  public var hasTschchartseriesdefaultshowerrorbar: Bool {_storage._tschchartseriesdefaultshowerrorbar != nil}
   /// Clears the value of `tschchartseriesdefaultshowerrorbar`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultshowerrorbar() {_uniqueStorage()._tschchartseriesdefaultshowerrorbar = nil}
 
   public var tschchartseriesdefaultshowerrorbarscatterx: Bool {
-    get {return _storage._tschchartseriesdefaultshowerrorbarscatterx ?? false}
+    get {_storage._tschchartseriesdefaultshowerrorbarscatterx ?? false}
     set {_uniqueStorage()._tschchartseriesdefaultshowerrorbarscatterx = newValue}
   }
   /// Returns true if `tschchartseriesdefaultshowerrorbarscatterx` has been explicitly set.
-  public var hasTschchartseriesdefaultshowerrorbarscatterx: Bool {return _storage._tschchartseriesdefaultshowerrorbarscatterx != nil}
+  public var hasTschchartseriesdefaultshowerrorbarscatterx: Bool {_storage._tschchartseriesdefaultshowerrorbarscatterx != nil}
   /// Clears the value of `tschchartseriesdefaultshowerrorbarscatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultshowerrorbarscatterx() {_uniqueStorage()._tschchartseriesdefaultshowerrorbarscatterx = nil}
 
   public var tschchartseriesbubbleshowlabelsinfront: Bool {
-    get {return _storage._tschchartseriesbubbleshowlabelsinfront ?? false}
+    get {_storage._tschchartseriesbubbleshowlabelsinfront ?? false}
     set {_uniqueStorage()._tschchartseriesbubbleshowlabelsinfront = newValue}
   }
   /// Returns true if `tschchartseriesbubbleshowlabelsinfront` has been explicitly set.
-  public var hasTschchartseriesbubbleshowlabelsinfront: Bool {return _storage._tschchartseriesbubbleshowlabelsinfront != nil}
+  public var hasTschchartseriesbubbleshowlabelsinfront: Bool {_storage._tschchartseriesbubbleshowlabelsinfront != nil}
   /// Clears the value of `tschchartseriesbubbleshowlabelsinfront`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubbleshowlabelsinfront() {_uniqueStorage()._tschchartseriesbubbleshowlabelsinfront = nil}
 
   public var tschchartseriesdefaultshowlabelsinfront: Bool {
-    get {return _storage._tschchartseriesdefaultshowlabelsinfront ?? false}
+    get {_storage._tschchartseriesdefaultshowlabelsinfront ?? false}
     set {_uniqueStorage()._tschchartseriesdefaultshowlabelsinfront = newValue}
   }
   /// Returns true if `tschchartseriesdefaultshowlabelsinfront` has been explicitly set.
-  public var hasTschchartseriesdefaultshowlabelsinfront: Bool {return _storage._tschchartseriesdefaultshowlabelsinfront != nil}
+  public var hasTschchartseriesdefaultshowlabelsinfront: Bool {_storage._tschchartseriesdefaultshowlabelsinfront != nil}
   /// Clears the value of `tschchartseriesdefaultshowlabelsinfront`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultshowlabelsinfront() {_uniqueStorage()._tschchartseriesdefaultshowlabelsinfront = nil}
 
   public var tschchartseriesscattershowline: Bool {
-    get {return _storage._tschchartseriesscattershowline ?? false}
+    get {_storage._tschchartseriesscattershowline ?? false}
     set {_uniqueStorage()._tschchartseriesscattershowline = newValue}
   }
   /// Returns true if `tschchartseriesscattershowline` has been explicitly set.
-  public var hasTschchartseriesscattershowline: Bool {return _storage._tschchartseriesscattershowline != nil}
+  public var hasTschchartseriesscattershowline: Bool {_storage._tschchartseriesscattershowline != nil}
   /// Clears the value of `tschchartseriesscattershowline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattershowline() {_uniqueStorage()._tschchartseriesscattershowline = nil}
 
   public var tschchartseriesbubbleshownegativedata: Bool {
-    get {return _storage._tschchartseriesbubbleshownegativedata ?? false}
+    get {_storage._tschchartseriesbubbleshownegativedata ?? false}
     set {_uniqueStorage()._tschchartseriesbubbleshownegativedata = newValue}
   }
   /// Returns true if `tschchartseriesbubbleshownegativedata` has been explicitly set.
-  public var hasTschchartseriesbubbleshownegativedata: Bool {return _storage._tschchartseriesbubbleshownegativedata != nil}
+  public var hasTschchartseriesbubbleshownegativedata: Bool {_storage._tschchartseriesbubbleshownegativedata != nil}
   /// Clears the value of `tschchartseriesbubbleshownegativedata`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubbleshownegativedata() {_uniqueStorage()._tschchartseriesbubbleshownegativedata = nil}
 
   public var tschchartseriesbubbleshowserieslabels: Bool {
-    get {return _storage._tschchartseriesbubbleshowserieslabels ?? false}
+    get {_storage._tschchartseriesbubbleshowserieslabels ?? false}
     set {_uniqueStorage()._tschchartseriesbubbleshowserieslabels = newValue}
   }
   /// Returns true if `tschchartseriesbubbleshowserieslabels` has been explicitly set.
-  public var hasTschchartseriesbubbleshowserieslabels: Bool {return _storage._tschchartseriesbubbleshowserieslabels != nil}
+  public var hasTschchartseriesbubbleshowserieslabels: Bool {_storage._tschchartseriesbubbleshowserieslabels != nil}
   /// Clears the value of `tschchartseriesbubbleshowserieslabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubbleshowserieslabels() {_uniqueStorage()._tschchartseriesbubbleshowserieslabels = nil}
 
   public var tschchartseriespieshowserieslabels: Bool {
-    get {return _storage._tschchartseriespieshowserieslabels ?? false}
+    get {_storage._tschchartseriespieshowserieslabels ?? false}
     set {_uniqueStorage()._tschchartseriespieshowserieslabels = newValue}
   }
   /// Returns true if `tschchartseriespieshowserieslabels` has been explicitly set.
-  public var hasTschchartseriespieshowserieslabels: Bool {return _storage._tschchartseriespieshowserieslabels != nil}
+  public var hasTschchartseriespieshowserieslabels: Bool {_storage._tschchartseriespieshowserieslabels != nil}
   /// Clears the value of `tschchartseriespieshowserieslabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespieshowserieslabels() {_uniqueStorage()._tschchartseriespieshowserieslabels = nil}
 
   public var tschchartseriesscattershowserieslabels: Bool {
-    get {return _storage._tschchartseriesscattershowserieslabels ?? false}
+    get {_storage._tschchartseriesscattershowserieslabels ?? false}
     set {_uniqueStorage()._tschchartseriesscattershowserieslabels = newValue}
   }
   /// Returns true if `tschchartseriesscattershowserieslabels` has been explicitly set.
-  public var hasTschchartseriesscattershowserieslabels: Bool {return _storage._tschchartseriesscattershowserieslabels != nil}
+  public var hasTschchartseriesscattershowserieslabels: Bool {_storage._tschchartseriesscattershowserieslabels != nil}
   /// Clears the value of `tschchartseriesscattershowserieslabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattershowserieslabels() {_uniqueStorage()._tschchartseriesscattershowserieslabels = nil}
 
   public var tschchartseriesareashowsymbol: Bool {
-    get {return _storage._tschchartseriesareashowsymbol ?? false}
+    get {_storage._tschchartseriesareashowsymbol ?? false}
     set {_uniqueStorage()._tschchartseriesareashowsymbol = newValue}
   }
   /// Returns true if `tschchartseriesareashowsymbol` has been explicitly set.
-  public var hasTschchartseriesareashowsymbol: Bool {return _storage._tschchartseriesareashowsymbol != nil}
+  public var hasTschchartseriesareashowsymbol: Bool {_storage._tschchartseriesareashowsymbol != nil}
   /// Clears the value of `tschchartseriesareashowsymbol`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareashowsymbol() {_uniqueStorage()._tschchartseriesareashowsymbol = nil}
 
   public var tschchartserieslineshowsymbol: Bool {
-    get {return _storage._tschchartserieslineshowsymbol ?? false}
+    get {_storage._tschchartserieslineshowsymbol ?? false}
     set {_uniqueStorage()._tschchartserieslineshowsymbol = newValue}
   }
   /// Returns true if `tschchartserieslineshowsymbol` has been explicitly set.
-  public var hasTschchartserieslineshowsymbol: Bool {return _storage._tschchartserieslineshowsymbol != nil}
+  public var hasTschchartserieslineshowsymbol: Bool {_storage._tschchartserieslineshowsymbol != nil}
   /// Clears the value of `tschchartserieslineshowsymbol`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslineshowsymbol() {_uniqueStorage()._tschchartserieslineshowsymbol = nil}
 
   public var tschchartseriesmixedareashowsymbol: Bool {
-    get {return _storage._tschchartseriesmixedareashowsymbol ?? false}
+    get {_storage._tschchartseriesmixedareashowsymbol ?? false}
     set {_uniqueStorage()._tschchartseriesmixedareashowsymbol = newValue}
   }
   /// Returns true if `tschchartseriesmixedareashowsymbol` has been explicitly set.
-  public var hasTschchartseriesmixedareashowsymbol: Bool {return _storage._tschchartseriesmixedareashowsymbol != nil}
+  public var hasTschchartseriesmixedareashowsymbol: Bool {_storage._tschchartseriesmixedareashowsymbol != nil}
   /// Clears the value of `tschchartseriesmixedareashowsymbol`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareashowsymbol() {_uniqueStorage()._tschchartseriesmixedareashowsymbol = nil}
 
   public var tschchartseriesmixedlineshowsymbol: Bool {
-    get {return _storage._tschchartseriesmixedlineshowsymbol ?? false}
+    get {_storage._tschchartseriesmixedlineshowsymbol ?? false}
     set {_uniqueStorage()._tschchartseriesmixedlineshowsymbol = newValue}
   }
   /// Returns true if `tschchartseriesmixedlineshowsymbol` has been explicitly set.
-  public var hasTschchartseriesmixedlineshowsymbol: Bool {return _storage._tschchartseriesmixedlineshowsymbol != nil}
+  public var hasTschchartseriesmixedlineshowsymbol: Bool {_storage._tschchartseriesmixedlineshowsymbol != nil}
   /// Clears the value of `tschchartseriesmixedlineshowsymbol`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlineshowsymbol() {_uniqueStorage()._tschchartseriesmixedlineshowsymbol = nil}
 
   public var tschchartseriesradarareashowsymbol: Bool {
-    get {return _storage._tschchartseriesradarareashowsymbol ?? false}
+    get {_storage._tschchartseriesradarareashowsymbol ?? false}
     set {_uniqueStorage()._tschchartseriesradarareashowsymbol = newValue}
   }
   /// Returns true if `tschchartseriesradarareashowsymbol` has been explicitly set.
-  public var hasTschchartseriesradarareashowsymbol: Bool {return _storage._tschchartseriesradarareashowsymbol != nil}
+  public var hasTschchartseriesradarareashowsymbol: Bool {_storage._tschchartseriesradarareashowsymbol != nil}
   /// Clears the value of `tschchartseriesradarareashowsymbol`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareashowsymbol() {_uniqueStorage()._tschchartseriesradarareashowsymbol = nil}
 
   public var tschchartseriesscattershowsymbol: Bool {
-    get {return _storage._tschchartseriesscattershowsymbol ?? false}
+    get {_storage._tschchartseriesscattershowsymbol ?? false}
     set {_uniqueStorage()._tschchartseriesscattershowsymbol = newValue}
   }
   /// Returns true if `tschchartseriesscattershowsymbol` has been explicitly set.
-  public var hasTschchartseriesscattershowsymbol: Bool {return _storage._tschchartseriesscattershowsymbol != nil}
+  public var hasTschchartseriesscattershowsymbol: Bool {_storage._tschchartseriesscattershowsymbol != nil}
   /// Clears the value of `tschchartseriesscattershowsymbol`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattershowsymbol() {_uniqueStorage()._tschchartseriesscattershowsymbol = nil}
 
   public var tschchartseriesdefaultshowtrendline: Bool {
-    get {return _storage._tschchartseriesdefaultshowtrendline ?? false}
+    get {_storage._tschchartseriesdefaultshowtrendline ?? false}
     set {_uniqueStorage()._tschchartseriesdefaultshowtrendline = newValue}
   }
   /// Returns true if `tschchartseriesdefaultshowtrendline` has been explicitly set.
-  public var hasTschchartseriesdefaultshowtrendline: Bool {return _storage._tschchartseriesdefaultshowtrendline != nil}
+  public var hasTschchartseriesdefaultshowtrendline: Bool {_storage._tschchartseriesdefaultshowtrendline != nil}
   /// Clears the value of `tschchartseriesdefaultshowtrendline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultshowtrendline() {_uniqueStorage()._tschchartseriesdefaultshowtrendline = nil}
 
   public var tschchartseriesareashowvaluelabels: Bool {
-    get {return _storage._tschchartseriesareashowvaluelabels ?? false}
+    get {_storage._tschchartseriesareashowvaluelabels ?? false}
     set {_uniqueStorage()._tschchartseriesareashowvaluelabels = newValue}
   }
   /// Returns true if `tschchartseriesareashowvaluelabels` has been explicitly set.
-  public var hasTschchartseriesareashowvaluelabels: Bool {return _storage._tschchartseriesareashowvaluelabels != nil}
+  public var hasTschchartseriesareashowvaluelabels: Bool {_storage._tschchartseriesareashowvaluelabels != nil}
   /// Clears the value of `tschchartseriesareashowvaluelabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareashowvaluelabels() {_uniqueStorage()._tschchartseriesareashowvaluelabels = nil}
 
   public var tschchartseriesbarshowvaluelabels: Bool {
-    get {return _storage._tschchartseriesbarshowvaluelabels ?? false}
+    get {_storage._tschchartseriesbarshowvaluelabels ?? false}
     set {_uniqueStorage()._tschchartseriesbarshowvaluelabels = newValue}
   }
   /// Returns true if `tschchartseriesbarshowvaluelabels` has been explicitly set.
-  public var hasTschchartseriesbarshowvaluelabels: Bool {return _storage._tschchartseriesbarshowvaluelabels != nil}
+  public var hasTschchartseriesbarshowvaluelabels: Bool {_storage._tschchartseriesbarshowvaluelabels != nil}
   /// Clears the value of `tschchartseriesbarshowvaluelabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbarshowvaluelabels() {_uniqueStorage()._tschchartseriesbarshowvaluelabels = nil}
 
   public var tschchartseriesbubbleshowvaluelabels: Bool {
-    get {return _storage._tschchartseriesbubbleshowvaluelabels ?? false}
+    get {_storage._tschchartseriesbubbleshowvaluelabels ?? false}
     set {_uniqueStorage()._tschchartseriesbubbleshowvaluelabels = newValue}
   }
   /// Returns true if `tschchartseriesbubbleshowvaluelabels` has been explicitly set.
-  public var hasTschchartseriesbubbleshowvaluelabels: Bool {return _storage._tschchartseriesbubbleshowvaluelabels != nil}
+  public var hasTschchartseriesbubbleshowvaluelabels: Bool {_storage._tschchartseriesbubbleshowvaluelabels != nil}
   /// Clears the value of `tschchartseriesbubbleshowvaluelabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubbleshowvaluelabels() {_uniqueStorage()._tschchartseriesbubbleshowvaluelabels = nil}
 
   public var tschchartseriesdefaultshowvaluelabels: Bool {
-    get {return _storage._tschchartseriesdefaultshowvaluelabels ?? false}
+    get {_storage._tschchartseriesdefaultshowvaluelabels ?? false}
     set {_uniqueStorage()._tschchartseriesdefaultshowvaluelabels = newValue}
   }
   /// Returns true if `tschchartseriesdefaultshowvaluelabels` has been explicitly set.
-  public var hasTschchartseriesdefaultshowvaluelabels: Bool {return _storage._tschchartseriesdefaultshowvaluelabels != nil}
+  public var hasTschchartseriesdefaultshowvaluelabels: Bool {_storage._tschchartseriesdefaultshowvaluelabels != nil}
   /// Clears the value of `tschchartseriesdefaultshowvaluelabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultshowvaluelabels() {_uniqueStorage()._tschchartseriesdefaultshowvaluelabels = nil}
 
   public var tschchartserieslineshowvaluelabels: Bool {
-    get {return _storage._tschchartserieslineshowvaluelabels ?? false}
+    get {_storage._tschchartserieslineshowvaluelabels ?? false}
     set {_uniqueStorage()._tschchartserieslineshowvaluelabels = newValue}
   }
   /// Returns true if `tschchartserieslineshowvaluelabels` has been explicitly set.
-  public var hasTschchartserieslineshowvaluelabels: Bool {return _storage._tschchartserieslineshowvaluelabels != nil}
+  public var hasTschchartserieslineshowvaluelabels: Bool {_storage._tschchartserieslineshowvaluelabels != nil}
   /// Clears the value of `tschchartserieslineshowvaluelabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslineshowvaluelabels() {_uniqueStorage()._tschchartserieslineshowvaluelabels = nil}
 
   public var tschchartseriesmixedshowvaluelabels: Bool {
-    get {return _storage._tschchartseriesmixedshowvaluelabels ?? false}
+    get {_storage._tschchartseriesmixedshowvaluelabels ?? false}
     set {_uniqueStorage()._tschchartseriesmixedshowvaluelabels = newValue}
   }
   /// Returns true if `tschchartseriesmixedshowvaluelabels` has been explicitly set.
-  public var hasTschchartseriesmixedshowvaluelabels: Bool {return _storage._tschchartseriesmixedshowvaluelabels != nil}
+  public var hasTschchartseriesmixedshowvaluelabels: Bool {_storage._tschchartseriesmixedshowvaluelabels != nil}
   /// Clears the value of `tschchartseriesmixedshowvaluelabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedshowvaluelabels() {_uniqueStorage()._tschchartseriesmixedshowvaluelabels = nil}
 
   public var tschchartseriespieshowvaluelabels: Bool {
-    get {return _storage._tschchartseriespieshowvaluelabels ?? false}
+    get {_storage._tschchartseriespieshowvaluelabels ?? false}
     set {_uniqueStorage()._tschchartseriespieshowvaluelabels = newValue}
   }
   /// Returns true if `tschchartseriespieshowvaluelabels` has been explicitly set.
-  public var hasTschchartseriespieshowvaluelabels: Bool {return _storage._tschchartseriespieshowvaluelabels != nil}
+  public var hasTschchartseriespieshowvaluelabels: Bool {_storage._tschchartseriespieshowvaluelabels != nil}
   /// Clears the value of `tschchartseriespieshowvaluelabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespieshowvaluelabels() {_uniqueStorage()._tschchartseriespieshowvaluelabels = nil}
 
   public var tschchartseriesradarshowvaluelabels: Bool {
-    get {return _storage._tschchartseriesradarshowvaluelabels ?? false}
+    get {_storage._tschchartseriesradarshowvaluelabels ?? false}
     set {_uniqueStorage()._tschchartseriesradarshowvaluelabels = newValue}
   }
   /// Returns true if `tschchartseriesradarshowvaluelabels` has been explicitly set.
-  public var hasTschchartseriesradarshowvaluelabels: Bool {return _storage._tschchartseriesradarshowvaluelabels != nil}
+  public var hasTschchartseriesradarshowvaluelabels: Bool {_storage._tschchartseriesradarshowvaluelabels != nil}
   /// Clears the value of `tschchartseriesradarshowvaluelabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarshowvaluelabels() {_uniqueStorage()._tschchartseriesradarshowvaluelabels = nil}
 
   public var tschchartseriesscattershowvaluelabels: Bool {
-    get {return _storage._tschchartseriesscattershowvaluelabels ?? false}
+    get {_storage._tschchartseriesscattershowvaluelabels ?? false}
     set {_uniqueStorage()._tschchartseriesscattershowvaluelabels = newValue}
   }
   /// Returns true if `tschchartseriesscattershowvaluelabels` has been explicitly set.
-  public var hasTschchartseriesscattershowvaluelabels: Bool {return _storage._tschchartseriesscattershowvaluelabels != nil}
+  public var hasTschchartseriesscattershowvaluelabels: Bool {_storage._tschchartseriesscattershowvaluelabels != nil}
   /// Clears the value of `tschchartseriesscattershowvaluelabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattershowvaluelabels() {_uniqueStorage()._tschchartseriesscattershowvaluelabels = nil}
 
   public var tschchartseriesbubblesizedimension: Int32 {
-    get {return _storage._tschchartseriesbubblesizedimension ?? 0}
+    get {_storage._tschchartseriesbubblesizedimension ?? 0}
     set {_uniqueStorage()._tschchartseriesbubblesizedimension = newValue}
   }
   /// Returns true if `tschchartseriesbubblesizedimension` has been explicitly set.
-  public var hasTschchartseriesbubblesizedimension: Bool {return _storage._tschchartseriesbubblesizedimension != nil}
+  public var hasTschchartseriesbubblesizedimension: Bool {_storage._tschchartseriesbubblesizedimension != nil}
   /// Clears the value of `tschchartseriesbubblesizedimension`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubblesizedimension() {_uniqueStorage()._tschchartseriesbubblesizedimension = nil}
 
   public var tschchartseriesareastacklabels: Bool {
-    get {return _storage._tschchartseriesareastacklabels ?? false}
+    get {_storage._tschchartseriesareastacklabels ?? false}
     set {_uniqueStorage()._tschchartseriesareastacklabels = newValue}
   }
   /// Returns true if `tschchartseriesareastacklabels` has been explicitly set.
-  public var hasTschchartseriesareastacklabels: Bool {return _storage._tschchartseriesareastacklabels != nil}
+  public var hasTschchartseriesareastacklabels: Bool {_storage._tschchartseriesareastacklabels != nil}
   /// Clears the value of `tschchartseriesareastacklabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareastacklabels() {_uniqueStorage()._tschchartseriesareastacklabels = nil}
 
   public var tschchartseriesbarstacklabels: Bool {
-    get {return _storage._tschchartseriesbarstacklabels ?? false}
+    get {_storage._tschchartseriesbarstacklabels ?? false}
     set {_uniqueStorage()._tschchartseriesbarstacklabels = newValue}
   }
   /// Returns true if `tschchartseriesbarstacklabels` has been explicitly set.
-  public var hasTschchartseriesbarstacklabels: Bool {return _storage._tschchartseriesbarstacklabels != nil}
+  public var hasTschchartseriesbarstacklabels: Bool {_storage._tschchartseriesbarstacklabels != nil}
   /// Clears the value of `tschchartseriesbarstacklabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbarstacklabels() {_uniqueStorage()._tschchartseriesbarstacklabels = nil}
 
   public var tschchartseriesbubblestacklabels: Bool {
-    get {return _storage._tschchartseriesbubblestacklabels ?? false}
+    get {_storage._tschchartseriesbubblestacklabels ?? false}
     set {_uniqueStorage()._tschchartseriesbubblestacklabels = newValue}
   }
   /// Returns true if `tschchartseriesbubblestacklabels` has been explicitly set.
-  public var hasTschchartseriesbubblestacklabels: Bool {return _storage._tschchartseriesbubblestacklabels != nil}
+  public var hasTschchartseriesbubblestacklabels: Bool {_storage._tschchartseriesbubblestacklabels != nil}
   /// Clears the value of `tschchartseriesbubblestacklabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubblestacklabels() {_uniqueStorage()._tschchartseriesbubblestacklabels = nil}
 
   public var tschchartseriesdefaultstacklabels: Bool {
-    get {return _storage._tschchartseriesdefaultstacklabels ?? false}
+    get {_storage._tschchartseriesdefaultstacklabels ?? false}
     set {_uniqueStorage()._tschchartseriesdefaultstacklabels = newValue}
   }
   /// Returns true if `tschchartseriesdefaultstacklabels` has been explicitly set.
-  public var hasTschchartseriesdefaultstacklabels: Bool {return _storage._tschchartseriesdefaultstacklabels != nil}
+  public var hasTschchartseriesdefaultstacklabels: Bool {_storage._tschchartseriesdefaultstacklabels != nil}
   /// Clears the value of `tschchartseriesdefaultstacklabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultstacklabels() {_uniqueStorage()._tschchartseriesdefaultstacklabels = nil}
 
   public var tschchartserieslinestacklabels: Bool {
-    get {return _storage._tschchartserieslinestacklabels ?? false}
+    get {_storage._tschchartserieslinestacklabels ?? false}
     set {_uniqueStorage()._tschchartserieslinestacklabels = newValue}
   }
   /// Returns true if `tschchartserieslinestacklabels` has been explicitly set.
-  public var hasTschchartserieslinestacklabels: Bool {return _storage._tschchartserieslinestacklabels != nil}
+  public var hasTschchartserieslinestacklabels: Bool {_storage._tschchartserieslinestacklabels != nil}
   /// Clears the value of `tschchartserieslinestacklabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinestacklabels() {_uniqueStorage()._tschchartserieslinestacklabels = nil}
 
   public var tschchartseriespiestacklabels: Bool {
-    get {return _storage._tschchartseriespiestacklabels ?? false}
+    get {_storage._tschchartseriespiestacklabels ?? false}
     set {_uniqueStorage()._tschchartseriespiestacklabels = newValue}
   }
   /// Returns true if `tschchartseriespiestacklabels` has been explicitly set.
-  public var hasTschchartseriespiestacklabels: Bool {return _storage._tschchartseriespiestacklabels != nil}
+  public var hasTschchartseriespiestacklabels: Bool {_storage._tschchartseriespiestacklabels != nil}
   /// Clears the value of `tschchartseriespiestacklabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespiestacklabels() {_uniqueStorage()._tschchartseriespiestacklabels = nil}
 
   public var tschchartseriesscatterstacklabels: Bool {
-    get {return _storage._tschchartseriesscatterstacklabels ?? false}
+    get {_storage._tschchartseriesscatterstacklabels ?? false}
     set {_uniqueStorage()._tschchartseriesscatterstacklabels = newValue}
   }
   /// Returns true if `tschchartseriesscatterstacklabels` has been explicitly set.
-  public var hasTschchartseriesscatterstacklabels: Bool {return _storage._tschchartseriesscatterstacklabels != nil}
+  public var hasTschchartseriesscatterstacklabels: Bool {_storage._tschchartseriesscatterstacklabels != nil}
   /// Clears the value of `tschchartseriesscatterstacklabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscatterstacklabels() {_uniqueStorage()._tschchartseriesscatterstacklabels = nil}
 
   public var tschchartseriesstackedareastacklabels: Bool {
-    get {return _storage._tschchartseriesstackedareastacklabels ?? false}
+    get {_storage._tschchartseriesstackedareastacklabels ?? false}
     set {_uniqueStorage()._tschchartseriesstackedareastacklabels = newValue}
   }
   /// Returns true if `tschchartseriesstackedareastacklabels` has been explicitly set.
-  public var hasTschchartseriesstackedareastacklabels: Bool {return _storage._tschchartseriesstackedareastacklabels != nil}
+  public var hasTschchartseriesstackedareastacklabels: Bool {_storage._tschchartseriesstackedareastacklabels != nil}
   /// Clears the value of `tschchartseriesstackedareastacklabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesstackedareastacklabels() {_uniqueStorage()._tschchartseriesstackedareastacklabels = nil}
 
   public var tschchartseriesstackedbarstacklabels: Bool {
-    get {return _storage._tschchartseriesstackedbarstacklabels ?? false}
+    get {_storage._tschchartseriesstackedbarstacklabels ?? false}
     set {_uniqueStorage()._tschchartseriesstackedbarstacklabels = newValue}
   }
   /// Returns true if `tschchartseriesstackedbarstacklabels` has been explicitly set.
-  public var hasTschchartseriesstackedbarstacklabels: Bool {return _storage._tschchartseriesstackedbarstacklabels != nil}
+  public var hasTschchartseriesstackedbarstacklabels: Bool {_storage._tschchartseriesstackedbarstacklabels != nil}
   /// Clears the value of `tschchartseriesstackedbarstacklabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesstackedbarstacklabels() {_uniqueStorage()._tschchartseriesstackedbarstacklabels = nil}
 
   public var tschchartseriesareasymboltype: Int32 {
-    get {return _storage._tschchartseriesareasymboltype ?? 0}
+    get {_storage._tschchartseriesareasymboltype ?? 0}
     set {_uniqueStorage()._tschchartseriesareasymboltype = newValue}
   }
   /// Returns true if `tschchartseriesareasymboltype` has been explicitly set.
-  public var hasTschchartseriesareasymboltype: Bool {return _storage._tschchartseriesareasymboltype != nil}
+  public var hasTschchartseriesareasymboltype: Bool {_storage._tschchartseriesareasymboltype != nil}
   /// Clears the value of `tschchartseriesareasymboltype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesareasymboltype() {_uniqueStorage()._tschchartseriesareasymboltype = nil}
 
   public var tschchartserieslinesymboltype: Int32 {
-    get {return _storage._tschchartserieslinesymboltype ?? 0}
+    get {_storage._tschchartserieslinesymboltype ?? 0}
     set {_uniqueStorage()._tschchartserieslinesymboltype = newValue}
   }
   /// Returns true if `tschchartserieslinesymboltype` has been explicitly set.
-  public var hasTschchartserieslinesymboltype: Bool {return _storage._tschchartserieslinesymboltype != nil}
+  public var hasTschchartserieslinesymboltype: Bool {_storage._tschchartserieslinesymboltype != nil}
   /// Clears the value of `tschchartserieslinesymboltype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinesymboltype() {_uniqueStorage()._tschchartserieslinesymboltype = nil}
 
   public var tschchartseriesmixedareasymboltype: Int32 {
-    get {return _storage._tschchartseriesmixedareasymboltype ?? 0}
+    get {_storage._tschchartseriesmixedareasymboltype ?? 0}
     set {_uniqueStorage()._tschchartseriesmixedareasymboltype = newValue}
   }
   /// Returns true if `tschchartseriesmixedareasymboltype` has been explicitly set.
-  public var hasTschchartseriesmixedareasymboltype: Bool {return _storage._tschchartseriesmixedareasymboltype != nil}
+  public var hasTschchartseriesmixedareasymboltype: Bool {_storage._tschchartseriesmixedareasymboltype != nil}
   /// Clears the value of `tschchartseriesmixedareasymboltype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedareasymboltype() {_uniqueStorage()._tschchartseriesmixedareasymboltype = nil}
 
   public var tschchartseriesmixedlinesymboltype: Int32 {
-    get {return _storage._tschchartseriesmixedlinesymboltype ?? 0}
+    get {_storage._tschchartseriesmixedlinesymboltype ?? 0}
     set {_uniqueStorage()._tschchartseriesmixedlinesymboltype = newValue}
   }
   /// Returns true if `tschchartseriesmixedlinesymboltype` has been explicitly set.
-  public var hasTschchartseriesmixedlinesymboltype: Bool {return _storage._tschchartseriesmixedlinesymboltype != nil}
+  public var hasTschchartseriesmixedlinesymboltype: Bool {_storage._tschchartseriesmixedlinesymboltype != nil}
   /// Clears the value of `tschchartseriesmixedlinesymboltype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesmixedlinesymboltype() {_uniqueStorage()._tschchartseriesmixedlinesymboltype = nil}
 
   public var tschchartseriesradarareasymboltype: Int32 {
-    get {return _storage._tschchartseriesradarareasymboltype ?? 0}
+    get {_storage._tschchartseriesradarareasymboltype ?? 0}
     set {_uniqueStorage()._tschchartseriesradarareasymboltype = newValue}
   }
   /// Returns true if `tschchartseriesradarareasymboltype` has been explicitly set.
-  public var hasTschchartseriesradarareasymboltype: Bool {return _storage._tschchartseriesradarareasymboltype != nil}
+  public var hasTschchartseriesradarareasymboltype: Bool {_storage._tschchartseriesradarareasymboltype != nil}
   /// Clears the value of `tschchartseriesradarareasymboltype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesradarareasymboltype() {_uniqueStorage()._tschchartseriesradarareasymboltype = nil}
 
   public var tschchartseriesscattersymboltype: Int32 {
-    get {return _storage._tschchartseriesscattersymboltype ?? 0}
+    get {_storage._tschchartseriesscattersymboltype ?? 0}
     set {_uniqueStorage()._tschchartseriesscattersymboltype = newValue}
   }
   /// Returns true if `tschchartseriesscattersymboltype` has been explicitly set.
-  public var hasTschchartseriesscattersymboltype: Bool {return _storage._tschchartseriesscattersymboltype != nil}
+  public var hasTschchartseriesscattersymboltype: Bool {_storage._tschchartseriesscattersymboltype != nil}
   /// Clears the value of `tschchartseriesscattersymboltype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattersymboltype() {_uniqueStorage()._tschchartseriesscattersymboltype = nil}
 
   public var tschchartseriesdefaulttrendlineequationoffsetx: Float {
-    get {return _storage._tschchartseriesdefaulttrendlineequationoffsetx ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlineequationoffsetx ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlineequationoffsetx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlineequationoffsetx` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlineequationoffsetx: Bool {return _storage._tschchartseriesdefaulttrendlineequationoffsetx != nil}
+  public var hasTschchartseriesdefaulttrendlineequationoffsetx: Bool {_storage._tschchartseriesdefaulttrendlineequationoffsetx != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlineequationoffsetx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlineequationoffsetx() {_uniqueStorage()._tschchartseriesdefaulttrendlineequationoffsetx = nil}
 
   public var tschchartseriesdefaulttrendlineequationoffsety: Float {
-    get {return _storage._tschchartseriesdefaulttrendlineequationoffsety ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlineequationoffsety ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlineequationoffsety = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlineequationoffsety` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlineequationoffsety: Bool {return _storage._tschchartseriesdefaulttrendlineequationoffsety != nil}
+  public var hasTschchartseriesdefaulttrendlineequationoffsety: Bool {_storage._tschchartseriesdefaulttrendlineequationoffsety != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlineequationoffsety`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlineequationoffsety() {_uniqueStorage()._tschchartseriesdefaulttrendlineequationoffsety = nil}
 
   public var tschchartseriesdefaulttrendlinelabelstring: String {
-    get {return _storage._tschchartseriesdefaulttrendlinelabelstring ?? String()}
+    get {_storage._tschchartseriesdefaulttrendlinelabelstring ?? String()}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlinelabelstring = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlinelabelstring` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlinelabelstring: Bool {return _storage._tschchartseriesdefaulttrendlinelabelstring != nil}
+  public var hasTschchartseriesdefaulttrendlinelabelstring: Bool {_storage._tschchartseriesdefaulttrendlinelabelstring != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlinelabelstring`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlinelabelstring() {_uniqueStorage()._tschchartseriesdefaulttrendlinelabelstring = nil}
 
   public var tschchartseriesdefaulttrendlineorder: Int32 {
-    get {return _storage._tschchartseriesdefaulttrendlineorder ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlineorder ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlineorder = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlineorder` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlineorder: Bool {return _storage._tschchartseriesdefaulttrendlineorder != nil}
+  public var hasTschchartseriesdefaulttrendlineorder: Bool {_storage._tschchartseriesdefaulttrendlineorder != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlineorder`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlineorder() {_uniqueStorage()._tschchartseriesdefaulttrendlineorder = nil}
 
   public var tschchartseriesdefaulttrendlineperiod: Int32 {
-    get {return _storage._tschchartseriesdefaulttrendlineperiod ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlineperiod ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlineperiod = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlineperiod` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlineperiod: Bool {return _storage._tschchartseriesdefaulttrendlineperiod != nil}
+  public var hasTschchartseriesdefaulttrendlineperiod: Bool {_storage._tschchartseriesdefaulttrendlineperiod != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlineperiod`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlineperiod() {_uniqueStorage()._tschchartseriesdefaulttrendlineperiod = nil}
 
   public var tschchartseriesdefaulttrendlinersquaredoffsetx: Float {
-    get {return _storage._tschchartseriesdefaulttrendlinersquaredoffsetx ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlinersquaredoffsetx ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlinersquaredoffsetx = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlinersquaredoffsetx` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlinersquaredoffsetx: Bool {return _storage._tschchartseriesdefaulttrendlinersquaredoffsetx != nil}
+  public var hasTschchartseriesdefaulttrendlinersquaredoffsetx: Bool {_storage._tschchartseriesdefaulttrendlinersquaredoffsetx != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlinersquaredoffsetx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlinersquaredoffsetx() {_uniqueStorage()._tschchartseriesdefaulttrendlinersquaredoffsetx = nil}
 
   public var tschchartseriesdefaulttrendlinersquaredoffsety: Float {
-    get {return _storage._tschchartseriesdefaulttrendlinersquaredoffsety ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlinersquaredoffsety ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlinersquaredoffsety = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlinersquaredoffsety` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlinersquaredoffsety: Bool {return _storage._tschchartseriesdefaulttrendlinersquaredoffsety != nil}
+  public var hasTschchartseriesdefaulttrendlinersquaredoffsety: Bool {_storage._tschchartseriesdefaulttrendlinersquaredoffsety != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlinersquaredoffsety`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlinersquaredoffsety() {_uniqueStorage()._tschchartseriesdefaulttrendlinersquaredoffsety = nil}
 
   public var tschchartseriesdefaulttrendlineshowequation: Bool {
-    get {return _storage._tschchartseriesdefaulttrendlineshowequation ?? false}
+    get {_storage._tschchartseriesdefaulttrendlineshowequation ?? false}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlineshowequation = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlineshowequation` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlineshowequation: Bool {return _storage._tschchartseriesdefaulttrendlineshowequation != nil}
+  public var hasTschchartseriesdefaulttrendlineshowequation: Bool {_storage._tschchartseriesdefaulttrendlineshowequation != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlineshowequation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlineshowequation() {_uniqueStorage()._tschchartseriesdefaulttrendlineshowequation = nil}
 
   public var tschchartseriesdefaulttrendlineshowlabel: Bool {
-    get {return _storage._tschchartseriesdefaulttrendlineshowlabel ?? false}
+    get {_storage._tschchartseriesdefaulttrendlineshowlabel ?? false}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlineshowlabel = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlineshowlabel` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlineshowlabel: Bool {return _storage._tschchartseriesdefaulttrendlineshowlabel != nil}
+  public var hasTschchartseriesdefaulttrendlineshowlabel: Bool {_storage._tschchartseriesdefaulttrendlineshowlabel != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlineshowlabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlineshowlabel() {_uniqueStorage()._tschchartseriesdefaulttrendlineshowlabel = nil}
 
   public var tschchartseriesdefaulttrendlineshowr2Value: Bool {
-    get {return _storage._tschchartseriesdefaulttrendlineshowr2Value ?? false}
+    get {_storage._tschchartseriesdefaulttrendlineshowr2Value ?? false}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlineshowr2Value = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlineshowr2Value` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlineshowr2Value: Bool {return _storage._tschchartseriesdefaulttrendlineshowr2Value != nil}
+  public var hasTschchartseriesdefaulttrendlineshowr2Value: Bool {_storage._tschchartseriesdefaulttrendlineshowr2Value != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlineshowr2Value`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlineshowr2Value() {_uniqueStorage()._tschchartseriesdefaulttrendlineshowr2Value = nil}
 
   public var tschchartseriesdefaulttrendlinetype: Int32 {
-    get {return _storage._tschchartseriesdefaulttrendlinetype ?? 0}
+    get {_storage._tschchartseriesdefaulttrendlinetype ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaulttrendlinetype = newValue}
   }
   /// Returns true if `tschchartseriesdefaulttrendlinetype` has been explicitly set.
-  public var hasTschchartseriesdefaulttrendlinetype: Bool {return _storage._tschchartseriesdefaulttrendlinetype != nil}
+  public var hasTschchartseriesdefaulttrendlinetype: Bool {_storage._tschchartseriesdefaulttrendlinetype != nil}
   /// Clears the value of `tschchartseriesdefaulttrendlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaulttrendlinetype() {_uniqueStorage()._tschchartseriesdefaulttrendlinetype = nil}
 
   public var tschchartseriesbubblevaluelabelsaxis: Int32 {
-    get {return _storage._tschchartseriesbubblevaluelabelsaxis ?? 0}
+    get {_storage._tschchartseriesbubblevaluelabelsaxis ?? 0}
     set {_uniqueStorage()._tschchartseriesbubblevaluelabelsaxis = newValue}
   }
   /// Returns true if `tschchartseriesbubblevaluelabelsaxis` has been explicitly set.
-  public var hasTschchartseriesbubblevaluelabelsaxis: Bool {return _storage._tschchartseriesbubblevaluelabelsaxis != nil}
+  public var hasTschchartseriesbubblevaluelabelsaxis: Bool {_storage._tschchartseriesbubblevaluelabelsaxis != nil}
   /// Clears the value of `tschchartseriesbubblevaluelabelsaxis`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesbubblevaluelabelsaxis() {_uniqueStorage()._tschchartseriesbubblevaluelabelsaxis = nil}
 
   public var tschchartseriesscattervaluelabelsaxis: Int32 {
-    get {return _storage._tschchartseriesscattervaluelabelsaxis ?? 0}
+    get {_storage._tschchartseriesscattervaluelabelsaxis ?? 0}
     set {_uniqueStorage()._tschchartseriesscattervaluelabelsaxis = newValue}
   }
   /// Returns true if `tschchartseriesscattervaluelabelsaxis` has been explicitly set.
-  public var hasTschchartseriesscattervaluelabelsaxis: Bool {return _storage._tschchartseriesscattervaluelabelsaxis != nil}
+  public var hasTschchartseriesscattervaluelabelsaxis: Bool {_storage._tschchartseriesscattervaluelabelsaxis != nil}
   /// Clears the value of `tschchartseriesscattervaluelabelsaxis`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesscattervaluelabelsaxis() {_uniqueStorage()._tschchartseriesscattervaluelabelsaxis = nil}
 
   public var tschchartseriespiewedgeexplosion: Float {
-    get {return _storage._tschchartseriespiewedgeexplosion ?? 0}
+    get {_storage._tschchartseriespiewedgeexplosion ?? 0}
     set {_uniqueStorage()._tschchartseriespiewedgeexplosion = newValue}
   }
   /// Returns true if `tschchartseriespiewedgeexplosion` has been explicitly set.
-  public var hasTschchartseriespiewedgeexplosion: Bool {return _storage._tschchartseriespiewedgeexplosion != nil}
+  public var hasTschchartseriespiewedgeexplosion: Bool {_storage._tschchartseriespiewedgeexplosion != nil}
   /// Clears the value of `tschchartseriespiewedgeexplosion`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespiewedgeexplosion() {_uniqueStorage()._tschchartseriespiewedgeexplosion = nil}
 
   public var tschchartseriesdefaultyaxisordinal: Int32 {
-    get {return _storage._tschchartseriesdefaultyaxisordinal ?? 0}
+    get {_storage._tschchartseriesdefaultyaxisordinal ?? 0}
     set {_uniqueStorage()._tschchartseriesdefaultyaxisordinal = newValue}
   }
   /// Returns true if `tschchartseriesdefaultyaxisordinal` has been explicitly set.
-  public var hasTschchartseriesdefaultyaxisordinal: Bool {return _storage._tschchartseriesdefaultyaxisordinal != nil}
+  public var hasTschchartseriesdefaultyaxisordinal: Bool {_storage._tschchartseriesdefaultyaxisordinal != nil}
   /// Clears the value of `tschchartseriesdefaultyaxisordinal`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdefaultyaxisordinal() {_uniqueStorage()._tschchartseriesdefaultyaxisordinal = nil}
 
@@ -3322,44 +3322,44 @@ public struct TSCH_Generated_ChartSeriesNonStyleArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Generated_ReferenceLineStyleArchive: Sendable {
+public nonisolated struct TSCH_Generated_ReferenceLineStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschreferencelinedefaultlabelparagraphstyleindex: Int32 {
-    get {return _tschreferencelinedefaultlabelparagraphstyleindex ?? 0}
+    get {_tschreferencelinedefaultlabelparagraphstyleindex ?? 0}
     set {_tschreferencelinedefaultlabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschreferencelinedefaultlabelparagraphstyleindex` has been explicitly set.
-  public var hasTschreferencelinedefaultlabelparagraphstyleindex: Bool {return self._tschreferencelinedefaultlabelparagraphstyleindex != nil}
+  public var hasTschreferencelinedefaultlabelparagraphstyleindex: Bool {self._tschreferencelinedefaultlabelparagraphstyleindex != nil}
   /// Clears the value of `tschreferencelinedefaultlabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinedefaultlabelparagraphstyleindex() {self._tschreferencelinedefaultlabelparagraphstyleindex = nil}
 
   public var tschreferencelinedefaultshadow: TSD_ShadowArchive {
-    get {return _tschreferencelinedefaultshadow ?? TSD_ShadowArchive()}
+    get {_tschreferencelinedefaultshadow ?? TSD_ShadowArchive()}
     set {_tschreferencelinedefaultshadow = newValue}
   }
   /// Returns true if `tschreferencelinedefaultshadow` has been explicitly set.
-  public var hasTschreferencelinedefaultshadow: Bool {return self._tschreferencelinedefaultshadow != nil}
+  public var hasTschreferencelinedefaultshadow: Bool {self._tschreferencelinedefaultshadow != nil}
   /// Clears the value of `tschreferencelinedefaultshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinedefaultshadow() {self._tschreferencelinedefaultshadow = nil}
 
   public var tschreferencelinedefaultstroke: TSD_StrokeArchive {
-    get {return _tschreferencelinedefaultstroke ?? TSD_StrokeArchive()}
+    get {_tschreferencelinedefaultstroke ?? TSD_StrokeArchive()}
     set {_tschreferencelinedefaultstroke = newValue}
   }
   /// Returns true if `tschreferencelinedefaultstroke` has been explicitly set.
-  public var hasTschreferencelinedefaultstroke: Bool {return self._tschreferencelinedefaultstroke != nil}
+  public var hasTschreferencelinedefaultstroke: Bool {self._tschreferencelinedefaultstroke != nil}
   /// Clears the value of `tschreferencelinedefaultstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinedefaultstroke() {self._tschreferencelinedefaultstroke = nil}
 
   public var tschreferencelinedefaultvaluelabelparagraphstyleindex: Int32 {
-    get {return _tschreferencelinedefaultvaluelabelparagraphstyleindex ?? 0}
+    get {_tschreferencelinedefaultvaluelabelparagraphstyleindex ?? 0}
     set {_tschreferencelinedefaultvaluelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschreferencelinedefaultvaluelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschreferencelinedefaultvaluelabelparagraphstyleindex: Bool {return self._tschreferencelinedefaultvaluelabelparagraphstyleindex != nil}
+  public var hasTschreferencelinedefaultvaluelabelparagraphstyleindex: Bool {self._tschreferencelinedefaultvaluelabelparagraphstyleindex != nil}
   /// Clears the value of `tschreferencelinedefaultvaluelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinedefaultvaluelabelparagraphstyleindex() {self._tschreferencelinedefaultvaluelabelparagraphstyleindex = nil}
 
@@ -3373,62 +3373,62 @@ public struct TSCH_Generated_ReferenceLineStyleArchive: Sendable {
   fileprivate var _tschreferencelinedefaultvaluelabelparagraphstyleindex: Int32? = nil
 }
 
-public struct TSCH_Generated_ReferenceLineNonStyleArchive: Sendable {
+public nonisolated struct TSCH_Generated_ReferenceLineNonStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschreferencelinedefaultcustomvalue: TSCH_ChartsNSNumberDoubleArchive {
-    get {return _tschreferencelinedefaultcustomvalue ?? TSCH_ChartsNSNumberDoubleArchive()}
+    get {_tschreferencelinedefaultcustomvalue ?? TSCH_ChartsNSNumberDoubleArchive()}
     set {_tschreferencelinedefaultcustomvalue = newValue}
   }
   /// Returns true if `tschreferencelinedefaultcustomvalue` has been explicitly set.
-  public var hasTschreferencelinedefaultcustomvalue: Bool {return self._tschreferencelinedefaultcustomvalue != nil}
+  public var hasTschreferencelinedefaultcustomvalue: Bool {self._tschreferencelinedefaultcustomvalue != nil}
   /// Clears the value of `tschreferencelinedefaultcustomvalue`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinedefaultcustomvalue() {self._tschreferencelinedefaultcustomvalue = nil}
 
   public var tschreferencelinedefaultlabel: String {
-    get {return _tschreferencelinedefaultlabel ?? String()}
+    get {_tschreferencelinedefaultlabel ?? String()}
     set {_tschreferencelinedefaultlabel = newValue}
   }
   /// Returns true if `tschreferencelinedefaultlabel` has been explicitly set.
-  public var hasTschreferencelinedefaultlabel: Bool {return self._tschreferencelinedefaultlabel != nil}
+  public var hasTschreferencelinedefaultlabel: Bool {self._tschreferencelinedefaultlabel != nil}
   /// Clears the value of `tschreferencelinedefaultlabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinedefaultlabel() {self._tschreferencelinedefaultlabel = nil}
 
   public var tschreferencelinedefaultshowlabel: Bool {
-    get {return _tschreferencelinedefaultshowlabel ?? false}
+    get {_tschreferencelinedefaultshowlabel ?? false}
     set {_tschreferencelinedefaultshowlabel = newValue}
   }
   /// Returns true if `tschreferencelinedefaultshowlabel` has been explicitly set.
-  public var hasTschreferencelinedefaultshowlabel: Bool {return self._tschreferencelinedefaultshowlabel != nil}
+  public var hasTschreferencelinedefaultshowlabel: Bool {self._tschreferencelinedefaultshowlabel != nil}
   /// Clears the value of `tschreferencelinedefaultshowlabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinedefaultshowlabel() {self._tschreferencelinedefaultshowlabel = nil}
 
   public var tschreferencelinedefaultshowline: Bool {
-    get {return _tschreferencelinedefaultshowline ?? false}
+    get {_tschreferencelinedefaultshowline ?? false}
     set {_tschreferencelinedefaultshowline = newValue}
   }
   /// Returns true if `tschreferencelinedefaultshowline` has been explicitly set.
-  public var hasTschreferencelinedefaultshowline: Bool {return self._tschreferencelinedefaultshowline != nil}
+  public var hasTschreferencelinedefaultshowline: Bool {self._tschreferencelinedefaultshowline != nil}
   /// Clears the value of `tschreferencelinedefaultshowline`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinedefaultshowline() {self._tschreferencelinedefaultshowline = nil}
 
   public var tschreferencelinedefaultshowvaluelabel: Bool {
-    get {return _tschreferencelinedefaultshowvaluelabel ?? false}
+    get {_tschreferencelinedefaultshowvaluelabel ?? false}
     set {_tschreferencelinedefaultshowvaluelabel = newValue}
   }
   /// Returns true if `tschreferencelinedefaultshowvaluelabel` has been explicitly set.
-  public var hasTschreferencelinedefaultshowvaluelabel: Bool {return self._tschreferencelinedefaultshowvaluelabel != nil}
+  public var hasTschreferencelinedefaultshowvaluelabel: Bool {self._tschreferencelinedefaultshowvaluelabel != nil}
   /// Clears the value of `tschreferencelinedefaultshowvaluelabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinedefaultshowvaluelabel() {self._tschreferencelinedefaultshowvaluelabel = nil}
 
   public var tschreferencelinedefaulttype: Int32 {
-    get {return _tschreferencelinedefaulttype ?? 0}
+    get {_tschreferencelinedefaulttype ?? 0}
     set {_tschreferencelinedefaulttype = newValue}
   }
   /// Returns true if `tschreferencelinedefaulttype` has been explicitly set.
-  public var hasTschreferencelinedefaulttype: Bool {return self._tschreferencelinedefaulttype != nil}
+  public var hasTschreferencelinedefaulttype: Bool {self._tschreferencelinedefaulttype != nil}
   /// Clears the value of `tschreferencelinedefaulttype`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinedefaulttype() {self._tschreferencelinedefaulttype = nil}
 
@@ -3444,431 +3444,431 @@ public struct TSCH_Generated_ReferenceLineNonStyleArchive: Sendable {
   fileprivate var _tschreferencelinedefaulttype: Int32? = nil
 }
 
-public struct TSCH_Generated_ChartGenericPropertyMapArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Generated_ChartGenericPropertyMapArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschchartinfo3Dbarshape: Int32 {
-    get {return _storage._tschchartinfo3Dbarshape ?? 0}
+    get {_storage._tschchartinfo3Dbarshape ?? 0}
     set {_uniqueStorage()._tschchartinfo3Dbarshape = newValue}
   }
   /// Returns true if `tschchartinfo3Dbarshape` has been explicitly set.
-  public var hasTschchartinfo3Dbarshape: Bool {return _storage._tschchartinfo3Dbarshape != nil}
+  public var hasTschchartinfo3Dbarshape: Bool {_storage._tschchartinfo3Dbarshape != nil}
   /// Clears the value of `tschchartinfo3Dbarshape`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfo3Dbarshape() {_uniqueStorage()._tschchartinfo3Dbarshape = nil}
 
   public var tschchartinfo3Dbeveledges: Bool {
-    get {return _storage._tschchartinfo3Dbeveledges ?? false}
+    get {_storage._tschchartinfo3Dbeveledges ?? false}
     set {_uniqueStorage()._tschchartinfo3Dbeveledges = newValue}
   }
   /// Returns true if `tschchartinfo3Dbeveledges` has been explicitly set.
-  public var hasTschchartinfo3Dbeveledges: Bool {return _storage._tschchartinfo3Dbeveledges != nil}
+  public var hasTschchartinfo3Dbeveledges: Bool {_storage._tschchartinfo3Dbeveledges != nil}
   /// Clears the value of `tschchartinfo3Dbeveledges`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfo3Dbeveledges() {_uniqueStorage()._tschchartinfo3Dbeveledges = nil}
 
   public var tschchartinfo3Dchartopacity: Float {
-    get {return _storage._tschchartinfo3Dchartopacity ?? 0}
+    get {_storage._tschchartinfo3Dchartopacity ?? 0}
     set {_uniqueStorage()._tschchartinfo3Dchartopacity = newValue}
   }
   /// Returns true if `tschchartinfo3Dchartopacity` has been explicitly set.
-  public var hasTschchartinfo3Dchartopacity: Bool {return _storage._tschchartinfo3Dchartopacity != nil}
+  public var hasTschchartinfo3Dchartopacity: Bool {_storage._tschchartinfo3Dchartopacity != nil}
   /// Clears the value of `tschchartinfo3Dchartopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfo3Dchartopacity() {_uniqueStorage()._tschchartinfo3Dchartopacity = nil}
 
   public var tschchartinfo3Dintersetdepthgap: Float {
-    get {return _storage._tschchartinfo3Dintersetdepthgap ?? 0}
+    get {_storage._tschchartinfo3Dintersetdepthgap ?? 0}
     set {_uniqueStorage()._tschchartinfo3Dintersetdepthgap = newValue}
   }
   /// Returns true if `tschchartinfo3Dintersetdepthgap` has been explicitly set.
-  public var hasTschchartinfo3Dintersetdepthgap: Bool {return _storage._tschchartinfo3Dintersetdepthgap != nil}
+  public var hasTschchartinfo3Dintersetdepthgap: Bool {_storage._tschchartinfo3Dintersetdepthgap != nil}
   /// Clears the value of `tschchartinfo3Dintersetdepthgap`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfo3Dintersetdepthgap() {_uniqueStorage()._tschchartinfo3Dintersetdepthgap = nil}
 
   public var tschchartinfo3Dlightingpackage: TSCH_Chart3DLightingPackageArchive {
-    get {return _storage._tschchartinfo3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
+    get {_storage._tschchartinfo3Dlightingpackage ?? TSCH_Chart3DLightingPackageArchive()}
     set {_uniqueStorage()._tschchartinfo3Dlightingpackage = newValue}
   }
   /// Returns true if `tschchartinfo3Dlightingpackage` has been explicitly set.
-  public var hasTschchartinfo3Dlightingpackage: Bool {return _storage._tschchartinfo3Dlightingpackage != nil}
+  public var hasTschchartinfo3Dlightingpackage: Bool {_storage._tschchartinfo3Dlightingpackage != nil}
   /// Clears the value of `tschchartinfo3Dlightingpackage`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfo3Dlightingpackage() {_uniqueStorage()._tschchartinfo3Dlightingpackage = nil}
 
   public var tschchartinfo3Drotation: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfo3Drotation ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfo3Drotation ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfo3Drotation = newValue}
   }
   /// Returns true if `tschchartinfo3Drotation` has been explicitly set.
-  public var hasTschchartinfo3Drotation: Bool {return _storage._tschchartinfo3Drotation != nil}
+  public var hasTschchartinfo3Drotation: Bool {_storage._tschchartinfo3Drotation != nil}
   /// Clears the value of `tschchartinfo3Drotation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfo3Drotation() {_uniqueStorage()._tschchartinfo3Drotation = nil}
 
   public var tschchartinfo3Dscale: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfo3Dscale ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfo3Dscale ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfo3Dscale = newValue}
   }
   /// Returns true if `tschchartinfo3Dscale` has been explicitly set.
-  public var hasTschchartinfo3Dscale: Bool {return _storage._tschchartinfo3Dscale != nil}
+  public var hasTschchartinfo3Dscale: Bool {_storage._tschchartinfo3Dscale != nil}
   /// Clears the value of `tschchartinfo3Dscale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfo3Dscale() {_uniqueStorage()._tschchartinfo3Dscale = nil}
 
   public var tschchartinfo3Dviewport: TSCH_Chart3DVectorArchive {
-    get {return _storage._tschchartinfo3Dviewport ?? TSCH_Chart3DVectorArchive()}
+    get {_storage._tschchartinfo3Dviewport ?? TSCH_Chart3DVectorArchive()}
     set {_uniqueStorage()._tschchartinfo3Dviewport = newValue}
   }
   /// Returns true if `tschchartinfo3Dviewport` has been explicitly set.
-  public var hasTschchartinfo3Dviewport: Bool {return _storage._tschchartinfo3Dviewport != nil}
+  public var hasTschchartinfo3Dviewport: Bool {_storage._tschchartinfo3Dviewport != nil}
   /// Clears the value of `tschchartinfo3Dviewport`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfo3Dviewport() {_uniqueStorage()._tschchartinfo3Dviewport = nil}
 
   public var tschchartinfoaxisanchorlabelatends: Bool {
-    get {return _storage._tschchartinfoaxisanchorlabelatends ?? false}
+    get {_storage._tschchartinfoaxisanchorlabelatends ?? false}
     set {_uniqueStorage()._tschchartinfoaxisanchorlabelatends = newValue}
   }
   /// Returns true if `tschchartinfoaxisanchorlabelatends` has been explicitly set.
-  public var hasTschchartinfoaxisanchorlabelatends: Bool {return _storage._tschchartinfoaxisanchorlabelatends != nil}
+  public var hasTschchartinfoaxisanchorlabelatends: Bool {_storage._tschchartinfoaxisanchorlabelatends != nil}
   /// Clears the value of `tschchartinfoaxisanchorlabelatends`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoaxisanchorlabelatends() {_uniqueStorage()._tschchartinfoaxisanchorlabelatends = nil}
 
   public var tschchartinfobackgroundfill: TSD_FillArchive {
-    get {return _storage._tschchartinfobackgroundfill ?? TSD_FillArchive()}
+    get {_storage._tschchartinfobackgroundfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartinfobackgroundfill = newValue}
   }
   /// Returns true if `tschchartinfobackgroundfill` has been explicitly set.
-  public var hasTschchartinfobackgroundfill: Bool {return _storage._tschchartinfobackgroundfill != nil}
+  public var hasTschchartinfobackgroundfill: Bool {_storage._tschchartinfobackgroundfill != nil}
   /// Clears the value of `tschchartinfobackgroundfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfobackgroundfill() {_uniqueStorage()._tschchartinfobackgroundfill = nil}
 
   public var tschchartinfobackgroundstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartinfobackgroundstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartinfobackgroundstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartinfobackgroundstroke = newValue}
   }
   /// Returns true if `tschchartinfobackgroundstroke` has been explicitly set.
-  public var hasTschchartinfobackgroundstroke: Bool {return _storage._tschchartinfobackgroundstroke != nil}
+  public var hasTschchartinfobackgroundstroke: Bool {_storage._tschchartinfobackgroundstroke != nil}
   /// Clears the value of `tschchartinfobackgroundstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfobackgroundstroke() {_uniqueStorage()._tschchartinfobackgroundstroke = nil}
 
   public var tschchartinfoborderopacity: Float {
-    get {return _storage._tschchartinfoborderopacity ?? 0}
+    get {_storage._tschchartinfoborderopacity ?? 0}
     set {_uniqueStorage()._tschchartinfoborderopacity = newValue}
   }
   /// Returns true if `tschchartinfoborderopacity` has been explicitly set.
-  public var hasTschchartinfoborderopacity: Bool {return _storage._tschchartinfoborderopacity != nil}
+  public var hasTschchartinfoborderopacity: Bool {_storage._tschchartinfoborderopacity != nil}
   /// Clears the value of `tschchartinfoborderopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoborderopacity() {_uniqueStorage()._tschchartinfoborderopacity = nil}
 
   public var tschchartinfobordershadow: TSD_ShadowArchive {
-    get {return _storage._tschchartinfobordershadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartinfobordershadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartinfobordershadow = newValue}
   }
   /// Returns true if `tschchartinfobordershadow` has been explicitly set.
-  public var hasTschchartinfobordershadow: Bool {return _storage._tschchartinfobordershadow != nil}
+  public var hasTschchartinfobordershadow: Bool {_storage._tschchartinfobordershadow != nil}
   /// Clears the value of `tschchartinfobordershadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfobordershadow() {_uniqueStorage()._tschchartinfobordershadow = nil}
 
   public var tschchartinfoborderstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartinfoborderstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartinfoborderstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartinfoborderstroke = newValue}
   }
   /// Returns true if `tschchartinfoborderstroke` has been explicitly set.
-  public var hasTschchartinfoborderstroke: Bool {return _storage._tschchartinfoborderstroke != nil}
+  public var hasTschchartinfoborderstroke: Bool {_storage._tschchartinfoborderstroke != nil}
   /// Clears the value of `tschchartinfoborderstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoborderstroke() {_uniqueStorage()._tschchartinfoborderstroke = nil}
 
   public var tschchartinfocalloutlinetype: Int32 {
-    get {return _storage._tschchartinfocalloutlinetype ?? 0}
+    get {_storage._tschchartinfocalloutlinetype ?? 0}
     set {_uniqueStorage()._tschchartinfocalloutlinetype = newValue}
   }
   /// Returns true if `tschchartinfocalloutlinetype` has been explicitly set.
-  public var hasTschchartinfocalloutlinetype: Bool {return _storage._tschchartinfocalloutlinetype != nil}
+  public var hasTschchartinfocalloutlinetype: Bool {_storage._tschchartinfocalloutlinetype != nil}
   /// Clears the value of `tschchartinfocalloutlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfocalloutlinetype() {_uniqueStorage()._tschchartinfocalloutlinetype = nil}
 
   public var tschchartinfocombinelayers: Bool {
-    get {return _storage._tschchartinfocombinelayers ?? false}
+    get {_storage._tschchartinfocombinelayers ?? false}
     set {_uniqueStorage()._tschchartinfocombinelayers = newValue}
   }
   /// Returns true if `tschchartinfocombinelayers` has been explicitly set.
-  public var hasTschchartinfocombinelayers: Bool {return _storage._tschchartinfocombinelayers != nil}
+  public var hasTschchartinfocombinelayers: Bool {_storage._tschchartinfocombinelayers != nil}
   /// Clears the value of `tschchartinfocombinelayers`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfocombinelayers() {_uniqueStorage()._tschchartinfocombinelayers = nil}
 
   public var tschchartinfodeprecatedroundedcornerouterendonly: Bool {
-    get {return _storage._tschchartinfodeprecatedroundedcornerouterendonly ?? false}
+    get {_storage._tschchartinfodeprecatedroundedcornerouterendonly ?? false}
     set {_uniqueStorage()._tschchartinfodeprecatedroundedcornerouterendonly = newValue}
   }
   /// Returns true if `tschchartinfodeprecatedroundedcornerouterendonly` has been explicitly set.
-  public var hasTschchartinfodeprecatedroundedcornerouterendonly: Bool {return _storage._tschchartinfodeprecatedroundedcornerouterendonly != nil}
+  public var hasTschchartinfodeprecatedroundedcornerouterendonly: Bool {_storage._tschchartinfodeprecatedroundedcornerouterendonly != nil}
   /// Clears the value of `tschchartinfodeprecatedroundedcornerouterendonly`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodeprecatedroundedcornerouterendonly() {_uniqueStorage()._tschchartinfodeprecatedroundedcornerouterendonly = nil}
 
   public var tschchartinfodeprecatedroundedcornerradius: Float {
-    get {return _storage._tschchartinfodeprecatedroundedcornerradius ?? 0}
+    get {_storage._tschchartinfodeprecatedroundedcornerradius ?? 0}
     set {_uniqueStorage()._tschchartinfodeprecatedroundedcornerradius = newValue}
   }
   /// Returns true if `tschchartinfodeprecatedroundedcornerradius` has been explicitly set.
-  public var hasTschchartinfodeprecatedroundedcornerradius: Bool {return _storage._tschchartinfodeprecatedroundedcornerradius != nil}
+  public var hasTschchartinfodeprecatedroundedcornerradius: Bool {_storage._tschchartinfodeprecatedroundedcornerradius != nil}
   /// Clears the value of `tschchartinfodeprecatedroundedcornerradius`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodeprecatedroundedcornerradius() {_uniqueStorage()._tschchartinfodeprecatedroundedcornerradius = nil}
 
   public var tschchartinfodatasetnamelocation: Int32 {
-    get {return _storage._tschchartinfodatasetnamelocation ?? 0}
+    get {_storage._tschchartinfodatasetnamelocation ?? 0}
     set {_uniqueStorage()._tschchartinfodatasetnamelocation = newValue}
   }
   /// Returns true if `tschchartinfodatasetnamelocation` has been explicitly set.
-  public var hasTschchartinfodatasetnamelocation: Bool {return _storage._tschchartinfodatasetnamelocation != nil}
+  public var hasTschchartinfodatasetnamelocation: Bool {_storage._tschchartinfodatasetnamelocation != nil}
   /// Clears the value of `tschchartinfodatasetnamelocation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodatasetnamelocation() {_uniqueStorage()._tschchartinfodatasetnamelocation = nil}
 
   public var tschchartinfodatasetnameparagraphstyleindex: Int32 {
-    get {return _storage._tschchartinfodatasetnameparagraphstyleindex ?? 0}
+    get {_storage._tschchartinfodatasetnameparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartinfodatasetnameparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartinfodatasetnameparagraphstyleindex` has been explicitly set.
-  public var hasTschchartinfodatasetnameparagraphstyleindex: Bool {return _storage._tschchartinfodatasetnameparagraphstyleindex != nil}
+  public var hasTschchartinfodatasetnameparagraphstyleindex: Bool {_storage._tschchartinfodatasetnameparagraphstyleindex != nil}
   /// Clears the value of `tschchartinfodatasetnameparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodatasetnameparagraphstyleindex() {_uniqueStorage()._tschchartinfodatasetnameparagraphstyleindex = nil}
 
   public var tschchartinfodonutplacetitleatcenter: Bool {
-    get {return _storage._tschchartinfodonutplacetitleatcenter ?? false}
+    get {_storage._tschchartinfodonutplacetitleatcenter ?? false}
     set {_uniqueStorage()._tschchartinfodonutplacetitleatcenter = newValue}
   }
   /// Returns true if `tschchartinfodonutplacetitleatcenter` has been explicitly set.
-  public var hasTschchartinfodonutplacetitleatcenter: Bool {return _storage._tschchartinfodonutplacetitleatcenter != nil}
+  public var hasTschchartinfodonutplacetitleatcenter: Bool {_storage._tschchartinfodonutplacetitleatcenter != nil}
   /// Clears the value of `tschchartinfodonutplacetitleatcenter`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfodonutplacetitleatcenter() {_uniqueStorage()._tschchartinfodonutplacetitleatcenter = nil}
 
   public var tschchartinfogridbackgroundfill: TSD_FillArchive {
-    get {return _storage._tschchartinfogridbackgroundfill ?? TSD_FillArchive()}
+    get {_storage._tschchartinfogridbackgroundfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartinfogridbackgroundfill = newValue}
   }
   /// Returns true if `tschchartinfogridbackgroundfill` has been explicitly set.
-  public var hasTschchartinfogridbackgroundfill: Bool {return _storage._tschchartinfogridbackgroundfill != nil}
+  public var hasTschchartinfogridbackgroundfill: Bool {_storage._tschchartinfogridbackgroundfill != nil}
   /// Clears the value of `tschchartinfogridbackgroundfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfogridbackgroundfill() {_uniqueStorage()._tschchartinfogridbackgroundfill = nil}
 
   public var tschchartinfogridbackgroundopacity: Float {
-    get {return _storage._tschchartinfogridbackgroundopacity ?? 0}
+    get {_storage._tschchartinfogridbackgroundopacity ?? 0}
     set {_uniqueStorage()._tschchartinfogridbackgroundopacity = newValue}
   }
   /// Returns true if `tschchartinfogridbackgroundopacity` has been explicitly set.
-  public var hasTschchartinfogridbackgroundopacity: Bool {return _storage._tschchartinfogridbackgroundopacity != nil}
+  public var hasTschchartinfogridbackgroundopacity: Bool {_storage._tschchartinfogridbackgroundopacity != nil}
   /// Clears the value of `tschchartinfogridbackgroundopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfogridbackgroundopacity() {_uniqueStorage()._tschchartinfogridbackgroundopacity = nil}
 
   public var tschchartinfoinnerradius: Float {
-    get {return _storage._tschchartinfoinnerradius ?? 0}
+    get {_storage._tschchartinfoinnerradius ?? 0}
     set {_uniqueStorage()._tschchartinfoinnerradius = newValue}
   }
   /// Returns true if `tschchartinfoinnerradius` has been explicitly set.
-  public var hasTschchartinfoinnerradius: Bool {return _storage._tschchartinfoinnerradius != nil}
+  public var hasTschchartinfoinnerradius: Bool {_storage._tschchartinfoinnerradius != nil}
   /// Clears the value of `tschchartinfoinnerradius`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoinnerradius() {_uniqueStorage()._tschchartinfoinnerradius = nil}
 
   public var tschchartinfointerbargap: Float {
-    get {return _storage._tschchartinfointerbargap ?? 0}
+    get {_storage._tschchartinfointerbargap ?? 0}
     set {_uniqueStorage()._tschchartinfointerbargap = newValue}
   }
   /// Returns true if `tschchartinfointerbargap` has been explicitly set.
-  public var hasTschchartinfointerbargap: Bool {return _storage._tschchartinfointerbargap != nil}
+  public var hasTschchartinfointerbargap: Bool {_storage._tschchartinfointerbargap != nil}
   /// Clears the value of `tschchartinfointerbargap`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfointerbargap() {_uniqueStorage()._tschchartinfointerbargap = nil}
 
   public var tschchartinfointersetgap: Float {
-    get {return _storage._tschchartinfointersetgap ?? 0}
+    get {_storage._tschchartinfointersetgap ?? 0}
     set {_uniqueStorage()._tschchartinfointersetgap = newValue}
   }
   /// Returns true if `tschchartinfointersetgap` has been explicitly set.
-  public var hasTschchartinfointersetgap: Bool {return _storage._tschchartinfointersetgap != nil}
+  public var hasTschchartinfointersetgap: Bool {_storage._tschchartinfointersetgap != nil}
   /// Clears the value of `tschchartinfointersetgap`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfointersetgap() {_uniqueStorage()._tschchartinfointersetgap = nil}
 
   public var tschchartinfomultidatacontroltype: Int32 {
-    get {return _storage._tschchartinfomultidatacontroltype ?? 0}
+    get {_storage._tschchartinfomultidatacontroltype ?? 0}
     set {_uniqueStorage()._tschchartinfomultidatacontroltype = newValue}
   }
   /// Returns true if `tschchartinfomultidatacontroltype` has been explicitly set.
-  public var hasTschchartinfomultidatacontroltype: Bool {return _storage._tschchartinfomultidatacontroltype != nil}
+  public var hasTschchartinfomultidatacontroltype: Bool {_storage._tschchartinfomultidatacontroltype != nil}
   /// Clears the value of `tschchartinfomultidatacontroltype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfomultidatacontroltype() {_uniqueStorage()._tschchartinfomultidatacontroltype = nil}
 
   public var tschchartinfopiestartangle: Float {
-    get {return _storage._tschchartinfopiestartangle ?? 0}
+    get {_storage._tschchartinfopiestartangle ?? 0}
     set {_uniqueStorage()._tschchartinfopiestartangle = newValue}
   }
   /// Returns true if `tschchartinfopiestartangle` has been explicitly set.
-  public var hasTschchartinfopiestartangle: Bool {return _storage._tschchartinfopiestartangle != nil}
+  public var hasTschchartinfopiestartangle: Bool {_storage._tschchartinfopiestartangle != nil}
   /// Clears the value of `tschchartinfopiestartangle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfopiestartangle() {_uniqueStorage()._tschchartinfopiestartangle = nil}
 
   public var tschchartinforadarradiusgridlinecurve: Bool {
-    get {return _storage._tschchartinforadarradiusgridlinecurve ?? false}
+    get {_storage._tschchartinforadarradiusgridlinecurve ?? false}
     set {_uniqueStorage()._tschchartinforadarradiusgridlinecurve = newValue}
   }
   /// Returns true if `tschchartinforadarradiusgridlinecurve` has been explicitly set.
-  public var hasTschchartinforadarradiusgridlinecurve: Bool {return _storage._tschchartinforadarradiusgridlinecurve != nil}
+  public var hasTschchartinforadarradiusgridlinecurve: Bool {_storage._tschchartinforadarradiusgridlinecurve != nil}
   /// Clears the value of `tschchartinforadarradiusgridlinecurve`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinforadarradiusgridlinecurve() {_uniqueStorage()._tschchartinforadarradiusgridlinecurve = nil}
 
   public var tschchartinforadarstartangle: Float {
-    get {return _storage._tschchartinforadarstartangle ?? 0}
+    get {_storage._tschchartinforadarstartangle ?? 0}
     set {_uniqueStorage()._tschchartinforadarstartangle = newValue}
   }
   /// Returns true if `tschchartinforadarstartangle` has been explicitly set.
-  public var hasTschchartinforadarstartangle: Bool {return _storage._tschchartinforadarstartangle != nil}
+  public var hasTschchartinforadarstartangle: Bool {_storage._tschchartinforadarstartangle != nil}
   /// Clears the value of `tschchartinforadarstartangle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinforadarstartangle() {_uniqueStorage()._tschchartinforadarstartangle = nil}
 
   public var tschchartinforoundedcornerouterendonly: Bool {
-    get {return _storage._tschchartinforoundedcornerouterendonly ?? false}
+    get {_storage._tschchartinforoundedcornerouterendonly ?? false}
     set {_uniqueStorage()._tschchartinforoundedcornerouterendonly = newValue}
   }
   /// Returns true if `tschchartinforoundedcornerouterendonly` has been explicitly set.
-  public var hasTschchartinforoundedcornerouterendonly: Bool {return _storage._tschchartinforoundedcornerouterendonly != nil}
+  public var hasTschchartinforoundedcornerouterendonly: Bool {_storage._tschchartinforoundedcornerouterendonly != nil}
   /// Clears the value of `tschchartinforoundedcornerouterendonly`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinforoundedcornerouterendonly() {_uniqueStorage()._tschchartinforoundedcornerouterendonly = nil}
 
   public var tschchartinforoundedcornerradius: Float {
-    get {return _storage._tschchartinforoundedcornerradius ?? 0}
+    get {_storage._tschchartinforoundedcornerradius ?? 0}
     set {_uniqueStorage()._tschchartinforoundedcornerradius = newValue}
   }
   /// Returns true if `tschchartinforoundedcornerradius` has been explicitly set.
-  public var hasTschchartinforoundedcornerradius: Bool {return _storage._tschchartinforoundedcornerradius != nil}
+  public var hasTschchartinforoundedcornerradius: Bool {_storage._tschchartinforoundedcornerradius != nil}
   /// Clears the value of `tschchartinforoundedcornerradius`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinforoundedcornerradius() {_uniqueStorage()._tschchartinforoundedcornerradius = nil}
 
   public var tschchartinfoshowborder: Bool {
-    get {return _storage._tschchartinfoshowborder ?? false}
+    get {_storage._tschchartinfoshowborder ?? false}
     set {_uniqueStorage()._tschchartinfoshowborder = newValue}
   }
   /// Returns true if `tschchartinfoshowborder` has been explicitly set.
-  public var hasTschchartinfoshowborder: Bool {return _storage._tschchartinfoshowborder != nil}
+  public var hasTschchartinfoshowborder: Bool {_storage._tschchartinfoshowborder != nil}
   /// Clears the value of `tschchartinfoshowborder`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoshowborder() {_uniqueStorage()._tschchartinfoshowborder = nil}
 
   public var tschchartinfoshowlegend: Bool {
-    get {return _storage._tschchartinfoshowlegend ?? false}
+    get {_storage._tschchartinfoshowlegend ?? false}
     set {_uniqueStorage()._tschchartinfoshowlegend = newValue}
   }
   /// Returns true if `tschchartinfoshowlegend` has been explicitly set.
-  public var hasTschchartinfoshowlegend: Bool {return _storage._tschchartinfoshowlegend != nil}
+  public var hasTschchartinfoshowlegend: Bool {_storage._tschchartinfoshowlegend != nil}
   /// Clears the value of `tschchartinfoshowlegend`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoshowlegend() {_uniqueStorage()._tschchartinfoshowlegend = nil}
 
   public var tschchartinfoshowtitle: Bool {
-    get {return _storage._tschchartinfoshowtitle ?? false}
+    get {_storage._tschchartinfoshowtitle ?? false}
     set {_uniqueStorage()._tschchartinfoshowtitle = newValue}
   }
   /// Returns true if `tschchartinfoshowtitle` has been explicitly set.
-  public var hasTschchartinfoshowtitle: Bool {return _storage._tschchartinfoshowtitle != nil}
+  public var hasTschchartinfoshowtitle: Bool {_storage._tschchartinfoshowtitle != nil}
   /// Clears the value of `tschchartinfoshowtitle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoshowtitle() {_uniqueStorage()._tschchartinfoshowtitle = nil}
 
   public var tschchartinfoskiphiddendata: Bool {
-    get {return _storage._tschchartinfoskiphiddendata ?? false}
+    get {_storage._tschchartinfoskiphiddendata ?? false}
     set {_uniqueStorage()._tschchartinfoskiphiddendata = newValue}
   }
   /// Returns true if `tschchartinfoskiphiddendata` has been explicitly set.
-  public var hasTschchartinfoskiphiddendata: Bool {return _storage._tschchartinfoskiphiddendata != nil}
+  public var hasTschchartinfoskiphiddendata: Bool {_storage._tschchartinfoskiphiddendata != nil}
   /// Clears the value of `tschchartinfoskiphiddendata`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfoskiphiddendata() {_uniqueStorage()._tschchartinfoskiphiddendata = nil}
 
   public var tschchartinfosummarylabeldateformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartinfosummarylabeldateformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartinfosummarylabeldateformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartinfosummarylabeldateformat = newValue}
   }
   /// Returns true if `tschchartinfosummarylabeldateformat` has been explicitly set.
-  public var hasTschchartinfosummarylabeldateformat: Bool {return _storage._tschchartinfosummarylabeldateformat != nil}
+  public var hasTschchartinfosummarylabeldateformat: Bool {_storage._tschchartinfosummarylabeldateformat != nil}
   /// Clears the value of `tschchartinfosummarylabeldateformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfosummarylabeldateformat() {_uniqueStorage()._tschchartinfosummarylabeldateformat = nil}
 
   public var tschchartinfosummarylabeldurationformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartinfosummarylabeldurationformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartinfosummarylabeldurationformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartinfosummarylabeldurationformat = newValue}
   }
   /// Returns true if `tschchartinfosummarylabeldurationformat` has been explicitly set.
-  public var hasTschchartinfosummarylabeldurationformat: Bool {return _storage._tschchartinfosummarylabeldurationformat != nil}
+  public var hasTschchartinfosummarylabeldurationformat: Bool {_storage._tschchartinfosummarylabeldurationformat != nil}
   /// Clears the value of `tschchartinfosummarylabeldurationformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfosummarylabeldurationformat() {_uniqueStorage()._tschchartinfosummarylabeldurationformat = nil}
 
   public var tschchartinfosummarylabelnumberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartinfosummarylabelnumberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartinfosummarylabelnumberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartinfosummarylabelnumberformat = newValue}
   }
   /// Returns true if `tschchartinfosummarylabelnumberformat` has been explicitly set.
-  public var hasTschchartinfosummarylabelnumberformat: Bool {return _storage._tschchartinfosummarylabelnumberformat != nil}
+  public var hasTschchartinfosummarylabelnumberformat: Bool {_storage._tschchartinfosummarylabelnumberformat != nil}
   /// Clears the value of `tschchartinfosummarylabelnumberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfosummarylabelnumberformat() {_uniqueStorage()._tschchartinfosummarylabelnumberformat = nil}
 
   public var tschchartinfosummarylabelnumberformattype: Int32 {
-    get {return _storage._tschchartinfosummarylabelnumberformattype ?? 0}
+    get {_storage._tschchartinfosummarylabelnumberformattype ?? 0}
     set {_uniqueStorage()._tschchartinfosummarylabelnumberformattype = newValue}
   }
   /// Returns true if `tschchartinfosummarylabelnumberformattype` has been explicitly set.
-  public var hasTschchartinfosummarylabelnumberformattype: Bool {return _storage._tschchartinfosummarylabelnumberformattype != nil}
+  public var hasTschchartinfosummarylabelnumberformattype: Bool {_storage._tschchartinfosummarylabelnumberformattype != nil}
   /// Clears the value of `tschchartinfosummarylabelnumberformattype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfosummarylabelnumberformattype() {_uniqueStorage()._tschchartinfosummarylabelnumberformattype = nil}
 
   public var tschchartinfosummarylabeloffset: Float {
-    get {return _storage._tschchartinfosummarylabeloffset ?? 0}
+    get {_storage._tschchartinfosummarylabeloffset ?? 0}
     set {_uniqueStorage()._tschchartinfosummarylabeloffset = newValue}
   }
   /// Returns true if `tschchartinfosummarylabeloffset` has been explicitly set.
-  public var hasTschchartinfosummarylabeloffset: Bool {return _storage._tschchartinfosummarylabeloffset != nil}
+  public var hasTschchartinfosummarylabeloffset: Bool {_storage._tschchartinfosummarylabeloffset != nil}
   /// Clears the value of `tschchartinfosummarylabeloffset`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfosummarylabeloffset() {_uniqueStorage()._tschchartinfosummarylabeloffset = nil}
 
   public var tschchartinfosummarylabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartinfosummarylabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartinfosummarylabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartinfosummarylabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartinfosummarylabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartinfosummarylabelparagraphstyleindex: Bool {return _storage._tschchartinfosummarylabelparagraphstyleindex != nil}
+  public var hasTschchartinfosummarylabelparagraphstyleindex: Bool {_storage._tschchartinfosummarylabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartinfosummarylabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfosummarylabelparagraphstyleindex() {_uniqueStorage()._tschchartinfosummarylabelparagraphstyleindex = nil}
 
   public var tschchartinfosummarylabelshowlabels: Bool {
-    get {return _storage._tschchartinfosummarylabelshowlabels ?? false}
+    get {_storage._tschchartinfosummarylabelshowlabels ?? false}
     set {_uniqueStorage()._tschchartinfosummarylabelshowlabels = newValue}
   }
   /// Returns true if `tschchartinfosummarylabelshowlabels` has been explicitly set.
-  public var hasTschchartinfosummarylabelshowlabels: Bool {return _storage._tschchartinfosummarylabelshowlabels != nil}
+  public var hasTschchartinfosummarylabelshowlabels: Bool {_storage._tschchartinfosummarylabelshowlabels != nil}
   /// Clears the value of `tschchartinfosummarylabelshowlabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfosummarylabelshowlabels() {_uniqueStorage()._tschchartinfosummarylabelshowlabels = nil}
 
   public var tschchartinfosummarylabelvaluelabelspacing: Int32 {
-    get {return _storage._tschchartinfosummarylabelvaluelabelspacing ?? 0}
+    get {_storage._tschchartinfosummarylabelvaluelabelspacing ?? 0}
     set {_uniqueStorage()._tschchartinfosummarylabelvaluelabelspacing = newValue}
   }
   /// Returns true if `tschchartinfosummarylabelvaluelabelspacing` has been explicitly set.
-  public var hasTschchartinfosummarylabelvaluelabelspacing: Bool {return _storage._tschchartinfosummarylabelvaluelabelspacing != nil}
+  public var hasTschchartinfosummarylabelvaluelabelspacing: Bool {_storage._tschchartinfosummarylabelvaluelabelspacing != nil}
   /// Clears the value of `tschchartinfosummarylabelvaluelabelspacing`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfosummarylabelvaluelabelspacing() {_uniqueStorage()._tschchartinfosummarylabelvaluelabelspacing = nil}
 
   public var tschchartinfotitlecolor: TSP_Color {
-    get {return _storage._tschchartinfotitlecolor ?? TSP_Color()}
+    get {_storage._tschchartinfotitlecolor ?? TSP_Color()}
     set {_uniqueStorage()._tschchartinfotitlecolor = newValue}
   }
   /// Returns true if `tschchartinfotitlecolor` has been explicitly set.
-  public var hasTschchartinfotitlecolor: Bool {return _storage._tschchartinfotitlecolor != nil}
+  public var hasTschchartinfotitlecolor: Bool {_storage._tschchartinfotitlecolor != nil}
   /// Clears the value of `tschchartinfotitlecolor`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfotitlecolor() {_uniqueStorage()._tschchartinfotitlecolor = nil}
 
   public var tschchartinfotitle: String {
-    get {return _storage._tschchartinfotitle ?? String()}
+    get {_storage._tschchartinfotitle ?? String()}
     set {_uniqueStorage()._tschchartinfotitle = newValue}
   }
   /// Returns true if `tschchartinfotitle` has been explicitly set.
-  public var hasTschchartinfotitle: Bool {return _storage._tschchartinfotitle != nil}
+  public var hasTschchartinfotitle: Bool {_storage._tschchartinfotitle != nil}
   /// Clears the value of `tschchartinfotitle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfotitle() {_uniqueStorage()._tschchartinfotitle = nil}
 
   public var tschchartinfotitleparagraphstyleindex: Int32 {
-    get {return _storage._tschchartinfotitleparagraphstyleindex ?? 0}
+    get {_storage._tschchartinfotitleparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartinfotitleparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartinfotitleparagraphstyleindex` has been explicitly set.
-  public var hasTschchartinfotitleparagraphstyleindex: Bool {return _storage._tschchartinfotitleparagraphstyleindex != nil}
+  public var hasTschchartinfotitleparagraphstyleindex: Bool {_storage._tschchartinfotitleparagraphstyleindex != nil}
   /// Clears the value of `tschchartinfotitleparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartinfotitleparagraphstyleindex() {_uniqueStorage()._tschchartinfotitleparagraphstyleindex = nil}
 
@@ -3879,53 +3879,53 @@ public struct TSCH_Generated_ChartGenericPropertyMapArchive: @unchecked Sendable
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Generated_LegendGenericPropertyMapArchive: Sendable {
+public nonisolated struct TSCH_Generated_LegendGenericPropertyMapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschlegendmodelfill: TSD_FillArchive {
-    get {return _tschlegendmodelfill ?? TSD_FillArchive()}
+    get {_tschlegendmodelfill ?? TSD_FillArchive()}
     set {_tschlegendmodelfill = newValue}
   }
   /// Returns true if `tschlegendmodelfill` has been explicitly set.
-  public var hasTschlegendmodelfill: Bool {return self._tschlegendmodelfill != nil}
+  public var hasTschlegendmodelfill: Bool {self._tschlegendmodelfill != nil}
   /// Clears the value of `tschlegendmodelfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschlegendmodelfill() {self._tschlegendmodelfill = nil}
 
   public var tschlegendmodellabelparagraphstyleindex: Int32 {
-    get {return _tschlegendmodellabelparagraphstyleindex ?? 0}
+    get {_tschlegendmodellabelparagraphstyleindex ?? 0}
     set {_tschlegendmodellabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschlegendmodellabelparagraphstyleindex` has been explicitly set.
-  public var hasTschlegendmodellabelparagraphstyleindex: Bool {return self._tschlegendmodellabelparagraphstyleindex != nil}
+  public var hasTschlegendmodellabelparagraphstyleindex: Bool {self._tschlegendmodellabelparagraphstyleindex != nil}
   /// Clears the value of `tschlegendmodellabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschlegendmodellabelparagraphstyleindex() {self._tschlegendmodellabelparagraphstyleindex = nil}
 
   public var tschlegendmodelopacity: Float {
-    get {return _tschlegendmodelopacity ?? 0}
+    get {_tschlegendmodelopacity ?? 0}
     set {_tschlegendmodelopacity = newValue}
   }
   /// Returns true if `tschlegendmodelopacity` has been explicitly set.
-  public var hasTschlegendmodelopacity: Bool {return self._tschlegendmodelopacity != nil}
+  public var hasTschlegendmodelopacity: Bool {self._tschlegendmodelopacity != nil}
   /// Clears the value of `tschlegendmodelopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschlegendmodelopacity() {self._tschlegendmodelopacity = nil}
 
   public var tschlegendmodelshadow: TSD_ShadowArchive {
-    get {return _tschlegendmodelshadow ?? TSD_ShadowArchive()}
+    get {_tschlegendmodelshadow ?? TSD_ShadowArchive()}
     set {_tschlegendmodelshadow = newValue}
   }
   /// Returns true if `tschlegendmodelshadow` has been explicitly set.
-  public var hasTschlegendmodelshadow: Bool {return self._tschlegendmodelshadow != nil}
+  public var hasTschlegendmodelshadow: Bool {self._tschlegendmodelshadow != nil}
   /// Clears the value of `tschlegendmodelshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschlegendmodelshadow() {self._tschlegendmodelshadow = nil}
 
   public var tschlegendmodelstroke: TSD_StrokeArchive {
-    get {return _tschlegendmodelstroke ?? TSD_StrokeArchive()}
+    get {_tschlegendmodelstroke ?? TSD_StrokeArchive()}
     set {_tschlegendmodelstroke = newValue}
   }
   /// Returns true if `tschlegendmodelstroke` has been explicitly set.
-  public var hasTschlegendmodelstroke: Bool {return self._tschlegendmodelstroke != nil}
+  public var hasTschlegendmodelstroke: Bool {self._tschlegendmodelstroke != nil}
   /// Clears the value of `tschlegendmodelstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschlegendmodelstroke() {self._tschlegendmodelstroke = nil}
 
@@ -3940,395 +3940,395 @@ public struct TSCH_Generated_LegendGenericPropertyMapArchive: Sendable {
   fileprivate var _tschlegendmodelstroke: TSD_StrokeArchive? = nil
 }
 
-public struct TSCH_Generated_ChartAxisGenericPropertyMapArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Generated_ChartAxisGenericPropertyMapArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschchartaxis10Dateformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartaxis10Dateformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartaxis10Dateformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartaxis10Dateformat = newValue}
   }
   /// Returns true if `tschchartaxis10Dateformat` has been explicitly set.
-  public var hasTschchartaxis10Dateformat: Bool {return _storage._tschchartaxis10Dateformat != nil}
+  public var hasTschchartaxis10Dateformat: Bool {_storage._tschchartaxis10Dateformat != nil}
   /// Clears the value of `tschchartaxis10Dateformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxis10Dateformat() {_uniqueStorage()._tschchartaxis10Dateformat = nil}
 
   public var tschchartaxis10Numberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartaxis10Numberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartaxis10Numberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartaxis10Numberformat = newValue}
   }
   /// Returns true if `tschchartaxis10Numberformat` has been explicitly set.
-  public var hasTschchartaxis10Numberformat: Bool {return _storage._tschchartaxis10Numberformat != nil}
+  public var hasTschchartaxis10Numberformat: Bool {_storage._tschchartaxis10Numberformat != nil}
   /// Clears the value of `tschchartaxis10Numberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxis10Numberformat() {_uniqueStorage()._tschchartaxis10Numberformat = nil}
 
   public var tschchartaxis3Dgridlineopacity: Float {
-    get {return _storage._tschchartaxis3Dgridlineopacity ?? 0}
+    get {_storage._tschchartaxis3Dgridlineopacity ?? 0}
     set {_uniqueStorage()._tschchartaxis3Dgridlineopacity = newValue}
   }
   /// Returns true if `tschchartaxis3Dgridlineopacity` has been explicitly set.
-  public var hasTschchartaxis3Dgridlineopacity: Bool {return _storage._tschchartaxis3Dgridlineopacity != nil}
+  public var hasTschchartaxis3Dgridlineopacity: Bool {_storage._tschchartaxis3Dgridlineopacity != nil}
   /// Clears the value of `tschchartaxis3Dgridlineopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxis3Dgridlineopacity() {_uniqueStorage()._tschchartaxis3Dgridlineopacity = nil}
 
   public var tschchartaxis3Dgridlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartaxis3Dgridlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartaxis3Dgridlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartaxis3Dgridlinestroke = newValue}
   }
   /// Returns true if `tschchartaxis3Dgridlinestroke` has been explicitly set.
-  public var hasTschchartaxis3Dgridlinestroke: Bool {return _storage._tschchartaxis3Dgridlinestroke != nil}
+  public var hasTschchartaxis3Dgridlinestroke: Bool {_storage._tschchartaxis3Dgridlinestroke != nil}
   /// Clears the value of `tschchartaxis3Dgridlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxis3Dgridlinestroke() {_uniqueStorage()._tschchartaxis3Dgridlinestroke = nil}
 
   public var tschchartaxis3Dlabelposition: Int32 {
-    get {return _storage._tschchartaxis3Dlabelposition ?? 0}
+    get {_storage._tschchartaxis3Dlabelposition ?? 0}
     set {_uniqueStorage()._tschchartaxis3Dlabelposition = newValue}
   }
   /// Returns true if `tschchartaxis3Dlabelposition` has been explicitly set.
-  public var hasTschchartaxis3Dlabelposition: Bool {return _storage._tschchartaxis3Dlabelposition != nil}
+  public var hasTschchartaxis3Dlabelposition: Bool {_storage._tschchartaxis3Dlabelposition != nil}
   /// Clears the value of `tschchartaxis3Dlabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxis3Dlabelposition() {_uniqueStorage()._tschchartaxis3Dlabelposition = nil}
 
   public var tschchartaxisdateformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartaxisdateformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartaxisdateformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartaxisdateformat = newValue}
   }
   /// Returns true if `tschchartaxisdateformat` has been explicitly set.
-  public var hasTschchartaxisdateformat: Bool {return _storage._tschchartaxisdateformat != nil}
+  public var hasTschchartaxisdateformat: Bool {_storage._tschchartaxisdateformat != nil}
   /// Clears the value of `tschchartaxisdateformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdateformat() {_uniqueStorage()._tschchartaxisdateformat = nil}
 
   public var tschchartaxisdurationformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartaxisdurationformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartaxisdurationformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartaxisdurationformat = newValue}
   }
   /// Returns true if `tschchartaxisdurationformat` has been explicitly set.
-  public var hasTschchartaxisdurationformat: Bool {return _storage._tschchartaxisdurationformat != nil}
+  public var hasTschchartaxisdurationformat: Bool {_storage._tschchartaxisdurationformat != nil}
   /// Clears the value of `tschchartaxisdurationformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisdurationformat() {_uniqueStorage()._tschchartaxisdurationformat = nil}
 
   public var tschchartaxishorizontalspacing: Int32 {
-    get {return _storage._tschchartaxishorizontalspacing ?? 0}
+    get {_storage._tschchartaxishorizontalspacing ?? 0}
     set {_uniqueStorage()._tschchartaxishorizontalspacing = newValue}
   }
   /// Returns true if `tschchartaxishorizontalspacing` has been explicitly set.
-  public var hasTschchartaxishorizontalspacing: Bool {return _storage._tschchartaxishorizontalspacing != nil}
+  public var hasTschchartaxishorizontalspacing: Bool {_storage._tschchartaxishorizontalspacing != nil}
   /// Clears the value of `tschchartaxishorizontalspacing`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxishorizontalspacing() {_uniqueStorage()._tschchartaxishorizontalspacing = nil}
 
   public var tschchartaxislabelanglebaselinedirection: Int32 {
-    get {return _storage._tschchartaxislabelanglebaselinedirection ?? 0}
+    get {_storage._tschchartaxislabelanglebaselinedirection ?? 0}
     set {_uniqueStorage()._tschchartaxislabelanglebaselinedirection = newValue}
   }
   /// Returns true if `tschchartaxislabelanglebaselinedirection` has been explicitly set.
-  public var hasTschchartaxislabelanglebaselinedirection: Bool {return _storage._tschchartaxislabelanglebaselinedirection != nil}
+  public var hasTschchartaxislabelanglebaselinedirection: Bool {_storage._tschchartaxislabelanglebaselinedirection != nil}
   /// Clears the value of `tschchartaxislabelanglebaselinedirection`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxislabelanglebaselinedirection() {_uniqueStorage()._tschchartaxislabelanglebaselinedirection = nil}
 
   public var tschchartaxislabelexplosion: Float {
-    get {return _storage._tschchartaxislabelexplosion ?? 0}
+    get {_storage._tschchartaxislabelexplosion ?? 0}
     set {_uniqueStorage()._tschchartaxislabelexplosion = newValue}
   }
   /// Returns true if `tschchartaxislabelexplosion` has been explicitly set.
-  public var hasTschchartaxislabelexplosion: Bool {return _storage._tschchartaxislabelexplosion != nil}
+  public var hasTschchartaxislabelexplosion: Bool {_storage._tschchartaxislabelexplosion != nil}
   /// Clears the value of `tschchartaxislabelexplosion`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxislabelexplosion() {_uniqueStorage()._tschchartaxislabelexplosion = nil}
 
   public var tschchartaxislabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartaxislabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartaxislabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartaxislabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartaxislabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartaxislabelparagraphstyleindex: Bool {return _storage._tschchartaxislabelparagraphstyleindex != nil}
+  public var hasTschchartaxislabelparagraphstyleindex: Bool {_storage._tschchartaxislabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartaxislabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxislabelparagraphstyleindex() {_uniqueStorage()._tschchartaxislabelparagraphstyleindex = nil}
 
   public var tschchartaxislabelsorientation: Float {
-    get {return _storage._tschchartaxislabelsorientation ?? 0}
+    get {_storage._tschchartaxislabelsorientation ?? 0}
     set {_uniqueStorage()._tschchartaxislabelsorientation = newValue}
   }
   /// Returns true if `tschchartaxislabelsorientation` has been explicitly set.
-  public var hasTschchartaxislabelsorientation: Bool {return _storage._tschchartaxislabelsorientation != nil}
+  public var hasTschchartaxislabelsorientation: Bool {_storage._tschchartaxislabelsorientation != nil}
   /// Clears the value of `tschchartaxislabelsorientation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxislabelsorientation() {_uniqueStorage()._tschchartaxislabelsorientation = nil}
 
   public var tschchartaxismajorgridlineopacity: Float {
-    get {return _storage._tschchartaxismajorgridlineopacity ?? 0}
+    get {_storage._tschchartaxismajorgridlineopacity ?? 0}
     set {_uniqueStorage()._tschchartaxismajorgridlineopacity = newValue}
   }
   /// Returns true if `tschchartaxismajorgridlineopacity` has been explicitly set.
-  public var hasTschchartaxismajorgridlineopacity: Bool {return _storage._tschchartaxismajorgridlineopacity != nil}
+  public var hasTschchartaxismajorgridlineopacity: Bool {_storage._tschchartaxismajorgridlineopacity != nil}
   /// Clears the value of `tschchartaxismajorgridlineopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxismajorgridlineopacity() {_uniqueStorage()._tschchartaxismajorgridlineopacity = nil}
 
   public var tschchartaxismajorgridlineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartaxismajorgridlineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartaxismajorgridlineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartaxismajorgridlineshadow = newValue}
   }
   /// Returns true if `tschchartaxismajorgridlineshadow` has been explicitly set.
-  public var hasTschchartaxismajorgridlineshadow: Bool {return _storage._tschchartaxismajorgridlineshadow != nil}
+  public var hasTschchartaxismajorgridlineshadow: Bool {_storage._tschchartaxismajorgridlineshadow != nil}
   /// Clears the value of `tschchartaxismajorgridlineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxismajorgridlineshadow() {_uniqueStorage()._tschchartaxismajorgridlineshadow = nil}
 
   public var tschchartaxismajorgridlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartaxismajorgridlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartaxismajorgridlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartaxismajorgridlinestroke = newValue}
   }
   /// Returns true if `tschchartaxismajorgridlinestroke` has been explicitly set.
-  public var hasTschchartaxismajorgridlinestroke: Bool {return _storage._tschchartaxismajorgridlinestroke != nil}
+  public var hasTschchartaxismajorgridlinestroke: Bool {_storage._tschchartaxismajorgridlinestroke != nil}
   /// Clears the value of `tschchartaxismajorgridlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxismajorgridlinestroke() {_uniqueStorage()._tschchartaxismajorgridlinestroke = nil}
 
   public var tschchartaxisminorgridlineopacity: Float {
-    get {return _storage._tschchartaxisminorgridlineopacity ?? 0}
+    get {_storage._tschchartaxisminorgridlineopacity ?? 0}
     set {_uniqueStorage()._tschchartaxisminorgridlineopacity = newValue}
   }
   /// Returns true if `tschchartaxisminorgridlineopacity` has been explicitly set.
-  public var hasTschchartaxisminorgridlineopacity: Bool {return _storage._tschchartaxisminorgridlineopacity != nil}
+  public var hasTschchartaxisminorgridlineopacity: Bool {_storage._tschchartaxisminorgridlineopacity != nil}
   /// Clears the value of `tschchartaxisminorgridlineopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisminorgridlineopacity() {_uniqueStorage()._tschchartaxisminorgridlineopacity = nil}
 
   public var tschchartaxisminorgridlineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartaxisminorgridlineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartaxisminorgridlineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartaxisminorgridlineshadow = newValue}
   }
   /// Returns true if `tschchartaxisminorgridlineshadow` has been explicitly set.
-  public var hasTschchartaxisminorgridlineshadow: Bool {return _storage._tschchartaxisminorgridlineshadow != nil}
+  public var hasTschchartaxisminorgridlineshadow: Bool {_storage._tschchartaxisminorgridlineshadow != nil}
   /// Clears the value of `tschchartaxisminorgridlineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisminorgridlineshadow() {_uniqueStorage()._tschchartaxisminorgridlineshadow = nil}
 
   public var tschchartaxisminorgridlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartaxisminorgridlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartaxisminorgridlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartaxisminorgridlinestroke = newValue}
   }
   /// Returns true if `tschchartaxisminorgridlinestroke` has been explicitly set.
-  public var hasTschchartaxisminorgridlinestroke: Bool {return _storage._tschchartaxisminorgridlinestroke != nil}
+  public var hasTschchartaxisminorgridlinestroke: Bool {_storage._tschchartaxisminorgridlinestroke != nil}
   /// Clears the value of `tschchartaxisminorgridlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisminorgridlinestroke() {_uniqueStorage()._tschchartaxisminorgridlinestroke = nil}
 
   public var tschchartaxisnumberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartaxisnumberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartaxisnumberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartaxisnumberformat = newValue}
   }
   /// Returns true if `tschchartaxisnumberformat` has been explicitly set.
-  public var hasTschchartaxisnumberformat: Bool {return _storage._tschchartaxisnumberformat != nil}
+  public var hasTschchartaxisnumberformat: Bool {_storage._tschchartaxisnumberformat != nil}
   /// Clears the value of `tschchartaxisnumberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisnumberformat() {_uniqueStorage()._tschchartaxisnumberformat = nil}
 
   public var tschchartaxisnumberformattype: Int32 {
-    get {return _storage._tschchartaxisnumberformattype ?? 0}
+    get {_storage._tschchartaxisnumberformattype ?? 0}
     set {_uniqueStorage()._tschchartaxisnumberformattype = newValue}
   }
   /// Returns true if `tschchartaxisnumberformattype` has been explicitly set.
-  public var hasTschchartaxisnumberformattype: Bool {return _storage._tschchartaxisnumberformattype != nil}
+  public var hasTschchartaxisnumberformattype: Bool {_storage._tschchartaxisnumberformattype != nil}
   /// Clears the value of `tschchartaxisnumberformattype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisnumberformattype() {_uniqueStorage()._tschchartaxisnumberformattype = nil}
 
   public var tschchartaxisnumberofdecades: Int32 {
-    get {return _storage._tschchartaxisnumberofdecades ?? 0}
+    get {_storage._tschchartaxisnumberofdecades ?? 0}
     set {_uniqueStorage()._tschchartaxisnumberofdecades = newValue}
   }
   /// Returns true if `tschchartaxisnumberofdecades` has been explicitly set.
-  public var hasTschchartaxisnumberofdecades: Bool {return _storage._tschchartaxisnumberofdecades != nil}
+  public var hasTschchartaxisnumberofdecades: Bool {_storage._tschchartaxisnumberofdecades != nil}
   /// Clears the value of `tschchartaxisnumberofdecades`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisnumberofdecades() {_uniqueStorage()._tschchartaxisnumberofdecades = nil}
 
   public var tschchartaxisnumberofmajorgridlines: Int32 {
-    get {return _storage._tschchartaxisnumberofmajorgridlines ?? 0}
+    get {_storage._tschchartaxisnumberofmajorgridlines ?? 0}
     set {_uniqueStorage()._tschchartaxisnumberofmajorgridlines = newValue}
   }
   /// Returns true if `tschchartaxisnumberofmajorgridlines` has been explicitly set.
-  public var hasTschchartaxisnumberofmajorgridlines: Bool {return _storage._tschchartaxisnumberofmajorgridlines != nil}
+  public var hasTschchartaxisnumberofmajorgridlines: Bool {_storage._tschchartaxisnumberofmajorgridlines != nil}
   /// Clears the value of `tschchartaxisnumberofmajorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisnumberofmajorgridlines() {_uniqueStorage()._tschchartaxisnumberofmajorgridlines = nil}
 
   public var tschchartaxisnumberofminorgridlines: Int32 {
-    get {return _storage._tschchartaxisnumberofminorgridlines ?? 0}
+    get {_storage._tschchartaxisnumberofminorgridlines ?? 0}
     set {_uniqueStorage()._tschchartaxisnumberofminorgridlines = newValue}
   }
   /// Returns true if `tschchartaxisnumberofminorgridlines` has been explicitly set.
-  public var hasTschchartaxisnumberofminorgridlines: Bool {return _storage._tschchartaxisnumberofminorgridlines != nil}
+  public var hasTschchartaxisnumberofminorgridlines: Bool {_storage._tschchartaxisnumberofminorgridlines != nil}
   /// Clears the value of `tschchartaxisnumberofminorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisnumberofminorgridlines() {_uniqueStorage()._tschchartaxisnumberofminorgridlines = nil}
 
   public var tschchartaxisplottoedges: Bool {
-    get {return _storage._tschchartaxisplottoedges ?? false}
+    get {_storage._tschchartaxisplottoedges ?? false}
     set {_uniqueStorage()._tschchartaxisplottoedges = newValue}
   }
   /// Returns true if `tschchartaxisplottoedges` has been explicitly set.
-  public var hasTschchartaxisplottoedges: Bool {return _storage._tschchartaxisplottoedges != nil}
+  public var hasTschchartaxisplottoedges: Bool {_storage._tschchartaxisplottoedges != nil}
   /// Clears the value of `tschchartaxisplottoedges`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisplottoedges() {_uniqueStorage()._tschchartaxisplottoedges = nil}
 
   public var tschchartaxisscale: Int32 {
-    get {return _storage._tschchartaxisscale ?? 0}
+    get {_storage._tschchartaxisscale ?? 0}
     set {_uniqueStorage()._tschchartaxisscale = newValue}
   }
   /// Returns true if `tschchartaxisscale` has been explicitly set.
-  public var hasTschchartaxisscale: Bool {return _storage._tschchartaxisscale != nil}
+  public var hasTschchartaxisscale: Bool {_storage._tschchartaxisscale != nil}
   /// Clears the value of `tschchartaxisscale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisscale() {_uniqueStorage()._tschchartaxisscale = nil}
 
   public var tschchartaxisshowaxis: Bool {
-    get {return _storage._tschchartaxisshowaxis ?? false}
+    get {_storage._tschchartaxisshowaxis ?? false}
     set {_uniqueStorage()._tschchartaxisshowaxis = newValue}
   }
   /// Returns true if `tschchartaxisshowaxis` has been explicitly set.
-  public var hasTschchartaxisshowaxis: Bool {return _storage._tschchartaxisshowaxis != nil}
+  public var hasTschchartaxisshowaxis: Bool {_storage._tschchartaxisshowaxis != nil}
   /// Clears the value of `tschchartaxisshowaxis`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowaxis() {_uniqueStorage()._tschchartaxisshowaxis = nil}
 
   public var tschchartaxisshowextensionlines: Bool {
-    get {return _storage._tschchartaxisshowextensionlines ?? false}
+    get {_storage._tschchartaxisshowextensionlines ?? false}
     set {_uniqueStorage()._tschchartaxisshowextensionlines = newValue}
   }
   /// Returns true if `tschchartaxisshowextensionlines` has been explicitly set.
-  public var hasTschchartaxisshowextensionlines: Bool {return _storage._tschchartaxisshowextensionlines != nil}
+  public var hasTschchartaxisshowextensionlines: Bool {_storage._tschchartaxisshowextensionlines != nil}
   /// Clears the value of `tschchartaxisshowextensionlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowextensionlines() {_uniqueStorage()._tschchartaxisshowextensionlines = nil}
 
   public var tschchartaxisshowgridlinetickmarks: Bool {
-    get {return _storage._tschchartaxisshowgridlinetickmarks ?? false}
+    get {_storage._tschchartaxisshowgridlinetickmarks ?? false}
     set {_uniqueStorage()._tschchartaxisshowgridlinetickmarks = newValue}
   }
   /// Returns true if `tschchartaxisshowgridlinetickmarks` has been explicitly set.
-  public var hasTschchartaxisshowgridlinetickmarks: Bool {return _storage._tschchartaxisshowgridlinetickmarks != nil}
+  public var hasTschchartaxisshowgridlinetickmarks: Bool {_storage._tschchartaxisshowgridlinetickmarks != nil}
   /// Clears the value of `tschchartaxisshowgridlinetickmarks`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowgridlinetickmarks() {_uniqueStorage()._tschchartaxisshowgridlinetickmarks = nil}
 
   public var tschchartaxisshowlabels: Bool {
-    get {return _storage._tschchartaxisshowlabels ?? false}
+    get {_storage._tschchartaxisshowlabels ?? false}
     set {_uniqueStorage()._tschchartaxisshowlabels = newValue}
   }
   /// Returns true if `tschchartaxisshowlabels` has been explicitly set.
-  public var hasTschchartaxisshowlabels: Bool {return _storage._tschchartaxisshowlabels != nil}
+  public var hasTschchartaxisshowlabels: Bool {_storage._tschchartaxisshowlabels != nil}
   /// Clears the value of `tschchartaxisshowlabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowlabels() {_uniqueStorage()._tschchartaxisshowlabels = nil}
 
   public var tschchartaxisshowlastlabel: Bool {
-    get {return _storage._tschchartaxisshowlastlabel ?? false}
+    get {_storage._tschchartaxisshowlastlabel ?? false}
     set {_uniqueStorage()._tschchartaxisshowlastlabel = newValue}
   }
   /// Returns true if `tschchartaxisshowlastlabel` has been explicitly set.
-  public var hasTschchartaxisshowlastlabel: Bool {return _storage._tschchartaxisshowlastlabel != nil}
+  public var hasTschchartaxisshowlastlabel: Bool {_storage._tschchartaxisshowlastlabel != nil}
   /// Clears the value of `tschchartaxisshowlastlabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowlastlabel() {_uniqueStorage()._tschchartaxisshowlastlabel = nil}
 
   public var tschchartaxisshowmajorgridlines: Bool {
-    get {return _storage._tschchartaxisshowmajorgridlines ?? false}
+    get {_storage._tschchartaxisshowmajorgridlines ?? false}
     set {_uniqueStorage()._tschchartaxisshowmajorgridlines = newValue}
   }
   /// Returns true if `tschchartaxisshowmajorgridlines` has been explicitly set.
-  public var hasTschchartaxisshowmajorgridlines: Bool {return _storage._tschchartaxisshowmajorgridlines != nil}
+  public var hasTschchartaxisshowmajorgridlines: Bool {_storage._tschchartaxisshowmajorgridlines != nil}
   /// Clears the value of `tschchartaxisshowmajorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowmajorgridlines() {_uniqueStorage()._tschchartaxisshowmajorgridlines = nil}
 
   public var tschchartaxisshowmajortickmarks: Bool {
-    get {return _storage._tschchartaxisshowmajortickmarks ?? false}
+    get {_storage._tschchartaxisshowmajortickmarks ?? false}
     set {_uniqueStorage()._tschchartaxisshowmajortickmarks = newValue}
   }
   /// Returns true if `tschchartaxisshowmajortickmarks` has been explicitly set.
-  public var hasTschchartaxisshowmajortickmarks: Bool {return _storage._tschchartaxisshowmajortickmarks != nil}
+  public var hasTschchartaxisshowmajortickmarks: Bool {_storage._tschchartaxisshowmajortickmarks != nil}
   /// Clears the value of `tschchartaxisshowmajortickmarks`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowmajortickmarks() {_uniqueStorage()._tschchartaxisshowmajortickmarks = nil}
 
   public var tschchartaxisshowminimumlabel: Bool {
-    get {return _storage._tschchartaxisshowminimumlabel ?? false}
+    get {_storage._tschchartaxisshowminimumlabel ?? false}
     set {_uniqueStorage()._tschchartaxisshowminimumlabel = newValue}
   }
   /// Returns true if `tschchartaxisshowminimumlabel` has been explicitly set.
-  public var hasTschchartaxisshowminimumlabel: Bool {return _storage._tschchartaxisshowminimumlabel != nil}
+  public var hasTschchartaxisshowminimumlabel: Bool {_storage._tschchartaxisshowminimumlabel != nil}
   /// Clears the value of `tschchartaxisshowminimumlabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowminimumlabel() {_uniqueStorage()._tschchartaxisshowminimumlabel = nil}
 
   public var tschchartaxisshowminorgridlines: Bool {
-    get {return _storage._tschchartaxisshowminorgridlines ?? false}
+    get {_storage._tschchartaxisshowminorgridlines ?? false}
     set {_uniqueStorage()._tschchartaxisshowminorgridlines = newValue}
   }
   /// Returns true if `tschchartaxisshowminorgridlines` has been explicitly set.
-  public var hasTschchartaxisshowminorgridlines: Bool {return _storage._tschchartaxisshowminorgridlines != nil}
+  public var hasTschchartaxisshowminorgridlines: Bool {_storage._tschchartaxisshowminorgridlines != nil}
   /// Clears the value of `tschchartaxisshowminorgridlines`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowminorgridlines() {_uniqueStorage()._tschchartaxisshowminorgridlines = nil}
 
   public var tschchartaxisshowminortickmarks: Bool {
-    get {return _storage._tschchartaxisshowminortickmarks ?? false}
+    get {_storage._tschchartaxisshowminortickmarks ?? false}
     set {_uniqueStorage()._tschchartaxisshowminortickmarks = newValue}
   }
   /// Returns true if `tschchartaxisshowminortickmarks` has been explicitly set.
-  public var hasTschchartaxisshowminortickmarks: Bool {return _storage._tschchartaxisshowminortickmarks != nil}
+  public var hasTschchartaxisshowminortickmarks: Bool {_storage._tschchartaxisshowminortickmarks != nil}
   /// Clears the value of `tschchartaxisshowminortickmarks`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowminortickmarks() {_uniqueStorage()._tschchartaxisshowminortickmarks = nil}
 
   public var tschchartaxisshowserieslabels: Bool {
-    get {return _storage._tschchartaxisshowserieslabels ?? false}
+    get {_storage._tschchartaxisshowserieslabels ?? false}
     set {_uniqueStorage()._tschchartaxisshowserieslabels = newValue}
   }
   /// Returns true if `tschchartaxisshowserieslabels` has been explicitly set.
-  public var hasTschchartaxisshowserieslabels: Bool {return _storage._tschchartaxisshowserieslabels != nil}
+  public var hasTschchartaxisshowserieslabels: Bool {_storage._tschchartaxisshowserieslabels != nil}
   /// Clears the value of `tschchartaxisshowserieslabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowserieslabels() {_uniqueStorage()._tschchartaxisshowserieslabels = nil}
 
   public var tschchartaxisshowtitle: Bool {
-    get {return _storage._tschchartaxisshowtitle ?? false}
+    get {_storage._tschchartaxisshowtitle ?? false}
     set {_uniqueStorage()._tschchartaxisshowtitle = newValue}
   }
   /// Returns true if `tschchartaxisshowtitle` has been explicitly set.
-  public var hasTschchartaxisshowtitle: Bool {return _storage._tschchartaxisshowtitle != nil}
+  public var hasTschchartaxisshowtitle: Bool {_storage._tschchartaxisshowtitle != nil}
   /// Clears the value of `tschchartaxisshowtitle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisshowtitle() {_uniqueStorage()._tschchartaxisshowtitle = nil}
 
   public var tschchartaxistickmarklocation: Int32 {
-    get {return _storage._tschchartaxistickmarklocation ?? 0}
+    get {_storage._tschchartaxistickmarklocation ?? 0}
     set {_uniqueStorage()._tschchartaxistickmarklocation = newValue}
   }
   /// Returns true if `tschchartaxistickmarklocation` has been explicitly set.
-  public var hasTschchartaxistickmarklocation: Bool {return _storage._tschchartaxistickmarklocation != nil}
+  public var hasTschchartaxistickmarklocation: Bool {_storage._tschchartaxistickmarklocation != nil}
   /// Clears the value of `tschchartaxistickmarklocation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxistickmarklocation() {_uniqueStorage()._tschchartaxistickmarklocation = nil}
 
   public var tschchartaxistitle: String {
-    get {return _storage._tschchartaxistitle ?? String()}
+    get {_storage._tschchartaxistitle ?? String()}
     set {_uniqueStorage()._tschchartaxistitle = newValue}
   }
   /// Returns true if `tschchartaxistitle` has been explicitly set.
-  public var hasTschchartaxistitle: Bool {return _storage._tschchartaxistitle != nil}
+  public var hasTschchartaxistitle: Bool {_storage._tschchartaxistitle != nil}
   /// Clears the value of `tschchartaxistitle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxistitle() {_uniqueStorage()._tschchartaxistitle = nil}
 
   public var tschchartaxistitleparagraphstyleindex: Int32 {
-    get {return _storage._tschchartaxistitleparagraphstyleindex ?? 0}
+    get {_storage._tschchartaxistitleparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartaxistitleparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartaxistitleparagraphstyleindex` has been explicitly set.
-  public var hasTschchartaxistitleparagraphstyleindex: Bool {return _storage._tschchartaxistitleparagraphstyleindex != nil}
+  public var hasTschchartaxistitleparagraphstyleindex: Bool {_storage._tschchartaxistitleparagraphstyleindex != nil}
   /// Clears the value of `tschchartaxistitleparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxistitleparagraphstyleindex() {_uniqueStorage()._tschchartaxistitleparagraphstyleindex = nil}
 
   public var tschchartaxisusermax: TSCH_ChartsNSNumberDoubleArchive {
-    get {return _storage._tschchartaxisusermax ?? TSCH_ChartsNSNumberDoubleArchive()}
+    get {_storage._tschchartaxisusermax ?? TSCH_ChartsNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartaxisusermax = newValue}
   }
   /// Returns true if `tschchartaxisusermax` has been explicitly set.
-  public var hasTschchartaxisusermax: Bool {return _storage._tschchartaxisusermax != nil}
+  public var hasTschchartaxisusermax: Bool {_storage._tschchartaxisusermax != nil}
   /// Clears the value of `tschchartaxisusermax`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisusermax() {_uniqueStorage()._tschchartaxisusermax = nil}
 
   public var tschchartaxisusermin: TSCH_ChartsNSNumberDoubleArchive {
-    get {return _storage._tschchartaxisusermin ?? TSCH_ChartsNSNumberDoubleArchive()}
+    get {_storage._tschchartaxisusermin ?? TSCH_ChartsNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartaxisusermin = newValue}
   }
   /// Returns true if `tschchartaxisusermin` has been explicitly set.
-  public var hasTschchartaxisusermin: Bool {return _storage._tschchartaxisusermin != nil}
+  public var hasTschchartaxisusermin: Bool {_storage._tschchartaxisusermin != nil}
   /// Clears the value of `tschchartaxisusermin`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisusermin() {_uniqueStorage()._tschchartaxisusermin = nil}
 
   public var tschchartaxisverticalspacing: Int32 {
-    get {return _storage._tschchartaxisverticalspacing ?? 0}
+    get {_storage._tschchartaxisverticalspacing ?? 0}
     set {_uniqueStorage()._tschchartaxisverticalspacing = newValue}
   }
   /// Returns true if `tschchartaxisverticalspacing` has been explicitly set.
-  public var hasTschchartaxisverticalspacing: Bool {return _storage._tschchartaxisverticalspacing != nil}
+  public var hasTschchartaxisverticalspacing: Bool {_storage._tschchartaxisverticalspacing != nil}
   /// Clears the value of `tschchartaxisverticalspacing`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartaxisverticalspacing() {_uniqueStorage()._tschchartaxisverticalspacing = nil}
 
@@ -4339,764 +4339,764 @@ public struct TSCH_Generated_ChartAxisGenericPropertyMapArchive: @unchecked Send
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Generated_ChartSeriesGenericPropertyMapArchive: @unchecked Sendable {
+public nonisolated struct TSCH_Generated_ChartSeriesGenericPropertyMapArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschchartseries10Dateformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseries10Dateformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseries10Dateformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseries10Dateformat = newValue}
   }
   /// Returns true if `tschchartseries10Dateformat` has been explicitly set.
-  public var hasTschchartseries10Dateformat: Bool {return _storage._tschchartseries10Dateformat != nil}
+  public var hasTschchartseries10Dateformat: Bool {_storage._tschchartseries10Dateformat != nil}
   /// Clears the value of `tschchartseries10Dateformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries10Dateformat() {_uniqueStorage()._tschchartseries10Dateformat = nil}
 
   public var tschchartseries10Numberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseries10Numberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseries10Numberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseries10Numberformat = newValue}
   }
   /// Returns true if `tschchartseries10Numberformat` has been explicitly set.
-  public var hasTschchartseries10Numberformat: Bool {return _storage._tschchartseries10Numberformat != nil}
+  public var hasTschchartseries10Numberformat: Bool {_storage._tschchartseries10Numberformat != nil}
   /// Clears the value of `tschchartseries10Numberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries10Numberformat() {_uniqueStorage()._tschchartseries10Numberformat = nil}
 
   public var tschchartseries23Labelexplosion: Float {
-    get {return _storage._tschchartseries23Labelexplosion ?? 0}
+    get {_storage._tschchartseries23Labelexplosion ?? 0}
     set {_uniqueStorage()._tschchartseries23Labelexplosion = newValue}
   }
   /// Returns true if `tschchartseries23Labelexplosion` has been explicitly set.
-  public var hasTschchartseries23Labelexplosion: Bool {return _storage._tschchartseries23Labelexplosion != nil}
+  public var hasTschchartseries23Labelexplosion: Bool {_storage._tschchartseries23Labelexplosion != nil}
   /// Clears the value of `tschchartseries23Labelexplosion`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseries23Labelexplosion() {_uniqueStorage()._tschchartseries23Labelexplosion = nil}
 
   public var tschchartseriesadjustmentscale: Float {
-    get {return _storage._tschchartseriesadjustmentscale ?? 0}
+    get {_storage._tschchartseriesadjustmentscale ?? 0}
     set {_uniqueStorage()._tschchartseriesadjustmentscale = newValue}
   }
   /// Returns true if `tschchartseriesadjustmentscale` has been explicitly set.
-  public var hasTschchartseriesadjustmentscale: Bool {return _storage._tschchartseriesadjustmentscale != nil}
+  public var hasTschchartseriesadjustmentscale: Bool {_storage._tschchartseriesadjustmentscale != nil}
   /// Clears the value of `tschchartseriesadjustmentscale`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesadjustmentscale() {_uniqueStorage()._tschchartseriesadjustmentscale = nil}
 
   public var tschchartseriescalloutlineendlineend: TSD_LineEndArchive {
-    get {return _storage._tschchartseriescalloutlineendlineend ?? TSD_LineEndArchive()}
+    get {_storage._tschchartseriescalloutlineendlineend ?? TSD_LineEndArchive()}
     set {_uniqueStorage()._tschchartseriescalloutlineendlineend = newValue}
   }
   /// Returns true if `tschchartseriescalloutlineendlineend` has been explicitly set.
-  public var hasTschchartseriescalloutlineendlineend: Bool {return _storage._tschchartseriescalloutlineendlineend != nil}
+  public var hasTschchartseriescalloutlineendlineend: Bool {_storage._tschchartseriescalloutlineendlineend != nil}
   /// Clears the value of `tschchartseriescalloutlineendlineend`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriescalloutlineendlineend() {_uniqueStorage()._tschchartseriescalloutlineendlineend = nil}
 
   public var tschchartseriescalloutlinestartlineend: TSD_LineEndArchive {
-    get {return _storage._tschchartseriescalloutlinestartlineend ?? TSD_LineEndArchive()}
+    get {_storage._tschchartseriescalloutlinestartlineend ?? TSD_LineEndArchive()}
     set {_uniqueStorage()._tschchartseriescalloutlinestartlineend = newValue}
   }
   /// Returns true if `tschchartseriescalloutlinestartlineend` has been explicitly set.
-  public var hasTschchartseriescalloutlinestartlineend: Bool {return _storage._tschchartseriescalloutlinestartlineend != nil}
+  public var hasTschchartseriescalloutlinestartlineend: Bool {_storage._tschchartseriescalloutlinestartlineend != nil}
   /// Clears the value of `tschchartseriescalloutlinestartlineend`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriescalloutlinestartlineend() {_uniqueStorage()._tschchartseriescalloutlinestartlineend = nil}
 
   public var tschchartseriescalloutlinestrokestyle: TSD_StrokeArchive {
-    get {return _storage._tschchartseriescalloutlinestrokestyle ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriescalloutlinestrokestyle ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriescalloutlinestrokestyle = newValue}
   }
   /// Returns true if `tschchartseriescalloutlinestrokestyle` has been explicitly set.
-  public var hasTschchartseriescalloutlinestrokestyle: Bool {return _storage._tschchartseriescalloutlinestrokestyle != nil}
+  public var hasTschchartseriescalloutlinestrokestyle: Bool {_storage._tschchartseriescalloutlinestrokestyle != nil}
   /// Clears the value of `tschchartseriescalloutlinestrokestyle`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriescalloutlinestrokestyle() {_uniqueStorage()._tschchartseriescalloutlinestrokestyle = nil}
 
   public var tschchartseriesdateformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriesdateformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriesdateformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriesdateformat = newValue}
   }
   /// Returns true if `tschchartseriesdateformat` has been explicitly set.
-  public var hasTschchartseriesdateformat: Bool {return _storage._tschchartseriesdateformat != nil}
+  public var hasTschchartseriesdateformat: Bool {_storage._tschchartseriesdateformat != nil}
   /// Clears the value of `tschchartseriesdateformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdateformat() {_uniqueStorage()._tschchartseriesdateformat = nil}
 
   public var tschchartseriesdurationformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriesdurationformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriesdurationformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriesdurationformat = newValue}
   }
   /// Returns true if `tschchartseriesdurationformat` has been explicitly set.
-  public var hasTschchartseriesdurationformat: Bool {return _storage._tschchartseriesdurationformat != nil}
+  public var hasTschchartseriesdurationformat: Bool {_storage._tschchartseriesdurationformat != nil}
   /// Clears the value of `tschchartseriesdurationformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesdurationformat() {_uniqueStorage()._tschchartseriesdurationformat = nil}
 
   public var tschchartseriesenablecalloutline: Int32 {
-    get {return _storage._tschchartseriesenablecalloutline ?? 0}
+    get {_storage._tschchartseriesenablecalloutline ?? 0}
     set {_uniqueStorage()._tschchartseriesenablecalloutline = newValue}
   }
   /// Returns true if `tschchartseriesenablecalloutline` has been explicitly set.
-  public var hasTschchartseriesenablecalloutline: Bool {return _storage._tschchartseriesenablecalloutline != nil}
+  public var hasTschchartseriesenablecalloutline: Bool {_storage._tschchartseriesenablecalloutline != nil}
   /// Clears the value of `tschchartseriesenablecalloutline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesenablecalloutline() {_uniqueStorage()._tschchartseriesenablecalloutline = nil}
 
   public var tschchartserieserrorbarcustomnegativedata: TSCH_ChartsNSArrayOfNSNumberDoubleArchive {
-    get {return _storage._tschchartserieserrorbarcustomnegativedata ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
+    get {_storage._tschchartserieserrorbarcustomnegativedata ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartserieserrorbarcustomnegativedata = newValue}
   }
   /// Returns true if `tschchartserieserrorbarcustomnegativedata` has been explicitly set.
-  public var hasTschchartserieserrorbarcustomnegativedata: Bool {return _storage._tschchartserieserrorbarcustomnegativedata != nil}
+  public var hasTschchartserieserrorbarcustomnegativedata: Bool {_storage._tschchartserieserrorbarcustomnegativedata != nil}
   /// Clears the value of `tschchartserieserrorbarcustomnegativedata`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarcustomnegativedata() {_uniqueStorage()._tschchartserieserrorbarcustomnegativedata = nil}
 
   public var tschchartserieserrorbarcustomnegativedatascatterx: TSCH_ChartsNSArrayOfNSNumberDoubleArchive {
-    get {return _storage._tschchartserieserrorbarcustomnegativedatascatterx ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
+    get {_storage._tschchartserieserrorbarcustomnegativedatascatterx ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartserieserrorbarcustomnegativedatascatterx = newValue}
   }
   /// Returns true if `tschchartserieserrorbarcustomnegativedatascatterx` has been explicitly set.
-  public var hasTschchartserieserrorbarcustomnegativedatascatterx: Bool {return _storage._tschchartserieserrorbarcustomnegativedatascatterx != nil}
+  public var hasTschchartserieserrorbarcustomnegativedatascatterx: Bool {_storage._tschchartserieserrorbarcustomnegativedatascatterx != nil}
   /// Clears the value of `tschchartserieserrorbarcustomnegativedatascatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarcustomnegativedatascatterx() {_uniqueStorage()._tschchartserieserrorbarcustomnegativedatascatterx = nil}
 
   public var tschchartserieserrorbarcustompositivedata: TSCH_ChartsNSArrayOfNSNumberDoubleArchive {
-    get {return _storage._tschchartserieserrorbarcustompositivedata ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
+    get {_storage._tschchartserieserrorbarcustompositivedata ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartserieserrorbarcustompositivedata = newValue}
   }
   /// Returns true if `tschchartserieserrorbarcustompositivedata` has been explicitly set.
-  public var hasTschchartserieserrorbarcustompositivedata: Bool {return _storage._tschchartserieserrorbarcustompositivedata != nil}
+  public var hasTschchartserieserrorbarcustompositivedata: Bool {_storage._tschchartserieserrorbarcustompositivedata != nil}
   /// Clears the value of `tschchartserieserrorbarcustompositivedata`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarcustompositivedata() {_uniqueStorage()._tschchartserieserrorbarcustompositivedata = nil}
 
   public var tschchartserieserrorbarcustompositivedatascatterx: TSCH_ChartsNSArrayOfNSNumberDoubleArchive {
-    get {return _storage._tschchartserieserrorbarcustompositivedatascatterx ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
+    get {_storage._tschchartserieserrorbarcustompositivedatascatterx ?? TSCH_ChartsNSArrayOfNSNumberDoubleArchive()}
     set {_uniqueStorage()._tschchartserieserrorbarcustompositivedatascatterx = newValue}
   }
   /// Returns true if `tschchartserieserrorbarcustompositivedatascatterx` has been explicitly set.
-  public var hasTschchartserieserrorbarcustompositivedatascatterx: Bool {return _storage._tschchartserieserrorbarcustompositivedatascatterx != nil}
+  public var hasTschchartserieserrorbarcustompositivedatascatterx: Bool {_storage._tschchartserieserrorbarcustompositivedatascatterx != nil}
   /// Clears the value of `tschchartserieserrorbarcustompositivedatascatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarcustompositivedatascatterx() {_uniqueStorage()._tschchartserieserrorbarcustompositivedatascatterx = nil}
 
   public var tschchartserieserrorbarfixedvalue: Float {
-    get {return _storage._tschchartserieserrorbarfixedvalue ?? 0}
+    get {_storage._tschchartserieserrorbarfixedvalue ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbarfixedvalue = newValue}
   }
   /// Returns true if `tschchartserieserrorbarfixedvalue` has been explicitly set.
-  public var hasTschchartserieserrorbarfixedvalue: Bool {return _storage._tschchartserieserrorbarfixedvalue != nil}
+  public var hasTschchartserieserrorbarfixedvalue: Bool {_storage._tschchartserieserrorbarfixedvalue != nil}
   /// Clears the value of `tschchartserieserrorbarfixedvalue`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarfixedvalue() {_uniqueStorage()._tschchartserieserrorbarfixedvalue = nil}
 
   public var tschchartserieserrorbarfixedvaluescatterx: Float {
-    get {return _storage._tschchartserieserrorbarfixedvaluescatterx ?? 0}
+    get {_storage._tschchartserieserrorbarfixedvaluescatterx ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbarfixedvaluescatterx = newValue}
   }
   /// Returns true if `tschchartserieserrorbarfixedvaluescatterx` has been explicitly set.
-  public var hasTschchartserieserrorbarfixedvaluescatterx: Bool {return _storage._tschchartserieserrorbarfixedvaluescatterx != nil}
+  public var hasTschchartserieserrorbarfixedvaluescatterx: Bool {_storage._tschchartserieserrorbarfixedvaluescatterx != nil}
   /// Clears the value of `tschchartserieserrorbarfixedvaluescatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarfixedvaluescatterx() {_uniqueStorage()._tschchartserieserrorbarfixedvaluescatterx = nil}
 
   public var tschchartserieserrorbarlineend: TSD_LineEndArchive {
-    get {return _storage._tschchartserieserrorbarlineend ?? TSD_LineEndArchive()}
+    get {_storage._tschchartserieserrorbarlineend ?? TSD_LineEndArchive()}
     set {_uniqueStorage()._tschchartserieserrorbarlineend = newValue}
   }
   /// Returns true if `tschchartserieserrorbarlineend` has been explicitly set.
-  public var hasTschchartserieserrorbarlineend: Bool {return _storage._tschchartserieserrorbarlineend != nil}
+  public var hasTschchartserieserrorbarlineend: Bool {_storage._tschchartserieserrorbarlineend != nil}
   /// Clears the value of `tschchartserieserrorbarlineend`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarlineend() {_uniqueStorage()._tschchartserieserrorbarlineend = nil}
 
   public var tschchartserieserrorbarlineendscatterx: TSD_LineEndArchive {
-    get {return _storage._tschchartserieserrorbarlineendscatterx ?? TSD_LineEndArchive()}
+    get {_storage._tschchartserieserrorbarlineendscatterx ?? TSD_LineEndArchive()}
     set {_uniqueStorage()._tschchartserieserrorbarlineendscatterx = newValue}
   }
   /// Returns true if `tschchartserieserrorbarlineendscatterx` has been explicitly set.
-  public var hasTschchartserieserrorbarlineendscatterx: Bool {return _storage._tschchartserieserrorbarlineendscatterx != nil}
+  public var hasTschchartserieserrorbarlineendscatterx: Bool {_storage._tschchartserieserrorbarlineendscatterx != nil}
   /// Clears the value of `tschchartserieserrorbarlineendscatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarlineendscatterx() {_uniqueStorage()._tschchartserieserrorbarlineendscatterx = nil}
 
   public var tschchartserieserrorbarpercentvalue: Float {
-    get {return _storage._tschchartserieserrorbarpercentvalue ?? 0}
+    get {_storage._tschchartserieserrorbarpercentvalue ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbarpercentvalue = newValue}
   }
   /// Returns true if `tschchartserieserrorbarpercentvalue` has been explicitly set.
-  public var hasTschchartserieserrorbarpercentvalue: Bool {return _storage._tschchartserieserrorbarpercentvalue != nil}
+  public var hasTschchartserieserrorbarpercentvalue: Bool {_storage._tschchartserieserrorbarpercentvalue != nil}
   /// Clears the value of `tschchartserieserrorbarpercentvalue`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarpercentvalue() {_uniqueStorage()._tschchartserieserrorbarpercentvalue = nil}
 
   public var tschchartserieserrorbarpercentvaluescatterx: Float {
-    get {return _storage._tschchartserieserrorbarpercentvaluescatterx ?? 0}
+    get {_storage._tschchartserieserrorbarpercentvaluescatterx ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbarpercentvaluescatterx = newValue}
   }
   /// Returns true if `tschchartserieserrorbarpercentvaluescatterx` has been explicitly set.
-  public var hasTschchartserieserrorbarpercentvaluescatterx: Bool {return _storage._tschchartserieserrorbarpercentvaluescatterx != nil}
+  public var hasTschchartserieserrorbarpercentvaluescatterx: Bool {_storage._tschchartserieserrorbarpercentvaluescatterx != nil}
   /// Clears the value of `tschchartserieserrorbarpercentvaluescatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarpercentvaluescatterx() {_uniqueStorage()._tschchartserieserrorbarpercentvaluescatterx = nil}
 
   public var tschchartserieserrorbarsetting: Int32 {
-    get {return _storage._tschchartserieserrorbarsetting ?? 0}
+    get {_storage._tschchartserieserrorbarsetting ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbarsetting = newValue}
   }
   /// Returns true if `tschchartserieserrorbarsetting` has been explicitly set.
-  public var hasTschchartserieserrorbarsetting: Bool {return _storage._tschchartserieserrorbarsetting != nil}
+  public var hasTschchartserieserrorbarsetting: Bool {_storage._tschchartserieserrorbarsetting != nil}
   /// Clears the value of `tschchartserieserrorbarsetting`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarsetting() {_uniqueStorage()._tschchartserieserrorbarsetting = nil}
 
   public var tschchartserieserrorbarsettingscatterx: Int32 {
-    get {return _storage._tschchartserieserrorbarsettingscatterx ?? 0}
+    get {_storage._tschchartserieserrorbarsettingscatterx ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbarsettingscatterx = newValue}
   }
   /// Returns true if `tschchartserieserrorbarsettingscatterx` has been explicitly set.
-  public var hasTschchartserieserrorbarsettingscatterx: Bool {return _storage._tschchartserieserrorbarsettingscatterx != nil}
+  public var hasTschchartserieserrorbarsettingscatterx: Bool {_storage._tschchartserieserrorbarsettingscatterx != nil}
   /// Clears the value of `tschchartserieserrorbarsettingscatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarsettingscatterx() {_uniqueStorage()._tschchartserieserrorbarsettingscatterx = nil}
 
   public var tschchartserieserrorbarshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartserieserrorbarshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartserieserrorbarshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartserieserrorbarshadow = newValue}
   }
   /// Returns true if `tschchartserieserrorbarshadow` has been explicitly set.
-  public var hasTschchartserieserrorbarshadow: Bool {return _storage._tschchartserieserrorbarshadow != nil}
+  public var hasTschchartserieserrorbarshadow: Bool {_storage._tschchartserieserrorbarshadow != nil}
   /// Clears the value of `tschchartserieserrorbarshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarshadow() {_uniqueStorage()._tschchartserieserrorbarshadow = nil}
 
   public var tschchartserieserrorbarspacing: Int32 {
-    get {return _storage._tschchartserieserrorbarspacing ?? 0}
+    get {_storage._tschchartserieserrorbarspacing ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbarspacing = newValue}
   }
   /// Returns true if `tschchartserieserrorbarspacing` has been explicitly set.
-  public var hasTschchartserieserrorbarspacing: Bool {return _storage._tschchartserieserrorbarspacing != nil}
+  public var hasTschchartserieserrorbarspacing: Bool {_storage._tschchartserieserrorbarspacing != nil}
   /// Clears the value of `tschchartserieserrorbarspacing`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarspacing() {_uniqueStorage()._tschchartserieserrorbarspacing = nil}
 
   public var tschchartserieserrorbarspacingscatterx: Int32 {
-    get {return _storage._tschchartserieserrorbarspacingscatterx ?? 0}
+    get {_storage._tschchartserieserrorbarspacingscatterx ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbarspacingscatterx = newValue}
   }
   /// Returns true if `tschchartserieserrorbarspacingscatterx` has been explicitly set.
-  public var hasTschchartserieserrorbarspacingscatterx: Bool {return _storage._tschchartserieserrorbarspacingscatterx != nil}
+  public var hasTschchartserieserrorbarspacingscatterx: Bool {_storage._tschchartserieserrorbarspacingscatterx != nil}
   /// Clears the value of `tschchartserieserrorbarspacingscatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarspacingscatterx() {_uniqueStorage()._tschchartserieserrorbarspacingscatterx = nil}
 
   public var tschchartserieserrorbarstddevvalue: Float {
-    get {return _storage._tschchartserieserrorbarstddevvalue ?? 0}
+    get {_storage._tschchartserieserrorbarstddevvalue ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbarstddevvalue = newValue}
   }
   /// Returns true if `tschchartserieserrorbarstddevvalue` has been explicitly set.
-  public var hasTschchartserieserrorbarstddevvalue: Bool {return _storage._tschchartserieserrorbarstddevvalue != nil}
+  public var hasTschchartserieserrorbarstddevvalue: Bool {_storage._tschchartserieserrorbarstddevvalue != nil}
   /// Clears the value of `tschchartserieserrorbarstddevvalue`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarstddevvalue() {_uniqueStorage()._tschchartserieserrorbarstddevvalue = nil}
 
   public var tschchartserieserrorbarstddevvaluescatterx: Float {
-    get {return _storage._tschchartserieserrorbarstddevvaluescatterx ?? 0}
+    get {_storage._tschchartserieserrorbarstddevvaluescatterx ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbarstddevvaluescatterx = newValue}
   }
   /// Returns true if `tschchartserieserrorbarstddevvaluescatterx` has been explicitly set.
-  public var hasTschchartserieserrorbarstddevvaluescatterx: Bool {return _storage._tschchartserieserrorbarstddevvaluescatterx != nil}
+  public var hasTschchartserieserrorbarstddevvaluescatterx: Bool {_storage._tschchartserieserrorbarstddevvaluescatterx != nil}
   /// Clears the value of `tschchartserieserrorbarstddevvaluescatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarstddevvaluescatterx() {_uniqueStorage()._tschchartserieserrorbarstddevvaluescatterx = nil}
 
   public var tschchartserieserrorbarstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartserieserrorbarstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartserieserrorbarstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartserieserrorbarstroke = newValue}
   }
   /// Returns true if `tschchartserieserrorbarstroke` has been explicitly set.
-  public var hasTschchartserieserrorbarstroke: Bool {return _storage._tschchartserieserrorbarstroke != nil}
+  public var hasTschchartserieserrorbarstroke: Bool {_storage._tschchartserieserrorbarstroke != nil}
   /// Clears the value of `tschchartserieserrorbarstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarstroke() {_uniqueStorage()._tschchartserieserrorbarstroke = nil}
 
   public var tschchartserieserrorbarstrokescatterx: TSD_StrokeArchive {
-    get {return _storage._tschchartserieserrorbarstrokescatterx ?? TSD_StrokeArchive()}
+    get {_storage._tschchartserieserrorbarstrokescatterx ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartserieserrorbarstrokescatterx = newValue}
   }
   /// Returns true if `tschchartserieserrorbarstrokescatterx` has been explicitly set.
-  public var hasTschchartserieserrorbarstrokescatterx: Bool {return _storage._tschchartserieserrorbarstrokescatterx != nil}
+  public var hasTschchartserieserrorbarstrokescatterx: Bool {_storage._tschchartserieserrorbarstrokescatterx != nil}
   /// Clears the value of `tschchartserieserrorbarstrokescatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbarstrokescatterx() {_uniqueStorage()._tschchartserieserrorbarstrokescatterx = nil}
 
   public var tschchartserieserrorbartype: Int32 {
-    get {return _storage._tschchartserieserrorbartype ?? 0}
+    get {_storage._tschchartserieserrorbartype ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbartype = newValue}
   }
   /// Returns true if `tschchartserieserrorbartype` has been explicitly set.
-  public var hasTschchartserieserrorbartype: Bool {return _storage._tschchartserieserrorbartype != nil}
+  public var hasTschchartserieserrorbartype: Bool {_storage._tschchartserieserrorbartype != nil}
   /// Clears the value of `tschchartserieserrorbartype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbartype() {_uniqueStorage()._tschchartserieserrorbartype = nil}
 
   public var tschchartserieserrorbartypescatterx: Int32 {
-    get {return _storage._tschchartserieserrorbartypescatterx ?? 0}
+    get {_storage._tschchartserieserrorbartypescatterx ?? 0}
     set {_uniqueStorage()._tschchartserieserrorbartypescatterx = newValue}
   }
   /// Returns true if `tschchartserieserrorbartypescatterx` has been explicitly set.
-  public var hasTschchartserieserrorbartypescatterx: Bool {return _storage._tschchartserieserrorbartypescatterx != nil}
+  public var hasTschchartserieserrorbartypescatterx: Bool {_storage._tschchartserieserrorbartypescatterx != nil}
   /// Clears the value of `tschchartserieserrorbartypescatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieserrorbartypescatterx() {_uniqueStorage()._tschchartserieserrorbartypescatterx = nil}
 
   public var tschchartseriesfill: TSD_FillArchive {
-    get {return _storage._tschchartseriesfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriesfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriesfill = newValue}
   }
   /// Returns true if `tschchartseriesfill` has been explicitly set.
-  public var hasTschchartseriesfill: Bool {return _storage._tschchartseriesfill != nil}
+  public var hasTschchartseriesfill: Bool {_storage._tschchartseriesfill != nil}
   /// Clears the value of `tschchartseriesfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesfill() {_uniqueStorage()._tschchartseriesfill = nil}
 
   public var tschchartseriesfilluseseriesstrokealphamultiplier: Float {
-    get {return _storage._tschchartseriesfilluseseriesstrokealphamultiplier ?? 0}
+    get {_storage._tschchartseriesfilluseseriesstrokealphamultiplier ?? 0}
     set {_uniqueStorage()._tschchartseriesfilluseseriesstrokealphamultiplier = newValue}
   }
   /// Returns true if `tschchartseriesfilluseseriesstrokealphamultiplier` has been explicitly set.
-  public var hasTschchartseriesfilluseseriesstrokealphamultiplier: Bool {return _storage._tschchartseriesfilluseseriesstrokealphamultiplier != nil}
+  public var hasTschchartseriesfilluseseriesstrokealphamultiplier: Bool {_storage._tschchartseriesfilluseseriesstrokealphamultiplier != nil}
   /// Clears the value of `tschchartseriesfilluseseriesstrokealphamultiplier`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesfilluseseriesstrokealphamultiplier() {_uniqueStorage()._tschchartseriesfilluseseriesstrokealphamultiplier = nil}
 
   public var tschchartseriesfilluseseriesstroke: Bool {
-    get {return _storage._tschchartseriesfilluseseriesstroke ?? false}
+    get {_storage._tschchartseriesfilluseseriesstroke ?? false}
     set {_uniqueStorage()._tschchartseriesfilluseseriesstroke = newValue}
   }
   /// Returns true if `tschchartseriesfilluseseriesstroke` has been explicitly set.
-  public var hasTschchartseriesfilluseseriesstroke: Bool {return _storage._tschchartseriesfilluseseriesstroke != nil}
+  public var hasTschchartseriesfilluseseriesstroke: Bool {_storage._tschchartseriesfilluseseriesstroke != nil}
   /// Clears the value of `tschchartseriesfilluseseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesfilluseseriesstroke() {_uniqueStorage()._tschchartseriesfilluseseriesstroke = nil}
 
   public var tschchartserieslabelexplosion: Float {
-    get {return _storage._tschchartserieslabelexplosion ?? 0}
+    get {_storage._tschchartserieslabelexplosion ?? 0}
     set {_uniqueStorage()._tschchartserieslabelexplosion = newValue}
   }
   /// Returns true if `tschchartserieslabelexplosion` has been explicitly set.
-  public var hasTschchartserieslabelexplosion: Bool {return _storage._tschchartserieslabelexplosion != nil}
+  public var hasTschchartserieslabelexplosion: Bool {_storage._tschchartserieslabelexplosion != nil}
   /// Clears the value of `tschchartserieslabelexplosion`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslabelexplosion() {_uniqueStorage()._tschchartserieslabelexplosion = nil}
 
   public var tschchartserieslabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartserieslabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartserieslabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartserieslabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartserieslabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartserieslabelparagraphstyleindex: Bool {return _storage._tschchartserieslabelparagraphstyleindex != nil}
+  public var hasTschchartserieslabelparagraphstyleindex: Bool {_storage._tschchartserieslabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartserieslabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslabelparagraphstyleindex() {_uniqueStorage()._tschchartserieslabelparagraphstyleindex = nil}
 
   public var tschchartserieslinetype: Int32 {
-    get {return _storage._tschchartserieslinetype ?? 0}
+    get {_storage._tschchartserieslinetype ?? 0}
     set {_uniqueStorage()._tschchartserieslinetype = newValue}
   }
   /// Returns true if `tschchartserieslinetype` has been explicitly set.
-  public var hasTschchartserieslinetype: Bool {return _storage._tschchartserieslinetype != nil}
+  public var hasTschchartserieslinetype: Bool {_storage._tschchartserieslinetype != nil}
   /// Clears the value of `tschchartserieslinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieslinetype() {_uniqueStorage()._tschchartserieslinetype = nil}
 
   public var tschchartseriesnumberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriesnumberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriesnumberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriesnumberformat = newValue}
   }
   /// Returns true if `tschchartseriesnumberformat` has been explicitly set.
-  public var hasTschchartseriesnumberformat: Bool {return _storage._tschchartseriesnumberformat != nil}
+  public var hasTschchartseriesnumberformat: Bool {_storage._tschchartseriesnumberformat != nil}
   /// Clears the value of `tschchartseriesnumberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesnumberformat() {_uniqueStorage()._tschchartseriesnumberformat = nil}
 
   public var tschchartseriesnumberformattype: Int32 {
-    get {return _storage._tschchartseriesnumberformattype ?? 0}
+    get {_storage._tschchartseriesnumberformattype ?? 0}
     set {_uniqueStorage()._tschchartseriesnumberformattype = newValue}
   }
   /// Returns true if `tschchartseriesnumberformattype` has been explicitly set.
-  public var hasTschchartseriesnumberformattype: Bool {return _storage._tschchartseriesnumberformattype != nil}
+  public var hasTschchartseriesnumberformattype: Bool {_storage._tschchartseriesnumberformattype != nil}
   /// Clears the value of `tschchartseriesnumberformattype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesnumberformattype() {_uniqueStorage()._tschchartseriesnumberformattype = nil}
 
   public var tschchartseriesopacity: Float {
-    get {return _storage._tschchartseriesopacity ?? 0}
+    get {_storage._tschchartseriesopacity ?? 0}
     set {_uniqueStorage()._tschchartseriesopacity = newValue}
   }
   /// Returns true if `tschchartseriesopacity` has been explicitly set.
-  public var hasTschchartseriesopacity: Bool {return _storage._tschchartseriesopacity != nil}
+  public var hasTschchartseriesopacity: Bool {_storage._tschchartseriesopacity != nil}
   /// Clears the value of `tschchartseriesopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesopacity() {_uniqueStorage()._tschchartseriesopacity = nil}
 
   public var tschchartseriesoutsidelabelparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriesoutsidelabelparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriesoutsidelabelparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriesoutsidelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriesoutsidelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriesoutsidelabelparagraphstyleindex: Bool {return _storage._tschchartseriesoutsidelabelparagraphstyleindex != nil}
+  public var hasTschchartseriesoutsidelabelparagraphstyleindex: Bool {_storage._tschchartseriesoutsidelabelparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriesoutsidelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesoutsidelabelparagraphstyleindex() {_uniqueStorage()._tschchartseriesoutsidelabelparagraphstyleindex = nil}
 
   public var tschchartseriespercentnumberformat: TSK_FormatStructArchive {
-    get {return _storage._tschchartseriespercentnumberformat ?? TSK_FormatStructArchive()}
+    get {_storage._tschchartseriespercentnumberformat ?? TSK_FormatStructArchive()}
     set {_uniqueStorage()._tschchartseriespercentnumberformat = newValue}
   }
   /// Returns true if `tschchartseriespercentnumberformat` has been explicitly set.
-  public var hasTschchartseriespercentnumberformat: Bool {return _storage._tschchartseriespercentnumberformat != nil}
+  public var hasTschchartseriespercentnumberformat: Bool {_storage._tschchartseriespercentnumberformat != nil}
   /// Clears the value of `tschchartseriespercentnumberformat`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriespercentnumberformat() {_uniqueStorage()._tschchartseriespercentnumberformat = nil}
 
   public var tschchartseriesseriestype: Int32 {
-    get {return _storage._tschchartseriesseriestype ?? 0}
+    get {_storage._tschchartseriesseriestype ?? 0}
     set {_uniqueStorage()._tschchartseriesseriestype = newValue}
   }
   /// Returns true if `tschchartseriesseriestype` has been explicitly set.
-  public var hasTschchartseriesseriestype: Bool {return _storage._tschchartseriesseriestype != nil}
+  public var hasTschchartseriesseriestype: Bool {_storage._tschchartseriesseriestype != nil}
   /// Clears the value of `tschchartseriesseriestype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesseriestype() {_uniqueStorage()._tschchartseriesseriestype = nil}
 
   public var tschchartseriesshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriesshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriesshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriesshadow = newValue}
   }
   /// Returns true if `tschchartseriesshadow` has been explicitly set.
-  public var hasTschchartseriesshadow: Bool {return _storage._tschchartseriesshadow != nil}
+  public var hasTschchartseriesshadow: Bool {_storage._tschchartseriesshadow != nil}
   /// Clears the value of `tschchartseriesshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesshadow() {_uniqueStorage()._tschchartseriesshadow = nil}
 
   public var tschchartseriesshowerrorbar: Bool {
-    get {return _storage._tschchartseriesshowerrorbar ?? false}
+    get {_storage._tschchartseriesshowerrorbar ?? false}
     set {_uniqueStorage()._tschchartseriesshowerrorbar = newValue}
   }
   /// Returns true if `tschchartseriesshowerrorbar` has been explicitly set.
-  public var hasTschchartseriesshowerrorbar: Bool {return _storage._tschchartseriesshowerrorbar != nil}
+  public var hasTschchartseriesshowerrorbar: Bool {_storage._tschchartseriesshowerrorbar != nil}
   /// Clears the value of `tschchartseriesshowerrorbar`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesshowerrorbar() {_uniqueStorage()._tschchartseriesshowerrorbar = nil}
 
   public var tschchartseriesshowerrorbarscatterx: Bool {
-    get {return _storage._tschchartseriesshowerrorbarscatterx ?? false}
+    get {_storage._tschchartseriesshowerrorbarscatterx ?? false}
     set {_uniqueStorage()._tschchartseriesshowerrorbarscatterx = newValue}
   }
   /// Returns true if `tschchartseriesshowerrorbarscatterx` has been explicitly set.
-  public var hasTschchartseriesshowerrorbarscatterx: Bool {return _storage._tschchartseriesshowerrorbarscatterx != nil}
+  public var hasTschchartseriesshowerrorbarscatterx: Bool {_storage._tschchartseriesshowerrorbarscatterx != nil}
   /// Clears the value of `tschchartseriesshowerrorbarscatterx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesshowerrorbarscatterx() {_uniqueStorage()._tschchartseriesshowerrorbarscatterx = nil}
 
   public var tschchartseriesshowlabelsinfront: Bool {
-    get {return _storage._tschchartseriesshowlabelsinfront ?? false}
+    get {_storage._tschchartseriesshowlabelsinfront ?? false}
     set {_uniqueStorage()._tschchartseriesshowlabelsinfront = newValue}
   }
   /// Returns true if `tschchartseriesshowlabelsinfront` has been explicitly set.
-  public var hasTschchartseriesshowlabelsinfront: Bool {return _storage._tschchartseriesshowlabelsinfront != nil}
+  public var hasTschchartseriesshowlabelsinfront: Bool {_storage._tschchartseriesshowlabelsinfront != nil}
   /// Clears the value of `tschchartseriesshowlabelsinfront`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesshowlabelsinfront() {_uniqueStorage()._tschchartseriesshowlabelsinfront = nil}
 
   public var tschchartseriesshowline: Bool {
-    get {return _storage._tschchartseriesshowline ?? false}
+    get {_storage._tschchartseriesshowline ?? false}
     set {_uniqueStorage()._tschchartseriesshowline = newValue}
   }
   /// Returns true if `tschchartseriesshowline` has been explicitly set.
-  public var hasTschchartseriesshowline: Bool {return _storage._tschchartseriesshowline != nil}
+  public var hasTschchartseriesshowline: Bool {_storage._tschchartseriesshowline != nil}
   /// Clears the value of `tschchartseriesshowline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesshowline() {_uniqueStorage()._tschchartseriesshowline = nil}
 
   public var tschchartseriesshownegativedata: Bool {
-    get {return _storage._tschchartseriesshownegativedata ?? false}
+    get {_storage._tschchartseriesshownegativedata ?? false}
     set {_uniqueStorage()._tschchartseriesshownegativedata = newValue}
   }
   /// Returns true if `tschchartseriesshownegativedata` has been explicitly set.
-  public var hasTschchartseriesshownegativedata: Bool {return _storage._tschchartseriesshownegativedata != nil}
+  public var hasTschchartseriesshownegativedata: Bool {_storage._tschchartseriesshownegativedata != nil}
   /// Clears the value of `tschchartseriesshownegativedata`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesshownegativedata() {_uniqueStorage()._tschchartseriesshownegativedata = nil}
 
   public var tschchartseriesshowserieslabels: Bool {
-    get {return _storage._tschchartseriesshowserieslabels ?? false}
+    get {_storage._tschchartseriesshowserieslabels ?? false}
     set {_uniqueStorage()._tschchartseriesshowserieslabels = newValue}
   }
   /// Returns true if `tschchartseriesshowserieslabels` has been explicitly set.
-  public var hasTschchartseriesshowserieslabels: Bool {return _storage._tschchartseriesshowserieslabels != nil}
+  public var hasTschchartseriesshowserieslabels: Bool {_storage._tschchartseriesshowserieslabels != nil}
   /// Clears the value of `tschchartseriesshowserieslabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesshowserieslabels() {_uniqueStorage()._tschchartseriesshowserieslabels = nil}
 
   public var tschchartseriesshowsymbol: Bool {
-    get {return _storage._tschchartseriesshowsymbol ?? false}
+    get {_storage._tschchartseriesshowsymbol ?? false}
     set {_uniqueStorage()._tschchartseriesshowsymbol = newValue}
   }
   /// Returns true if `tschchartseriesshowsymbol` has been explicitly set.
-  public var hasTschchartseriesshowsymbol: Bool {return _storage._tschchartseriesshowsymbol != nil}
+  public var hasTschchartseriesshowsymbol: Bool {_storage._tschchartseriesshowsymbol != nil}
   /// Clears the value of `tschchartseriesshowsymbol`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesshowsymbol() {_uniqueStorage()._tschchartseriesshowsymbol = nil}
 
   public var tschchartseriesshowtrendline: Bool {
-    get {return _storage._tschchartseriesshowtrendline ?? false}
+    get {_storage._tschchartseriesshowtrendline ?? false}
     set {_uniqueStorage()._tschchartseriesshowtrendline = newValue}
   }
   /// Returns true if `tschchartseriesshowtrendline` has been explicitly set.
-  public var hasTschchartseriesshowtrendline: Bool {return _storage._tschchartseriesshowtrendline != nil}
+  public var hasTschchartseriesshowtrendline: Bool {_storage._tschchartseriesshowtrendline != nil}
   /// Clears the value of `tschchartseriesshowtrendline`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesshowtrendline() {_uniqueStorage()._tschchartseriesshowtrendline = nil}
 
   public var tschchartseriesshowvaluelabels: Bool {
-    get {return _storage._tschchartseriesshowvaluelabels ?? false}
+    get {_storage._tschchartseriesshowvaluelabels ?? false}
     set {_uniqueStorage()._tschchartseriesshowvaluelabels = newValue}
   }
   /// Returns true if `tschchartseriesshowvaluelabels` has been explicitly set.
-  public var hasTschchartseriesshowvaluelabels: Bool {return _storage._tschchartseriesshowvaluelabels != nil}
+  public var hasTschchartseriesshowvaluelabels: Bool {_storage._tschchartseriesshowvaluelabels != nil}
   /// Clears the value of `tschchartseriesshowvaluelabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesshowvaluelabels() {_uniqueStorage()._tschchartseriesshowvaluelabels = nil}
 
   public var tschchartseriessizedimension: Int32 {
-    get {return _storage._tschchartseriessizedimension ?? 0}
+    get {_storage._tschchartseriessizedimension ?? 0}
     set {_uniqueStorage()._tschchartseriessizedimension = newValue}
   }
   /// Returns true if `tschchartseriessizedimension` has been explicitly set.
-  public var hasTschchartseriessizedimension: Bool {return _storage._tschchartseriessizedimension != nil}
+  public var hasTschchartseriessizedimension: Bool {_storage._tschchartseriessizedimension != nil}
   /// Clears the value of `tschchartseriessizedimension`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriessizedimension() {_uniqueStorage()._tschchartseriessizedimension = nil}
 
   public var tschchartseriesstacklabels: Bool {
-    get {return _storage._tschchartseriesstacklabels ?? false}
+    get {_storage._tschchartseriesstacklabels ?? false}
     set {_uniqueStorage()._tschchartseriesstacklabels = newValue}
   }
   /// Returns true if `tschchartseriesstacklabels` has been explicitly set.
-  public var hasTschchartseriesstacklabels: Bool {return _storage._tschchartseriesstacklabels != nil}
+  public var hasTschchartseriesstacklabels: Bool {_storage._tschchartseriesstacklabels != nil}
   /// Clears the value of `tschchartseriesstacklabels`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesstacklabels() {_uniqueStorage()._tschchartseriesstacklabels = nil}
 
   public var tschchartseriesstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriesstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriesstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriesstroke = newValue}
   }
   /// Returns true if `tschchartseriesstroke` has been explicitly set.
-  public var hasTschchartseriesstroke: Bool {return _storage._tschchartseriesstroke != nil}
+  public var hasTschchartseriesstroke: Bool {_storage._tschchartseriesstroke != nil}
   /// Clears the value of `tschchartseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesstroke() {_uniqueStorage()._tschchartseriesstroke = nil}
 
   public var tschchartseriessymbolfill: TSD_FillArchive {
-    get {return _storage._tschchartseriessymbolfill ?? TSD_FillArchive()}
+    get {_storage._tschchartseriessymbolfill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tschchartseriessymbolfill = newValue}
   }
   /// Returns true if `tschchartseriessymbolfill` has been explicitly set.
-  public var hasTschchartseriessymbolfill: Bool {return _storage._tschchartseriessymbolfill != nil}
+  public var hasTschchartseriessymbolfill: Bool {_storage._tschchartseriessymbolfill != nil}
   /// Clears the value of `tschchartseriessymbolfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriessymbolfill() {_uniqueStorage()._tschchartseriessymbolfill = nil}
 
   public var tschchartseriessymbolfilluseseriesfill: Bool {
-    get {return _storage._tschchartseriessymbolfilluseseriesfill ?? false}
+    get {_storage._tschchartseriessymbolfilluseseriesfill ?? false}
     set {_uniqueStorage()._tschchartseriessymbolfilluseseriesfill = newValue}
   }
   /// Returns true if `tschchartseriessymbolfilluseseriesfill` has been explicitly set.
-  public var hasTschchartseriessymbolfilluseseriesfill: Bool {return _storage._tschchartseriessymbolfilluseseriesfill != nil}
+  public var hasTschchartseriessymbolfilluseseriesfill: Bool {_storage._tschchartseriessymbolfilluseseriesfill != nil}
   /// Clears the value of `tschchartseriessymbolfilluseseriesfill`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriessymbolfilluseseriesfill() {_uniqueStorage()._tschchartseriessymbolfilluseseriesfill = nil}
 
   public var tschchartseriessymbolfilluseseriesstroke: Bool {
-    get {return _storage._tschchartseriessymbolfilluseseriesstroke ?? false}
+    get {_storage._tschchartseriessymbolfilluseseriesstroke ?? false}
     set {_uniqueStorage()._tschchartseriessymbolfilluseseriesstroke = newValue}
   }
   /// Returns true if `tschchartseriessymbolfilluseseriesstroke` has been explicitly set.
-  public var hasTschchartseriessymbolfilluseseriesstroke: Bool {return _storage._tschchartseriessymbolfilluseseriesstroke != nil}
+  public var hasTschchartseriessymbolfilluseseriesstroke: Bool {_storage._tschchartseriessymbolfilluseseriesstroke != nil}
   /// Clears the value of `tschchartseriessymbolfilluseseriesstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriessymbolfilluseseriesstroke() {_uniqueStorage()._tschchartseriessymbolfilluseseriesstroke = nil}
 
   public var tschchartseriessymbolsize: Float {
-    get {return _storage._tschchartseriessymbolsize ?? 0}
+    get {_storage._tschchartseriessymbolsize ?? 0}
     set {_uniqueStorage()._tschchartseriessymbolsize = newValue}
   }
   /// Returns true if `tschchartseriessymbolsize` has been explicitly set.
-  public var hasTschchartseriessymbolsize: Bool {return _storage._tschchartseriessymbolsize != nil}
+  public var hasTschchartseriessymbolsize: Bool {_storage._tschchartseriessymbolsize != nil}
   /// Clears the value of `tschchartseriessymbolsize`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriessymbolsize() {_uniqueStorage()._tschchartseriessymbolsize = nil}
 
   public var tschchartseriessymbolstroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriessymbolstroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriessymbolstroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriessymbolstroke = newValue}
   }
   /// Returns true if `tschchartseriessymbolstroke` has been explicitly set.
-  public var hasTschchartseriessymbolstroke: Bool {return _storage._tschchartseriessymbolstroke != nil}
+  public var hasTschchartseriessymbolstroke: Bool {_storage._tschchartseriessymbolstroke != nil}
   /// Clears the value of `tschchartseriessymbolstroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriessymbolstroke() {_uniqueStorage()._tschchartseriessymbolstroke = nil}
 
   public var tschchartseriessymboltype: Int32 {
-    get {return _storage._tschchartseriessymboltype ?? 0}
+    get {_storage._tschchartseriessymboltype ?? 0}
     set {_uniqueStorage()._tschchartseriessymboltype = newValue}
   }
   /// Returns true if `tschchartseriessymboltype` has been explicitly set.
-  public var hasTschchartseriessymboltype: Bool {return _storage._tschchartseriessymboltype != nil}
+  public var hasTschchartseriessymboltype: Bool {_storage._tschchartseriessymboltype != nil}
   /// Clears the value of `tschchartseriessymboltype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriessymboltype() {_uniqueStorage()._tschchartseriessymboltype = nil}
 
   public var tschchartseriestrendlineequationoffsetx: Float {
-    get {return _storage._tschchartseriestrendlineequationoffsetx ?? 0}
+    get {_storage._tschchartseriestrendlineequationoffsetx ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlineequationoffsetx = newValue}
   }
   /// Returns true if `tschchartseriestrendlineequationoffsetx` has been explicitly set.
-  public var hasTschchartseriestrendlineequationoffsetx: Bool {return _storage._tschchartseriestrendlineequationoffsetx != nil}
+  public var hasTschchartseriestrendlineequationoffsetx: Bool {_storage._tschchartseriestrendlineequationoffsetx != nil}
   /// Clears the value of `tschchartseriestrendlineequationoffsetx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlineequationoffsetx() {_uniqueStorage()._tschchartseriestrendlineequationoffsetx = nil}
 
   public var tschchartseriestrendlineequationoffsety: Float {
-    get {return _storage._tschchartseriestrendlineequationoffsety ?? 0}
+    get {_storage._tschchartseriestrendlineequationoffsety ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlineequationoffsety = newValue}
   }
   /// Returns true if `tschchartseriestrendlineequationoffsety` has been explicitly set.
-  public var hasTschchartseriestrendlineequationoffsety: Bool {return _storage._tschchartseriestrendlineequationoffsety != nil}
+  public var hasTschchartseriestrendlineequationoffsety: Bool {_storage._tschchartseriestrendlineequationoffsety != nil}
   /// Clears the value of `tschchartseriestrendlineequationoffsety`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlineequationoffsety() {_uniqueStorage()._tschchartseriestrendlineequationoffsety = nil}
 
   public var tschchartseriestrendlinelabelstring: String {
-    get {return _storage._tschchartseriestrendlinelabelstring ?? String()}
+    get {_storage._tschchartseriestrendlinelabelstring ?? String()}
     set {_uniqueStorage()._tschchartseriestrendlinelabelstring = newValue}
   }
   /// Returns true if `tschchartseriestrendlinelabelstring` has been explicitly set.
-  public var hasTschchartseriestrendlinelabelstring: Bool {return _storage._tschchartseriestrendlinelabelstring != nil}
+  public var hasTschchartseriestrendlinelabelstring: Bool {_storage._tschchartseriestrendlinelabelstring != nil}
   /// Clears the value of `tschchartseriestrendlinelabelstring`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlinelabelstring() {_uniqueStorage()._tschchartseriestrendlinelabelstring = nil}
 
   public var tschchartseriestrendlineorder: Int32 {
-    get {return _storage._tschchartseriestrendlineorder ?? 0}
+    get {_storage._tschchartseriestrendlineorder ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlineorder = newValue}
   }
   /// Returns true if `tschchartseriestrendlineorder` has been explicitly set.
-  public var hasTschchartseriestrendlineorder: Bool {return _storage._tschchartseriestrendlineorder != nil}
+  public var hasTschchartseriestrendlineorder: Bool {_storage._tschchartseriestrendlineorder != nil}
   /// Clears the value of `tschchartseriestrendlineorder`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlineorder() {_uniqueStorage()._tschchartseriestrendlineorder = nil}
 
   public var tschchartseriestrendlineperiod: Int32 {
-    get {return _storage._tschchartseriestrendlineperiod ?? 0}
+    get {_storage._tschchartseriestrendlineperiod ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlineperiod = newValue}
   }
   /// Returns true if `tschchartseriestrendlineperiod` has been explicitly set.
-  public var hasTschchartseriestrendlineperiod: Bool {return _storage._tschchartseriestrendlineperiod != nil}
+  public var hasTschchartseriestrendlineperiod: Bool {_storage._tschchartseriestrendlineperiod != nil}
   /// Clears the value of `tschchartseriestrendlineperiod`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlineperiod() {_uniqueStorage()._tschchartseriestrendlineperiod = nil}
 
   public var tschchartseriestrendlinersquaredoffsetx: Float {
-    get {return _storage._tschchartseriestrendlinersquaredoffsetx ?? 0}
+    get {_storage._tschchartseriestrendlinersquaredoffsetx ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlinersquaredoffsetx = newValue}
   }
   /// Returns true if `tschchartseriestrendlinersquaredoffsetx` has been explicitly set.
-  public var hasTschchartseriestrendlinersquaredoffsetx: Bool {return _storage._tschchartseriestrendlinersquaredoffsetx != nil}
+  public var hasTschchartseriestrendlinersquaredoffsetx: Bool {_storage._tschchartseriestrendlinersquaredoffsetx != nil}
   /// Clears the value of `tschchartseriestrendlinersquaredoffsetx`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlinersquaredoffsetx() {_uniqueStorage()._tschchartseriestrendlinersquaredoffsetx = nil}
 
   public var tschchartseriestrendlinersquaredoffsety: Float {
-    get {return _storage._tschchartseriestrendlinersquaredoffsety ?? 0}
+    get {_storage._tschchartseriestrendlinersquaredoffsety ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlinersquaredoffsety = newValue}
   }
   /// Returns true if `tschchartseriestrendlinersquaredoffsety` has been explicitly set.
-  public var hasTschchartseriestrendlinersquaredoffsety: Bool {return _storage._tschchartseriestrendlinersquaredoffsety != nil}
+  public var hasTschchartseriestrendlinersquaredoffsety: Bool {_storage._tschchartseriestrendlinersquaredoffsety != nil}
   /// Clears the value of `tschchartseriestrendlinersquaredoffsety`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlinersquaredoffsety() {_uniqueStorage()._tschchartseriestrendlinersquaredoffsety = nil}
 
   public var tschchartseriestrendlineshadow: TSD_ShadowArchive {
-    get {return _storage._tschchartseriestrendlineshadow ?? TSD_ShadowArchive()}
+    get {_storage._tschchartseriestrendlineshadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._tschchartseriestrendlineshadow = newValue}
   }
   /// Returns true if `tschchartseriestrendlineshadow` has been explicitly set.
-  public var hasTschchartseriestrendlineshadow: Bool {return _storage._tschchartseriestrendlineshadow != nil}
+  public var hasTschchartseriestrendlineshadow: Bool {_storage._tschchartseriestrendlineshadow != nil}
   /// Clears the value of `tschchartseriestrendlineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlineshadow() {_uniqueStorage()._tschchartseriestrendlineshadow = nil}
 
   public var tschchartseriestrendlineshowequation: Bool {
-    get {return _storage._tschchartseriestrendlineshowequation ?? false}
+    get {_storage._tschchartseriestrendlineshowequation ?? false}
     set {_uniqueStorage()._tschchartseriestrendlineshowequation = newValue}
   }
   /// Returns true if `tschchartseriestrendlineshowequation` has been explicitly set.
-  public var hasTschchartseriestrendlineshowequation: Bool {return _storage._tschchartseriestrendlineshowequation != nil}
+  public var hasTschchartseriestrendlineshowequation: Bool {_storage._tschchartseriestrendlineshowequation != nil}
   /// Clears the value of `tschchartseriestrendlineshowequation`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlineshowequation() {_uniqueStorage()._tschchartseriestrendlineshowequation = nil}
 
   public var tschchartseriestrendlineshowlabel: Bool {
-    get {return _storage._tschchartseriestrendlineshowlabel ?? false}
+    get {_storage._tschchartseriestrendlineshowlabel ?? false}
     set {_uniqueStorage()._tschchartseriestrendlineshowlabel = newValue}
   }
   /// Returns true if `tschchartseriestrendlineshowlabel` has been explicitly set.
-  public var hasTschchartseriestrendlineshowlabel: Bool {return _storage._tschchartseriestrendlineshowlabel != nil}
+  public var hasTschchartseriestrendlineshowlabel: Bool {_storage._tschchartseriestrendlineshowlabel != nil}
   /// Clears the value of `tschchartseriestrendlineshowlabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlineshowlabel() {_uniqueStorage()._tschchartseriestrendlineshowlabel = nil}
 
   public var tschchartseriestrendlineshowr2Value: Bool {
-    get {return _storage._tschchartseriestrendlineshowr2Value ?? false}
+    get {_storage._tschchartseriestrendlineshowr2Value ?? false}
     set {_uniqueStorage()._tschchartseriestrendlineshowr2Value = newValue}
   }
   /// Returns true if `tschchartseriestrendlineshowr2Value` has been explicitly set.
-  public var hasTschchartseriestrendlineshowr2Value: Bool {return _storage._tschchartseriestrendlineshowr2Value != nil}
+  public var hasTschchartseriestrendlineshowr2Value: Bool {_storage._tschchartseriestrendlineshowr2Value != nil}
   /// Clears the value of `tschchartseriestrendlineshowr2Value`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlineshowr2Value() {_uniqueStorage()._tschchartseriestrendlineshowr2Value = nil}
 
   public var tschchartseriestrendlinestroke: TSD_StrokeArchive {
-    get {return _storage._tschchartseriestrendlinestroke ?? TSD_StrokeArchive()}
+    get {_storage._tschchartseriestrendlinestroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tschchartseriestrendlinestroke = newValue}
   }
   /// Returns true if `tschchartseriestrendlinestroke` has been explicitly set.
-  public var hasTschchartseriestrendlinestroke: Bool {return _storage._tschchartseriestrendlinestroke != nil}
+  public var hasTschchartseriestrendlinestroke: Bool {_storage._tschchartseriestrendlinestroke != nil}
   /// Clears the value of `tschchartseriestrendlinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlinestroke() {_uniqueStorage()._tschchartseriestrendlinestroke = nil}
 
   public var tschchartseriestrendlinetype: Int32 {
-    get {return _storage._tschchartseriestrendlinetype ?? 0}
+    get {_storage._tschchartseriestrendlinetype ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlinetype = newValue}
   }
   /// Returns true if `tschchartseriestrendlinetype` has been explicitly set.
-  public var hasTschchartseriestrendlinetype: Bool {return _storage._tschchartseriestrendlinetype != nil}
+  public var hasTschchartseriestrendlinetype: Bool {_storage._tschchartseriestrendlinetype != nil}
   /// Clears the value of `tschchartseriestrendlinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlinetype() {_uniqueStorage()._tschchartseriestrendlinetype = nil}
 
   public var tschchartseriestrendlineequationopacity: Float {
-    get {return _storage._tschchartseriestrendlineequationopacity ?? 0}
+    get {_storage._tschchartseriestrendlineequationopacity ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlineequationopacity = newValue}
   }
   /// Returns true if `tschchartseriestrendlineequationopacity` has been explicitly set.
-  public var hasTschchartseriestrendlineequationopacity: Bool {return _storage._tschchartseriestrendlineequationopacity != nil}
+  public var hasTschchartseriestrendlineequationopacity: Bool {_storage._tschchartseriestrendlineequationopacity != nil}
   /// Clears the value of `tschchartseriestrendlineequationopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlineequationopacity() {_uniqueStorage()._tschchartseriestrendlineequationopacity = nil}
 
   public var tschchartseriestrendlineequationparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriestrendlineequationparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriestrendlineequationparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlineequationparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriestrendlineequationparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriestrendlineequationparagraphstyleindex: Bool {return _storage._tschchartseriestrendlineequationparagraphstyleindex != nil}
+  public var hasTschchartseriestrendlineequationparagraphstyleindex: Bool {_storage._tschchartseriestrendlineequationparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriestrendlineequationparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlineequationparagraphstyleindex() {_uniqueStorage()._tschchartseriestrendlineequationparagraphstyleindex = nil}
 
   public var tschchartseriestrendlinersquaredopacity: Float {
-    get {return _storage._tschchartseriestrendlinersquaredopacity ?? 0}
+    get {_storage._tschchartseriestrendlinersquaredopacity ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlinersquaredopacity = newValue}
   }
   /// Returns true if `tschchartseriestrendlinersquaredopacity` has been explicitly set.
-  public var hasTschchartseriestrendlinersquaredopacity: Bool {return _storage._tschchartseriestrendlinersquaredopacity != nil}
+  public var hasTschchartseriestrendlinersquaredopacity: Bool {_storage._tschchartseriestrendlinersquaredopacity != nil}
   /// Clears the value of `tschchartseriestrendlinersquaredopacity`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlinersquaredopacity() {_uniqueStorage()._tschchartseriestrendlinersquaredopacity = nil}
 
   public var tschchartseriestrendlinersquaredparagraphstyleindex: Int32 {
-    get {return _storage._tschchartseriestrendlinersquaredparagraphstyleindex ?? 0}
+    get {_storage._tschchartseriestrendlinersquaredparagraphstyleindex ?? 0}
     set {_uniqueStorage()._tschchartseriestrendlinersquaredparagraphstyleindex = newValue}
   }
   /// Returns true if `tschchartseriestrendlinersquaredparagraphstyleindex` has been explicitly set.
-  public var hasTschchartseriestrendlinersquaredparagraphstyleindex: Bool {return _storage._tschchartseriestrendlinersquaredparagraphstyleindex != nil}
+  public var hasTschchartseriestrendlinersquaredparagraphstyleindex: Bool {_storage._tschchartseriestrendlinersquaredparagraphstyleindex != nil}
   /// Clears the value of `tschchartseriestrendlinersquaredparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriestrendlinersquaredparagraphstyleindex() {_uniqueStorage()._tschchartseriestrendlinersquaredparagraphstyleindex = nil}
 
   public var tschchartseriesvaluelabelposition: Int32 {
-    get {return _storage._tschchartseriesvaluelabelposition ?? 0}
+    get {_storage._tschchartseriesvaluelabelposition ?? 0}
     set {_uniqueStorage()._tschchartseriesvaluelabelposition = newValue}
   }
   /// Returns true if `tschchartseriesvaluelabelposition` has been explicitly set.
-  public var hasTschchartseriesvaluelabelposition: Bool {return _storage._tschchartseriesvaluelabelposition != nil}
+  public var hasTschchartseriesvaluelabelposition: Bool {_storage._tschchartseriesvaluelabelposition != nil}
   /// Clears the value of `tschchartseriesvaluelabelposition`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesvaluelabelposition() {_uniqueStorage()._tschchartseriesvaluelabelposition = nil}
 
   public var tschchartseriesvaluelabelspacing: Int32 {
-    get {return _storage._tschchartseriesvaluelabelspacing ?? 0}
+    get {_storage._tschchartseriesvaluelabelspacing ?? 0}
     set {_uniqueStorage()._tschchartseriesvaluelabelspacing = newValue}
   }
   /// Returns true if `tschchartseriesvaluelabelspacing` has been explicitly set.
-  public var hasTschchartseriesvaluelabelspacing: Bool {return _storage._tschchartseriesvaluelabelspacing != nil}
+  public var hasTschchartseriesvaluelabelspacing: Bool {_storage._tschchartseriesvaluelabelspacing != nil}
   /// Clears the value of `tschchartseriesvaluelabelspacing`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesvaluelabelspacing() {_uniqueStorage()._tschchartseriesvaluelabelspacing = nil}
 
   public var tschchartseriesvaluelabelsaxis: Int32 {
-    get {return _storage._tschchartseriesvaluelabelsaxis ?? 0}
+    get {_storage._tschchartseriesvaluelabelsaxis ?? 0}
     set {_uniqueStorage()._tschchartseriesvaluelabelsaxis = newValue}
   }
   /// Returns true if `tschchartseriesvaluelabelsaxis` has been explicitly set.
-  public var hasTschchartseriesvaluelabelsaxis: Bool {return _storage._tschchartseriesvaluelabelsaxis != nil}
+  public var hasTschchartseriesvaluelabelsaxis: Bool {_storage._tschchartseriesvaluelabelsaxis != nil}
   /// Clears the value of `tschchartseriesvaluelabelsaxis`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesvaluelabelsaxis() {_uniqueStorage()._tschchartseriesvaluelabelsaxis = nil}
 
   public var tschchartserieswedgeexplosion: Float {
-    get {return _storage._tschchartserieswedgeexplosion ?? 0}
+    get {_storage._tschchartserieswedgeexplosion ?? 0}
     set {_uniqueStorage()._tschchartserieswedgeexplosion = newValue}
   }
   /// Returns true if `tschchartserieswedgeexplosion` has been explicitly set.
-  public var hasTschchartserieswedgeexplosion: Bool {return _storage._tschchartserieswedgeexplosion != nil}
+  public var hasTschchartserieswedgeexplosion: Bool {_storage._tschchartserieswedgeexplosion != nil}
   /// Clears the value of `tschchartserieswedgeexplosion`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartserieswedgeexplosion() {_uniqueStorage()._tschchartserieswedgeexplosion = nil}
 
   public var tschchartseriesyaxisordinal: Int32 {
-    get {return _storage._tschchartseriesyaxisordinal ?? 0}
+    get {_storage._tschchartseriesyaxisordinal ?? 0}
     set {_uniqueStorage()._tschchartseriesyaxisordinal = newValue}
   }
   /// Returns true if `tschchartseriesyaxisordinal` has been explicitly set.
-  public var hasTschchartseriesyaxisordinal: Bool {return _storage._tschchartseriesyaxisordinal != nil}
+  public var hasTschchartseriesyaxisordinal: Bool {_storage._tschchartseriesyaxisordinal != nil}
   /// Clears the value of `tschchartseriesyaxisordinal`. Subsequent reads from it will return its default value.
   public mutating func clearTschchartseriesyaxisordinal() {_uniqueStorage()._tschchartseriesyaxisordinal = nil}
 
@@ -5107,98 +5107,98 @@ public struct TSCH_Generated_ChartSeriesGenericPropertyMapArchive: @unchecked Se
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_Generated_ReferenceLineGenericPropertyMapArchive: Sendable {
+public nonisolated struct TSCH_Generated_ReferenceLineGenericPropertyMapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tschreferencelinecustomvalue: TSCH_ChartsNSNumberDoubleArchive {
-    get {return _tschreferencelinecustomvalue ?? TSCH_ChartsNSNumberDoubleArchive()}
+    get {_tschreferencelinecustomvalue ?? TSCH_ChartsNSNumberDoubleArchive()}
     set {_tschreferencelinecustomvalue = newValue}
   }
   /// Returns true if `tschreferencelinecustomvalue` has been explicitly set.
-  public var hasTschreferencelinecustomvalue: Bool {return self._tschreferencelinecustomvalue != nil}
+  public var hasTschreferencelinecustomvalue: Bool {self._tschreferencelinecustomvalue != nil}
   /// Clears the value of `tschreferencelinecustomvalue`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinecustomvalue() {self._tschreferencelinecustomvalue = nil}
 
   public var tschreferencelinelabel: String {
-    get {return _tschreferencelinelabel ?? String()}
+    get {_tschreferencelinelabel ?? String()}
     set {_tschreferencelinelabel = newValue}
   }
   /// Returns true if `tschreferencelinelabel` has been explicitly set.
-  public var hasTschreferencelinelabel: Bool {return self._tschreferencelinelabel != nil}
+  public var hasTschreferencelinelabel: Bool {self._tschreferencelinelabel != nil}
   /// Clears the value of `tschreferencelinelabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinelabel() {self._tschreferencelinelabel = nil}
 
   public var tschreferencelinelabelparagraphstyleindex: Int32 {
-    get {return _tschreferencelinelabelparagraphstyleindex ?? 0}
+    get {_tschreferencelinelabelparagraphstyleindex ?? 0}
     set {_tschreferencelinelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschreferencelinelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschreferencelinelabelparagraphstyleindex: Bool {return self._tschreferencelinelabelparagraphstyleindex != nil}
+  public var hasTschreferencelinelabelparagraphstyleindex: Bool {self._tschreferencelinelabelparagraphstyleindex != nil}
   /// Clears the value of `tschreferencelinelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinelabelparagraphstyleindex() {self._tschreferencelinelabelparagraphstyleindex = nil}
 
   public var tschreferencelineshadow: TSD_ShadowArchive {
-    get {return _tschreferencelineshadow ?? TSD_ShadowArchive()}
+    get {_tschreferencelineshadow ?? TSD_ShadowArchive()}
     set {_tschreferencelineshadow = newValue}
   }
   /// Returns true if `tschreferencelineshadow` has been explicitly set.
-  public var hasTschreferencelineshadow: Bool {return self._tschreferencelineshadow != nil}
+  public var hasTschreferencelineshadow: Bool {self._tschreferencelineshadow != nil}
   /// Clears the value of `tschreferencelineshadow`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelineshadow() {self._tschreferencelineshadow = nil}
 
   public var tschreferencelineshowlabel: Bool {
-    get {return _tschreferencelineshowlabel ?? false}
+    get {_tschreferencelineshowlabel ?? false}
     set {_tschreferencelineshowlabel = newValue}
   }
   /// Returns true if `tschreferencelineshowlabel` has been explicitly set.
-  public var hasTschreferencelineshowlabel: Bool {return self._tschreferencelineshowlabel != nil}
+  public var hasTschreferencelineshowlabel: Bool {self._tschreferencelineshowlabel != nil}
   /// Clears the value of `tschreferencelineshowlabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelineshowlabel() {self._tschreferencelineshowlabel = nil}
 
   public var tschreferencelineshowline: Bool {
-    get {return _tschreferencelineshowline ?? false}
+    get {_tschreferencelineshowline ?? false}
     set {_tschreferencelineshowline = newValue}
   }
   /// Returns true if `tschreferencelineshowline` has been explicitly set.
-  public var hasTschreferencelineshowline: Bool {return self._tschreferencelineshowline != nil}
+  public var hasTschreferencelineshowline: Bool {self._tschreferencelineshowline != nil}
   /// Clears the value of `tschreferencelineshowline`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelineshowline() {self._tschreferencelineshowline = nil}
 
   public var tschreferencelineshowvaluelabel: Bool {
-    get {return _tschreferencelineshowvaluelabel ?? false}
+    get {_tschreferencelineshowvaluelabel ?? false}
     set {_tschreferencelineshowvaluelabel = newValue}
   }
   /// Returns true if `tschreferencelineshowvaluelabel` has been explicitly set.
-  public var hasTschreferencelineshowvaluelabel: Bool {return self._tschreferencelineshowvaluelabel != nil}
+  public var hasTschreferencelineshowvaluelabel: Bool {self._tschreferencelineshowvaluelabel != nil}
   /// Clears the value of `tschreferencelineshowvaluelabel`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelineshowvaluelabel() {self._tschreferencelineshowvaluelabel = nil}
 
   public var tschreferencelinestroke: TSD_StrokeArchive {
-    get {return _tschreferencelinestroke ?? TSD_StrokeArchive()}
+    get {_tschreferencelinestroke ?? TSD_StrokeArchive()}
     set {_tschreferencelinestroke = newValue}
   }
   /// Returns true if `tschreferencelinestroke` has been explicitly set.
-  public var hasTschreferencelinestroke: Bool {return self._tschreferencelinestroke != nil}
+  public var hasTschreferencelinestroke: Bool {self._tschreferencelinestroke != nil}
   /// Clears the value of `tschreferencelinestroke`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinestroke() {self._tschreferencelinestroke = nil}
 
   public var tschreferencelinetype: Int32 {
-    get {return _tschreferencelinetype ?? 0}
+    get {_tschreferencelinetype ?? 0}
     set {_tschreferencelinetype = newValue}
   }
   /// Returns true if `tschreferencelinetype` has been explicitly set.
-  public var hasTschreferencelinetype: Bool {return self._tschreferencelinetype != nil}
+  public var hasTschreferencelinetype: Bool {self._tschreferencelinetype != nil}
   /// Clears the value of `tschreferencelinetype`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinetype() {self._tschreferencelinetype = nil}
 
   public var tschreferencelinevaluelabelparagraphstyleindex: Int32 {
-    get {return _tschreferencelinevaluelabelparagraphstyleindex ?? 0}
+    get {_tschreferencelinevaluelabelparagraphstyleindex ?? 0}
     set {_tschreferencelinevaluelabelparagraphstyleindex = newValue}
   }
   /// Returns true if `tschreferencelinevaluelabelparagraphstyleindex` has been explicitly set.
-  public var hasTschreferencelinevaluelabelparagraphstyleindex: Bool {return self._tschreferencelinevaluelabelparagraphstyleindex != nil}
+  public var hasTschreferencelinevaluelabelparagraphstyleindex: Bool {self._tschreferencelinevaluelabelparagraphstyleindex != nil}
   /// Clears the value of `tschreferencelinevaluelabelparagraphstyleindex`. Subsequent reads from it will return its default value.
   public mutating func clearTschreferencelinevaluelabelparagraphstyleindex() {self._tschreferencelinevaluelabelparagraphstyleindex = nil}
 
@@ -5227,7 +5227,7 @@ public struct TSCH_Generated_ReferenceLineGenericPropertyMapArchive: Sendable {
 // declaration. To avoid naming collisions, the names are prefixed with the name of
 // the scope where the extend directive occurs.
 
-extension TSCH_ChartAxisNonStyleArchive {
+nonisolated extension TSCH_ChartAxisNonStyleArchive {
 
   public var TSCH_Generated_ChartAxisNonStyleArchive_current: TSCH_Generated_ChartAxisNonStyleArchive {
     get {return getExtensionValue(ext: TSCH_Generated_ChartAxisNonStyleArchive.Extensions.current) ?? TSCH_Generated_ChartAxisNonStyleArchive()}
@@ -5245,7 +5245,7 @@ extension TSCH_ChartAxisNonStyleArchive {
   }
 }
 
-extension TSCH_ChartAxisStyleArchive {
+nonisolated extension TSCH_ChartAxisStyleArchive {
 
   public var TSCH_Generated_ChartAxisStyleArchive_current: TSCH_Generated_ChartAxisStyleArchive {
     get {return getExtensionValue(ext: TSCH_Generated_ChartAxisStyleArchive.Extensions.current) ?? TSCH_Generated_ChartAxisStyleArchive()}
@@ -5263,7 +5263,7 @@ extension TSCH_ChartAxisStyleArchive {
   }
 }
 
-extension TSCH_ChartNonStyleArchive {
+nonisolated extension TSCH_ChartNonStyleArchive {
 
   public var TSCH_Generated_ChartNonStyleArchive_current: TSCH_Generated_ChartNonStyleArchive {
     get {return getExtensionValue(ext: TSCH_Generated_ChartNonStyleArchive.Extensions.current) ?? TSCH_Generated_ChartNonStyleArchive()}
@@ -5281,7 +5281,7 @@ extension TSCH_ChartNonStyleArchive {
   }
 }
 
-extension TSCH_ChartSeriesNonStyleArchive {
+nonisolated extension TSCH_ChartSeriesNonStyleArchive {
 
   public var TSCH_Generated_ChartSeriesNonStyleArchive_current: TSCH_Generated_ChartSeriesNonStyleArchive {
     get {return getExtensionValue(ext: TSCH_Generated_ChartSeriesNonStyleArchive.Extensions.current) ?? TSCH_Generated_ChartSeriesNonStyleArchive()}
@@ -5299,7 +5299,7 @@ extension TSCH_ChartSeriesNonStyleArchive {
   }
 }
 
-extension TSCH_ChartSeriesStyleArchive {
+nonisolated extension TSCH_ChartSeriesStyleArchive {
 
   public var TSCH_Generated_ChartSeriesStyleArchive_current: TSCH_Generated_ChartSeriesStyleArchive {
     get {return getExtensionValue(ext: TSCH_Generated_ChartSeriesStyleArchive.Extensions.current) ?? TSCH_Generated_ChartSeriesStyleArchive()}
@@ -5317,7 +5317,7 @@ extension TSCH_ChartSeriesStyleArchive {
   }
 }
 
-extension TSCH_ChartStyleArchive {
+nonisolated extension TSCH_ChartStyleArchive {
 
   public var TSCH_Generated_ChartStyleArchive_current: TSCH_Generated_ChartStyleArchive {
     get {return getExtensionValue(ext: TSCH_Generated_ChartStyleArchive.Extensions.current) ?? TSCH_Generated_ChartStyleArchive()}
@@ -5335,7 +5335,7 @@ extension TSCH_ChartStyleArchive {
   }
 }
 
-extension TSCH_LegendNonStyleArchive {
+nonisolated extension TSCH_LegendNonStyleArchive {
 
   public var TSCH_Generated_LegendNonStyleArchive_current: TSCH_Generated_LegendNonStyleArchive {
     get {return getExtensionValue(ext: TSCH_Generated_LegendNonStyleArchive.Extensions.current) ?? TSCH_Generated_LegendNonStyleArchive()}
@@ -5353,7 +5353,7 @@ extension TSCH_LegendNonStyleArchive {
   }
 }
 
-extension TSCH_LegendStyleArchive {
+nonisolated extension TSCH_LegendStyleArchive {
 
   public var TSCH_Generated_LegendStyleArchive_current: TSCH_Generated_LegendStyleArchive {
     get {return getExtensionValue(ext: TSCH_Generated_LegendStyleArchive.Extensions.current) ?? TSCH_Generated_LegendStyleArchive()}
@@ -5371,7 +5371,7 @@ extension TSCH_LegendStyleArchive {
   }
 }
 
-extension TSCH_ReferenceLineNonStyleArchive {
+nonisolated extension TSCH_ReferenceLineNonStyleArchive {
 
   public var TSCH_Generated_ReferenceLineNonStyleArchive_current: TSCH_Generated_ReferenceLineNonStyleArchive {
     get {return getExtensionValue(ext: TSCH_Generated_ReferenceLineNonStyleArchive.Extensions.current) ?? TSCH_Generated_ReferenceLineNonStyleArchive()}
@@ -5389,7 +5389,7 @@ extension TSCH_ReferenceLineNonStyleArchive {
   }
 }
 
-extension TSCH_ReferenceLineStyleArchive {
+nonisolated extension TSCH_ReferenceLineStyleArchive {
 
   public var TSCH_Generated_ReferenceLineStyleArchive_current: TSCH_Generated_ReferenceLineStyleArchive {
     get {return getExtensionValue(ext: TSCH_Generated_ReferenceLineStyleArchive.Extensions.current) ?? TSCH_Generated_ReferenceLineStyleArchive()}
@@ -5414,7 +5414,7 @@ extension TSCH_ReferenceLineStyleArchive {
 /// this .proto file. It can be used any place an `SwiftProtobuf.ExtensionMap` is needed
 /// in parsing, or it can be combined with other `SwiftProtobuf.SimpleExtensionMap`s to create
 /// a larger `SwiftProtobuf.SimpleExtensionMap`.
-public let TSCH_Generated_TscharchivesGen_Extensions: SwiftProtobuf.SimpleExtensionMap = [
+public nonisolated let TSCH_Generated_TscharchivesGen_Extensions: SwiftProtobuf.SimpleExtensionMap = [
   TSCH_Generated_ChartStyleArchive.Extensions.current,
   TSCH_Generated_ChartNonStyleArchive.Extensions.current,
   TSCH_Generated_LegendStyleArchive.Extensions.current,
@@ -5431,7 +5431,7 @@ public let TSCH_Generated_TscharchivesGen_Extensions: SwiftProtobuf.SimpleExtens
 // constructing a `SimpleExtensionMap`, otherwise, use the above _Extension Properties_
 // accessors for the extension fields on the messages directly.
 
-extension TSCH_Generated_ChartStyleArchive {
+nonisolated extension TSCH_Generated_ChartStyleArchive {
   public enum Extensions {
     public static let current = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Generated_ChartStyleArchive>, TSCH_ChartStyleArchive>(
       _protobuf_fieldNumber: 10000,
@@ -5440,7 +5440,7 @@ extension TSCH_Generated_ChartStyleArchive {
   }
 }
 
-extension TSCH_Generated_ChartNonStyleArchive {
+nonisolated extension TSCH_Generated_ChartNonStyleArchive {
   public enum Extensions {
     public static let current = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Generated_ChartNonStyleArchive>, TSCH_ChartNonStyleArchive>(
       _protobuf_fieldNumber: 10000,
@@ -5449,7 +5449,7 @@ extension TSCH_Generated_ChartNonStyleArchive {
   }
 }
 
-extension TSCH_Generated_LegendStyleArchive {
+nonisolated extension TSCH_Generated_LegendStyleArchive {
   public enum Extensions {
     public static let current = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Generated_LegendStyleArchive>, TSCH_LegendStyleArchive>(
       _protobuf_fieldNumber: 10000,
@@ -5458,7 +5458,7 @@ extension TSCH_Generated_LegendStyleArchive {
   }
 }
 
-extension TSCH_Generated_LegendNonStyleArchive {
+nonisolated extension TSCH_Generated_LegendNonStyleArchive {
   public enum Extensions {
     public static let current = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Generated_LegendNonStyleArchive>, TSCH_LegendNonStyleArchive>(
       _protobuf_fieldNumber: 10000,
@@ -5467,7 +5467,7 @@ extension TSCH_Generated_LegendNonStyleArchive {
   }
 }
 
-extension TSCH_Generated_ChartAxisStyleArchive {
+nonisolated extension TSCH_Generated_ChartAxisStyleArchive {
   public enum Extensions {
     public static let current = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Generated_ChartAxisStyleArchive>, TSCH_ChartAxisStyleArchive>(
       _protobuf_fieldNumber: 10000,
@@ -5476,7 +5476,7 @@ extension TSCH_Generated_ChartAxisStyleArchive {
   }
 }
 
-extension TSCH_Generated_ChartAxisNonStyleArchive {
+nonisolated extension TSCH_Generated_ChartAxisNonStyleArchive {
   public enum Extensions {
     public static let current = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Generated_ChartAxisNonStyleArchive>, TSCH_ChartAxisNonStyleArchive>(
       _protobuf_fieldNumber: 10000,
@@ -5485,7 +5485,7 @@ extension TSCH_Generated_ChartAxisNonStyleArchive {
   }
 }
 
-extension TSCH_Generated_ChartSeriesStyleArchive {
+nonisolated extension TSCH_Generated_ChartSeriesStyleArchive {
   public enum Extensions {
     public static let current = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Generated_ChartSeriesStyleArchive>, TSCH_ChartSeriesStyleArchive>(
       _protobuf_fieldNumber: 10000,
@@ -5494,7 +5494,7 @@ extension TSCH_Generated_ChartSeriesStyleArchive {
   }
 }
 
-extension TSCH_Generated_ChartSeriesNonStyleArchive {
+nonisolated extension TSCH_Generated_ChartSeriesNonStyleArchive {
   public enum Extensions {
     public static let current = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Generated_ChartSeriesNonStyleArchive>, TSCH_ChartSeriesNonStyleArchive>(
       _protobuf_fieldNumber: 10000,
@@ -5503,7 +5503,7 @@ extension TSCH_Generated_ChartSeriesNonStyleArchive {
   }
 }
 
-extension TSCH_Generated_ReferenceLineStyleArchive {
+nonisolated extension TSCH_Generated_ReferenceLineStyleArchive {
   public enum Extensions {
     public static let current = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Generated_ReferenceLineStyleArchive>, TSCH_ReferenceLineStyleArchive>(
       _protobuf_fieldNumber: 10000,
@@ -5512,7 +5512,7 @@ extension TSCH_Generated_ReferenceLineStyleArchive {
   }
 }
 
-extension TSCH_Generated_ReferenceLineNonStyleArchive {
+nonisolated extension TSCH_Generated_ReferenceLineNonStyleArchive {
   public enum Extensions {
     public static let current = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_Generated_ReferenceLineNonStyleArchive>, TSCH_ReferenceLineNonStyleArchive>(
       _protobuf_fieldNumber: 10000,
@@ -5523,40 +5523,11 @@ extension TSCH_Generated_ReferenceLineNonStyleArchive {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSCH.Generated"
+fileprivate nonisolated let _protobuf_package = "TSCH.Generated"
 
-extension TSCH_Generated_ChartStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ChartStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tschchartinfodefault3dchartopacity"),
-    2: .same(proto: "tschchartinfoarea3dlightingpackage"),
-    3: .same(proto: "tschchartinfobar3dlightingpackage"),
-    4: .same(proto: "tschchartinfocolumn3dlightingpackage"),
-    5: .same(proto: "tschchartinfodefault3dlightingpackage"),
-    6: .same(proto: "tschchartinfoline3dlightingpackage"),
-    7: .same(proto: "tschchartinfopie3dlightingpackage"),
-    124: .same(proto: "tschchartinfodefaultaxisanchorlabelatends"),
-    8: .same(proto: "tschchartinfodefaultbackgroundfill"),
-    9: .same(proto: "tschchartinfodefaultbackgroundstroke"),
-    10: .same(proto: "tschchartinfodefaultborderopacity"),
-    11: .same(proto: "tschchartinfodefaultbordershadow"),
-    12: .same(proto: "tschchartinfodefaultborderstroke"),
-    13: .same(proto: "tschchartinfodefaultcombinelayers"),
-    21: .same(proto: "tschchartinfodefaultdatasetnameparagraphstyleindex"),
-    14: .same(proto: "tschchartinfodefaultgridbackgroundfill"),
-    15: .same(proto: "tschchartinfodefaultgridbackgroundopacity"),
-    16: .same(proto: "tschchartinfodefaultinterbargap"),
-    17: .same(proto: "tschchartinfodefaultintersetgap"),
-    29: .same(proto: "tschchartinfodefaultradarradiusgridlinecurve"),
-    123: .same(proto: "tschchartinfodefaultroundedcornerouterendonly"),
-    122: .same(proto: "tschchartinfodefaultroundedcornerradius"),
-    18: .same(proto: "tschchartinfodefaultshowborder"),
-    32: .same(proto: "tschchartinfodefaultsummarylabeloffset"),
-    30: .same(proto: "tschchartinfodefaultsummarylabelparagraphstyleindex"),
-    31: .same(proto: "tschchartinfodefaultsummarylabelvaluelabelspacing"),
-    19: .same(proto: "tschchartinfodefaulttitlecolor"),
-    20: .same(proto: "tschchartinfodefaulttitleparagraphstyleindex"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschchartinfodefault3dchartopacity\0\u{1}tschchartinfoarea3dlightingpackage\0\u{1}tschchartinfobar3dlightingpackage\0\u{1}tschchartinfocolumn3dlightingpackage\0\u{1}tschchartinfodefault3dlightingpackage\0\u{1}tschchartinfoline3dlightingpackage\0\u{1}tschchartinfopie3dlightingpackage\0\u{1}tschchartinfodefaultbackgroundfill\0\u{1}tschchartinfodefaultbackgroundstroke\0\u{1}tschchartinfodefaultborderopacity\0\u{1}tschchartinfodefaultbordershadow\0\u{1}tschchartinfodefaultborderstroke\0\u{1}tschchartinfodefaultcombinelayers\0\u{1}tschchartinfodefaultgridbackgroundfill\0\u{1}tschchartinfodefaultgridbackgroundopacity\0\u{1}tschchartinfodefaultinterbargap\0\u{1}tschchartinfodefaultintersetgap\0\u{1}tschchartinfodefaultshowborder\0\u{1}tschchartinfodefaulttitlecolor\0\u{1}tschchartinfodefaulttitleparagraphstyleindex\0\u{1}tschchartinfodefaultdatasetnameparagraphstyleindex\0\u{2}\u{8}tschchartinfodefaultradarradiusgridlinecurve\0\u{1}tschchartinfodefaultsummarylabelparagraphstyleindex\0\u{1}tschchartinfodefaultsummarylabelvaluelabelspacing\0\u{1}tschchartinfodefaultsummarylabeloffset\0\u{2}Z\u{1}tschchartinfodefaultroundedcornerradius\0\u{1}tschchartinfodefaultroundedcornerouterendonly\0\u{1}tschchartinfodefaultaxisanchorlabelatends\0")
 
   fileprivate class _StorageClass {
     var _tschchartinfodefault3Dchartopacity: Float? = nil
@@ -5588,15 +5559,11 @@ extension TSCH_Generated_ChartStyleArchive: SwiftProtobuf.Message, SwiftProtobuf
     var _tschchartinfodefaulttitlecolor: TSP_Color? = nil
     var _tschchartinfodefaulttitleparagraphstyleindex: Int32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5835,47 +5802,9 @@ extension TSCH_Generated_ChartStyleArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCH_Generated_ChartNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ChartNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartNonStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tschchartinfodefault3dbarshape"),
-    2: .same(proto: "tschchartinfodefault3dbeveledges"),
-    3: .same(proto: "tschchartinfodefault3dintersetdepthgap"),
-    4: .same(proto: "tschchartinfodefault3drotation"),
-    5: .same(proto: "tschchartinfoarea3dscale"),
-    6: .same(proto: "tschchartinfobar3dscale"),
-    7: .same(proto: "tschchartinfocolumn3dscale"),
-    8: .same(proto: "tschchartinfodefault3dscale"),
-    9: .same(proto: "tschchartinfoline3dscale"),
-    10: .same(proto: "tschchartinfopie3dscale"),
-    11: .same(proto: "tschchartinfodefault3dviewport"),
-    112: .same(proto: "tschchartinfoareacalloutlinetype"),
-    113: .same(proto: "tschchartinfobarcalloutlinetype"),
-    114: .same(proto: "tschchartinfobubblecalloutlinetype"),
-    119: .same(proto: "tschchartinfodefaultcalloutlinetype"),
-    115: .same(proto: "tschchartinfolinecalloutlinetype"),
-    111: .same(proto: "tschchartinfopiecalloutlinetype"),
-    116: .same(proto: "tschchartinfoscattercalloutlinetype"),
-    117: .same(proto: "tschchartinfostackedareacalloutlinetype"),
-    118: .same(proto: "tschchartinfostackedbarcalloutlinetype"),
-    121: .same(proto: "tschchartinfodefaultdeprecatedroundedcornerouterendonly"),
-    120: .same(proto: "tschchartinfodefaultdeprecatedroundedcornerradius"),
-    24: .same(proto: "tschchartinfodefaultdatasetnamelocation"),
-    28: .same(proto: "tschchartinfodefaultdonutplacetitleatcenter"),
-    27: .same(proto: "tschchartinfodefaultinnerradius"),
-    25: .same(proto: "tschchartinfodefaultmultidatacontroltype"),
-    19: .same(proto: "tschchartinfodefaultpiestartangle"),
-    29: .same(proto: "tschchartinfodefaultradarstartangle"),
-    20: .same(proto: "tschchartinfodefaultshowlegend"),
-    21: .same(proto: "tschchartinfodefaultshowtitle"),
-    22: .same(proto: "tschchartinfodefaultskiphiddendata"),
-    33: .same(proto: "tschchartinfodefaultsummarylabeldateformat"),
-    34: .same(proto: "tschchartinfodefaultsummarylabeldurationformat"),
-    32: .same(proto: "tschchartinfodefaultsummarylabelnumberformat"),
-    31: .same(proto: "tschchartinfodefaultsummarylabelnumberformattype"),
-    30: .same(proto: "tschchartinfodefaultsummarylabelshowlabels"),
-    23: .same(proto: "tschchartinfodefaulttitle"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschchartinfodefault3dbarshape\0\u{1}tschchartinfodefault3dbeveledges\0\u{1}tschchartinfodefault3dintersetdepthgap\0\u{1}tschchartinfodefault3drotation\0\u{1}tschchartinfoarea3dscale\0\u{1}tschchartinfobar3dscale\0\u{1}tschchartinfocolumn3dscale\0\u{1}tschchartinfodefault3dscale\0\u{1}tschchartinfoline3dscale\0\u{1}tschchartinfopie3dscale\0\u{1}tschchartinfodefault3dviewport\0\u{2}\u{8}tschchartinfodefaultpiestartangle\0\u{1}tschchartinfodefaultshowlegend\0\u{1}tschchartinfodefaultshowtitle\0\u{1}tschchartinfodefaultskiphiddendata\0\u{1}tschchartinfodefaulttitle\0\u{1}tschchartinfodefaultdatasetnamelocation\0\u{1}tschchartinfodefaultmultidatacontroltype\0\u{2}\u{2}tschchartinfodefaultinnerradius\0\u{1}tschchartinfodefaultdonutplacetitleatcenter\0\u{1}tschchartinfodefaultradarstartangle\0\u{1}tschchartinfodefaultsummarylabelshowlabels\0\u{1}tschchartinfodefaultsummarylabelnumberformattype\0\u{1}tschchartinfodefaultsummarylabelnumberformat\0\u{1}tschchartinfodefaultsummarylabeldateformat\0\u{1}tschchartinfodefaultsummarylabeldurationformat\0\u{2}M\u{1}tschchartinfopiecalloutlinetype\0\u{1}tschchartinfoareacalloutlinetype\0\u{1}tschchartinfobarcalloutlinetype\0\u{1}tschchartinfobubblecalloutlinetype\0\u{1}tschchartinfolinecalloutlinetype\0\u{1}tschchartinfoscattercalloutlinetype\0\u{1}tschchartinfostackedareacalloutlinetype\0\u{1}tschchartinfostackedbarcalloutlinetype\0\u{1}tschchartinfodefaultcalloutlinetype\0\u{1}tschchartinfodefaultdeprecatedroundedcornerradius\0\u{1}tschchartinfodefaultdeprecatedroundedcornerouterendonly\0")
 
   fileprivate class _StorageClass {
     var _tschchartinfodefault3Dbarshape: Int32? = nil
@@ -5916,15 +5845,11 @@ extension TSCH_Generated_ChartNonStyleArchive: SwiftProtobuf.Message, SwiftProto
     var _tschchartinfodefaultsummarylabelshowlabels: Bool? = nil
     var _tschchartinfodefaulttitle: String? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -6216,15 +6141,9 @@ extension TSCH_Generated_ChartNonStyleArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_Generated_LegendStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_LegendStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LegendStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tschlegendmodeldefaultfill"),
-    2: .same(proto: "tschlegendmodeldefaultlabelparagraphstyleindex"),
-    3: .same(proto: "tschlegendmodeldefaultopacity"),
-    4: .same(proto: "tschlegendmodeldefaultshadow"),
-    5: .same(proto: "tschlegendmodeldefaultstroke"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschlegendmodeldefaultfill\0\u{1}tschlegendmodeldefaultlabelparagraphstyleindex\0\u{1}tschlegendmodeldefaultopacity\0\u{1}tschlegendmodeldefaultshadow\0\u{1}tschlegendmodeldefaultstroke\0")
 
   public var isInitialized: Bool {
     if let v = self._tschlegendmodeldefaultfill, !v.isInitialized {return false}
@@ -6283,7 +6202,7 @@ extension TSCH_Generated_LegendStyleArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCH_Generated_LegendNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_LegendNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LegendNonStyleArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -6302,56 +6221,9 @@ extension TSCH_Generated_LegendNonStyleArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCH_Generated_ChartAxisStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ChartAxisStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartAxisStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tschchartaxiscategory3dgridlineopacity"),
-    2: .same(proto: "tschchartaxisvalue3dgridlineopacity"),
-    3: .same(proto: "tschchartaxiscategory3dgridlinestroke"),
-    4: .same(proto: "tschchartaxisvalue3dgridlinestroke"),
-    5: .same(proto: "tschchartaxiscategoryhorizontalspacing"),
-    46: .same(proto: "tschchartaxisdefaultlabelanglebaselinedirection"),
-    6: .same(proto: "tschchartaxiscategorylabelparagraphstyleindex"),
-    7: .same(proto: "tschchartaxisdefaultlabelparagraphstyleindex"),
-    8: .same(proto: "tschchartaxisvaluelabelparagraphstyleindex"),
-    9: .same(proto: "tschchartaxiscategorylabelsorientation"),
-    10: .same(proto: "tschchartaxisdefaultlabelsorientation"),
-    11: .same(proto: "tschchartaxisvaluelabelsorientation"),
-    12: .same(proto: "tschchartaxiscategorymajorgridlineopacity"),
-    13: .same(proto: "tschchartaxisvaluemajorgridlineopacity"),
-    14: .same(proto: "tschchartaxiscategorymajorgridlineshadow"),
-    15: .same(proto: "tschchartaxisvaluemajorgridlineshadow"),
-    16: .same(proto: "tschchartaxiscategorymajorgridlinestroke"),
-    17: .same(proto: "tschchartaxisvaluemajorgridlinestroke"),
-    18: .same(proto: "tschchartaxiscategoryminorgridlineopacity"),
-    19: .same(proto: "tschchartaxisvalueminorgridlineopacity"),
-    20: .same(proto: "tschchartaxiscategoryminorgridlineshadow"),
-    21: .same(proto: "tschchartaxisvalueminorgridlineshadow"),
-    22: .same(proto: "tschchartaxiscategoryminorgridlinestroke"),
-    23: .same(proto: "tschchartaxisvalueminorgridlinestroke"),
-    24: .same(proto: "tschchartaxiscategoryshowaxis"),
-    25: .same(proto: "tschchartaxisvalueshowaxis"),
-    47: .same(proto: "tschchartaxisdefaultshowextensionlines"),
-    42: .same(proto: "tschchartaxiscategoryshowgridlinetickmarks"),
-    43: .same(proto: "tschchartaxisvalueshowgridlinetickmarks"),
-    26: .same(proto: "tschchartaxiscategoryshowlastlabel"),
-    27: .same(proto: "tschchartaxiscategoryshowmajorgridlines"),
-    44: .same(proto: "tschchartaxispolarcategoryshowmajorgridlines"),
-    28: .same(proto: "tschchartaxisvalueshowmajorgridlines"),
-    29: .same(proto: "tschchartaxiscategoryshowmajortickmarks"),
-    30: .same(proto: "tschchartaxisvalueshowmajortickmarks"),
-    31: .same(proto: "tschchartaxisvalueshowminimumlabel"),
-    32: .same(proto: "tschchartaxiscategoryshowminorgridlines"),
-    33: .same(proto: "tschchartaxisvalueshowminorgridlines"),
-    34: .same(proto: "tschchartaxiscategoryshowminortickmarks"),
-    35: .same(proto: "tschchartaxisvalueshowminortickmarks"),
-    36: .same(proto: "tschchartaxiscategorytickmarklocation"),
-    37: .same(proto: "tschchartaxisvaluetickmarklocation"),
-    38: .same(proto: "tschchartaxiscategorytitleparagraphstyleindex"),
-    39: .same(proto: "tschchartaxisdefaulttitleparagraphstyleindex"),
-    40: .same(proto: "tschchartaxisvaluetitleparagraphstyleindex"),
-    41: .same(proto: "tschchartaxiscategoryverticalspacing"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschchartaxiscategory3dgridlineopacity\0\u{1}tschchartaxisvalue3dgridlineopacity\0\u{1}tschchartaxiscategory3dgridlinestroke\0\u{1}tschchartaxisvalue3dgridlinestroke\0\u{1}tschchartaxiscategoryhorizontalspacing\0\u{1}tschchartaxiscategorylabelparagraphstyleindex\0\u{1}tschchartaxisdefaultlabelparagraphstyleindex\0\u{1}tschchartaxisvaluelabelparagraphstyleindex\0\u{1}tschchartaxiscategorylabelsorientation\0\u{1}tschchartaxisdefaultlabelsorientation\0\u{1}tschchartaxisvaluelabelsorientation\0\u{1}tschchartaxiscategorymajorgridlineopacity\0\u{1}tschchartaxisvaluemajorgridlineopacity\0\u{1}tschchartaxiscategorymajorgridlineshadow\0\u{1}tschchartaxisvaluemajorgridlineshadow\0\u{1}tschchartaxiscategorymajorgridlinestroke\0\u{1}tschchartaxisvaluemajorgridlinestroke\0\u{1}tschchartaxiscategoryminorgridlineopacity\0\u{1}tschchartaxisvalueminorgridlineopacity\0\u{1}tschchartaxiscategoryminorgridlineshadow\0\u{1}tschchartaxisvalueminorgridlineshadow\0\u{1}tschchartaxiscategoryminorgridlinestroke\0\u{1}tschchartaxisvalueminorgridlinestroke\0\u{1}tschchartaxiscategoryshowaxis\0\u{1}tschchartaxisvalueshowaxis\0\u{1}tschchartaxiscategoryshowlastlabel\0\u{1}tschchartaxiscategoryshowmajorgridlines\0\u{1}tschchartaxisvalueshowmajorgridlines\0\u{1}tschchartaxiscategoryshowmajortickmarks\0\u{1}tschchartaxisvalueshowmajortickmarks\0\u{1}tschchartaxisvalueshowminimumlabel\0\u{1}tschchartaxiscategoryshowminorgridlines\0\u{1}tschchartaxisvalueshowminorgridlines\0\u{1}tschchartaxiscategoryshowminortickmarks\0\u{1}tschchartaxisvalueshowminortickmarks\0\u{1}tschchartaxiscategorytickmarklocation\0\u{1}tschchartaxisvaluetickmarklocation\0\u{1}tschchartaxiscategorytitleparagraphstyleindex\0\u{1}tschchartaxisdefaulttitleparagraphstyleindex\0\u{1}tschchartaxisvaluetitleparagraphstyleindex\0\u{1}tschchartaxiscategoryverticalspacing\0\u{1}tschchartaxiscategoryshowgridlinetickmarks\0\u{1}tschchartaxisvalueshowgridlinetickmarks\0\u{1}tschchartaxispolarcategoryshowmajorgridlines\0\u{2}\u{2}tschchartaxisdefaultlabelanglebaselinedirection\0\u{1}tschchartaxisdefaultshowextensionlines\0")
 
   fileprivate class _StorageClass {
     var _tschchartaxiscategory3Dgridlineopacity: Float? = nil
@@ -6401,15 +6273,11 @@ extension TSCH_Generated_ChartAxisStyleArchive: SwiftProtobuf.Message, SwiftProt
     var _tschchartaxisvaluetitleparagraphstyleindex: Int32? = nil
     var _tschchartaxiscategoryverticalspacing: Int32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -6754,34 +6622,9 @@ extension TSCH_Generated_ChartAxisStyleArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCH_Generated_ChartAxisNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ChartAxisNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartAxisNonStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    20: .standard(proto: "tschchartaxisdefault1_0dateformat"),
-    2: .standard(proto: "tschchartaxisdefault1_0numberformat"),
-    1: .same(proto: "tschchartaxisdefault3dlabelposition"),
-    22: .same(proto: "tschchartaxisdefaultdateformat"),
-    21: .same(proto: "tschchartaxisdefaultdurationformat"),
-    23: .same(proto: "tschchartaxisdefaultlabelexplosion"),
-    42: .same(proto: "tschchartaxisdefaultnumberformat"),
-    3: .same(proto: "tschchartaxisdefaultnumberformattype"),
-    4: .same(proto: "tschchartaxisvaluenumberofdecades"),
-    5: .same(proto: "tschchartaxisvaluenumberofmajorgridlines"),
-    6: .same(proto: "tschchartaxisvaluenumberofminorgridlines"),
-    7: .same(proto: "tschchartaxiscategoryplottoedges"),
-    8: .same(proto: "tschchartaxisvaluescale"),
-    9: .same(proto: "tschchartaxiscategoryshowlabels"),
-    10: .same(proto: "tschchartaxisdefaultshowlabels"),
-    11: .same(proto: "tschchartaxisvalueshowlabels"),
-    12: .same(proto: "tschchartaxiscategoryshowserieslabels"),
-    19: .same(proto: "tschchartaxismultidatashowserieslabels"),
-    13: .same(proto: "tschchartaxiscategoryshowtitle"),
-    14: .same(proto: "tschchartaxisvalueshowtitle"),
-    15: .same(proto: "tschchartaxiscategorytitle"),
-    16: .same(proto: "tschchartaxisvaluetitle"),
-    17: .same(proto: "tschchartaxisdefaultusermax"),
-    18: .same(proto: "tschchartaxisdefaultusermin"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschchartaxisdefault3dlabelposition\0\u{3}tschchartaxisdefault1_0numberformat\0\u{1}tschchartaxisdefaultnumberformattype\0\u{1}tschchartaxisvaluenumberofdecades\0\u{1}tschchartaxisvaluenumberofmajorgridlines\0\u{1}tschchartaxisvaluenumberofminorgridlines\0\u{1}tschchartaxiscategoryplottoedges\0\u{1}tschchartaxisvaluescale\0\u{1}tschchartaxiscategoryshowlabels\0\u{1}tschchartaxisdefaultshowlabels\0\u{1}tschchartaxisvalueshowlabels\0\u{1}tschchartaxiscategoryshowserieslabels\0\u{1}tschchartaxiscategoryshowtitle\0\u{1}tschchartaxisvalueshowtitle\0\u{1}tschchartaxiscategorytitle\0\u{1}tschchartaxisvaluetitle\0\u{1}tschchartaxisdefaultusermax\0\u{1}tschchartaxisdefaultusermin\0\u{1}tschchartaxismultidatashowserieslabels\0\u{3}tschchartaxisdefault1_0dateformat\0\u{1}tschchartaxisdefaultdurationformat\0\u{1}tschchartaxisdefaultdateformat\0\u{1}tschchartaxisdefaultlabelexplosion\0\u{2}\u{13}tschchartaxisdefaultnumberformat\0")
 
   fileprivate class _StorageClass {
     var _tschchartaxisdefault10Dateformat: TSK_FormatStructArchive? = nil
@@ -6809,15 +6652,11 @@ extension TSCH_Generated_ChartAxisNonStyleArchive: SwiftProtobuf.Message, SwiftP
     var _tschchartaxisdefaultusermax: TSCH_ChartsNSNumberDoubleArchive? = nil
     var _tschchartaxisdefaultusermin: TSCH_ChartsNSNumberDoubleArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -7025,128 +6864,9 @@ extension TSCH_Generated_ChartAxisNonStyleArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSCH_Generated_ChartSeriesStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ChartSeriesStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSeriesStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    130: .same(proto: "tschchartseriesdefaultcalloutlineendlineend"),
-    129: .same(proto: "tschchartseriesdefaultcalloutlinestartlineend"),
-    128: .same(proto: "tschchartseriesdefaultcalloutlinestrokestyle"),
-    1: .same(proto: "tschchartseriesdefaulterrorbarlineend"),
-    2: .same(proto: "tschchartseriesdefaulterrorbarlineendscatterx"),
-    3: .same(proto: "tschchartseriesdefaulterrorbarshadow"),
-    98: .same(proto: "tschchartseriesdefaulterrorbarspacing"),
-    99: .same(proto: "tschchartseriesdefaulterrorbarspacingscatterx"),
-    4: .same(proto: "tschchartseriesdefaulterrorbarstroke"),
-    5: .same(proto: "tschchartseriesdefaulterrorbarstrokescatterx"),
-    6: .same(proto: "tschchartseries3dareafill"),
-    7: .same(proto: "tschchartseries3dbarfill"),
-    8: .same(proto: "tschchartseries3dcolumnfill"),
-    9: .same(proto: "tschchartseries3dlinefill"),
-    10: .same(proto: "tschchartseries3dpiefill"),
-    11: .same(proto: "tschchartseriesareafill"),
-    12: .same(proto: "tschchartseriesbarfill"),
-    13: .same(proto: "tschchartseriescolumnfill"),
-    14: .same(proto: "tschchartseriesdefaultfill"),
-    15: .same(proto: "tschchartseriesmixedareafill"),
-    16: .same(proto: "tschchartseriesmixedcolumnfill"),
-    17: .same(proto: "tschchartseriespiefill"),
-    165: .same(proto: "tschchartseriesradarareafill"),
-    189: .same(proto: "tschchartseriesradarareafilluseseriesstrokealphamultiplier"),
-    188: .same(proto: "tschchartseriesradarareafilluseseriesstroke"),
-    18: .same(proto: "tschchartseriesarealabelparagraphstyleindex"),
-    19: .same(proto: "tschchartseriesbarlabelparagraphstyleindex"),
-    20: .same(proto: "tschchartseriesdefaultlabelparagraphstyleindex"),
-    152: .same(proto: "tschchartseriesdonutlabelparagraphstyleindex"),
-    21: .same(proto: "tschchartserieslinelabelparagraphstyleindex"),
-    22: .same(proto: "tschchartseriesmixedlabelparagraphstyleindex"),
-    23: .same(proto: "tschchartseriespielabelparagraphstyleindex"),
-    167: .same(proto: "tschchartseriesradarlabelparagraphstyleindex"),
-    24: .same(proto: "tschchartseriesdefaultopacity"),
-    25: .same(proto: "tschchartseriesareaoutsidelabelparagraphstyleindex"),
-    26: .same(proto: "tschchartseriesbaroutsidelabelparagraphstyleindex"),
-    27: .same(proto: "tschchartseriesdefaultoutsidelabelparagraphstyleindex"),
-    153: .same(proto: "tschchartseriesdonutoutsidelabelparagraphstyleindex"),
-    28: .same(proto: "tschchartseriesmixedoutsidelabelparagraphstyleindex"),
-    29: .same(proto: "tschchartseriespieoutsidelabelparagraphstyleindex"),
-    168: .same(proto: "tschchartseriesradaroutsidelabelparagraphstyleindex"),
-    30: .same(proto: "tschchartseries3dareashadow"),
-    31: .same(proto: "tschchartseries3dbarshadow"),
-    32: .same(proto: "tschchartseries3dcolumnshadow"),
-    33: .same(proto: "tschchartseries3dlineshadow"),
-    34: .same(proto: "tschchartseries3dpieshadow"),
-    35: .same(proto: "tschchartseriesareashadow"),
-    36: .same(proto: "tschchartseriesbarshadow"),
-    37: .same(proto: "tschchartseriesbubbleshadow"),
-    38: .same(proto: "tschchartseriesdefaultshadow"),
-    39: .same(proto: "tschchartserieslineshadow"),
-    40: .same(proto: "tschchartseriesmixedareashadow"),
-    41: .same(proto: "tschchartseriesmixedcolumnshadow"),
-    42: .same(proto: "tschchartseriesmixedlineshadow"),
-    43: .same(proto: "tschchartseriespieshadow"),
-    169: .same(proto: "tschchartseriesradarareashadow"),
-    44: .same(proto: "tschchartseriesscattershadow"),
-    45: .same(proto: "tschchartseriesareastroke"),
-    46: .same(proto: "tschchartseriesbarstroke"),
-    47: .same(proto: "tschchartseriesbubblestroke"),
-    48: .same(proto: "tschchartserieslinestroke"),
-    49: .same(proto: "tschchartseriesmixedareastroke"),
-    50: .same(proto: "tschchartseriesmixedcolumnstroke"),
-    51: .same(proto: "tschchartseriesmixedlinestroke"),
-    52: .same(proto: "tschchartseriespiestroke"),
-    172: .same(proto: "tschchartseriesradarareastroke"),
-    53: .same(proto: "tschchartseriesscatterstroke"),
-    54: .same(proto: "tschchartseriesareasymbolfill"),
-    55: .same(proto: "tschchartseriesbubblesymbolfill"),
-    56: .same(proto: "tschchartserieslinesymbolfill"),
-    57: .same(proto: "tschchartseriesmixedareasymbolfill"),
-    58: .same(proto: "tschchartseriesmixedlinesymbolfill"),
-    175: .same(proto: "tschchartseriesradarareasymbolfill"),
-    59: .same(proto: "tschchartseriesscattersymbolfill"),
-    60: .same(proto: "tschchartseriesareasymbolfilluseseriesfill"),
-    61: .same(proto: "tschchartserieslinesymbolfilluseseriesfill"),
-    62: .same(proto: "tschchartseriesmixedareasymbolfilluseseriesfill"),
-    63: .same(proto: "tschchartseriesmixedlinesymbolfilluseseriesfill"),
-    177: .same(proto: "tschchartseriesradarareasymbolfilluseseriesfill"),
-    64: .same(proto: "tschchartseriesareasymbolfilluseseriesstroke"),
-    65: .same(proto: "tschchartseriesbubblesymbolfilluseseriesstroke"),
-    66: .same(proto: "tschchartserieslinesymbolfilluseseriesstroke"),
-    67: .same(proto: "tschchartseriesmixedareasymbolfilluseseriesstroke"),
-    68: .same(proto: "tschchartseriesmixedlinesymbolfilluseseriesstroke"),
-    179: .same(proto: "tschchartseriesradarareasymbolfilluseseriesstroke"),
-    69: .same(proto: "tschchartseriesscattersymbolfilluseseriesstroke"),
-    70: .same(proto: "tschchartseriesareasymbolsize"),
-    71: .same(proto: "tschchartserieslinesymbolsize"),
-    72: .same(proto: "tschchartseriesmixedareasymbolsize"),
-    73: .same(proto: "tschchartseriesmixedlinesymbolsize"),
-    181: .same(proto: "tschchartseriesradarareasymbolsize"),
-    74: .same(proto: "tschchartseriesscattersymbolsize"),
-    75: .same(proto: "tschchartseriesareasymbolstroke"),
-    76: .same(proto: "tschchartseriesbubblesymbolstroke"),
-    77: .same(proto: "tschchartserieslinesymbolstroke"),
-    78: .same(proto: "tschchartseriesmixedareasymbolstroke"),
-    79: .same(proto: "tschchartseriesmixedlinesymbolstroke"),
-    183: .same(proto: "tschchartseriesradarareasymbolstroke"),
-    80: .same(proto: "tschchartseriesscattersymbolstroke"),
-    85: .same(proto: "tschchartseriesdefaulttrendlineshadow"),
-    86: .same(proto: "tschchartseriesdefaulttrendlinestroke"),
-    81: .same(proto: "tschchartseriesdefaulttrendlineequationopacity"),
-    82: .same(proto: "tschchartseriesdefaulttrendlineequationparagraphstyleindex"),
-    83: .same(proto: "tschchartseriesdefaulttrendlinersquaredopacity"),
-    84: .same(proto: "tschchartseriesdefaulttrendlinersquaredparagraphstyleindex"),
-    87: .same(proto: "tschchartseriesareavaluelabelposition"),
-    88: .same(proto: "tschchartseriesbarvaluelabelposition"),
-    89: .same(proto: "tschchartseriesbubblevaluelabelposition"),
-    90: .same(proto: "tschchartseriesdefaultvaluelabelposition"),
-    91: .same(proto: "tschchartserieslinevaluelabelposition"),
-    92: .same(proto: "tschchartseriesmixedareavaluelabelposition"),
-    93: .same(proto: "tschchartseriesmixedcolumnvaluelabelposition"),
-    94: .same(proto: "tschchartseriesmixedlinevaluelabelposition"),
-    185: .same(proto: "tschchartseriesradarareavaluelabelposition"),
-    95: .same(proto: "tschchartseriesscattervaluelabelposition"),
-    96: .same(proto: "tschchartseriesstackedareavaluelabelposition"),
-    97: .same(proto: "tschchartseriesstackedbarvaluelabelposition"),
-    100: .same(proto: "tschchartseriesdefaultvaluelabelspacing"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschchartseriesdefaulterrorbarlineend\0\u{1}tschchartseriesdefaulterrorbarlineendscatterx\0\u{1}tschchartseriesdefaulterrorbarshadow\0\u{1}tschchartseriesdefaulterrorbarstroke\0\u{1}tschchartseriesdefaulterrorbarstrokescatterx\0\u{1}tschchartseries3dareafill\0\u{1}tschchartseries3dbarfill\0\u{1}tschchartseries3dcolumnfill\0\u{1}tschchartseries3dlinefill\0\u{1}tschchartseries3dpiefill\0\u{1}tschchartseriesareafill\0\u{1}tschchartseriesbarfill\0\u{1}tschchartseriescolumnfill\0\u{1}tschchartseriesdefaultfill\0\u{1}tschchartseriesmixedareafill\0\u{1}tschchartseriesmixedcolumnfill\0\u{1}tschchartseriespiefill\0\u{1}tschchartseriesarealabelparagraphstyleindex\0\u{1}tschchartseriesbarlabelparagraphstyleindex\0\u{1}tschchartseriesdefaultlabelparagraphstyleindex\0\u{1}tschchartserieslinelabelparagraphstyleindex\0\u{1}tschchartseriesmixedlabelparagraphstyleindex\0\u{1}tschchartseriespielabelparagraphstyleindex\0\u{1}tschchartseriesdefaultopacity\0\u{1}tschchartseriesareaoutsidelabelparagraphstyleindex\0\u{1}tschchartseriesbaroutsidelabelparagraphstyleindex\0\u{1}tschchartseriesdefaultoutsidelabelparagraphstyleindex\0\u{1}tschchartseriesmixedoutsidelabelparagraphstyleindex\0\u{1}tschchartseriespieoutsidelabelparagraphstyleindex\0\u{1}tschchartseries3dareashadow\0\u{1}tschchartseries3dbarshadow\0\u{1}tschchartseries3dcolumnshadow\0\u{1}tschchartseries3dlineshadow\0\u{1}tschchartseries3dpieshadow\0\u{1}tschchartseriesareashadow\0\u{1}tschchartseriesbarshadow\0\u{1}tschchartseriesbubbleshadow\0\u{1}tschchartseriesdefaultshadow\0\u{1}tschchartserieslineshadow\0\u{1}tschchartseriesmixedareashadow\0\u{1}tschchartseriesmixedcolumnshadow\0\u{1}tschchartseriesmixedlineshadow\0\u{1}tschchartseriespieshadow\0\u{1}tschchartseriesscattershadow\0\u{1}tschchartseriesareastroke\0\u{1}tschchartseriesbarstroke\0\u{1}tschchartseriesbubblestroke\0\u{1}tschchartserieslinestroke\0\u{1}tschchartseriesmixedareastroke\0\u{1}tschchartseriesmixedcolumnstroke\0\u{1}tschchartseriesmixedlinestroke\0\u{1}tschchartseriespiestroke\0\u{1}tschchartseriesscatterstroke\0\u{1}tschchartseriesareasymbolfill\0\u{1}tschchartseriesbubblesymbolfill\0\u{1}tschchartserieslinesymbolfill\0\u{1}tschchartseriesmixedareasymbolfill\0\u{1}tschchartseriesmixedlinesymbolfill\0\u{1}tschchartseriesscattersymbolfill\0\u{1}tschchartseriesareasymbolfilluseseriesfill\0\u{1}tschchartserieslinesymbolfilluseseriesfill\0\u{1}tschchartseriesmixedareasymbolfilluseseriesfill\0\u{1}tschchartseriesmixedlinesymbolfilluseseriesfill\0\u{1}tschchartseriesareasymbolfilluseseriesstroke\0\u{1}tschchartseriesbubblesymbolfilluseseriesstroke\0\u{1}tschchartserieslinesymbolfilluseseriesstroke\0\u{1}tschchartseriesmixedareasymbolfilluseseriesstroke\0\u{1}tschchartseriesmixedlinesymbolfilluseseriesstroke\0\u{1}tschchartseriesscattersymbolfilluseseriesstroke\0\u{1}tschchartseriesareasymbolsize\0\u{1}tschchartserieslinesymbolsize\0\u{1}tschchartseriesmixedareasymbolsize\0\u{1}tschchartseriesmixedlinesymbolsize\0\u{1}tschchartseriesscattersymbolsize\0\u{1}tschchartseriesareasymbolstroke\0\u{1}tschchartseriesbubblesymbolstroke\0\u{1}tschchartserieslinesymbolstroke\0\u{1}tschchartseriesmixedareasymbolstroke\0\u{1}tschchartseriesmixedlinesymbolstroke\0\u{1}tschchartseriesscattersymbolstroke\0\u{1}tschchartseriesdefaulttrendlineequationopacity\0\u{1}tschchartseriesdefaulttrendlineequationparagraphstyleindex\0\u{1}tschchartseriesdefaulttrendlinersquaredopacity\0\u{1}tschchartseriesdefaulttrendlinersquaredparagraphstyleindex\0\u{1}tschchartseriesdefaulttrendlineshadow\0\u{1}tschchartseriesdefaulttrendlinestroke\0\u{1}tschchartseriesareavaluelabelposition\0\u{1}tschchartseriesbarvaluelabelposition\0\u{1}tschchartseriesbubblevaluelabelposition\0\u{1}tschchartseriesdefaultvaluelabelposition\0\u{1}tschchartserieslinevaluelabelposition\0\u{1}tschchartseriesmixedareavaluelabelposition\0\u{1}tschchartseriesmixedcolumnvaluelabelposition\0\u{1}tschchartseriesmixedlinevaluelabelposition\0\u{1}tschchartseriesscattervaluelabelposition\0\u{1}tschchartseriesstackedareavaluelabelposition\0\u{1}tschchartseriesstackedbarvaluelabelposition\0\u{1}tschchartseriesdefaulterrorbarspacing\0\u{1}tschchartseriesdefaulterrorbarspacingscatterx\0\u{1}tschchartseriesdefaultvaluelabelspacing\0\u{2}\u{1c}tschchartseriesdefaultcalloutlinestrokestyle\0\u{1}tschchartseriesdefaultcalloutlinestartlineend\0\u{1}tschchartseriesdefaultcalloutlineendlineend\0\u{2}\u{16}tschchartseriesdonutlabelparagraphstyleindex\0\u{1}tschchartseriesdonutoutsidelabelparagraphstyleindex\0\u{2}\u{c}tschchartseriesradarareafill\0\u{2}\u{2}tschchartseriesradarlabelparagraphstyleindex\0\u{1}tschchartseriesradaroutsidelabelparagraphstyleindex\0\u{1}tschchartseriesradarareashadow\0\u{2}\u{3}tschchartseriesradarareastroke\0\u{2}\u{3}tschchartseriesradarareasymbolfill\0\u{2}\u{2}tschchartseriesradarareasymbolfilluseseriesfill\0\u{2}\u{2}tschchartseriesradarareasymbolfilluseseriesstroke\0\u{2}\u{2}tschchartseriesradarareasymbolsize\0\u{2}\u{2}tschchartseriesradarareasymbolstroke\0\u{2}\u{2}tschchartseriesradarareavaluelabelposition\0\u{2}\u{3}tschchartseriesradarareafilluseseriesstroke\0\u{1}tschchartseriesradarareafilluseseriesstrokealphamultiplier\0")
 
   fileprivate class _StorageClass {
     var _tschchartseriesdefaultcalloutlineendlineend: TSD_LineEndArchive? = nil
@@ -7268,15 +6988,11 @@ extension TSCH_Generated_ChartSeriesStyleArchive: SwiftProtobuf.Message, SwiftPr
     var _tschchartseriesstackedbarvaluelabelposition: Int32? = nil
     var _tschchartseriesdefaultvaluelabelspacing: Int32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -8106,108 +7822,9 @@ extension TSCH_Generated_ChartSeriesStyleArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCH_Generated_ChartSeriesNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ChartSeriesNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSeriesNonStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    69: .standard(proto: "tschchartseriesdefault1_0dateformat"),
-    21: .standard(proto: "tschchartseriesdefault1_0numberformat"),
-    22: .standard(proto: "tschchartseriespie1_0numberformat"),
-    16: .standard(proto: "tschchartseriespie2_3labelexplosion"),
-    1: .same(proto: "tschchartseriesbubbleadjustmentscale"),
-    71: .same(proto: "tschchartseriesdefaultdateformat"),
-    70: .same(proto: "tschchartseriesdefaultdurationformat"),
-    103: .same(proto: "tschchartseriesareaenablecalloutline"),
-    104: .same(proto: "tschchartseriesbarenablecalloutline"),
-    105: .same(proto: "tschchartseriesbubbleenablecalloutline"),
-    110: .same(proto: "tschchartseriesdefaultenablecalloutline"),
-    106: .same(proto: "tschchartserieslineenablecalloutline"),
-    102: .same(proto: "tschchartseriespieenablecalloutline"),
-    107: .same(proto: "tschchartseriesscatterenablecalloutline"),
-    108: .same(proto: "tschchartseriesstackedareaenablecalloutline"),
-    109: .same(proto: "tschchartseriesstackedbarenablecalloutline"),
-    2: .same(proto: "tschchartseriesdefaulterrorbarcustomnegativedata"),
-    3: .same(proto: "tschchartseriesdefaulterrorbarcustomnegativedatascatterx"),
-    4: .same(proto: "tschchartseriesdefaulterrorbarcustompositivedata"),
-    5: .same(proto: "tschchartseriesdefaulterrorbarcustompositivedatascatterx"),
-    6: .same(proto: "tschchartseriesdefaulterrorbarfixedvalue"),
-    7: .same(proto: "tschchartseriesdefaulterrorbarfixedvaluescatterx"),
-    8: .same(proto: "tschchartseriesdefaulterrorbarpercentvalue"),
-    9: .same(proto: "tschchartseriesdefaulterrorbarpercentvaluescatterx"),
-    10: .same(proto: "tschchartseriesdefaulterrorbarsetting"),
-    11: .same(proto: "tschchartseriesdefaulterrorbarsettingscatterx"),
-    12: .same(proto: "tschchartseriesdefaulterrorbarstddevvalue"),
-    13: .same(proto: "tschchartseriesdefaulterrorbarstddevvaluescatterx"),
-    14: .same(proto: "tschchartseriesdefaulterrorbartype"),
-    15: .same(proto: "tschchartseriesdefaulterrorbartypescatterx"),
-    147: .same(proto: "tschchartseriespielabelexplosion"),
-    17: .same(proto: "tschchartseriesbubblelinetype"),
-    18: .same(proto: "tschchartserieslinelinetype"),
-    19: .same(proto: "tschchartseriesmixedlinelinetype"),
-    189: .same(proto: "tschchartseriesradararealinetype"),
-    20: .same(proto: "tschchartseriesscatterlinetype"),
-    98: .same(proto: "tschchartseriesdefaultnumberformat"),
-    99: .same(proto: "tschchartseriespienumberformat"),
-    23: .same(proto: "tschchartseriesdefaultnumberformattype"),
-    24: .same(proto: "tschchartseriespienumberformattype"),
-    25: .same(proto: "tschchartseriesstackedpercentnumberformat"),
-    26: .same(proto: "tschchartseriesdefaultseriestype"),
-    27: .same(proto: "tschchartseriesdefaultshowerrorbar"),
-    28: .same(proto: "tschchartseriesdefaultshowerrorbarscatterx"),
-    101: .same(proto: "tschchartseriesbubbleshowlabelsinfront"),
-    100: .same(proto: "tschchartseriesdefaultshowlabelsinfront"),
-    29: .same(proto: "tschchartseriesscattershowline"),
-    30: .same(proto: "tschchartseriesbubbleshownegativedata"),
-    65: .same(proto: "tschchartseriesbubbleshowserieslabels"),
-    31: .same(proto: "tschchartseriespieshowserieslabels"),
-    67: .same(proto: "tschchartseriesscattershowserieslabels"),
-    32: .same(proto: "tschchartseriesareashowsymbol"),
-    33: .same(proto: "tschchartserieslineshowsymbol"),
-    34: .same(proto: "tschchartseriesmixedareashowsymbol"),
-    35: .same(proto: "tschchartseriesmixedlineshowsymbol"),
-    160: .same(proto: "tschchartseriesradarareashowsymbol"),
-    36: .same(proto: "tschchartseriesscattershowsymbol"),
-    37: .same(proto: "tschchartseriesdefaultshowtrendline"),
-    38: .same(proto: "tschchartseriesareashowvaluelabels"),
-    39: .same(proto: "tschchartseriesbarshowvaluelabels"),
-    40: .same(proto: "tschchartseriesbubbleshowvaluelabels"),
-    41: .same(proto: "tschchartseriesdefaultshowvaluelabels"),
-    42: .same(proto: "tschchartserieslineshowvaluelabels"),
-    43: .same(proto: "tschchartseriesmixedshowvaluelabels"),
-    44: .same(proto: "tschchartseriespieshowvaluelabels"),
-    162: .same(proto: "tschchartseriesradarshowvaluelabels"),
-    45: .same(proto: "tschchartseriesscattershowvaluelabels"),
-    46: .same(proto: "tschchartseriesbubblesizedimension"),
-    139: .same(proto: "tschchartseriesareastacklabels"),
-    140: .same(proto: "tschchartseriesbarstacklabels"),
-    141: .same(proto: "tschchartseriesbubblestacklabels"),
-    146: .same(proto: "tschchartseriesdefaultstacklabels"),
-    142: .same(proto: "tschchartserieslinestacklabels"),
-    138: .same(proto: "tschchartseriespiestacklabels"),
-    143: .same(proto: "tschchartseriesscatterstacklabels"),
-    144: .same(proto: "tschchartseriesstackedareastacklabels"),
-    145: .same(proto: "tschchartseriesstackedbarstacklabels"),
-    47: .same(proto: "tschchartseriesareasymboltype"),
-    48: .same(proto: "tschchartserieslinesymboltype"),
-    49: .same(proto: "tschchartseriesmixedareasymboltype"),
-    50: .same(proto: "tschchartseriesmixedlinesymboltype"),
-    163: .same(proto: "tschchartseriesradarareasymboltype"),
-    51: .same(proto: "tschchartseriesscattersymboltype"),
-    52: .same(proto: "tschchartseriesdefaulttrendlineequationoffsetx"),
-    53: .same(proto: "tschchartseriesdefaulttrendlineequationoffsety"),
-    54: .same(proto: "tschchartseriesdefaulttrendlinelabelstring"),
-    55: .same(proto: "tschchartseriesdefaulttrendlineorder"),
-    56: .same(proto: "tschchartseriesdefaulttrendlineperiod"),
-    57: .same(proto: "tschchartseriesdefaulttrendlinersquaredoffsetx"),
-    58: .same(proto: "tschchartseriesdefaulttrendlinersquaredoffsety"),
-    59: .same(proto: "tschchartseriesdefaulttrendlineshowequation"),
-    60: .same(proto: "tschchartseriesdefaulttrendlineshowlabel"),
-    61: .same(proto: "tschchartseriesdefaulttrendlineshowr2value"),
-    62: .same(proto: "tschchartseriesdefaulttrendlinetype"),
-    66: .same(proto: "tschchartseriesbubblevaluelabelsaxis"),
-    68: .same(proto: "tschchartseriesscattervaluelabelsaxis"),
-    63: .same(proto: "tschchartseriespiewedgeexplosion"),
-    64: .same(proto: "tschchartseriesdefaultyaxisordinal"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschchartseriesbubbleadjustmentscale\0\u{1}tschchartseriesdefaulterrorbarcustomnegativedata\0\u{1}tschchartseriesdefaulterrorbarcustomnegativedatascatterx\0\u{1}tschchartseriesdefaulterrorbarcustompositivedata\0\u{1}tschchartseriesdefaulterrorbarcustompositivedatascatterx\0\u{1}tschchartseriesdefaulterrorbarfixedvalue\0\u{1}tschchartseriesdefaulterrorbarfixedvaluescatterx\0\u{1}tschchartseriesdefaulterrorbarpercentvalue\0\u{1}tschchartseriesdefaulterrorbarpercentvaluescatterx\0\u{1}tschchartseriesdefaulterrorbarsetting\0\u{1}tschchartseriesdefaulterrorbarsettingscatterx\0\u{1}tschchartseriesdefaulterrorbarstddevvalue\0\u{1}tschchartseriesdefaulterrorbarstddevvaluescatterx\0\u{1}tschchartseriesdefaulterrorbartype\0\u{1}tschchartseriesdefaulterrorbartypescatterx\0\u{3}tschchartseriespie2_3labelexplosion\0\u{1}tschchartseriesbubblelinetype\0\u{1}tschchartserieslinelinetype\0\u{1}tschchartseriesmixedlinelinetype\0\u{1}tschchartseriesscatterlinetype\0\u{3}tschchartseriesdefault1_0numberformat\0\u{3}tschchartseriespie1_0numberformat\0\u{1}tschchartseriesdefaultnumberformattype\0\u{1}tschchartseriespienumberformattype\0\u{1}tschchartseriesstackedpercentnumberformat\0\u{1}tschchartseriesdefaultseriestype\0\u{1}tschchartseriesdefaultshowerrorbar\0\u{1}tschchartseriesdefaultshowerrorbarscatterx\0\u{1}tschchartseriesscattershowline\0\u{1}tschchartseriesbubbleshownegativedata\0\u{1}tschchartseriespieshowserieslabels\0\u{1}tschchartseriesareashowsymbol\0\u{1}tschchartserieslineshowsymbol\0\u{1}tschchartseriesmixedareashowsymbol\0\u{1}tschchartseriesmixedlineshowsymbol\0\u{1}tschchartseriesscattershowsymbol\0\u{1}tschchartseriesdefaultshowtrendline\0\u{1}tschchartseriesareashowvaluelabels\0\u{1}tschchartseriesbarshowvaluelabels\0\u{1}tschchartseriesbubbleshowvaluelabels\0\u{1}tschchartseriesdefaultshowvaluelabels\0\u{1}tschchartserieslineshowvaluelabels\0\u{1}tschchartseriesmixedshowvaluelabels\0\u{1}tschchartseriespieshowvaluelabels\0\u{1}tschchartseriesscattershowvaluelabels\0\u{1}tschchartseriesbubblesizedimension\0\u{1}tschchartseriesareasymboltype\0\u{1}tschchartserieslinesymboltype\0\u{1}tschchartseriesmixedareasymboltype\0\u{1}tschchartseriesmixedlinesymboltype\0\u{1}tschchartseriesscattersymboltype\0\u{1}tschchartseriesdefaulttrendlineequationoffsetx\0\u{1}tschchartseriesdefaulttrendlineequationoffsety\0\u{1}tschchartseriesdefaulttrendlinelabelstring\0\u{1}tschchartseriesdefaulttrendlineorder\0\u{1}tschchartseriesdefaulttrendlineperiod\0\u{1}tschchartseriesdefaulttrendlinersquaredoffsetx\0\u{1}tschchartseriesdefaulttrendlinersquaredoffsety\0\u{1}tschchartseriesdefaulttrendlineshowequation\0\u{1}tschchartseriesdefaulttrendlineshowlabel\0\u{1}tschchartseriesdefaulttrendlineshowr2value\0\u{1}tschchartseriesdefaulttrendlinetype\0\u{1}tschchartseriespiewedgeexplosion\0\u{1}tschchartseriesdefaultyaxisordinal\0\u{1}tschchartseriesbubbleshowserieslabels\0\u{1}tschchartseriesbubblevaluelabelsaxis\0\u{1}tschchartseriesscattershowserieslabels\0\u{1}tschchartseriesscattervaluelabelsaxis\0\u{3}tschchartseriesdefault1_0dateformat\0\u{1}tschchartseriesdefaultdurationformat\0\u{1}tschchartseriesdefaultdateformat\0\u{2}\u{1b}tschchartseriesdefaultnumberformat\0\u{1}tschchartseriespienumberformat\0\u{1}tschchartseriesdefaultshowlabelsinfront\0\u{1}tschchartseriesbubbleshowlabelsinfront\0\u{1}tschchartseriespieenablecalloutline\0\u{1}tschchartseriesareaenablecalloutline\0\u{1}tschchartseriesbarenablecalloutline\0\u{1}tschchartseriesbubbleenablecalloutline\0\u{1}tschchartserieslineenablecalloutline\0\u{1}tschchartseriesscatterenablecalloutline\0\u{1}tschchartseriesstackedareaenablecalloutline\0\u{1}tschchartseriesstackedbarenablecalloutline\0\u{1}tschchartseriesdefaultenablecalloutline\0\u{2}\u{1c}tschchartseriespiestacklabels\0\u{1}tschchartseriesareastacklabels\0\u{1}tschchartseriesbarstacklabels\0\u{1}tschchartseriesbubblestacklabels\0\u{1}tschchartserieslinestacklabels\0\u{1}tschchartseriesscatterstacklabels\0\u{1}tschchartseriesstackedareastacklabels\0\u{1}tschchartseriesstackedbarstacklabels\0\u{1}tschchartseriesdefaultstacklabels\0\u{1}tschchartseriespielabelexplosion\0\u{2}\u{d}tschchartseriesradarareashowsymbol\0\u{2}\u{2}tschchartseriesradarshowvaluelabels\0\u{1}tschchartseriesradarareasymboltype\0\u{2}\u{1a}tschchartseriesradararealinetype\0")
 
   fileprivate class _StorageClass {
     var _tschchartseriesdefault10Dateformat: TSK_FormatStructArchive? = nil
@@ -8309,15 +7926,11 @@ extension TSCH_Generated_ChartSeriesNonStyleArchive: SwiftProtobuf.Message, Swif
     var _tschchartseriespiewedgeexplosion: Float? = nil
     var _tschchartseriesdefaultyaxisordinal: Int32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -8972,14 +8585,9 @@ extension TSCH_Generated_ChartSeriesNonStyleArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSCH_Generated_ReferenceLineStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ReferenceLineStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ReferenceLineStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    3: .same(proto: "tschreferencelinedefaultlabelparagraphstyleindex"),
-    2: .same(proto: "tschreferencelinedefaultshadow"),
-    1: .same(proto: "tschreferencelinedefaultstroke"),
-    4: .same(proto: "tschreferencelinedefaultvaluelabelparagraphstyleindex"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschreferencelinedefaultstroke\0\u{1}tschreferencelinedefaultshadow\0\u{1}tschreferencelinedefaultlabelparagraphstyleindex\0\u{1}tschreferencelinedefaultvaluelabelparagraphstyleindex\0")
 
   public var isInitialized: Bool {
     if let v = self._tschreferencelinedefaultshadow, !v.isInitialized {return false}
@@ -9032,16 +8640,9 @@ extension TSCH_Generated_ReferenceLineStyleArchive: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSCH_Generated_ReferenceLineNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ReferenceLineNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ReferenceLineNonStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    6: .same(proto: "tschreferencelinedefaultcustomvalue"),
-    5: .same(proto: "tschreferencelinedefaultlabel"),
-    3: .same(proto: "tschreferencelinedefaultshowlabel"),
-    2: .same(proto: "tschreferencelinedefaultshowline"),
-    4: .same(proto: "tschreferencelinedefaultshowvaluelabel"),
-    1: .same(proto: "tschreferencelinedefaulttype"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschreferencelinedefaulttype\0\u{1}tschreferencelinedefaultshowline\0\u{1}tschreferencelinedefaultshowlabel\0\u{1}tschreferencelinedefaultshowvaluelabel\0\u{1}tschreferencelinedefaultlabel\0\u{1}tschreferencelinedefaultcustomvalue\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -9098,57 +8699,9 @@ extension TSCH_Generated_ReferenceLineNonStyleArchive: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSCH_Generated_ChartGenericPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ChartGenericPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartGenericPropertyMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tschchartinfo3dbarshape"),
-    2: .same(proto: "tschchartinfo3dbeveledges"),
-    3: .same(proto: "tschchartinfo3dchartopacity"),
-    4: .same(proto: "tschchartinfo3dintersetdepthgap"),
-    5: .same(proto: "tschchartinfo3dlightingpackage"),
-    6: .same(proto: "tschchartinfo3drotation"),
-    7: .same(proto: "tschchartinfo3dscale"),
-    8: .same(proto: "tschchartinfo3dviewport"),
-    9: .same(proto: "tschchartinfoaxisanchorlabelatends"),
-    10: .same(proto: "tschchartinfobackgroundfill"),
-    11: .same(proto: "tschchartinfobackgroundstroke"),
-    12: .same(proto: "tschchartinfoborderopacity"),
-    13: .same(proto: "tschchartinfobordershadow"),
-    14: .same(proto: "tschchartinfoborderstroke"),
-    15: .same(proto: "tschchartinfocalloutlinetype"),
-    16: .same(proto: "tschchartinfocombinelayers"),
-    17: .same(proto: "tschchartinfodeprecatedroundedcornerouterendonly"),
-    18: .same(proto: "tschchartinfodeprecatedroundedcornerradius"),
-    19: .same(proto: "tschchartinfodatasetnamelocation"),
-    20: .same(proto: "tschchartinfodatasetnameparagraphstyleindex"),
-    21: .same(proto: "tschchartinfodonutplacetitleatcenter"),
-    22: .same(proto: "tschchartinfogridbackgroundfill"),
-    23: .same(proto: "tschchartinfogridbackgroundopacity"),
-    24: .same(proto: "tschchartinfoinnerradius"),
-    25: .same(proto: "tschchartinfointerbargap"),
-    26: .same(proto: "tschchartinfointersetgap"),
-    27: .same(proto: "tschchartinfomultidatacontroltype"),
-    28: .same(proto: "tschchartinfopiestartangle"),
-    29: .same(proto: "tschchartinforadarradiusgridlinecurve"),
-    30: .same(proto: "tschchartinforadarstartangle"),
-    31: .same(proto: "tschchartinforoundedcornerouterendonly"),
-    32: .same(proto: "tschchartinforoundedcornerradius"),
-    33: .same(proto: "tschchartinfoshowborder"),
-    34: .same(proto: "tschchartinfoshowlegend"),
-    35: .same(proto: "tschchartinfoshowtitle"),
-    36: .same(proto: "tschchartinfoskiphiddendata"),
-    37: .same(proto: "tschchartinfosummarylabeldateformat"),
-    38: .same(proto: "tschchartinfosummarylabeldurationformat"),
-    39: .same(proto: "tschchartinfosummarylabelnumberformat"),
-    40: .same(proto: "tschchartinfosummarylabelnumberformattype"),
-    41: .same(proto: "tschchartinfosummarylabeloffset"),
-    42: .same(proto: "tschchartinfosummarylabelparagraphstyleindex"),
-    43: .same(proto: "tschchartinfosummarylabelshowlabels"),
-    44: .same(proto: "tschchartinfosummarylabelvaluelabelspacing"),
-    45: .same(proto: "tschchartinfotitlecolor"),
-    46: .same(proto: "tschchartinfotitle"),
-    47: .same(proto: "tschchartinfotitleparagraphstyleindex"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschchartinfo3dbarshape\0\u{1}tschchartinfo3dbeveledges\0\u{1}tschchartinfo3dchartopacity\0\u{1}tschchartinfo3dintersetdepthgap\0\u{1}tschchartinfo3dlightingpackage\0\u{1}tschchartinfo3drotation\0\u{1}tschchartinfo3dscale\0\u{1}tschchartinfo3dviewport\0\u{1}tschchartinfoaxisanchorlabelatends\0\u{1}tschchartinfobackgroundfill\0\u{1}tschchartinfobackgroundstroke\0\u{1}tschchartinfoborderopacity\0\u{1}tschchartinfobordershadow\0\u{1}tschchartinfoborderstroke\0\u{1}tschchartinfocalloutlinetype\0\u{1}tschchartinfocombinelayers\0\u{1}tschchartinfodeprecatedroundedcornerouterendonly\0\u{1}tschchartinfodeprecatedroundedcornerradius\0\u{1}tschchartinfodatasetnamelocation\0\u{1}tschchartinfodatasetnameparagraphstyleindex\0\u{1}tschchartinfodonutplacetitleatcenter\0\u{1}tschchartinfogridbackgroundfill\0\u{1}tschchartinfogridbackgroundopacity\0\u{1}tschchartinfoinnerradius\0\u{1}tschchartinfointerbargap\0\u{1}tschchartinfointersetgap\0\u{1}tschchartinfomultidatacontroltype\0\u{1}tschchartinfopiestartangle\0\u{1}tschchartinforadarradiusgridlinecurve\0\u{1}tschchartinforadarstartangle\0\u{1}tschchartinforoundedcornerouterendonly\0\u{1}tschchartinforoundedcornerradius\0\u{1}tschchartinfoshowborder\0\u{1}tschchartinfoshowlegend\0\u{1}tschchartinfoshowtitle\0\u{1}tschchartinfoskiphiddendata\0\u{1}tschchartinfosummarylabeldateformat\0\u{1}tschchartinfosummarylabeldurationformat\0\u{1}tschchartinfosummarylabelnumberformat\0\u{1}tschchartinfosummarylabelnumberformattype\0\u{1}tschchartinfosummarylabeloffset\0\u{1}tschchartinfosummarylabelparagraphstyleindex\0\u{1}tschchartinfosummarylabelshowlabels\0\u{1}tschchartinfosummarylabelvaluelabelspacing\0\u{1}tschchartinfotitlecolor\0\u{1}tschchartinfotitle\0\u{1}tschchartinfotitleparagraphstyleindex\0")
 
   fileprivate class _StorageClass {
     var _tschchartinfo3Dbarshape: Int32? = nil
@@ -9199,15 +8752,11 @@ extension TSCH_Generated_ChartGenericPropertyMapArchive: SwiftProtobuf.Message, 
     var _tschchartinfotitle: String? = nil
     var _tschchartinfotitleparagraphstyleindex: Int32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -9561,15 +9110,9 @@ extension TSCH_Generated_ChartGenericPropertyMapArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCH_Generated_LegendGenericPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_LegendGenericPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LegendGenericPropertyMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tschlegendmodelfill"),
-    2: .same(proto: "tschlegendmodellabelparagraphstyleindex"),
-    3: .same(proto: "tschlegendmodelopacity"),
-    4: .same(proto: "tschlegendmodelshadow"),
-    5: .same(proto: "tschlegendmodelstroke"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschlegendmodelfill\0\u{1}tschlegendmodellabelparagraphstyleindex\0\u{1}tschlegendmodelopacity\0\u{1}tschlegendmodelshadow\0\u{1}tschlegendmodelstroke\0")
 
   public var isInitialized: Bool {
     if let v = self._tschlegendmodelfill, !v.isInitialized {return false}
@@ -9628,53 +9171,9 @@ extension TSCH_Generated_LegendGenericPropertyMapArchive: SwiftProtobuf.Message,
   }
 }
 
-extension TSCH_Generated_ChartAxisGenericPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ChartAxisGenericPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartAxisGenericPropertyMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "tschchartaxis1_0dateformat"),
-    2: .standard(proto: "tschchartaxis1_0numberformat"),
-    3: .same(proto: "tschchartaxis3dgridlineopacity"),
-    4: .same(proto: "tschchartaxis3dgridlinestroke"),
-    5: .same(proto: "tschchartaxis3dlabelposition"),
-    6: .same(proto: "tschchartaxisdateformat"),
-    7: .same(proto: "tschchartaxisdurationformat"),
-    8: .same(proto: "tschchartaxishorizontalspacing"),
-    9: .same(proto: "tschchartaxislabelanglebaselinedirection"),
-    10: .same(proto: "tschchartaxislabelexplosion"),
-    11: .same(proto: "tschchartaxislabelparagraphstyleindex"),
-    12: .same(proto: "tschchartaxislabelsorientation"),
-    13: .same(proto: "tschchartaxismajorgridlineopacity"),
-    14: .same(proto: "tschchartaxismajorgridlineshadow"),
-    15: .same(proto: "tschchartaxismajorgridlinestroke"),
-    16: .same(proto: "tschchartaxisminorgridlineopacity"),
-    17: .same(proto: "tschchartaxisminorgridlineshadow"),
-    18: .same(proto: "tschchartaxisminorgridlinestroke"),
-    19: .same(proto: "tschchartaxisnumberformat"),
-    20: .same(proto: "tschchartaxisnumberformattype"),
-    21: .same(proto: "tschchartaxisnumberofdecades"),
-    22: .same(proto: "tschchartaxisnumberofmajorgridlines"),
-    23: .same(proto: "tschchartaxisnumberofminorgridlines"),
-    24: .same(proto: "tschchartaxisplottoedges"),
-    25: .same(proto: "tschchartaxisscale"),
-    26: .same(proto: "tschchartaxisshowaxis"),
-    27: .same(proto: "tschchartaxisshowextensionlines"),
-    28: .same(proto: "tschchartaxisshowgridlinetickmarks"),
-    29: .same(proto: "tschchartaxisshowlabels"),
-    30: .same(proto: "tschchartaxisshowlastlabel"),
-    31: .same(proto: "tschchartaxisshowmajorgridlines"),
-    32: .same(proto: "tschchartaxisshowmajortickmarks"),
-    33: .same(proto: "tschchartaxisshowminimumlabel"),
-    34: .same(proto: "tschchartaxisshowminorgridlines"),
-    35: .same(proto: "tschchartaxisshowminortickmarks"),
-    36: .same(proto: "tschchartaxisshowserieslabels"),
-    37: .same(proto: "tschchartaxisshowtitle"),
-    38: .same(proto: "tschchartaxistickmarklocation"),
-    39: .same(proto: "tschchartaxistitle"),
-    40: .same(proto: "tschchartaxistitleparagraphstyleindex"),
-    41: .same(proto: "tschchartaxisusermax"),
-    42: .same(proto: "tschchartaxisusermin"),
-    43: .same(proto: "tschchartaxisverticalspacing"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}tschchartaxis1_0dateformat\0\u{3}tschchartaxis1_0numberformat\0\u{1}tschchartaxis3dgridlineopacity\0\u{1}tschchartaxis3dgridlinestroke\0\u{1}tschchartaxis3dlabelposition\0\u{1}tschchartaxisdateformat\0\u{1}tschchartaxisdurationformat\0\u{1}tschchartaxishorizontalspacing\0\u{1}tschchartaxislabelanglebaselinedirection\0\u{1}tschchartaxislabelexplosion\0\u{1}tschchartaxislabelparagraphstyleindex\0\u{1}tschchartaxislabelsorientation\0\u{1}tschchartaxismajorgridlineopacity\0\u{1}tschchartaxismajorgridlineshadow\0\u{1}tschchartaxismajorgridlinestroke\0\u{1}tschchartaxisminorgridlineopacity\0\u{1}tschchartaxisminorgridlineshadow\0\u{1}tschchartaxisminorgridlinestroke\0\u{1}tschchartaxisnumberformat\0\u{1}tschchartaxisnumberformattype\0\u{1}tschchartaxisnumberofdecades\0\u{1}tschchartaxisnumberofmajorgridlines\0\u{1}tschchartaxisnumberofminorgridlines\0\u{1}tschchartaxisplottoedges\0\u{1}tschchartaxisscale\0\u{1}tschchartaxisshowaxis\0\u{1}tschchartaxisshowextensionlines\0\u{1}tschchartaxisshowgridlinetickmarks\0\u{1}tschchartaxisshowlabels\0\u{1}tschchartaxisshowlastlabel\0\u{1}tschchartaxisshowmajorgridlines\0\u{1}tschchartaxisshowmajortickmarks\0\u{1}tschchartaxisshowminimumlabel\0\u{1}tschchartaxisshowminorgridlines\0\u{1}tschchartaxisshowminortickmarks\0\u{1}tschchartaxisshowserieslabels\0\u{1}tschchartaxisshowtitle\0\u{1}tschchartaxistickmarklocation\0\u{1}tschchartaxistitle\0\u{1}tschchartaxistitleparagraphstyleindex\0\u{1}tschchartaxisusermax\0\u{1}tschchartaxisusermin\0\u{1}tschchartaxisverticalspacing\0")
 
   fileprivate class _StorageClass {
     var _tschchartaxis10Dateformat: TSK_FormatStructArchive? = nil
@@ -9721,15 +9220,11 @@ extension TSCH_Generated_ChartAxisGenericPropertyMapArchive: SwiftProtobuf.Messa
     var _tschchartaxisusermin: TSCH_ChartsNSNumberDoubleArchive? = nil
     var _tschchartaxisverticalspacing: Int32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -10056,94 +9551,9 @@ extension TSCH_Generated_ChartAxisGenericPropertyMapArchive: SwiftProtobuf.Messa
   }
 }
 
-extension TSCH_Generated_ChartSeriesGenericPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ChartSeriesGenericPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSeriesGenericPropertyMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "tschchartseries1_0dateformat"),
-    2: .standard(proto: "tschchartseries1_0numberformat"),
-    3: .standard(proto: "tschchartseries2_3labelexplosion"),
-    4: .same(proto: "tschchartseriesadjustmentscale"),
-    5: .same(proto: "tschchartseriescalloutlineendlineend"),
-    6: .same(proto: "tschchartseriescalloutlinestartlineend"),
-    7: .same(proto: "tschchartseriescalloutlinestrokestyle"),
-    8: .same(proto: "tschchartseriesdateformat"),
-    9: .same(proto: "tschchartseriesdurationformat"),
-    10: .same(proto: "tschchartseriesenablecalloutline"),
-    11: .same(proto: "tschchartserieserrorbarcustomnegativedata"),
-    12: .same(proto: "tschchartserieserrorbarcustomnegativedatascatterx"),
-    13: .same(proto: "tschchartserieserrorbarcustompositivedata"),
-    14: .same(proto: "tschchartserieserrorbarcustompositivedatascatterx"),
-    15: .same(proto: "tschchartserieserrorbarfixedvalue"),
-    16: .same(proto: "tschchartserieserrorbarfixedvaluescatterx"),
-    17: .same(proto: "tschchartserieserrorbarlineend"),
-    18: .same(proto: "tschchartserieserrorbarlineendscatterx"),
-    19: .same(proto: "tschchartserieserrorbarpercentvalue"),
-    20: .same(proto: "tschchartserieserrorbarpercentvaluescatterx"),
-    21: .same(proto: "tschchartserieserrorbarsetting"),
-    22: .same(proto: "tschchartserieserrorbarsettingscatterx"),
-    23: .same(proto: "tschchartserieserrorbarshadow"),
-    24: .same(proto: "tschchartserieserrorbarspacing"),
-    25: .same(proto: "tschchartserieserrorbarspacingscatterx"),
-    26: .same(proto: "tschchartserieserrorbarstddevvalue"),
-    27: .same(proto: "tschchartserieserrorbarstddevvaluescatterx"),
-    28: .same(proto: "tschchartserieserrorbarstroke"),
-    29: .same(proto: "tschchartserieserrorbarstrokescatterx"),
-    30: .same(proto: "tschchartserieserrorbartype"),
-    31: .same(proto: "tschchartserieserrorbartypescatterx"),
-    32: .same(proto: "tschchartseriesfill"),
-    33: .same(proto: "tschchartseriesfilluseseriesstrokealphamultiplier"),
-    34: .same(proto: "tschchartseriesfilluseseriesstroke"),
-    35: .same(proto: "tschchartserieslabelexplosion"),
-    36: .same(proto: "tschchartserieslabelparagraphstyleindex"),
-    37: .same(proto: "tschchartserieslinetype"),
-    38: .same(proto: "tschchartseriesnumberformat"),
-    39: .same(proto: "tschchartseriesnumberformattype"),
-    40: .same(proto: "tschchartseriesopacity"),
-    41: .same(proto: "tschchartseriesoutsidelabelparagraphstyleindex"),
-    42: .same(proto: "tschchartseriespercentnumberformat"),
-    43: .same(proto: "tschchartseriesseriestype"),
-    44: .same(proto: "tschchartseriesshadow"),
-    45: .same(proto: "tschchartseriesshowerrorbar"),
-    46: .same(proto: "tschchartseriesshowerrorbarscatterx"),
-    47: .same(proto: "tschchartseriesshowlabelsinfront"),
-    48: .same(proto: "tschchartseriesshowline"),
-    49: .same(proto: "tschchartseriesshownegativedata"),
-    50: .same(proto: "tschchartseriesshowserieslabels"),
-    51: .same(proto: "tschchartseriesshowsymbol"),
-    52: .same(proto: "tschchartseriesshowtrendline"),
-    53: .same(proto: "tschchartseriesshowvaluelabels"),
-    54: .same(proto: "tschchartseriessizedimension"),
-    55: .same(proto: "tschchartseriesstacklabels"),
-    56: .same(proto: "tschchartseriesstroke"),
-    57: .same(proto: "tschchartseriessymbolfill"),
-    58: .same(proto: "tschchartseriessymbolfilluseseriesfill"),
-    59: .same(proto: "tschchartseriessymbolfilluseseriesstroke"),
-    60: .same(proto: "tschchartseriessymbolsize"),
-    61: .same(proto: "tschchartseriessymbolstroke"),
-    62: .same(proto: "tschchartseriessymboltype"),
-    63: .same(proto: "tschchartseriestrendlineequationoffsetx"),
-    64: .same(proto: "tschchartseriestrendlineequationoffsety"),
-    65: .same(proto: "tschchartseriestrendlinelabelstring"),
-    66: .same(proto: "tschchartseriestrendlineorder"),
-    67: .same(proto: "tschchartseriestrendlineperiod"),
-    68: .same(proto: "tschchartseriestrendlinersquaredoffsetx"),
-    69: .same(proto: "tschchartseriestrendlinersquaredoffsety"),
-    70: .same(proto: "tschchartseriestrendlineshadow"),
-    71: .same(proto: "tschchartseriestrendlineshowequation"),
-    72: .same(proto: "tschchartseriestrendlineshowlabel"),
-    73: .same(proto: "tschchartseriestrendlineshowr2value"),
-    74: .same(proto: "tschchartseriestrendlinestroke"),
-    75: .same(proto: "tschchartseriestrendlinetype"),
-    76: .same(proto: "tschchartseriestrendlineequationopacity"),
-    77: .same(proto: "tschchartseriestrendlineequationparagraphstyleindex"),
-    78: .same(proto: "tschchartseriestrendlinersquaredopacity"),
-    79: .same(proto: "tschchartseriestrendlinersquaredparagraphstyleindex"),
-    80: .same(proto: "tschchartseriesvaluelabelposition"),
-    81: .same(proto: "tschchartseriesvaluelabelspacing"),
-    82: .same(proto: "tschchartseriesvaluelabelsaxis"),
-    83: .same(proto: "tschchartserieswedgeexplosion"),
-    84: .same(proto: "tschchartseriesyaxisordinal"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}tschchartseries1_0dateformat\0\u{3}tschchartseries1_0numberformat\0\u{3}tschchartseries2_3labelexplosion\0\u{1}tschchartseriesadjustmentscale\0\u{1}tschchartseriescalloutlineendlineend\0\u{1}tschchartseriescalloutlinestartlineend\0\u{1}tschchartseriescalloutlinestrokestyle\0\u{1}tschchartseriesdateformat\0\u{1}tschchartseriesdurationformat\0\u{1}tschchartseriesenablecalloutline\0\u{1}tschchartserieserrorbarcustomnegativedata\0\u{1}tschchartserieserrorbarcustomnegativedatascatterx\0\u{1}tschchartserieserrorbarcustompositivedata\0\u{1}tschchartserieserrorbarcustompositivedatascatterx\0\u{1}tschchartserieserrorbarfixedvalue\0\u{1}tschchartserieserrorbarfixedvaluescatterx\0\u{1}tschchartserieserrorbarlineend\0\u{1}tschchartserieserrorbarlineendscatterx\0\u{1}tschchartserieserrorbarpercentvalue\0\u{1}tschchartserieserrorbarpercentvaluescatterx\0\u{1}tschchartserieserrorbarsetting\0\u{1}tschchartserieserrorbarsettingscatterx\0\u{1}tschchartserieserrorbarshadow\0\u{1}tschchartserieserrorbarspacing\0\u{1}tschchartserieserrorbarspacingscatterx\0\u{1}tschchartserieserrorbarstddevvalue\0\u{1}tschchartserieserrorbarstddevvaluescatterx\0\u{1}tschchartserieserrorbarstroke\0\u{1}tschchartserieserrorbarstrokescatterx\0\u{1}tschchartserieserrorbartype\0\u{1}tschchartserieserrorbartypescatterx\0\u{1}tschchartseriesfill\0\u{1}tschchartseriesfilluseseriesstrokealphamultiplier\0\u{1}tschchartseriesfilluseseriesstroke\0\u{1}tschchartserieslabelexplosion\0\u{1}tschchartserieslabelparagraphstyleindex\0\u{1}tschchartserieslinetype\0\u{1}tschchartseriesnumberformat\0\u{1}tschchartseriesnumberformattype\0\u{1}tschchartseriesopacity\0\u{1}tschchartseriesoutsidelabelparagraphstyleindex\0\u{1}tschchartseriespercentnumberformat\0\u{1}tschchartseriesseriestype\0\u{1}tschchartseriesshadow\0\u{1}tschchartseriesshowerrorbar\0\u{1}tschchartseriesshowerrorbarscatterx\0\u{1}tschchartseriesshowlabelsinfront\0\u{1}tschchartseriesshowline\0\u{1}tschchartseriesshownegativedata\0\u{1}tschchartseriesshowserieslabels\0\u{1}tschchartseriesshowsymbol\0\u{1}tschchartseriesshowtrendline\0\u{1}tschchartseriesshowvaluelabels\0\u{1}tschchartseriessizedimension\0\u{1}tschchartseriesstacklabels\0\u{1}tschchartseriesstroke\0\u{1}tschchartseriessymbolfill\0\u{1}tschchartseriessymbolfilluseseriesfill\0\u{1}tschchartseriessymbolfilluseseriesstroke\0\u{1}tschchartseriessymbolsize\0\u{1}tschchartseriessymbolstroke\0\u{1}tschchartseriessymboltype\0\u{1}tschchartseriestrendlineequationoffsetx\0\u{1}tschchartseriestrendlineequationoffsety\0\u{1}tschchartseriestrendlinelabelstring\0\u{1}tschchartseriestrendlineorder\0\u{1}tschchartseriestrendlineperiod\0\u{1}tschchartseriestrendlinersquaredoffsetx\0\u{1}tschchartseriestrendlinersquaredoffsety\0\u{1}tschchartseriestrendlineshadow\0\u{1}tschchartseriestrendlineshowequation\0\u{1}tschchartseriestrendlineshowlabel\0\u{1}tschchartseriestrendlineshowr2value\0\u{1}tschchartseriestrendlinestroke\0\u{1}tschchartseriestrendlinetype\0\u{1}tschchartseriestrendlineequationopacity\0\u{1}tschchartseriestrendlineequationparagraphstyleindex\0\u{1}tschchartseriestrendlinersquaredopacity\0\u{1}tschchartseriestrendlinersquaredparagraphstyleindex\0\u{1}tschchartseriesvaluelabelposition\0\u{1}tschchartseriesvaluelabelspacing\0\u{1}tschchartseriesvaluelabelsaxis\0\u{1}tschchartserieswedgeexplosion\0\u{1}tschchartseriesyaxisordinal\0")
 
   fileprivate class _StorageClass {
     var _tschchartseries10Dateformat: TSK_FormatStructArchive? = nil
@@ -10231,15 +9641,11 @@ extension TSCH_Generated_ChartSeriesGenericPropertyMapArchive: SwiftProtobuf.Mes
     var _tschchartserieswedgeexplosion: Float? = nil
     var _tschchartseriesyaxisordinal: Int32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -10823,20 +10229,9 @@ extension TSCH_Generated_ChartSeriesGenericPropertyMapArchive: SwiftProtobuf.Mes
   }
 }
 
-extension TSCH_Generated_ReferenceLineGenericPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_Generated_ReferenceLineGenericPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ReferenceLineGenericPropertyMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tschreferencelinecustomvalue"),
-    2: .same(proto: "tschreferencelinelabel"),
-    3: .same(proto: "tschreferencelinelabelparagraphstyleindex"),
-    4: .same(proto: "tschreferencelineshadow"),
-    5: .same(proto: "tschreferencelineshowlabel"),
-    6: .same(proto: "tschreferencelineshowline"),
-    7: .same(proto: "tschreferencelineshowvaluelabel"),
-    8: .same(proto: "tschreferencelinestroke"),
-    9: .same(proto: "tschreferencelinetype"),
-    10: .same(proto: "tschreferencelinevaluelabelparagraphstyleindex"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tschreferencelinecustomvalue\0\u{1}tschreferencelinelabel\0\u{1}tschreferencelinelabelparagraphstyleindex\0\u{1}tschreferencelineshadow\0\u{1}tschreferencelineshowlabel\0\u{1}tschreferencelineshowline\0\u{1}tschreferencelineshowvaluelabel\0\u{1}tschreferencelinestroke\0\u{1}tschreferencelinetype\0\u{1}tschreferencelinevaluelabelparagraphstyleindex\0")
 
   public var isInitialized: Bool {
     if let v = self._tschreferencelineshadow, !v.isInitialized {return false}

@@ -13,7 +13,9 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/weichsel/ZIPFoundation.git", from: "0.9.19"),
-        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.28.2"),
+        // Keep in sync with the protoc-gen-swift used by scripts/gen-protos.sh —
+        // a newer runtime than the generator produces deprecation warnings.
+        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.38.1"),
     ],
     targets: [
         .target(

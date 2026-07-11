@@ -15,68 +15,68 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSASOS_InducedVerifyActivityStreamWithServerCommandArchive: @unchecked Sendable {
+public nonisolated struct TSASOS_InducedVerifyActivityStreamWithServerCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var serverActivities: [TSP_Reference] {
-    get {return _storage._serverActivities}
+    get {_storage._serverActivities}
     set {_uniqueStorage()._serverActivities = newValue}
   }
 
   public var serverActivitiesUndefined: Bool {
-    get {return _storage._serverActivitiesUndefined ?? false}
+    get {_storage._serverActivitiesUndefined ?? false}
     set {_uniqueStorage()._serverActivitiesUndefined = newValue}
   }
   /// Returns true if `serverActivitiesUndefined` has been explicitly set.
-  public var hasServerActivitiesUndefined: Bool {return _storage._serverActivitiesUndefined != nil}
+  public var hasServerActivitiesUndefined: Bool {_storage._serverActivitiesUndefined != nil}
   /// Clears the value of `serverActivitiesUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearServerActivitiesUndefined() {_uniqueStorage()._serverActivitiesUndefined = nil}
 
   public var timestampOfLastActivityWhenLastActivityCoalescing: Double {
-    get {return _storage._timestampOfLastActivityWhenLastActivityCoalescing ?? 0}
+    get {_storage._timestampOfLastActivityWhenLastActivityCoalescing ?? 0}
     set {_uniqueStorage()._timestampOfLastActivityWhenLastActivityCoalescing = newValue}
   }
   /// Returns true if `timestampOfLastActivityWhenLastActivityCoalescing` has been explicitly set.
-  public var hasTimestampOfLastActivityWhenLastActivityCoalescing: Bool {return _storage._timestampOfLastActivityWhenLastActivityCoalescing != nil}
+  public var hasTimestampOfLastActivityWhenLastActivityCoalescing: Bool {_storage._timestampOfLastActivityWhenLastActivityCoalescing != nil}
   /// Clears the value of `timestampOfLastActivityWhenLastActivityCoalescing`. Subsequent reads from it will return its default value.
   public mutating func clearTimestampOfLastActivityWhenLastActivityCoalescing() {_uniqueStorage()._timestampOfLastActivityWhenLastActivityCoalescing = nil}
 
   public var nextActivityToTransformIndex: Int32 {
-    get {return _storage._nextActivityToTransformIndex ?? 0}
+    get {_storage._nextActivityToTransformIndex ?? 0}
     set {_uniqueStorage()._nextActivityToTransformIndex = newValue}
   }
   /// Returns true if `nextActivityToTransformIndex` has been explicitly set.
-  public var hasNextActivityToTransformIndex: Bool {return _storage._nextActivityToTransformIndex != nil}
+  public var hasNextActivityToTransformIndex: Bool {_storage._nextActivityToTransformIndex != nil}
   /// Clears the value of `nextActivityToTransformIndex`. Subsequent reads from it will return its default value.
   public mutating func clearNextActivityToTransformIndex() {_uniqueStorage()._nextActivityToTransformIndex = nil}
 
   public var authorIdentifiersToVerify: [TSP_UUID] {
-    get {return _storage._authorIdentifiersToVerify}
+    get {_storage._authorIdentifiersToVerify}
     set {_uniqueStorage()._authorIdentifiersToVerify = newValue}
   }
 
   public var authorIdentifiersToVerifyUndefined: Bool {
-    get {return _storage._authorIdentifiersToVerifyUndefined ?? false}
+    get {_storage._authorIdentifiersToVerifyUndefined ?? false}
     set {_uniqueStorage()._authorIdentifiersToVerifyUndefined = newValue}
   }
   /// Returns true if `authorIdentifiersToVerifyUndefined` has been explicitly set.
-  public var hasAuthorIdentifiersToVerifyUndefined: Bool {return _storage._authorIdentifiersToVerifyUndefined != nil}
+  public var hasAuthorIdentifiersToVerifyUndefined: Bool {_storage._authorIdentifiersToVerifyUndefined != nil}
   /// Clears the value of `authorIdentifiersToVerifyUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearAuthorIdentifiersToVerifyUndefined() {_uniqueStorage()._authorIdentifiersToVerifyUndefined = nil}
 
@@ -87,28 +87,28 @@ public struct TSASOS_InducedVerifyActivityStreamWithServerCommandArchive: @unche
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSASOS_DrawableZOrderListArchive: Sendable {
+public nonisolated struct TSASOS_DrawableZOrderListArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var containerID: TSP_UUID {
-    get {return _containerID ?? TSP_UUID()}
+    get {_containerID ?? TSP_UUID()}
     set {_containerID = newValue}
   }
   /// Returns true if `containerID` has been explicitly set.
-  public var hasContainerID: Bool {return self._containerID != nil}
+  public var hasContainerID: Bool {self._containerID != nil}
   /// Clears the value of `containerID`. Subsequent reads from it will return its default value.
   public mutating func clearContainerID() {self._containerID = nil}
 
   public var drawableIDList: [TSP_UUID] = []
 
   public var drawableIDListUndefined: Bool {
-    get {return _drawableIDListUndefined ?? false}
+    get {_drawableIDListUndefined ?? false}
     set {_drawableIDListUndefined = newValue}
   }
   /// Returns true if `drawableIDListUndefined` has been explicitly set.
-  public var hasDrawableIDListUndefined: Bool {return self._drawableIDListUndefined != nil}
+  public var hasDrawableIDListUndefined: Bool {self._drawableIDListUndefined != nil}
   /// Clears the value of `drawableIDListUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDrawableIDListUndefined() {self._drawableIDListUndefined = nil}
 
@@ -122,19 +122,11 @@ public struct TSASOS_DrawableZOrderListArchive: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSASOS"
+fileprivate nonisolated let _protobuf_package = "TSASOS"
 
-extension TSASOS_InducedVerifyActivityStreamWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSASOS_InducedVerifyActivityStreamWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InducedVerifyActivityStreamWithServerCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "server_activities"),
-    3: .standard(proto: "server_activities_undefined"),
-    4: .standard(proto: "timestamp_of_last_activity_when_last_activity_coalescing"),
-    5: .standard(proto: "next_activity_to_transform_index"),
-    6: .standard(proto: "author_identifiers_to_verify"),
-    7: .standard(proto: "author_identifiers_to_verify_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}server_activities\0\u{3}server_activities_undefined\0\u{3}timestamp_of_last_activity_when_last_activity_coalescing\0\u{3}next_activity_to_transform_index\0\u{3}author_identifiers_to_verify\0\u{3}author_identifiers_to_verify_undefined\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -145,15 +137,11 @@ extension TSASOS_InducedVerifyActivityStreamWithServerCommandArchive: SwiftProto
     var _authorIdentifiersToVerify: [TSP_UUID] = []
     var _authorIdentifiersToVerifyUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -260,13 +248,9 @@ extension TSASOS_InducedVerifyActivityStreamWithServerCommandArchive: SwiftProto
   }
 }
 
-extension TSASOS_DrawableZOrderListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSASOS_DrawableZOrderListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawableZOrderListArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "container_id"),
-    2: .standard(proto: "drawable_id_list"),
-    3: .standard(proto: "drawable_id_list_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}container_id\0\u{3}drawable_id_list\0\u{3}drawable_id_list_undefined\0")
 
   public var isInitialized: Bool {
     if let v = self._containerID, !v.isInitialized {return false}

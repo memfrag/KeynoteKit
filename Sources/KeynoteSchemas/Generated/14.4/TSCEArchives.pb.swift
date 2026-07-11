@@ -15,40 +15,40 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSCE_CellReferenceArchive: Sendable {
+public nonisolated struct TSCE_CellReferenceArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var column: UInt32 {
-    get {return _column ?? 0}
+    get {_column ?? 0}
     set {_column = newValue}
   }
   /// Returns true if `column` has been explicitly set.
-  public var hasColumn: Bool {return self._column != nil}
+  public var hasColumn: Bool {self._column != nil}
   /// Clears the value of `column`. Subsequent reads from it will return its default value.
   public mutating func clearColumn() {self._column = nil}
 
   public var row: UInt32 {
-    get {return _row ?? 0}
+    get {_row ?? 0}
     set {_row = newValue}
   }
   /// Returns true if `row` has been explicitly set.
-  public var hasRow: Bool {return self._row != nil}
+  public var hasRow: Bool {self._row != nil}
   /// Clears the value of `row`. Subsequent reads from it will return its default value.
   public mutating func clearRow() {self._row = nil}
 
   public var tableID: TSP_CFUUIDArchive {
-    get {return _tableID ?? TSP_CFUUIDArchive()}
+    get {_tableID ?? TSP_CFUUIDArchive()}
     set {_tableID = newValue}
   }
   /// Returns true if `tableID` has been explicitly set.
-  public var hasTableID: Bool {return self._tableID != nil}
+  public var hasTableID: Bool {self._tableID != nil}
   /// Clears the value of `tableID`. Subsequent reads from it will return its default value.
   public mutating func clearTableID() {self._tableID = nil}
 
@@ -61,26 +61,26 @@ public struct TSCE_CellReferenceArchive: Sendable {
   fileprivate var _tableID: TSP_CFUUIDArchive? = nil
 }
 
-public struct TSCE_InternalCellReferenceArchive: Sendable {
+public nonisolated struct TSCE_InternalCellReferenceArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var coordinate: TSCE_CellCoordinateArchive {
-    get {return _coordinate ?? TSCE_CellCoordinateArchive()}
+    get {_coordinate ?? TSCE_CellCoordinateArchive()}
     set {_coordinate = newValue}
   }
   /// Returns true if `coordinate` has been explicitly set.
-  public var hasCoordinate: Bool {return self._coordinate != nil}
+  public var hasCoordinate: Bool {self._coordinate != nil}
   /// Clears the value of `coordinate`. Subsequent reads from it will return its default value.
   public mutating func clearCoordinate() {self._coordinate = nil}
 
   public var ownerID: UInt32 {
-    get {return _ownerID ?? 0}
+    get {_ownerID ?? 0}
     set {_ownerID = newValue}
   }
   /// Returns true if `ownerID` has been explicitly set.
-  public var hasOwnerID: Bool {return self._ownerID != nil}
+  public var hasOwnerID: Bool {self._ownerID != nil}
   /// Clears the value of `ownerID`. Subsequent reads from it will return its default value.
   public mutating func clearOwnerID() {self._ownerID = nil}
 
@@ -92,71 +92,71 @@ public struct TSCE_InternalCellReferenceArchive: Sendable {
   fileprivate var _ownerID: UInt32? = nil
 }
 
-public struct TSCE_RelativeCellRefArchive: Sendable {
+public nonisolated struct TSCE_RelativeCellRefArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var relativeRowOffset: Int32 {
-    get {return _relativeRowOffset ?? 0}
+    get {_relativeRowOffset ?? 0}
     set {_relativeRowOffset = newValue}
   }
   /// Returns true if `relativeRowOffset` has been explicitly set.
-  public var hasRelativeRowOffset: Bool {return self._relativeRowOffset != nil}
+  public var hasRelativeRowOffset: Bool {self._relativeRowOffset != nil}
   /// Clears the value of `relativeRowOffset`. Subsequent reads from it will return its default value.
   public mutating func clearRelativeRowOffset() {self._relativeRowOffset = nil}
 
   public var relativeColumnOffset: Int32 {
-    get {return _relativeColumnOffset ?? 0}
+    get {_relativeColumnOffset ?? 0}
     set {_relativeColumnOffset = newValue}
   }
   /// Returns true if `relativeColumnOffset` has been explicitly set.
-  public var hasRelativeColumnOffset: Bool {return self._relativeColumnOffset != nil}
+  public var hasRelativeColumnOffset: Bool {self._relativeColumnOffset != nil}
   /// Clears the value of `relativeColumnOffset`. Subsequent reads from it will return its default value.
   public mutating func clearRelativeColumnOffset() {self._relativeColumnOffset = nil}
 
   public var tableUid: TSP_UUID {
-    get {return _tableUid ?? TSP_UUID()}
+    get {_tableUid ?? TSP_UUID()}
     set {_tableUid = newValue}
   }
   /// Returns true if `tableUid` has been explicitly set.
-  public var hasTableUid: Bool {return self._tableUid != nil}
+  public var hasTableUid: Bool {self._tableUid != nil}
   /// Clears the value of `tableUid`. Subsequent reads from it will return its default value.
   public mutating func clearTableUid() {self._tableUid = nil}
 
   public var preserveColumn: Bool {
-    get {return _preserveColumn ?? false}
+    get {_preserveColumn ?? false}
     set {_preserveColumn = newValue}
   }
   /// Returns true if `preserveColumn` has been explicitly set.
-  public var hasPreserveColumn: Bool {return self._preserveColumn != nil}
+  public var hasPreserveColumn: Bool {self._preserveColumn != nil}
   /// Clears the value of `preserveColumn`. Subsequent reads from it will return its default value.
   public mutating func clearPreserveColumn() {self._preserveColumn = nil}
 
   public var preserveRow: Bool {
-    get {return _preserveRow ?? false}
+    get {_preserveRow ?? false}
     set {_preserveRow = newValue}
   }
   /// Returns true if `preserveRow` has been explicitly set.
-  public var hasPreserveRow: Bool {return self._preserveRow != nil}
+  public var hasPreserveRow: Bool {self._preserveRow != nil}
   /// Clears the value of `preserveRow`. Subsequent reads from it will return its default value.
   public mutating func clearPreserveRow() {self._preserveRow = nil}
 
   public var isSpanningColumn: Bool {
-    get {return _isSpanningColumn ?? false}
+    get {_isSpanningColumn ?? false}
     set {_isSpanningColumn = newValue}
   }
   /// Returns true if `isSpanningColumn` has been explicitly set.
-  public var hasIsSpanningColumn: Bool {return self._isSpanningColumn != nil}
+  public var hasIsSpanningColumn: Bool {self._isSpanningColumn != nil}
   /// Clears the value of `isSpanningColumn`. Subsequent reads from it will return its default value.
   public mutating func clearIsSpanningColumn() {self._isSpanningColumn = nil}
 
   public var isSpanningRow: Bool {
-    get {return _isSpanningRow ?? false}
+    get {_isSpanningRow ?? false}
     set {_isSpanningRow = newValue}
   }
   /// Returns true if `isSpanningRow` has been explicitly set.
-  public var hasIsSpanningRow: Bool {return self._isSpanningRow != nil}
+  public var hasIsSpanningRow: Bool {self._isSpanningRow != nil}
   /// Clears the value of `isSpanningRow`. Subsequent reads from it will return its default value.
   public mutating func clearIsSpanningRow() {self._isSpanningRow = nil}
 
@@ -173,53 +173,53 @@ public struct TSCE_RelativeCellRefArchive: Sendable {
   fileprivate var _isSpanningRow: Bool? = nil
 }
 
-public struct TSCE_RangeReferenceArchive: Sendable {
+public nonisolated struct TSCE_RangeReferenceArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tableID: TSP_CFUUIDArchive {
-    get {return _tableID ?? TSP_CFUUIDArchive()}
+    get {_tableID ?? TSP_CFUUIDArchive()}
     set {_tableID = newValue}
   }
   /// Returns true if `tableID` has been explicitly set.
-  public var hasTableID: Bool {return self._tableID != nil}
+  public var hasTableID: Bool {self._tableID != nil}
   /// Clears the value of `tableID`. Subsequent reads from it will return its default value.
   public mutating func clearTableID() {self._tableID = nil}
 
   public var topLeftColumn: UInt32 {
-    get {return _topLeftColumn ?? 0}
+    get {_topLeftColumn ?? 0}
     set {_topLeftColumn = newValue}
   }
   /// Returns true if `topLeftColumn` has been explicitly set.
-  public var hasTopLeftColumn: Bool {return self._topLeftColumn != nil}
+  public var hasTopLeftColumn: Bool {self._topLeftColumn != nil}
   /// Clears the value of `topLeftColumn`. Subsequent reads from it will return its default value.
   public mutating func clearTopLeftColumn() {self._topLeftColumn = nil}
 
   public var topLeftRow: UInt32 {
-    get {return _topLeftRow ?? 0}
+    get {_topLeftRow ?? 0}
     set {_topLeftRow = newValue}
   }
   /// Returns true if `topLeftRow` has been explicitly set.
-  public var hasTopLeftRow: Bool {return self._topLeftRow != nil}
+  public var hasTopLeftRow: Bool {self._topLeftRow != nil}
   /// Clears the value of `topLeftRow`. Subsequent reads from it will return its default value.
   public mutating func clearTopLeftRow() {self._topLeftRow = nil}
 
   public var bottomRightColumn: UInt32 {
-    get {return _bottomRightColumn ?? 0}
+    get {_bottomRightColumn ?? 0}
     set {_bottomRightColumn = newValue}
   }
   /// Returns true if `bottomRightColumn` has been explicitly set.
-  public var hasBottomRightColumn: Bool {return self._bottomRightColumn != nil}
+  public var hasBottomRightColumn: Bool {self._bottomRightColumn != nil}
   /// Clears the value of `bottomRightColumn`. Subsequent reads from it will return its default value.
   public mutating func clearBottomRightColumn() {self._bottomRightColumn = nil}
 
   public var bottomRightRow: UInt32 {
-    get {return _bottomRightRow ?? 0}
+    get {_bottomRightRow ?? 0}
     set {_bottomRightRow = newValue}
   }
   /// Returns true if `bottomRightRow` has been explicitly set.
-  public var hasBottomRightRow: Bool {return self._bottomRightRow != nil}
+  public var hasBottomRightRow: Bool {self._bottomRightRow != nil}
   /// Clears the value of `bottomRightRow`. Subsequent reads from it will return its default value.
   public mutating func clearBottomRightRow() {self._bottomRightRow = nil}
 
@@ -234,26 +234,26 @@ public struct TSCE_RangeReferenceArchive: Sendable {
   fileprivate var _bottomRightRow: UInt32? = nil
 }
 
-public struct TSCE_InternalRangeReferenceArchive: Sendable {
+public nonisolated struct TSCE_InternalRangeReferenceArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var ownerID: UInt32 {
-    get {return _ownerID ?? 0}
+    get {_ownerID ?? 0}
     set {_ownerID = newValue}
   }
   /// Returns true if `ownerID` has been explicitly set.
-  public var hasOwnerID: Bool {return self._ownerID != nil}
+  public var hasOwnerID: Bool {self._ownerID != nil}
   /// Clears the value of `ownerID`. Subsequent reads from it will return its default value.
   public mutating func clearOwnerID() {self._ownerID = nil}
 
   public var range: TSCE_RangeCoordinateArchive {
-    get {return _range ?? TSCE_RangeCoordinateArchive()}
+    get {_range ?? TSCE_RangeCoordinateArchive()}
     set {_range = newValue}
   }
   /// Returns true if `range` has been explicitly set.
-  public var hasRange: Bool {return self._range != nil}
+  public var hasRange: Bool {self._range != nil}
   /// Clears the value of `range`. Subsequent reads from it will return its default value.
   public mutating func clearRange() {self._range = nil}
 
@@ -265,7 +265,7 @@ public struct TSCE_InternalRangeReferenceArchive: Sendable {
   fileprivate var _range: TSCE_RangeCoordinateArchive? = nil
 }
 
-public struct TSCE_IndexSetArchive: Sendable {
+public nonisolated struct TSCE_IndexSetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -274,26 +274,26 @@ public struct TSCE_IndexSetArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct IndexSetEntry: Sendable {
+  public nonisolated struct IndexSetEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var rangeBegin: Int32 {
-      get {return _rangeBegin ?? 0}
+      get {_rangeBegin ?? 0}
       set {_rangeBegin = newValue}
     }
     /// Returns true if `rangeBegin` has been explicitly set.
-    public var hasRangeBegin: Bool {return self._rangeBegin != nil}
+    public var hasRangeBegin: Bool {self._rangeBegin != nil}
     /// Clears the value of `rangeBegin`. Subsequent reads from it will return its default value.
     public mutating func clearRangeBegin() {self._rangeBegin = nil}
 
     public var rangeEnd: Int32 {
-      get {return _rangeEnd ?? 0}
+      get {_rangeEnd ?? 0}
       set {_rangeEnd = newValue}
     }
     /// Returns true if `rangeEnd` has been explicitly set.
-    public var hasRangeEnd: Bool {return self._rangeEnd != nil}
+    public var hasRangeEnd: Bool {self._rangeEnd != nil}
     /// Clears the value of `rangeEnd`. Subsequent reads from it will return its default value.
     public mutating func clearRangeEnd() {self._rangeEnd = nil}
 
@@ -308,7 +308,7 @@ public struct TSCE_IndexSetArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_CellCoordSetArchive: Sendable {
+public nonisolated struct TSCE_CellCoordSetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -317,26 +317,26 @@ public struct TSCE_CellCoordSetArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ColumnEntry: Sendable {
+  public nonisolated struct ColumnEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var column: UInt32 {
-      get {return _column ?? 0}
+      get {_column ?? 0}
       set {_column = newValue}
     }
     /// Returns true if `column` has been explicitly set.
-    public var hasColumn: Bool {return self._column != nil}
+    public var hasColumn: Bool {self._column != nil}
     /// Clears the value of `column`. Subsequent reads from it will return its default value.
     public mutating func clearColumn() {self._column = nil}
 
     public var rowSet: TSCE_IndexSetArchive {
-      get {return _rowSet ?? TSCE_IndexSetArchive()}
+      get {_rowSet ?? TSCE_IndexSetArchive()}
       set {_rowSet = newValue}
     }
     /// Returns true if `rowSet` has been explicitly set.
-    public var hasRowSet: Bool {return self._rowSet != nil}
+    public var hasRowSet: Bool {self._rowSet != nil}
     /// Clears the value of `rowSet`. Subsequent reads from it will return its default value.
     public mutating func clearRowSet() {self._rowSet = nil}
 
@@ -351,7 +351,7 @@ public struct TSCE_CellCoordSetArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_InternalCellRefSetArchive: Sendable {
+public nonisolated struct TSCE_InternalCellRefSetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -360,26 +360,26 @@ public struct TSCE_InternalCellRefSetArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct OwnerEntry: Sendable {
+  public nonisolated struct OwnerEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var ownerID: UInt32 {
-      get {return _ownerID ?? 0}
+      get {_ownerID ?? 0}
       set {_ownerID = newValue}
     }
     /// Returns true if `ownerID` has been explicitly set.
-    public var hasOwnerID: Bool {return self._ownerID != nil}
+    public var hasOwnerID: Bool {self._ownerID != nil}
     /// Clears the value of `ownerID`. Subsequent reads from it will return its default value.
     public mutating func clearOwnerID() {self._ownerID = nil}
 
     public var coordSet: TSCE_CellCoordSetArchive {
-      get {return _coordSet ?? TSCE_CellCoordSetArchive()}
+      get {_coordSet ?? TSCE_CellCoordSetArchive()}
       set {_coordSet = newValue}
     }
     /// Returns true if `coordSet` has been explicitly set.
-    public var hasCoordSet: Bool {return self._coordSet != nil}
+    public var hasCoordSet: Bool {self._coordSet != nil}
     /// Clears the value of `coordSet`. Subsequent reads from it will return its default value.
     public mutating func clearCoordSet() {self._coordSet = nil}
 
@@ -394,26 +394,26 @@ public struct TSCE_InternalCellRefSetArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_ColumnRowSize: Sendable {
+public nonisolated struct TSCE_ColumnRowSize: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var numColumns: UInt32 {
-    get {return _numColumns ?? 1}
+    get {_numColumns ?? 1}
     set {_numColumns = newValue}
   }
   /// Returns true if `numColumns` has been explicitly set.
-  public var hasNumColumns: Bool {return self._numColumns != nil}
+  public var hasNumColumns: Bool {self._numColumns != nil}
   /// Clears the value of `numColumns`. Subsequent reads from it will return its default value.
   public mutating func clearNumColumns() {self._numColumns = nil}
 
   public var numRows: UInt32 {
-    get {return _numRows ?? 1}
+    get {_numRows ?? 1}
     set {_numRows = newValue}
   }
   /// Returns true if `numRows` has been explicitly set.
-  public var hasNumRows: Bool {return self._numRows != nil}
+  public var hasNumRows: Bool {self._numRows != nil}
   /// Clears the value of `numRows`. Subsequent reads from it will return its default value.
   public mutating func clearNumRows() {self._numRows = nil}
 
@@ -425,26 +425,26 @@ public struct TSCE_ColumnRowSize: Sendable {
   fileprivate var _numRows: UInt32? = nil
 }
 
-public struct TSCE_CellRectArchive: Sendable {
+public nonisolated struct TSCE_CellRectArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var origin: TSCE_CellCoordinateArchive {
-    get {return _origin ?? TSCE_CellCoordinateArchive()}
+    get {_origin ?? TSCE_CellCoordinateArchive()}
     set {_origin = newValue}
   }
   /// Returns true if `origin` has been explicitly set.
-  public var hasOrigin: Bool {return self._origin != nil}
+  public var hasOrigin: Bool {self._origin != nil}
   /// Clears the value of `origin`. Subsequent reads from it will return its default value.
   public mutating func clearOrigin() {self._origin = nil}
 
   public var size: TSCE_ColumnRowSize {
-    get {return _size ?? TSCE_ColumnRowSize()}
+    get {_size ?? TSCE_ColumnRowSize()}
     set {_size = newValue}
   }
   /// Returns true if `size` has been explicitly set.
-  public var hasSize: Bool {return self._size != nil}
+  public var hasSize: Bool {self._size != nil}
   /// Clears the value of `size`. Subsequent reads from it will return its default value.
   public mutating func clearSize() {self._size = nil}
 
@@ -456,7 +456,7 @@ public struct TSCE_CellRectArchive: Sendable {
   fileprivate var _size: TSCE_ColumnRowSize? = nil
 }
 
-public struct TSCE_CellRefSetArchive: Sendable {
+public nonisolated struct TSCE_CellRefSetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -465,26 +465,26 @@ public struct TSCE_CellRefSetArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct OwnerEntry: Sendable {
+  public nonisolated struct OwnerEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var ownerUid: TSP_UUID {
-      get {return _ownerUid ?? TSP_UUID()}
+      get {_ownerUid ?? TSP_UUID()}
       set {_ownerUid = newValue}
     }
     /// Returns true if `ownerUid` has been explicitly set.
-    public var hasOwnerUid: Bool {return self._ownerUid != nil}
+    public var hasOwnerUid: Bool {self._ownerUid != nil}
     /// Clears the value of `ownerUid`. Subsequent reads from it will return its default value.
     public mutating func clearOwnerUid() {self._ownerUid = nil}
 
     public var coordSet: TSCE_CellCoordSetArchive {
-      get {return _coordSet ?? TSCE_CellCoordSetArchive()}
+      get {_coordSet ?? TSCE_CellCoordSetArchive()}
       set {_coordSet = newValue}
     }
     /// Returns true if `coordSet` has been explicitly set.
-    public var hasCoordSet: Bool {return self._coordSet != nil}
+    public var hasCoordSet: Bool {self._coordSet != nil}
     /// Clears the value of `coordSet`. Subsequent reads from it will return its default value.
     public mutating func clearCoordSet() {self._coordSet = nil}
 
@@ -499,7 +499,7 @@ public struct TSCE_CellRefSetArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_UidCoordSetArchive: Sendable {
+public nonisolated struct TSCE_UidCoordSetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -508,17 +508,17 @@ public struct TSCE_UidCoordSetArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ColumnEntry: Sendable {
+  public nonisolated struct ColumnEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var column: TSP_UUID {
-      get {return _column ?? TSP_UUID()}
+      get {_column ?? TSP_UUID()}
       set {_column = newValue}
     }
     /// Returns true if `column` has been explicitly set.
-    public var hasColumn: Bool {return self._column != nil}
+    public var hasColumn: Bool {self._column != nil}
     /// Clears the value of `column`. Subsequent reads from it will return its default value.
     public mutating func clearColumn() {self._column = nil}
 
@@ -534,7 +534,7 @@ public struct TSCE_UidCoordSetArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_UidCellRefSetArchive: Sendable {
+public nonisolated struct TSCE_UidCellRefSetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -543,26 +543,26 @@ public struct TSCE_UidCellRefSetArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct OwnerEntry: Sendable {
+  public nonisolated struct OwnerEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var ownerUid: TSP_UUID {
-      get {return _ownerUid ?? TSP_UUID()}
+      get {_ownerUid ?? TSP_UUID()}
       set {_ownerUid = newValue}
     }
     /// Returns true if `ownerUid` has been explicitly set.
-    public var hasOwnerUid: Bool {return self._ownerUid != nil}
+    public var hasOwnerUid: Bool {self._ownerUid != nil}
     /// Clears the value of `ownerUid`. Subsequent reads from it will return its default value.
     public mutating func clearOwnerUid() {self._ownerUid = nil}
 
     public var coordSet: TSCE_UidCoordSetArchive {
-      get {return _coordSet ?? TSCE_UidCoordSetArchive()}
+      get {_coordSet ?? TSCE_UidCoordSetArchive()}
       set {_coordSet = newValue}
     }
     /// Returns true if `coordSet` has been explicitly set.
-    public var hasCoordSet: Bool {return self._coordSet != nil}
+    public var hasCoordSet: Bool {self._coordSet != nil}
     /// Clears the value of `coordSet`. Subsequent reads from it will return its default value.
     public mutating func clearCoordSet() {self._coordSet = nil}
 
@@ -577,55 +577,55 @@ public struct TSCE_UidCellRefSetArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_ReferencesToDirtyArchive: Sendable {
+public nonisolated struct TSCE_ReferencesToDirtyArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var toDirtyOwnerIds: TSCE_IndexSetArchive {
-    get {return _toDirtyOwnerIds ?? TSCE_IndexSetArchive()}
+    get {_toDirtyOwnerIds ?? TSCE_IndexSetArchive()}
     set {_toDirtyOwnerIds = newValue}
   }
   /// Returns true if `toDirtyOwnerIds` has been explicitly set.
-  public var hasToDirtyOwnerIds: Bool {return self._toDirtyOwnerIds != nil}
+  public var hasToDirtyOwnerIds: Bool {self._toDirtyOwnerIds != nil}
   /// Clears the value of `toDirtyOwnerIds`. Subsequent reads from it will return its default value.
   public mutating func clearToDirtyOwnerIds() {self._toDirtyOwnerIds = nil}
 
   public var toDirtyCells: TSCE_InternalCellRefSetArchive {
-    get {return _toDirtyCells ?? TSCE_InternalCellRefSetArchive()}
+    get {_toDirtyCells ?? TSCE_InternalCellRefSetArchive()}
     set {_toDirtyCells = newValue}
   }
   /// Returns true if `toDirtyCells` has been explicitly set.
-  public var hasToDirtyCells: Bool {return self._toDirtyCells != nil}
+  public var hasToDirtyCells: Bool {self._toDirtyCells != nil}
   /// Clears the value of `toDirtyCells`. Subsequent reads from it will return its default value.
   public mutating func clearToDirtyCells() {self._toDirtyCells = nil}
 
   public var toDirtyCellsAdditional: TSCE_InternalCellRefSetArchive {
-    get {return _toDirtyCellsAdditional ?? TSCE_InternalCellRefSetArchive()}
+    get {_toDirtyCellsAdditional ?? TSCE_InternalCellRefSetArchive()}
     set {_toDirtyCellsAdditional = newValue}
   }
   /// Returns true if `toDirtyCellsAdditional` has been explicitly set.
-  public var hasToDirtyCellsAdditional: Bool {return self._toDirtyCellsAdditional != nil}
+  public var hasToDirtyCellsAdditional: Bool {self._toDirtyCellsAdditional != nil}
   /// Clears the value of `toDirtyCellsAdditional`. Subsequent reads from it will return its default value.
   public mutating func clearToDirtyCellsAdditional() {self._toDirtyCellsAdditional = nil}
 
   public var toDirtyRangeRefs: [TSCE_InternalRangeReferenceArchive] = []
 
   public var calcInProgressCells: TSCE_InternalCellRefSetArchive {
-    get {return _calcInProgressCells ?? TSCE_InternalCellRefSetArchive()}
+    get {_calcInProgressCells ?? TSCE_InternalCellRefSetArchive()}
     set {_calcInProgressCells = newValue}
   }
   /// Returns true if `calcInProgressCells` has been explicitly set.
-  public var hasCalcInProgressCells: Bool {return self._calcInProgressCells != nil}
+  public var hasCalcInProgressCells: Bool {self._calcInProgressCells != nil}
   /// Clears the value of `calcInProgressCells`. Subsequent reads from it will return its default value.
   public mutating func clearCalcInProgressCells() {self._calcInProgressCells = nil}
 
   public var toUpdatePrecedentsCells: TSCE_InternalCellRefSetArchive {
-    get {return _toUpdatePrecedentsCells ?? TSCE_InternalCellRefSetArchive()}
+    get {_toUpdatePrecedentsCells ?? TSCE_InternalCellRefSetArchive()}
     set {_toUpdatePrecedentsCells = newValue}
   }
   /// Returns true if `toUpdatePrecedentsCells` has been explicitly set.
-  public var hasToUpdatePrecedentsCells: Bool {return self._toUpdatePrecedentsCells != nil}
+  public var hasToUpdatePrecedentsCells: Bool {self._toUpdatePrecedentsCells != nil}
   /// Clears the value of `toUpdatePrecedentsCells`. Subsequent reads from it will return its default value.
   public mutating func clearToUpdatePrecedentsCells() {self._toUpdatePrecedentsCells = nil}
 
@@ -640,44 +640,44 @@ public struct TSCE_ReferencesToDirtyArchive: Sendable {
   fileprivate var _toUpdatePrecedentsCells: TSCE_InternalCellRefSetArchive? = nil
 }
 
-public struct TSCE_CoordMapperArchive: Sendable {
+public nonisolated struct TSCE_CoordMapperArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tableUid: TSP_UUID {
-    get {return _tableUid ?? TSP_UUID()}
+    get {_tableUid ?? TSP_UUID()}
     set {_tableUid = newValue}
   }
   /// Returns true if `tableUid` has been explicitly set.
-  public var hasTableUid: Bool {return self._tableUid != nil}
+  public var hasTableUid: Bool {self._tableUid != nil}
   /// Clears the value of `tableUid`. Subsequent reads from it will return its default value.
   public mutating func clearTableUid() {self._tableUid = nil}
 
   public var summaryRowsSet: TSCE_IndexSetArchive {
-    get {return _summaryRowsSet ?? TSCE_IndexSetArchive()}
+    get {_summaryRowsSet ?? TSCE_IndexSetArchive()}
     set {_summaryRowsSet = newValue}
   }
   /// Returns true if `summaryRowsSet` has been explicitly set.
-  public var hasSummaryRowsSet: Bool {return self._summaryRowsSet != nil}
+  public var hasSummaryRowsSet: Bool {self._summaryRowsSet != nil}
   /// Clears the value of `summaryRowsSet`. Subsequent reads from it will return its default value.
   public mutating func clearSummaryRowsSet() {self._summaryRowsSet = nil}
 
   public var summaryColumnsSet: TSCE_IndexSetArchive {
-    get {return _summaryColumnsSet ?? TSCE_IndexSetArchive()}
+    get {_summaryColumnsSet ?? TSCE_IndexSetArchive()}
     set {_summaryColumnsSet = newValue}
   }
   /// Returns true if `summaryColumnsSet` has been explicitly set.
-  public var hasSummaryColumnsSet: Bool {return self._summaryColumnsSet != nil}
+  public var hasSummaryColumnsSet: Bool {self._summaryColumnsSet != nil}
   /// Clears the value of `summaryColumnsSet`. Subsequent reads from it will return its default value.
   public mutating func clearSummaryColumnsSet() {self._summaryColumnsSet = nil}
 
   public var labelRowsSet: TSCE_IndexSetArchive {
-    get {return _labelRowsSet ?? TSCE_IndexSetArchive()}
+    get {_labelRowsSet ?? TSCE_IndexSetArchive()}
     set {_labelRowsSet = newValue}
   }
   /// Returns true if `labelRowsSet` has been explicitly set.
-  public var hasLabelRowsSet: Bool {return self._labelRowsSet != nil}
+  public var hasLabelRowsSet: Bool {self._labelRowsSet != nil}
   /// Clears the value of `labelRowsSet`. Subsequent reads from it will return its default value.
   public mutating func clearLabelRowsSet() {self._labelRowsSet = nil}
 
@@ -691,26 +691,26 @@ public struct TSCE_CoordMapperArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct BaseToViewEntry: Sendable {
+  public nonisolated struct BaseToViewEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var baseColumnOrRow: UInt32 {
-      get {return _baseColumnOrRow ?? 0}
+      get {_baseColumnOrRow ?? 0}
       set {_baseColumnOrRow = newValue}
     }
     /// Returns true if `baseColumnOrRow` has been explicitly set.
-    public var hasBaseColumnOrRow: Bool {return self._baseColumnOrRow != nil}
+    public var hasBaseColumnOrRow: Bool {self._baseColumnOrRow != nil}
     /// Clears the value of `baseColumnOrRow`. Subsequent reads from it will return its default value.
     public mutating func clearBaseColumnOrRow() {self._baseColumnOrRow = nil}
 
     public var viewColumnOrRow: UInt32 {
-      get {return _viewColumnOrRow ?? 0}
+      get {_viewColumnOrRow ?? 0}
       set {_viewColumnOrRow = newValue}
     }
     /// Returns true if `viewColumnOrRow` has been explicitly set.
-    public var hasViewColumnOrRow: Bool {return self._viewColumnOrRow != nil}
+    public var hasViewColumnOrRow: Bool {self._viewColumnOrRow != nil}
     /// Clears the value of `viewColumnOrRow`. Subsequent reads from it will return its default value.
     public mutating func clearViewColumnOrRow() {self._viewColumnOrRow = nil}
 
@@ -722,26 +722,26 @@ public struct TSCE_CoordMapperArchive: Sendable {
     fileprivate var _viewColumnOrRow: UInt32? = nil
   }
 
-  public struct SummaryToViewEntry: Sendable {
+  public nonisolated struct SummaryToViewEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var summaryColumnOrRow: UInt32 {
-      get {return _summaryColumnOrRow ?? 0}
+      get {_summaryColumnOrRow ?? 0}
       set {_summaryColumnOrRow = newValue}
     }
     /// Returns true if `summaryColumnOrRow` has been explicitly set.
-    public var hasSummaryColumnOrRow: Bool {return self._summaryColumnOrRow != nil}
+    public var hasSummaryColumnOrRow: Bool {self._summaryColumnOrRow != nil}
     /// Clears the value of `summaryColumnOrRow`. Subsequent reads from it will return its default value.
     public mutating func clearSummaryColumnOrRow() {self._summaryColumnOrRow = nil}
 
     public var viewColumnOrRow: UInt32 {
-      get {return _viewColumnOrRow ?? 0}
+      get {_viewColumnOrRow ?? 0}
       set {_viewColumnOrRow = newValue}
     }
     /// Returns true if `viewColumnOrRow` has been explicitly set.
-    public var hasViewColumnOrRow: Bool {return self._viewColumnOrRow != nil}
+    public var hasViewColumnOrRow: Bool {self._viewColumnOrRow != nil}
     /// Clears the value of `viewColumnOrRow`. Subsequent reads from it will return its default value.
     public mutating func clearViewColumnOrRow() {self._viewColumnOrRow = nil}
 
@@ -761,65 +761,47 @@ public struct TSCE_CoordMapperArchive: Sendable {
   fileprivate var _labelRowsSet: TSCE_IndexSetArchive? = nil
 }
 
-public struct TSCE_ReferenceArchive: @unchecked Sendable {
+public nonisolated struct TSCE_ReferenceArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var referenceType: TSCE_ReferenceArchive.ReferenceType {
-    get {return _storage._referenceType ?? .cellReference}
+    get {_storage._referenceType ?? .cellReference}
     set {_uniqueStorage()._referenceType = newValue}
   }
   /// Returns true if `referenceType` has been explicitly set.
-  public var hasReferenceType: Bool {return _storage._referenceType != nil}
+  public var hasReferenceType: Bool {_storage._referenceType != nil}
   /// Clears the value of `referenceType`. Subsequent reads from it will return its default value.
   public mutating func clearReferenceType() {_uniqueStorage()._referenceType = nil}
 
   public var cellReference: TSCE_CellReferenceArchive {
-    get {return _storage._cellReference ?? TSCE_CellReferenceArchive()}
+    get {_storage._cellReference ?? TSCE_CellReferenceArchive()}
     set {_uniqueStorage()._cellReference = newValue}
   }
   /// Returns true if `cellReference` has been explicitly set.
-  public var hasCellReference: Bool {return _storage._cellReference != nil}
+  public var hasCellReference: Bool {_storage._cellReference != nil}
   /// Clears the value of `cellReference`. Subsequent reads from it will return its default value.
   public mutating func clearCellReference() {_uniqueStorage()._cellReference = nil}
 
   public var rangeReference: TSCE_RangeReferenceArchive {
-    get {return _storage._rangeReference ?? TSCE_RangeReferenceArchive()}
+    get {_storage._rangeReference ?? TSCE_RangeReferenceArchive()}
     set {_uniqueStorage()._rangeReference = newValue}
   }
   /// Returns true if `rangeReference` has been explicitly set.
-  public var hasRangeReference: Bool {return _storage._rangeReference != nil}
+  public var hasRangeReference: Bool {_storage._rangeReference != nil}
   /// Clears the value of `rangeReference`. Subsequent reads from it will return its default value.
   public mutating func clearRangeReference() {_uniqueStorage()._rangeReference = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ReferenceType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case cellReference // = 1
-    case rangeReference // = 2
-    case nameDependency // = 3
+  public nonisolated enum ReferenceType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case cellReference = 1
+    case rangeReference = 2
+    case nameDependency = 3
 
     public init() {
       self = .cellReference
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 1: self = .cellReference
-      case 2: self = .rangeReference
-      case 3: self = .nameDependency
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .cellReference: return 1
-      case .rangeReference: return 2
-      case .nameDependency: return 3
-      }
     }
 
   }
@@ -829,44 +811,44 @@ public struct TSCE_ReferenceArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCE_EdgeArchive: Sendable {
+public nonisolated struct TSCE_EdgeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var column: UInt32 {
-    get {return _column ?? 0}
+    get {_column ?? 0}
     set {_column = newValue}
   }
   /// Returns true if `column` has been explicitly set.
-  public var hasColumn: Bool {return self._column != nil}
+  public var hasColumn: Bool {self._column != nil}
   /// Clears the value of `column`. Subsequent reads from it will return its default value.
   public mutating func clearColumn() {self._column = nil}
 
   public var row: UInt32 {
-    get {return _row ?? 0}
+    get {_row ?? 0}
     set {_row = newValue}
   }
   /// Returns true if `row` has been explicitly set.
-  public var hasRow: Bool {return self._row != nil}
+  public var hasRow: Bool {self._row != nil}
   /// Clears the value of `row`. Subsequent reads from it will return its default value.
   public mutating func clearRow() {self._row = nil}
 
   public var isPrecedent: Bool {
-    get {return _isPrecedent ?? false}
+    get {_isPrecedent ?? false}
     set {_isPrecedent = newValue}
   }
   /// Returns true if `isPrecedent` has been explicitly set.
-  public var hasIsPrecedent: Bool {return self._isPrecedent != nil}
+  public var hasIsPrecedent: Bool {self._isPrecedent != nil}
   /// Clears the value of `isPrecedent`. Subsequent reads from it will return its default value.
   public mutating func clearIsPrecedent() {self._isPrecedent = nil}
 
   public var ownerID: TSP_CFUUIDArchive {
-    get {return _ownerID ?? TSP_CFUUIDArchive()}
+    get {_ownerID ?? TSP_CFUUIDArchive()}
     set {_ownerID = newValue}
   }
   /// Returns true if `ownerID` has been explicitly set.
-  public var hasOwnerID: Bool {return self._ownerID != nil}
+  public var hasOwnerID: Bool {self._ownerID != nil}
   /// Clears the value of `ownerID`. Subsequent reads from it will return its default value.
   public mutating func clearOwnerID() {self._ownerID = nil}
 
@@ -880,7 +862,7 @@ public struct TSCE_EdgeArchive: Sendable {
   fileprivate var _ownerID: TSP_CFUUIDArchive? = nil
 }
 
-public struct TSCE_EdgesArchive: Sendable {
+public nonisolated struct TSCE_EdgesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -898,7 +880,7 @@ public struct TSCE_EdgesArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_ExpandedEdgesArchive: Sendable {
+public nonisolated struct TSCE_ExpandedEdgesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -918,44 +900,44 @@ public struct TSCE_ExpandedEdgesArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_CellRecordArchive: Sendable {
+public nonisolated struct TSCE_CellRecordArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var column: UInt32 {
-    get {return _column ?? 0}
+    get {_column ?? 0}
     set {_column = newValue}
   }
   /// Returns true if `column` has been explicitly set.
-  public var hasColumn: Bool {return self._column != nil}
+  public var hasColumn: Bool {self._column != nil}
   /// Clears the value of `column`. Subsequent reads from it will return its default value.
   public mutating func clearColumn() {self._column = nil}
 
   public var row: UInt32 {
-    get {return _row ?? 0}
+    get {_row ?? 0}
     set {_row = newValue}
   }
   /// Returns true if `row` has been explicitly set.
-  public var hasRow: Bool {return self._row != nil}
+  public var hasRow: Bool {self._row != nil}
   /// Clears the value of `row`. Subsequent reads from it will return its default value.
   public mutating func clearRow() {self._row = nil}
 
   public var dirtySelfPlusPrecedentsCount: UInt64 {
-    get {return _dirtySelfPlusPrecedentsCount ?? 0}
+    get {_dirtySelfPlusPrecedentsCount ?? 0}
     set {_dirtySelfPlusPrecedentsCount = newValue}
   }
   /// Returns true if `dirtySelfPlusPrecedentsCount` has been explicitly set.
-  public var hasDirtySelfPlusPrecedentsCount: Bool {return self._dirtySelfPlusPrecedentsCount != nil}
+  public var hasDirtySelfPlusPrecedentsCount: Bool {self._dirtySelfPlusPrecedentsCount != nil}
   /// Clears the value of `dirtySelfPlusPrecedentsCount`. Subsequent reads from it will return its default value.
   public mutating func clearDirtySelfPlusPrecedentsCount() {self._dirtySelfPlusPrecedentsCount = nil}
 
   public var isInACycle: Bool {
-    get {return _isInACycle ?? false}
+    get {_isInACycle ?? false}
     set {_isInACycle = newValue}
   }
   /// Returns true if `isInACycle` has been explicitly set.
-  public var hasIsInACycle: Bool {return self._isInACycle != nil}
+  public var hasIsInACycle: Bool {self._isInACycle != nil}
   /// Clears the value of `isInACycle`. Subsequent reads from it will return its default value.
   public mutating func clearIsInACycle() {self._isInACycle = nil}
 
@@ -963,48 +945,48 @@ public struct TSCE_CellRecordArchive: Sendable {
   public var edge: [TSCE_EdgeArchive] = []
 
   public var containsAFormula: Bool {
-    get {return _containsAFormula ?? true}
+    get {_containsAFormula ?? true}
     set {_containsAFormula = newValue}
   }
   /// Returns true if `containsAFormula` has been explicitly set.
-  public var hasContainsAFormula: Bool {return self._containsAFormula != nil}
+  public var hasContainsAFormula: Bool {self._containsAFormula != nil}
   /// Clears the value of `containsAFormula`. Subsequent reads from it will return its default value.
   public mutating func clearContainsAFormula() {self._containsAFormula = nil}
 
   public var hasCalculatedPrecedents_p: Bool {
-    get {return _hasCalculatedPrecedents_p ?? false}
+    get {_hasCalculatedPrecedents_p ?? false}
     set {_hasCalculatedPrecedents_p = newValue}
   }
   /// Returns true if `hasCalculatedPrecedents_p` has been explicitly set.
-  public var hasHasCalculatedPrecedents_p: Bool {return self._hasCalculatedPrecedents_p != nil}
+  public var hasHasCalculatedPrecedents_p: Bool {self._hasCalculatedPrecedents_p != nil}
   /// Clears the value of `hasCalculatedPrecedents_p`. Subsequent reads from it will return its default value.
   public mutating func clearHasCalculatedPrecedents_p() {self._hasCalculatedPrecedents_p = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var calculatePrecedentsOnNextRecalc: Bool {
-    get {return _calculatePrecedentsOnNextRecalc ?? false}
+    get {_calculatePrecedentsOnNextRecalc ?? false}
     set {_calculatePrecedentsOnNextRecalc = newValue}
   }
   /// Returns true if `calculatePrecedentsOnNextRecalc` has been explicitly set.
-  public var hasCalculatePrecedentsOnNextRecalc: Bool {return self._calculatePrecedentsOnNextRecalc != nil}
+  public var hasCalculatePrecedentsOnNextRecalc: Bool {self._calculatePrecedentsOnNextRecalc != nil}
   /// Clears the value of `calculatePrecedentsOnNextRecalc`. Subsequent reads from it will return its default value.
   public mutating func clearCalculatePrecedentsOnNextRecalc() {self._calculatePrecedentsOnNextRecalc = nil}
 
   public var translateForExcelImportOnNextRecalc: Bool {
-    get {return _translateForExcelImportOnNextRecalc ?? false}
+    get {_translateForExcelImportOnNextRecalc ?? false}
     set {_translateForExcelImportOnNextRecalc = newValue}
   }
   /// Returns true if `translateForExcelImportOnNextRecalc` has been explicitly set.
-  public var hasTranslateForExcelImportOnNextRecalc: Bool {return self._translateForExcelImportOnNextRecalc != nil}
+  public var hasTranslateForExcelImportOnNextRecalc: Bool {self._translateForExcelImportOnNextRecalc != nil}
   /// Clears the value of `translateForExcelImportOnNextRecalc`. Subsequent reads from it will return its default value.
   public mutating func clearTranslateForExcelImportOnNextRecalc() {self._translateForExcelImportOnNextRecalc = nil}
 
   public var edges: TSCE_EdgesArchive {
-    get {return _edges ?? TSCE_EdgesArchive()}
+    get {_edges ?? TSCE_EdgesArchive()}
     set {_edges = newValue}
   }
   /// Returns true if `edges` has been explicitly set.
-  public var hasEdges: Bool {return self._edges != nil}
+  public var hasEdges: Bool {self._edges != nil}
   /// Clears the value of `edges`. Subsequent reads from it will return its default value.
   public mutating func clearEdges() {self._edges = nil}
 
@@ -1023,7 +1005,7 @@ public struct TSCE_CellRecordArchive: Sendable {
   fileprivate var _edges: TSCE_EdgesArchive? = nil
 }
 
-public struct TSCE_CellDependenciesArchive: Sendable {
+public nonisolated struct TSCE_CellDependenciesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1031,11 +1013,11 @@ public struct TSCE_CellDependenciesArchive: Sendable {
   public var cellRecord: [TSCE_CellRecordArchive] = []
 
   public var numDirtyCells: UInt32 {
-    get {return _numDirtyCells ?? 0}
+    get {_numDirtyCells ?? 0}
     set {_numDirtyCells = newValue}
   }
   /// Returns true if `numDirtyCells` has been explicitly set.
-  public var hasNumDirtyCells: Bool {return self._numDirtyCells != nil}
+  public var hasNumDirtyCells: Bool {self._numDirtyCells != nil}
   /// Clears the value of `numDirtyCells`. Subsequent reads from it will return its default value.
   public mutating func clearNumDirtyCells() {self._numDirtyCells = nil}
 
@@ -1046,62 +1028,62 @@ public struct TSCE_CellDependenciesArchive: Sendable {
   fileprivate var _numDirtyCells: UInt32? = nil
 }
 
-public struct TSCE_CellRecordExpandedArchive: Sendable {
+public nonisolated struct TSCE_CellRecordExpandedArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var column: UInt32 {
-    get {return _column ?? 0}
+    get {_column ?? 0}
     set {_column = newValue}
   }
   /// Returns true if `column` has been explicitly set.
-  public var hasColumn: Bool {return self._column != nil}
+  public var hasColumn: Bool {self._column != nil}
   /// Clears the value of `column`. Subsequent reads from it will return its default value.
   public mutating func clearColumn() {self._column = nil}
 
   public var row: UInt32 {
-    get {return _row ?? 0}
+    get {_row ?? 0}
     set {_row = newValue}
   }
   /// Returns true if `row` has been explicitly set.
-  public var hasRow: Bool {return self._row != nil}
+  public var hasRow: Bool {self._row != nil}
   /// Clears the value of `row`. Subsequent reads from it will return its default value.
   public mutating func clearRow() {self._row = nil}
 
   public var dirtySelfPlusPrecedentsCount: UInt64 {
-    get {return _dirtySelfPlusPrecedentsCount ?? 0}
+    get {_dirtySelfPlusPrecedentsCount ?? 0}
     set {_dirtySelfPlusPrecedentsCount = newValue}
   }
   /// Returns true if `dirtySelfPlusPrecedentsCount` has been explicitly set.
-  public var hasDirtySelfPlusPrecedentsCount: Bool {return self._dirtySelfPlusPrecedentsCount != nil}
+  public var hasDirtySelfPlusPrecedentsCount: Bool {self._dirtySelfPlusPrecedentsCount != nil}
   /// Clears the value of `dirtySelfPlusPrecedentsCount`. Subsequent reads from it will return its default value.
   public mutating func clearDirtySelfPlusPrecedentsCount() {self._dirtySelfPlusPrecedentsCount = nil}
 
   public var isInACycle: Bool {
-    get {return _isInACycle ?? false}
+    get {_isInACycle ?? false}
     set {_isInACycle = newValue}
   }
   /// Returns true if `isInACycle` has been explicitly set.
-  public var hasIsInACycle: Bool {return self._isInACycle != nil}
+  public var hasIsInACycle: Bool {self._isInACycle != nil}
   /// Clears the value of `isInACycle`. Subsequent reads from it will return its default value.
   public mutating func clearIsInACycle() {self._isInACycle = nil}
 
   public var hasCalculatedPrecedents_p: Bool {
-    get {return _hasCalculatedPrecedents_p ?? false}
+    get {_hasCalculatedPrecedents_p ?? false}
     set {_hasCalculatedPrecedents_p = newValue}
   }
   /// Returns true if `hasCalculatedPrecedents_p` has been explicitly set.
-  public var hasHasCalculatedPrecedents_p: Bool {return self._hasCalculatedPrecedents_p != nil}
+  public var hasHasCalculatedPrecedents_p: Bool {self._hasCalculatedPrecedents_p != nil}
   /// Clears the value of `hasCalculatedPrecedents_p`. Subsequent reads from it will return its default value.
   public mutating func clearHasCalculatedPrecedents_p() {self._hasCalculatedPrecedents_p = nil}
 
   public var expandedEdges: TSCE_ExpandedEdgesArchive {
-    get {return _expandedEdges ?? TSCE_ExpandedEdgesArchive()}
+    get {_expandedEdges ?? TSCE_ExpandedEdgesArchive()}
     set {_expandedEdges = newValue}
   }
   /// Returns true if `expandedEdges` has been explicitly set.
-  public var hasExpandedEdges: Bool {return self._expandedEdges != nil}
+  public var hasExpandedEdges: Bool {self._expandedEdges != nil}
   /// Clears the value of `expandedEdges`. Subsequent reads from it will return its default value.
   public mutating func clearExpandedEdges() {self._expandedEdges = nil}
 
@@ -1117,7 +1099,7 @@ public struct TSCE_CellRecordExpandedArchive: Sendable {
   fileprivate var _expandedEdges: TSCE_ExpandedEdgesArchive? = nil
 }
 
-public struct TSCE_CellDependenciesExpandedArchive: Sendable {
+public nonisolated struct TSCE_CellDependenciesExpandedArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1129,35 +1111,35 @@ public struct TSCE_CellDependenciesExpandedArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_CellRecordTileArchive: Sendable {
+public nonisolated struct TSCE_CellRecordTileArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var internalOwnerID: UInt32 {
-    get {return _internalOwnerID ?? 0}
+    get {_internalOwnerID ?? 0}
     set {_internalOwnerID = newValue}
   }
   /// Returns true if `internalOwnerID` has been explicitly set.
-  public var hasInternalOwnerID: Bool {return self._internalOwnerID != nil}
+  public var hasInternalOwnerID: Bool {self._internalOwnerID != nil}
   /// Clears the value of `internalOwnerID`. Subsequent reads from it will return its default value.
   public mutating func clearInternalOwnerID() {self._internalOwnerID = nil}
 
   public var tileColumnBegin: UInt32 {
-    get {return _tileColumnBegin ?? 0}
+    get {_tileColumnBegin ?? 0}
     set {_tileColumnBegin = newValue}
   }
   /// Returns true if `tileColumnBegin` has been explicitly set.
-  public var hasTileColumnBegin: Bool {return self._tileColumnBegin != nil}
+  public var hasTileColumnBegin: Bool {self._tileColumnBegin != nil}
   /// Clears the value of `tileColumnBegin`. Subsequent reads from it will return its default value.
   public mutating func clearTileColumnBegin() {self._tileColumnBegin = nil}
 
   public var tileRowBegin: UInt32 {
-    get {return _tileRowBegin ?? 0}
+    get {_tileRowBegin ?? 0}
     set {_tileRowBegin = newValue}
   }
   /// Returns true if `tileRowBegin` has been explicitly set.
-  public var hasTileRowBegin: Bool {return self._tileRowBegin != nil}
+  public var hasTileRowBegin: Bool {self._tileRowBegin != nil}
   /// Clears the value of `tileRowBegin`. Subsequent reads from it will return its default value.
   public mutating func clearTileRowBegin() {self._tileRowBegin = nil}
 
@@ -1172,7 +1154,7 @@ public struct TSCE_CellRecordTileArchive: Sendable {
   fileprivate var _tileRowBegin: UInt32? = nil
 }
 
-public struct TSCE_CellDependenciesTiledArchive: Sendable {
+public nonisolated struct TSCE_CellDependenciesTiledArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1184,98 +1166,98 @@ public struct TSCE_CellDependenciesTiledArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_VolatileDependenciesArchive: @unchecked Sendable {
+public nonisolated struct TSCE_VolatileDependenciesArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var volatileTimeCellColumn: [UInt32] {
-    get {return _storage._volatileTimeCellColumn}
+    get {_storage._volatileTimeCellColumn}
     set {_uniqueStorage()._volatileTimeCellColumn = newValue}
   }
 
   public var volatileTimeCellRow: [UInt32] {
-    get {return _storage._volatileTimeCellRow}
+    get {_storage._volatileTimeCellRow}
     set {_uniqueStorage()._volatileTimeCellRow = newValue}
   }
 
   public var volatileRandomCellColumn: [UInt32] {
-    get {return _storage._volatileRandomCellColumn}
+    get {_storage._volatileRandomCellColumn}
     set {_uniqueStorage()._volatileRandomCellColumn = newValue}
   }
 
   public var volatileRandomCellRow: [UInt32] {
-    get {return _storage._volatileRandomCellRow}
+    get {_storage._volatileRandomCellRow}
     set {_uniqueStorage()._volatileRandomCellRow = newValue}
   }
 
   public var volatileLocaleCellColumn: [UInt32] {
-    get {return _storage._volatileLocaleCellColumn}
+    get {_storage._volatileLocaleCellColumn}
     set {_uniqueStorage()._volatileLocaleCellColumn = newValue}
   }
 
   public var volatileLocaleCellRow: [UInt32] {
-    get {return _storage._volatileLocaleCellRow}
+    get {_storage._volatileLocaleCellRow}
     set {_uniqueStorage()._volatileLocaleCellRow = newValue}
   }
 
   public var volatileLocationCellColumn: [UInt32] {
-    get {return _storage._volatileLocationCellColumn}
+    get {_storage._volatileLocationCellColumn}
     set {_uniqueStorage()._volatileLocationCellColumn = newValue}
   }
 
   public var volatileLocationCellRow: [UInt32] {
-    get {return _storage._volatileLocationCellRow}
+    get {_storage._volatileLocationCellRow}
     set {_uniqueStorage()._volatileLocationCellRow = newValue}
   }
 
   public var volatileCompassCellColumn: [UInt32] {
-    get {return _storage._volatileCompassCellColumn}
+    get {_storage._volatileCompassCellColumn}
     set {_uniqueStorage()._volatileCompassCellColumn = newValue}
   }
 
   public var volatileCompassCellRow: [UInt32] {
-    get {return _storage._volatileCompassCellRow}
+    get {_storage._volatileCompassCellRow}
     set {_uniqueStorage()._volatileCompassCellRow = newValue}
   }
 
   public var volatileRemoteDataCellColumn: [UInt32] {
-    get {return _storage._volatileRemoteDataCellColumn}
+    get {_storage._volatileRemoteDataCellColumn}
     set {_uniqueStorage()._volatileRemoteDataCellColumn = newValue}
   }
 
   public var volatileRemoteDataCellRow: [UInt32] {
-    get {return _storage._volatileRemoteDataCellRow}
+    get {_storage._volatileRemoteDataCellRow}
     set {_uniqueStorage()._volatileRemoteDataCellRow = newValue}
   }
 
   public var volatileSheetTableNameCellColumn: [UInt32] {
-    get {return _storage._volatileSheetTableNameCellColumn}
+    get {_storage._volatileSheetTableNameCellColumn}
     set {_uniqueStorage()._volatileSheetTableNameCellColumn = newValue}
   }
 
   public var volatileSheetTableNameCellRow: [UInt32] {
-    get {return _storage._volatileSheetTableNameCellRow}
+    get {_storage._volatileSheetTableNameCellRow}
     set {_uniqueStorage()._volatileSheetTableNameCellRow = newValue}
   }
 
   public var calculatedDependencyCellColumn: [UInt32] {
-    get {return _storage._calculatedDependencyCellColumn}
+    get {_storage._calculatedDependencyCellColumn}
     set {_uniqueStorage()._calculatedDependencyCellColumn = newValue}
   }
 
   public var calculatedDependencyCellRow: [UInt32] {
-    get {return _storage._calculatedDependencyCellRow}
+    get {_storage._calculatedDependencyCellRow}
     set {_uniqueStorage()._calculatedDependencyCellRow = newValue}
   }
 
   public var volatileGeometryCellReference: [TSCE_CellReferenceArchive] {
-    get {return _storage._volatileGeometryCellReference}
+    get {_storage._volatileGeometryCellReference}
     set {_uniqueStorage()._volatileGeometryCellReference = newValue}
   }
 
   public var volatileGeometryCell: [TSCE_CellCoordinateArchive] {
-    get {return _storage._volatileGeometryCell}
+    get {_storage._volatileGeometryCell}
     set {_uniqueStorage()._volatileGeometryCell = newValue}
   }
 
@@ -1286,62 +1268,62 @@ public struct TSCE_VolatileDependenciesArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCE_VolatileDependenciesExpandedArchive: Sendable {
+public nonisolated struct TSCE_VolatileDependenciesExpandedArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var volatileTimeCells: TSCE_CellCoordSetArchive {
-    get {return _volatileTimeCells ?? TSCE_CellCoordSetArchive()}
+    get {_volatileTimeCells ?? TSCE_CellCoordSetArchive()}
     set {_volatileTimeCells = newValue}
   }
   /// Returns true if `volatileTimeCells` has been explicitly set.
-  public var hasVolatileTimeCells: Bool {return self._volatileTimeCells != nil}
+  public var hasVolatileTimeCells: Bool {self._volatileTimeCells != nil}
   /// Clears the value of `volatileTimeCells`. Subsequent reads from it will return its default value.
   public mutating func clearVolatileTimeCells() {self._volatileTimeCells = nil}
 
   public var volatileRandomCells: TSCE_CellCoordSetArchive {
-    get {return _volatileRandomCells ?? TSCE_CellCoordSetArchive()}
+    get {_volatileRandomCells ?? TSCE_CellCoordSetArchive()}
     set {_volatileRandomCells = newValue}
   }
   /// Returns true if `volatileRandomCells` has been explicitly set.
-  public var hasVolatileRandomCells: Bool {return self._volatileRandomCells != nil}
+  public var hasVolatileRandomCells: Bool {self._volatileRandomCells != nil}
   /// Clears the value of `volatileRandomCells`. Subsequent reads from it will return its default value.
   public mutating func clearVolatileRandomCells() {self._volatileRandomCells = nil}
 
   public var volatileLocaleCells: TSCE_CellCoordSetArchive {
-    get {return _volatileLocaleCells ?? TSCE_CellCoordSetArchive()}
+    get {_volatileLocaleCells ?? TSCE_CellCoordSetArchive()}
     set {_volatileLocaleCells = newValue}
   }
   /// Returns true if `volatileLocaleCells` has been explicitly set.
-  public var hasVolatileLocaleCells: Bool {return self._volatileLocaleCells != nil}
+  public var hasVolatileLocaleCells: Bool {self._volatileLocaleCells != nil}
   /// Clears the value of `volatileLocaleCells`. Subsequent reads from it will return its default value.
   public mutating func clearVolatileLocaleCells() {self._volatileLocaleCells = nil}
 
   public var volatileSheetTableNameCells: TSCE_CellCoordSetArchive {
-    get {return _volatileSheetTableNameCells ?? TSCE_CellCoordSetArchive()}
+    get {_volatileSheetTableNameCells ?? TSCE_CellCoordSetArchive()}
     set {_volatileSheetTableNameCells = newValue}
   }
   /// Returns true if `volatileSheetTableNameCells` has been explicitly set.
-  public var hasVolatileSheetTableNameCells: Bool {return self._volatileSheetTableNameCells != nil}
+  public var hasVolatileSheetTableNameCells: Bool {self._volatileSheetTableNameCells != nil}
   /// Clears the value of `volatileSheetTableNameCells`. Subsequent reads from it will return its default value.
   public mutating func clearVolatileSheetTableNameCells() {self._volatileSheetTableNameCells = nil}
 
   public var volatileRemoteDataCells: TSCE_CellCoordSetArchive {
-    get {return _volatileRemoteDataCells ?? TSCE_CellCoordSetArchive()}
+    get {_volatileRemoteDataCells ?? TSCE_CellCoordSetArchive()}
     set {_volatileRemoteDataCells = newValue}
   }
   /// Returns true if `volatileRemoteDataCells` has been explicitly set.
-  public var hasVolatileRemoteDataCells: Bool {return self._volatileRemoteDataCells != nil}
+  public var hasVolatileRemoteDataCells: Bool {self._volatileRemoteDataCells != nil}
   /// Clears the value of `volatileRemoteDataCells`. Subsequent reads from it will return its default value.
   public mutating func clearVolatileRemoteDataCells() {self._volatileRemoteDataCells = nil}
 
   public var volatileGeometryCellRefs: TSCE_InternalCellRefSetArchive {
-    get {return _volatileGeometryCellRefs ?? TSCE_InternalCellRefSetArchive()}
+    get {_volatileGeometryCellRefs ?? TSCE_InternalCellRefSetArchive()}
     set {_volatileGeometryCellRefs = newValue}
   }
   /// Returns true if `volatileGeometryCellRefs` has been explicitly set.
-  public var hasVolatileGeometryCellRefs: Bool {return self._volatileGeometryCellRefs != nil}
+  public var hasVolatileGeometryCellRefs: Bool {self._volatileGeometryCellRefs != nil}
   /// Clears the value of `volatileGeometryCellRefs`. Subsequent reads from it will return its default value.
   public mutating func clearVolatileGeometryCellRefs() {self._volatileGeometryCellRefs = nil}
 
@@ -1357,7 +1339,7 @@ public struct TSCE_VolatileDependenciesExpandedArchive: Sendable {
   fileprivate var _volatileGeometryCellRefs: TSCE_InternalCellRefSetArchive? = nil
 }
 
-public struct TSCE_RTreeInternalNodeContentsArchive: Sendable {
+public nonisolated struct TSCE_RTreeInternalNodeContentsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1367,11 +1349,11 @@ public struct TSCE_RTreeInternalNodeContentsArchive: Sendable {
   public var max: [UInt32] = []
 
   public var child: TSCE_RTreeNodeArchive {
-    get {return _child ?? TSCE_RTreeNodeArchive()}
+    get {_child ?? TSCE_RTreeNodeArchive()}
     set {_child = newValue}
   }
   /// Returns true if `child` has been explicitly set.
-  public var hasChild: Bool {return self._child != nil}
+  public var hasChild: Bool {self._child != nil}
   /// Clears the value of `child`. Subsequent reads from it will return its default value.
   public mutating func clearChild() {self._child = nil}
 
@@ -1382,7 +1364,7 @@ public struct TSCE_RTreeInternalNodeContentsArchive: Sendable {
   fileprivate var _child: TSCE_RTreeNodeArchive? = nil
 }
 
-public struct TSCE_RTreeLeafNodeContentsArchive: Sendable {
+public nonisolated struct TSCE_RTreeLeafNodeContentsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1392,11 +1374,11 @@ public struct TSCE_RTreeLeafNodeContentsArchive: Sendable {
   public var max: [UInt32] = []
 
   public var cellReference: TSCE_CellReferenceArchive {
-    get {return _cellReference ?? TSCE_CellReferenceArchive()}
+    get {_cellReference ?? TSCE_CellReferenceArchive()}
     set {_cellReference = newValue}
   }
   /// Returns true if `cellReference` has been explicitly set.
-  public var hasCellReference: Bool {return self._cellReference != nil}
+  public var hasCellReference: Bool {self._cellReference != nil}
   /// Clears the value of `cellReference`. Subsequent reads from it will return its default value.
   public mutating func clearCellReference() {self._cellReference = nil}
 
@@ -1407,26 +1389,26 @@ public struct TSCE_RTreeLeafNodeContentsArchive: Sendable {
   fileprivate var _cellReference: TSCE_CellReferenceArchive? = nil
 }
 
-public struct TSCE_RTreeNodeArchive: Sendable {
+public nonisolated struct TSCE_RTreeNodeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var level: UInt32 {
-    get {return _level ?? 0}
+    get {_level ?? 0}
     set {_level = newValue}
   }
   /// Returns true if `level` has been explicitly set.
-  public var hasLevel: Bool {return self._level != nil}
+  public var hasLevel: Bool {self._level != nil}
   /// Clears the value of `level`. Subsequent reads from it will return its default value.
   public mutating func clearLevel() {self._level = nil}
 
   public var count: UInt32 {
-    get {return _count ?? 0}
+    get {_count ?? 0}
     set {_count = newValue}
   }
   /// Returns true if `count` has been explicitly set.
-  public var hasCount: Bool {return self._count != nil}
+  public var hasCount: Bool {self._count != nil}
   /// Clears the value of `count`. Subsequent reads from it will return its default value.
   public mutating func clearCount() {self._count = nil}
 
@@ -1442,80 +1424,80 @@ public struct TSCE_RTreeNodeArchive: Sendable {
   fileprivate var _count: UInt32? = nil
 }
 
-public struct TSCE_RTreeArchive: Sendable {
+public nonisolated struct TSCE_RTreeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var dataFileID: UInt32 {
-    get {return _dataFileID ?? 0}
+    get {_dataFileID ?? 0}
     set {_dataFileID = newValue}
   }
   /// Returns true if `dataFileID` has been explicitly set.
-  public var hasDataFileID: Bool {return self._dataFileID != nil}
+  public var hasDataFileID: Bool {self._dataFileID != nil}
   /// Clears the value of `dataFileID`. Subsequent reads from it will return its default value.
   public mutating func clearDataFileID() {self._dataFileID = nil}
 
   public var dataSize: UInt32 {
-    get {return _dataSize ?? 0}
+    get {_dataSize ?? 0}
     set {_dataSize = newValue}
   }
   /// Returns true if `dataSize` has been explicitly set.
-  public var hasDataSize: Bool {return self._dataSize != nil}
+  public var hasDataSize: Bool {self._dataSize != nil}
   /// Clears the value of `dataSize`. Subsequent reads from it will return its default value.
   public mutating func clearDataSize() {self._dataSize = nil}
 
   public var dataNumDims: UInt32 {
-    get {return _dataNumDims ?? 0}
+    get {_dataNumDims ?? 0}
     set {_dataNumDims = newValue}
   }
   /// Returns true if `dataNumDims` has been explicitly set.
-  public var hasDataNumDims: Bool {return self._dataNumDims != nil}
+  public var hasDataNumDims: Bool {self._dataNumDims != nil}
   /// Clears the value of `dataNumDims`. Subsequent reads from it will return its default value.
   public mutating func clearDataNumDims() {self._dataNumDims = nil}
 
   public var dataElemSize: UInt32 {
-    get {return _dataElemSize ?? 0}
+    get {_dataElemSize ?? 0}
     set {_dataElemSize = newValue}
   }
   /// Returns true if `dataElemSize` has been explicitly set.
-  public var hasDataElemSize: Bool {return self._dataElemSize != nil}
+  public var hasDataElemSize: Bool {self._dataElemSize != nil}
   /// Clears the value of `dataElemSize`. Subsequent reads from it will return its default value.
   public mutating func clearDataElemSize() {self._dataElemSize = nil}
 
   public var dataElemRealSize: UInt32 {
-    get {return _dataElemRealSize ?? 0}
+    get {_dataElemRealSize ?? 0}
     set {_dataElemRealSize = newValue}
   }
   /// Returns true if `dataElemRealSize` has been explicitly set.
-  public var hasDataElemRealSize: Bool {return self._dataElemRealSize != nil}
+  public var hasDataElemRealSize: Bool {self._dataElemRealSize != nil}
   /// Clears the value of `dataElemRealSize`. Subsequent reads from it will return its default value.
   public mutating func clearDataElemRealSize() {self._dataElemRealSize = nil}
 
   public var dataMaxNodes: UInt32 {
-    get {return _dataMaxNodes ?? 0}
+    get {_dataMaxNodes ?? 0}
     set {_dataMaxNodes = newValue}
   }
   /// Returns true if `dataMaxNodes` has been explicitly set.
-  public var hasDataMaxNodes: Bool {return self._dataMaxNodes != nil}
+  public var hasDataMaxNodes: Bool {self._dataMaxNodes != nil}
   /// Clears the value of `dataMaxNodes`. Subsequent reads from it will return its default value.
   public mutating func clearDataMaxNodes() {self._dataMaxNodes = nil}
 
   public var dataMinNodes: UInt32 {
-    get {return _dataMinNodes ?? 0}
+    get {_dataMinNodes ?? 0}
     set {_dataMinNodes = newValue}
   }
   /// Returns true if `dataMinNodes` has been explicitly set.
-  public var hasDataMinNodes: Bool {return self._dataMinNodes != nil}
+  public var hasDataMinNodes: Bool {self._dataMinNodes != nil}
   /// Clears the value of `dataMinNodes`. Subsequent reads from it will return its default value.
   public mutating func clearDataMinNodes() {self._dataMinNodes = nil}
 
   public var root: TSCE_RTreeNodeArchive {
-    get {return _root ?? TSCE_RTreeNodeArchive()}
+    get {_root ?? TSCE_RTreeNodeArchive()}
     set {_root = newValue}
   }
   /// Returns true if `root` has been explicitly set.
-  public var hasRoot: Bool {return self._root != nil}
+  public var hasRoot: Bool {self._root != nil}
   /// Clears the value of `root`. Subsequent reads from it will return its default value.
   public mutating func clearRoot() {self._root = nil}
 
@@ -1533,44 +1515,44 @@ public struct TSCE_RTreeArchive: Sendable {
   fileprivate var _root: TSCE_RTreeNodeArchive? = nil
 }
 
-public struct TSCE_RangeBackDependencyArchive: Sendable {
+public nonisolated struct TSCE_RangeBackDependencyArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var cellCoordRow: UInt32 {
-    get {return _cellCoordRow ?? 0}
+    get {_cellCoordRow ?? 0}
     set {_cellCoordRow = newValue}
   }
   /// Returns true if `cellCoordRow` has been explicitly set.
-  public var hasCellCoordRow: Bool {return self._cellCoordRow != nil}
+  public var hasCellCoordRow: Bool {self._cellCoordRow != nil}
   /// Clears the value of `cellCoordRow`. Subsequent reads from it will return its default value.
   public mutating func clearCellCoordRow() {self._cellCoordRow = nil}
 
   public var cellCoordColumn: UInt32 {
-    get {return _cellCoordColumn ?? 0}
+    get {_cellCoordColumn ?? 0}
     set {_cellCoordColumn = newValue}
   }
   /// Returns true if `cellCoordColumn` has been explicitly set.
-  public var hasCellCoordColumn: Bool {return self._cellCoordColumn != nil}
+  public var hasCellCoordColumn: Bool {self._cellCoordColumn != nil}
   /// Clears the value of `cellCoordColumn`. Subsequent reads from it will return its default value.
   public mutating func clearCellCoordColumn() {self._cellCoordColumn = nil}
 
   public var rangeReference: TSCE_RangeReferenceArchive {
-    get {return _rangeReference ?? TSCE_RangeReferenceArchive()}
+    get {_rangeReference ?? TSCE_RangeReferenceArchive()}
     set {_rangeReference = newValue}
   }
   /// Returns true if `rangeReference` has been explicitly set.
-  public var hasRangeReference: Bool {return self._rangeReference != nil}
+  public var hasRangeReference: Bool {self._rangeReference != nil}
   /// Clears the value of `rangeReference`. Subsequent reads from it will return its default value.
   public mutating func clearRangeReference() {self._rangeReference = nil}
 
   public var internalRangeReference: TSCE_InternalRangeReferenceArchive {
-    get {return _internalRangeReference ?? TSCE_InternalRangeReferenceArchive()}
+    get {_internalRangeReference ?? TSCE_InternalRangeReferenceArchive()}
     set {_internalRangeReference = newValue}
   }
   /// Returns true if `internalRangeReference` has been explicitly set.
-  public var hasInternalRangeReference: Bool {return self._internalRangeReference != nil}
+  public var hasInternalRangeReference: Bool {self._internalRangeReference != nil}
   /// Clears the value of `internalRangeReference`. Subsequent reads from it will return its default value.
   public mutating func clearInternalRangeReference() {self._internalRangeReference = nil}
 
@@ -1584,7 +1566,7 @@ public struct TSCE_RangeBackDependencyArchive: Sendable {
   fileprivate var _internalRangeReference: TSCE_InternalRangeReferenceArchive? = nil
 }
 
-public struct TSCE_RangeDependenciesArchive: Sendable {
+public nonisolated struct TSCE_RangeDependenciesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1596,17 +1578,17 @@ public struct TSCE_RangeDependenciesArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_RangePrecedentsTileArchive: Sendable {
+public nonisolated struct TSCE_RangePrecedentsTileArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var toOwnerID: UInt32 {
-    get {return _toOwnerID ?? 0}
+    get {_toOwnerID ?? 0}
     set {_toOwnerID = newValue}
   }
   /// Returns true if `toOwnerID` has been explicitly set.
-  public var hasToOwnerID: Bool {return self._toOwnerID != nil}
+  public var hasToOwnerID: Bool {self._toOwnerID != nil}
   /// Clears the value of `toOwnerID`. Subsequent reads from it will return its default value.
   public mutating func clearToOwnerID() {self._toOwnerID = nil}
 
@@ -1614,26 +1596,26 @@ public struct TSCE_RangePrecedentsTileArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct FromToRangeArchive: Sendable {
+  public nonisolated struct FromToRangeArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var fromCoord: TSCE_CellCoordinateArchive {
-      get {return _fromCoord ?? TSCE_CellCoordinateArchive()}
+      get {_fromCoord ?? TSCE_CellCoordinateArchive()}
       set {_fromCoord = newValue}
     }
     /// Returns true if `fromCoord` has been explicitly set.
-    public var hasFromCoord: Bool {return self._fromCoord != nil}
+    public var hasFromCoord: Bool {self._fromCoord != nil}
     /// Clears the value of `fromCoord`. Subsequent reads from it will return its default value.
     public mutating func clearFromCoord() {self._fromCoord = nil}
 
     public var refersToRect: TSCE_CellRectArchive {
-      get {return _refersToRect ?? TSCE_CellRectArchive()}
+      get {_refersToRect ?? TSCE_CellRectArchive()}
       set {_refersToRect = newValue}
     }
     /// Returns true if `refersToRect` has been explicitly set.
-    public var hasRefersToRect: Bool {return self._refersToRect != nil}
+    public var hasRefersToRect: Bool {self._refersToRect != nil}
     /// Clears the value of `refersToRect`. Subsequent reads from it will return its default value.
     public mutating func clearRefersToRect() {self._refersToRect = nil}
 
@@ -1650,7 +1632,7 @@ public struct TSCE_RangePrecedentsTileArchive: Sendable {
   fileprivate var _toOwnerID: UInt32? = nil
 }
 
-public struct TSCE_RangeDependenciesTiledArchive: Sendable {
+public nonisolated struct TSCE_RangeDependenciesTiledArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1662,7 +1644,7 @@ public struct TSCE_RangeDependenciesTiledArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_SpanningDependenciesArchive: Sendable {
+public nonisolated struct TSCE_SpanningDependenciesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1674,20 +1656,20 @@ public struct TSCE_SpanningDependenciesArchive: Sendable {
   public var cell: [TSCE_CellReferenceArchive] = []
 
   public var totalRangeForDeletedTable: TSCE_RangeCoordinateArchive {
-    get {return _totalRangeForDeletedTable ?? TSCE_RangeCoordinateArchive()}
+    get {_totalRangeForDeletedTable ?? TSCE_RangeCoordinateArchive()}
     set {_totalRangeForDeletedTable = newValue}
   }
   /// Returns true if `totalRangeForDeletedTable` has been explicitly set.
-  public var hasTotalRangeForDeletedTable: Bool {return self._totalRangeForDeletedTable != nil}
+  public var hasTotalRangeForDeletedTable: Bool {self._totalRangeForDeletedTable != nil}
   /// Clears the value of `totalRangeForDeletedTable`. Subsequent reads from it will return its default value.
   public mutating func clearTotalRangeForDeletedTable() {self._totalRangeForDeletedTable = nil}
 
   public var bodyRangeForDeletedTable: TSCE_RangeCoordinateArchive {
-    get {return _bodyRangeForDeletedTable ?? TSCE_RangeCoordinateArchive()}
+    get {_bodyRangeForDeletedTable ?? TSCE_RangeCoordinateArchive()}
     set {_bodyRangeForDeletedTable = newValue}
   }
   /// Returns true if `bodyRangeForDeletedTable` has been explicitly set.
-  public var hasBodyRangeForDeletedTable: Bool {return self._bodyRangeForDeletedTable != nil}
+  public var hasBodyRangeForDeletedTable: Bool {self._bodyRangeForDeletedTable != nil}
   /// Clears the value of `bodyRangeForDeletedTable`. Subsequent reads from it will return its default value.
   public mutating func clearBodyRangeForDeletedTable() {self._bodyRangeForDeletedTable = nil}
 
@@ -1697,52 +1679,36 @@ public struct TSCE_SpanningDependenciesArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum RangeContext: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case `default` // = 0
-    case includeHeaders // = 1
+  public nonisolated enum RangeContext: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case `default` = 0
+    case includeHeaders = 1
 
     public init() {
       self = .default
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .default
-      case 1: self = .includeHeaders
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .default: return 0
-      case .includeHeaders: return 1
-      }
-    }
-
   }
 
-  public struct ReferringColumnToLocalCells: Sendable {
+  public nonisolated struct ReferringColumnToLocalCells: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var column: UInt32 {
-      get {return _column ?? 0}
+      get {_column ?? 0}
       set {_column = newValue}
     }
     /// Returns true if `column` has been explicitly set.
-    public var hasColumn: Bool {return self._column != nil}
+    public var hasColumn: Bool {self._column != nil}
     /// Clears the value of `column`. Subsequent reads from it will return its default value.
     public mutating func clearColumn() {self._column = nil}
 
     public var rangeContext: TSCE_SpanningDependenciesArchive.RangeContext {
-      get {return _rangeContext ?? .default}
+      get {_rangeContext ?? .default}
       set {_rangeContext = newValue}
     }
     /// Returns true if `rangeContext` has been explicitly set.
-    public var hasRangeContext: Bool {return self._rangeContext != nil}
+    public var hasRangeContext: Bool {self._rangeContext != nil}
     /// Clears the value of `rangeContext`. Subsequent reads from it will return its default value.
     public mutating func clearRangeContext() {self._rangeContext = nil}
 
@@ -1756,26 +1722,26 @@ public struct TSCE_SpanningDependenciesArchive: Sendable {
     fileprivate var _rangeContext: TSCE_SpanningDependenciesArchive.RangeContext? = nil
   }
 
-  public struct ReferringColumnToRemoteCells: Sendable {
+  public nonisolated struct ReferringColumnToRemoteCells: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var column: UInt32 {
-      get {return _column ?? 0}
+      get {_column ?? 0}
       set {_column = newValue}
     }
     /// Returns true if `column` has been explicitly set.
-    public var hasColumn: Bool {return self._column != nil}
+    public var hasColumn: Bool {self._column != nil}
     /// Clears the value of `column`. Subsequent reads from it will return its default value.
     public mutating func clearColumn() {self._column = nil}
 
     public var rangeContext: TSCE_SpanningDependenciesArchive.RangeContext {
-      get {return _rangeContext ?? .default}
+      get {_rangeContext ?? .default}
       set {_rangeContext = newValue}
     }
     /// Returns true if `rangeContext` has been explicitly set.
-    public var hasRangeContext: Bool {return self._rangeContext != nil}
+    public var hasRangeContext: Bool {self._rangeContext != nil}
     /// Clears the value of `rangeContext`. Subsequent reads from it will return its default value.
     public mutating func clearRangeContext() {self._rangeContext = nil}
 
@@ -1795,7 +1761,7 @@ public struct TSCE_SpanningDependenciesArchive: Sendable {
   fileprivate var _bodyRangeForDeletedTable: TSCE_RangeCoordinateArchive? = nil
 }
 
-public struct TSCE_SpanningDependenciesExpandedArchive: Sendable {
+public nonisolated struct TSCE_SpanningDependenciesExpandedArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1803,71 +1769,55 @@ public struct TSCE_SpanningDependenciesExpandedArchive: Sendable {
   public var coordRefersToSpans: [TSCE_SpanningDependenciesExpandedArchive.CellCoordRefersToExtents] = []
 
   public var totalRangeForTable: TSCE_RangeCoordinateArchive {
-    get {return _totalRangeForTable ?? TSCE_RangeCoordinateArchive()}
+    get {_totalRangeForTable ?? TSCE_RangeCoordinateArchive()}
     set {_totalRangeForTable = newValue}
   }
   /// Returns true if `totalRangeForTable` has been explicitly set.
-  public var hasTotalRangeForTable: Bool {return self._totalRangeForTable != nil}
+  public var hasTotalRangeForTable: Bool {self._totalRangeForTable != nil}
   /// Clears the value of `totalRangeForTable`. Subsequent reads from it will return its default value.
   public mutating func clearTotalRangeForTable() {self._totalRangeForTable = nil}
 
   public var bodyRangeForTable: TSCE_RangeCoordinateArchive {
-    get {return _bodyRangeForTable ?? TSCE_RangeCoordinateArchive()}
+    get {_bodyRangeForTable ?? TSCE_RangeCoordinateArchive()}
     set {_bodyRangeForTable = newValue}
   }
   /// Returns true if `bodyRangeForTable` has been explicitly set.
-  public var hasBodyRangeForTable: Bool {return self._bodyRangeForTable != nil}
+  public var hasBodyRangeForTable: Bool {self._bodyRangeForTable != nil}
   /// Clears the value of `bodyRangeForTable`. Subsequent reads from it will return its default value.
   public mutating func clearBodyRangeForTable() {self._bodyRangeForTable = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum RangeContext: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case `default` // = 0
-    case includeHeaders // = 1
+  public nonisolated enum RangeContext: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case `default` = 0
+    case includeHeaders = 1
 
     public init() {
       self = .default
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .default
-      case 1: self = .includeHeaders
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .default: return 0
-      case .includeHeaders: return 1
-      }
-    }
-
   }
 
-  public struct ExtentRange: Sendable {
+  public nonisolated struct ExtentRange: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var extentBegin: UInt32 {
-      get {return _extentBegin ?? 0}
+      get {_extentBegin ?? 0}
       set {_extentBegin = newValue}
     }
     /// Returns true if `extentBegin` has been explicitly set.
-    public var hasExtentBegin: Bool {return self._extentBegin != nil}
+    public var hasExtentBegin: Bool {self._extentBegin != nil}
     /// Clears the value of `extentBegin`. Subsequent reads from it will return its default value.
     public mutating func clearExtentBegin() {self._extentBegin = nil}
 
     public var extentEnd: UInt32 {
-      get {return _extentEnd ?? 0}
+      get {_extentEnd ?? 0}
       set {_extentEnd = newValue}
     }
     /// Returns true if `extentEnd` has been explicitly set.
-    public var hasExtentEnd: Bool {return self._extentEnd != nil}
+    public var hasExtentEnd: Bool {self._extentEnd != nil}
     /// Clears the value of `extentEnd`. Subsequent reads from it will return its default value.
     public mutating func clearExtentEnd() {self._extentEnd = nil}
 
@@ -1879,26 +1829,26 @@ public struct TSCE_SpanningDependenciesExpandedArchive: Sendable {
     fileprivate var _extentEnd: UInt32? = nil
   }
 
-  public struct ExtentRangeWithTableWithContext: Sendable {
+  public nonisolated struct ExtentRangeWithTableWithContext: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var ownerID: UInt32 {
-      get {return _ownerID ?? 0}
+      get {_ownerID ?? 0}
       set {_ownerID = newValue}
     }
     /// Returns true if `ownerID` has been explicitly set.
-    public var hasOwnerID: Bool {return self._ownerID != nil}
+    public var hasOwnerID: Bool {self._ownerID != nil}
     /// Clears the value of `ownerID`. Subsequent reads from it will return its default value.
     public mutating func clearOwnerID() {self._ownerID = nil}
 
     public var rangeContext: TSCE_SpanningDependenciesExpandedArchive.RangeContext {
-      get {return _rangeContext ?? .default}
+      get {_rangeContext ?? .default}
       set {_rangeContext = newValue}
     }
     /// Returns true if `rangeContext` has been explicitly set.
-    public var hasRangeContext: Bool {return self._rangeContext != nil}
+    public var hasRangeContext: Bool {self._rangeContext != nil}
     /// Clears the value of `rangeContext`. Subsequent reads from it will return its default value.
     public mutating func clearRangeContext() {self._rangeContext = nil}
 
@@ -1912,17 +1862,17 @@ public struct TSCE_SpanningDependenciesExpandedArchive: Sendable {
     fileprivate var _rangeContext: TSCE_SpanningDependenciesExpandedArchive.RangeContext? = nil
   }
 
-  public struct CellCoordRefersToExtents: Sendable {
+  public nonisolated struct CellCoordRefersToExtents: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var coordinate: TSCE_CellCoordinateArchive {
-      get {return _coordinate ?? TSCE_CellCoordinateArchive()}
+      get {_coordinate ?? TSCE_CellCoordinateArchive()}
       set {_coordinate = newValue}
     }
     /// Returns true if `coordinate` has been explicitly set.
-    public var hasCoordinate: Bool {return self._coordinate != nil}
+    public var hasCoordinate: Bool {self._coordinate != nil}
     /// Clears the value of `coordinate`. Subsequent reads from it will return its default value.
     public mutating func clearCoordinate() {self._coordinate = nil}
 
@@ -1941,7 +1891,7 @@ public struct TSCE_SpanningDependenciesExpandedArchive: Sendable {
   fileprivate var _bodyRangeForTable: TSCE_RangeCoordinateArchive? = nil
 }
 
-public struct TSCE_WholeOwnerDependenciesArchive: Sendable {
+public nonisolated struct TSCE_WholeOwnerDependenciesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1953,17 +1903,17 @@ public struct TSCE_WholeOwnerDependenciesArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_WholeOwnerDependenciesExpandedArchive: Sendable {
+public nonisolated struct TSCE_WholeOwnerDependenciesExpandedArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var dependentCells: TSCE_InternalCellRefSetArchive {
-    get {return _dependentCells ?? TSCE_InternalCellRefSetArchive()}
+    get {_dependentCells ?? TSCE_InternalCellRefSetArchive()}
     set {_dependentCells = newValue}
   }
   /// Returns true if `dependentCells` has been explicitly set.
-  public var hasDependentCells: Bool {return self._dependentCells != nil}
+  public var hasDependentCells: Bool {self._dependentCells != nil}
   /// Clears the value of `dependentCells`. Subsequent reads from it will return its default value.
   public mutating func clearDependentCells() {self._dependentCells = nil}
 
@@ -1974,17 +1924,17 @@ public struct TSCE_WholeOwnerDependenciesExpandedArchive: Sendable {
   fileprivate var _dependentCells: TSCE_InternalCellRefSetArchive? = nil
 }
 
-public struct TSCE_ErrorArchive: Sendable {
+public nonisolated struct TSCE_ErrorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var errorTypeCode: UInt32 {
-    get {return _errorTypeCode ?? 0}
+    get {_errorTypeCode ?? 0}
     set {_errorTypeCode = newValue}
   }
   /// Returns true if `errorTypeCode` has been explicitly set.
-  public var hasErrorTypeCode: Bool {return self._errorTypeCode != nil}
+  public var hasErrorTypeCode: Bool {self._errorTypeCode != nil}
   /// Clears the value of `errorTypeCode`. Subsequent reads from it will return its default value.
   public mutating func clearErrorTypeCode() {self._errorTypeCode = nil}
 
@@ -1992,35 +1942,35 @@ public struct TSCE_ErrorArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ErrorDictionaryEntry: Sendable {
+  public nonisolated struct ErrorDictionaryEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var errorKey: String {
-      get {return _errorKey ?? String()}
+      get {_errorKey ?? String()}
       set {_errorKey = newValue}
     }
     /// Returns true if `errorKey` has been explicitly set.
-    public var hasErrorKey: Bool {return self._errorKey != nil}
+    public var hasErrorKey: Bool {self._errorKey != nil}
     /// Clears the value of `errorKey`. Subsequent reads from it will return its default value.
     public mutating func clearErrorKey() {self._errorKey = nil}
 
     public var valueForKeyString: String {
-      get {return _valueForKeyString ?? String()}
+      get {_valueForKeyString ?? String()}
       set {_valueForKeyString = newValue}
     }
     /// Returns true if `valueForKeyString` has been explicitly set.
-    public var hasValueForKeyString: Bool {return self._valueForKeyString != nil}
+    public var hasValueForKeyString: Bool {self._valueForKeyString != nil}
     /// Clears the value of `valueForKeyString`. Subsequent reads from it will return its default value.
     public mutating func clearValueForKeyString() {self._valueForKeyString = nil}
 
     public var valueForKeyNumber: Double {
-      get {return _valueForKeyNumber ?? 0}
+      get {_valueForKeyNumber ?? 0}
       set {_valueForKeyNumber = newValue}
     }
     /// Returns true if `valueForKeyNumber` has been explicitly set.
-    public var hasValueForKeyNumber: Bool {return self._valueForKeyNumber != nil}
+    public var hasValueForKeyNumber: Bool {self._valueForKeyNumber != nil}
     /// Clears the value of `valueForKeyNumber`. Subsequent reads from it will return its default value.
     public mutating func clearValueForKeyNumber() {self._valueForKeyNumber = nil}
 
@@ -2038,62 +1988,62 @@ public struct TSCE_ErrorArchive: Sendable {
   fileprivate var _errorTypeCode: UInt32? = nil
 }
 
-public struct TSCE_WarningArchive: Sendable {
+public nonisolated struct TSCE_WarningArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var warningType: UInt32 {
-    get {return _warningType ?? 0}
+    get {_warningType ?? 0}
     set {_warningType = newValue}
   }
   /// Returns true if `warningType` has been explicitly set.
-  public var hasWarningType: Bool {return self._warningType != nil}
+  public var hasWarningType: Bool {self._warningType != nil}
   /// Clears the value of `warningType`. Subsequent reads from it will return its default value.
   public mutating func clearWarningType() {self._warningType = nil}
 
   public var warningInfoDictionary: [TSCE_WarningArchive.WarningDictionaryEntry] = []
 
   public var rangeRef: TSCE_RangeReferenceArchive {
-    get {return _rangeRef ?? TSCE_RangeReferenceArchive()}
+    get {_rangeRef ?? TSCE_RangeReferenceArchive()}
     set {_rangeRef = newValue}
   }
   /// Returns true if `rangeRef` has been explicitly set.
-  public var hasRangeRef: Bool {return self._rangeRef != nil}
+  public var hasRangeRef: Bool {self._rangeRef != nil}
   /// Clears the value of `rangeRef`. Subsequent reads from it will return its default value.
   public mutating func clearRangeRef() {self._rangeRef = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct WarningDictionaryEntry: Sendable {
+  public nonisolated struct WarningDictionaryEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var warningKey: String {
-      get {return _warningKey ?? String()}
+      get {_warningKey ?? String()}
       set {_warningKey = newValue}
     }
     /// Returns true if `warningKey` has been explicitly set.
-    public var hasWarningKey: Bool {return self._warningKey != nil}
+    public var hasWarningKey: Bool {self._warningKey != nil}
     /// Clears the value of `warningKey`. Subsequent reads from it will return its default value.
     public mutating func clearWarningKey() {self._warningKey = nil}
 
     public var valueForKeyString: String {
-      get {return _valueForKeyString ?? String()}
+      get {_valueForKeyString ?? String()}
       set {_valueForKeyString = newValue}
     }
     /// Returns true if `valueForKeyString` has been explicitly set.
-    public var hasValueForKeyString: Bool {return self._valueForKeyString != nil}
+    public var hasValueForKeyString: Bool {self._valueForKeyString != nil}
     /// Clears the value of `valueForKeyString`. Subsequent reads from it will return its default value.
     public mutating func clearValueForKeyString() {self._valueForKeyString = nil}
 
     public var valueForKeyNumber: Double {
-      get {return _valueForKeyNumber ?? 0}
+      get {_valueForKeyNumber ?? 0}
       set {_valueForKeyNumber = newValue}
     }
     /// Returns true if `valueForKeyNumber` has been explicitly set.
-    public var hasValueForKeyNumber: Bool {return self._valueForKeyNumber != nil}
+    public var hasValueForKeyNumber: Bool {self._valueForKeyNumber != nil}
     /// Clears the value of `valueForKeyNumber`. Subsequent reads from it will return its default value.
     public mutating func clearValueForKeyNumber() {self._valueForKeyNumber = nil}
 
@@ -2112,7 +2062,7 @@ public struct TSCE_WarningArchive: Sendable {
   fileprivate var _rangeRef: TSCE_RangeReferenceArchive? = nil
 }
 
-public struct TSCE_CellErrorsArchive: Sendable {
+public nonisolated struct TSCE_CellErrorsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2123,70 +2073,48 @@ public struct TSCE_CellErrorsArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ErrorFlavor: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case none // = 0
-    case error // = 1
-    case refError // = 2
-    case circularRefError // = 3
-    case unsupportedFunctionError // = 4
+  public nonisolated enum ErrorFlavor: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case none = 0
+    case error = 1
+    case refError = 2
+    case circularRefError = 3
+    case unsupportedFunctionError = 4
 
     public init() {
       self = .none
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .none
-      case 1: self = .error
-      case 2: self = .refError
-      case 3: self = .circularRefError
-      case 4: self = .unsupportedFunctionError
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .none: return 0
-      case .error: return 1
-      case .refError: return 2
-      case .circularRefError: return 3
-      case .unsupportedFunctionError: return 4
-      }
-    }
-
   }
 
-  public struct ErrorForCell: Sendable {
+  public nonisolated struct ErrorForCell: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var coordinate: TSCE_CellCoordinateArchive {
-      get {return _coordinate ?? TSCE_CellCoordinateArchive()}
+      get {_coordinate ?? TSCE_CellCoordinateArchive()}
       set {_coordinate = newValue}
     }
     /// Returns true if `coordinate` has been explicitly set.
-    public var hasCoordinate: Bool {return self._coordinate != nil}
+    public var hasCoordinate: Bool {self._coordinate != nil}
     /// Clears the value of `coordinate`. Subsequent reads from it will return its default value.
     public mutating func clearCoordinate() {self._coordinate = nil}
 
     public var errorFlavor: TSCE_CellErrorsArchive.ErrorFlavor {
-      get {return _errorFlavor ?? .none}
+      get {_errorFlavor ?? .none}
       set {_errorFlavor = newValue}
     }
     /// Returns true if `errorFlavor` has been explicitly set.
-    public var hasErrorFlavor: Bool {return self._errorFlavor != nil}
+    public var hasErrorFlavor: Bool {self._errorFlavor != nil}
     /// Clears the value of `errorFlavor`. Subsequent reads from it will return its default value.
     public mutating func clearErrorFlavor() {self._errorFlavor = nil}
 
     public var errDueToCell: TSCE_InternalCellReferenceArchive {
-      get {return _errDueToCell ?? TSCE_InternalCellReferenceArchive()}
+      get {_errDueToCell ?? TSCE_InternalCellReferenceArchive()}
       set {_errDueToCell = newValue}
     }
     /// Returns true if `errDueToCell` has been explicitly set.
-    public var hasErrDueToCell: Bool {return self._errDueToCell != nil}
+    public var hasErrDueToCell: Bool {self._errDueToCell != nil}
     /// Clears the value of `errDueToCell`. Subsequent reads from it will return its default value.
     public mutating func clearErrDueToCell() {self._errDueToCell = nil}
 
@@ -2199,35 +2127,35 @@ public struct TSCE_CellErrorsArchive: Sendable {
     fileprivate var _errDueToCell: TSCE_InternalCellReferenceArchive? = nil
   }
 
-  public struct EnhancedErrorForCell: Sendable {
+  public nonisolated struct EnhancedErrorForCell: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var coordinate: TSCE_CellCoordinateArchive {
-      get {return _coordinate ?? TSCE_CellCoordinateArchive()}
+      get {_coordinate ?? TSCE_CellCoordinateArchive()}
       set {_coordinate = newValue}
     }
     /// Returns true if `coordinate` has been explicitly set.
-    public var hasCoordinate: Bool {return self._coordinate != nil}
+    public var hasCoordinate: Bool {self._coordinate != nil}
     /// Clears the value of `coordinate`. Subsequent reads from it will return its default value.
     public mutating func clearCoordinate() {self._coordinate = nil}
 
     public var error: TSCE_ErrorArchive {
-      get {return _error ?? TSCE_ErrorArchive()}
+      get {_error ?? TSCE_ErrorArchive()}
       set {_error = newValue}
     }
     /// Returns true if `error` has been explicitly set.
-    public var hasError: Bool {return self._error != nil}
+    public var hasError: Bool {self._error != nil}
     /// Clears the value of `error`. Subsequent reads from it will return its default value.
     public mutating func clearError() {self._error = nil}
 
     public var errDueToCell: TSCE_InternalCellReferenceArchive {
-      get {return _errDueToCell ?? TSCE_InternalCellReferenceArchive()}
+      get {_errDueToCell ?? TSCE_InternalCellReferenceArchive()}
       set {_errDueToCell = newValue}
     }
     /// Returns true if `errDueToCell` has been explicitly set.
-    public var hasErrDueToCell: Bool {return self._errDueToCell != nil}
+    public var hasErrDueToCell: Bool {self._errDueToCell != nil}
     /// Clears the value of `errDueToCell`. Subsequent reads from it will return its default value.
     public mutating func clearErrDueToCell() {self._errDueToCell = nil}
 
@@ -2245,7 +2173,7 @@ public struct TSCE_CellErrorsArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_CellSpillSizesArchive: Sendable {
+public nonisolated struct TSCE_CellSpillSizesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2254,26 +2182,26 @@ public struct TSCE_CellSpillSizesArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct SpillForCell: Sendable {
+  public nonisolated struct SpillForCell: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var coordinate: TSCE_CellCoordinateArchive {
-      get {return _coordinate ?? TSCE_CellCoordinateArchive()}
+      get {_coordinate ?? TSCE_CellCoordinateArchive()}
       set {_coordinate = newValue}
     }
     /// Returns true if `coordinate` has been explicitly set.
-    public var hasCoordinate: Bool {return self._coordinate != nil}
+    public var hasCoordinate: Bool {self._coordinate != nil}
     /// Clears the value of `coordinate`. Subsequent reads from it will return its default value.
     public mutating func clearCoordinate() {self._coordinate = nil}
 
     public var spillSize: TSCE_ColumnRowSize {
-      get {return _spillSize ?? TSCE_ColumnRowSize()}
+      get {_spillSize ?? TSCE_ColumnRowSize()}
       set {_spillSize = newValue}
     }
     /// Returns true if `spillSize` has been explicitly set.
-    public var hasSpillSize: Bool {return self._spillSize != nil}
+    public var hasSpillSize: Bool {self._spillSize != nil}
     /// Clears the value of `spillSize`. Subsequent reads from it will return its default value.
     public mutating func clearSpillSize() {self._spillSize = nil}
 
@@ -2288,7 +2216,7 @@ public struct TSCE_CellSpillSizesArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_UuidReferencesArchive: Sendable {
+public nonisolated struct TSCE_UuidReferencesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2299,26 +2227,26 @@ public struct TSCE_UuidReferencesArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct TableRef: Sendable {
+  public nonisolated struct TableRef: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var ownerUuid: TSP_UUID {
-      get {return _ownerUuid ?? TSP_UUID()}
+      get {_ownerUuid ?? TSP_UUID()}
       set {_ownerUuid = newValue}
     }
     /// Returns true if `ownerUuid` has been explicitly set.
-    public var hasOwnerUuid: Bool {return self._ownerUuid != nil}
+    public var hasOwnerUuid: Bool {self._ownerUuid != nil}
     /// Clears the value of `ownerUuid`. Subsequent reads from it will return its default value.
     public mutating func clearOwnerUuid() {self._ownerUuid = nil}
 
     public var coordSet: TSCE_CellCoordSetArchive {
-      get {return _coordSet ?? TSCE_CellCoordSetArchive()}
+      get {_coordSet ?? TSCE_CellCoordSetArchive()}
       set {_coordSet = newValue}
     }
     /// Returns true if `coordSet` has been explicitly set.
-    public var hasCoordSet: Bool {return self._coordSet != nil}
+    public var hasCoordSet: Bool {self._coordSet != nil}
     /// Clears the value of `coordSet`. Subsequent reads from it will return its default value.
     public mutating func clearCoordSet() {self._coordSet = nil}
 
@@ -2330,26 +2258,26 @@ public struct TSCE_UuidReferencesArchive: Sendable {
     fileprivate var _coordSet: TSCE_CellCoordSetArchive? = nil
   }
 
-  public struct UuidRef: Sendable {
+  public nonisolated struct UuidRef: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var uuid: TSP_UUID {
-      get {return _uuid ?? TSP_UUID()}
+      get {_uuid ?? TSP_UUID()}
       set {_uuid = newValue}
     }
     /// Returns true if `uuid` has been explicitly set.
-    public var hasUuid: Bool {return self._uuid != nil}
+    public var hasUuid: Bool {self._uuid != nil}
     /// Clears the value of `uuid`. Subsequent reads from it will return its default value.
     public mutating func clearUuid() {self._uuid = nil}
 
     public var coordSet: TSCE_CellCoordSetArchive {
-      get {return _coordSet ?? TSCE_CellCoordSetArchive()}
+      get {_coordSet ?? TSCE_CellCoordSetArchive()}
       set {_coordSet = newValue}
     }
     /// Returns true if `coordSet` has been explicitly set.
-    public var hasCoordSet: Bool {return self._coordSet != nil}
+    public var hasCoordSet: Bool {self._coordSet != nil}
     /// Clears the value of `coordSet`. Subsequent reads from it will return its default value.
     public mutating func clearCoordSet() {self._coordSet = nil}
 
@@ -2361,17 +2289,17 @@ public struct TSCE_UuidReferencesArchive: Sendable {
     fileprivate var _coordSet: TSCE_CellCoordSetArchive? = nil
   }
 
-  public struct TableWithUuidRef: Sendable {
+  public nonisolated struct TableWithUuidRef: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var ownerUuid: TSP_UUID {
-      get {return _ownerUuid ?? TSP_UUID()}
+      get {_ownerUuid ?? TSP_UUID()}
       set {_ownerUuid = newValue}
     }
     /// Returns true if `ownerUuid` has been explicitly set.
-    public var hasOwnerUuid: Bool {return self._ownerUuid != nil}
+    public var hasOwnerUuid: Bool {self._ownerUuid != nil}
     /// Clears the value of `ownerUuid`. Subsequent reads from it will return its default value.
     public mutating func clearOwnerUuid() {self._ownerUuid = nil}
 
@@ -2387,152 +2315,152 @@ public struct TSCE_UuidReferencesArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_FormulaOwnerDependenciesArchive: @unchecked Sendable {
+public nonisolated struct TSCE_FormulaOwnerDependenciesArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var formulaOwnerUid: TSP_UUID {
-    get {return _storage._formulaOwnerUid ?? TSP_UUID()}
+    get {_storage._formulaOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._formulaOwnerUid = newValue}
   }
   /// Returns true if `formulaOwnerUid` has been explicitly set.
-  public var hasFormulaOwnerUid: Bool {return _storage._formulaOwnerUid != nil}
+  public var hasFormulaOwnerUid: Bool {_storage._formulaOwnerUid != nil}
   /// Clears the value of `formulaOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearFormulaOwnerUid() {_uniqueStorage()._formulaOwnerUid = nil}
 
   public var internalFormulaOwnerID: UInt32 {
-    get {return _storage._internalFormulaOwnerID ?? 0}
+    get {_storage._internalFormulaOwnerID ?? 0}
     set {_uniqueStorage()._internalFormulaOwnerID = newValue}
   }
   /// Returns true if `internalFormulaOwnerID` has been explicitly set.
-  public var hasInternalFormulaOwnerID: Bool {return _storage._internalFormulaOwnerID != nil}
+  public var hasInternalFormulaOwnerID: Bool {_storage._internalFormulaOwnerID != nil}
   /// Clears the value of `internalFormulaOwnerID`. Subsequent reads from it will return its default value.
   public mutating func clearInternalFormulaOwnerID() {_uniqueStorage()._internalFormulaOwnerID = nil}
 
   public var ownerKind: UInt32 {
-    get {return _storage._ownerKind ?? 0}
+    get {_storage._ownerKind ?? 0}
     set {_uniqueStorage()._ownerKind = newValue}
   }
   /// Returns true if `ownerKind` has been explicitly set.
-  public var hasOwnerKind: Bool {return _storage._ownerKind != nil}
+  public var hasOwnerKind: Bool {_storage._ownerKind != nil}
   /// Clears the value of `ownerKind`. Subsequent reads from it will return its default value.
   public mutating func clearOwnerKind() {_uniqueStorage()._ownerKind = nil}
 
   public var cellDependencies: TSCE_CellDependenciesExpandedArchive {
-    get {return _storage._cellDependencies ?? TSCE_CellDependenciesExpandedArchive()}
+    get {_storage._cellDependencies ?? TSCE_CellDependenciesExpandedArchive()}
     set {_uniqueStorage()._cellDependencies = newValue}
   }
   /// Returns true if `cellDependencies` has been explicitly set.
-  public var hasCellDependencies: Bool {return _storage._cellDependencies != nil}
+  public var hasCellDependencies: Bool {_storage._cellDependencies != nil}
   /// Clears the value of `cellDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearCellDependencies() {_uniqueStorage()._cellDependencies = nil}
 
   public var rangeDependencies: TSCE_RangeDependenciesArchive {
-    get {return _storage._rangeDependencies ?? TSCE_RangeDependenciesArchive()}
+    get {_storage._rangeDependencies ?? TSCE_RangeDependenciesArchive()}
     set {_uniqueStorage()._rangeDependencies = newValue}
   }
   /// Returns true if `rangeDependencies` has been explicitly set.
-  public var hasRangeDependencies: Bool {return _storage._rangeDependencies != nil}
+  public var hasRangeDependencies: Bool {_storage._rangeDependencies != nil}
   /// Clears the value of `rangeDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearRangeDependencies() {_uniqueStorage()._rangeDependencies = nil}
 
   public var volatileDependencies: TSCE_VolatileDependenciesExpandedArchive {
-    get {return _storage._volatileDependencies ?? TSCE_VolatileDependenciesExpandedArchive()}
+    get {_storage._volatileDependencies ?? TSCE_VolatileDependenciesExpandedArchive()}
     set {_uniqueStorage()._volatileDependencies = newValue}
   }
   /// Returns true if `volatileDependencies` has been explicitly set.
-  public var hasVolatileDependencies: Bool {return _storage._volatileDependencies != nil}
+  public var hasVolatileDependencies: Bool {_storage._volatileDependencies != nil}
   /// Clears the value of `volatileDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearVolatileDependencies() {_uniqueStorage()._volatileDependencies = nil}
 
   public var spanningColumnDependencies: TSCE_SpanningDependenciesExpandedArchive {
-    get {return _storage._spanningColumnDependencies ?? TSCE_SpanningDependenciesExpandedArchive()}
+    get {_storage._spanningColumnDependencies ?? TSCE_SpanningDependenciesExpandedArchive()}
     set {_uniqueStorage()._spanningColumnDependencies = newValue}
   }
   /// Returns true if `spanningColumnDependencies` has been explicitly set.
-  public var hasSpanningColumnDependencies: Bool {return _storage._spanningColumnDependencies != nil}
+  public var hasSpanningColumnDependencies: Bool {_storage._spanningColumnDependencies != nil}
   /// Clears the value of `spanningColumnDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearSpanningColumnDependencies() {_uniqueStorage()._spanningColumnDependencies = nil}
 
   public var spanningRowDependencies: TSCE_SpanningDependenciesExpandedArchive {
-    get {return _storage._spanningRowDependencies ?? TSCE_SpanningDependenciesExpandedArchive()}
+    get {_storage._spanningRowDependencies ?? TSCE_SpanningDependenciesExpandedArchive()}
     set {_uniqueStorage()._spanningRowDependencies = newValue}
   }
   /// Returns true if `spanningRowDependencies` has been explicitly set.
-  public var hasSpanningRowDependencies: Bool {return _storage._spanningRowDependencies != nil}
+  public var hasSpanningRowDependencies: Bool {_storage._spanningRowDependencies != nil}
   /// Clears the value of `spanningRowDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearSpanningRowDependencies() {_uniqueStorage()._spanningRowDependencies = nil}
 
   public var wholeOwnerDependencies: TSCE_WholeOwnerDependenciesExpandedArchive {
-    get {return _storage._wholeOwnerDependencies ?? TSCE_WholeOwnerDependenciesExpandedArchive()}
+    get {_storage._wholeOwnerDependencies ?? TSCE_WholeOwnerDependenciesExpandedArchive()}
     set {_uniqueStorage()._wholeOwnerDependencies = newValue}
   }
   /// Returns true if `wholeOwnerDependencies` has been explicitly set.
-  public var hasWholeOwnerDependencies: Bool {return _storage._wholeOwnerDependencies != nil}
+  public var hasWholeOwnerDependencies: Bool {_storage._wholeOwnerDependencies != nil}
   /// Clears the value of `wholeOwnerDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearWholeOwnerDependencies() {_uniqueStorage()._wholeOwnerDependencies = nil}
 
   public var cellErrors: TSCE_CellErrorsArchive {
-    get {return _storage._cellErrors ?? TSCE_CellErrorsArchive()}
+    get {_storage._cellErrors ?? TSCE_CellErrorsArchive()}
     set {_uniqueStorage()._cellErrors = newValue}
   }
   /// Returns true if `cellErrors` has been explicitly set.
-  public var hasCellErrors: Bool {return _storage._cellErrors != nil}
+  public var hasCellErrors: Bool {_storage._cellErrors != nil}
   /// Clears the value of `cellErrors`. Subsequent reads from it will return its default value.
   public mutating func clearCellErrors() {_uniqueStorage()._cellErrors = nil}
 
   public var formulaOwner: TSP_Reference {
-    get {return _storage._formulaOwner ?? TSP_Reference()}
+    get {_storage._formulaOwner ?? TSP_Reference()}
     set {_uniqueStorage()._formulaOwner = newValue}
   }
   /// Returns true if `formulaOwner` has been explicitly set.
-  public var hasFormulaOwner: Bool {return _storage._formulaOwner != nil}
+  public var hasFormulaOwner: Bool {_storage._formulaOwner != nil}
   /// Clears the value of `formulaOwner`. Subsequent reads from it will return its default value.
   public mutating func clearFormulaOwner() {_uniqueStorage()._formulaOwner = nil}
 
   public var baseOwnerUid: TSP_UUID {
-    get {return _storage._baseOwnerUid ?? TSP_UUID()}
+    get {_storage._baseOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._baseOwnerUid = newValue}
   }
   /// Returns true if `baseOwnerUid` has been explicitly set.
-  public var hasBaseOwnerUid: Bool {return _storage._baseOwnerUid != nil}
+  public var hasBaseOwnerUid: Bool {_storage._baseOwnerUid != nil}
   /// Clears the value of `baseOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearBaseOwnerUid() {_uniqueStorage()._baseOwnerUid = nil}
 
   public var tiledCellDependencies: TSCE_CellDependenciesTiledArchive {
-    get {return _storage._tiledCellDependencies ?? TSCE_CellDependenciesTiledArchive()}
+    get {_storage._tiledCellDependencies ?? TSCE_CellDependenciesTiledArchive()}
     set {_uniqueStorage()._tiledCellDependencies = newValue}
   }
   /// Returns true if `tiledCellDependencies` has been explicitly set.
-  public var hasTiledCellDependencies: Bool {return _storage._tiledCellDependencies != nil}
+  public var hasTiledCellDependencies: Bool {_storage._tiledCellDependencies != nil}
   /// Clears the value of `tiledCellDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearTiledCellDependencies() {_uniqueStorage()._tiledCellDependencies = nil}
 
   public var uuidReferences: TSCE_UuidReferencesArchive {
-    get {return _storage._uuidReferences ?? TSCE_UuidReferencesArchive()}
+    get {_storage._uuidReferences ?? TSCE_UuidReferencesArchive()}
     set {_uniqueStorage()._uuidReferences = newValue}
   }
   /// Returns true if `uuidReferences` has been explicitly set.
-  public var hasUuidReferences: Bool {return _storage._uuidReferences != nil}
+  public var hasUuidReferences: Bool {_storage._uuidReferences != nil}
   /// Clears the value of `uuidReferences`. Subsequent reads from it will return its default value.
   public mutating func clearUuidReferences() {_uniqueStorage()._uuidReferences = nil}
 
   public var tiledRangeDependencies: TSCE_RangeDependenciesTiledArchive {
-    get {return _storage._tiledRangeDependencies ?? TSCE_RangeDependenciesTiledArchive()}
+    get {_storage._tiledRangeDependencies ?? TSCE_RangeDependenciesTiledArchive()}
     set {_uniqueStorage()._tiledRangeDependencies = newValue}
   }
   /// Returns true if `tiledRangeDependencies` has been explicitly set.
-  public var hasTiledRangeDependencies: Bool {return _storage._tiledRangeDependencies != nil}
+  public var hasTiledRangeDependencies: Bool {_storage._tiledRangeDependencies != nil}
   /// Clears the value of `tiledRangeDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearTiledRangeDependencies() {_uniqueStorage()._tiledRangeDependencies = nil}
 
   public var spillRangeSizes: TSCE_CellSpillSizesArchive {
-    get {return _storage._spillRangeSizes ?? TSCE_CellSpillSizesArchive()}
+    get {_storage._spillRangeSizes ?? TSCE_CellSpillSizesArchive()}
     set {_uniqueStorage()._spillRangeSizes = newValue}
   }
   /// Returns true if `spillRangeSizes` has been explicitly set.
-  public var hasSpillRangeSizes: Bool {return _storage._spillRangeSizes != nil}
+  public var hasSpillRangeSizes: Bool {_storage._spillRangeSizes != nil}
   /// Clears the value of `spillRangeSizes`. Subsequent reads from it will return its default value.
   public mutating func clearSpillRangeSizes() {_uniqueStorage()._spillRangeSizes = nil}
 
@@ -2543,89 +2471,89 @@ public struct TSCE_FormulaOwnerDependenciesArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCE_FormulaOwnerInfoArchive: @unchecked Sendable {
+public nonisolated struct TSCE_FormulaOwnerInfoArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var formulaOwnerID: TSP_CFUUIDArchive {
-    get {return _storage._formulaOwnerID ?? TSP_CFUUIDArchive()}
+    get {_storage._formulaOwnerID ?? TSP_CFUUIDArchive()}
     set {_uniqueStorage()._formulaOwnerID = newValue}
   }
   /// Returns true if `formulaOwnerID` has been explicitly set.
-  public var hasFormulaOwnerID: Bool {return _storage._formulaOwnerID != nil}
+  public var hasFormulaOwnerID: Bool {_storage._formulaOwnerID != nil}
   /// Clears the value of `formulaOwnerID`. Subsequent reads from it will return its default value.
   public mutating func clearFormulaOwnerID() {_uniqueStorage()._formulaOwnerID = nil}
 
   public var cellDependencies: TSCE_CellDependenciesArchive {
-    get {return _storage._cellDependencies ?? TSCE_CellDependenciesArchive()}
+    get {_storage._cellDependencies ?? TSCE_CellDependenciesArchive()}
     set {_uniqueStorage()._cellDependencies = newValue}
   }
   /// Returns true if `cellDependencies` has been explicitly set.
-  public var hasCellDependencies: Bool {return _storage._cellDependencies != nil}
+  public var hasCellDependencies: Bool {_storage._cellDependencies != nil}
   /// Clears the value of `cellDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearCellDependencies() {_uniqueStorage()._cellDependencies = nil}
 
   public var rangeDependencies: TSCE_RangeDependenciesArchive {
-    get {return _storage._rangeDependencies ?? TSCE_RangeDependenciesArchive()}
+    get {_storage._rangeDependencies ?? TSCE_RangeDependenciesArchive()}
     set {_uniqueStorage()._rangeDependencies = newValue}
   }
   /// Returns true if `rangeDependencies` has been explicitly set.
-  public var hasRangeDependencies: Bool {return _storage._rangeDependencies != nil}
+  public var hasRangeDependencies: Bool {_storage._rangeDependencies != nil}
   /// Clears the value of `rangeDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearRangeDependencies() {_uniqueStorage()._rangeDependencies = nil}
 
   public var volatileDependencies: TSCE_VolatileDependenciesArchive {
-    get {return _storage._volatileDependencies ?? TSCE_VolatileDependenciesArchive()}
+    get {_storage._volatileDependencies ?? TSCE_VolatileDependenciesArchive()}
     set {_uniqueStorage()._volatileDependencies = newValue}
   }
   /// Returns true if `volatileDependencies` has been explicitly set.
-  public var hasVolatileDependencies: Bool {return _storage._volatileDependencies != nil}
+  public var hasVolatileDependencies: Bool {_storage._volatileDependencies != nil}
   /// Clears the value of `volatileDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearVolatileDependencies() {_uniqueStorage()._volatileDependencies = nil}
 
   public var spanningColumnDependencies: TSCE_SpanningDependenciesArchive {
-    get {return _storage._spanningColumnDependencies ?? TSCE_SpanningDependenciesArchive()}
+    get {_storage._spanningColumnDependencies ?? TSCE_SpanningDependenciesArchive()}
     set {_uniqueStorage()._spanningColumnDependencies = newValue}
   }
   /// Returns true if `spanningColumnDependencies` has been explicitly set.
-  public var hasSpanningColumnDependencies: Bool {return _storage._spanningColumnDependencies != nil}
+  public var hasSpanningColumnDependencies: Bool {_storage._spanningColumnDependencies != nil}
   /// Clears the value of `spanningColumnDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearSpanningColumnDependencies() {_uniqueStorage()._spanningColumnDependencies = nil}
 
   public var spanningRowDependencies: TSCE_SpanningDependenciesArchive {
-    get {return _storage._spanningRowDependencies ?? TSCE_SpanningDependenciesArchive()}
+    get {_storage._spanningRowDependencies ?? TSCE_SpanningDependenciesArchive()}
     set {_uniqueStorage()._spanningRowDependencies = newValue}
   }
   /// Returns true if `spanningRowDependencies` has been explicitly set.
-  public var hasSpanningRowDependencies: Bool {return _storage._spanningRowDependencies != nil}
+  public var hasSpanningRowDependencies: Bool {_storage._spanningRowDependencies != nil}
   /// Clears the value of `spanningRowDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearSpanningRowDependencies() {_uniqueStorage()._spanningRowDependencies = nil}
 
   public var wholeOwnerDependencies: TSCE_WholeOwnerDependenciesArchive {
-    get {return _storage._wholeOwnerDependencies ?? TSCE_WholeOwnerDependenciesArchive()}
+    get {_storage._wholeOwnerDependencies ?? TSCE_WholeOwnerDependenciesArchive()}
     set {_uniqueStorage()._wholeOwnerDependencies = newValue}
   }
   /// Returns true if `wholeOwnerDependencies` has been explicitly set.
-  public var hasWholeOwnerDependencies: Bool {return _storage._wholeOwnerDependencies != nil}
+  public var hasWholeOwnerDependencies: Bool {_storage._wholeOwnerDependencies != nil}
   /// Clears the value of `wholeOwnerDependencies`. Subsequent reads from it will return its default value.
   public mutating func clearWholeOwnerDependencies() {_uniqueStorage()._wholeOwnerDependencies = nil}
 
   public var cellErrors: TSCE_CellErrorsArchive {
-    get {return _storage._cellErrors ?? TSCE_CellErrorsArchive()}
+    get {_storage._cellErrors ?? TSCE_CellErrorsArchive()}
     set {_uniqueStorage()._cellErrors = newValue}
   }
   /// Returns true if `cellErrors` has been explicitly set.
-  public var hasCellErrors: Bool {return _storage._cellErrors != nil}
+  public var hasCellErrors: Bool {_storage._cellErrors != nil}
   /// Clears the value of `cellErrors`. Subsequent reads from it will return its default value.
   public mutating func clearCellErrors() {_uniqueStorage()._cellErrors = nil}
 
   public var formulaOwner: TSP_Reference {
-    get {return _storage._formulaOwner ?? TSP_Reference()}
+    get {_storage._formulaOwner ?? TSP_Reference()}
     set {_uniqueStorage()._formulaOwner = newValue}
   }
   /// Returns true if `formulaOwner` has been explicitly set.
-  public var hasFormulaOwner: Bool {return _storage._formulaOwner != nil}
+  public var hasFormulaOwner: Bool {_storage._formulaOwner != nil}
   /// Clears the value of `formulaOwner`. Subsequent reads from it will return its default value.
   public mutating func clearFormulaOwner() {_uniqueStorage()._formulaOwner = nil}
 
@@ -2636,26 +2564,26 @@ public struct TSCE_FormulaOwnerInfoArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCE_SubFormulaOwnerIDArchive: Sendable {
+public nonisolated struct TSCE_SubFormulaOwnerIDArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var baseOwnerUid: TSP_UUID {
-    get {return _baseOwnerUid ?? TSP_UUID()}
+    get {_baseOwnerUid ?? TSP_UUID()}
     set {_baseOwnerUid = newValue}
   }
   /// Returns true if `baseOwnerUid` has been explicitly set.
-  public var hasBaseOwnerUid: Bool {return self._baseOwnerUid != nil}
+  public var hasBaseOwnerUid: Bool {self._baseOwnerUid != nil}
   /// Clears the value of `baseOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearBaseOwnerUid() {self._baseOwnerUid = nil}
 
   public var ownerKind: UInt32 {
-    get {return _ownerKind ?? 0}
+    get {_ownerKind ?? 0}
     set {_ownerKind = newValue}
   }
   /// Returns true if `ownerKind` has been explicitly set.
-  public var hasOwnerKind: Bool {return self._ownerKind != nil}
+  public var hasOwnerKind: Bool {self._ownerKind != nil}
   /// Clears the value of `ownerKind`. Subsequent reads from it will return its default value.
   public mutating func clearOwnerKind() {self._ownerKind = nil}
 
@@ -2667,7 +2595,7 @@ public struct TSCE_SubFormulaOwnerIDArchive: Sendable {
   fileprivate var _ownerKind: UInt32? = nil
 }
 
-public struct TSCE_OwnerIDMapArchive: Sendable {
+public nonisolated struct TSCE_OwnerIDMapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2678,26 +2606,26 @@ public struct TSCE_OwnerIDMapArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct OwnerIDMapArchiveEntry: Sendable {
+  public nonisolated struct OwnerIDMapArchiveEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var internalOwnerID: UInt32 {
-      get {return _internalOwnerID ?? 0}
+      get {_internalOwnerID ?? 0}
       set {_internalOwnerID = newValue}
     }
     /// Returns true if `internalOwnerID` has been explicitly set.
-    public var hasInternalOwnerID: Bool {return self._internalOwnerID != nil}
+    public var hasInternalOwnerID: Bool {self._internalOwnerID != nil}
     /// Clears the value of `internalOwnerID`. Subsequent reads from it will return its default value.
     public mutating func clearInternalOwnerID() {self._internalOwnerID = nil}
 
     public var ownerID: TSP_CFUUIDArchive {
-      get {return _ownerID ?? TSP_CFUUIDArchive()}
+      get {_ownerID ?? TSP_CFUUIDArchive()}
       set {_ownerID = newValue}
     }
     /// Returns true if `ownerID` has been explicitly set.
-    public var hasOwnerID: Bool {return self._ownerID != nil}
+    public var hasOwnerID: Bool {self._ownerID != nil}
     /// Clears the value of `ownerID`. Subsequent reads from it will return its default value.
     public mutating func clearOwnerID() {self._ownerID = nil}
 
@@ -2712,7 +2640,7 @@ public struct TSCE_OwnerIDMapArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_UidLookupListArchive: Sendable {
+public nonisolated struct TSCE_UidLookupListArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2724,7 +2652,7 @@ public struct TSCE_UidLookupListArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_DependencyTrackerArchive: Sendable {
+public nonisolated struct TSCE_DependencyTrackerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2735,11 +2663,11 @@ public struct TSCE_DependencyTrackerArchive: Sendable {
   public var dirtyLeaf: [TSCE_CellReferenceArchive] = []
 
   public var ownerIDMap: TSCE_OwnerIDMapArchive {
-    get {return _ownerIDMap ?? TSCE_OwnerIDMapArchive()}
+    get {_ownerIDMap ?? TSCE_OwnerIDMapArchive()}
     set {_ownerIDMap = newValue}
   }
   /// Returns true if `ownerIDMap` has been explicitly set.
-  public var hasOwnerIDMap: Bool {return self._ownerIDMap != nil}
+  public var hasOwnerIDMap: Bool {self._ownerIDMap != nil}
   /// Clears the value of `ownerIDMap`. Subsequent reads from it will return its default value.
   public mutating func clearOwnerIDMap() {self._ownerIDMap = nil}
 
@@ -2747,11 +2675,11 @@ public struct TSCE_DependencyTrackerArchive: Sendable {
   public var internalDirtyLeaf: [TSCE_InternalCellReferenceArchive] = []
 
   public var numberOfFormulas: UInt64 {
-    get {return _numberOfFormulas ?? 0}
+    get {_numberOfFormulas ?? 0}
     set {_numberOfFormulas = newValue}
   }
   /// Returns true if `numberOfFormulas` has been explicitly set.
-  public var hasNumberOfFormulas: Bool {return self._numberOfFormulas != nil}
+  public var hasNumberOfFormulas: Bool {self._numberOfFormulas != nil}
   /// Clears the value of `numberOfFormulas`. Subsequent reads from it will return its default value.
   public mutating func clearNumberOfFormulas() {self._numberOfFormulas = nil}
 
@@ -2765,44 +2693,44 @@ public struct TSCE_DependencyTrackerArchive: Sendable {
   fileprivate var _numberOfFormulas: UInt64? = nil
 }
 
-public struct TSCE_RemoteDataSpecifierArchive: Sendable {
+public nonisolated struct TSCE_RemoteDataSpecifierArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var functionIndex: UInt32 {
-    get {return _functionIndex ?? 0}
+    get {_functionIndex ?? 0}
     set {_functionIndex = newValue}
   }
   /// Returns true if `functionIndex` has been explicitly set.
-  public var hasFunctionIndex: Bool {return self._functionIndex != nil}
+  public var hasFunctionIndex: Bool {self._functionIndex != nil}
   /// Clears the value of `functionIndex`. Subsequent reads from it will return its default value.
   public mutating func clearFunctionIndex() {self._functionIndex = nil}
 
   public var symbol: String {
-    get {return _symbol ?? String()}
+    get {_symbol ?? String()}
     set {_symbol = newValue}
   }
   /// Returns true if `symbol` has been explicitly set.
-  public var hasSymbol: Bool {return self._symbol != nil}
+  public var hasSymbol: Bool {self._symbol != nil}
   /// Clears the value of `symbol`. Subsequent reads from it will return its default value.
   public mutating func clearSymbol() {self._symbol = nil}
 
   public var attribute: UInt32 {
-    get {return _attribute ?? 0}
+    get {_attribute ?? 0}
     set {_attribute = newValue}
   }
   /// Returns true if `attribute` has been explicitly set.
-  public var hasAttribute: Bool {return self._attribute != nil}
+  public var hasAttribute: Bool {self._attribute != nil}
   /// Clears the value of `attribute`. Subsequent reads from it will return its default value.
   public mutating func clearAttribute() {self._attribute = nil}
 
   public var date: Double {
-    get {return _date ?? 0}
+    get {_date ?? 0}
     set {_date = newValue}
   }
   /// Returns true if `date` has been explicitly set.
-  public var hasDate: Bool {return self._date != nil}
+  public var hasDate: Bool {self._date != nil}
   /// Clears the value of `date`. Subsequent reads from it will return its default value.
   public mutating func clearDate() {self._date = nil}
 
@@ -2816,7 +2744,7 @@ public struct TSCE_RemoteDataSpecifierArchive: Sendable {
   fileprivate var _date: Double? = nil
 }
 
-public struct TSCE_RemoteDataValueMapArchive: Sendable {
+public nonisolated struct TSCE_RemoteDataValueMapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2825,26 +2753,26 @@ public struct TSCE_RemoteDataValueMapArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct RemoteDataMapEntry: Sendable {
+  public nonisolated struct RemoteDataMapEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var specifier: TSCE_RemoteDataSpecifierArchive {
-      get {return _specifier ?? TSCE_RemoteDataSpecifierArchive()}
+      get {_specifier ?? TSCE_RemoteDataSpecifierArchive()}
       set {_specifier = newValue}
     }
     /// Returns true if `specifier` has been explicitly set.
-    public var hasSpecifier: Bool {return self._specifier != nil}
+    public var hasSpecifier: Bool {self._specifier != nil}
     /// Clears the value of `specifier`. Subsequent reads from it will return its default value.
     public mutating func clearSpecifier() {self._specifier = nil}
 
     public var value: TSCE_CellValueArchive {
-      get {return _value ?? TSCE_CellValueArchive()}
+      get {_value ?? TSCE_CellValueArchive()}
       set {_value = newValue}
     }
     /// Returns true if `value` has been explicitly set.
-    public var hasValue: Bool {return self._value != nil}
+    public var hasValue: Bool {self._value != nil}
     /// Clears the value of `value`. Subsequent reads from it will return its default value.
     public mutating func clearValue() {self._value = nil}
 
@@ -2859,26 +2787,26 @@ public struct TSCE_RemoteDataValueMapArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_StockArchive: Sendable {
+public nonisolated struct TSCE_StockArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var symbol: String {
-    get {return _symbol ?? String()}
+    get {_symbol ?? String()}
     set {_symbol = newValue}
   }
   /// Returns true if `symbol` has been explicitly set.
-  public var hasSymbol: Bool {return self._symbol != nil}
+  public var hasSymbol: Bool {self._symbol != nil}
   /// Clears the value of `symbol`. Subsequent reads from it will return its default value.
   public mutating func clearSymbol() {self._symbol = nil}
 
   public var date: Double {
-    get {return _date ?? 0}
+    get {_date ?? 0}
     set {_date = newValue}
   }
   /// Returns true if `date` has been explicitly set.
-  public var hasDate: Bool {return self._date != nil}
+  public var hasDate: Bool {self._date != nil}
   /// Clears the value of `date`. Subsequent reads from it will return its default value.
   public mutating func clearDate() {self._date = nil}
 
@@ -2886,26 +2814,26 @@ public struct TSCE_StockArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct AttributeEntry: Sendable {
+  public nonisolated struct AttributeEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var attribute: UInt32 {
-      get {return _attribute ?? 0}
+      get {_attribute ?? 0}
       set {_attribute = newValue}
     }
     /// Returns true if `attribute` has been explicitly set.
-    public var hasAttribute: Bool {return self._attribute != nil}
+    public var hasAttribute: Bool {self._attribute != nil}
     /// Clears the value of `attribute`. Subsequent reads from it will return its default value.
     public mutating func clearAttribute() {self._attribute = nil}
 
     public var value: String {
-      get {return _value ?? String()}
+      get {_value ?? String()}
       set {_value = newValue}
     }
     /// Returns true if `value` has been explicitly set.
-    public var hasValue: Bool {return self._value != nil}
+    public var hasValue: Bool {self._value != nil}
     /// Clears the value of `value`. Subsequent reads from it will return its default value.
     public mutating func clearValue() {self._value = nil}
 
@@ -2923,17 +2851,17 @@ public struct TSCE_StockArchive: Sendable {
   fileprivate var _date: Double? = nil
 }
 
-public struct TSCE_RemoteDataStoreArchive: Sendable {
+public nonisolated struct TSCE_RemoteDataStoreArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var valueMap: TSCE_RemoteDataValueMapArchive {
-    get {return _valueMap ?? TSCE_RemoteDataValueMapArchive()}
+    get {_valueMap ?? TSCE_RemoteDataValueMapArchive()}
     set {_valueMap = newValue}
   }
   /// Returns true if `valueMap` has been explicitly set.
-  public var hasValueMap: Bool {return self._valueMap != nil}
+  public var hasValueMap: Bool {self._valueMap != nil}
   /// Clears the value of `valueMap`. Subsequent reads from it will return its default value.
   public mutating func clearValueMap() {self._valueMap = nil}
 
@@ -2946,35 +2874,35 @@ public struct TSCE_RemoteDataStoreArchive: Sendable {
   fileprivate var _valueMap: TSCE_RemoteDataValueMapArchive? = nil
 }
 
-public struct TSCE_NameTrackedReferencePair: Sendable {
+public nonisolated struct TSCE_NameTrackedReferencePair: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var name: String {
-    get {return _name ?? String()}
+    get {_name ?? String()}
     set {_name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return self._name != nil}
+  public var hasName: Bool {self._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {self._name = nil}
 
   public var trackedReference: TSP_Reference {
-    get {return _trackedReference ?? TSP_Reference()}
+    get {_trackedReference ?? TSP_Reference()}
     set {_trackedReference = newValue}
   }
   /// Returns true if `trackedReference` has been explicitly set.
-  public var hasTrackedReference: Bool {return self._trackedReference != nil}
+  public var hasTrackedReference: Bool {self._trackedReference != nil}
   /// Clears the value of `trackedReference`. Subsequent reads from it will return its default value.
   public mutating func clearTrackedReference() {self._trackedReference = nil}
 
   public var trackedReferenceID: UInt32 {
-    get {return _trackedReferenceID ?? 0}
+    get {_trackedReferenceID ?? 0}
     set {_trackedReferenceID = newValue}
   }
   /// Returns true if `trackedReferenceID` has been explicitly set.
-  public var hasTrackedReferenceID: Bool {return self._trackedReferenceID != nil}
+  public var hasTrackedReferenceID: Bool {self._trackedReferenceID != nil}
   /// Clears the value of `trackedReferenceID`. Subsequent reads from it will return its default value.
   public mutating func clearTrackedReferenceID() {self._trackedReferenceID = nil}
 
@@ -2987,17 +2915,17 @@ public struct TSCE_NameTrackedReferencePair: Sendable {
   fileprivate var _trackedReferenceID: UInt32? = nil
 }
 
-public struct TSCE_NamesByTrackedReferenceArchive: Sendable {
+public nonisolated struct TSCE_NamesByTrackedReferenceArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tableID: TSP_CFUUIDArchive {
-    get {return _tableID ?? TSP_CFUUIDArchive()}
+    get {_tableID ?? TSP_CFUUIDArchive()}
     set {_tableID = newValue}
   }
   /// Returns true if `tableID` has been explicitly set.
-  public var hasTableID: Bool {return self._tableID != nil}
+  public var hasTableID: Bool {self._tableID != nil}
   /// Clears the value of `tableID`. Subsequent reads from it will return its default value.
   public mutating func clearTableID() {self._tableID = nil}
 
@@ -3010,17 +2938,17 @@ public struct TSCE_NamesByTrackedReferenceArchive: Sendable {
   fileprivate var _tableID: TSP_CFUUIDArchive? = nil
 }
 
-public struct TSCE_NamedReferenceManagerArchive: Sendable {
+public nonisolated struct TSCE_NamedReferenceManagerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var referenceTracker: TSP_Reference {
-    get {return _referenceTracker ?? TSP_Reference()}
+    get {_referenceTracker ?? TSP_Reference()}
     set {_referenceTracker = newValue}
   }
   /// Returns true if `referenceTracker` has been explicitly set.
-  public var hasReferenceTracker: Bool {return self._referenceTracker != nil}
+  public var hasReferenceTracker: Bool {self._referenceTracker != nil}
   /// Clears the value of `referenceTracker`. Subsequent reads from it will return its default value.
   public mutating func clearReferenceTracker() {self._referenceTracker = nil}
 
@@ -3034,7 +2962,7 @@ public struct TSCE_NamedReferenceManagerArchive: Sendable {
   fileprivate var _referenceTracker: TSP_Reference? = nil
 }
 
-public struct TSCE_UuidSetStoreArchive: Sendable {
+public nonisolated struct TSCE_UuidSetStoreArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -3043,7 +2971,7 @@ public struct TSCE_UuidSetStoreArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct UuidSet: Sendable {
+  public nonisolated struct UuidSet: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -3051,11 +2979,11 @@ public struct TSCE_UuidSetStoreArchive: Sendable {
     public var uuid: [TSP_UUID] = []
 
     public var indexOfSet: UInt32 {
-      get {return _indexOfSet ?? 0}
+      get {_indexOfSet ?? 0}
       set {_indexOfSet = newValue}
     }
     /// Returns true if `indexOfSet` has been explicitly set.
-    public var hasIndexOfSet: Bool {return self._indexOfSet != nil}
+    public var hasIndexOfSet: Bool {self._indexOfSet != nil}
     /// Clears the value of `indexOfSet`. Subsequent reads from it will return its default value.
     public mutating func clearIndexOfSet() {self._indexOfSet = nil}
 
@@ -3069,7 +2997,7 @@ public struct TSCE_UuidSetStoreArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_UuidReferenceMapArchive: Sendable {
+public nonisolated struct TSCE_UuidReferenceMapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -3078,28 +3006,28 @@ public struct TSCE_UuidReferenceMapArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct CellRefsForUuid: Sendable {
+  public nonisolated struct CellRefsForUuid: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var uuid: TSP_UUID {
-      get {return _uuid ?? TSP_UUID()}
+      get {_uuid ?? TSP_UUID()}
       set {_uuid = newValue}
     }
     /// Returns true if `uuid` has been explicitly set.
-    public var hasUuid: Bool {return self._uuid != nil}
+    public var hasUuid: Bool {self._uuid != nil}
     /// Clears the value of `uuid`. Subsequent reads from it will return its default value.
     public mutating func clearUuid() {self._uuid = nil}
 
     public var cellRef: [TSCE_InternalCellReferenceArchive] = []
 
     public var cellRefs: TSCE_InternalCellRefSetArchive {
-      get {return _cellRefs ?? TSCE_InternalCellRefSetArchive()}
+      get {_cellRefs ?? TSCE_InternalCellRefSetArchive()}
       set {_cellRefs = newValue}
     }
     /// Returns true if `cellRefs` has been explicitly set.
-    public var hasCellRefs: Bool {return self._cellRefs != nil}
+    public var hasCellRefs: Bool {self._cellRefs != nil}
     /// Clears the value of `cellRefs`. Subsequent reads from it will return its default value.
     public mutating func clearCellRefs() {self._cellRefs = nil}
 
@@ -3114,7 +3042,7 @@ public struct TSCE_UuidReferenceMapArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_GroupByNodeMapArchive: Sendable {
+public nonisolated struct TSCE_GroupByNodeMapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -3123,26 +3051,26 @@ public struct TSCE_GroupByNodeMapArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct CellRefsForGroupNode: Sendable {
+  public nonisolated struct CellRefsForGroupNode: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var groupNodeUid: TSP_UUID {
-      get {return _groupNodeUid ?? TSP_UUID()}
+      get {_groupNodeUid ?? TSP_UUID()}
       set {_groupNodeUid = newValue}
     }
     /// Returns true if `groupNodeUid` has been explicitly set.
-    public var hasGroupNodeUid: Bool {return self._groupNodeUid != nil}
+    public var hasGroupNodeUid: Bool {self._groupNodeUid != nil}
     /// Clears the value of `groupNodeUid`. Subsequent reads from it will return its default value.
     public mutating func clearGroupNodeUid() {self._groupNodeUid = nil}
 
     public var cellRefs: TSCE_InternalCellRefSetArchive {
-      get {return _cellRefs ?? TSCE_InternalCellRefSetArchive()}
+      get {_cellRefs ?? TSCE_InternalCellRefSetArchive()}
       set {_cellRefs = newValue}
     }
     /// Returns true if `cellRefs` has been explicitly set.
-    public var hasCellRefs: Bool {return self._cellRefs != nil}
+    public var hasCellRefs: Bool {self._cellRefs != nil}
     /// Clears the value of `cellRefs`. Subsequent reads from it will return its default value.
     public mutating func clearCellRefs() {self._cellRefs = nil}
 
@@ -3154,17 +3082,17 @@ public struct TSCE_GroupByNodeMapArchive: Sendable {
     fileprivate var _cellRefs: TSCE_InternalCellRefSetArchive? = nil
   }
 
-  public struct GroupNodesForGroupBy: Sendable {
+  public nonisolated struct GroupNodesForGroupBy: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var groupByUid: TSP_UUID {
-      get {return _groupByUid ?? TSP_UUID()}
+      get {_groupByUid ?? TSP_UUID()}
       set {_groupByUid = newValue}
     }
     /// Returns true if `groupByUid` has been explicitly set.
-    public var hasGroupByUid: Bool {return self._groupByUid != nil}
+    public var hasGroupByUid: Bool {self._groupByUid != nil}
     /// Clears the value of `groupByUid`. Subsequent reads from it will return its default value.
     public mutating func clearGroupByUid() {self._groupByUid = nil}
 
@@ -3180,183 +3108,165 @@ public struct TSCE_GroupByNodeMapArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_CalculationEngineArchive: @unchecked Sendable {
+public nonisolated struct TSCE_CalculationEngineArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var baseDate1904: Bool {
-    get {return _storage._baseDate1904 ?? false}
+    get {_storage._baseDate1904 ?? false}
     set {_uniqueStorage()._baseDate1904 = newValue}
   }
   /// Returns true if `baseDate1904` has been explicitly set.
-  public var hasBaseDate1904: Bool {return _storage._baseDate1904 != nil}
+  public var hasBaseDate1904: Bool {_storage._baseDate1904 != nil}
   /// Clears the value of `baseDate1904`. Subsequent reads from it will return its default value.
   public mutating func clearBaseDate1904() {_uniqueStorage()._baseDate1904 = nil}
 
   public var dependencyTracker: TSCE_DependencyTrackerArchive {
-    get {return _storage._dependencyTracker ?? TSCE_DependencyTrackerArchive()}
+    get {_storage._dependencyTracker ?? TSCE_DependencyTrackerArchive()}
     set {_uniqueStorage()._dependencyTracker = newValue}
   }
   /// Returns true if `dependencyTracker` has been explicitly set.
-  public var hasDependencyTracker: Bool {return _storage._dependencyTracker != nil}
+  public var hasDependencyTracker: Bool {_storage._dependencyTracker != nil}
   /// Clears the value of `dependencyTracker`. Subsequent reads from it will return its default value.
   public mutating func clearDependencyTracker() {_uniqueStorage()._dependencyTracker = nil}
 
   public var namedReferenceManager: TSP_Reference {
-    get {return _storage._namedReferenceManager ?? TSP_Reference()}
+    get {_storage._namedReferenceManager ?? TSP_Reference()}
     set {_uniqueStorage()._namedReferenceManager = newValue}
   }
   /// Returns true if `namedReferenceManager` has been explicitly set.
-  public var hasNamedReferenceManager: Bool {return _storage._namedReferenceManager != nil}
+  public var hasNamedReferenceManager: Bool {_storage._namedReferenceManager != nil}
   /// Clears the value of `namedReferenceManager`. Subsequent reads from it will return its default value.
   public mutating func clearNamedReferenceManager() {_uniqueStorage()._namedReferenceManager = nil}
 
   public var excelImportDateMode: TSCE_CalculationEngineArchive.ExcelImportDateMode {
-    get {return _storage._excelImportDateMode ?? .dateMode1900}
+    get {_storage._excelImportDateMode ?? .dateMode1900}
     set {_uniqueStorage()._excelImportDateMode = newValue}
   }
   /// Returns true if `excelImportDateMode` has been explicitly set.
-  public var hasExcelImportDateMode: Bool {return _storage._excelImportDateMode != nil}
+  public var hasExcelImportDateMode: Bool {_storage._excelImportDateMode != nil}
   /// Clears the value of `excelImportDateMode`. Subsequent reads from it will return its default value.
   public mutating func clearExcelImportDateMode() {_uniqueStorage()._excelImportDateMode = nil}
 
   public var savedLocaleIdentifierFor42: String {
-    get {return _storage._savedLocaleIdentifierFor42 ?? String()}
+    get {_storage._savedLocaleIdentifierFor42 ?? String()}
     set {_uniqueStorage()._savedLocaleIdentifierFor42 = newValue}
   }
   /// Returns true if `savedLocaleIdentifierFor42` has been explicitly set.
-  public var hasSavedLocaleIdentifierFor42: Bool {return _storage._savedLocaleIdentifierFor42 != nil}
+  public var hasSavedLocaleIdentifierFor42: Bool {_storage._savedLocaleIdentifierFor42 != nil}
   /// Clears the value of `savedLocaleIdentifierFor42`. Subsequent reads from it will return its default value.
   public mutating func clearSavedLocaleIdentifierFor42() {_uniqueStorage()._savedLocaleIdentifierFor42 = nil}
 
   public var documentRandomSeed: UInt64 {
-    get {return _storage._documentRandomSeed ?? 0}
+    get {_storage._documentRandomSeed ?? 0}
     set {_uniqueStorage()._documentRandomSeed = newValue}
   }
   /// Returns true if `documentRandomSeed` has been explicitly set.
-  public var hasDocumentRandomSeed: Bool {return _storage._documentRandomSeed != nil}
+  public var hasDocumentRandomSeed: Bool {_storage._documentRandomSeed != nil}
   /// Clears the value of `documentRandomSeed`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentRandomSeed() {_uniqueStorage()._documentRandomSeed = nil}
 
   public var uuidReferenceMap: TSCE_UuidReferenceMapArchive {
-    get {return _storage._uuidReferenceMap ?? TSCE_UuidReferenceMapArchive()}
+    get {_storage._uuidReferenceMap ?? TSCE_UuidReferenceMapArchive()}
     set {_uniqueStorage()._uuidReferenceMap = newValue}
   }
   /// Returns true if `uuidReferenceMap` has been explicitly set.
-  public var hasUuidReferenceMap: Bool {return _storage._uuidReferenceMap != nil}
+  public var hasUuidReferenceMap: Bool {_storage._uuidReferenceMap != nil}
   /// Clears the value of `uuidReferenceMap`. Subsequent reads from it will return its default value.
   public mutating func clearUuidReferenceMap() {_uniqueStorage()._uuidReferenceMap = nil}
 
   public var documentTimestamp: Double {
-    get {return _storage._documentTimestamp ?? 0}
+    get {_storage._documentTimestamp ?? 0}
     set {_uniqueStorage()._documentTimestamp = newValue}
   }
   /// Returns true if `documentTimestamp` has been explicitly set.
-  public var hasDocumentTimestamp: Bool {return _storage._documentTimestamp != nil}
+  public var hasDocumentTimestamp: Bool {_storage._documentTimestamp != nil}
   /// Clears the value of `documentTimestamp`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentTimestamp() {_uniqueStorage()._documentTimestamp = nil}
 
   public var documentTimezone: String {
-    get {return _storage._documentTimezone ?? String()}
+    get {_storage._documentTimezone ?? String()}
     set {_uniqueStorage()._documentTimezone = newValue}
   }
   /// Returns true if `documentTimezone` has been explicitly set.
-  public var hasDocumentTimezone: Bool {return _storage._documentTimezone != nil}
+  public var hasDocumentTimezone: Bool {_storage._documentTimezone != nil}
   /// Clears the value of `documentTimezone`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentTimezone() {_uniqueStorage()._documentTimezone = nil}
 
   public var tableUidHistory: TSCE_RewriteTableUIDInfoArchive {
-    get {return _storage._tableUidHistory ?? TSCE_RewriteTableUIDInfoArchive()}
+    get {_storage._tableUidHistory ?? TSCE_RewriteTableUIDInfoArchive()}
     set {_uniqueStorage()._tableUidHistory = newValue}
   }
   /// Returns true if `tableUidHistory` has been explicitly set.
-  public var hasTableUidHistory: Bool {return _storage._tableUidHistory != nil}
+  public var hasTableUidHistory: Bool {_storage._tableUidHistory != nil}
   /// Clears the value of `tableUidHistory`. Subsequent reads from it will return its default value.
   public mutating func clearTableUidHistory() {_uniqueStorage()._tableUidHistory = nil}
 
   public var remoteDataStore: TSP_Reference {
-    get {return _storage._remoteDataStore ?? TSP_Reference()}
+    get {_storage._remoteDataStore ?? TSP_Reference()}
     set {_uniqueStorage()._remoteDataStore = newValue}
   }
   /// Returns true if `remoteDataStore` has been explicitly set.
-  public var hasRemoteDataStore: Bool {return _storage._remoteDataStore != nil}
+  public var hasRemoteDataStore: Bool {_storage._remoteDataStore != nil}
   /// Clears the value of `remoteDataStore`. Subsequent reads from it will return its default value.
   public mutating func clearRemoteDataStore() {_uniqueStorage()._remoteDataStore = nil}
 
   public var groupNodeMap: TSCE_GroupByNodeMapArchive {
-    get {return _storage._groupNodeMap ?? TSCE_GroupByNodeMapArchive()}
+    get {_storage._groupNodeMap ?? TSCE_GroupByNodeMapArchive()}
     set {_uniqueStorage()._groupNodeMap = newValue}
   }
   /// Returns true if `groupNodeMap` has been explicitly set.
-  public var hasGroupNodeMap: Bool {return _storage._groupNodeMap != nil}
+  public var hasGroupNodeMap: Bool {_storage._groupNodeMap != nil}
   /// Clears the value of `groupNodeMap`. Subsequent reads from it will return its default value.
   public mutating func clearGroupNodeMap() {_uniqueStorage()._groupNodeMap = nil}
 
   public var headerNameManager: TSP_Reference {
-    get {return _storage._headerNameManager ?? TSP_Reference()}
+    get {_storage._headerNameManager ?? TSP_Reference()}
     set {_uniqueStorage()._headerNameManager = newValue}
   }
   /// Returns true if `headerNameManager` has been explicitly set.
-  public var hasHeaderNameManager: Bool {return _storage._headerNameManager != nil}
+  public var hasHeaderNameManager: Bool {_storage._headerNameManager != nil}
   /// Clears the value of `headerNameManager`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderNameManager() {_uniqueStorage()._headerNameManager = nil}
 
   public var refsToDirty: TSP_Reference {
-    get {return _storage._refsToDirty ?? TSP_Reference()}
+    get {_storage._refsToDirty ?? TSP_Reference()}
     set {_uniqueStorage()._refsToDirty = newValue}
   }
   /// Returns true if `refsToDirty` has been explicitly set.
-  public var hasRefsToDirty: Bool {return _storage._refsToDirty != nil}
+  public var hasRefsToDirty: Bool {_storage._refsToDirty != nil}
   /// Clears the value of `refsToDirty`. Subsequent reads from it will return its default value.
   public mutating func clearRefsToDirty() {_uniqueStorage()._refsToDirty = nil}
 
   public var savedLocaleIdentifier: String {
-    get {return _storage._savedLocaleIdentifier ?? String()}
+    get {_storage._savedLocaleIdentifier ?? String()}
     set {_uniqueStorage()._savedLocaleIdentifier = newValue}
   }
   /// Returns true if `savedLocaleIdentifier` has been explicitly set.
-  public var hasSavedLocaleIdentifier: Bool {return _storage._savedLocaleIdentifier != nil}
+  public var hasSavedLocaleIdentifier: Bool {_storage._savedLocaleIdentifier != nil}
   /// Clears the value of `savedLocaleIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearSavedLocaleIdentifier() {_uniqueStorage()._savedLocaleIdentifier = nil}
 
   public var beginTrackingNamesLegacyNrm: [TSP_UUID] {
-    get {return _storage._beginTrackingNamesLegacyNrm}
+    get {_storage._beginTrackingNamesLegacyNrm}
     set {_uniqueStorage()._beginTrackingNamesLegacyNrm = newValue}
   }
 
   public var endTrackingNamesLegacyNrm: [TSP_UUID] {
-    get {return _storage._endTrackingNamesLegacyNrm}
+    get {_storage._endTrackingNamesLegacyNrm}
     set {_uniqueStorage()._endTrackingNamesLegacyNrm = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ExcelImportDateMode: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case dateMode1900 // = 1
-    case dateMode1900Legacy // = 2
-    case dateMode1904Legacy // = 3
+  public nonisolated enum ExcelImportDateMode: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case dateMode1900 = 1
+    case dateMode1900Legacy = 2
+    case dateMode1904Legacy = 3
 
     public init() {
       self = .dateMode1900
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 1: self = .dateMode1900
-      case 2: self = .dateMode1900Legacy
-      case 3: self = .dateMode1904Legacy
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .dateMode1900: return 1
-      case .dateMode1900Legacy: return 2
-      case .dateMode1904Legacy: return 3
-      }
     }
 
   }
@@ -3366,44 +3276,44 @@ public struct TSCE_CalculationEngineArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCE_PreserveColumnRowFlagsArchive: Sendable {
+public nonisolated struct TSCE_PreserveColumnRowFlagsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var beginRowIsAbsolute: Bool {
-    get {return _beginRowIsAbsolute ?? false}
+    get {_beginRowIsAbsolute ?? false}
     set {_beginRowIsAbsolute = newValue}
   }
   /// Returns true if `beginRowIsAbsolute` has been explicitly set.
-  public var hasBeginRowIsAbsolute: Bool {return self._beginRowIsAbsolute != nil}
+  public var hasBeginRowIsAbsolute: Bool {self._beginRowIsAbsolute != nil}
   /// Clears the value of `beginRowIsAbsolute`. Subsequent reads from it will return its default value.
   public mutating func clearBeginRowIsAbsolute() {self._beginRowIsAbsolute = nil}
 
   public var beginColumnIsAbsolute: Bool {
-    get {return _beginColumnIsAbsolute ?? false}
+    get {_beginColumnIsAbsolute ?? false}
     set {_beginColumnIsAbsolute = newValue}
   }
   /// Returns true if `beginColumnIsAbsolute` has been explicitly set.
-  public var hasBeginColumnIsAbsolute: Bool {return self._beginColumnIsAbsolute != nil}
+  public var hasBeginColumnIsAbsolute: Bool {self._beginColumnIsAbsolute != nil}
   /// Clears the value of `beginColumnIsAbsolute`. Subsequent reads from it will return its default value.
   public mutating func clearBeginColumnIsAbsolute() {self._beginColumnIsAbsolute = nil}
 
   public var endRowIsAbsolute: Bool {
-    get {return _endRowIsAbsolute ?? false}
+    get {_endRowIsAbsolute ?? false}
     set {_endRowIsAbsolute = newValue}
   }
   /// Returns true if `endRowIsAbsolute` has been explicitly set.
-  public var hasEndRowIsAbsolute: Bool {return self._endRowIsAbsolute != nil}
+  public var hasEndRowIsAbsolute: Bool {self._endRowIsAbsolute != nil}
   /// Clears the value of `endRowIsAbsolute`. Subsequent reads from it will return its default value.
   public mutating func clearEndRowIsAbsolute() {self._endRowIsAbsolute = nil}
 
   public var endColumnIsAbsolute: Bool {
-    get {return _endColumnIsAbsolute ?? false}
+    get {_endColumnIsAbsolute ?? false}
     set {_endColumnIsAbsolute = newValue}
   }
   /// Returns true if `endColumnIsAbsolute` has been explicitly set.
-  public var hasEndColumnIsAbsolute: Bool {return self._endColumnIsAbsolute != nil}
+  public var hasEndColumnIsAbsolute: Bool {self._endColumnIsAbsolute != nil}
   /// Clears the value of `endColumnIsAbsolute`. Subsequent reads from it will return its default value.
   public mutating func clearEndColumnIsAbsolute() {self._endColumnIsAbsolute = nil}
 
@@ -3417,131 +3327,131 @@ public struct TSCE_PreserveColumnRowFlagsArchive: Sendable {
   fileprivate var _endColumnIsAbsolute: Bool? = nil
 }
 
-public struct TSCE_CategoryReferenceArchive: @unchecked Sendable {
+public nonisolated struct TSCE_CategoryReferenceArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var groupByUid: TSP_UUID {
-    get {return _storage._groupByUid ?? TSP_UUID()}
+    get {_storage._groupByUid ?? TSP_UUID()}
     set {_uniqueStorage()._groupByUid = newValue}
   }
   /// Returns true if `groupByUid` has been explicitly set.
-  public var hasGroupByUid: Bool {return _storage._groupByUid != nil}
+  public var hasGroupByUid: Bool {_storage._groupByUid != nil}
   /// Clears the value of `groupByUid`. Subsequent reads from it will return its default value.
   public mutating func clearGroupByUid() {_uniqueStorage()._groupByUid = nil}
 
   public var columnUid: TSP_UUID {
-    get {return _storage._columnUid ?? TSP_UUID()}
+    get {_storage._columnUid ?? TSP_UUID()}
     set {_uniqueStorage()._columnUid = newValue}
   }
   /// Returns true if `columnUid` has been explicitly set.
-  public var hasColumnUid: Bool {return _storage._columnUid != nil}
+  public var hasColumnUid: Bool {_storage._columnUid != nil}
   /// Clears the value of `columnUid`. Subsequent reads from it will return its default value.
   public mutating func clearColumnUid() {_uniqueStorage()._columnUid = nil}
 
   public var aggregateType: UInt32 {
-    get {return _storage._aggregateType ?? 0}
+    get {_storage._aggregateType ?? 0}
     set {_uniqueStorage()._aggregateType = newValue}
   }
   /// Returns true if `aggregateType` has been explicitly set.
-  public var hasAggregateType: Bool {return _storage._aggregateType != nil}
+  public var hasAggregateType: Bool {_storage._aggregateType != nil}
   /// Clears the value of `aggregateType`. Subsequent reads from it will return its default value.
   public mutating func clearAggregateType() {_uniqueStorage()._aggregateType = nil}
 
   public var groupLevel: Int32 {
-    get {return _storage._groupLevel ?? 0}
+    get {_storage._groupLevel ?? 0}
     set {_uniqueStorage()._groupLevel = newValue}
   }
   /// Returns true if `groupLevel` has been explicitly set.
-  public var hasGroupLevel: Bool {return _storage._groupLevel != nil}
+  public var hasGroupLevel: Bool {_storage._groupLevel != nil}
   /// Clears the value of `groupLevel`. Subsequent reads from it will return its default value.
   public mutating func clearGroupLevel() {_uniqueStorage()._groupLevel = nil}
 
   public var groupUids: TSCE_CategoryReferenceArchive.CatRefUidList {
-    get {return _storage._groupUids ?? TSCE_CategoryReferenceArchive.CatRefUidList()}
+    get {_storage._groupUids ?? TSCE_CategoryReferenceArchive.CatRefUidList()}
     set {_uniqueStorage()._groupUids = newValue}
   }
   /// Returns true if `groupUids` has been explicitly set.
-  public var hasGroupUids: Bool {return _storage._groupUids != nil}
+  public var hasGroupUids: Bool {_storage._groupUids != nil}
   /// Clears the value of `groupUids`. Subsequent reads from it will return its default value.
   public mutating func clearGroupUids() {_uniqueStorage()._groupUids = nil}
 
   public var preserveFlags: TSCE_PreserveColumnRowFlagsArchive {
-    get {return _storage._preserveFlags ?? TSCE_PreserveColumnRowFlagsArchive()}
+    get {_storage._preserveFlags ?? TSCE_PreserveColumnRowFlagsArchive()}
     set {_uniqueStorage()._preserveFlags = newValue}
   }
   /// Returns true if `preserveFlags` has been explicitly set.
-  public var hasPreserveFlags: Bool {return _storage._preserveFlags != nil}
+  public var hasPreserveFlags: Bool {_storage._preserveFlags != nil}
   /// Clears the value of `preserveFlags`. Subsequent reads from it will return its default value.
   public mutating func clearPreserveFlags() {_uniqueStorage()._preserveFlags = nil}
 
   public var relativeColumn: Int32 {
-    get {return _storage._relativeColumn ?? 0}
+    get {_storage._relativeColumn ?? 0}
     set {_uniqueStorage()._relativeColumn = newValue}
   }
   /// Returns true if `relativeColumn` has been explicitly set.
-  public var hasRelativeColumn: Bool {return _storage._relativeColumn != nil}
+  public var hasRelativeColumn: Bool {_storage._relativeColumn != nil}
   /// Clears the value of `relativeColumn`. Subsequent reads from it will return its default value.
   public mutating func clearRelativeColumn() {_uniqueStorage()._relativeColumn = nil}
 
   public var relativeGroupUid: TSP_UUID {
-    get {return _storage._relativeGroupUid ?? TSP_UUID()}
+    get {_storage._relativeGroupUid ?? TSP_UUID()}
     set {_uniqueStorage()._relativeGroupUid = newValue}
   }
   /// Returns true if `relativeGroupUid` has been explicitly set.
-  public var hasRelativeGroupUid: Bool {return _storage._relativeGroupUid != nil}
+  public var hasRelativeGroupUid: Bool {_storage._relativeGroupUid != nil}
   /// Clears the value of `relativeGroupUid`. Subsequent reads from it will return its default value.
   public mutating func clearRelativeGroupUid() {_uniqueStorage()._relativeGroupUid = nil}
 
   public var absoluteGroupUid: TSP_UUID {
-    get {return _storage._absoluteGroupUid ?? TSP_UUID()}
+    get {_storage._absoluteGroupUid ?? TSP_UUID()}
     set {_uniqueStorage()._absoluteGroupUid = newValue}
   }
   /// Returns true if `absoluteGroupUid` has been explicitly set.
-  public var hasAbsoluteGroupUid: Bool {return _storage._absoluteGroupUid != nil}
+  public var hasAbsoluteGroupUid: Bool {_storage._absoluteGroupUid != nil}
   /// Clears the value of `absoluteGroupUid`. Subsequent reads from it will return its default value.
   public mutating func clearAbsoluteGroupUid() {_uniqueStorage()._absoluteGroupUid = nil}
 
   public var optionRefersToPivotRows: Bool {
-    get {return _storage._optionRefersToPivotRows ?? false}
+    get {_storage._optionRefersToPivotRows ?? false}
     set {_uniqueStorage()._optionRefersToPivotRows = newValue}
   }
   /// Returns true if `optionRefersToPivotRows` has been explicitly set.
-  public var hasOptionRefersToPivotRows: Bool {return _storage._optionRefersToPivotRows != nil}
+  public var hasOptionRefersToPivotRows: Bool {_storage._optionRefersToPivotRows != nil}
   /// Clears the value of `optionRefersToPivotRows`. Subsequent reads from it will return its default value.
   public mutating func clearOptionRefersToPivotRows() {_uniqueStorage()._optionRefersToPivotRows = nil}
 
   public var optionRefersToPivotColumns: Bool {
-    get {return _storage._optionRefersToPivotColumns ?? false}
+    get {_storage._optionRefersToPivotColumns ?? false}
     set {_uniqueStorage()._optionRefersToPivotColumns = newValue}
   }
   /// Returns true if `optionRefersToPivotColumns` has been explicitly set.
-  public var hasOptionRefersToPivotColumns: Bool {return _storage._optionRefersToPivotColumns != nil}
+  public var hasOptionRefersToPivotColumns: Bool {_storage._optionRefersToPivotColumns != nil}
   /// Clears the value of `optionRefersToPivotColumns`. Subsequent reads from it will return its default value.
   public mutating func clearOptionRefersToPivotColumns() {_uniqueStorage()._optionRefersToPivotColumns = nil}
 
   public var aggIndexLevel: UInt32 {
-    get {return _storage._aggIndexLevel ?? 0}
+    get {_storage._aggIndexLevel ?? 0}
     set {_uniqueStorage()._aggIndexLevel = newValue}
   }
   /// Returns true if `aggIndexLevel` has been explicitly set.
-  public var hasAggIndexLevel: Bool {return _storage._aggIndexLevel != nil}
+  public var hasAggIndexLevel: Bool {_storage._aggIndexLevel != nil}
   /// Clears the value of `aggIndexLevel`. Subsequent reads from it will return its default value.
   public mutating func clearAggIndexLevel() {_uniqueStorage()._aggIndexLevel = nil}
 
   public var optionShowAggregateName: Bool {
-    get {return _storage._optionShowAggregateName ?? false}
+    get {_storage._optionShowAggregateName ?? false}
     set {_uniqueStorage()._optionShowAggregateName = newValue}
   }
   /// Returns true if `optionShowAggregateName` has been explicitly set.
-  public var hasOptionShowAggregateName: Bool {return _storage._optionShowAggregateName != nil}
+  public var hasOptionShowAggregateName: Bool {_storage._optionShowAggregateName != nil}
   /// Clears the value of `optionShowAggregateName`. Subsequent reads from it will return its default value.
   public mutating func clearOptionShowAggregateName() {_uniqueStorage()._optionShowAggregateName = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct CatRefUidList: Sendable {
+  public nonisolated struct CatRefUidList: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -3558,7 +3468,7 @@ public struct TSCE_CategoryReferenceArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCE_ASTNodeArrayArchive: Sendable {
+public nonisolated struct TSCE_ASTNodeArrayArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -3567,273 +3477,123 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ASTNodeType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case additionNode // = 1
-    case subtractionNode // = 2
-    case multiplicationNode // = 3
-    case divisionNode // = 4
-    case powerNode // = 5
-    case concatenationNode // = 6
-    case greaterThanNode // = 7
-    case greaterThanOrEqualToNode // = 8
-    case lessThanNode // = 9
-    case lessThanOrEqualToNode // = 10
-    case equalToNode // = 11
-    case notEqualToNode // = 12
-    case negationNode // = 13
-    case plusSignNode // = 14
-    case percentNode // = 15
-    case functionNode // = 16
-    case numberNode // = 17
-    case booleanNode // = 18
-    case stringNode // = 19
-    case dateNode // = 20
-    case durationNode // = 21
-    case emptyArgumentNode // = 22
-    case tokenNode // = 23
-    case arrayNode // = 24
-    case listNode // = 25
-    case thunkNode // = 26
-    case localCellReferenceNode // = 27
-    case crossTableCellReferenceNode // = 28
-    case colonNode // = 29
-    case referenceErrorNode // = 30
-    case unknownFunctionNode // = 31
-    case appendWhitespaceNode // = 32
-    case prependWhitespaceNode // = 33
-    case beginThunkNode // = 34
-    case endThunkNode // = 35
-    case cellReferenceNode // = 36
-    case colonNodeWithUids // = 45
-    case referenceErrorWithUids // = 46
-    case uidReferenceNode // = 48
-    case letBindNode // = 52
-    case varNode // = 53
-    case endScopeNode // = 54
-    case lambdaNode // = 55
-    case beginLambdaThunkNode // = 56
-    case endLambdaThunkNode // = 57
-    case linkedCellRefNode // = 63
-    case linkedColumnRefNode // = 64
-    case linkedRowRefNode // = 65
-    case categoryRefNode // = 66
-    case colonTractNode // = 67
-    case viewTractRefNode // = 68
-    case intersectionNode // = 69
-    case spillRangeNode // = 70
+  public nonisolated enum ASTNodeType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case additionNode = 1
+    case subtractionNode = 2
+    case multiplicationNode = 3
+    case divisionNode = 4
+    case powerNode = 5
+    case concatenationNode = 6
+    case greaterThanNode = 7
+    case greaterThanOrEqualToNode = 8
+    case lessThanNode = 9
+    case lessThanOrEqualToNode = 10
+    case equalToNode = 11
+    case notEqualToNode = 12
+    case negationNode = 13
+    case plusSignNode = 14
+    case percentNode = 15
+    case functionNode = 16
+    case numberNode = 17
+    case booleanNode = 18
+    case stringNode = 19
+    case dateNode = 20
+    case durationNode = 21
+    case emptyArgumentNode = 22
+    case tokenNode = 23
+    case arrayNode = 24
+    case listNode = 25
+    case thunkNode = 26
+    case localCellReferenceNode = 27
+    case crossTableCellReferenceNode = 28
+    case colonNode = 29
+    case referenceErrorNode = 30
+    case unknownFunctionNode = 31
+    case appendWhitespaceNode = 32
+    case prependWhitespaceNode = 33
+    case beginThunkNode = 34
+    case endThunkNode = 35
+    case cellReferenceNode = 36
+    case colonNodeWithUids = 45
+    case referenceErrorWithUids = 46
+    case uidReferenceNode = 48
+    case letBindNode = 52
+    case varNode = 53
+    case endScopeNode = 54
+    case lambdaNode = 55
+    case beginLambdaThunkNode = 56
+    case endLambdaThunkNode = 57
+    case linkedCellRefNode = 63
+    case linkedColumnRefNode = 64
+    case linkedRowRefNode = 65
+    case categoryRefNode = 66
+    case colonTractNode = 67
+    case viewTractRefNode = 68
+    case intersectionNode = 69
+    case spillRangeNode = 70
 
     public init() {
       self = .additionNode
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 1: self = .additionNode
-      case 2: self = .subtractionNode
-      case 3: self = .multiplicationNode
-      case 4: self = .divisionNode
-      case 5: self = .powerNode
-      case 6: self = .concatenationNode
-      case 7: self = .greaterThanNode
-      case 8: self = .greaterThanOrEqualToNode
-      case 9: self = .lessThanNode
-      case 10: self = .lessThanOrEqualToNode
-      case 11: self = .equalToNode
-      case 12: self = .notEqualToNode
-      case 13: self = .negationNode
-      case 14: self = .plusSignNode
-      case 15: self = .percentNode
-      case 16: self = .functionNode
-      case 17: self = .numberNode
-      case 18: self = .booleanNode
-      case 19: self = .stringNode
-      case 20: self = .dateNode
-      case 21: self = .durationNode
-      case 22: self = .emptyArgumentNode
-      case 23: self = .tokenNode
-      case 24: self = .arrayNode
-      case 25: self = .listNode
-      case 26: self = .thunkNode
-      case 27: self = .localCellReferenceNode
-      case 28: self = .crossTableCellReferenceNode
-      case 29: self = .colonNode
-      case 30: self = .referenceErrorNode
-      case 31: self = .unknownFunctionNode
-      case 32: self = .appendWhitespaceNode
-      case 33: self = .prependWhitespaceNode
-      case 34: self = .beginThunkNode
-      case 35: self = .endThunkNode
-      case 36: self = .cellReferenceNode
-      case 45: self = .colonNodeWithUids
-      case 46: self = .referenceErrorWithUids
-      case 48: self = .uidReferenceNode
-      case 52: self = .letBindNode
-      case 53: self = .varNode
-      case 54: self = .endScopeNode
-      case 55: self = .lambdaNode
-      case 56: self = .beginLambdaThunkNode
-      case 57: self = .endLambdaThunkNode
-      case 63: self = .linkedCellRefNode
-      case 64: self = .linkedColumnRefNode
-      case 65: self = .linkedRowRefNode
-      case 66: self = .categoryRefNode
-      case 67: self = .colonTractNode
-      case 68: self = .viewTractRefNode
-      case 69: self = .intersectionNode
-      case 70: self = .spillRangeNode
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .additionNode: return 1
-      case .subtractionNode: return 2
-      case .multiplicationNode: return 3
-      case .divisionNode: return 4
-      case .powerNode: return 5
-      case .concatenationNode: return 6
-      case .greaterThanNode: return 7
-      case .greaterThanOrEqualToNode: return 8
-      case .lessThanNode: return 9
-      case .lessThanOrEqualToNode: return 10
-      case .equalToNode: return 11
-      case .notEqualToNode: return 12
-      case .negationNode: return 13
-      case .plusSignNode: return 14
-      case .percentNode: return 15
-      case .functionNode: return 16
-      case .numberNode: return 17
-      case .booleanNode: return 18
-      case .stringNode: return 19
-      case .dateNode: return 20
-      case .durationNode: return 21
-      case .emptyArgumentNode: return 22
-      case .tokenNode: return 23
-      case .arrayNode: return 24
-      case .listNode: return 25
-      case .thunkNode: return 26
-      case .localCellReferenceNode: return 27
-      case .crossTableCellReferenceNode: return 28
-      case .colonNode: return 29
-      case .referenceErrorNode: return 30
-      case .unknownFunctionNode: return 31
-      case .appendWhitespaceNode: return 32
-      case .prependWhitespaceNode: return 33
-      case .beginThunkNode: return 34
-      case .endThunkNode: return 35
-      case .cellReferenceNode: return 36
-      case .colonNodeWithUids: return 45
-      case .referenceErrorWithUids: return 46
-      case .uidReferenceNode: return 48
-      case .letBindNode: return 52
-      case .varNode: return 53
-      case .endScopeNode: return 54
-      case .lambdaNode: return 55
-      case .beginLambdaThunkNode: return 56
-      case .endLambdaThunkNode: return 57
-      case .linkedCellRefNode: return 63
-      case .linkedColumnRefNode: return 64
-      case .linkedRowRefNode: return 65
-      case .categoryRefNode: return 66
-      case .colonTractNode: return 67
-      case .viewTractRefNode: return 68
-      case .intersectionNode: return 69
-      case .spillRangeNode: return 70
-      }
-    }
-
   }
 
-  public enum ASTUidTractPurpose: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case uidsIncluded // = 0
-    case uidsPremerge // = 1
-    case uidsPremoveregion // = 2
-    case uidsExcluded // = 3
-    case uidsActive // = 4
-    case uidsPremergeTopleft // = 5
-    case uidsRemovedByMove // = 6
-    case fulltupleRowColumnHeader // = 7
-    case fulltupleAggregateRuleUid // = 8
-    case fulltupleRowColumnRuleValuePairs // = 9
+  public nonisolated enum ASTUidTractPurpose: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case uidsIncluded = 0
+    case uidsPremerge = 1
+    case uidsPremoveregion = 2
+    case uidsExcluded = 3
+    case uidsActive = 4
+    case uidsPremergeTopleft = 5
+    case uidsRemovedByMove = 6
+    case fulltupleRowColumnHeader = 7
+    case fulltupleAggregateRuleUid = 8
+    case fulltupleRowColumnRuleValuePairs = 9
 
     public init() {
       self = .uidsIncluded
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .uidsIncluded
-      case 1: self = .uidsPremerge
-      case 2: self = .uidsPremoveregion
-      case 3: self = .uidsExcluded
-      case 4: self = .uidsActive
-      case 5: self = .uidsPremergeTopleft
-      case 6: self = .uidsRemovedByMove
-      case 7: self = .fulltupleRowColumnHeader
-      case 8: self = .fulltupleAggregateRuleUid
-      case 9: self = .fulltupleRowColumnRuleValuePairs
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .uidsIncluded: return 0
-      case .uidsPremerge: return 1
-      case .uidsPremoveregion: return 2
-      case .uidsExcluded: return 3
-      case .uidsActive: return 4
-      case .uidsPremergeTopleft: return 5
-      case .uidsRemovedByMove: return 6
-      case .fulltupleRowColumnHeader: return 7
-      case .fulltupleAggregateRuleUid: return 8
-      case .fulltupleRowColumnRuleValuePairs: return 9
-      }
-    }
-
   }
 
-  public struct ASTLocalCellReferenceNodeArchive: Sendable {
+  public nonisolated struct ASTLocalCellReferenceNodeArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var rowHandle: UInt32 {
-      get {return _rowHandle ?? 0}
+      get {_rowHandle ?? 0}
       set {_rowHandle = newValue}
     }
     /// Returns true if `rowHandle` has been explicitly set.
-    public var hasRowHandle: Bool {return self._rowHandle != nil}
+    public var hasRowHandle: Bool {self._rowHandle != nil}
     /// Clears the value of `rowHandle`. Subsequent reads from it will return its default value.
     public mutating func clearRowHandle() {self._rowHandle = nil}
 
     public var columnHandle: UInt32 {
-      get {return _columnHandle ?? 0}
+      get {_columnHandle ?? 0}
       set {_columnHandle = newValue}
     }
     /// Returns true if `columnHandle` has been explicitly set.
-    public var hasColumnHandle: Bool {return self._columnHandle != nil}
+    public var hasColumnHandle: Bool {self._columnHandle != nil}
     /// Clears the value of `columnHandle`. Subsequent reads from it will return its default value.
     public mutating func clearColumnHandle() {self._columnHandle = nil}
 
     public var rowIsSticky: UInt32 {
-      get {return _rowIsSticky ?? 0}
+      get {_rowIsSticky ?? 0}
       set {_rowIsSticky = newValue}
     }
     /// Returns true if `rowIsSticky` has been explicitly set.
-    public var hasRowIsSticky: Bool {return self._rowIsSticky != nil}
+    public var hasRowIsSticky: Bool {self._rowIsSticky != nil}
     /// Clears the value of `rowIsSticky`. Subsequent reads from it will return its default value.
     public mutating func clearRowIsSticky() {self._rowIsSticky = nil}
 
     public var columnIsSticky: UInt32 {
-      get {return _columnIsSticky ?? 0}
+      get {_columnIsSticky ?? 0}
       set {_columnIsSticky = newValue}
     }
     /// Returns true if `columnIsSticky` has been explicitly set.
-    public var hasColumnIsSticky: Bool {return self._columnIsSticky != nil}
+    public var hasColumnIsSticky: Bool {self._columnIsSticky != nil}
     /// Clears the value of `columnIsSticky`. Subsequent reads from it will return its default value.
     public mutating func clearColumnIsSticky() {self._columnIsSticky = nil}
 
@@ -3847,89 +3607,89 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _columnIsSticky: UInt32? = nil
   }
 
-  public struct ASTCrossTableCellReferenceNodeArchive: Sendable {
+  public nonisolated struct ASTCrossTableCellReferenceNodeArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var rowHandle: UInt32 {
-      get {return _rowHandle ?? 0}
+      get {_rowHandle ?? 0}
       set {_rowHandle = newValue}
     }
     /// Returns true if `rowHandle` has been explicitly set.
-    public var hasRowHandle: Bool {return self._rowHandle != nil}
+    public var hasRowHandle: Bool {self._rowHandle != nil}
     /// Clears the value of `rowHandle`. Subsequent reads from it will return its default value.
     public mutating func clearRowHandle() {self._rowHandle = nil}
 
     public var columnHandle: UInt32 {
-      get {return _columnHandle ?? 0}
+      get {_columnHandle ?? 0}
       set {_columnHandle = newValue}
     }
     /// Returns true if `columnHandle` has been explicitly set.
-    public var hasColumnHandle: Bool {return self._columnHandle != nil}
+    public var hasColumnHandle: Bool {self._columnHandle != nil}
     /// Clears the value of `columnHandle`. Subsequent reads from it will return its default value.
     public mutating func clearColumnHandle() {self._columnHandle = nil}
 
     public var rowIsSticky: UInt32 {
-      get {return _rowIsSticky ?? 0}
+      get {_rowIsSticky ?? 0}
       set {_rowIsSticky = newValue}
     }
     /// Returns true if `rowIsSticky` has been explicitly set.
-    public var hasRowIsSticky: Bool {return self._rowIsSticky != nil}
+    public var hasRowIsSticky: Bool {self._rowIsSticky != nil}
     /// Clears the value of `rowIsSticky`. Subsequent reads from it will return its default value.
     public mutating func clearRowIsSticky() {self._rowIsSticky = nil}
 
     public var columnIsSticky: UInt32 {
-      get {return _columnIsSticky ?? 0}
+      get {_columnIsSticky ?? 0}
       set {_columnIsSticky = newValue}
     }
     /// Returns true if `columnIsSticky` has been explicitly set.
-    public var hasColumnIsSticky: Bool {return self._columnIsSticky != nil}
+    public var hasColumnIsSticky: Bool {self._columnIsSticky != nil}
     /// Clears the value of `columnIsSticky`. Subsequent reads from it will return its default value.
     public mutating func clearColumnIsSticky() {self._columnIsSticky = nil}
 
     public var tableID: TSP_CFUUIDArchive {
-      get {return _tableID ?? TSP_CFUUIDArchive()}
+      get {_tableID ?? TSP_CFUUIDArchive()}
       set {_tableID = newValue}
     }
     /// Returns true if `tableID` has been explicitly set.
-    public var hasTableID: Bool {return self._tableID != nil}
+    public var hasTableID: Bool {self._tableID != nil}
     /// Clears the value of `tableID`. Subsequent reads from it will return its default value.
     public mutating func clearTableID() {self._tableID = nil}
 
     public var astReferenceWhitespaceAfterSheetName: String {
-      get {return _astReferenceWhitespaceAfterSheetName ?? String()}
+      get {_astReferenceWhitespaceAfterSheetName ?? String()}
       set {_astReferenceWhitespaceAfterSheetName = newValue}
     }
     /// Returns true if `astReferenceWhitespaceAfterSheetName` has been explicitly set.
-    public var hasAstReferenceWhitespaceAfterSheetName: Bool {return self._astReferenceWhitespaceAfterSheetName != nil}
+    public var hasAstReferenceWhitespaceAfterSheetName: Bool {self._astReferenceWhitespaceAfterSheetName != nil}
     /// Clears the value of `astReferenceWhitespaceAfterSheetName`. Subsequent reads from it will return its default value.
     public mutating func clearAstReferenceWhitespaceAfterSheetName() {self._astReferenceWhitespaceAfterSheetName = nil}
 
     public var astReferenceWhitespaceBeforeTableName: String {
-      get {return _astReferenceWhitespaceBeforeTableName ?? String()}
+      get {_astReferenceWhitespaceBeforeTableName ?? String()}
       set {_astReferenceWhitespaceBeforeTableName = newValue}
     }
     /// Returns true if `astReferenceWhitespaceBeforeTableName` has been explicitly set.
-    public var hasAstReferenceWhitespaceBeforeTableName: Bool {return self._astReferenceWhitespaceBeforeTableName != nil}
+    public var hasAstReferenceWhitespaceBeforeTableName: Bool {self._astReferenceWhitespaceBeforeTableName != nil}
     /// Clears the value of `astReferenceWhitespaceBeforeTableName`. Subsequent reads from it will return its default value.
     public mutating func clearAstReferenceWhitespaceBeforeTableName() {self._astReferenceWhitespaceBeforeTableName = nil}
 
     public var astReferenceWhitespaceAfterTableName: String {
-      get {return _astReferenceWhitespaceAfterTableName ?? String()}
+      get {_astReferenceWhitespaceAfterTableName ?? String()}
       set {_astReferenceWhitespaceAfterTableName = newValue}
     }
     /// Returns true if `astReferenceWhitespaceAfterTableName` has been explicitly set.
-    public var hasAstReferenceWhitespaceAfterTableName: Bool {return self._astReferenceWhitespaceAfterTableName != nil}
+    public var hasAstReferenceWhitespaceAfterTableName: Bool {self._astReferenceWhitespaceAfterTableName != nil}
     /// Clears the value of `astReferenceWhitespaceAfterTableName`. Subsequent reads from it will return its default value.
     public mutating func clearAstReferenceWhitespaceAfterTableName() {self._astReferenceWhitespaceAfterTableName = nil}
 
     public var astReferenceWhitespaceBeforeCellAddress: String {
-      get {return _astReferenceWhitespaceBeforeCellAddress ?? String()}
+      get {_astReferenceWhitespaceBeforeCellAddress ?? String()}
       set {_astReferenceWhitespaceBeforeCellAddress = newValue}
     }
     /// Returns true if `astReferenceWhitespaceBeforeCellAddress` has been explicitly set.
-    public var hasAstReferenceWhitespaceBeforeCellAddress: Bool {return self._astReferenceWhitespaceBeforeCellAddress != nil}
+    public var hasAstReferenceWhitespaceBeforeCellAddress: Bool {self._astReferenceWhitespaceBeforeCellAddress != nil}
     /// Clears the value of `astReferenceWhitespaceBeforeCellAddress`. Subsequent reads from it will return its default value.
     public mutating func clearAstReferenceWhitespaceBeforeCellAddress() {self._astReferenceWhitespaceBeforeCellAddress = nil}
 
@@ -3948,26 +3708,26 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _astReferenceWhitespaceBeforeCellAddress: String? = nil
   }
 
-  public struct ASTColumnCoordinateArchive: Sendable {
+  public nonisolated struct ASTColumnCoordinateArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var column: Int32 {
-      get {return _column ?? 0}
+      get {_column ?? 0}
       set {_column = newValue}
     }
     /// Returns true if `column` has been explicitly set.
-    public var hasColumn: Bool {return self._column != nil}
+    public var hasColumn: Bool {self._column != nil}
     /// Clears the value of `column`. Subsequent reads from it will return its default value.
     public mutating func clearColumn() {self._column = nil}
 
     public var absolute: Bool {
-      get {return _absolute ?? false}
+      get {_absolute ?? false}
       set {_absolute = newValue}
     }
     /// Returns true if `absolute` has been explicitly set.
-    public var hasAbsolute: Bool {return self._absolute != nil}
+    public var hasAbsolute: Bool {self._absolute != nil}
     /// Clears the value of `absolute`. Subsequent reads from it will return its default value.
     public mutating func clearAbsolute() {self._absolute = nil}
 
@@ -3979,26 +3739,26 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _absolute: Bool? = nil
   }
 
-  public struct ASTRowCoordinateArchive: Sendable {
+  public nonisolated struct ASTRowCoordinateArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var row: Int32 {
-      get {return _row ?? 0}
+      get {_row ?? 0}
       set {_row = newValue}
     }
     /// Returns true if `row` has been explicitly set.
-    public var hasRow: Bool {return self._row != nil}
+    public var hasRow: Bool {self._row != nil}
     /// Clears the value of `row`. Subsequent reads from it will return its default value.
     public mutating func clearRow() {self._row = nil}
 
     public var absolute: Bool {
-      get {return _absolute ?? false}
+      get {_absolute ?? false}
       set {_absolute = newValue}
     }
     /// Returns true if `absolute` has been explicitly set.
-    public var hasAbsolute: Bool {return self._absolute != nil}
+    public var hasAbsolute: Bool {self._absolute != nil}
     /// Clears the value of `absolute`. Subsequent reads from it will return its default value.
     public mutating func clearAbsolute() {self._absolute = nil}
 
@@ -4010,7 +3770,7 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _absolute: Bool? = nil
   }
 
-  public struct ASTUidList: Sendable {
+  public nonisolated struct ASTUidList: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -4022,53 +3782,53 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     public init() {}
   }
 
-  public struct ASTUidTract: Sendable {
+  public nonisolated struct ASTUidTract: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var columnUids: TSCE_ASTNodeArrayArchive.ASTUidList {
-      get {return _columnUids ?? TSCE_ASTNodeArrayArchive.ASTUidList()}
+      get {_columnUids ?? TSCE_ASTNodeArrayArchive.ASTUidList()}
       set {_columnUids = newValue}
     }
     /// Returns true if `columnUids` has been explicitly set.
-    public var hasColumnUids: Bool {return self._columnUids != nil}
+    public var hasColumnUids: Bool {self._columnUids != nil}
     /// Clears the value of `columnUids`. Subsequent reads from it will return its default value.
     public mutating func clearColumnUids() {self._columnUids = nil}
 
     public var rowUids: TSCE_ASTNodeArrayArchive.ASTUidList {
-      get {return _rowUids ?? TSCE_ASTNodeArrayArchive.ASTUidList()}
+      get {_rowUids ?? TSCE_ASTNodeArrayArchive.ASTUidList()}
       set {_rowUids = newValue}
     }
     /// Returns true if `rowUids` has been explicitly set.
-    public var hasRowUids: Bool {return self._rowUids != nil}
+    public var hasRowUids: Bool {self._rowUids != nil}
     /// Clears the value of `rowUids`. Subsequent reads from it will return its default value.
     public mutating func clearRowUids() {self._rowUids = nil}
 
     public var isRangeRef: Bool {
-      get {return _isRangeRef ?? false}
+      get {_isRangeRef ?? false}
       set {_isRangeRef = newValue}
     }
     /// Returns true if `isRangeRef` has been explicitly set.
-    public var hasIsRangeRef: Bool {return self._isRangeRef != nil}
+    public var hasIsRangeRef: Bool {self._isRangeRef != nil}
     /// Clears the value of `isRangeRef`. Subsequent reads from it will return its default value.
     public mutating func clearIsRangeRef() {self._isRangeRef = nil}
 
     public var purpose: TSCE_ASTNodeArrayArchive.ASTUidTractPurpose {
-      get {return _purpose ?? .uidsIncluded}
+      get {_purpose ?? .uidsIncluded}
       set {_purpose = newValue}
     }
     /// Returns true if `purpose` has been explicitly set.
-    public var hasPurpose: Bool {return self._purpose != nil}
+    public var hasPurpose: Bool {self._purpose != nil}
     /// Clears the value of `purpose`. Subsequent reads from it will return its default value.
     public mutating func clearPurpose() {self._purpose = nil}
 
     public var preserveRectangular: Bool {
-      get {return _preserveRectangular ?? true}
+      get {_preserveRectangular ?? true}
       set {_preserveRectangular = newValue}
     }
     /// Returns true if `preserveRectangular` has been explicitly set.
-    public var hasPreserveRectangular: Bool {return self._preserveRectangular != nil}
+    public var hasPreserveRectangular: Bool {self._preserveRectangular != nil}
     /// Clears the value of `preserveRectangular`. Subsequent reads from it will return its default value.
     public mutating func clearPreserveRectangular() {self._preserveRectangular = nil}
 
@@ -4083,44 +3843,44 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _preserveRectangular: Bool? = nil
   }
 
-  public struct ASTStickyBits: Sendable {
+  public nonisolated struct ASTStickyBits: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var beginRowIsAbsolute: Bool {
-      get {return _beginRowIsAbsolute ?? false}
+      get {_beginRowIsAbsolute ?? false}
       set {_beginRowIsAbsolute = newValue}
     }
     /// Returns true if `beginRowIsAbsolute` has been explicitly set.
-    public var hasBeginRowIsAbsolute: Bool {return self._beginRowIsAbsolute != nil}
+    public var hasBeginRowIsAbsolute: Bool {self._beginRowIsAbsolute != nil}
     /// Clears the value of `beginRowIsAbsolute`. Subsequent reads from it will return its default value.
     public mutating func clearBeginRowIsAbsolute() {self._beginRowIsAbsolute = nil}
 
     public var beginColumnIsAbsolute: Bool {
-      get {return _beginColumnIsAbsolute ?? false}
+      get {_beginColumnIsAbsolute ?? false}
       set {_beginColumnIsAbsolute = newValue}
     }
     /// Returns true if `beginColumnIsAbsolute` has been explicitly set.
-    public var hasBeginColumnIsAbsolute: Bool {return self._beginColumnIsAbsolute != nil}
+    public var hasBeginColumnIsAbsolute: Bool {self._beginColumnIsAbsolute != nil}
     /// Clears the value of `beginColumnIsAbsolute`. Subsequent reads from it will return its default value.
     public mutating func clearBeginColumnIsAbsolute() {self._beginColumnIsAbsolute = nil}
 
     public var endRowIsAbsolute: Bool {
-      get {return _endRowIsAbsolute ?? false}
+      get {_endRowIsAbsolute ?? false}
       set {_endRowIsAbsolute = newValue}
     }
     /// Returns true if `endRowIsAbsolute` has been explicitly set.
-    public var hasEndRowIsAbsolute: Bool {return self._endRowIsAbsolute != nil}
+    public var hasEndRowIsAbsolute: Bool {self._endRowIsAbsolute != nil}
     /// Clears the value of `endRowIsAbsolute`. Subsequent reads from it will return its default value.
     public mutating func clearEndRowIsAbsolute() {self._endRowIsAbsolute = nil}
 
     public var endColumnIsAbsolute: Bool {
-      get {return _endColumnIsAbsolute ?? false}
+      get {_endColumnIsAbsolute ?? false}
       set {_endColumnIsAbsolute = newValue}
     }
     /// Returns true if `endColumnIsAbsolute` has been explicitly set.
-    public var hasEndColumnIsAbsolute: Bool {return self._endColumnIsAbsolute != nil}
+    public var hasEndColumnIsAbsolute: Bool {self._endColumnIsAbsolute != nil}
     /// Clears the value of `endColumnIsAbsolute`. Subsequent reads from it will return its default value.
     public mutating func clearEndColumnIsAbsolute() {self._endColumnIsAbsolute = nil}
 
@@ -4134,7 +3894,7 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _endColumnIsAbsolute: Bool? = nil
   }
 
-  public struct ASTUidTractList: Sendable {
+  public nonisolated struct ASTUidTractList: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -4142,11 +3902,11 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     public var tract: [TSCE_ASTNodeArrayArchive.ASTUidTract] = []
 
     public var stickyBits: TSCE_ASTNodeArrayArchive.ASTStickyBits {
-      get {return _stickyBits ?? TSCE_ASTNodeArrayArchive.ASTStickyBits()}
+      get {_stickyBits ?? TSCE_ASTNodeArrayArchive.ASTStickyBits()}
       set {_stickyBits = newValue}
     }
     /// Returns true if `stickyBits` has been explicitly set.
-    public var hasStickyBits: Bool {return self._stickyBits != nil}
+    public var hasStickyBits: Bool {self._stickyBits != nil}
     /// Clears the value of `stickyBits`. Subsequent reads from it will return its default value.
     public mutating func clearStickyBits() {self._stickyBits = nil}
 
@@ -4157,44 +3917,44 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _stickyBits: TSCE_ASTNodeArrayArchive.ASTStickyBits? = nil
   }
 
-  public struct ASTUidCoordinateArchive: Sendable {
+  public nonisolated struct ASTUidCoordinateArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var columnUid: TSP_UUID {
-      get {return _columnUid ?? TSP_UUID()}
+      get {_columnUid ?? TSP_UUID()}
       set {_columnUid = newValue}
     }
     /// Returns true if `columnUid` has been explicitly set.
-    public var hasColumnUid: Bool {return self._columnUid != nil}
+    public var hasColumnUid: Bool {self._columnUid != nil}
     /// Clears the value of `columnUid`. Subsequent reads from it will return its default value.
     public mutating func clearColumnUid() {self._columnUid = nil}
 
     public var rowUid: TSP_UUID {
-      get {return _rowUid ?? TSP_UUID()}
+      get {_rowUid ?? TSP_UUID()}
       set {_rowUid = newValue}
     }
     /// Returns true if `rowUid` has been explicitly set.
-    public var hasRowUid: Bool {return self._rowUid != nil}
+    public var hasRowUid: Bool {self._rowUid != nil}
     /// Clears the value of `rowUid`. Subsequent reads from it will return its default value.
     public mutating func clearRowUid() {self._rowUid = nil}
 
     public var columnAbsolute: Bool {
-      get {return _columnAbsolute ?? false}
+      get {_columnAbsolute ?? false}
       set {_columnAbsolute = newValue}
     }
     /// Returns true if `columnAbsolute` has been explicitly set.
-    public var hasColumnAbsolute: Bool {return self._columnAbsolute != nil}
+    public var hasColumnAbsolute: Bool {self._columnAbsolute != nil}
     /// Clears the value of `columnAbsolute`. Subsequent reads from it will return its default value.
     public mutating func clearColumnAbsolute() {self._columnAbsolute = nil}
 
     public var rowAbsolute: Bool {
-      get {return _rowAbsolute ?? false}
+      get {_rowAbsolute ?? false}
       set {_rowAbsolute = newValue}
     }
     /// Returns true if `rowAbsolute` has been explicitly set.
-    public var hasRowAbsolute: Bool {return self._rowAbsolute != nil}
+    public var hasRowAbsolute: Bool {self._rowAbsolute != nil}
     /// Clears the value of `rowAbsolute`. Subsequent reads from it will return its default value.
     public mutating func clearRowAbsolute() {self._rowAbsolute = nil}
 
@@ -4208,35 +3968,35 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _rowAbsolute: Bool? = nil
   }
 
-  public struct ASTCategoryLevels: Sendable {
+  public nonisolated struct ASTCategoryLevels: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var astColumnGroupLevel: UInt32 {
-      get {return _astColumnGroupLevel ?? 0}
+      get {_astColumnGroupLevel ?? 0}
       set {_astColumnGroupLevel = newValue}
     }
     /// Returns true if `astColumnGroupLevel` has been explicitly set.
-    public var hasAstColumnGroupLevel: Bool {return self._astColumnGroupLevel != nil}
+    public var hasAstColumnGroupLevel: Bool {self._astColumnGroupLevel != nil}
     /// Clears the value of `astColumnGroupLevel`. Subsequent reads from it will return its default value.
     public mutating func clearAstColumnGroupLevel() {self._astColumnGroupLevel = nil}
 
     public var astRowGroupLevel: UInt32 {
-      get {return _astRowGroupLevel ?? 0}
+      get {_astRowGroupLevel ?? 0}
       set {_astRowGroupLevel = newValue}
     }
     /// Returns true if `astRowGroupLevel` has been explicitly set.
-    public var hasAstRowGroupLevel: Bool {return self._astRowGroupLevel != nil}
+    public var hasAstRowGroupLevel: Bool {self._astRowGroupLevel != nil}
     /// Clears the value of `astRowGroupLevel`. Subsequent reads from it will return its default value.
     public mutating func clearAstRowGroupLevel() {self._astRowGroupLevel = nil}
 
     public var astAggIndexLevel: UInt32 {
-      get {return _astAggIndexLevel ?? 0}
+      get {_astAggIndexLevel ?? 0}
       set {_astAggIndexLevel = newValue}
     }
     /// Returns true if `astAggIndexLevel` has been explicitly set.
-    public var hasAstAggIndexLevel: Bool {return self._astAggIndexLevel != nil}
+    public var hasAstAggIndexLevel: Bool {self._astAggIndexLevel != nil}
     /// Clears the value of `astAggIndexLevel`. Subsequent reads from it will return its default value.
     public mutating func clearAstAggIndexLevel() {self._astAggIndexLevel = nil}
 
@@ -4249,17 +4009,17 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _astAggIndexLevel: UInt32? = nil
   }
 
-  public struct ASTCategoryReferenceArchive: Sendable {
+  public nonisolated struct ASTCategoryReferenceArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var categoryRef: TSCE_CategoryReferenceArchive {
-      get {return _categoryRef ?? TSCE_CategoryReferenceArchive()}
+      get {_categoryRef ?? TSCE_CategoryReferenceArchive()}
       set {_categoryRef = newValue}
     }
     /// Returns true if `categoryRef` has been explicitly set.
-    public var hasCategoryRef: Bool {return self._categoryRef != nil}
+    public var hasCategoryRef: Bool {self._categoryRef != nil}
     /// Clears the value of `categoryRef`. Subsequent reads from it will return its default value.
     public mutating func clearCategoryRef() {self._categoryRef = nil}
 
@@ -4270,7 +4030,7 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _categoryRef: TSCE_CategoryReferenceArchive? = nil
   }
 
-  public struct ASTColonTractArchive: Sendable {
+  public nonisolated struct ASTColonTractArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -4284,36 +4044,36 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     public var absoluteRow: [TSCE_ASTNodeArrayArchive.ASTColonTractArchive.ASTColonTractAbsoluteRangeArchive] = []
 
     public var preserveRectangular: Bool {
-      get {return _preserveRectangular ?? true}
+      get {_preserveRectangular ?? true}
       set {_preserveRectangular = newValue}
     }
     /// Returns true if `preserveRectangular` has been explicitly set.
-    public var hasPreserveRectangular: Bool {return self._preserveRectangular != nil}
+    public var hasPreserveRectangular: Bool {self._preserveRectangular != nil}
     /// Clears the value of `preserveRectangular`. Subsequent reads from it will return its default value.
     public mutating func clearPreserveRectangular() {self._preserveRectangular = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    public struct ASTColonTractRelativeRangeArchive: Sendable {
+    public nonisolated struct ASTColonTractRelativeRangeArchive: Sendable {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
       public var rangeBegin: Int32 {
-        get {return _rangeBegin ?? 0}
+        get {_rangeBegin ?? 0}
         set {_rangeBegin = newValue}
       }
       /// Returns true if `rangeBegin` has been explicitly set.
-      public var hasRangeBegin: Bool {return self._rangeBegin != nil}
+      public var hasRangeBegin: Bool {self._rangeBegin != nil}
       /// Clears the value of `rangeBegin`. Subsequent reads from it will return its default value.
       public mutating func clearRangeBegin() {self._rangeBegin = nil}
 
       public var rangeEnd: Int32 {
-        get {return _rangeEnd ?? 0}
+        get {_rangeEnd ?? 0}
         set {_rangeEnd = newValue}
       }
       /// Returns true if `rangeEnd` has been explicitly set.
-      public var hasRangeEnd: Bool {return self._rangeEnd != nil}
+      public var hasRangeEnd: Bool {self._rangeEnd != nil}
       /// Clears the value of `rangeEnd`. Subsequent reads from it will return its default value.
       public mutating func clearRangeEnd() {self._rangeEnd = nil}
 
@@ -4325,26 +4085,26 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
       fileprivate var _rangeEnd: Int32? = nil
     }
 
-    public struct ASTColonTractAbsoluteRangeArchive: Sendable {
+    public nonisolated struct ASTColonTractAbsoluteRangeArchive: Sendable {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
       public var rangeBegin: UInt32 {
-        get {return _rangeBegin ?? 0}
+        get {_rangeBegin ?? 0}
         set {_rangeBegin = newValue}
       }
       /// Returns true if `rangeBegin` has been explicitly set.
-      public var hasRangeBegin: Bool {return self._rangeBegin != nil}
+      public var hasRangeBegin: Bool {self._rangeBegin != nil}
       /// Clears the value of `rangeBegin`. Subsequent reads from it will return its default value.
       public mutating func clearRangeBegin() {self._rangeBegin = nil}
 
       public var rangeEnd: UInt32 {
-        get {return _rangeEnd ?? 0}
+        get {_rangeEnd ?? 0}
         set {_rangeEnd = newValue}
       }
       /// Returns true if `rangeEnd` has been explicitly set.
-      public var hasRangeEnd: Bool {return self._rangeEnd != nil}
+      public var hasRangeEnd: Bool {self._rangeEnd != nil}
       /// Clears the value of `rangeEnd`. Subsequent reads from it will return its default value.
       public mutating func clearRangeEnd() {self._rangeEnd = nil}
 
@@ -4361,53 +4121,53 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _preserveRectangular: Bool? = nil
   }
 
-  public struct ASTCrossTableReferenceExtraInfoArchive: Sendable {
+  public nonisolated struct ASTCrossTableReferenceExtraInfoArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var tableID: TSP_CFUUIDArchive {
-      get {return _tableID ?? TSP_CFUUIDArchive()}
+      get {_tableID ?? TSP_CFUUIDArchive()}
       set {_tableID = newValue}
     }
     /// Returns true if `tableID` has been explicitly set.
-    public var hasTableID: Bool {return self._tableID != nil}
+    public var hasTableID: Bool {self._tableID != nil}
     /// Clears the value of `tableID`. Subsequent reads from it will return its default value.
     public mutating func clearTableID() {self._tableID = nil}
 
     public var astReferenceWhitespaceAfterSheetName: String {
-      get {return _astReferenceWhitespaceAfterSheetName ?? String()}
+      get {_astReferenceWhitespaceAfterSheetName ?? String()}
       set {_astReferenceWhitespaceAfterSheetName = newValue}
     }
     /// Returns true if `astReferenceWhitespaceAfterSheetName` has been explicitly set.
-    public var hasAstReferenceWhitespaceAfterSheetName: Bool {return self._astReferenceWhitespaceAfterSheetName != nil}
+    public var hasAstReferenceWhitespaceAfterSheetName: Bool {self._astReferenceWhitespaceAfterSheetName != nil}
     /// Clears the value of `astReferenceWhitespaceAfterSheetName`. Subsequent reads from it will return its default value.
     public mutating func clearAstReferenceWhitespaceAfterSheetName() {self._astReferenceWhitespaceAfterSheetName = nil}
 
     public var astReferenceWhitespaceBeforeTableName: String {
-      get {return _astReferenceWhitespaceBeforeTableName ?? String()}
+      get {_astReferenceWhitespaceBeforeTableName ?? String()}
       set {_astReferenceWhitespaceBeforeTableName = newValue}
     }
     /// Returns true if `astReferenceWhitespaceBeforeTableName` has been explicitly set.
-    public var hasAstReferenceWhitespaceBeforeTableName: Bool {return self._astReferenceWhitespaceBeforeTableName != nil}
+    public var hasAstReferenceWhitespaceBeforeTableName: Bool {self._astReferenceWhitespaceBeforeTableName != nil}
     /// Clears the value of `astReferenceWhitespaceBeforeTableName`. Subsequent reads from it will return its default value.
     public mutating func clearAstReferenceWhitespaceBeforeTableName() {self._astReferenceWhitespaceBeforeTableName = nil}
 
     public var astReferenceWhitespaceAfterTableName: String {
-      get {return _astReferenceWhitespaceAfterTableName ?? String()}
+      get {_astReferenceWhitespaceAfterTableName ?? String()}
       set {_astReferenceWhitespaceAfterTableName = newValue}
     }
     /// Returns true if `astReferenceWhitespaceAfterTableName` has been explicitly set.
-    public var hasAstReferenceWhitespaceAfterTableName: Bool {return self._astReferenceWhitespaceAfterTableName != nil}
+    public var hasAstReferenceWhitespaceAfterTableName: Bool {self._astReferenceWhitespaceAfterTableName != nil}
     /// Clears the value of `astReferenceWhitespaceAfterTableName`. Subsequent reads from it will return its default value.
     public mutating func clearAstReferenceWhitespaceAfterTableName() {self._astReferenceWhitespaceAfterTableName = nil}
 
     public var astReferenceWhitespaceBeforeCellAddress: String {
-      get {return _astReferenceWhitespaceBeforeCellAddress ?? String()}
+      get {_astReferenceWhitespaceBeforeCellAddress ?? String()}
       set {_astReferenceWhitespaceBeforeCellAddress = newValue}
     }
     /// Returns true if `astReferenceWhitespaceBeforeCellAddress` has been explicitly set.
-    public var hasAstReferenceWhitespaceBeforeCellAddress: Bool {return self._astReferenceWhitespaceBeforeCellAddress != nil}
+    public var hasAstReferenceWhitespaceBeforeCellAddress: Bool {self._astReferenceWhitespaceBeforeCellAddress != nil}
     /// Clears the value of `astReferenceWhitespaceBeforeCellAddress`. Subsequent reads from it will return its default value.
     public mutating func clearAstReferenceWhitespaceBeforeCellAddress() {self._astReferenceWhitespaceBeforeCellAddress = nil}
 
@@ -4422,7 +4182,7 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _astReferenceWhitespaceBeforeCellAddress: String? = nil
   }
 
-  public struct ASTLambdaIdentsListArchive: Sendable {
+  public nonisolated struct ASTLambdaIdentsListArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -4430,29 +4190,29 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     public var astIdentifierString: [String] = []
 
     public var astFirstSymbol: UInt32 {
-      get {return _astFirstSymbol ?? 0}
+      get {_astFirstSymbol ?? 0}
       set {_astFirstSymbol = newValue}
     }
     /// Returns true if `astFirstSymbol` has been explicitly set.
-    public var hasAstFirstSymbol: Bool {return self._astFirstSymbol != nil}
+    public var hasAstFirstSymbol: Bool {self._astFirstSymbol != nil}
     /// Clears the value of `astFirstSymbol`. Subsequent reads from it will return its default value.
     public mutating func clearAstFirstSymbol() {self._astFirstSymbol = nil}
 
     public var astWhitespaceBeforeIdents: String {
-      get {return _astWhitespaceBeforeIdents ?? String()}
+      get {_astWhitespaceBeforeIdents ?? String()}
       set {_astWhitespaceBeforeIdents = newValue}
     }
     /// Returns true if `astWhitespaceBeforeIdents` has been explicitly set.
-    public var hasAstWhitespaceBeforeIdents: Bool {return self._astWhitespaceBeforeIdents != nil}
+    public var hasAstWhitespaceBeforeIdents: Bool {self._astWhitespaceBeforeIdents != nil}
     /// Clears the value of `astWhitespaceBeforeIdents`. Subsequent reads from it will return its default value.
     public mutating func clearAstWhitespaceBeforeIdents() {self._astWhitespaceBeforeIdents = nil}
 
     public var astWhitespaceAfterIdents: String {
-      get {return _astWhitespaceAfterIdents ?? String()}
+      get {_astWhitespaceAfterIdents ?? String()}
       set {_astWhitespaceAfterIdents = newValue}
     }
     /// Returns true if `astWhitespaceAfterIdents` has been explicitly set.
-    public var hasAstWhitespaceAfterIdents: Bool {return self._astWhitespaceAfterIdents != nil}
+    public var hasAstWhitespaceAfterIdents: Bool {self._astWhitespaceAfterIdents != nil}
     /// Clears the value of `astWhitespaceAfterIdents`. Subsequent reads from it will return its default value.
     public mutating func clearAstWhitespaceAfterIdents() {self._astWhitespaceAfterIdents = nil}
 
@@ -4465,413 +4225,413 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
     fileprivate var _astWhitespaceAfterIdents: String? = nil
   }
 
-  public struct ASTNodeArchive: @unchecked Sendable {
+  public nonisolated struct ASTNodeArchive: @unchecked Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var astNodeType: TSCE_ASTNodeArrayArchive.ASTNodeType {
-      get {return _storage._astNodeType ?? .additionNode}
+      get {_storage._astNodeType ?? .additionNode}
       set {_uniqueStorage()._astNodeType = newValue}
     }
     /// Returns true if `astNodeType` has been explicitly set.
-    public var hasAstNodeType: Bool {return _storage._astNodeType != nil}
+    public var hasAstNodeType: Bool {_storage._astNodeType != nil}
     /// Clears the value of `astNodeType`. Subsequent reads from it will return its default value.
     public mutating func clearAstNodeType() {_uniqueStorage()._astNodeType = nil}
 
     public var astFunctionNodeIndex: UInt32 {
-      get {return _storage._astFunctionNodeIndex ?? 0}
+      get {_storage._astFunctionNodeIndex ?? 0}
       set {_uniqueStorage()._astFunctionNodeIndex = newValue}
     }
     /// Returns true if `astFunctionNodeIndex` has been explicitly set.
-    public var hasAstFunctionNodeIndex: Bool {return _storage._astFunctionNodeIndex != nil}
+    public var hasAstFunctionNodeIndex: Bool {_storage._astFunctionNodeIndex != nil}
     /// Clears the value of `astFunctionNodeIndex`. Subsequent reads from it will return its default value.
     public mutating func clearAstFunctionNodeIndex() {_uniqueStorage()._astFunctionNodeIndex = nil}
 
     public var astFunctionNodeNumArgs: UInt32 {
-      get {return _storage._astFunctionNodeNumArgs ?? 0}
+      get {_storage._astFunctionNodeNumArgs ?? 0}
       set {_uniqueStorage()._astFunctionNodeNumArgs = newValue}
     }
     /// Returns true if `astFunctionNodeNumArgs` has been explicitly set.
-    public var hasAstFunctionNodeNumArgs: Bool {return _storage._astFunctionNodeNumArgs != nil}
+    public var hasAstFunctionNodeNumArgs: Bool {_storage._astFunctionNodeNumArgs != nil}
     /// Clears the value of `astFunctionNodeNumArgs`. Subsequent reads from it will return its default value.
     public mutating func clearAstFunctionNodeNumArgs() {_uniqueStorage()._astFunctionNodeNumArgs = nil}
 
     public var astNumberNodeNumber: Double {
-      get {return _storage._astNumberNodeNumber ?? 0}
+      get {_storage._astNumberNodeNumber ?? 0}
       set {_uniqueStorage()._astNumberNodeNumber = newValue}
     }
     /// Returns true if `astNumberNodeNumber` has been explicitly set.
-    public var hasAstNumberNodeNumber: Bool {return _storage._astNumberNodeNumber != nil}
+    public var hasAstNumberNodeNumber: Bool {_storage._astNumberNodeNumber != nil}
     /// Clears the value of `astNumberNodeNumber`. Subsequent reads from it will return its default value.
     public mutating func clearAstNumberNodeNumber() {_uniqueStorage()._astNumberNodeNumber = nil}
 
     public var astBooleanNodeBoolean: Bool {
-      get {return _storage._astBooleanNodeBoolean ?? false}
+      get {_storage._astBooleanNodeBoolean ?? false}
       set {_uniqueStorage()._astBooleanNodeBoolean = newValue}
     }
     /// Returns true if `astBooleanNodeBoolean` has been explicitly set.
-    public var hasAstBooleanNodeBoolean: Bool {return _storage._astBooleanNodeBoolean != nil}
+    public var hasAstBooleanNodeBoolean: Bool {_storage._astBooleanNodeBoolean != nil}
     /// Clears the value of `astBooleanNodeBoolean`. Subsequent reads from it will return its default value.
     public mutating func clearAstBooleanNodeBoolean() {_uniqueStorage()._astBooleanNodeBoolean = nil}
 
     public var astStringNodeString: String {
-      get {return _storage._astStringNodeString ?? String()}
+      get {_storage._astStringNodeString ?? String()}
       set {_uniqueStorage()._astStringNodeString = newValue}
     }
     /// Returns true if `astStringNodeString` has been explicitly set.
-    public var hasAstStringNodeString: Bool {return _storage._astStringNodeString != nil}
+    public var hasAstStringNodeString: Bool {_storage._astStringNodeString != nil}
     /// Clears the value of `astStringNodeString`. Subsequent reads from it will return its default value.
     public mutating func clearAstStringNodeString() {_uniqueStorage()._astStringNodeString = nil}
 
     public var astDateNodeDateNum: Double {
-      get {return _storage._astDateNodeDateNum ?? 0}
+      get {_storage._astDateNodeDateNum ?? 0}
       set {_uniqueStorage()._astDateNodeDateNum = newValue}
     }
     /// Returns true if `astDateNodeDateNum` has been explicitly set.
-    public var hasAstDateNodeDateNum: Bool {return _storage._astDateNodeDateNum != nil}
+    public var hasAstDateNodeDateNum: Bool {_storage._astDateNodeDateNum != nil}
     /// Clears the value of `astDateNodeDateNum`. Subsequent reads from it will return its default value.
     public mutating func clearAstDateNodeDateNum() {_uniqueStorage()._astDateNodeDateNum = nil}
 
     public var astDateNodeSuppressDateFormat: Bool {
-      get {return _storage._astDateNodeSuppressDateFormat ?? false}
+      get {_storage._astDateNodeSuppressDateFormat ?? false}
       set {_uniqueStorage()._astDateNodeSuppressDateFormat = newValue}
     }
     /// Returns true if `astDateNodeSuppressDateFormat` has been explicitly set.
-    public var hasAstDateNodeSuppressDateFormat: Bool {return _storage._astDateNodeSuppressDateFormat != nil}
+    public var hasAstDateNodeSuppressDateFormat: Bool {_storage._astDateNodeSuppressDateFormat != nil}
     /// Clears the value of `astDateNodeSuppressDateFormat`. Subsequent reads from it will return its default value.
     public mutating func clearAstDateNodeSuppressDateFormat() {_uniqueStorage()._astDateNodeSuppressDateFormat = nil}
 
     public var astDateNodeSuppressTimeFormat: Bool {
-      get {return _storage._astDateNodeSuppressTimeFormat ?? false}
+      get {_storage._astDateNodeSuppressTimeFormat ?? false}
       set {_uniqueStorage()._astDateNodeSuppressTimeFormat = newValue}
     }
     /// Returns true if `astDateNodeSuppressTimeFormat` has been explicitly set.
-    public var hasAstDateNodeSuppressTimeFormat: Bool {return _storage._astDateNodeSuppressTimeFormat != nil}
+    public var hasAstDateNodeSuppressTimeFormat: Bool {_storage._astDateNodeSuppressTimeFormat != nil}
     /// Clears the value of `astDateNodeSuppressTimeFormat`. Subsequent reads from it will return its default value.
     public mutating func clearAstDateNodeSuppressTimeFormat() {_uniqueStorage()._astDateNodeSuppressTimeFormat = nil}
 
     public var astDateNodeDateTimeFormat: String {
-      get {return _storage._astDateNodeDateTimeFormat ?? String()}
+      get {_storage._astDateNodeDateTimeFormat ?? String()}
       set {_uniqueStorage()._astDateNodeDateTimeFormat = newValue}
     }
     /// Returns true if `astDateNodeDateTimeFormat` has been explicitly set.
-    public var hasAstDateNodeDateTimeFormat: Bool {return _storage._astDateNodeDateTimeFormat != nil}
+    public var hasAstDateNodeDateTimeFormat: Bool {_storage._astDateNodeDateTimeFormat != nil}
     /// Clears the value of `astDateNodeDateTimeFormat`. Subsequent reads from it will return its default value.
     public mutating func clearAstDateNodeDateTimeFormat() {_uniqueStorage()._astDateNodeDateTimeFormat = nil}
 
     public var astDurationNodeUnitNum: Double {
-      get {return _storage._astDurationNodeUnitNum ?? 0}
+      get {_storage._astDurationNodeUnitNum ?? 0}
       set {_uniqueStorage()._astDurationNodeUnitNum = newValue}
     }
     /// Returns true if `astDurationNodeUnitNum` has been explicitly set.
-    public var hasAstDurationNodeUnitNum: Bool {return _storage._astDurationNodeUnitNum != nil}
+    public var hasAstDurationNodeUnitNum: Bool {_storage._astDurationNodeUnitNum != nil}
     /// Clears the value of `astDurationNodeUnitNum`. Subsequent reads from it will return its default value.
     public mutating func clearAstDurationNodeUnitNum() {_uniqueStorage()._astDurationNodeUnitNum = nil}
 
     public var astDurationNodeUnit: Int32 {
-      get {return _storage._astDurationNodeUnit ?? 0}
+      get {_storage._astDurationNodeUnit ?? 0}
       set {_uniqueStorage()._astDurationNodeUnit = newValue}
     }
     /// Returns true if `astDurationNodeUnit` has been explicitly set.
-    public var hasAstDurationNodeUnit: Bool {return _storage._astDurationNodeUnit != nil}
+    public var hasAstDurationNodeUnit: Bool {_storage._astDurationNodeUnit != nil}
     /// Clears the value of `astDurationNodeUnit`. Subsequent reads from it will return its default value.
     public mutating func clearAstDurationNodeUnit() {_uniqueStorage()._astDurationNodeUnit = nil}
 
     public var astDurationNodeStyle: UInt32 {
-      get {return _storage._astDurationNodeStyle ?? 0}
+      get {_storage._astDurationNodeStyle ?? 0}
       set {_uniqueStorage()._astDurationNodeStyle = newValue}
     }
     /// Returns true if `astDurationNodeStyle` has been explicitly set.
-    public var hasAstDurationNodeStyle: Bool {return _storage._astDurationNodeStyle != nil}
+    public var hasAstDurationNodeStyle: Bool {_storage._astDurationNodeStyle != nil}
     /// Clears the value of `astDurationNodeStyle`. Subsequent reads from it will return its default value.
     public mutating func clearAstDurationNodeStyle() {_uniqueStorage()._astDurationNodeStyle = nil}
 
     public var astDurationNodeDurationUnitLargest: UInt32 {
-      get {return _storage._astDurationNodeDurationUnitLargest ?? 0}
+      get {_storage._astDurationNodeDurationUnitLargest ?? 0}
       set {_uniqueStorage()._astDurationNodeDurationUnitLargest = newValue}
     }
     /// Returns true if `astDurationNodeDurationUnitLargest` has been explicitly set.
-    public var hasAstDurationNodeDurationUnitLargest: Bool {return _storage._astDurationNodeDurationUnitLargest != nil}
+    public var hasAstDurationNodeDurationUnitLargest: Bool {_storage._astDurationNodeDurationUnitLargest != nil}
     /// Clears the value of `astDurationNodeDurationUnitLargest`. Subsequent reads from it will return its default value.
     public mutating func clearAstDurationNodeDurationUnitLargest() {_uniqueStorage()._astDurationNodeDurationUnitLargest = nil}
 
     public var astDurationNodeDurationUnitSmallest: UInt32 {
-      get {return _storage._astDurationNodeDurationUnitSmallest ?? 0}
+      get {_storage._astDurationNodeDurationUnitSmallest ?? 0}
       set {_uniqueStorage()._astDurationNodeDurationUnitSmallest = newValue}
     }
     /// Returns true if `astDurationNodeDurationUnitSmallest` has been explicitly set.
-    public var hasAstDurationNodeDurationUnitSmallest: Bool {return _storage._astDurationNodeDurationUnitSmallest != nil}
+    public var hasAstDurationNodeDurationUnitSmallest: Bool {_storage._astDurationNodeDurationUnitSmallest != nil}
     /// Clears the value of `astDurationNodeDurationUnitSmallest`. Subsequent reads from it will return its default value.
     public mutating func clearAstDurationNodeDurationUnitSmallest() {_uniqueStorage()._astDurationNodeDurationUnitSmallest = nil}
 
     public var astDurationNodeUseAutomaticUnits: Bool {
-      get {return _storage._astDurationNodeUseAutomaticUnits ?? false}
+      get {_storage._astDurationNodeUseAutomaticUnits ?? false}
       set {_uniqueStorage()._astDurationNodeUseAutomaticUnits = newValue}
     }
     /// Returns true if `astDurationNodeUseAutomaticUnits` has been explicitly set.
-    public var hasAstDurationNodeUseAutomaticUnits: Bool {return _storage._astDurationNodeUseAutomaticUnits != nil}
+    public var hasAstDurationNodeUseAutomaticUnits: Bool {_storage._astDurationNodeUseAutomaticUnits != nil}
     /// Clears the value of `astDurationNodeUseAutomaticUnits`. Subsequent reads from it will return its default value.
     public mutating func clearAstDurationNodeUseAutomaticUnits() {_uniqueStorage()._astDurationNodeUseAutomaticUnits = nil}
 
     public var astTokenNodeBoolean: Bool {
-      get {return _storage._astTokenNodeBoolean ?? false}
+      get {_storage._astTokenNodeBoolean ?? false}
       set {_uniqueStorage()._astTokenNodeBoolean = newValue}
     }
     /// Returns true if `astTokenNodeBoolean` has been explicitly set.
-    public var hasAstTokenNodeBoolean: Bool {return _storage._astTokenNodeBoolean != nil}
+    public var hasAstTokenNodeBoolean: Bool {_storage._astTokenNodeBoolean != nil}
     /// Clears the value of `astTokenNodeBoolean`. Subsequent reads from it will return its default value.
     public mutating func clearAstTokenNodeBoolean() {_uniqueStorage()._astTokenNodeBoolean = nil}
 
     public var astArrayNodeNumCol: UInt32 {
-      get {return _storage._astArrayNodeNumCol ?? 0}
+      get {_storage._astArrayNodeNumCol ?? 0}
       set {_uniqueStorage()._astArrayNodeNumCol = newValue}
     }
     /// Returns true if `astArrayNodeNumCol` has been explicitly set.
-    public var hasAstArrayNodeNumCol: Bool {return _storage._astArrayNodeNumCol != nil}
+    public var hasAstArrayNodeNumCol: Bool {_storage._astArrayNodeNumCol != nil}
     /// Clears the value of `astArrayNodeNumCol`. Subsequent reads from it will return its default value.
     public mutating func clearAstArrayNodeNumCol() {_uniqueStorage()._astArrayNodeNumCol = nil}
 
     public var astArrayNodeNumRow: UInt32 {
-      get {return _storage._astArrayNodeNumRow ?? 0}
+      get {_storage._astArrayNodeNumRow ?? 0}
       set {_uniqueStorage()._astArrayNodeNumRow = newValue}
     }
     /// Returns true if `astArrayNodeNumRow` has been explicitly set.
-    public var hasAstArrayNodeNumRow: Bool {return _storage._astArrayNodeNumRow != nil}
+    public var hasAstArrayNodeNumRow: Bool {_storage._astArrayNodeNumRow != nil}
     /// Clears the value of `astArrayNodeNumRow`. Subsequent reads from it will return its default value.
     public mutating func clearAstArrayNodeNumRow() {_uniqueStorage()._astArrayNodeNumRow = nil}
 
     public var astListNodeNumArgs: UInt32 {
-      get {return _storage._astListNodeNumArgs ?? 0}
+      get {_storage._astListNodeNumArgs ?? 0}
       set {_uniqueStorage()._astListNodeNumArgs = newValue}
     }
     /// Returns true if `astListNodeNumArgs` has been explicitly set.
-    public var hasAstListNodeNumArgs: Bool {return _storage._astListNodeNumArgs != nil}
+    public var hasAstListNodeNumArgs: Bool {_storage._astListNodeNumArgs != nil}
     /// Clears the value of `astListNodeNumArgs`. Subsequent reads from it will return its default value.
     public mutating func clearAstListNodeNumArgs() {_uniqueStorage()._astListNodeNumArgs = nil}
 
     public var astThunkNodeArray: TSCE_ASTNodeArrayArchive {
-      get {return _storage._astThunkNodeArray ?? TSCE_ASTNodeArrayArchive()}
+      get {_storage._astThunkNodeArray ?? TSCE_ASTNodeArrayArchive()}
       set {_uniqueStorage()._astThunkNodeArray = newValue}
     }
     /// Returns true if `astThunkNodeArray` has been explicitly set.
-    public var hasAstThunkNodeArray: Bool {return _storage._astThunkNodeArray != nil}
+    public var hasAstThunkNodeArray: Bool {_storage._astThunkNodeArray != nil}
     /// Clears the value of `astThunkNodeArray`. Subsequent reads from it will return its default value.
     public mutating func clearAstThunkNodeArray() {_uniqueStorage()._astThunkNodeArray = nil}
 
     public var astLocalCellReferenceNodeReference: TSCE_ASTNodeArrayArchive.ASTLocalCellReferenceNodeArchive {
-      get {return _storage._astLocalCellReferenceNodeReference ?? TSCE_ASTNodeArrayArchive.ASTLocalCellReferenceNodeArchive()}
+      get {_storage._astLocalCellReferenceNodeReference ?? TSCE_ASTNodeArrayArchive.ASTLocalCellReferenceNodeArchive()}
       set {_uniqueStorage()._astLocalCellReferenceNodeReference = newValue}
     }
     /// Returns true if `astLocalCellReferenceNodeReference` has been explicitly set.
-    public var hasAstLocalCellReferenceNodeReference: Bool {return _storage._astLocalCellReferenceNodeReference != nil}
+    public var hasAstLocalCellReferenceNodeReference: Bool {_storage._astLocalCellReferenceNodeReference != nil}
     /// Clears the value of `astLocalCellReferenceNodeReference`. Subsequent reads from it will return its default value.
     public mutating func clearAstLocalCellReferenceNodeReference() {_uniqueStorage()._astLocalCellReferenceNodeReference = nil}
 
     public var astCrossTableCellReferenceNodeReference: TSCE_ASTNodeArrayArchive.ASTCrossTableCellReferenceNodeArchive {
-      get {return _storage._astCrossTableCellReferenceNodeReference ?? TSCE_ASTNodeArrayArchive.ASTCrossTableCellReferenceNodeArchive()}
+      get {_storage._astCrossTableCellReferenceNodeReference ?? TSCE_ASTNodeArrayArchive.ASTCrossTableCellReferenceNodeArchive()}
       set {_uniqueStorage()._astCrossTableCellReferenceNodeReference = newValue}
     }
     /// Returns true if `astCrossTableCellReferenceNodeReference` has been explicitly set.
-    public var hasAstCrossTableCellReferenceNodeReference: Bool {return _storage._astCrossTableCellReferenceNodeReference != nil}
+    public var hasAstCrossTableCellReferenceNodeReference: Bool {_storage._astCrossTableCellReferenceNodeReference != nil}
     /// Clears the value of `astCrossTableCellReferenceNodeReference`. Subsequent reads from it will return its default value.
     public mutating func clearAstCrossTableCellReferenceNodeReference() {_uniqueStorage()._astCrossTableCellReferenceNodeReference = nil}
 
     public var astUnknownFunctionNodeString: String {
-      get {return _storage._astUnknownFunctionNodeString ?? String()}
+      get {_storage._astUnknownFunctionNodeString ?? String()}
       set {_uniqueStorage()._astUnknownFunctionNodeString = newValue}
     }
     /// Returns true if `astUnknownFunctionNodeString` has been explicitly set.
-    public var hasAstUnknownFunctionNodeString: Bool {return _storage._astUnknownFunctionNodeString != nil}
+    public var hasAstUnknownFunctionNodeString: Bool {_storage._astUnknownFunctionNodeString != nil}
     /// Clears the value of `astUnknownFunctionNodeString`. Subsequent reads from it will return its default value.
     public mutating func clearAstUnknownFunctionNodeString() {_uniqueStorage()._astUnknownFunctionNodeString = nil}
 
     public var astUnknownFunctionNodeNumArgs: UInt32 {
-      get {return _storage._astUnknownFunctionNodeNumArgs ?? 0}
+      get {_storage._astUnknownFunctionNodeNumArgs ?? 0}
       set {_uniqueStorage()._astUnknownFunctionNodeNumArgs = newValue}
     }
     /// Returns true if `astUnknownFunctionNodeNumArgs` has been explicitly set.
-    public var hasAstUnknownFunctionNodeNumArgs: Bool {return _storage._astUnknownFunctionNodeNumArgs != nil}
+    public var hasAstUnknownFunctionNodeNumArgs: Bool {_storage._astUnknownFunctionNodeNumArgs != nil}
     /// Clears the value of `astUnknownFunctionNodeNumArgs`. Subsequent reads from it will return its default value.
     public mutating func clearAstUnknownFunctionNodeNumArgs() {_uniqueStorage()._astUnknownFunctionNodeNumArgs = nil}
 
     public var astWhitespace: String {
-      get {return _storage._astWhitespace ?? String()}
+      get {_storage._astWhitespace ?? String()}
       set {_uniqueStorage()._astWhitespace = newValue}
     }
     /// Returns true if `astWhitespace` has been explicitly set.
-    public var hasAstWhitespace: Bool {return _storage._astWhitespace != nil}
+    public var hasAstWhitespace: Bool {_storage._astWhitespace != nil}
     /// Clears the value of `astWhitespace`. Subsequent reads from it will return its default value.
     public mutating func clearAstWhitespace() {_uniqueStorage()._astWhitespace = nil}
 
     public var astColumn: TSCE_ASTNodeArrayArchive.ASTColumnCoordinateArchive {
-      get {return _storage._astColumn ?? TSCE_ASTNodeArrayArchive.ASTColumnCoordinateArchive()}
+      get {_storage._astColumn ?? TSCE_ASTNodeArrayArchive.ASTColumnCoordinateArchive()}
       set {_uniqueStorage()._astColumn = newValue}
     }
     /// Returns true if `astColumn` has been explicitly set.
-    public var hasAstColumn: Bool {return _storage._astColumn != nil}
+    public var hasAstColumn: Bool {_storage._astColumn != nil}
     /// Clears the value of `astColumn`. Subsequent reads from it will return its default value.
     public mutating func clearAstColumn() {_uniqueStorage()._astColumn = nil}
 
     public var astRow: TSCE_ASTNodeArrayArchive.ASTRowCoordinateArchive {
-      get {return _storage._astRow ?? TSCE_ASTNodeArrayArchive.ASTRowCoordinateArchive()}
+      get {_storage._astRow ?? TSCE_ASTNodeArrayArchive.ASTRowCoordinateArchive()}
       set {_uniqueStorage()._astRow = newValue}
     }
     /// Returns true if `astRow` has been explicitly set.
-    public var hasAstRow: Bool {return _storage._astRow != nil}
+    public var hasAstRow: Bool {_storage._astRow != nil}
     /// Clears the value of `astRow`. Subsequent reads from it will return its default value.
     public mutating func clearAstRow() {_uniqueStorage()._astRow = nil}
 
     public var astCrossTableReferenceExtraInfo: TSCE_ASTNodeArrayArchive.ASTCrossTableReferenceExtraInfoArchive {
-      get {return _storage._astCrossTableReferenceExtraInfo ?? TSCE_ASTNodeArrayArchive.ASTCrossTableReferenceExtraInfoArchive()}
+      get {_storage._astCrossTableReferenceExtraInfo ?? TSCE_ASTNodeArrayArchive.ASTCrossTableReferenceExtraInfoArchive()}
       set {_uniqueStorage()._astCrossTableReferenceExtraInfo = newValue}
     }
     /// Returns true if `astCrossTableReferenceExtraInfo` has been explicitly set.
-    public var hasAstCrossTableReferenceExtraInfo: Bool {return _storage._astCrossTableReferenceExtraInfo != nil}
+    public var hasAstCrossTableReferenceExtraInfo: Bool {_storage._astCrossTableReferenceExtraInfo != nil}
     /// Clears the value of `astCrossTableReferenceExtraInfo`. Subsequent reads from it will return its default value.
     public mutating func clearAstCrossTableReferenceExtraInfo() {_uniqueStorage()._astCrossTableReferenceExtraInfo = nil}
 
     public var astUidCoordinate: TSCE_ASTNodeArrayArchive.ASTUidCoordinateArchive {
-      get {return _storage._astUidCoordinate ?? TSCE_ASTNodeArrayArchive.ASTUidCoordinateArchive()}
+      get {_storage._astUidCoordinate ?? TSCE_ASTNodeArrayArchive.ASTUidCoordinateArchive()}
       set {_uniqueStorage()._astUidCoordinate = newValue}
     }
     /// Returns true if `astUidCoordinate` has been explicitly set.
-    public var hasAstUidCoordinate: Bool {return _storage._astUidCoordinate != nil}
+    public var hasAstUidCoordinate: Bool {_storage._astUidCoordinate != nil}
     /// Clears the value of `astUidCoordinate`. Subsequent reads from it will return its default value.
     public mutating func clearAstUidCoordinate() {_uniqueStorage()._astUidCoordinate = nil}
 
     public var astStickyBits: TSCE_ASTNodeArrayArchive.ASTStickyBits {
-      get {return _storage._astStickyBits ?? TSCE_ASTNodeArrayArchive.ASTStickyBits()}
+      get {_storage._astStickyBits ?? TSCE_ASTNodeArrayArchive.ASTStickyBits()}
       set {_uniqueStorage()._astStickyBits = newValue}
     }
     /// Returns true if `astStickyBits` has been explicitly set.
-    public var hasAstStickyBits: Bool {return _storage._astStickyBits != nil}
+    public var hasAstStickyBits: Bool {_storage._astStickyBits != nil}
     /// Clears the value of `astStickyBits`. Subsequent reads from it will return its default value.
     public mutating func clearAstStickyBits() {_uniqueStorage()._astStickyBits = nil}
 
     public var astFrozenStickyBits: TSCE_ASTNodeArrayArchive.ASTStickyBits {
-      get {return _storage._astFrozenStickyBits ?? TSCE_ASTNodeArrayArchive.ASTStickyBits()}
+      get {_storage._astFrozenStickyBits ?? TSCE_ASTNodeArrayArchive.ASTStickyBits()}
       set {_uniqueStorage()._astFrozenStickyBits = newValue}
     }
     /// Returns true if `astFrozenStickyBits` has been explicitly set.
-    public var hasAstFrozenStickyBits: Bool {return _storage._astFrozenStickyBits != nil}
+    public var hasAstFrozenStickyBits: Bool {_storage._astFrozenStickyBits != nil}
     /// Clears the value of `astFrozenStickyBits`. Subsequent reads from it will return its default value.
     public mutating func clearAstFrozenStickyBits() {_uniqueStorage()._astFrozenStickyBits = nil}
 
     public var astLetIdentifier: String {
-      get {return _storage._astLetIdentifier ?? String()}
+      get {_storage._astLetIdentifier ?? String()}
       set {_uniqueStorage()._astLetIdentifier = newValue}
     }
     /// Returns true if `astLetIdentifier` has been explicitly set.
-    public var hasAstLetIdentifier: Bool {return _storage._astLetIdentifier != nil}
+    public var hasAstLetIdentifier: Bool {_storage._astLetIdentifier != nil}
     /// Clears the value of `astLetIdentifier`. Subsequent reads from it will return its default value.
     public mutating func clearAstLetIdentifier() {_uniqueStorage()._astLetIdentifier = nil}
 
     public var astLetWhitespace: String {
-      get {return _storage._astLetWhitespace ?? String()}
+      get {_storage._astLetWhitespace ?? String()}
       set {_uniqueStorage()._astLetWhitespace = newValue}
     }
     /// Returns true if `astLetWhitespace` has been explicitly set.
-    public var hasAstLetWhitespace: Bool {return _storage._astLetWhitespace != nil}
+    public var hasAstLetWhitespace: Bool {_storage._astLetWhitespace != nil}
     /// Clears the value of `astLetWhitespace`. Subsequent reads from it will return its default value.
     public mutating func clearAstLetWhitespace() {_uniqueStorage()._astLetWhitespace = nil}
 
     public var astLetIsContinuation: Bool {
-      get {return _storage._astLetIsContinuation ?? false}
+      get {_storage._astLetIsContinuation ?? false}
       set {_uniqueStorage()._astLetIsContinuation = newValue}
     }
     /// Returns true if `astLetIsContinuation` has been explicitly set.
-    public var hasAstLetIsContinuation: Bool {return _storage._astLetIsContinuation != nil}
+    public var hasAstLetIsContinuation: Bool {_storage._astLetIsContinuation != nil}
     /// Clears the value of `astLetIsContinuation`. Subsequent reads from it will return its default value.
     public mutating func clearAstLetIsContinuation() {_uniqueStorage()._astLetIsContinuation = nil}
 
     public var astSymbol: UInt32 {
-      get {return _storage._astSymbol ?? 0}
+      get {_storage._astSymbol ?? 0}
       set {_uniqueStorage()._astSymbol = newValue}
     }
     /// Returns true if `astSymbol` has been explicitly set.
-    public var hasAstSymbol: Bool {return _storage._astSymbol != nil}
+    public var hasAstSymbol: Bool {_storage._astSymbol != nil}
     /// Clears the value of `astSymbol`. Subsequent reads from it will return its default value.
     public mutating func clearAstSymbol() {_uniqueStorage()._astSymbol = nil}
 
     public var astTractList: TSCE_ASTNodeArrayArchive.ASTUidTractList {
-      get {return _storage._astTractList ?? TSCE_ASTNodeArrayArchive.ASTUidTractList()}
+      get {_storage._astTractList ?? TSCE_ASTNodeArrayArchive.ASTUidTractList()}
       set {_uniqueStorage()._astTractList = newValue}
     }
     /// Returns true if `astTractList` has been explicitly set.
-    public var hasAstTractList: Bool {return _storage._astTractList != nil}
+    public var hasAstTractList: Bool {_storage._astTractList != nil}
     /// Clears the value of `astTractList`. Subsequent reads from it will return its default value.
     public mutating func clearAstTractList() {_uniqueStorage()._astTractList = nil}
 
     public var astCategoryRef: TSCE_ASTNodeArrayArchive.ASTCategoryReferenceArchive {
-      get {return _storage._astCategoryRef ?? TSCE_ASTNodeArrayArchive.ASTCategoryReferenceArchive()}
+      get {_storage._astCategoryRef ?? TSCE_ASTNodeArrayArchive.ASTCategoryReferenceArchive()}
       set {_uniqueStorage()._astCategoryRef = newValue}
     }
     /// Returns true if `astCategoryRef` has been explicitly set.
-    public var hasAstCategoryRef: Bool {return _storage._astCategoryRef != nil}
+    public var hasAstCategoryRef: Bool {_storage._astCategoryRef != nil}
     /// Clears the value of `astCategoryRef`. Subsequent reads from it will return its default value.
     public mutating func clearAstCategoryRef() {_uniqueStorage()._astCategoryRef = nil}
 
     public var astColonTract: TSCE_ASTNodeArrayArchive.ASTColonTractArchive {
-      get {return _storage._astColonTract ?? TSCE_ASTNodeArrayArchive.ASTColonTractArchive()}
+      get {_storage._astColonTract ?? TSCE_ASTNodeArrayArchive.ASTColonTractArchive()}
       set {_uniqueStorage()._astColonTract = newValue}
     }
     /// Returns true if `astColonTract` has been explicitly set.
-    public var hasAstColonTract: Bool {return _storage._astColonTract != nil}
+    public var hasAstColonTract: Bool {_storage._astColonTract != nil}
     /// Clears the value of `astColonTract`. Subsequent reads from it will return its default value.
     public mutating func clearAstColonTract() {_uniqueStorage()._astColonTract = nil}
 
     public var astNumberNodeDecimalLow: UInt64 {
-      get {return _storage._astNumberNodeDecimalLow ?? 0}
+      get {_storage._astNumberNodeDecimalLow ?? 0}
       set {_uniqueStorage()._astNumberNodeDecimalLow = newValue}
     }
     /// Returns true if `astNumberNodeDecimalLow` has been explicitly set.
-    public var hasAstNumberNodeDecimalLow: Bool {return _storage._astNumberNodeDecimalLow != nil}
+    public var hasAstNumberNodeDecimalLow: Bool {_storage._astNumberNodeDecimalLow != nil}
     /// Clears the value of `astNumberNodeDecimalLow`. Subsequent reads from it will return its default value.
     public mutating func clearAstNumberNodeDecimalLow() {_uniqueStorage()._astNumberNodeDecimalLow = nil}
 
     public var astNumberNodeDecimalHigh: UInt64 {
-      get {return _storage._astNumberNodeDecimalHigh ?? 0}
+      get {_storage._astNumberNodeDecimalHigh ?? 0}
       set {_uniqueStorage()._astNumberNodeDecimalHigh = newValue}
     }
     /// Returns true if `astNumberNodeDecimalHigh` has been explicitly set.
-    public var hasAstNumberNodeDecimalHigh: Bool {return _storage._astNumberNodeDecimalHigh != nil}
+    public var hasAstNumberNodeDecimalHigh: Bool {_storage._astNumberNodeDecimalHigh != nil}
     /// Clears the value of `astNumberNodeDecimalHigh`. Subsequent reads from it will return its default value.
     public mutating func clearAstNumberNodeDecimalHigh() {_uniqueStorage()._astNumberNodeDecimalHigh = nil}
 
     public var astCategoryLevels: TSCE_ASTNodeArrayArchive.ASTCategoryLevels {
-      get {return _storage._astCategoryLevels ?? TSCE_ASTNodeArrayArchive.ASTCategoryLevels()}
+      get {_storage._astCategoryLevels ?? TSCE_ASTNodeArrayArchive.ASTCategoryLevels()}
       set {_uniqueStorage()._astCategoryLevels = newValue}
     }
     /// Returns true if `astCategoryLevels` has been explicitly set.
-    public var hasAstCategoryLevels: Bool {return _storage._astCategoryLevels != nil}
+    public var hasAstCategoryLevels: Bool {_storage._astCategoryLevels != nil}
     /// Clears the value of `astCategoryLevels`. Subsequent reads from it will return its default value.
     public mutating func clearAstCategoryLevels() {_uniqueStorage()._astCategoryLevels = nil}
 
     public var astLambdaIdents: TSCE_ASTNodeArrayArchive.ASTLambdaIdentsListArchive {
-      get {return _storage._astLambdaIdents ?? TSCE_ASTNodeArrayArchive.ASTLambdaIdentsListArchive()}
+      get {_storage._astLambdaIdents ?? TSCE_ASTNodeArrayArchive.ASTLambdaIdentsListArchive()}
       set {_uniqueStorage()._astLambdaIdents = newValue}
     }
     /// Returns true if `astLambdaIdents` has been explicitly set.
-    public var hasAstLambdaIdents: Bool {return _storage._astLambdaIdents != nil}
+    public var hasAstLambdaIdents: Bool {_storage._astLambdaIdents != nil}
     /// Clears the value of `astLambdaIdents`. Subsequent reads from it will return its default value.
     public mutating func clearAstLambdaIdents() {_uniqueStorage()._astLambdaIdents = nil}
 
     public var astRangeContext: UInt32 {
-      get {return _storage._astRangeContext ?? 0}
+      get {_storage._astRangeContext ?? 0}
       set {_uniqueStorage()._astRangeContext = newValue}
     }
     /// Returns true if `astRangeContext` has been explicitly set.
-    public var hasAstRangeContext: Bool {return _storage._astRangeContext != nil}
+    public var hasAstRangeContext: Bool {_storage._astRangeContext != nil}
     /// Clears the value of `astRangeContext`. Subsequent reads from it will return its default value.
     public mutating func clearAstRangeContext() {_uniqueStorage()._astRangeContext = nil}
 
     public var upgradeNodeType: TSCE_ASTNodeArrayArchive.ASTNodeType {
-      get {return _storage._upgradeNodeType ?? .additionNode}
+      get {_storage._upgradeNodeType ?? .additionNode}
       set {_uniqueStorage()._upgradeNodeType = newValue}
     }
     /// Returns true if `upgradeNodeType` has been explicitly set.
-    public var hasUpgradeNodeType: Bool {return _storage._upgradeNodeType != nil}
+    public var hasUpgradeNodeType: Bool {_storage._upgradeNodeType != nil}
     /// Clears the value of `upgradeNodeType`. Subsequent reads from it will return its default value.
     public mutating func clearUpgradeNodeType() {_uniqueStorage()._upgradeNodeType = nil}
 
@@ -4885,53 +4645,53 @@ public struct TSCE_ASTNodeArrayArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_FormulaTranslationFlagsArchive: Sendable {
+public nonisolated struct TSCE_FormulaTranslationFlagsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var excelImportTranslation: Bool {
-    get {return _excelImportTranslation ?? false}
+    get {_excelImportTranslation ?? false}
     set {_excelImportTranslation = newValue}
   }
   /// Returns true if `excelImportTranslation` has been explicitly set.
-  public var hasExcelImportTranslation: Bool {return self._excelImportTranslation != nil}
+  public var hasExcelImportTranslation: Bool {self._excelImportTranslation != nil}
   /// Clears the value of `excelImportTranslation`. Subsequent reads from it will return its default value.
   public mutating func clearExcelImportTranslation() {self._excelImportTranslation = nil}
 
   public var numberToDateCoercionRemovalTranslation: Bool {
-    get {return _numberToDateCoercionRemovalTranslation ?? false}
+    get {_numberToDateCoercionRemovalTranslation ?? false}
     set {_numberToDateCoercionRemovalTranslation = newValue}
   }
   /// Returns true if `numberToDateCoercionRemovalTranslation` has been explicitly set.
-  public var hasNumberToDateCoercionRemovalTranslation: Bool {return self._numberToDateCoercionRemovalTranslation != nil}
+  public var hasNumberToDateCoercionRemovalTranslation: Bool {self._numberToDateCoercionRemovalTranslation != nil}
   /// Clears the value of `numberToDateCoercionRemovalTranslation`. Subsequent reads from it will return its default value.
   public mutating func clearNumberToDateCoercionRemovalTranslation() {self._numberToDateCoercionRemovalTranslation = nil}
 
   public var containsUidFormReferences: Bool {
-    get {return _containsUidFormReferences ?? false}
+    get {_containsUidFormReferences ?? false}
     set {_containsUidFormReferences = newValue}
   }
   /// Returns true if `containsUidFormReferences` has been explicitly set.
-  public var hasContainsUidFormReferences: Bool {return self._containsUidFormReferences != nil}
+  public var hasContainsUidFormReferences: Bool {self._containsUidFormReferences != nil}
   /// Clears the value of `containsUidFormReferences`. Subsequent reads from it will return its default value.
   public mutating func clearContainsUidFormReferences() {self._containsUidFormReferences = nil}
 
   public var containsFrozenReferences: Bool {
-    get {return _containsFrozenReferences ?? false}
+    get {_containsFrozenReferences ?? false}
     set {_containsFrozenReferences = newValue}
   }
   /// Returns true if `containsFrozenReferences` has been explicitly set.
-  public var hasContainsFrozenReferences: Bool {return self._containsFrozenReferences != nil}
+  public var hasContainsFrozenReferences: Bool {self._containsFrozenReferences != nil}
   /// Clears the value of `containsFrozenReferences`. Subsequent reads from it will return its default value.
   public mutating func clearContainsFrozenReferences() {self._containsFrozenReferences = nil}
 
   public var returnsPercentFormatted: Bool {
-    get {return _returnsPercentFormatted ?? false}
+    get {_returnsPercentFormatted ?? false}
     set {_returnsPercentFormatted = newValue}
   }
   /// Returns true if `returnsPercentFormatted` has been explicitly set.
-  public var hasReturnsPercentFormatted: Bool {return self._returnsPercentFormatted != nil}
+  public var hasReturnsPercentFormatted: Bool {self._returnsPercentFormatted != nil}
   /// Clears the value of `returnsPercentFormatted`. Subsequent reads from it will return its default value.
   public mutating func clearReturnsPercentFormatted() {self._returnsPercentFormatted = nil}
 
@@ -4946,89 +4706,89 @@ public struct TSCE_FormulaTranslationFlagsArchive: Sendable {
   fileprivate var _returnsPercentFormatted: Bool? = nil
 }
 
-public struct TSCE_FormulaArchive: Sendable {
+public nonisolated struct TSCE_FormulaArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var astNodeArray: TSCE_ASTNodeArrayArchive {
-    get {return _astNodeArray ?? TSCE_ASTNodeArrayArchive()}
+    get {_astNodeArray ?? TSCE_ASTNodeArrayArchive()}
     set {_astNodeArray = newValue}
   }
   /// Returns true if `astNodeArray` has been explicitly set.
-  public var hasAstNodeArray: Bool {return self._astNodeArray != nil}
+  public var hasAstNodeArray: Bool {self._astNodeArray != nil}
   /// Clears the value of `astNodeArray`. Subsequent reads from it will return its default value.
   public mutating func clearAstNodeArray() {self._astNodeArray = nil}
 
   public var hostColumn: UInt32 {
-    get {return _hostColumn ?? 0}
+    get {_hostColumn ?? 0}
     set {_hostColumn = newValue}
   }
   /// Returns true if `hostColumn` has been explicitly set.
-  public var hasHostColumn: Bool {return self._hostColumn != nil}
+  public var hasHostColumn: Bool {self._hostColumn != nil}
   /// Clears the value of `hostColumn`. Subsequent reads from it will return its default value.
   public mutating func clearHostColumn() {self._hostColumn = nil}
 
   public var hostRow: UInt32 {
-    get {return _hostRow ?? 0}
+    get {_hostRow ?? 0}
     set {_hostRow = newValue}
   }
   /// Returns true if `hostRow` has been explicitly set.
-  public var hasHostRow: Bool {return self._hostRow != nil}
+  public var hasHostRow: Bool {self._hostRow != nil}
   /// Clears the value of `hostRow`. Subsequent reads from it will return its default value.
   public mutating func clearHostRow() {self._hostRow = nil}
 
   public var hostColumnIsNegative: Bool {
-    get {return _hostColumnIsNegative ?? false}
+    get {_hostColumnIsNegative ?? false}
     set {_hostColumnIsNegative = newValue}
   }
   /// Returns true if `hostColumnIsNegative` has been explicitly set.
-  public var hasHostColumnIsNegative: Bool {return self._hostColumnIsNegative != nil}
+  public var hasHostColumnIsNegative: Bool {self._hostColumnIsNegative != nil}
   /// Clears the value of `hostColumnIsNegative`. Subsequent reads from it will return its default value.
   public mutating func clearHostColumnIsNegative() {self._hostColumnIsNegative = nil}
 
   public var hostRowIsNegative: Bool {
-    get {return _hostRowIsNegative ?? false}
+    get {_hostRowIsNegative ?? false}
     set {_hostRowIsNegative = newValue}
   }
   /// Returns true if `hostRowIsNegative` has been explicitly set.
-  public var hasHostRowIsNegative: Bool {return self._hostRowIsNegative != nil}
+  public var hasHostRowIsNegative: Bool {self._hostRowIsNegative != nil}
   /// Clears the value of `hostRowIsNegative`. Subsequent reads from it will return its default value.
   public mutating func clearHostRowIsNegative() {self._hostRowIsNegative = nil}
 
   public var translationFlags: TSCE_FormulaTranslationFlagsArchive {
-    get {return _translationFlags ?? TSCE_FormulaTranslationFlagsArchive()}
+    get {_translationFlags ?? TSCE_FormulaTranslationFlagsArchive()}
     set {_translationFlags = newValue}
   }
   /// Returns true if `translationFlags` has been explicitly set.
-  public var hasTranslationFlags: Bool {return self._translationFlags != nil}
+  public var hasTranslationFlags: Bool {self._translationFlags != nil}
   /// Clears the value of `translationFlags`. Subsequent reads from it will return its default value.
   public mutating func clearTranslationFlags() {self._translationFlags = nil}
 
   public var hostTableUid: TSP_UUID {
-    get {return _hostTableUid ?? TSP_UUID()}
+    get {_hostTableUid ?? TSP_UUID()}
     set {_hostTableUid = newValue}
   }
   /// Returns true if `hostTableUid` has been explicitly set.
-  public var hasHostTableUid: Bool {return self._hostTableUid != nil}
+  public var hasHostTableUid: Bool {self._hostTableUid != nil}
   /// Clears the value of `hostTableUid`. Subsequent reads from it will return its default value.
   public mutating func clearHostTableUid() {self._hostTableUid = nil}
 
   public var hostColumnUid: TSP_UUID {
-    get {return _hostColumnUid ?? TSP_UUID()}
+    get {_hostColumnUid ?? TSP_UUID()}
     set {_hostColumnUid = newValue}
   }
   /// Returns true if `hostColumnUid` has been explicitly set.
-  public var hasHostColumnUid: Bool {return self._hostColumnUid != nil}
+  public var hasHostColumnUid: Bool {self._hostColumnUid != nil}
   /// Clears the value of `hostColumnUid`. Subsequent reads from it will return its default value.
   public mutating func clearHostColumnUid() {self._hostColumnUid = nil}
 
   public var hostRowUid: TSP_UUID {
-    get {return _hostRowUid ?? TSP_UUID()}
+    get {_hostRowUid ?? TSP_UUID()}
     set {_hostRowUid = newValue}
   }
   /// Returns true if `hostRowUid` has been explicitly set.
-  public var hasHostRowUid: Bool {return self._hostRowUid != nil}
+  public var hasHostRowUid: Bool {self._hostRowUid != nil}
   /// Clears the value of `hostRowUid`. Subsequent reads from it will return its default value.
   public mutating func clearHostRowUid() {self._hostRowUid = nil}
 
@@ -5047,35 +4807,35 @@ public struct TSCE_FormulaArchive: Sendable {
   fileprivate var _hostRowUid: TSP_UUID? = nil
 }
 
-public struct TSCE_FunctorArchive: @unchecked Sendable {
+public nonisolated struct TSCE_FunctorArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var formula: TSCE_FormulaArchive {
-    get {return _storage._formula ?? TSCE_FormulaArchive()}
+    get {_storage._formula ?? TSCE_FormulaArchive()}
     set {_uniqueStorage()._formula = newValue}
   }
   /// Returns true if `formula` has been explicitly set.
-  public var hasFormula: Bool {return _storage._formula != nil}
+  public var hasFormula: Bool {_storage._formula != nil}
   /// Clears the value of `formula`. Subsequent reads from it will return its default value.
   public mutating func clearFormula() {_uniqueStorage()._formula = nil}
 
   public var numArgs: UInt32 {
-    get {return _storage._numArgs ?? 0}
+    get {_storage._numArgs ?? 0}
     set {_uniqueStorage()._numArgs = newValue}
   }
   /// Returns true if `numArgs` has been explicitly set.
-  public var hasNumArgs: Bool {return _storage._numArgs != nil}
+  public var hasNumArgs: Bool {_storage._numArgs != nil}
   /// Clears the value of `numArgs`. Subsequent reads from it will return its default value.
   public mutating func clearNumArgs() {_uniqueStorage()._numArgs = nil}
 
   public var firstSymbol: UInt32 {
-    get {return _storage._firstSymbol ?? 0}
+    get {_storage._firstSymbol ?? 0}
     set {_uniqueStorage()._firstSymbol = newValue}
   }
   /// Returns true if `firstSymbol` has been explicitly set.
-  public var hasFirstSymbol: Bool {return _storage._firstSymbol != nil}
+  public var hasFirstSymbol: Bool {_storage._firstSymbol != nil}
   /// Clears the value of `firstSymbol`. Subsequent reads from it will return its default value.
   public mutating func clearFirstSymbol() {_uniqueStorage()._firstSymbol = nil}
 
@@ -5086,152 +4846,152 @@ public struct TSCE_FunctorArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCE_FormatStructArchive: Sendable {
+public nonisolated struct TSCE_FormatStructArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var formatType: UInt32 {
-    get {return _formatType ?? 0}
+    get {_formatType ?? 0}
     set {_formatType = newValue}
   }
   /// Returns true if `formatType` has been explicitly set.
-  public var hasFormatType: Bool {return self._formatType != nil}
+  public var hasFormatType: Bool {self._formatType != nil}
   /// Clears the value of `formatType`. Subsequent reads from it will return its default value.
   public mutating func clearFormatType() {self._formatType = nil}
 
   public var decimalPlaces: UInt32 {
-    get {return _decimalPlaces ?? 0}
+    get {_decimalPlaces ?? 0}
     set {_decimalPlaces = newValue}
   }
   /// Returns true if `decimalPlaces` has been explicitly set.
-  public var hasDecimalPlaces: Bool {return self._decimalPlaces != nil}
+  public var hasDecimalPlaces: Bool {self._decimalPlaces != nil}
   /// Clears the value of `decimalPlaces`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalPlaces() {self._decimalPlaces = nil}
 
   public var currencyCode: String {
-    get {return _currencyCode ?? String()}
+    get {_currencyCode ?? String()}
     set {_currencyCode = newValue}
   }
   /// Returns true if `currencyCode` has been explicitly set.
-  public var hasCurrencyCode: Bool {return self._currencyCode != nil}
+  public var hasCurrencyCode: Bool {self._currencyCode != nil}
   /// Clears the value of `currencyCode`. Subsequent reads from it will return its default value.
   public mutating func clearCurrencyCode() {self._currencyCode = nil}
 
   public var negativeStyle: UInt32 {
-    get {return _negativeStyle ?? 0}
+    get {_negativeStyle ?? 0}
     set {_negativeStyle = newValue}
   }
   /// Returns true if `negativeStyle` has been explicitly set.
-  public var hasNegativeStyle: Bool {return self._negativeStyle != nil}
+  public var hasNegativeStyle: Bool {self._negativeStyle != nil}
   /// Clears the value of `negativeStyle`. Subsequent reads from it will return its default value.
   public mutating func clearNegativeStyle() {self._negativeStyle = nil}
 
   public var showThousandsSeparator: Bool {
-    get {return _showThousandsSeparator ?? false}
+    get {_showThousandsSeparator ?? false}
     set {_showThousandsSeparator = newValue}
   }
   /// Returns true if `showThousandsSeparator` has been explicitly set.
-  public var hasShowThousandsSeparator: Bool {return self._showThousandsSeparator != nil}
+  public var hasShowThousandsSeparator: Bool {self._showThousandsSeparator != nil}
   /// Clears the value of `showThousandsSeparator`. Subsequent reads from it will return its default value.
   public mutating func clearShowThousandsSeparator() {self._showThousandsSeparator = nil}
 
   public var useAccountingStyle: Bool {
-    get {return _useAccountingStyle ?? false}
+    get {_useAccountingStyle ?? false}
     set {_useAccountingStyle = newValue}
   }
   /// Returns true if `useAccountingStyle` has been explicitly set.
-  public var hasUseAccountingStyle: Bool {return self._useAccountingStyle != nil}
+  public var hasUseAccountingStyle: Bool {self._useAccountingStyle != nil}
   /// Clears the value of `useAccountingStyle`. Subsequent reads from it will return its default value.
   public mutating func clearUseAccountingStyle() {self._useAccountingStyle = nil}
 
   public var durationStyle: UInt32 {
-    get {return _durationStyle ?? 0}
+    get {_durationStyle ?? 0}
     set {_durationStyle = newValue}
   }
   /// Returns true if `durationStyle` has been explicitly set.
-  public var hasDurationStyle: Bool {return self._durationStyle != nil}
+  public var hasDurationStyle: Bool {self._durationStyle != nil}
   /// Clears the value of `durationStyle`. Subsequent reads from it will return its default value.
   public mutating func clearDurationStyle() {self._durationStyle = nil}
 
   public var base: UInt32 {
-    get {return _base ?? 0}
+    get {_base ?? 0}
     set {_base = newValue}
   }
   /// Returns true if `base` has been explicitly set.
-  public var hasBase: Bool {return self._base != nil}
+  public var hasBase: Bool {self._base != nil}
   /// Clears the value of `base`. Subsequent reads from it will return its default value.
   public mutating func clearBase() {self._base = nil}
 
   public var basePlaces: UInt32 {
-    get {return _basePlaces ?? 0}
+    get {_basePlaces ?? 0}
     set {_basePlaces = newValue}
   }
   /// Returns true if `basePlaces` has been explicitly set.
-  public var hasBasePlaces: Bool {return self._basePlaces != nil}
+  public var hasBasePlaces: Bool {self._basePlaces != nil}
   /// Clears the value of `basePlaces`. Subsequent reads from it will return its default value.
   public mutating func clearBasePlaces() {self._basePlaces = nil}
 
   public var baseUseMinusSign: Bool {
-    get {return _baseUseMinusSign ?? false}
+    get {_baseUseMinusSign ?? false}
     set {_baseUseMinusSign = newValue}
   }
   /// Returns true if `baseUseMinusSign` has been explicitly set.
-  public var hasBaseUseMinusSign: Bool {return self._baseUseMinusSign != nil}
+  public var hasBaseUseMinusSign: Bool {self._baseUseMinusSign != nil}
   /// Clears the value of `baseUseMinusSign`. Subsequent reads from it will return its default value.
   public mutating func clearBaseUseMinusSign() {self._baseUseMinusSign = nil}
 
   public var fractionAccuracy: UInt32 {
-    get {return _fractionAccuracy ?? 0}
+    get {_fractionAccuracy ?? 0}
     set {_fractionAccuracy = newValue}
   }
   /// Returns true if `fractionAccuracy` has been explicitly set.
-  public var hasFractionAccuracy: Bool {return self._fractionAccuracy != nil}
+  public var hasFractionAccuracy: Bool {self._fractionAccuracy != nil}
   /// Clears the value of `fractionAccuracy`. Subsequent reads from it will return its default value.
   public mutating func clearFractionAccuracy() {self._fractionAccuracy = nil}
 
   public var suppressDateFormat: Bool {
-    get {return _suppressDateFormat ?? false}
+    get {_suppressDateFormat ?? false}
     set {_suppressDateFormat = newValue}
   }
   /// Returns true if `suppressDateFormat` has been explicitly set.
-  public var hasSuppressDateFormat: Bool {return self._suppressDateFormat != nil}
+  public var hasSuppressDateFormat: Bool {self._suppressDateFormat != nil}
   /// Clears the value of `suppressDateFormat`. Subsequent reads from it will return its default value.
   public mutating func clearSuppressDateFormat() {self._suppressDateFormat = nil}
 
   public var suppressTimeFormat: Bool {
-    get {return _suppressTimeFormat ?? false}
+    get {_suppressTimeFormat ?? false}
     set {_suppressTimeFormat = newValue}
   }
   /// Returns true if `suppressTimeFormat` has been explicitly set.
-  public var hasSuppressTimeFormat: Bool {return self._suppressTimeFormat != nil}
+  public var hasSuppressTimeFormat: Bool {self._suppressTimeFormat != nil}
   /// Clears the value of `suppressTimeFormat`. Subsequent reads from it will return its default value.
   public mutating func clearSuppressTimeFormat() {self._suppressTimeFormat = nil}
 
   public var dateTimeFormat: String {
-    get {return _dateTimeFormat ?? String()}
+    get {_dateTimeFormat ?? String()}
     set {_dateTimeFormat = newValue}
   }
   /// Returns true if `dateTimeFormat` has been explicitly set.
-  public var hasDateTimeFormat: Bool {return self._dateTimeFormat != nil}
+  public var hasDateTimeFormat: Bool {self._dateTimeFormat != nil}
   /// Clears the value of `dateTimeFormat`. Subsequent reads from it will return its default value.
   public mutating func clearDateTimeFormat() {self._dateTimeFormat = nil}
 
   public var durationUnitLargest: UInt32 {
-    get {return _durationUnitLargest ?? 0}
+    get {_durationUnitLargest ?? 0}
     set {_durationUnitLargest = newValue}
   }
   /// Returns true if `durationUnitLargest` has been explicitly set.
-  public var hasDurationUnitLargest: Bool {return self._durationUnitLargest != nil}
+  public var hasDurationUnitLargest: Bool {self._durationUnitLargest != nil}
   /// Clears the value of `durationUnitLargest`. Subsequent reads from it will return its default value.
   public mutating func clearDurationUnitLargest() {self._durationUnitLargest = nil}
 
   public var durationUnitSmallest: UInt32 {
-    get {return _durationUnitSmallest ?? 0}
+    get {_durationUnitSmallest ?? 0}
     set {_durationUnitSmallest = newValue}
   }
   /// Returns true if `durationUnitSmallest` has been explicitly set.
-  public var hasDurationUnitSmallest: Bool {return self._durationUnitSmallest != nil}
+  public var hasDurationUnitSmallest: Bool {self._durationUnitSmallest != nil}
   /// Clears the value of `durationUnitSmallest`. Subsequent reads from it will return its default value.
   public mutating func clearDurationUnitSmallest() {self._durationUnitSmallest = nil}
 
@@ -5257,44 +5017,44 @@ public struct TSCE_FormatStructArchive: Sendable {
   fileprivate var _durationUnitSmallest: UInt32? = nil
 }
 
-public struct TSCE_RangeCoordinateArchive: Sendable {
+public nonisolated struct TSCE_RangeCoordinateArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var topLeftColumn: UInt32 {
-    get {return _topLeftColumn ?? 0}
+    get {_topLeftColumn ?? 0}
     set {_topLeftColumn = newValue}
   }
   /// Returns true if `topLeftColumn` has been explicitly set.
-  public var hasTopLeftColumn: Bool {return self._topLeftColumn != nil}
+  public var hasTopLeftColumn: Bool {self._topLeftColumn != nil}
   /// Clears the value of `topLeftColumn`. Subsequent reads from it will return its default value.
   public mutating func clearTopLeftColumn() {self._topLeftColumn = nil}
 
   public var topLeftRow: UInt32 {
-    get {return _topLeftRow ?? 0}
+    get {_topLeftRow ?? 0}
     set {_topLeftRow = newValue}
   }
   /// Returns true if `topLeftRow` has been explicitly set.
-  public var hasTopLeftRow: Bool {return self._topLeftRow != nil}
+  public var hasTopLeftRow: Bool {self._topLeftRow != nil}
   /// Clears the value of `topLeftRow`. Subsequent reads from it will return its default value.
   public mutating func clearTopLeftRow() {self._topLeftRow = nil}
 
   public var bottomRightColumn: UInt32 {
-    get {return _bottomRightColumn ?? 0}
+    get {_bottomRightColumn ?? 0}
     set {_bottomRightColumn = newValue}
   }
   /// Returns true if `bottomRightColumn` has been explicitly set.
-  public var hasBottomRightColumn: Bool {return self._bottomRightColumn != nil}
+  public var hasBottomRightColumn: Bool {self._bottomRightColumn != nil}
   /// Clears the value of `bottomRightColumn`. Subsequent reads from it will return its default value.
   public mutating func clearBottomRightColumn() {self._bottomRightColumn = nil}
 
   public var bottomRightRow: UInt32 {
-    get {return _bottomRightRow ?? 0}
+    get {_bottomRightRow ?? 0}
     set {_bottomRightRow = newValue}
   }
   /// Returns true if `bottomRightRow` has been explicitly set.
-  public var hasBottomRightRow: Bool {return self._bottomRightRow != nil}
+  public var hasBottomRightRow: Bool {self._bottomRightRow != nil}
   /// Clears the value of `bottomRightRow`. Subsequent reads from it will return its default value.
   public mutating func clearBottomRightRow() {self._bottomRightRow = nil}
 
@@ -5308,26 +5068,26 @@ public struct TSCE_RangeCoordinateArchive: Sendable {
   fileprivate var _bottomRightRow: UInt32? = nil
 }
 
-public struct TSCE_TableTransposeInfoArchive: Sendable {
+public nonisolated struct TSCE_TableTransposeInfoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var numberOfFooterRows: UInt32 {
-    get {return _numberOfFooterRows ?? 0}
+    get {_numberOfFooterRows ?? 0}
     set {_numberOfFooterRows = newValue}
   }
   /// Returns true if `numberOfFooterRows` has been explicitly set.
-  public var hasNumberOfFooterRows: Bool {return self._numberOfFooterRows != nil}
+  public var hasNumberOfFooterRows: Bool {self._numberOfFooterRows != nil}
   /// Clears the value of `numberOfFooterRows`. Subsequent reads from it will return its default value.
   public mutating func clearNumberOfFooterRows() {self._numberOfFooterRows = nil}
 
   public var bodyRangeForTransposedTable: TSCE_RangeCoordinateArchive {
-    get {return _bodyRangeForTransposedTable ?? TSCE_RangeCoordinateArchive()}
+    get {_bodyRangeForTransposedTable ?? TSCE_RangeCoordinateArchive()}
     set {_bodyRangeForTransposedTable = newValue}
   }
   /// Returns true if `bodyRangeForTransposedTable` has been explicitly set.
-  public var hasBodyRangeForTransposedTable: Bool {return self._bodyRangeForTransposedTable != nil}
+  public var hasBodyRangeForTransposedTable: Bool {self._bodyRangeForTransposedTable != nil}
   /// Clears the value of `bodyRangeForTransposedTable`. Subsequent reads from it will return its default value.
   public mutating func clearBodyRangeForTransposedTable() {self._bodyRangeForTransposedTable = nil}
 
@@ -5339,7 +5099,7 @@ public struct TSCE_TableTransposeInfoArchive: Sendable {
   fileprivate var _bodyRangeForTransposedTable: TSCE_RangeCoordinateArchive? = nil
 }
 
-public struct TSCE_MergeOriginMovedArchive: Sendable {
+public nonisolated struct TSCE_MergeOriginMovedArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -5357,170 +5117,170 @@ public struct TSCE_MergeOriginMovedArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_OwnerUIDMapperArchive: @unchecked Sendable {
+public nonisolated struct TSCE_OwnerUIDMapperArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tableUid: TSP_UUID {
-    get {return _storage._tableUid ?? TSP_UUID()}
+    get {_storage._tableUid ?? TSP_UUID()}
     set {_uniqueStorage()._tableUid = newValue}
   }
   /// Returns true if `tableUid` has been explicitly set.
-  public var hasTableUid: Bool {return _storage._tableUid != nil}
+  public var hasTableUid: Bool {_storage._tableUid != nil}
   /// Clears the value of `tableUid`. Subsequent reads from it will return its default value.
   public mutating func clearTableUid() {_uniqueStorage()._tableUid = nil}
 
   public var nextTableUid: TSP_UUID {
-    get {return _storage._nextTableUid ?? TSP_UUID()}
+    get {_storage._nextTableUid ?? TSP_UUID()}
     set {_uniqueStorage()._nextTableUid = newValue}
   }
   /// Returns true if `nextTableUid` has been explicitly set.
-  public var hasNextTableUid: Bool {return _storage._nextTableUid != nil}
+  public var hasNextTableUid: Bool {_storage._nextTableUid != nil}
   /// Clears the value of `nextTableUid`. Subsequent reads from it will return its default value.
   public mutating func clearNextTableUid() {_uniqueStorage()._nextTableUid = nil}
 
   public var hiddenStateForRowsOwnerUid: TSP_UUID {
-    get {return _storage._hiddenStateForRowsOwnerUid ?? TSP_UUID()}
+    get {_storage._hiddenStateForRowsOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._hiddenStateForRowsOwnerUid = newValue}
   }
   /// Returns true if `hiddenStateForRowsOwnerUid` has been explicitly set.
-  public var hasHiddenStateForRowsOwnerUid: Bool {return _storage._hiddenStateForRowsOwnerUid != nil}
+  public var hasHiddenStateForRowsOwnerUid: Bool {_storage._hiddenStateForRowsOwnerUid != nil}
   /// Clears the value of `hiddenStateForRowsOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearHiddenStateForRowsOwnerUid() {_uniqueStorage()._hiddenStateForRowsOwnerUid = nil}
 
   public var nextHiddenStateForRowsOwnerUid: TSP_UUID {
-    get {return _storage._nextHiddenStateForRowsOwnerUid ?? TSP_UUID()}
+    get {_storage._nextHiddenStateForRowsOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._nextHiddenStateForRowsOwnerUid = newValue}
   }
   /// Returns true if `nextHiddenStateForRowsOwnerUid` has been explicitly set.
-  public var hasNextHiddenStateForRowsOwnerUid: Bool {return _storage._nextHiddenStateForRowsOwnerUid != nil}
+  public var hasNextHiddenStateForRowsOwnerUid: Bool {_storage._nextHiddenStateForRowsOwnerUid != nil}
   /// Clears the value of `nextHiddenStateForRowsOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearNextHiddenStateForRowsOwnerUid() {_uniqueStorage()._nextHiddenStateForRowsOwnerUid = nil}
 
   public var hiddenStateForColumnsOwnerUid: TSP_UUID {
-    get {return _storage._hiddenStateForColumnsOwnerUid ?? TSP_UUID()}
+    get {_storage._hiddenStateForColumnsOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._hiddenStateForColumnsOwnerUid = newValue}
   }
   /// Returns true if `hiddenStateForColumnsOwnerUid` has been explicitly set.
-  public var hasHiddenStateForColumnsOwnerUid: Bool {return _storage._hiddenStateForColumnsOwnerUid != nil}
+  public var hasHiddenStateForColumnsOwnerUid: Bool {_storage._hiddenStateForColumnsOwnerUid != nil}
   /// Clears the value of `hiddenStateForColumnsOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearHiddenStateForColumnsOwnerUid() {_uniqueStorage()._hiddenStateForColumnsOwnerUid = nil}
 
   public var nextHiddenStateForColumnsOwnerUid: TSP_UUID {
-    get {return _storage._nextHiddenStateForColumnsOwnerUid ?? TSP_UUID()}
+    get {_storage._nextHiddenStateForColumnsOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._nextHiddenStateForColumnsOwnerUid = newValue}
   }
   /// Returns true if `nextHiddenStateForColumnsOwnerUid` has been explicitly set.
-  public var hasNextHiddenStateForColumnsOwnerUid: Bool {return _storage._nextHiddenStateForColumnsOwnerUid != nil}
+  public var hasNextHiddenStateForColumnsOwnerUid: Bool {_storage._nextHiddenStateForColumnsOwnerUid != nil}
   /// Clears the value of `nextHiddenStateForColumnsOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearNextHiddenStateForColumnsOwnerUid() {_uniqueStorage()._nextHiddenStateForColumnsOwnerUid = nil}
 
   public var conditionalStyleOwnerUid: TSP_UUID {
-    get {return _storage._conditionalStyleOwnerUid ?? TSP_UUID()}
+    get {_storage._conditionalStyleOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._conditionalStyleOwnerUid = newValue}
   }
   /// Returns true if `conditionalStyleOwnerUid` has been explicitly set.
-  public var hasConditionalStyleOwnerUid: Bool {return _storage._conditionalStyleOwnerUid != nil}
+  public var hasConditionalStyleOwnerUid: Bool {_storage._conditionalStyleOwnerUid != nil}
   /// Clears the value of `conditionalStyleOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearConditionalStyleOwnerUid() {_uniqueStorage()._conditionalStyleOwnerUid = nil}
 
   public var nextConditionalStyleOwnerUid: TSP_UUID {
-    get {return _storage._nextConditionalStyleOwnerUid ?? TSP_UUID()}
+    get {_storage._nextConditionalStyleOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._nextConditionalStyleOwnerUid = newValue}
   }
   /// Returns true if `nextConditionalStyleOwnerUid` has been explicitly set.
-  public var hasNextConditionalStyleOwnerUid: Bool {return _storage._nextConditionalStyleOwnerUid != nil}
+  public var hasNextConditionalStyleOwnerUid: Bool {_storage._nextConditionalStyleOwnerUid != nil}
   /// Clears the value of `nextConditionalStyleOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearNextConditionalStyleOwnerUid() {_uniqueStorage()._nextConditionalStyleOwnerUid = nil}
 
   public var sortRuleReferenceTrackerOwnerUid: TSP_UUID {
-    get {return _storage._sortRuleReferenceTrackerOwnerUid ?? TSP_UUID()}
+    get {_storage._sortRuleReferenceTrackerOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._sortRuleReferenceTrackerOwnerUid = newValue}
   }
   /// Returns true if `sortRuleReferenceTrackerOwnerUid` has been explicitly set.
-  public var hasSortRuleReferenceTrackerOwnerUid: Bool {return _storage._sortRuleReferenceTrackerOwnerUid != nil}
+  public var hasSortRuleReferenceTrackerOwnerUid: Bool {_storage._sortRuleReferenceTrackerOwnerUid != nil}
   /// Clears the value of `sortRuleReferenceTrackerOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearSortRuleReferenceTrackerOwnerUid() {_uniqueStorage()._sortRuleReferenceTrackerOwnerUid = nil}
 
   public var nextSortRuleReferenceTrackerOwnerUid: TSP_UUID {
-    get {return _storage._nextSortRuleReferenceTrackerOwnerUid ?? TSP_UUID()}
+    get {_storage._nextSortRuleReferenceTrackerOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._nextSortRuleReferenceTrackerOwnerUid = newValue}
   }
   /// Returns true if `nextSortRuleReferenceTrackerOwnerUid` has been explicitly set.
-  public var hasNextSortRuleReferenceTrackerOwnerUid: Bool {return _storage._nextSortRuleReferenceTrackerOwnerUid != nil}
+  public var hasNextSortRuleReferenceTrackerOwnerUid: Bool {_storage._nextSortRuleReferenceTrackerOwnerUid != nil}
   /// Clears the value of `nextSortRuleReferenceTrackerOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearNextSortRuleReferenceTrackerOwnerUid() {_uniqueStorage()._nextSortRuleReferenceTrackerOwnerUid = nil}
 
   public var mergeOwnerUid: TSP_UUID {
-    get {return _storage._mergeOwnerUid ?? TSP_UUID()}
+    get {_storage._mergeOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._mergeOwnerUid = newValue}
   }
   /// Returns true if `mergeOwnerUid` has been explicitly set.
-  public var hasMergeOwnerUid: Bool {return _storage._mergeOwnerUid != nil}
+  public var hasMergeOwnerUid: Bool {_storage._mergeOwnerUid != nil}
   /// Clears the value of `mergeOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearMergeOwnerUid() {_uniqueStorage()._mergeOwnerUid = nil}
 
   public var nextMergeOwnerUid: TSP_UUID {
-    get {return _storage._nextMergeOwnerUid ?? TSP_UUID()}
+    get {_storage._nextMergeOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._nextMergeOwnerUid = newValue}
   }
   /// Returns true if `nextMergeOwnerUid` has been explicitly set.
-  public var hasNextMergeOwnerUid: Bool {return _storage._nextMergeOwnerUid != nil}
+  public var hasNextMergeOwnerUid: Bool {_storage._nextMergeOwnerUid != nil}
   /// Clears the value of `nextMergeOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearNextMergeOwnerUid() {_uniqueStorage()._nextMergeOwnerUid = nil}
 
   public var categoryAggregatesOwnerUid: TSP_UUID {
-    get {return _storage._categoryAggregatesOwnerUid ?? TSP_UUID()}
+    get {_storage._categoryAggregatesOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._categoryAggregatesOwnerUid = newValue}
   }
   /// Returns true if `categoryAggregatesOwnerUid` has been explicitly set.
-  public var hasCategoryAggregatesOwnerUid: Bool {return _storage._categoryAggregatesOwnerUid != nil}
+  public var hasCategoryAggregatesOwnerUid: Bool {_storage._categoryAggregatesOwnerUid != nil}
   /// Clears the value of `categoryAggregatesOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryAggregatesOwnerUid() {_uniqueStorage()._categoryAggregatesOwnerUid = nil}
 
   public var nextCategoryAggregatesOwnerUid: TSP_UUID {
-    get {return _storage._nextCategoryAggregatesOwnerUid ?? TSP_UUID()}
+    get {_storage._nextCategoryAggregatesOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._nextCategoryAggregatesOwnerUid = newValue}
   }
   /// Returns true if `nextCategoryAggregatesOwnerUid` has been explicitly set.
-  public var hasNextCategoryAggregatesOwnerUid: Bool {return _storage._nextCategoryAggregatesOwnerUid != nil}
+  public var hasNextCategoryAggregatesOwnerUid: Bool {_storage._nextCategoryAggregatesOwnerUid != nil}
   /// Clears the value of `nextCategoryAggregatesOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearNextCategoryAggregatesOwnerUid() {_uniqueStorage()._nextCategoryAggregatesOwnerUid = nil}
 
   public var groupByUid: TSP_UUID {
-    get {return _storage._groupByUid ?? TSP_UUID()}
+    get {_storage._groupByUid ?? TSP_UUID()}
     set {_uniqueStorage()._groupByUid = newValue}
   }
   /// Returns true if `groupByUid` has been explicitly set.
-  public var hasGroupByUid: Bool {return _storage._groupByUid != nil}
+  public var hasGroupByUid: Bool {_storage._groupByUid != nil}
   /// Clears the value of `groupByUid`. Subsequent reads from it will return its default value.
   public mutating func clearGroupByUid() {_uniqueStorage()._groupByUid = nil}
 
   public var nextGroupByUid: TSP_UUID {
-    get {return _storage._nextGroupByUid ?? TSP_UUID()}
+    get {_storage._nextGroupByUid ?? TSP_UUID()}
     set {_uniqueStorage()._nextGroupByUid = newValue}
   }
   /// Returns true if `nextGroupByUid` has been explicitly set.
-  public var hasNextGroupByUid: Bool {return _storage._nextGroupByUid != nil}
+  public var hasNextGroupByUid: Bool {_storage._nextGroupByUid != nil}
   /// Clears the value of `nextGroupByUid`. Subsequent reads from it will return its default value.
   public mutating func clearNextGroupByUid() {_uniqueStorage()._nextGroupByUid = nil}
 
   public var pencilAnnotationOwnerUid: TSP_UUID {
-    get {return _storage._pencilAnnotationOwnerUid ?? TSP_UUID()}
+    get {_storage._pencilAnnotationOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._pencilAnnotationOwnerUid = newValue}
   }
   /// Returns true if `pencilAnnotationOwnerUid` has been explicitly set.
-  public var hasPencilAnnotationOwnerUid: Bool {return _storage._pencilAnnotationOwnerUid != nil}
+  public var hasPencilAnnotationOwnerUid: Bool {_storage._pencilAnnotationOwnerUid != nil}
   /// Clears the value of `pencilAnnotationOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearPencilAnnotationOwnerUid() {_uniqueStorage()._pencilAnnotationOwnerUid = nil}
 
   public var nextPencilAnnotationOwnerUid: TSP_UUID {
-    get {return _storage._nextPencilAnnotationOwnerUid ?? TSP_UUID()}
+    get {_storage._nextPencilAnnotationOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._nextPencilAnnotationOwnerUid = newValue}
   }
   /// Returns true if `nextPencilAnnotationOwnerUid` has been explicitly set.
-  public var hasNextPencilAnnotationOwnerUid: Bool {return _storage._nextPencilAnnotationOwnerUid != nil}
+  public var hasNextPencilAnnotationOwnerUid: Bool {_storage._nextPencilAnnotationOwnerUid != nil}
   /// Clears the value of `nextPencilAnnotationOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearNextPencilAnnotationOwnerUid() {_uniqueStorage()._nextPencilAnnotationOwnerUid = nil}
 
@@ -5531,7 +5291,7 @@ public struct TSCE_OwnerUIDMapperArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCE_RewriteTableUIDInfoArchive: Sendable {
+public nonisolated struct TSCE_RewriteTableUIDInfoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -5540,26 +5300,26 @@ public struct TSCE_RewriteTableUIDInfoArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct TableUIDMapEntryArchive: Sendable {
+  public nonisolated struct TableUIDMapEntryArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var prevTableUid: TSP_UUID {
-      get {return _prevTableUid ?? TSP_UUID()}
+      get {_prevTableUid ?? TSP_UUID()}
       set {_prevTableUid = newValue}
     }
     /// Returns true if `prevTableUid` has been explicitly set.
-    public var hasPrevTableUid: Bool {return self._prevTableUid != nil}
+    public var hasPrevTableUid: Bool {self._prevTableUid != nil}
     /// Clears the value of `prevTableUid`. Subsequent reads from it will return its default value.
     public mutating func clearPrevTableUid() {self._prevTableUid = nil}
 
     public var newTableUid: TSP_UUID {
-      get {return _newTableUid ?? TSP_UUID()}
+      get {_newTableUid ?? TSP_UUID()}
       set {_newTableUid = newValue}
     }
     /// Returns true if `newTableUid` has been explicitly set.
-    public var hasNewTableUid: Bool {return self._newTableUid != nil}
+    public var hasNewTableUid: Bool {self._newTableUid != nil}
     /// Clears the value of `newTableUid`. Subsequent reads from it will return its default value.
     public mutating func clearNewTableUid() {self._newTableUid = nil}
 
@@ -5574,62 +5334,62 @@ public struct TSCE_RewriteTableUIDInfoArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_GroupByChangeArchive: Sendable {
+public nonisolated struct TSCE_GroupByChangeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var changeType: TSCE_GroupByChangeArchive.ChangeType {
-    get {return _changeType ?? .none}
+    get {_changeType ?? .none}
     set {_changeType = newValue}
   }
   /// Returns true if `changeType` has been explicitly set.
-  public var hasChangeType: Bool {return self._changeType != nil}
+  public var hasChangeType: Bool {self._changeType != nil}
   /// Clears the value of `changeType`. Subsequent reads from it will return its default value.
   public mutating func clearChangeType() {self._changeType = nil}
 
   public var groupByUid: TSP_UUID {
-    get {return _groupByUid ?? TSP_UUID()}
+    get {_groupByUid ?? TSP_UUID()}
     set {_groupByUid = newValue}
   }
   /// Returns true if `groupByUid` has been explicitly set.
-  public var hasGroupByUid: Bool {return self._groupByUid != nil}
+  public var hasGroupByUid: Bool {self._groupByUid != nil}
   /// Clears the value of `groupByUid`. Subsequent reads from it will return its default value.
   public mutating func clearGroupByUid() {self._groupByUid = nil}
 
   public var previousLevel: UInt32 {
-    get {return _previousLevel ?? 0}
+    get {_previousLevel ?? 0}
     set {_previousLevel = newValue}
   }
   /// Returns true if `previousLevel` has been explicitly set.
-  public var hasPreviousLevel: Bool {return self._previousLevel != nil}
+  public var hasPreviousLevel: Bool {self._previousLevel != nil}
   /// Clears the value of `previousLevel`. Subsequent reads from it will return its default value.
   public mutating func clearPreviousLevel() {self._previousLevel = nil}
 
   public var updatedLevel: UInt32 {
-    get {return _updatedLevel ?? 0}
+    get {_updatedLevel ?? 0}
     set {_updatedLevel = newValue}
   }
   /// Returns true if `updatedLevel` has been explicitly set.
-  public var hasUpdatedLevel: Bool {return self._updatedLevel != nil}
+  public var hasUpdatedLevel: Bool {self._updatedLevel != nil}
   /// Clears the value of `updatedLevel`. Subsequent reads from it will return its default value.
   public mutating func clearUpdatedLevel() {self._updatedLevel = nil}
 
   public var previousToUpdatedMap: TSP_UUIDMapArchive {
-    get {return _previousToUpdatedMap ?? TSP_UUIDMapArchive()}
+    get {_previousToUpdatedMap ?? TSP_UUIDMapArchive()}
     set {_previousToUpdatedMap = newValue}
   }
   /// Returns true if `previousToUpdatedMap` has been explicitly set.
-  public var hasPreviousToUpdatedMap: Bool {return self._previousToUpdatedMap != nil}
+  public var hasPreviousToUpdatedMap: Bool {self._previousToUpdatedMap != nil}
   /// Clears the value of `previousToUpdatedMap`. Subsequent reads from it will return its default value.
   public mutating func clearPreviousToUpdatedMap() {self._previousToUpdatedMap = nil}
 
   public var updatedToPreviousMap: TSP_UUIDMapArchive {
-    get {return _updatedToPreviousMap ?? TSP_UUIDMapArchive()}
+    get {_updatedToPreviousMap ?? TSP_UUIDMapArchive()}
     set {_updatedToPreviousMap = newValue}
   }
   /// Returns true if `updatedToPreviousMap` has been explicitly set.
-  public var hasUpdatedToPreviousMap: Bool {return self._updatedToPreviousMap != nil}
+  public var hasUpdatedToPreviousMap: Bool {self._updatedToPreviousMap != nil}
   /// Clears the value of `updatedToPreviousMap`. Subsequent reads from it will return its default value.
   public mutating func clearUpdatedToPreviousMap() {self._updatedToPreviousMap = nil}
 
@@ -5639,67 +5399,41 @@ public struct TSCE_GroupByChangeArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ChangeType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case none // = 0
-    case groupValueChange // = 1
-    case groupDefinitionChange // = 2
-    case removeGroupLevel // = 3
-    case addGroupLevel // = 4
-    case promote // = 5
-    case demote // = 6
+  public nonisolated enum ChangeType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case none = 0
+    case groupValueChange = 1
+    case groupDefinitionChange = 2
+    case removeGroupLevel = 3
+    case addGroupLevel = 4
+    case promote = 5
+    case demote = 6
 
     public init() {
       self = .none
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .none
-      case 1: self = .groupValueChange
-      case 2: self = .groupDefinitionChange
-      case 3: self = .removeGroupLevel
-      case 4: self = .addGroupLevel
-      case 5: self = .promote
-      case 6: self = .demote
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .none: return 0
-      case .groupValueChange: return 1
-      case .groupDefinitionChange: return 2
-      case .removeGroupLevel: return 3
-      case .addGroupLevel: return 4
-      case .promote: return 5
-      case .demote: return 6
-      }
-    }
-
   }
 
-  public struct GroupingColumnChangeArchive: Sendable {
+  public nonisolated struct GroupingColumnChangeArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var oldLevel: UInt32 {
-      get {return _oldLevel ?? 0}
+      get {_oldLevel ?? 0}
       set {_oldLevel = newValue}
     }
     /// Returns true if `oldLevel` has been explicitly set.
-    public var hasOldLevel: Bool {return self._oldLevel != nil}
+    public var hasOldLevel: Bool {self._oldLevel != nil}
     /// Clears the value of `oldLevel`. Subsequent reads from it will return its default value.
     public mutating func clearOldLevel() {self._oldLevel = nil}
 
     public var newLevel: UInt32 {
-      get {return _newLevel ?? 0}
+      get {_newLevel ?? 0}
       set {_newLevel = newValue}
     }
     /// Returns true if `newLevel` has been explicitly set.
-    public var hasNewLevel: Bool {return self._newLevel != nil}
+    public var hasNewLevel: Bool {self._newLevel != nil}
     /// Clears the value of `newLevel`. Subsequent reads from it will return its default value.
     public mutating func clearNewLevel() {self._newLevel = nil}
 
@@ -5721,26 +5455,26 @@ public struct TSCE_GroupByChangeArchive: Sendable {
   fileprivate var _updatedToPreviousMap: TSP_UUIDMapArchive? = nil
 }
 
-public struct TSCE_RewriteGroupNodeUIDInfoArchive: Sendable {
+public nonisolated struct TSCE_RewriteGroupNodeUIDInfoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var groupByUid: TSP_UUID {
-    get {return _groupByUid ?? TSP_UUID()}
+    get {_groupByUid ?? TSP_UUID()}
     set {_groupByUid = newValue}
   }
   /// Returns true if `groupByUid` has been explicitly set.
-  public var hasGroupByUid: Bool {return self._groupByUid != nil}
+  public var hasGroupByUid: Bool {self._groupByUid != nil}
   /// Clears the value of `groupByUid`. Subsequent reads from it will return its default value.
   public mutating func clearGroupByUid() {self._groupByUid = nil}
 
   public var groupNodeUidMap: TSP_UUIDMapArchive {
-    get {return _groupNodeUidMap ?? TSP_UUIDMapArchive()}
+    get {_groupNodeUidMap ?? TSP_UUIDMapArchive()}
     set {_groupNodeUidMap = newValue}
   }
   /// Returns true if `groupNodeUidMap` has been explicitly set.
-  public var hasGroupNodeUidMap: Bool {return self._groupNodeUidMap != nil}
+  public var hasGroupNodeUidMap: Bool {self._groupNodeUidMap != nil}
   /// Clears the value of `groupNodeUidMap`. Subsequent reads from it will return its default value.
   public mutating func clearGroupNodeUidMap() {self._groupNodeUidMap = nil}
 
@@ -5752,7 +5486,7 @@ public struct TSCE_RewriteGroupNodeUIDInfoArchive: Sendable {
   fileprivate var _groupNodeUidMap: TSP_UUIDMapArchive? = nil
 }
 
-public struct TSCE_IndexedUidsArchive: Sendable {
+public nonisolated struct TSCE_IndexedUidsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -5761,26 +5495,26 @@ public struct TSCE_IndexedUidsArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct IndexedUid: Sendable {
+  public nonisolated struct IndexedUid: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var uidForIndex: TSP_UUID {
-      get {return _uidForIndex ?? TSP_UUID()}
+      get {_uidForIndex ?? TSP_UUID()}
       set {_uidForIndex = newValue}
     }
     /// Returns true if `uidForIndex` has been explicitly set.
-    public var hasUidForIndex: Bool {return self._uidForIndex != nil}
+    public var hasUidForIndex: Bool {self._uidForIndex != nil}
     /// Clears the value of `uidForIndex`. Subsequent reads from it will return its default value.
     public mutating func clearUidForIndex() {self._uidForIndex = nil}
 
     public var indexForUid: UInt32 {
-      get {return _indexForUid ?? 0}
+      get {_indexForUid ?? 0}
       set {_indexForUid = newValue}
     }
     /// Returns true if `indexForUid` has been explicitly set.
-    public var hasIndexForUid: Bool {return self._indexForUid != nil}
+    public var hasIndexForUid: Bool {self._indexForUid != nil}
     /// Clears the value of `indexForUid`. Subsequent reads from it will return its default value.
     public mutating func clearIndexForUid() {self._indexForUid = nil}
 
@@ -5795,37 +5529,37 @@ public struct TSCE_IndexedUidsArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_RewriteRangeEntryArchive: Sendable {
+public nonisolated struct TSCE_RewriteRangeEntryArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var rangeLocation: UInt32 {
-    get {return _rangeLocation ?? 0}
+    get {_rangeLocation ?? 0}
     set {_rangeLocation = newValue}
   }
   /// Returns true if `rangeLocation` has been explicitly set.
-  public var hasRangeLocation: Bool {return self._rangeLocation != nil}
+  public var hasRangeLocation: Bool {self._rangeLocation != nil}
   /// Clears the value of `rangeLocation`. Subsequent reads from it will return its default value.
   public mutating func clearRangeLocation() {self._rangeLocation = nil}
 
   public var rangeLength: UInt32 {
-    get {return _rangeLength ?? 0}
+    get {_rangeLength ?? 0}
     set {_rangeLength = newValue}
   }
   /// Returns true if `rangeLength` has been explicitly set.
-  public var hasRangeLength: Bool {return self._rangeLength != nil}
+  public var hasRangeLength: Bool {self._rangeLength != nil}
   /// Clears the value of `rangeLength`. Subsequent reads from it will return its default value.
   public mutating func clearRangeLength() {self._rangeLength = nil}
 
   public var rangeUids: [TSP_UUID] = []
 
   public var offset: UInt32 {
-    get {return _offset ?? 0}
+    get {_offset ?? 0}
     set {_offset = newValue}
   }
   /// Returns true if `offset` has been explicitly set.
-  public var hasOffset: Bool {return self._offset != nil}
+  public var hasOffset: Bool {self._offset != nil}
   /// Clears the value of `offset`. Subsequent reads from it will return its default value.
   public mutating func clearOffset() {self._offset = nil}
 
@@ -5838,85 +5572,85 @@ public struct TSCE_RewriteRangeEntryArchive: Sendable {
   fileprivate var _offset: UInt32? = nil
 }
 
-public struct TSCE_ColumnOrRowUuidsInfoArchive: @unchecked Sendable {
+public nonisolated struct TSCE_ColumnOrRowUuidsInfoArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var isRows: Bool {
-    get {return _storage._isRows ?? false}
+    get {_storage._isRows ?? false}
     set {_uniqueStorage()._isRows = newValue}
   }
   /// Returns true if `isRows` has been explicitly set.
-  public var hasIsRows: Bool {return _storage._isRows != nil}
+  public var hasIsRows: Bool {_storage._isRows != nil}
   /// Clears the value of `isRows`. Subsequent reads from it will return its default value.
   public mutating func clearIsRows() {_uniqueStorage()._isRows = nil}
 
   public var tableUid: TSP_UUID {
-    get {return _storage._tableUid ?? TSP_UUID()}
+    get {_storage._tableUid ?? TSP_UUID()}
     set {_uniqueStorage()._tableUid = newValue}
   }
   /// Returns true if `tableUid` has been explicitly set.
-  public var hasTableUid: Bool {return _storage._tableUid != nil}
+  public var hasTableUid: Bool {_storage._tableUid != nil}
   /// Clears the value of `tableUid`. Subsequent reads from it will return its default value.
   public mutating func clearTableUid() {_uniqueStorage()._tableUid = nil}
 
   public var condStyleOwnerUid: TSP_UUID {
-    get {return _storage._condStyleOwnerUid ?? TSP_UUID()}
+    get {_storage._condStyleOwnerUid ?? TSP_UUID()}
     set {_uniqueStorage()._condStyleOwnerUid = newValue}
   }
   /// Returns true if `condStyleOwnerUid` has been explicitly set.
-  public var hasCondStyleOwnerUid: Bool {return _storage._condStyleOwnerUid != nil}
+  public var hasCondStyleOwnerUid: Bool {_storage._condStyleOwnerUid != nil}
   /// Clears the value of `condStyleOwnerUid`. Subsequent reads from it will return its default value.
   public mutating func clearCondStyleOwnerUid() {_uniqueStorage()._condStyleOwnerUid = nil}
 
   public var groupByUid: TSP_UUID {
-    get {return _storage._groupByUid ?? TSP_UUID()}
+    get {_storage._groupByUid ?? TSP_UUID()}
     set {_uniqueStorage()._groupByUid = newValue}
   }
   /// Returns true if `groupByUid` has been explicitly set.
-  public var hasGroupByUid: Bool {return _storage._groupByUid != nil}
+  public var hasGroupByUid: Bool {_storage._groupByUid != nil}
   /// Clears the value of `groupByUid`. Subsequent reads from it will return its default value.
   public mutating func clearGroupByUid() {_uniqueStorage()._groupByUid = nil}
 
   public var uids: TSCE_IndexedUidsArchive {
-    get {return _storage._uids ?? TSCE_IndexedUidsArchive()}
+    get {_storage._uids ?? TSCE_IndexedUidsArchive()}
     set {_uniqueStorage()._uids = newValue}
   }
   /// Returns true if `uids` has been explicitly set.
-  public var hasUids: Bool {return _storage._uids != nil}
+  public var hasUids: Bool {_storage._uids != nil}
   /// Clears the value of `uids`. Subsequent reads from it will return its default value.
   public mutating func clearUids() {_uniqueStorage()._uids = nil}
 
   public var rangeEntries: [TSCE_RewriteRangeEntryArchive] {
-    get {return _storage._rangeEntries}
+    get {_storage._rangeEntries}
     set {_uniqueStorage()._rangeEntries = newValue}
   }
 
   public var tableRange: TSCE_RangeCoordinateArchive {
-    get {return _storage._tableRange ?? TSCE_RangeCoordinateArchive()}
+    get {_storage._tableRange ?? TSCE_RangeCoordinateArchive()}
     set {_uniqueStorage()._tableRange = newValue}
   }
   /// Returns true if `tableRange` has been explicitly set.
-  public var hasTableRange: Bool {return _storage._tableRange != nil}
+  public var hasTableRange: Bool {_storage._tableRange != nil}
   /// Clears the value of `tableRange`. Subsequent reads from it will return its default value.
   public mutating func clearTableRange() {_uniqueStorage()._tableRange = nil}
 
   public var insertAtUid: TSP_UUID {
-    get {return _storage._insertAtUid ?? TSP_UUID()}
+    get {_storage._insertAtUid ?? TSP_UUID()}
     set {_uniqueStorage()._insertAtUid = newValue}
   }
   /// Returns true if `insertAtUid` has been explicitly set.
-  public var hasInsertAtUid: Bool {return _storage._insertAtUid != nil}
+  public var hasInsertAtUid: Bool {_storage._insertAtUid != nil}
   /// Clears the value of `insertAtUid`. Subsequent reads from it will return its default value.
   public mutating func clearInsertAtUid() {_uniqueStorage()._insertAtUid = nil}
 
   public var insertOppositeUid: TSP_UUID {
-    get {return _storage._insertOppositeUid ?? TSP_UUID()}
+    get {_storage._insertOppositeUid ?? TSP_UUID()}
     set {_uniqueStorage()._insertOppositeUid = newValue}
   }
   /// Returns true if `insertOppositeUid` has been explicitly set.
-  public var hasInsertOppositeUid: Bool {return _storage._insertOppositeUid != nil}
+  public var hasInsertOppositeUid: Bool {_storage._insertOppositeUid != nil}
   /// Clears the value of `insertOppositeUid`. Subsequent reads from it will return its default value.
   public mutating func clearInsertOppositeUid() {_uniqueStorage()._insertOppositeUid = nil}
 
@@ -5927,35 +5661,35 @@ public struct TSCE_ColumnOrRowUuidsInfoArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCE_RegionInfoArchive: Sendable {
+public nonisolated struct TSCE_RegionInfoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tableUid: TSP_UUID {
-    get {return _tableUid ?? TSP_UUID()}
+    get {_tableUid ?? TSP_UUID()}
     set {_tableUid = newValue}
   }
   /// Returns true if `tableUid` has been explicitly set.
-  public var hasTableUid: Bool {return self._tableUid != nil}
+  public var hasTableUid: Bool {self._tableUid != nil}
   /// Clears the value of `tableUid`. Subsequent reads from it will return its default value.
   public mutating func clearTableUid() {self._tableUid = nil}
 
   public var columnUids: TSCE_IndexedUidsArchive {
-    get {return _columnUids ?? TSCE_IndexedUidsArchive()}
+    get {_columnUids ?? TSCE_IndexedUidsArchive()}
     set {_columnUids = newValue}
   }
   /// Returns true if `columnUids` has been explicitly set.
-  public var hasColumnUids: Bool {return self._columnUids != nil}
+  public var hasColumnUids: Bool {self._columnUids != nil}
   /// Clears the value of `columnUids`. Subsequent reads from it will return its default value.
   public mutating func clearColumnUids() {self._columnUids = nil}
 
   public var rowUids: TSCE_IndexedUidsArchive {
-    get {return _rowUids ?? TSCE_IndexedUidsArchive()}
+    get {_rowUids ?? TSCE_IndexedUidsArchive()}
     set {_rowUids = newValue}
   }
   /// Returns true if `rowUids` has been explicitly set.
-  public var hasRowUids: Bool {return self._rowUids != nil}
+  public var hasRowUids: Bool {self._rowUids != nil}
   /// Clears the value of `rowUids`. Subsequent reads from it will return its default value.
   public mutating func clearRowUids() {self._rowUids = nil}
 
@@ -5968,62 +5702,62 @@ public struct TSCE_RegionInfoArchive: Sendable {
   fileprivate var _rowUids: TSCE_IndexedUidsArchive? = nil
 }
 
-public struct TSCE_RegionMovedInfoArchive: Sendable {
+public nonisolated struct TSCE_RegionMovedInfoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var srcRegion: TSCE_RegionInfoArchive {
-    get {return _srcRegion ?? TSCE_RegionInfoArchive()}
+    get {_srcRegion ?? TSCE_RegionInfoArchive()}
     set {_srcRegion = newValue}
   }
   /// Returns true if `srcRegion` has been explicitly set.
-  public var hasSrcRegion: Bool {return self._srcRegion != nil}
+  public var hasSrcRegion: Bool {self._srcRegion != nil}
   /// Clears the value of `srcRegion`. Subsequent reads from it will return its default value.
   public mutating func clearSrcRegion() {self._srcRegion = nil}
 
   public var dstRegion: TSCE_RegionInfoArchive {
-    get {return _dstRegion ?? TSCE_RegionInfoArchive()}
+    get {_dstRegion ?? TSCE_RegionInfoArchive()}
     set {_dstRegion = newValue}
   }
   /// Returns true if `dstRegion` has been explicitly set.
-  public var hasDstRegion: Bool {return self._dstRegion != nil}
+  public var hasDstRegion: Bool {self._dstRegion != nil}
   /// Clears the value of `dstRegion`. Subsequent reads from it will return its default value.
   public mutating func clearDstRegion() {self._dstRegion = nil}
 
   public var spanRows: Bool {
-    get {return _spanRows ?? false}
+    get {_spanRows ?? false}
     set {_spanRows = newValue}
   }
   /// Returns true if `spanRows` has been explicitly set.
-  public var hasSpanRows: Bool {return self._spanRows != nil}
+  public var hasSpanRows: Bool {self._spanRows != nil}
   /// Clears the value of `spanRows`. Subsequent reads from it will return its default value.
   public mutating func clearSpanRows() {self._spanRows = nil}
 
   public var spanColumns: Bool {
-    get {return _spanColumns ?? false}
+    get {_spanColumns ?? false}
     set {_spanColumns = newValue}
   }
   /// Returns true if `spanColumns` has been explicitly set.
-  public var hasSpanColumns: Bool {return self._spanColumns != nil}
+  public var hasSpanColumns: Bool {self._spanColumns != nil}
   /// Clears the value of `spanColumns`. Subsequent reads from it will return its default value.
   public mutating func clearSpanColumns() {self._spanColumns = nil}
 
   public var originalSrcRegion: TSCE_RegionInfoArchive {
-    get {return _originalSrcRegion ?? TSCE_RegionInfoArchive()}
+    get {_originalSrcRegion ?? TSCE_RegionInfoArchive()}
     set {_originalSrcRegion = newValue}
   }
   /// Returns true if `originalSrcRegion` has been explicitly set.
-  public var hasOriginalSrcRegion: Bool {return self._originalSrcRegion != nil}
+  public var hasOriginalSrcRegion: Bool {self._originalSrcRegion != nil}
   /// Clears the value of `originalSrcRegion`. Subsequent reads from it will return its default value.
   public mutating func clearOriginalSrcRegion() {self._originalSrcRegion = nil}
 
   public var finalDestTableUid: TSP_UUID {
-    get {return _finalDestTableUid ?? TSP_UUID()}
+    get {_finalDestTableUid ?? TSP_UUID()}
     set {_finalDestTableUid = newValue}
   }
   /// Returns true if `finalDestTableUid` has been explicitly set.
-  public var hasFinalDestTableUid: Bool {return self._finalDestTableUid != nil}
+  public var hasFinalDestTableUid: Bool {self._finalDestTableUid != nil}
   /// Clears the value of `finalDestTableUid`. Subsequent reads from it will return its default value.
   public mutating func clearFinalDestTableUid() {self._finalDestTableUid = nil}
 
@@ -6039,26 +5773,26 @@ public struct TSCE_RegionMovedInfoArchive: Sendable {
   fileprivate var _finalDestTableUid: TSP_UUID? = nil
 }
 
-public struct TSCE_MergeSourceArchive: Sendable {
+public nonisolated struct TSCE_MergeSourceArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var coordColumn: UInt32 {
-    get {return _coordColumn ?? 0}
+    get {_coordColumn ?? 0}
     set {_coordColumn = newValue}
   }
   /// Returns true if `coordColumn` has been explicitly set.
-  public var hasCoordColumn: Bool {return self._coordColumn != nil}
+  public var hasCoordColumn: Bool {self._coordColumn != nil}
   /// Clears the value of `coordColumn`. Subsequent reads from it will return its default value.
   public mutating func clearCoordColumn() {self._coordColumn = nil}
 
   public var coordRow: UInt32 {
-    get {return _coordRow ?? 0}
+    get {_coordRow ?? 0}
     set {_coordRow = newValue}
   }
   /// Returns true if `coordRow` has been explicitly set.
-  public var hasCoordRow: Bool {return self._coordRow != nil}
+  public var hasCoordRow: Bool {self._coordRow != nil}
   /// Clears the value of `coordRow`. Subsequent reads from it will return its default value.
   public mutating func clearCoordRow() {self._coordRow = nil}
 
@@ -6070,17 +5804,17 @@ public struct TSCE_MergeSourceArchive: Sendable {
   fileprivate var _coordRow: UInt32? = nil
 }
 
-public struct TSCE_HauntedOwnerArchive: Sendable {
+public nonisolated struct TSCE_HauntedOwnerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var ownerUid: TSP_UUID {
-    get {return _ownerUid ?? TSP_UUID()}
+    get {_ownerUid ?? TSP_UUID()}
     set {_ownerUid = newValue}
   }
   /// Returns true if `ownerUid` has been explicitly set.
-  public var hasOwnerUid: Bool {return self._ownerUid != nil}
+  public var hasOwnerUid: Bool {self._ownerUid != nil}
   /// Clears the value of `ownerUid`. Subsequent reads from it will return its default value.
   public mutating func clearOwnerUid() {self._ownerUid = nil}
 
@@ -6091,17 +5825,17 @@ public struct TSCE_HauntedOwnerArchive: Sendable {
   fileprivate var _ownerUid: TSP_UUID? = nil
 }
 
-public struct TSCE_SpillOwnerArchive: Sendable {
+public nonisolated struct TSCE_SpillOwnerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var ownerUid: TSP_UUID {
-    get {return _ownerUid ?? TSP_UUID()}
+    get {_ownerUid ?? TSP_UUID()}
     set {_ownerUid = newValue}
   }
   /// Returns true if `ownerUid` has been explicitly set.
-  public var hasOwnerUid: Bool {return self._ownerUid != nil}
+  public var hasOwnerUid: Bool {self._ownerUid != nil}
   /// Clears the value of `ownerUid`. Subsequent reads from it will return its default value.
   public mutating func clearOwnerUid() {self._ownerUid = nil}
 
@@ -6112,35 +5846,35 @@ public struct TSCE_SpillOwnerArchive: Sendable {
   fileprivate var _ownerUid: TSP_UUID? = nil
 }
 
-public struct TSCE_CellCoordinateArchive: Sendable {
+public nonisolated struct TSCE_CellCoordinateArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var packedData: UInt32 {
-    get {return _packedData ?? 0}
+    get {_packedData ?? 0}
     set {_packedData = newValue}
   }
   /// Returns true if `packedData` has been explicitly set.
-  public var hasPackedData: Bool {return self._packedData != nil}
+  public var hasPackedData: Bool {self._packedData != nil}
   /// Clears the value of `packedData`. Subsequent reads from it will return its default value.
   public mutating func clearPackedData() {self._packedData = nil}
 
   public var column: UInt32 {
-    get {return _column ?? 0}
+    get {_column ?? 0}
     set {_column = newValue}
   }
   /// Returns true if `column` has been explicitly set.
-  public var hasColumn: Bool {return self._column != nil}
+  public var hasColumn: Bool {self._column != nil}
   /// Clears the value of `column`. Subsequent reads from it will return its default value.
   public mutating func clearColumn() {self._column = nil}
 
   public var row: UInt32 {
-    get {return _row ?? 0}
+    get {_row ?? 0}
     set {_row = newValue}
   }
   /// Returns true if `row` has been explicitly set.
-  public var hasRow: Bool {return self._row != nil}
+  public var hasRow: Bool {self._row != nil}
   /// Clears the value of `row`. Subsequent reads from it will return its default value.
   public mutating func clearRow() {self._row = nil}
 
@@ -6153,7 +5887,7 @@ public struct TSCE_CellCoordinateArchive: Sendable {
   fileprivate var _row: UInt32? = nil
 }
 
-public struct TSCE_CellCoordinateVectorArchive: Sendable {
+public nonisolated struct TSCE_CellCoordinateVectorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -6165,26 +5899,26 @@ public struct TSCE_CellCoordinateVectorArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_ExpandedCellRefObjectPairArchive: Sendable {
+public nonisolated struct TSCE_ExpandedCellRefObjectPairArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var cellRef: TSCE_CellReferenceArchive {
-    get {return _cellRef ?? TSCE_CellReferenceArchive()}
+    get {_cellRef ?? TSCE_CellReferenceArchive()}
     set {_cellRef = newValue}
   }
   /// Returns true if `cellRef` has been explicitly set.
-  public var hasCellRef: Bool {return self._cellRef != nil}
+  public var hasCellRef: Bool {self._cellRef != nil}
   /// Clears the value of `cellRef`. Subsequent reads from it will return its default value.
   public mutating func clearCellRef() {self._cellRef = nil}
 
   public var object: TSP_Reference {
-    get {return _object ?? TSP_Reference()}
+    get {_object ?? TSP_Reference()}
     set {_object = newValue}
   }
   /// Returns true if `object` has been explicitly set.
-  public var hasObject: Bool {return self._object != nil}
+  public var hasObject: Bool {self._object != nil}
   /// Clears the value of `object`. Subsequent reads from it will return its default value.
   public mutating func clearObject() {self._object = nil}
 
@@ -6196,7 +5930,7 @@ public struct TSCE_ExpandedCellRefObjectPairArchive: Sendable {
   fileprivate var _object: TSP_Reference? = nil
 }
 
-public struct TSCE_ExpandedCellRefObjectMapArchive: Sendable {
+public nonisolated struct TSCE_ExpandedCellRefObjectMapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -6208,44 +5942,44 @@ public struct TSCE_ExpandedCellRefObjectMapArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_FormulaAtCoordArchive: @unchecked Sendable {
+public nonisolated struct TSCE_FormulaAtCoordArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var column: UInt32 {
-    get {return _storage._column ?? 0}
+    get {_storage._column ?? 0}
     set {_uniqueStorage()._column = newValue}
   }
   /// Returns true if `column` has been explicitly set.
-  public var hasColumn: Bool {return _storage._column != nil}
+  public var hasColumn: Bool {_storage._column != nil}
   /// Clears the value of `column`. Subsequent reads from it will return its default value.
   public mutating func clearColumn() {_uniqueStorage()._column = nil}
 
   public var row: UInt32 {
-    get {return _storage._row ?? 0}
+    get {_storage._row ?? 0}
     set {_uniqueStorage()._row = newValue}
   }
   /// Returns true if `row` has been explicitly set.
-  public var hasRow: Bool {return _storage._row != nil}
+  public var hasRow: Bool {_storage._row != nil}
   /// Clears the value of `row`. Subsequent reads from it will return its default value.
   public mutating func clearRow() {_uniqueStorage()._row = nil}
 
   public var formula: TSCE_FormulaArchive {
-    get {return _storage._formula ?? TSCE_FormulaArchive()}
+    get {_storage._formula ?? TSCE_FormulaArchive()}
     set {_uniqueStorage()._formula = newValue}
   }
   /// Returns true if `formula` has been explicitly set.
-  public var hasFormula: Bool {return _storage._formula != nil}
+  public var hasFormula: Bool {_storage._formula != nil}
   /// Clears the value of `formula`. Subsequent reads from it will return its default value.
   public mutating func clearFormula() {_uniqueStorage()._formula = nil}
 
   public var repeatPreviousFormula: Bool {
-    get {return _storage._repeatPreviousFormula ?? false}
+    get {_storage._repeatPreviousFormula ?? false}
     set {_uniqueStorage()._repeatPreviousFormula = newValue}
   }
   /// Returns true if `repeatPreviousFormula` has been explicitly set.
-  public var hasRepeatPreviousFormula: Bool {return _storage._repeatPreviousFormula != nil}
+  public var hasRepeatPreviousFormula: Bool {_storage._repeatPreviousFormula != nil}
   /// Clears the value of `repeatPreviousFormula`. Subsequent reads from it will return its default value.
   public mutating func clearRepeatPreviousFormula() {_uniqueStorage()._repeatPreviousFormula = nil}
 
@@ -6256,26 +5990,26 @@ public struct TSCE_FormulaAtCoordArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCE_FormulaCoordPairsByOwnerArchive: Sendable {
+public nonisolated struct TSCE_FormulaCoordPairsByOwnerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var ownerKind: UInt32 {
-    get {return _ownerKind ?? 0}
+    get {_ownerKind ?? 0}
     set {_ownerKind = newValue}
   }
   /// Returns true if `ownerKind` has been explicitly set.
-  public var hasOwnerKind: Bool {return self._ownerKind != nil}
+  public var hasOwnerKind: Bool {self._ownerKind != nil}
   /// Clears the value of `ownerKind`. Subsequent reads from it will return its default value.
   public mutating func clearOwnerKind() {self._ownerKind = nil}
 
   public var ownerUid: TSP_UUID {
-    get {return _ownerUid ?? TSP_UUID()}
+    get {_ownerUid ?? TSP_UUID()}
     set {_ownerUid = newValue}
   }
   /// Returns true if `ownerUid` has been explicitly set.
-  public var hasOwnerUid: Bool {return self._ownerUid != nil}
+  public var hasOwnerUid: Bool {self._ownerUid != nil}
   /// Clears the value of `ownerUid`. Subsequent reads from it will return its default value.
   public mutating func clearOwnerUid() {self._ownerUid = nil}
 
@@ -6289,7 +6023,7 @@ public struct TSCE_FormulaCoordPairsByOwnerArchive: Sendable {
   fileprivate var _ownerUid: TSP_UUID? = nil
 }
 
-public struct TSCE_FormulasForUndoArchive: Sendable {
+public nonisolated struct TSCE_FormulasForUndoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -6301,26 +6035,26 @@ public struct TSCE_FormulasForUndoArchive: Sendable {
   public init() {}
 }
 
-public struct TSCE_FormulaRewriteCommandArchive: Sendable {
+public nonisolated struct TSCE_FormulaRewriteCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tableRewriteCommand: TSP_Reference {
-    get {return _tableRewriteCommand ?? TSP_Reference()}
+    get {_tableRewriteCommand ?? TSP_Reference()}
     set {_tableRewriteCommand = newValue}
   }
   /// Returns true if `tableRewriteCommand` has been explicitly set.
-  public var hasTableRewriteCommand: Bool {return self._tableRewriteCommand != nil}
+  public var hasTableRewriteCommand: Bool {self._tableRewriteCommand != nil}
   /// Clears the value of `tableRewriteCommand`. Subsequent reads from it will return its default value.
   public mutating func clearTableRewriteCommand() {self._tableRewriteCommand = nil}
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -6332,26 +6066,26 @@ public struct TSCE_FormulaRewriteCommandArchive: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSCE_TrackedReferenceArchive: Sendable {
+public nonisolated struct TSCE_TrackedReferenceArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var ast: TSCE_ASTNodeArrayArchive {
-    get {return _ast ?? TSCE_ASTNodeArrayArchive()}
+    get {_ast ?? TSCE_ASTNodeArrayArchive()}
     set {_ast = newValue}
   }
   /// Returns true if `ast` has been explicitly set.
-  public var hasAst: Bool {return self._ast != nil}
+  public var hasAst: Bool {self._ast != nil}
   /// Clears the value of `ast`. Subsequent reads from it will return its default value.
   public mutating func clearAst() {self._ast = nil}
 
   public var formulaID: UInt32 {
-    get {return _formulaID ?? 0}
+    get {_formulaID ?? 0}
     set {_formulaID = newValue}
   }
   /// Returns true if `formulaID` has been explicitly set.
-  public var hasFormulaID: Bool {return self._formulaID != nil}
+  public var hasFormulaID: Bool {self._formulaID != nil}
   /// Clears the value of `formulaID`. Subsequent reads from it will return its default value.
   public mutating func clearFormulaID() {self._formulaID = nil}
 
@@ -6363,35 +6097,35 @@ public struct TSCE_TrackedReferenceArchive: Sendable {
   fileprivate var _formulaID: UInt32? = nil
 }
 
-public struct TSCE_ExpandedTrackedReferenceArchive: Sendable {
+public nonisolated struct TSCE_ExpandedTrackedReferenceArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var ast: TSCE_ASTNodeArrayArchive {
-    get {return _ast ?? TSCE_ASTNodeArrayArchive()}
+    get {_ast ?? TSCE_ASTNodeArrayArchive()}
     set {_ast = newValue}
   }
   /// Returns true if `ast` has been explicitly set.
-  public var hasAst: Bool {return self._ast != nil}
+  public var hasAst: Bool {self._ast != nil}
   /// Clears the value of `ast`. Subsequent reads from it will return its default value.
   public mutating func clearAst() {self._ast = nil}
 
   public var formulaColumn: UInt32 {
-    get {return _formulaColumn ?? 0}
+    get {_formulaColumn ?? 0}
     set {_formulaColumn = newValue}
   }
   /// Returns true if `formulaColumn` has been explicitly set.
-  public var hasFormulaColumn: Bool {return self._formulaColumn != nil}
+  public var hasFormulaColumn: Bool {self._formulaColumn != nil}
   /// Clears the value of `formulaColumn`. Subsequent reads from it will return its default value.
   public mutating func clearFormulaColumn() {self._formulaColumn = nil}
 
   public var formulaRow: UInt32 {
-    get {return _formulaRow ?? 0}
+    get {_formulaRow ?? 0}
     set {_formulaRow = newValue}
   }
   /// Returns true if `formulaRow` has been explicitly set.
-  public var hasFormulaRow: Bool {return self._formulaRow != nil}
+  public var hasFormulaRow: Bool {self._formulaRow != nil}
   /// Clears the value of `formulaRow`. Subsequent reads from it will return its default value.
   public mutating func clearFormulaRow() {self._formulaRow = nil}
 
@@ -6404,17 +6138,17 @@ public struct TSCE_ExpandedTrackedReferenceArchive: Sendable {
   fileprivate var _formulaRow: UInt32? = nil
 }
 
-public struct TSCE_TrackedReferenceStoreArchive: Sendable {
+public nonisolated struct TSCE_TrackedReferenceStoreArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var uuid: TSP_CFUUIDArchive {
-    get {return _uuid ?? TSP_CFUUIDArchive()}
+    get {_uuid ?? TSP_CFUUIDArchive()}
     set {_uuid = newValue}
   }
   /// Returns true if `uuid` has been explicitly set.
-  public var hasUuid: Bool {return self._uuid != nil}
+  public var hasUuid: Bool {self._uuid != nil}
   /// Clears the value of `uuid`. Subsequent reads from it will return its default value.
   public mutating func clearUuid() {self._uuid = nil}
 
@@ -6432,62 +6166,62 @@ public struct TSCE_TrackedReferenceStoreArchive: Sendable {
   fileprivate var _uuid: TSP_CFUUIDArchive? = nil
 }
 
-public struct TSCE_ViewTractRefArchive: Sendable {
+public nonisolated struct TSCE_ViewTractRefArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tableUid: TSP_UUID {
-    get {return _tableUid ?? TSP_UUID()}
+    get {_tableUid ?? TSP_UUID()}
     set {_tableUid = newValue}
   }
   /// Returns true if `tableUid` has been explicitly set.
-  public var hasTableUid: Bool {return self._tableUid != nil}
+  public var hasTableUid: Bool {self._tableUid != nil}
   /// Clears the value of `tableUid`. Subsequent reads from it will return its default value.
   public mutating func clearTableUid() {self._tableUid = nil}
 
   public var uidTract: TSCE_ASTNodeArrayArchive.ASTUidTract {
-    get {return _uidTract ?? TSCE_ASTNodeArrayArchive.ASTUidTract()}
+    get {_uidTract ?? TSCE_ASTNodeArrayArchive.ASTUidTract()}
     set {_uidTract = newValue}
   }
   /// Returns true if `uidTract` has been explicitly set.
-  public var hasUidTract: Bool {return self._uidTract != nil}
+  public var hasUidTract: Bool {self._uidTract != nil}
   /// Clears the value of `uidTract`. Subsequent reads from it will return its default value.
   public mutating func clearUidTract() {self._uidTract = nil}
 
   public var preserveFlags: TSCE_PreserveColumnRowFlagsArchive {
-    get {return _preserveFlags ?? TSCE_PreserveColumnRowFlagsArchive()}
+    get {_preserveFlags ?? TSCE_PreserveColumnRowFlagsArchive()}
     set {_preserveFlags = newValue}
   }
   /// Returns true if `preserveFlags` has been explicitly set.
-  public var hasPreserveFlags: Bool {return self._preserveFlags != nil}
+  public var hasPreserveFlags: Bool {self._preserveFlags != nil}
   /// Clears the value of `preserveFlags`. Subsequent reads from it will return its default value.
   public mutating func clearPreserveFlags() {self._preserveFlags = nil}
 
   public var aggIndexLevel: UInt32 {
-    get {return _aggIndexLevel ?? 0}
+    get {_aggIndexLevel ?? 0}
     set {_aggIndexLevel = newValue}
   }
   /// Returns true if `aggIndexLevel` has been explicitly set.
-  public var hasAggIndexLevel: Bool {return self._aggIndexLevel != nil}
+  public var hasAggIndexLevel: Bool {self._aggIndexLevel != nil}
   /// Clears the value of `aggIndexLevel`. Subsequent reads from it will return its default value.
   public mutating func clearAggIndexLevel() {self._aggIndexLevel = nil}
 
   public var columnGroupLevel: Int32 {
-    get {return _columnGroupLevel ?? 0}
+    get {_columnGroupLevel ?? 0}
     set {_columnGroupLevel = newValue}
   }
   /// Returns true if `columnGroupLevel` has been explicitly set.
-  public var hasColumnGroupLevel: Bool {return self._columnGroupLevel != nil}
+  public var hasColumnGroupLevel: Bool {self._columnGroupLevel != nil}
   /// Clears the value of `columnGroupLevel`. Subsequent reads from it will return its default value.
   public mutating func clearColumnGroupLevel() {self._columnGroupLevel = nil}
 
   public var rowGroupLevel: Int32 {
-    get {return _rowGroupLevel ?? 0}
+    get {_rowGroupLevel ?? 0}
     set {_rowGroupLevel = newValue}
   }
   /// Returns true if `rowGroupLevel` has been explicitly set.
-  public var hasRowGroupLevel: Bool {return self._rowGroupLevel != nil}
+  public var hasRowGroupLevel: Bool {self._rowGroupLevel != nil}
   /// Clears the value of `rowGroupLevel`. Subsequent reads from it will return its default value.
   public mutating func clearRowGroupLevel() {self._rowGroupLevel = nil}
 
@@ -6503,35 +6237,35 @@ public struct TSCE_ViewTractRefArchive: Sendable {
   fileprivate var _rowGroupLevel: Int32? = nil
 }
 
-public struct TSCE_BooleanCellValueArchive: Sendable {
+public nonisolated struct TSCE_BooleanCellValueArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var value: Bool {
-    get {return _value ?? false}
+    get {_value ?? false}
     set {_value = newValue}
   }
   /// Returns true if `value` has been explicitly set.
-  public var hasValue: Bool {return self._value != nil}
+  public var hasValue: Bool {self._value != nil}
   /// Clears the value of `value`. Subsequent reads from it will return its default value.
   public mutating func clearValue() {self._value = nil}
 
   public var format: TSK_FormatStructArchive {
-    get {return _format ?? TSK_FormatStructArchive()}
+    get {_format ?? TSK_FormatStructArchive()}
     set {_format = newValue}
   }
   /// Returns true if `format` has been explicitly set.
-  public var hasFormat: Bool {return self._format != nil}
+  public var hasFormat: Bool {self._format != nil}
   /// Clears the value of `format`. Subsequent reads from it will return its default value.
   public mutating func clearFormat() {self._format = nil}
 
   public var formatIsExplicit: Bool {
-    get {return _formatIsExplicit ?? false}
+    get {_formatIsExplicit ?? false}
     set {_formatIsExplicit = newValue}
   }
   /// Returns true if `formatIsExplicit` has been explicitly set.
-  public var hasFormatIsExplicit: Bool {return self._formatIsExplicit != nil}
+  public var hasFormatIsExplicit: Bool {self._formatIsExplicit != nil}
   /// Clears the value of `formatIsExplicit`. Subsequent reads from it will return its default value.
   public mutating func clearFormatIsExplicit() {self._formatIsExplicit = nil}
 
@@ -6544,45 +6278,45 @@ public struct TSCE_BooleanCellValueArchive: Sendable {
   fileprivate var _formatIsExplicit: Bool? = nil
 }
 
-public struct TSCE_DateCellValueArchive: Sendable {
+public nonisolated struct TSCE_DateCellValueArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var value: Double {
-    get {return _value ?? 0}
+    get {_value ?? 0}
     set {_value = newValue}
   }
   /// Returns true if `value` has been explicitly set.
-  public var hasValue: Bool {return self._value != nil}
+  public var hasValue: Bool {self._value != nil}
   /// Clears the value of `value`. Subsequent reads from it will return its default value.
   public mutating func clearValue() {self._value = nil}
 
   public var format: TSK_FormatStructArchive {
-    get {return _format ?? TSK_FormatStructArchive()}
+    get {_format ?? TSK_FormatStructArchive()}
     set {_format = newValue}
   }
   /// Returns true if `format` has been explicitly set.
-  public var hasFormat: Bool {return self._format != nil}
+  public var hasFormat: Bool {self._format != nil}
   /// Clears the value of `format`. Subsequent reads from it will return its default value.
   public mutating func clearFormat() {self._format = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var formatIsImplicit: Bool {
-    get {return _formatIsImplicit ?? false}
+    get {_formatIsImplicit ?? false}
     set {_formatIsImplicit = newValue}
   }
   /// Returns true if `formatIsImplicit` has been explicitly set.
-  public var hasFormatIsImplicit: Bool {return self._formatIsImplicit != nil}
+  public var hasFormatIsImplicit: Bool {self._formatIsImplicit != nil}
   /// Clears the value of `formatIsImplicit`. Subsequent reads from it will return its default value.
   public mutating func clearFormatIsImplicit() {self._formatIsImplicit = nil}
 
   public var formatIsExplicit: Bool {
-    get {return _formatIsExplicit ?? false}
+    get {_formatIsExplicit ?? false}
     set {_formatIsExplicit = newValue}
   }
   /// Returns true if `formatIsExplicit` has been explicitly set.
-  public var hasFormatIsExplicit: Bool {return self._formatIsExplicit != nil}
+  public var hasFormatIsExplicit: Bool {self._formatIsExplicit != nil}
   /// Clears the value of `formatIsExplicit`. Subsequent reads from it will return its default value.
   public mutating func clearFormatIsExplicit() {self._formatIsExplicit = nil}
 
@@ -6596,81 +6330,81 @@ public struct TSCE_DateCellValueArchive: Sendable {
   fileprivate var _formatIsExplicit: Bool? = nil
 }
 
-public struct TSCE_NumberCellValueArchive: Sendable {
+public nonisolated struct TSCE_NumberCellValueArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var value: Double {
-    get {return _value ?? 0}
+    get {_value ?? 0}
     set {_value = newValue}
   }
   /// Returns true if `value` has been explicitly set.
-  public var hasValue: Bool {return self._value != nil}
+  public var hasValue: Bool {self._value != nil}
   /// Clears the value of `value`. Subsequent reads from it will return its default value.
   public mutating func clearValue() {self._value = nil}
 
   public var unitIndex: Int32 {
-    get {return _unitIndex ?? 0}
+    get {_unitIndex ?? 0}
     set {_unitIndex = newValue}
   }
   /// Returns true if `unitIndex` has been explicitly set.
-  public var hasUnitIndex: Bool {return self._unitIndex != nil}
+  public var hasUnitIndex: Bool {self._unitIndex != nil}
   /// Clears the value of `unitIndex`. Subsequent reads from it will return its default value.
   public mutating func clearUnitIndex() {self._unitIndex = nil}
 
   public var currencyCode: String {
-    get {return _currencyCode ?? String()}
+    get {_currencyCode ?? String()}
     set {_currencyCode = newValue}
   }
   /// Returns true if `currencyCode` has been explicitly set.
-  public var hasCurrencyCode: Bool {return self._currencyCode != nil}
+  public var hasCurrencyCode: Bool {self._currencyCode != nil}
   /// Clears the value of `currencyCode`. Subsequent reads from it will return its default value.
   public mutating func clearCurrencyCode() {self._currencyCode = nil}
 
   public var format: TSK_FormatStructArchive {
-    get {return _format ?? TSK_FormatStructArchive()}
+    get {_format ?? TSK_FormatStructArchive()}
     set {_format = newValue}
   }
   /// Returns true if `format` has been explicitly set.
-  public var hasFormat: Bool {return self._format != nil}
+  public var hasFormat: Bool {self._format != nil}
   /// Clears the value of `format`. Subsequent reads from it will return its default value.
   public mutating func clearFormat() {self._format = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var formatIsImplicit: Bool {
-    get {return _formatIsImplicit ?? false}
+    get {_formatIsImplicit ?? false}
     set {_formatIsImplicit = newValue}
   }
   /// Returns true if `formatIsImplicit` has been explicitly set.
-  public var hasFormatIsImplicit: Bool {return self._formatIsImplicit != nil}
+  public var hasFormatIsImplicit: Bool {self._formatIsImplicit != nil}
   /// Clears the value of `formatIsImplicit`. Subsequent reads from it will return its default value.
   public mutating func clearFormatIsImplicit() {self._formatIsImplicit = nil}
 
   public var formatIsExplicit: Bool {
-    get {return _formatIsExplicit ?? false}
+    get {_formatIsExplicit ?? false}
     set {_formatIsExplicit = newValue}
   }
   /// Returns true if `formatIsExplicit` has been explicitly set.
-  public var hasFormatIsExplicit: Bool {return self._formatIsExplicit != nil}
+  public var hasFormatIsExplicit: Bool {self._formatIsExplicit != nil}
   /// Clears the value of `formatIsExplicit`. Subsequent reads from it will return its default value.
   public mutating func clearFormatIsExplicit() {self._formatIsExplicit = nil}
 
   public var decimalLow: UInt64 {
-    get {return _decimalLow ?? 0}
+    get {_decimalLow ?? 0}
     set {_decimalLow = newValue}
   }
   /// Returns true if `decimalLow` has been explicitly set.
-  public var hasDecimalLow: Bool {return self._decimalLow != nil}
+  public var hasDecimalLow: Bool {self._decimalLow != nil}
   /// Clears the value of `decimalLow`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalLow() {self._decimalLow = nil}
 
   public var decimalHigh: UInt64 {
-    get {return _decimalHigh ?? 0}
+    get {_decimalHigh ?? 0}
     set {_decimalHigh = newValue}
   }
   /// Returns true if `decimalHigh` has been explicitly set.
-  public var hasDecimalHigh: Bool {return self._decimalHigh != nil}
+  public var hasDecimalHigh: Bool {self._decimalHigh != nil}
   /// Clears the value of `decimalHigh`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalHigh() {self._decimalHigh = nil}
 
@@ -6688,63 +6422,63 @@ public struct TSCE_NumberCellValueArchive: Sendable {
   fileprivate var _decimalHigh: UInt64? = nil
 }
 
-public struct TSCE_StringCellValueArchive: Sendable {
+public nonisolated struct TSCE_StringCellValueArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var value: String {
-    get {return _value ?? String()}
+    get {_value ?? String()}
     set {_value = newValue}
   }
   /// Returns true if `value` has been explicitly set.
-  public var hasValue: Bool {return self._value != nil}
+  public var hasValue: Bool {self._value != nil}
   /// Clears the value of `value`. Subsequent reads from it will return its default value.
   public mutating func clearValue() {self._value = nil}
 
   public var format: TSK_FormatStructArchive {
-    get {return _format ?? TSK_FormatStructArchive()}
+    get {_format ?? TSK_FormatStructArchive()}
     set {_format = newValue}
   }
   /// Returns true if `format` has been explicitly set.
-  public var hasFormat: Bool {return self._format != nil}
+  public var hasFormat: Bool {self._format != nil}
   /// Clears the value of `format`. Subsequent reads from it will return its default value.
   public mutating func clearFormat() {self._format = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var formatIsImplicit: Bool {
-    get {return _formatIsImplicit ?? false}
+    get {_formatIsImplicit ?? false}
     set {_formatIsImplicit = newValue}
   }
   /// Returns true if `formatIsImplicit` has been explicitly set.
-  public var hasFormatIsImplicit: Bool {return self._formatIsImplicit != nil}
+  public var hasFormatIsImplicit: Bool {self._formatIsImplicit != nil}
   /// Clears the value of `formatIsImplicit`. Subsequent reads from it will return its default value.
   public mutating func clearFormatIsImplicit() {self._formatIsImplicit = nil}
 
   public var formatIsExplicit: Bool {
-    get {return _formatIsExplicit ?? false}
+    get {_formatIsExplicit ?? false}
     set {_formatIsExplicit = newValue}
   }
   /// Returns true if `formatIsExplicit` has been explicitly set.
-  public var hasFormatIsExplicit: Bool {return self._formatIsExplicit != nil}
+  public var hasFormatIsExplicit: Bool {self._formatIsExplicit != nil}
   /// Clears the value of `formatIsExplicit`. Subsequent reads from it will return its default value.
   public mutating func clearFormatIsExplicit() {self._formatIsExplicit = nil}
 
   public var isRegex: Bool {
-    get {return _isRegex ?? false}
+    get {_isRegex ?? false}
     set {_isRegex = newValue}
   }
   /// Returns true if `isRegex` has been explicitly set.
-  public var hasIsRegex: Bool {return self._isRegex != nil}
+  public var hasIsRegex: Bool {self._isRegex != nil}
   /// Clears the value of `isRegex`. Subsequent reads from it will return its default value.
   public mutating func clearIsRegex() {self._isRegex = nil}
 
   public var isCaseSensitiveRegex: Bool {
-    get {return _isCaseSensitiveRegex ?? false}
+    get {_isCaseSensitiveRegex ?? false}
     set {_isCaseSensitiveRegex = newValue}
   }
   /// Returns true if `isCaseSensitiveRegex` has been explicitly set.
-  public var hasIsCaseSensitiveRegex: Bool {return self._isCaseSensitiveRegex != nil}
+  public var hasIsCaseSensitiveRegex: Bool {self._isCaseSensitiveRegex != nil}
   /// Clears the value of `isCaseSensitiveRegex`. Subsequent reads from it will return its default value.
   public mutating func clearIsCaseSensitiveRegex() {self._isCaseSensitiveRegex = nil}
 
@@ -6760,44 +6494,44 @@ public struct TSCE_StringCellValueArchive: Sendable {
   fileprivate var _isCaseSensitiveRegex: Bool? = nil
 }
 
-public struct TSCE_ErrorCellValueArchive: Sendable {
+public nonisolated struct TSCE_ErrorCellValueArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var errorType: Int32 {
-    get {return _errorType ?? 0}
+    get {_errorType ?? 0}
     set {_errorType = newValue}
   }
   /// Returns true if `errorType` has been explicitly set.
-  public var hasErrorType: Bool {return self._errorType != nil}
+  public var hasErrorType: Bool {self._errorType != nil}
   /// Clears the value of `errorType`. Subsequent reads from it will return its default value.
   public mutating func clearErrorType() {self._errorType = nil}
 
   public var extraInfoInt: Int32 {
-    get {return _extraInfoInt ?? 0}
+    get {_extraInfoInt ?? 0}
     set {_extraInfoInt = newValue}
   }
   /// Returns true if `extraInfoInt` has been explicitly set.
-  public var hasExtraInfoInt: Bool {return self._extraInfoInt != nil}
+  public var hasExtraInfoInt: Bool {self._extraInfoInt != nil}
   /// Clears the value of `extraInfoInt`. Subsequent reads from it will return its default value.
   public mutating func clearExtraInfoInt() {self._extraInfoInt = nil}
 
   public var extraInfoString: String {
-    get {return _extraInfoString ?? String()}
+    get {_extraInfoString ?? String()}
     set {_extraInfoString = newValue}
   }
   /// Returns true if `extraInfoString` has been explicitly set.
-  public var hasExtraInfoString: Bool {return self._extraInfoString != nil}
+  public var hasExtraInfoString: Bool {self._extraInfoString != nil}
   /// Clears the value of `extraInfoString`. Subsequent reads from it will return its default value.
   public mutating func clearExtraInfoString() {self._extraInfoString = nil}
 
   public var extraInfoDouble: Double {
-    get {return _extraInfoDouble ?? 0}
+    get {_extraInfoDouble ?? 0}
     set {_extraInfoDouble = newValue}
   }
   /// Returns true if `extraInfoDouble` has been explicitly set.
-  public var hasExtraInfoDouble: Bool {return self._extraInfoDouble != nil}
+  public var hasExtraInfoDouble: Bool {self._extraInfoDouble != nil}
   /// Clears the value of `extraInfoDouble`. Subsequent reads from it will return its default value.
   public mutating func clearExtraInfoDouble() {self._extraInfoDouble = nil}
 
@@ -6811,98 +6545,76 @@ public struct TSCE_ErrorCellValueArchive: Sendable {
   fileprivate var _extraInfoDouble: Double? = nil
 }
 
-public struct TSCE_CellValueArchive: @unchecked Sendable {
+public nonisolated struct TSCE_CellValueArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var cellValueType: TSCE_CellValueArchive.CellValueType {
-    get {return _storage._cellValueType ?? .nilType}
+    get {_storage._cellValueType ?? .nilType}
     set {_uniqueStorage()._cellValueType = newValue}
   }
   /// Returns true if `cellValueType` has been explicitly set.
-  public var hasCellValueType: Bool {return _storage._cellValueType != nil}
+  public var hasCellValueType: Bool {_storage._cellValueType != nil}
   /// Clears the value of `cellValueType`. Subsequent reads from it will return its default value.
   public mutating func clearCellValueType() {_uniqueStorage()._cellValueType = nil}
 
   public var booleanValue: TSCE_BooleanCellValueArchive {
-    get {return _storage._booleanValue ?? TSCE_BooleanCellValueArchive()}
+    get {_storage._booleanValue ?? TSCE_BooleanCellValueArchive()}
     set {_uniqueStorage()._booleanValue = newValue}
   }
   /// Returns true if `booleanValue` has been explicitly set.
-  public var hasBooleanValue: Bool {return _storage._booleanValue != nil}
+  public var hasBooleanValue: Bool {_storage._booleanValue != nil}
   /// Clears the value of `booleanValue`. Subsequent reads from it will return its default value.
   public mutating func clearBooleanValue() {_uniqueStorage()._booleanValue = nil}
 
   public var dateValue: TSCE_DateCellValueArchive {
-    get {return _storage._dateValue ?? TSCE_DateCellValueArchive()}
+    get {_storage._dateValue ?? TSCE_DateCellValueArchive()}
     set {_uniqueStorage()._dateValue = newValue}
   }
   /// Returns true if `dateValue` has been explicitly set.
-  public var hasDateValue: Bool {return _storage._dateValue != nil}
+  public var hasDateValue: Bool {_storage._dateValue != nil}
   /// Clears the value of `dateValue`. Subsequent reads from it will return its default value.
   public mutating func clearDateValue() {_uniqueStorage()._dateValue = nil}
 
   public var numberValue: TSCE_NumberCellValueArchive {
-    get {return _storage._numberValue ?? TSCE_NumberCellValueArchive()}
+    get {_storage._numberValue ?? TSCE_NumberCellValueArchive()}
     set {_uniqueStorage()._numberValue = newValue}
   }
   /// Returns true if `numberValue` has been explicitly set.
-  public var hasNumberValue: Bool {return _storage._numberValue != nil}
+  public var hasNumberValue: Bool {_storage._numberValue != nil}
   /// Clears the value of `numberValue`. Subsequent reads from it will return its default value.
   public mutating func clearNumberValue() {_uniqueStorage()._numberValue = nil}
 
   public var stringValue: TSCE_StringCellValueArchive {
-    get {return _storage._stringValue ?? TSCE_StringCellValueArchive()}
+    get {_storage._stringValue ?? TSCE_StringCellValueArchive()}
     set {_uniqueStorage()._stringValue = newValue}
   }
   /// Returns true if `stringValue` has been explicitly set.
-  public var hasStringValue: Bool {return _storage._stringValue != nil}
+  public var hasStringValue: Bool {_storage._stringValue != nil}
   /// Clears the value of `stringValue`. Subsequent reads from it will return its default value.
   public mutating func clearStringValue() {_uniqueStorage()._stringValue = nil}
 
   public var errorValue: TSCE_ErrorCellValueArchive {
-    get {return _storage._errorValue ?? TSCE_ErrorCellValueArchive()}
+    get {_storage._errorValue ?? TSCE_ErrorCellValueArchive()}
     set {_uniqueStorage()._errorValue = newValue}
   }
   /// Returns true if `errorValue` has been explicitly set.
-  public var hasErrorValue: Bool {return _storage._errorValue != nil}
+  public var hasErrorValue: Bool {_storage._errorValue != nil}
   /// Clears the value of `errorValue`. Subsequent reads from it will return its default value.
   public mutating func clearErrorValue() {_uniqueStorage()._errorValue = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum CellValueType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case nilType // = 1
-    case booleanType // = 2
-    case dateType // = 3
-    case numberType // = 4
-    case stringType // = 5
+  public nonisolated enum CellValueType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case nilType = 1
+    case booleanType = 2
+    case dateType = 3
+    case numberType = 4
+    case stringType = 5
 
     public init() {
       self = .nilType
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 1: self = .nilType
-      case 2: self = .booleanType
-      case 3: self = .dateType
-      case 4: self = .numberType
-      case 5: self = .stringType
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .nilType: return 1
-      case .booleanType: return 2
-      case .dateType: return 3
-      case .numberType: return 4
-      case .stringType: return 5
-      }
     }
 
   }
@@ -6914,15 +6626,11 @@ public struct TSCE_CellValueArchive: @unchecked Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSCE"
+fileprivate nonisolated let _protobuf_package = "TSCE"
 
-extension TSCE_CellReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellReferenceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .same(proto: "row"),
-    3: .standard(proto: "table_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{1}row\0\u{3}table_id\0")
 
   public var isInitialized: Bool {
     if self._column == nil {return false}
@@ -6971,12 +6679,9 @@ extension TSCE_CellReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSCE_InternalCellReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_InternalCellReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InternalCellReferenceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "coordinate"),
-    2: .standard(proto: "owner_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}coordinate\0\u{3}owner_id\0")
 
   public var isInitialized: Bool {
     if self._coordinate == nil {return false}
@@ -7019,17 +6724,9 @@ extension TSCE_InternalCellReferenceArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCE_RelativeCellRefArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RelativeCellRefArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RelativeCellRefArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "relative_row_offset"),
-    2: .standard(proto: "relative_column_offset"),
-    3: .standard(proto: "table_uid"),
-    4: .standard(proto: "preserve_column"),
-    5: .standard(proto: "preserve_row"),
-    6: .standard(proto: "is_spanning_column"),
-    7: .standard(proto: "is_spanning_row"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}relative_row_offset\0\u{3}relative_column_offset\0\u{3}table_uid\0\u{3}preserve_column\0\u{3}preserve_row\0\u{3}is_spanning_column\0\u{3}is_spanning_row\0")
 
   public var isInitialized: Bool {
     if let v = self._tableUid, !v.isInitialized {return false}
@@ -7096,15 +6793,9 @@ extension TSCE_RelativeCellRefArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSCE_RangeReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RangeReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RangeReferenceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_id"),
-    2: .standard(proto: "top_left_column"),
-    3: .standard(proto: "top_left_row"),
-    4: .standard(proto: "bottom_right_column"),
-    5: .standard(proto: "bottom_right_row"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_id\0\u{3}top_left_column\0\u{3}top_left_row\0\u{3}bottom_right_column\0\u{3}bottom_right_row\0")
 
   public var isInitialized: Bool {
     if self._tableID == nil {return false}
@@ -7165,12 +6856,9 @@ extension TSCE_RangeReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCE_InternalRangeReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_InternalRangeReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InternalRangeReferenceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_id"),
-    2: .same(proto: "range"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_id\0\u{1}range\0")
 
   public var isInitialized: Bool {
     if self._ownerID == nil {return false}
@@ -7214,11 +6902,9 @@ extension TSCE_InternalRangeReferenceArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCE_IndexSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_IndexSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".IndexSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.entries) {return false}
@@ -7251,12 +6937,9 @@ extension TSCE_IndexSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSCE_IndexSetArchive.IndexSetEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_IndexSetArchive.IndexSetEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_IndexSetArchive.protoMessageName + ".IndexSetEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "range_begin"),
-    2: .standard(proto: "range_end"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}range_begin\0\u{3}range_end\0")
 
   public var isInitialized: Bool {
     if self._rangeBegin == nil {return false}
@@ -7298,11 +6981,9 @@ extension TSCE_IndexSetArchive.IndexSetEntry: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCE_CellCoordSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellCoordSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellCoordSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "column_entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}column_entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.columnEntries) {return false}
@@ -7335,12 +7016,9 @@ extension TSCE_CellCoordSetArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSCE_CellCoordSetArchive.ColumnEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellCoordSetArchive.ColumnEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_CellCoordSetArchive.protoMessageName + ".ColumnEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .standard(proto: "row_set"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{3}row_set\0")
 
   public var isInitialized: Bool {
     if self._column == nil {return false}
@@ -7384,11 +7062,9 @@ extension TSCE_CellCoordSetArchive.ColumnEntry: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCE_InternalCellRefSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_InternalCellRefSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InternalCellRefSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.ownerEntries) {return false}
@@ -7421,12 +7097,9 @@ extension TSCE_InternalCellRefSetArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSCE_InternalCellRefSetArchive.OwnerEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_InternalCellRefSetArchive.OwnerEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_InternalCellRefSetArchive.protoMessageName + ".OwnerEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_id"),
-    2: .standard(proto: "coord_set"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_id\0\u{3}coord_set\0")
 
   public var isInitialized: Bool {
     if self._ownerID == nil {return false}
@@ -7470,12 +7143,9 @@ extension TSCE_InternalCellRefSetArchive.OwnerEntry: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSCE_ColumnRowSize: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ColumnRowSize: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ColumnRowSize"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "num_columns"),
-    2: .standard(proto: "num_rows"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}num_columns\0\u{3}num_rows\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -7512,12 +7182,9 @@ extension TSCE_ColumnRowSize: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension TSCE_CellRectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellRectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellRectArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "origin"),
-    2: .same(proto: "size"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}origin\0\u{1}size\0")
 
   public var isInitialized: Bool {
     if self._origin == nil {return false}
@@ -7560,11 +7227,9 @@ extension TSCE_CellRectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSCE_CellRefSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellRefSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellRefSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.ownerEntries) {return false}
@@ -7597,12 +7262,9 @@ extension TSCE_CellRefSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSCE_CellRefSetArchive.OwnerEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellRefSetArchive.OwnerEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_CellRefSetArchive.protoMessageName + ".OwnerEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_uid"),
-    2: .standard(proto: "coord_set"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_uid\0\u{3}coord_set\0")
 
   public var isInitialized: Bool {
     if self._ownerUid == nil {return false}
@@ -7647,11 +7309,9 @@ extension TSCE_CellRefSetArchive.OwnerEntry: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCE_UidCoordSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UidCoordSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UidCoordSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "column_entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}column_entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.columnEntries) {return false}
@@ -7684,12 +7344,9 @@ extension TSCE_UidCoordSetArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSCE_UidCoordSetArchive.ColumnEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UidCoordSetArchive.ColumnEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_UidCoordSetArchive.protoMessageName + ".ColumnEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .standard(proto: "row_set"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{3}row_set\0")
 
   public var isInitialized: Bool {
     if self._column == nil {return false}
@@ -7733,11 +7390,9 @@ extension TSCE_UidCoordSetArchive.ColumnEntry: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCE_UidCellRefSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UidCellRefSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UidCellRefSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.ownerEntries) {return false}
@@ -7770,12 +7425,9 @@ extension TSCE_UidCellRefSetArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSCE_UidCellRefSetArchive.OwnerEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UidCellRefSetArchive.OwnerEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_UidCellRefSetArchive.protoMessageName + ".OwnerEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_uid"),
-    2: .standard(proto: "coord_set"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_uid\0\u{3}coord_set\0")
 
   public var isInitialized: Bool {
     if self._ownerUid == nil {return false}
@@ -7820,16 +7472,9 @@ extension TSCE_UidCellRefSetArchive.OwnerEntry: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCE_ReferencesToDirtyArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ReferencesToDirtyArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ReferencesToDirtyArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "to_dirty_owner_ids"),
-    2: .standard(proto: "to_dirty_cells"),
-    3: .standard(proto: "to_dirty_cells_additional"),
-    4: .standard(proto: "to_dirty_range_refs"),
-    6: .standard(proto: "calc_in_progress_cells"),
-    7: .standard(proto: "to_update_precedents_cells"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}to_dirty_owner_ids\0\u{3}to_dirty_cells\0\u{3}to_dirty_cells_additional\0\u{3}to_dirty_range_refs\0\u{4}\u{2}calc_in_progress_cells\0\u{3}to_update_precedents_cells\0")
 
   public var isInitialized: Bool {
     if let v = self._toDirtyOwnerIds, !v.isInitialized {return false}
@@ -7896,18 +7541,9 @@ extension TSCE_ReferencesToDirtyArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCE_CoordMapperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CoordMapperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CoordMapperArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_uid"),
-    2: .standard(proto: "summary_rows_set"),
-    3: .standard(proto: "summary_columns_set"),
-    4: .standard(proto: "label_rows_set"),
-    5: .standard(proto: "base_to_view_row_map"),
-    6: .standard(proto: "base_to_view_column_map"),
-    7: .standard(proto: "summary_to_view_row_map"),
-    8: .standard(proto: "summary_to_view_column_map"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_uid\0\u{3}summary_rows_set\0\u{3}summary_columns_set\0\u{3}label_rows_set\0\u{3}base_to_view_row_map\0\u{3}base_to_view_column_map\0\u{3}summary_to_view_row_map\0\u{3}summary_to_view_column_map\0")
 
   public var isInitialized: Bool {
     if self._tableUid == nil {return false}
@@ -7987,12 +7623,9 @@ extension TSCE_CoordMapperArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSCE_CoordMapperArchive.BaseToViewEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CoordMapperArchive.BaseToViewEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_CoordMapperArchive.protoMessageName + ".BaseToViewEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_column_or_row"),
-    2: .standard(proto: "view_column_or_row"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_column_or_row\0\u{3}view_column_or_row\0")
 
   public var isInitialized: Bool {
     if self._baseColumnOrRow == nil {return false}
@@ -8035,12 +7668,9 @@ extension TSCE_CoordMapperArchive.BaseToViewEntry: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSCE_CoordMapperArchive.SummaryToViewEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CoordMapperArchive.SummaryToViewEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_CoordMapperArchive.protoMessageName + ".SummaryToViewEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "summary_column_or_row"),
-    2: .standard(proto: "view_column_or_row"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}summary_column_or_row\0\u{3}view_column_or_row\0")
 
   public var isInitialized: Bool {
     if self._summaryColumnOrRow == nil {return false}
@@ -8083,28 +7713,20 @@ extension TSCE_CoordMapperArchive.SummaryToViewEntry: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSCE_ReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ReferenceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "reference_type"),
-    2: .standard(proto: "cell_reference"),
-    3: .standard(proto: "range_reference"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}reference_type\0\u{3}cell_reference\0\u{3}range_reference\0")
 
   fileprivate class _StorageClass {
     var _referenceType: TSCE_ReferenceArchive.ReferenceType? = nil
     var _cellReference: TSCE_CellReferenceArchive? = nil
     var _rangeReference: TSCE_RangeReferenceArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -8184,22 +7806,13 @@ extension TSCE_ReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSCE_ReferenceArchive.ReferenceType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "CELL_REFERENCE"),
-    2: .same(proto: "RANGE_REFERENCE"),
-    3: .same(proto: "NAME_DEPENDENCY"),
-  ]
+nonisolated extension TSCE_ReferenceArchive.ReferenceType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}CELL_REFERENCE\0\u{1}RANGE_REFERENCE\0\u{1}NAME_DEPENDENCY\0")
 }
 
-extension TSCE_EdgeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_EdgeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".EdgeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .same(proto: "row"),
-    3: .standard(proto: "is_precedent"),
-    4: .standard(proto: "owner_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{1}row\0\u{3}is_precedent\0\u{3}owner_id\0")
 
   public var isInitialized: Bool {
     if self._column == nil {return false}
@@ -8253,14 +7866,9 @@ extension TSCE_EdgeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension TSCE_EdgesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_EdgesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".EdgesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    9: .standard(proto: "packed_edge_without_owner"),
-    10: .standard(proto: "packed_edge_with_owner"),
-    11: .standard(proto: "owner_id_for_edge"),
-    12: .standard(proto: "internal_owner_id_for_edge"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{4}\u{9}packed_edge_without_owner\0\u{3}packed_edge_with_owner\0\u{3}owner_id_for_edge\0\u{3}internal_owner_id_for_edge\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -8303,15 +7911,9 @@ extension TSCE_EdgesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension TSCE_ExpandedEdgesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ExpandedEdgesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ExpandedEdgesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "edge_without_owner_rows"),
-    2: .standard(proto: "edge_without_owner_columns"),
-    3: .standard(proto: "edge_with_owner_rows"),
-    4: .standard(proto: "edge_with_owner_columns"),
-    5: .standard(proto: "internal_owner_id_for_edge"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}edge_without_owner_rows\0\u{3}edge_without_owner_columns\0\u{3}edge_with_owner_rows\0\u{3}edge_with_owner_columns\0\u{3}internal_owner_id_for_edge\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -8359,20 +7961,9 @@ extension TSCE_ExpandedEdgesArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSCE_CellRecordArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellRecordArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellRecordArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .same(proto: "row"),
-    3: .standard(proto: "dirty_self_plus_precedents_count"),
-    4: .standard(proto: "is_in_a_cycle"),
-    5: .same(proto: "edge"),
-    6: .standard(proto: "contains_a_formula"),
-    7: .standard(proto: "has_calculated_precedents"),
-    8: .standard(proto: "calculate_precedents_on_next_recalc"),
-    10: .standard(proto: "translate_for_excel_import_on_next_recalc"),
-    9: .same(proto: "edges"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{1}row\0\u{3}dirty_self_plus_precedents_count\0\u{3}is_in_a_cycle\0\u{1}edge\0\u{3}contains_a_formula\0\u{3}has_calculated_precedents\0\u{3}calculate_precedents_on_next_recalc\0\u{1}edges\0\u{3}translate_for_excel_import_on_next_recalc\0")
 
   public var isInitialized: Bool {
     if self._column == nil {return false}
@@ -8456,12 +8047,9 @@ extension TSCE_CellRecordArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSCE_CellDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellDependenciesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cell_record"),
-    2: .standard(proto: "num_dirty_cells"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cell_record\0\u{3}num_dirty_cells\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.cellRecord) {return false}
@@ -8503,16 +8091,9 @@ extension TSCE_CellDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSCE_CellRecordExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellRecordExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellRecordExpandedArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .same(proto: "row"),
-    3: .standard(proto: "dirty_self_plus_precedents_count"),
-    4: .standard(proto: "is_in_a_cycle"),
-    5: .standard(proto: "has_calculated_precedents"),
-    6: .standard(proto: "expanded_edges"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{1}row\0\u{3}dirty_self_plus_precedents_count\0\u{3}is_in_a_cycle\0\u{3}has_calculated_precedents\0\u{3}expanded_edges\0")
 
   public var isInitialized: Bool {
     if self._column == nil {return false}
@@ -8575,11 +8156,9 @@ extension TSCE_CellRecordExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSCE_CellDependenciesExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellDependenciesExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellDependenciesExpandedArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cell_record"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cell_record\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.cellRecord) {return false}
@@ -8612,14 +8191,9 @@ extension TSCE_CellDependenciesExpandedArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCE_CellRecordTileArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellRecordTileArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellRecordTileArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "internal_owner_id"),
-    2: .standard(proto: "tile_column_begin"),
-    3: .standard(proto: "tile_row_begin"),
-    4: .standard(proto: "cell_records"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}internal_owner_id\0\u{3}tile_column_begin\0\u{3}tile_row_begin\0\u{3}cell_records\0")
 
   public var isInitialized: Bool {
     if self._internalOwnerID == nil {return false}
@@ -8674,11 +8248,9 @@ extension TSCE_CellRecordTileArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCE_CellDependenciesTiledArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellDependenciesTiledArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellDependenciesTiledArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cell_record_tiles"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cell_record_tiles\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.cellRecordTiles) {return false}
@@ -8711,28 +8283,9 @@ extension TSCE_CellDependenciesTiledArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCE_VolatileDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_VolatileDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".VolatileDependenciesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "volatile_time_cell_column"),
-    2: .standard(proto: "volatile_time_cell_row"),
-    3: .standard(proto: "volatile_random_cell_column"),
-    4: .standard(proto: "volatile_random_cell_row"),
-    15: .standard(proto: "volatile_locale_cell_column"),
-    16: .standard(proto: "volatile_locale_cell_row"),
-    5: .standard(proto: "volatile_location_cell_column"),
-    6: .standard(proto: "volatile_location_cell_row"),
-    7: .standard(proto: "volatile_compass_cell_column"),
-    8: .standard(proto: "volatile_compass_cell_row"),
-    19: .standard(proto: "volatile_remote_data_cell_column"),
-    20: .standard(proto: "volatile_remote_data_cell_row"),
-    17: .standard(proto: "volatile_sheet_table_name_cell_column"),
-    18: .standard(proto: "volatile_sheet_table_name_cell_row"),
-    9: .standard(proto: "calculated_dependency_cell_column"),
-    10: .standard(proto: "calculated_dependency_cell_row"),
-    13: .standard(proto: "volatile_geometry_cell_reference"),
-    11: .standard(proto: "volatile_geometry_cell"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}volatile_time_cell_column\0\u{3}volatile_time_cell_row\0\u{3}volatile_random_cell_column\0\u{3}volatile_random_cell_row\0\u{3}volatile_location_cell_column\0\u{3}volatile_location_cell_row\0\u{3}volatile_compass_cell_column\0\u{3}volatile_compass_cell_row\0\u{3}calculated_dependency_cell_column\0\u{3}calculated_dependency_cell_row\0\u{3}volatile_geometry_cell\0\u{4}\u{2}volatile_geometry_cell_reference\0\u{4}\u{2}volatile_locale_cell_column\0\u{3}volatile_locale_cell_row\0\u{3}volatile_sheet_table_name_cell_column\0\u{3}volatile_sheet_table_name_cell_row\0\u{3}volatile_remote_data_cell_column\0\u{3}volatile_remote_data_cell_row\0")
 
   fileprivate class _StorageClass {
     var _volatileTimeCellColumn: [UInt32] = []
@@ -8754,15 +8307,11 @@ extension TSCE_VolatileDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf
     var _volatileGeometryCellReference: [TSCE_CellReferenceArchive] = []
     var _volatileGeometryCell: [TSCE_CellCoordinateArchive] = []
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -8926,16 +8475,9 @@ extension TSCE_VolatileDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCE_VolatileDependenciesExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_VolatileDependenciesExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".VolatileDependenciesExpandedArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "volatile_time_cells"),
-    2: .standard(proto: "volatile_random_cells"),
-    3: .standard(proto: "volatile_locale_cells"),
-    4: .standard(proto: "volatile_sheet_table_name_cells"),
-    5: .standard(proto: "volatile_remote_data_cells"),
-    7: .standard(proto: "volatile_geometry_cell_refs"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}volatile_time_cells\0\u{3}volatile_random_cells\0\u{3}volatile_locale_cells\0\u{3}volatile_sheet_table_name_cells\0\u{3}volatile_remote_data_cells\0\u{4}\u{2}volatile_geometry_cell_refs\0")
 
   public var isInitialized: Bool {
     if let v = self._volatileTimeCells, !v.isInitialized {return false}
@@ -9002,13 +8544,9 @@ extension TSCE_VolatileDependenciesExpandedArchive: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSCE_RTreeInternalNodeContentsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RTreeInternalNodeContentsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RTreeInternalNodeContentsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "min"),
-    2: .same(proto: "max"),
-    3: .same(proto: "child"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}min\0\u{1}max\0\u{1}child\0")
 
   public var isInitialized: Bool {
     if self._child == nil {return false}
@@ -9056,13 +8594,9 @@ extension TSCE_RTreeInternalNodeContentsArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSCE_RTreeLeafNodeContentsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RTreeLeafNodeContentsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RTreeLeafNodeContentsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "min"),
-    2: .same(proto: "max"),
-    3: .standard(proto: "cell_reference"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}min\0\u{1}max\0\u{3}cell_reference\0")
 
   public var isInitialized: Bool {
     if self._cellReference == nil {return false}
@@ -9110,14 +8644,9 @@ extension TSCE_RTreeLeafNodeContentsArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCE_RTreeNodeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RTreeNodeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RTreeNodeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "level"),
-    2: .same(proto: "count"),
-    3: .standard(proto: "internal_node_contents"),
-    4: .standard(proto: "leaf_node_contents"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}level\0\u{1}count\0\u{3}internal_node_contents\0\u{3}leaf_node_contents\0")
 
   public var isInitialized: Bool {
     if self._level == nil {return false}
@@ -9172,18 +8701,9 @@ extension TSCE_RTreeNodeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSCE_RTreeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RTreeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RTreeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "data_file_id"),
-    2: .standard(proto: "data_size"),
-    3: .standard(proto: "data_num_dims"),
-    4: .standard(proto: "data_elem_size"),
-    5: .standard(proto: "data_elem_real_size"),
-    6: .standard(proto: "data_max_nodes"),
-    7: .standard(proto: "data_min_nodes"),
-    8: .same(proto: "root"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}data_file_id\0\u{3}data_size\0\u{3}data_num_dims\0\u{3}data_elem_size\0\u{3}data_elem_real_size\0\u{3}data_max_nodes\0\u{3}data_min_nodes\0\u{1}root\0")
 
   public var isInitialized: Bool {
     if self._dataFileID == nil {return false}
@@ -9263,14 +8783,9 @@ extension TSCE_RTreeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension TSCE_RangeBackDependencyArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RangeBackDependencyArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RangeBackDependencyArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cell_coord_row"),
-    2: .standard(proto: "cell_coord_column"),
-    3: .standard(proto: "range_reference"),
-    4: .standard(proto: "internal_range_reference"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cell_coord_row\0\u{3}cell_coord_column\0\u{3}range_reference\0\u{3}internal_range_reference\0")
 
   public var isInitialized: Bool {
     if self._cellCoordRow == nil {return false}
@@ -9325,11 +8840,9 @@ extension TSCE_RangeBackDependencyArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCE_RangeDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RangeDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RangeDependenciesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    2: .standard(proto: "back_dependency"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{4}\u{2}back_dependency\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.backDependency) {return false}
@@ -9362,12 +8875,9 @@ extension TSCE_RangeDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCE_RangePrecedentsTileArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RangePrecedentsTileArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RangePrecedentsTileArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "to_owner_id"),
-    2: .standard(proto: "from_to_range"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}to_owner_id\0\u{3}from_to_range\0")
 
   public var isInitialized: Bool {
     if self._toOwnerID == nil {return false}
@@ -9410,12 +8920,9 @@ extension TSCE_RangePrecedentsTileArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCE_RangePrecedentsTileArchive.FromToRangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RangePrecedentsTileArchive.FromToRangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_RangePrecedentsTileArchive.protoMessageName + ".FromToRangeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "from_coord"),
-    2: .standard(proto: "refers_to_rect"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}from_coord\0\u{3}refers_to_rect\0")
 
   public var isInitialized: Bool {
     if self._fromCoord == nil {return false}
@@ -9459,11 +8966,9 @@ extension TSCE_RangePrecedentsTileArchive.FromToRangeArchive: SwiftProtobuf.Mess
   }
 }
 
-extension TSCE_RangeDependenciesTiledArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RangeDependenciesTiledArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RangeDependenciesTiledArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "range_precedents_tile"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}range_precedents_tile\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.rangePrecedentsTile) {return false}
@@ -9496,17 +9001,9 @@ extension TSCE_RangeDependenciesTiledArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCE_SpanningDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_SpanningDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpanningDependenciesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .standard(proto: "range_context"),
-    3: .same(proto: "cell"),
-    4: .standard(proto: "total_range_for_deleted_table"),
-    5: .standard(proto: "body_range_for_deleted_table"),
-    6: .standard(proto: "referring_column_to_local_cells"),
-    7: .standard(proto: "referring_column_to_remote_cells"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{3}range_context\0\u{1}cell\0\u{3}total_range_for_deleted_table\0\u{3}body_range_for_deleted_table\0\u{3}referring_column_to_local_cells\0\u{3}referring_column_to_remote_cells\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.cell) {return false}
@@ -9577,20 +9074,13 @@ extension TSCE_SpanningDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCE_SpanningDependenciesArchive.RangeContext: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "DEFAULT"),
-    1: .same(proto: "INCLUDE_HEADERS"),
-  ]
+nonisolated extension TSCE_SpanningDependenciesArchive.RangeContext: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0DEFAULT\0\u{1}INCLUDE_HEADERS\0")
 }
 
-extension TSCE_SpanningDependenciesArchive.ReferringColumnToLocalCells: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_SpanningDependenciesArchive.ReferringColumnToLocalCells: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_SpanningDependenciesArchive.protoMessageName + ".ReferringColumnToLocalCells"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .standard(proto: "range_context"),
-    3: .standard(proto: "cell_coordinate"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{3}range_context\0\u{3}cell_coordinate\0")
 
   public var isInitialized: Bool {
     if self._column == nil {return false}
@@ -9638,13 +9128,9 @@ extension TSCE_SpanningDependenciesArchive.ReferringColumnToLocalCells: SwiftPro
   }
 }
 
-extension TSCE_SpanningDependenciesArchive.ReferringColumnToRemoteCells: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_SpanningDependenciesArchive.ReferringColumnToRemoteCells: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_SpanningDependenciesArchive.protoMessageName + ".ReferringColumnToRemoteCells"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .standard(proto: "range_context"),
-    3: .standard(proto: "internal_cell_reference"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{3}range_context\0\u{3}internal_cell_reference\0")
 
   public var isInitialized: Bool {
     if self._column == nil {return false}
@@ -9693,13 +9179,9 @@ extension TSCE_SpanningDependenciesArchive.ReferringColumnToRemoteCells: SwiftPr
   }
 }
 
-extension TSCE_SpanningDependenciesExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_SpanningDependenciesExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpanningDependenciesExpandedArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "coord_refers_to_spans"),
-    2: .standard(proto: "total_range_for_table"),
-    3: .standard(proto: "body_range_for_table"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}coord_refers_to_spans\0\u{3}total_range_for_table\0\u{3}body_range_for_table\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.coordRefersToSpans) {return false}
@@ -9748,19 +9230,13 @@ extension TSCE_SpanningDependenciesExpandedArchive: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSCE_SpanningDependenciesExpandedArchive.RangeContext: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "DEFAULT"),
-    1: .same(proto: "INCLUDE_HEADERS"),
-  ]
+nonisolated extension TSCE_SpanningDependenciesExpandedArchive.RangeContext: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0DEFAULT\0\u{1}INCLUDE_HEADERS\0")
 }
 
-extension TSCE_SpanningDependenciesExpandedArchive.ExtentRange: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_SpanningDependenciesExpandedArchive.ExtentRange: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_SpanningDependenciesExpandedArchive.protoMessageName + ".ExtentRange"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "extent_begin"),
-    2: .standard(proto: "extent_end"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}extent_begin\0\u{3}extent_end\0")
 
   public var isInitialized: Bool {
     if self._extentBegin == nil {return false}
@@ -9802,13 +9278,9 @@ extension TSCE_SpanningDependenciesExpandedArchive.ExtentRange: SwiftProtobuf.Me
   }
 }
 
-extension TSCE_SpanningDependenciesExpandedArchive.ExtentRangeWithTableWithContext: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_SpanningDependenciesExpandedArchive.ExtentRangeWithTableWithContext: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_SpanningDependenciesExpandedArchive.protoMessageName + ".ExtentRangeWithTableWithContext"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_id"),
-    2: .standard(proto: "range_context"),
-    3: .same(proto: "ranges"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_id\0\u{3}range_context\0\u{1}ranges\0")
 
   public var isInitialized: Bool {
     if self._ownerID == nil {return false}
@@ -9857,12 +9329,9 @@ extension TSCE_SpanningDependenciesExpandedArchive.ExtentRangeWithTableWithConte
   }
 }
 
-extension TSCE_SpanningDependenciesExpandedArchive.CellCoordRefersToExtents: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_SpanningDependenciesExpandedArchive.CellCoordRefersToExtents: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_SpanningDependenciesExpandedArchive.protoMessageName + ".CellCoordRefersToExtents"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "coordinate"),
-    2: .standard(proto: "ranges_by_table_context"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}coordinate\0\u{3}ranges_by_table_context\0")
 
   public var isInitialized: Bool {
     if self._coordinate == nil {return false}
@@ -9905,11 +9374,9 @@ extension TSCE_SpanningDependenciesExpandedArchive.CellCoordRefersToExtents: Swi
   }
 }
 
-extension TSCE_WholeOwnerDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_WholeOwnerDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".WholeOwnerDependenciesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "dependent_cell"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}dependent_cell\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.dependentCell) {return false}
@@ -9942,11 +9409,9 @@ extension TSCE_WholeOwnerDependenciesArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCE_WholeOwnerDependenciesExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_WholeOwnerDependenciesExpandedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".WholeOwnerDependenciesExpandedArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "dependent_cells"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}dependent_cells\0")
 
   public var isInitialized: Bool {
     if let v = self._dependentCells, !v.isInitialized {return false}
@@ -9983,12 +9448,9 @@ extension TSCE_WholeOwnerDependenciesExpandedArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSCE_ErrorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ErrorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ErrorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "error_type_code"),
-    2: .standard(proto: "error_info_dictionary"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}error_type_code\0\u{3}error_info_dictionary\0")
 
   public var isInitialized: Bool {
     if self._errorTypeCode == nil {return false}
@@ -10031,13 +9493,9 @@ extension TSCE_ErrorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension TSCE_ErrorArchive.ErrorDictionaryEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ErrorArchive.ErrorDictionaryEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ErrorArchive.protoMessageName + ".ErrorDictionaryEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "error_key"),
-    2: .standard(proto: "value_for_key_string"),
-    3: .standard(proto: "value_for_key_number"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}error_key\0\u{3}value_for_key_string\0\u{3}value_for_key_number\0")
 
   public var isInitialized: Bool {
     if self._errorKey == nil {return false}
@@ -10084,13 +9542,9 @@ extension TSCE_ErrorArchive.ErrorDictionaryEntry: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCE_WarningArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_WarningArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".WarningArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "warning_type"),
-    2: .standard(proto: "warning_info_dictionary"),
-    3: .standard(proto: "range_ref"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}warning_type\0\u{3}warning_info_dictionary\0\u{3}range_ref\0")
 
   public var isInitialized: Bool {
     if self._warningType == nil {return false}
@@ -10139,13 +9593,9 @@ extension TSCE_WarningArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSCE_WarningArchive.WarningDictionaryEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_WarningArchive.WarningDictionaryEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_WarningArchive.protoMessageName + ".WarningDictionaryEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "warning_key"),
-    2: .standard(proto: "value_for_key_string"),
-    3: .standard(proto: "value_for_key_number"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}warning_key\0\u{3}value_for_key_string\0\u{3}value_for_key_number\0")
 
   public var isInitialized: Bool {
     if self._warningKey == nil {return false}
@@ -10192,12 +9642,9 @@ extension TSCE_WarningArchive.WarningDictionaryEntry: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSCE_CellErrorsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellErrorsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellErrorsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "errors"),
-    2: .standard(proto: "enhanced_errors"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}errors\0\u{3}enhanced_errors\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.errors) {return false}
@@ -10236,23 +9683,13 @@ extension TSCE_CellErrorsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSCE_CellErrorsArchive.ErrorFlavor: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "NONE"),
-    1: .same(proto: "ERROR"),
-    2: .same(proto: "REF_ERROR"),
-    3: .same(proto: "CIRCULAR_REF_ERROR"),
-    4: .same(proto: "UNSUPPORTED_FUNCTION_ERROR"),
-  ]
+nonisolated extension TSCE_CellErrorsArchive.ErrorFlavor: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0NONE\0\u{1}ERROR\0\u{1}REF_ERROR\0\u{1}CIRCULAR_REF_ERROR\0\u{1}UNSUPPORTED_FUNCTION_ERROR\0")
 }
 
-extension TSCE_CellErrorsArchive.ErrorForCell: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellErrorsArchive.ErrorForCell: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_CellErrorsArchive.protoMessageName + ".ErrorForCell"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "coordinate"),
-    2: .standard(proto: "error_flavor"),
-    3: .standard(proto: "err_due_to_cell"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}coordinate\0\u{3}error_flavor\0\u{3}err_due_to_cell\0")
 
   public var isInitialized: Bool {
     if self._coordinate == nil {return false}
@@ -10301,14 +9738,9 @@ extension TSCE_CellErrorsArchive.ErrorForCell: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCE_CellErrorsArchive.EnhancedErrorForCell: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellErrorsArchive.EnhancedErrorForCell: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_CellErrorsArchive.protoMessageName + ".EnhancedErrorForCell"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "coordinate"),
-    2: .same(proto: "error"),
-    3: .standard(proto: "err_due_to_cell"),
-    4: .standard(proto: "sorted_warnings"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}coordinate\0\u{1}error\0\u{3}err_due_to_cell\0\u{3}sorted_warnings\0")
 
   public var isInitialized: Bool {
     if self._coordinate == nil {return false}
@@ -10363,11 +9795,9 @@ extension TSCE_CellErrorsArchive.EnhancedErrorForCell: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSCE_CellSpillSizesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellSpillSizesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellSpillSizesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "spills"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}spills\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.spills) {return false}
@@ -10400,12 +9830,9 @@ extension TSCE_CellSpillSizesArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCE_CellSpillSizesArchive.SpillForCell: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellSpillSizesArchive.SpillForCell: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_CellSpillSizesArchive.protoMessageName + ".SpillForCell"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "coordinate"),
-    2: .standard(proto: "spill_size"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}coordinate\0\u{3}spill_size\0")
 
   public var isInitialized: Bool {
     if self._coordinate == nil {return false}
@@ -10448,12 +9875,9 @@ extension TSCE_CellSpillSizesArchive.SpillForCell: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSCE_UuidReferencesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UuidReferencesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UuidReferencesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_refs"),
-    2: .standard(proto: "table_uuid_refs"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_refs\0\u{3}table_uuid_refs\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.tableRefs) {return false}
@@ -10492,12 +9916,9 @@ extension TSCE_UuidReferencesArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCE_UuidReferencesArchive.TableRef: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UuidReferencesArchive.TableRef: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_UuidReferencesArchive.protoMessageName + ".TableRef"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_uuid"),
-    2: .standard(proto: "coord_set"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_uuid\0\u{3}coord_set\0")
 
   public var isInitialized: Bool {
     if self._ownerUuid == nil {return false}
@@ -10541,12 +9962,9 @@ extension TSCE_UuidReferencesArchive.TableRef: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCE_UuidReferencesArchive.UuidRef: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UuidReferencesArchive.UuidRef: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_UuidReferencesArchive.protoMessageName + ".UuidRef"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuid"),
-    2: .standard(proto: "coord_set"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uuid\0\u{3}coord_set\0")
 
   public var isInitialized: Bool {
     if self._uuid == nil {return false}
@@ -10590,12 +10008,9 @@ extension TSCE_UuidReferencesArchive.UuidRef: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCE_UuidReferencesArchive.TableWithUuidRef: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UuidReferencesArchive.TableWithUuidRef: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_UuidReferencesArchive.protoMessageName + ".TableWithUuidRef"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_uuid"),
-    2: .standard(proto: "uuid_refs"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_uuid\0\u{3}uuid_refs\0")
 
   public var isInitialized: Bool {
     if self._ownerUuid == nil {return false}
@@ -10639,26 +10054,9 @@ extension TSCE_UuidReferencesArchive.TableWithUuidRef: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSCE_FormulaOwnerDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_FormulaOwnerDependenciesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormulaOwnerDependenciesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "formula_owner_uid"),
-    2: .standard(proto: "internal_formula_owner_id"),
-    3: .standard(proto: "owner_kind"),
-    4: .standard(proto: "cell_dependencies"),
-    5: .standard(proto: "range_dependencies"),
-    6: .standard(proto: "volatile_dependencies"),
-    7: .standard(proto: "spanning_column_dependencies"),
-    8: .standard(proto: "spanning_row_dependencies"),
-    9: .standard(proto: "whole_owner_dependencies"),
-    10: .standard(proto: "cell_errors"),
-    11: .standard(proto: "formula_owner"),
-    12: .standard(proto: "base_owner_uid"),
-    13: .standard(proto: "tiled_cell_dependencies"),
-    14: .standard(proto: "uuid_references"),
-    15: .standard(proto: "tiled_range_dependencies"),
-    16: .standard(proto: "spill_range_sizes"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}formula_owner_uid\0\u{3}internal_formula_owner_id\0\u{3}owner_kind\0\u{3}cell_dependencies\0\u{3}range_dependencies\0\u{3}volatile_dependencies\0\u{3}spanning_column_dependencies\0\u{3}spanning_row_dependencies\0\u{3}whole_owner_dependencies\0\u{3}cell_errors\0\u{3}formula_owner\0\u{3}base_owner_uid\0\u{3}tiled_cell_dependencies\0\u{3}uuid_references\0\u{3}tiled_range_dependencies\0\u{3}spill_range_sizes\0")
 
   fileprivate class _StorageClass {
     var _formulaOwnerUid: TSP_UUID? = nil
@@ -10678,15 +10076,11 @@ extension TSCE_FormulaOwnerDependenciesArchive: SwiftProtobuf.Message, SwiftProt
     var _tiledRangeDependencies: TSCE_RangeDependenciesTiledArchive? = nil
     var _spillRangeSizes: TSCE_CellSpillSizesArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -10857,19 +10251,9 @@ extension TSCE_FormulaOwnerDependenciesArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCE_FormulaOwnerInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_FormulaOwnerInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormulaOwnerInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "formula_owner_id"),
-    2: .standard(proto: "cell_dependencies"),
-    3: .standard(proto: "range_dependencies"),
-    4: .standard(proto: "volatile_dependencies"),
-    5: .standard(proto: "spanning_column_dependencies"),
-    6: .standard(proto: "spanning_row_dependencies"),
-    8: .standard(proto: "whole_owner_dependencies"),
-    9: .standard(proto: "cell_errors"),
-    7: .standard(proto: "formula_owner"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}formula_owner_id\0\u{3}cell_dependencies\0\u{3}range_dependencies\0\u{3}volatile_dependencies\0\u{3}spanning_column_dependencies\0\u{3}spanning_row_dependencies\0\u{3}formula_owner\0\u{3}whole_owner_dependencies\0\u{3}cell_errors\0")
 
   fileprivate class _StorageClass {
     var _formulaOwnerID: TSP_CFUUIDArchive? = nil
@@ -10882,15 +10266,11 @@ extension TSCE_FormulaOwnerInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _cellErrors: TSCE_CellErrorsArchive? = nil
     var _formulaOwner: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -11012,12 +10392,9 @@ extension TSCE_FormulaOwnerInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSCE_SubFormulaOwnerIDArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_SubFormulaOwnerIDArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SubFormulaOwnerIDArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_owner_uid"),
-    2: .standard(proto: "owner_kind"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_owner_uid\0\u{3}owner_kind\0")
 
   public var isInitialized: Bool {
     if self._baseOwnerUid == nil {return false}
@@ -11061,12 +10438,9 @@ extension TSCE_SubFormulaOwnerIDArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCE_OwnerIDMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_OwnerIDMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OwnerIDMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "map_entry"),
-    2: .standard(proto: "unregistered_internal_owner_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}map_entry\0\u{3}unregistered_internal_owner_id\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.mapEntry) {return false}
@@ -11104,12 +10478,9 @@ extension TSCE_OwnerIDMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSCE_OwnerIDMapArchive.OwnerIDMapArchiveEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_OwnerIDMapArchive.OwnerIDMapArchiveEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_OwnerIDMapArchive.protoMessageName + ".OwnerIDMapArchiveEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "internal_owner_id"),
-    2: .standard(proto: "owner_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}internal_owner_id\0\u{3}owner_id\0")
 
   public var isInitialized: Bool {
     if self._internalOwnerID == nil {return false}
@@ -11152,11 +10523,9 @@ extension TSCE_OwnerIDMapArchive.OwnerIDMapArchiveEntry: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCE_UidLookupListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UidLookupListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UidLookupListArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuids"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uuids\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.uuids) {return false}
@@ -11189,16 +10558,9 @@ extension TSCE_UidLookupListArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSCE_DependencyTrackerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_DependencyTrackerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DependencyTrackerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "formula_owner_info"),
-    2: .standard(proto: "dirty_leaf"),
-    3: .standard(proto: "owner_id_map"),
-    4: .standard(proto: "internal_dirty_leaf"),
-    5: .standard(proto: "number_of_formulas"),
-    6: .standard(proto: "formula_owner_dependencies"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}formula_owner_info\0\u{3}dirty_leaf\0\u{3}owner_id_map\0\u{3}internal_dirty_leaf\0\u{3}number_of_formulas\0\u{3}formula_owner_dependencies\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.formulaOwnerInfo) {return false}
@@ -11264,14 +10626,9 @@ extension TSCE_DependencyTrackerArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCE_RemoteDataSpecifierArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RemoteDataSpecifierArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RemoteDataSpecifierArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "function_index"),
-    2: .same(proto: "symbol"),
-    3: .same(proto: "attribute"),
-    4: .same(proto: "date"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}function_index\0\u{1}symbol\0\u{1}attribute\0\u{1}date\0")
 
   public var isInitialized: Bool {
     if self._functionIndex == nil {return false}
@@ -11325,11 +10682,9 @@ extension TSCE_RemoteDataSpecifierArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCE_RemoteDataValueMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RemoteDataValueMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RemoteDataValueMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "entry"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}entry\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.entry) {return false}
@@ -11362,12 +10717,9 @@ extension TSCE_RemoteDataValueMapArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSCE_RemoteDataValueMapArchive.RemoteDataMapEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RemoteDataValueMapArchive.RemoteDataMapEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_RemoteDataValueMapArchive.protoMessageName + ".RemoteDataMapEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "specifier"),
-    2: .same(proto: "value"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}specifier\0\u{1}value\0")
 
   public var isInitialized: Bool {
     if self._specifier == nil {return false}
@@ -11412,13 +10764,9 @@ extension TSCE_RemoteDataValueMapArchive.RemoteDataMapEntry: SwiftProtobuf.Messa
   }
 }
 
-extension TSCE_StockArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_StockArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StockArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "symbol"),
-    2: .same(proto: "date"),
-    3: .same(proto: "attribute"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}symbol\0\u{1}date\0\u{1}attribute\0")
 
   public var isInitialized: Bool {
     if self._symbol == nil {return false}
@@ -11466,12 +10814,9 @@ extension TSCE_StockArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension TSCE_StockArchive.AttributeEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_StockArchive.AttributeEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_StockArchive.protoMessageName + ".AttributeEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "attribute"),
-    2: .same(proto: "value"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}attribute\0\u{1}value\0")
 
   public var isInitialized: Bool {
     if self._attribute == nil {return false}
@@ -11514,12 +10859,9 @@ extension TSCE_StockArchive.AttributeEntry: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCE_RemoteDataStoreArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RemoteDataStoreArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RemoteDataStoreArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "value_map"),
-    2: .same(proto: "stocks"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}value_map\0\u{1}stocks\0")
 
   public var isInitialized: Bool {
     if self._valueMap == nil {return false}
@@ -11563,13 +10905,9 @@ extension TSCE_RemoteDataStoreArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSCE_NameTrackedReferencePair: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_NameTrackedReferencePair: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".NameTrackedReferencePair"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .standard(proto: "tracked_reference"),
-    3: .standard(proto: "tracked_reference_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{3}tracked_reference\0\u{3}tracked_reference_id\0")
 
   public var isInitialized: Bool {
     if self._name == nil {return false}
@@ -11617,12 +10955,9 @@ extension TSCE_NameTrackedReferencePair: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCE_NamesByTrackedReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_NamesByTrackedReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".NamesByTrackedReferenceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_id"),
-    2: .standard(proto: "name_tracked_reference_pair"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_id\0\u{3}name_tracked_reference_pair\0")
 
   public var isInitialized: Bool {
     if self._tableID == nil {return false}
@@ -11665,12 +11000,9 @@ extension TSCE_NamesByTrackedReferenceArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCE_NamedReferenceManagerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_NamedReferenceManagerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".NamedReferenceManagerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "reference_tracker"),
-    2: .standard(proto: "names_by_tracked_reference_by_table"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}reference_tracker\0\u{3}names_by_tracked_reference_by_table\0")
 
   public var isInitialized: Bool {
     if self._referenceTracker == nil {return false}
@@ -11714,11 +11046,9 @@ extension TSCE_NamedReferenceManagerArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCE_UuidSetStoreArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UuidSetStoreArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UuidSetStoreArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuidSet"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uuidSet\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.uuidSet) {return false}
@@ -11751,12 +11081,9 @@ extension TSCE_UuidSetStoreArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSCE_UuidSetStoreArchive.UuidSet: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UuidSetStoreArchive.UuidSet: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_UuidSetStoreArchive.protoMessageName + ".UuidSet"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuid"),
-    2: .standard(proto: "index_of_set"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uuid\0\u{3}index_of_set\0")
 
   public var isInitialized: Bool {
     if self._indexOfSet == nil {return false}
@@ -11799,11 +11126,9 @@ extension TSCE_UuidSetStoreArchive.UuidSet: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCE_UuidReferenceMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UuidReferenceMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UuidReferenceMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cell_refs_for_uuid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cell_refs_for_uuid\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.cellRefsForUuid) {return false}
@@ -11836,13 +11161,9 @@ extension TSCE_UuidReferenceMapArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSCE_UuidReferenceMapArchive.CellRefsForUuid: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_UuidReferenceMapArchive.CellRefsForUuid: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_UuidReferenceMapArchive.protoMessageName + ".CellRefsForUuid"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuid"),
-    2: .standard(proto: "cell_ref"),
-    3: .standard(proto: "cell_refs"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uuid\0\u{3}cell_ref\0\u{3}cell_refs\0")
 
   public var isInitialized: Bool {
     if self._uuid == nil {return false}
@@ -11892,11 +11213,9 @@ extension TSCE_UuidReferenceMapArchive.CellRefsForUuid: SwiftProtobuf.Message, S
   }
 }
 
-extension TSCE_GroupByNodeMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_GroupByNodeMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GroupByNodeMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "refs_for_group_by"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}refs_for_group_by\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.refsForGroupBy) {return false}
@@ -11929,12 +11248,9 @@ extension TSCE_GroupByNodeMapArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCE_GroupByNodeMapArchive.CellRefsForGroupNode: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_GroupByNodeMapArchive.CellRefsForGroupNode: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_GroupByNodeMapArchive.protoMessageName + ".CellRefsForGroupNode"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "group_node_uid"),
-    3: .standard(proto: "cell_refs"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}group_node_uid\0\u{4}\u{2}cell_refs\0")
 
   public var isInitialized: Bool {
     if self._groupNodeUid == nil {return false}
@@ -11978,12 +11294,9 @@ extension TSCE_GroupByNodeMapArchive.CellRefsForGroupNode: SwiftProtobuf.Message
   }
 }
 
-extension TSCE_GroupByNodeMapArchive.GroupNodesForGroupBy: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_GroupByNodeMapArchive.GroupNodesForGroupBy: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_GroupByNodeMapArchive.protoMessageName + ".GroupNodesForGroupBy"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "group_by_uid"),
-    2: .standard(proto: "refs_for_group_node"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}group_by_uid\0\u{3}refs_for_group_node\0")
 
   public var isInitialized: Bool {
     if self._groupByUid == nil {return false}
@@ -12027,27 +11340,9 @@ extension TSCE_GroupByNodeMapArchive.GroupNodesForGroupBy: SwiftProtobuf.Message
   }
 }
 
-extension TSCE_CalculationEngineArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CalculationEngineArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CalculationEngineArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "base_date_1904"),
-    2: .standard(proto: "dependency_tracker"),
-    3: .standard(proto: "named_reference_manager"),
-    4: .standard(proto: "excel_import_date_mode"),
-    5: .standard(proto: "saved_locale_identifier_for_4_2"),
-    6: .standard(proto: "document_random_seed"),
-    7: .standard(proto: "uuid_reference_map"),
-    9: .standard(proto: "document_timestamp"),
-    10: .standard(proto: "document_timezone"),
-    11: .standard(proto: "table_uid_history"),
-    12: .standard(proto: "remote_data_store"),
-    13: .standard(proto: "group_node_map"),
-    14: .standard(proto: "header_name_manager"),
-    15: .standard(proto: "refs_to_dirty"),
-    16: .standard(proto: "saved_locale_identifier"),
-    17: .standard(proto: "begin_tracking_names_legacy_nrm"),
-    18: .standard(proto: "end_tracking_names_legacy_nrm"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}base_date_1904\0\u{3}dependency_tracker\0\u{3}named_reference_manager\0\u{3}excel_import_date_mode\0\u{3}saved_locale_identifier_for_4_2\0\u{3}document_random_seed\0\u{3}uuid_reference_map\0\u{4}\u{2}document_timestamp\0\u{3}document_timezone\0\u{3}table_uid_history\0\u{3}remote_data_store\0\u{3}group_node_map\0\u{3}header_name_manager\0\u{3}refs_to_dirty\0\u{3}saved_locale_identifier\0\u{3}begin_tracking_names_legacy_nrm\0\u{3}end_tracking_names_legacy_nrm\0")
 
   fileprivate class _StorageClass {
     var _baseDate1904: Bool? = nil
@@ -12068,15 +11363,11 @@ extension TSCE_CalculationEngineArchive: SwiftProtobuf.Message, SwiftProtobuf._M
     var _beginTrackingNamesLegacyNrm: [TSP_UUID] = []
     var _endTrackingNamesLegacyNrm: [TSP_UUID] = []
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -12248,22 +11539,13 @@ extension TSCE_CalculationEngineArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCE_CalculationEngineArchive.ExcelImportDateMode: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "DATE_MODE_1900"),
-    2: .same(proto: "DATE_MODE_1900_LEGACY"),
-    3: .same(proto: "DATE_MODE_1904_LEGACY"),
-  ]
+nonisolated extension TSCE_CalculationEngineArchive.ExcelImportDateMode: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}DATE_MODE_1900\0\u{1}DATE_MODE_1900_LEGACY\0\u{1}DATE_MODE_1904_LEGACY\0")
 }
 
-extension TSCE_PreserveColumnRowFlagsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_PreserveColumnRowFlagsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PreserveColumnRowFlagsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "begin_row_is_absolute"),
-    2: .standard(proto: "begin_column_is_absolute"),
-    3: .standard(proto: "end_row_is_absolute"),
-    4: .standard(proto: "end_column_is_absolute"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}begin_row_is_absolute\0\u{3}begin_column_is_absolute\0\u{3}end_row_is_absolute\0\u{3}end_column_is_absolute\0")
 
   public var isInitialized: Bool {
     if self._beginRowIsAbsolute == nil {return false}
@@ -12316,23 +11598,9 @@ extension TSCE_PreserveColumnRowFlagsArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCE_CategoryReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CategoryReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CategoryReferenceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "group_by_uid"),
-    2: .standard(proto: "column_uid"),
-    3: .standard(proto: "aggregate_type"),
-    4: .standard(proto: "group_level"),
-    6: .standard(proto: "group_uids"),
-    7: .standard(proto: "preserve_flags"),
-    8: .standard(proto: "relative_column"),
-    9: .standard(proto: "relative_group_uid"),
-    10: .standard(proto: "absolute_group_uid"),
-    11: .standard(proto: "option_refers_to_pivot_rows"),
-    12: .standard(proto: "option_refers_to_pivot_columns"),
-    13: .standard(proto: "agg_index_level"),
-    14: .standard(proto: "option_show_aggregate_name"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}group_by_uid\0\u{3}column_uid\0\u{3}aggregate_type\0\u{3}group_level\0\u{4}\u{2}group_uids\0\u{3}preserve_flags\0\u{3}relative_column\0\u{3}relative_group_uid\0\u{3}absolute_group_uid\0\u{3}option_refers_to_pivot_rows\0\u{3}option_refers_to_pivot_columns\0\u{3}agg_index_level\0\u{3}option_show_aggregate_name\0")
 
   fileprivate class _StorageClass {
     var _groupByUid: TSP_UUID? = nil
@@ -12349,15 +11617,11 @@ extension TSCE_CategoryReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._M
     var _aggIndexLevel: UInt32? = nil
     var _optionShowAggregateName: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -12504,11 +11768,9 @@ extension TSCE_CategoryReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCE_CategoryReferenceArchive.CatRefUidList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CategoryReferenceArchive.CatRefUidList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_CategoryReferenceArchive.protoMessageName + ".CatRefUidList"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uid\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.uid) {return false}
@@ -12541,11 +11803,9 @@ extension TSCE_CategoryReferenceArchive.CatRefUidList: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSCE_ASTNodeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ASTNodeArrayArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "AST_node"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}AST_node\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.astNode) {return false}
@@ -12578,87 +11838,17 @@ extension TSCE_ASTNodeArrayArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTNodeType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "ADDITION_NODE"),
-    2: .same(proto: "SUBTRACTION_NODE"),
-    3: .same(proto: "MULTIPLICATION_NODE"),
-    4: .same(proto: "DIVISION_NODE"),
-    5: .same(proto: "POWER_NODE"),
-    6: .same(proto: "CONCATENATION_NODE"),
-    7: .same(proto: "GREATER_THAN_NODE"),
-    8: .same(proto: "GREATER_THAN_OR_EQUAL_TO_NODE"),
-    9: .same(proto: "LESS_THAN_NODE"),
-    10: .same(proto: "LESS_THAN_OR_EQUAL_TO_NODE"),
-    11: .same(proto: "EQUAL_TO_NODE"),
-    12: .same(proto: "NOT_EQUAL_TO_NODE"),
-    13: .same(proto: "NEGATION_NODE"),
-    14: .same(proto: "PLUS_SIGN_NODE"),
-    15: .same(proto: "PERCENT_NODE"),
-    16: .same(proto: "FUNCTION_NODE"),
-    17: .same(proto: "NUMBER_NODE"),
-    18: .same(proto: "BOOLEAN_NODE"),
-    19: .same(proto: "STRING_NODE"),
-    20: .same(proto: "DATE_NODE"),
-    21: .same(proto: "DURATION_NODE"),
-    22: .same(proto: "EMPTY_ARGUMENT_NODE"),
-    23: .same(proto: "TOKEN_NODE"),
-    24: .same(proto: "ARRAY_NODE"),
-    25: .same(proto: "LIST_NODE"),
-    26: .same(proto: "THUNK_NODE"),
-    27: .same(proto: "LOCAL_CELL_REFERENCE_NODE"),
-    28: .same(proto: "CROSS_TABLE_CELL_REFERENCE_NODE"),
-    29: .same(proto: "COLON_NODE"),
-    30: .same(proto: "REFERENCE_ERROR_NODE"),
-    31: .same(proto: "UNKNOWN_FUNCTION_NODE"),
-    32: .same(proto: "APPEND_WHITESPACE_NODE"),
-    33: .same(proto: "PREPEND_WHITESPACE_NODE"),
-    34: .same(proto: "BEGIN_THUNK_NODE"),
-    35: .same(proto: "END_THUNK_NODE"),
-    36: .same(proto: "CELL_REFERENCE_NODE"),
-    45: .same(proto: "COLON_NODE_WITH_UIDS"),
-    46: .same(proto: "REFERENCE_ERROR_WITH_UIDS"),
-    48: .same(proto: "UID_REFERENCE_NODE"),
-    52: .same(proto: "LET_BIND_NODE"),
-    53: .same(proto: "VAR_NODE"),
-    54: .same(proto: "END_SCOPE_NODE"),
-    55: .same(proto: "LAMBDA_NODE"),
-    56: .same(proto: "BEGIN_LAMBDA_THUNK_NODE"),
-    57: .same(proto: "END_LAMBDA_THUNK_NODE"),
-    63: .same(proto: "LINKED_CELL_REF_NODE"),
-    64: .same(proto: "LINKED_COLUMN_REF_NODE"),
-    65: .same(proto: "LINKED_ROW_REF_NODE"),
-    66: .same(proto: "CATEGORY_REF_NODE"),
-    67: .same(proto: "COLON_TRACT_NODE"),
-    68: .same(proto: "VIEW_TRACT_REF_NODE"),
-    69: .same(proto: "INTERSECTION_NODE"),
-    70: .same(proto: "SPILL_RANGE_NODE"),
-  ]
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTNodeType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}ADDITION_NODE\0\u{1}SUBTRACTION_NODE\0\u{1}MULTIPLICATION_NODE\0\u{1}DIVISION_NODE\0\u{1}POWER_NODE\0\u{1}CONCATENATION_NODE\0\u{1}GREATER_THAN_NODE\0\u{1}GREATER_THAN_OR_EQUAL_TO_NODE\0\u{1}LESS_THAN_NODE\0\u{1}LESS_THAN_OR_EQUAL_TO_NODE\0\u{1}EQUAL_TO_NODE\0\u{1}NOT_EQUAL_TO_NODE\0\u{1}NEGATION_NODE\0\u{1}PLUS_SIGN_NODE\0\u{1}PERCENT_NODE\0\u{1}FUNCTION_NODE\0\u{1}NUMBER_NODE\0\u{1}BOOLEAN_NODE\0\u{1}STRING_NODE\0\u{1}DATE_NODE\0\u{1}DURATION_NODE\0\u{1}EMPTY_ARGUMENT_NODE\0\u{1}TOKEN_NODE\0\u{1}ARRAY_NODE\0\u{1}LIST_NODE\0\u{1}THUNK_NODE\0\u{1}LOCAL_CELL_REFERENCE_NODE\0\u{1}CROSS_TABLE_CELL_REFERENCE_NODE\0\u{1}COLON_NODE\0\u{1}REFERENCE_ERROR_NODE\0\u{1}UNKNOWN_FUNCTION_NODE\0\u{1}APPEND_WHITESPACE_NODE\0\u{1}PREPEND_WHITESPACE_NODE\0\u{1}BEGIN_THUNK_NODE\0\u{1}END_THUNK_NODE\0\u{1}CELL_REFERENCE_NODE\0\u{2}\u{9}COLON_NODE_WITH_UIDS\0\u{1}REFERENCE_ERROR_WITH_UIDS\0\u{2}\u{2}UID_REFERENCE_NODE\0\u{2}\u{4}LET_BIND_NODE\0\u{1}VAR_NODE\0\u{1}END_SCOPE_NODE\0\u{1}LAMBDA_NODE\0\u{1}BEGIN_LAMBDA_THUNK_NODE\0\u{1}END_LAMBDA_THUNK_NODE\0\u{2}\u{6}LINKED_CELL_REF_NODE\0\u{1}LINKED_COLUMN_REF_NODE\0\u{1}LINKED_ROW_REF_NODE\0\u{1}CATEGORY_REF_NODE\0\u{1}COLON_TRACT_NODE\0\u{1}VIEW_TRACT_REF_NODE\0\u{1}INTERSECTION_NODE\0\u{1}SPILL_RANGE_NODE\0")
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTUidTractPurpose: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "UIDS_INCLUDED"),
-    1: .same(proto: "UIDS_PREMERGE"),
-    2: .same(proto: "UIDS_PREMOVEREGION"),
-    3: .same(proto: "UIDS_EXCLUDED"),
-    4: .same(proto: "UIDS_ACTIVE"),
-    5: .same(proto: "UIDS_PREMERGE_TOPLEFT"),
-    6: .same(proto: "UIDS_REMOVED_BY_MOVE"),
-    7: .same(proto: "FULLTUPLE_ROW_COLUMN_HEADER"),
-    8: .same(proto: "FULLTUPLE_AGGREGATE_RULE_UID"),
-    9: .same(proto: "FULLTUPLE_ROW_COLUMN_RULE_VALUE_PAIRS"),
-  ]
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTUidTractPurpose: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0UIDS_INCLUDED\0\u{1}UIDS_PREMERGE\0\u{1}UIDS_PREMOVEREGION\0\u{1}UIDS_EXCLUDED\0\u{1}UIDS_ACTIVE\0\u{1}UIDS_PREMERGE_TOPLEFT\0\u{1}UIDS_REMOVED_BY_MOVE\0\u{1}FULLTUPLE_ROW_COLUMN_HEADER\0\u{1}FULLTUPLE_AGGREGATE_RULE_UID\0\u{1}FULLTUPLE_ROW_COLUMN_RULE_VALUE_PAIRS\0")
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTLocalCellReferenceNodeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTLocalCellReferenceNodeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTLocalCellReferenceNodeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "row_handle"),
-    2: .standard(proto: "column_handle"),
-    3: .standard(proto: "row_is_sticky"),
-    4: .standard(proto: "column_is_sticky"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}row_handle\0\u{3}column_handle\0\u{3}row_is_sticky\0\u{3}column_is_sticky\0")
 
   public var isInitialized: Bool {
     if self._rowHandle == nil {return false}
@@ -12713,19 +11903,9 @@ extension TSCE_ASTNodeArrayArchive.ASTLocalCellReferenceNodeArchive: SwiftProtob
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTCrossTableCellReferenceNodeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTCrossTableCellReferenceNodeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTCrossTableCellReferenceNodeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "row_handle"),
-    2: .standard(proto: "column_handle"),
-    3: .standard(proto: "row_is_sticky"),
-    4: .standard(proto: "column_is_sticky"),
-    5: .standard(proto: "table_id"),
-    6: .standard(proto: "AST_reference_whitespace_after_sheet_name"),
-    7: .standard(proto: "AST_reference_whitespace_before_table_name"),
-    8: .standard(proto: "AST_reference_whitespace_after_table_name"),
-    9: .standard(proto: "AST_reference_whitespace_before_cell_address"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}row_handle\0\u{3}column_handle\0\u{3}row_is_sticky\0\u{3}column_is_sticky\0\u{3}table_id\0\u{3}AST_reference_whitespace_after_sheet_name\0\u{3}AST_reference_whitespace_before_table_name\0\u{3}AST_reference_whitespace_after_table_name\0\u{3}AST_reference_whitespace_before_cell_address\0")
 
   public var isInitialized: Bool {
     if self._rowHandle == nil {return false}
@@ -12806,12 +11986,9 @@ extension TSCE_ASTNodeArrayArchive.ASTCrossTableCellReferenceNodeArchive: SwiftP
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTColumnCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTColumnCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTColumnCoordinateArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .same(proto: "absolute"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{1}absolute\0")
 
   public var isInitialized: Bool {
     if self._column == nil {return false}
@@ -12853,12 +12030,9 @@ extension TSCE_ASTNodeArrayArchive.ASTColumnCoordinateArchive: SwiftProtobuf.Mes
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTRowCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTRowCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTRowCoordinateArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "row"),
-    2: .same(proto: "absolute"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}row\0\u{1}absolute\0")
 
   public var isInitialized: Bool {
     if self._row == nil {return false}
@@ -12900,11 +12074,9 @@ extension TSCE_ASTNodeArrayArchive.ASTRowCoordinateArchive: SwiftProtobuf.Messag
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTUidList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTUidList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTUidList"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uid\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.uid) {return false}
@@ -12937,15 +12109,9 @@ extension TSCE_ASTNodeArrayArchive.ASTUidList: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTUidTract: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTUidTract: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTUidTract"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "columnUids"),
-    2: .same(proto: "rowUids"),
-    3: .standard(proto: "is_range_ref"),
-    4: .same(proto: "purpose"),
-    5: .standard(proto: "preserve_rectangular"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}columnUids\0\u{1}rowUids\0\u{3}is_range_ref\0\u{1}purpose\0\u{3}preserve_rectangular\0")
 
   public var isInitialized: Bool {
     if self._columnUids == nil {return false}
@@ -13005,14 +12171,9 @@ extension TSCE_ASTNodeArrayArchive.ASTUidTract: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTStickyBits: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTStickyBits: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTStickyBits"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "begin_row_is_absolute"),
-    2: .standard(proto: "begin_column_is_absolute"),
-    3: .standard(proto: "end_row_is_absolute"),
-    4: .standard(proto: "end_column_is_absolute"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}begin_row_is_absolute\0\u{3}begin_column_is_absolute\0\u{3}end_row_is_absolute\0\u{3}end_column_is_absolute\0")
 
   public var isInitialized: Bool {
     if self._beginRowIsAbsolute == nil {return false}
@@ -13067,12 +12228,9 @@ extension TSCE_ASTNodeArrayArchive.ASTStickyBits: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTUidTractList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTUidTractList: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTUidTractList"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tract"),
-    2: .standard(proto: "sticky_bits"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tract\0\u{3}sticky_bits\0")
 
   public var isInitialized: Bool {
     if self._stickyBits == nil {return false}
@@ -13116,14 +12274,9 @@ extension TSCE_ASTNodeArrayArchive.ASTUidTractList: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTUidCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTUidCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTUidCoordinateArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "column_uid"),
-    2: .standard(proto: "row_uid"),
-    3: .standard(proto: "column_absolute"),
-    4: .standard(proto: "row_absolute"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}column_uid\0\u{3}row_uid\0\u{3}column_absolute\0\u{3}row_absolute\0")
 
   public var isInitialized: Bool {
     if self._columnUid == nil {return false}
@@ -13180,13 +12333,9 @@ extension TSCE_ASTNodeArrayArchive.ASTUidCoordinateArchive: SwiftProtobuf.Messag
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTCategoryLevels: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTCategoryLevels: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTCategoryLevels"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "AST_column_group_level"),
-    2: .standard(proto: "AST_row_group_level"),
-    3: .standard(proto: "AST_agg_index_level"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}AST_column_group_level\0\u{3}AST_row_group_level\0\u{3}AST_agg_index_level\0")
 
   public var isInitialized: Bool {
     if self._astColumnGroupLevel == nil {return false}
@@ -13234,11 +12383,9 @@ extension TSCE_ASTNodeArrayArchive.ASTCategoryLevels: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTCategoryReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTCategoryReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTCategoryReferenceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "category_ref"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}category_ref\0")
 
   public var isInitialized: Bool {
     if self._categoryRef == nil {return false}
@@ -13276,15 +12423,9 @@ extension TSCE_ASTNodeArrayArchive.ASTCategoryReferenceArchive: SwiftProtobuf.Me
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTColonTractArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTColonTractArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTColonTractArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "relative_column"),
-    2: .standard(proto: "relative_row"),
-    3: .standard(proto: "absolute_column"),
-    4: .standard(proto: "absolute_row"),
-    5: .standard(proto: "preserve_rectangular"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}relative_column\0\u{3}relative_row\0\u{3}absolute_column\0\u{3}absolute_row\0\u{3}preserve_rectangular\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.relativeColumn) {return false}
@@ -13344,12 +12485,9 @@ extension TSCE_ASTNodeArrayArchive.ASTColonTractArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTColonTractArchive.ASTColonTractRelativeRangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTColonTractArchive.ASTColonTractRelativeRangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.ASTColonTractArchive.protoMessageName + ".ASTColonTractRelativeRangeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "range_begin"),
-    2: .standard(proto: "range_end"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}range_begin\0\u{3}range_end\0")
 
   public var isInitialized: Bool {
     if self._rangeBegin == nil {return false}
@@ -13391,12 +12529,9 @@ extension TSCE_ASTNodeArrayArchive.ASTColonTractArchive.ASTColonTractRelativeRan
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTColonTractArchive.ASTColonTractAbsoluteRangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTColonTractArchive.ASTColonTractAbsoluteRangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.ASTColonTractArchive.protoMessageName + ".ASTColonTractAbsoluteRangeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "range_begin"),
-    2: .standard(proto: "range_end"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}range_begin\0\u{3}range_end\0")
 
   public var isInitialized: Bool {
     if self._rangeBegin == nil {return false}
@@ -13438,15 +12573,9 @@ extension TSCE_ASTNodeArrayArchive.ASTColonTractArchive.ASTColonTractAbsoluteRan
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTCrossTableReferenceExtraInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTCrossTableReferenceExtraInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTCrossTableReferenceExtraInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_id"),
-    2: .standard(proto: "AST_reference_whitespace_after_sheet_name"),
-    3: .standard(proto: "AST_reference_whitespace_before_table_name"),
-    4: .standard(proto: "AST_reference_whitespace_after_table_name"),
-    5: .standard(proto: "AST_reference_whitespace_before_cell_address"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_id\0\u{3}AST_reference_whitespace_after_sheet_name\0\u{3}AST_reference_whitespace_before_table_name\0\u{3}AST_reference_whitespace_after_table_name\0\u{3}AST_reference_whitespace_before_cell_address\0")
 
   public var isInitialized: Bool {
     if self._tableID == nil {return false}
@@ -13503,14 +12632,9 @@ extension TSCE_ASTNodeArrayArchive.ASTCrossTableReferenceExtraInfoArchive: Swift
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTLambdaIdentsListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTLambdaIdentsListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTLambdaIdentsListArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "AST_identifier_string"),
-    2: .standard(proto: "AST_first_symbol"),
-    3: .standard(proto: "AST_whitespace_before_idents"),
-    4: .standard(proto: "AST_whitespace_after_idents"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}AST_identifier_string\0\u{3}AST_first_symbol\0\u{3}AST_whitespace_before_idents\0\u{3}AST_whitespace_after_idents\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -13557,55 +12681,9 @@ extension TSCE_ASTNodeArrayArchive.ASTLambdaIdentsListArchive: SwiftProtobuf.Mes
   }
 }
 
-extension TSCE_ASTNodeArrayArchive.ASTNodeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ASTNodeArrayArchive.ASTNodeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_ASTNodeArrayArchive.protoMessageName + ".ASTNodeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "AST_node_type"),
-    2: .standard(proto: "AST_function_node_index"),
-    3: .standard(proto: "AST_function_node_numArgs"),
-    4: .standard(proto: "AST_number_node_number"),
-    5: .standard(proto: "AST_boolean_node_boolean"),
-    6: .standard(proto: "AST_string_node_string"),
-    7: .standard(proto: "AST_date_node_dateNum"),
-    19: .standard(proto: "AST_date_node_suppress_date_format"),
-    20: .standard(proto: "AST_date_node_suppress_time_format"),
-    21: .standard(proto: "AST_date_node_date_time_format"),
-    8: .standard(proto: "AST_duration_node_unitNum"),
-    9: .standard(proto: "AST_duration_node_unit"),
-    22: .standard(proto: "AST_duration_node_style"),
-    23: .standard(proto: "AST_duration_node_duration_unit_largest"),
-    24: .standard(proto: "AST_duration_node_duration_unit_smallest"),
-    29: .standard(proto: "AST_duration_node_use_automatic_units"),
-    10: .standard(proto: "AST_token_node_boolean"),
-    11: .standard(proto: "AST_array_node_numCol"),
-    12: .standard(proto: "AST_array_node_numRow"),
-    13: .standard(proto: "AST_list_node_numArgs"),
-    14: .standard(proto: "AST_thunk_node_array"),
-    15: .standard(proto: "AST_local_cell_reference_node_reference"),
-    16: .standard(proto: "AST_cross_table_cell_reference_node_reference"),
-    17: .standard(proto: "AST_unknown_function_node_string"),
-    18: .standard(proto: "AST_unknown_function_node_numArgs"),
-    25: .standard(proto: "AST_whitespace"),
-    26: .standard(proto: "AST_column"),
-    27: .standard(proto: "AST_row"),
-    28: .standard(proto: "AST_cross_table_reference_extra_info"),
-    30: .standard(proto: "AST_uid_coordinate"),
-    33: .standard(proto: "AST_sticky_bits"),
-    41: .standard(proto: "AST_frozen_sticky_bits"),
-    34: .standard(proto: "AST_let_identifier"),
-    35: .standard(proto: "AST_let_whitespace"),
-    36: .standard(proto: "AST_let_is_continuation"),
-    37: .standard(proto: "AST_symbol"),
-    38: .standard(proto: "AST_tract_list"),
-    39: .standard(proto: "AST_category_ref"),
-    40: .standard(proto: "AST_colon_tract"),
-    42: .standard(proto: "AST_number_node_decimal_low"),
-    43: .standard(proto: "AST_number_node_decimal_high"),
-    44: .standard(proto: "AST_category_levels"),
-    45: .standard(proto: "AST_lambda_idents"),
-    46: .standard(proto: "AST_range_context"),
-    47: .standard(proto: "upgrade_node_type"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}AST_node_type\0\u{3}AST_function_node_index\0\u{3}AST_function_node_numArgs\0\u{3}AST_number_node_number\0\u{3}AST_boolean_node_boolean\0\u{3}AST_string_node_string\0\u{3}AST_date_node_dateNum\0\u{3}AST_duration_node_unitNum\0\u{3}AST_duration_node_unit\0\u{3}AST_token_node_boolean\0\u{3}AST_array_node_numCol\0\u{3}AST_array_node_numRow\0\u{3}AST_list_node_numArgs\0\u{3}AST_thunk_node_array\0\u{3}AST_local_cell_reference_node_reference\0\u{3}AST_cross_table_cell_reference_node_reference\0\u{3}AST_unknown_function_node_string\0\u{3}AST_unknown_function_node_numArgs\0\u{3}AST_date_node_suppress_date_format\0\u{3}AST_date_node_suppress_time_format\0\u{3}AST_date_node_date_time_format\0\u{3}AST_duration_node_style\0\u{3}AST_duration_node_duration_unit_largest\0\u{3}AST_duration_node_duration_unit_smallest\0\u{3}AST_whitespace\0\u{3}AST_column\0\u{3}AST_row\0\u{3}AST_cross_table_reference_extra_info\0\u{3}AST_duration_node_use_automatic_units\0\u{3}AST_uid_coordinate\0\u{4}\u{3}AST_sticky_bits\0\u{3}AST_let_identifier\0\u{3}AST_let_whitespace\0\u{3}AST_let_is_continuation\0\u{3}AST_symbol\0\u{3}AST_tract_list\0\u{3}AST_category_ref\0\u{3}AST_colon_tract\0\u{3}AST_frozen_sticky_bits\0\u{3}AST_number_node_decimal_low\0\u{3}AST_number_node_decimal_high\0\u{3}AST_category_levels\0\u{3}AST_lambda_idents\0\u{3}AST_range_context\0\u{3}upgrade_node_type\0")
 
   fileprivate class _StorageClass {
     var _astNodeType: TSCE_ASTNodeArrayArchive.ASTNodeType? = nil
@@ -13654,15 +12732,11 @@ extension TSCE_ASTNodeArrayArchive.ASTNodeArchive: SwiftProtobuf.Message, SwiftP
     var _astRangeContext: UInt32? = nil
     var _upgradeNodeType: TSCE_ASTNodeArrayArchive.ASTNodeType? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -14005,15 +13079,9 @@ extension TSCE_ASTNodeArrayArchive.ASTNodeArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSCE_FormulaTranslationFlagsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_FormulaTranslationFlagsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormulaTranslationFlagsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "excel_import_translation"),
-    2: .standard(proto: "number_to_date_coercion_removal_translation"),
-    3: .standard(proto: "contains_uid_form_references"),
-    4: .standard(proto: "contains_frozen_references"),
-    5: .standard(proto: "returns_percent_formatted"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}excel_import_translation\0\u{3}number_to_date_coercion_removal_translation\0\u{3}contains_uid_form_references\0\u{3}contains_frozen_references\0\u{3}returns_percent_formatted\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -14065,19 +13133,9 @@ extension TSCE_FormulaTranslationFlagsArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCE_FormulaArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_FormulaArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormulaArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "AST_node_array"),
-    2: .standard(proto: "host_column"),
-    3: .standard(proto: "host_row"),
-    4: .standard(proto: "host_column_is_negative"),
-    5: .standard(proto: "host_row_is_negative"),
-    6: .standard(proto: "translation_flags"),
-    7: .standard(proto: "host_table_uid"),
-    8: .standard(proto: "host_column_uid"),
-    9: .standard(proto: "host_row_uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}AST_node_array\0\u{3}host_column\0\u{3}host_row\0\u{3}host_column_is_negative\0\u{3}host_row_is_negative\0\u{3}translation_flags\0\u{3}host_table_uid\0\u{3}host_column_uid\0\u{3}host_row_uid\0")
 
   public var isInitialized: Bool {
     if self._astNodeArray == nil {return false}
@@ -14158,28 +13216,20 @@ extension TSCE_FormulaArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSCE_FunctorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_FunctorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FunctorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "formula"),
-    2: .standard(proto: "num_args"),
-    3: .standard(proto: "first_symbol"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}formula\0\u{3}num_args\0\u{3}first_symbol\0")
 
   fileprivate class _StorageClass {
     var _formula: TSCE_FormulaArchive? = nil
     var _numArgs: UInt32? = nil
     var _firstSymbol: UInt32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -14259,26 +13309,9 @@ extension TSCE_FunctorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSCE_FormatStructArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_FormatStructArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormatStructArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "format_type"),
-    2: .standard(proto: "decimal_places"),
-    3: .standard(proto: "currency_code"),
-    4: .standard(proto: "negative_style"),
-    5: .standard(proto: "show_thousands_separator"),
-    6: .standard(proto: "use_accounting_style"),
-    7: .standard(proto: "duration_style"),
-    8: .same(proto: "base"),
-    9: .standard(proto: "base_places"),
-    10: .standard(proto: "base_use_minus_sign"),
-    11: .standard(proto: "fraction_accuracy"),
-    12: .standard(proto: "suppress_date_format"),
-    13: .standard(proto: "suppress_time_format"),
-    14: .standard(proto: "date_time_format"),
-    15: .standard(proto: "duration_unit_largest"),
-    16: .standard(proto: "duration_unit_smallest"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}format_type\0\u{3}decimal_places\0\u{3}currency_code\0\u{3}negative_style\0\u{3}show_thousands_separator\0\u{3}use_accounting_style\0\u{3}duration_style\0\u{1}base\0\u{3}base_places\0\u{3}base_use_minus_sign\0\u{3}fraction_accuracy\0\u{3}suppress_date_format\0\u{3}suppress_time_format\0\u{3}date_time_format\0\u{3}duration_unit_largest\0\u{3}duration_unit_smallest\0")
 
   public var isInitialized: Bool {
     if self._formatType == nil {return false}
@@ -14390,14 +13423,9 @@ extension TSCE_FormatStructArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSCE_RangeCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RangeCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RangeCoordinateArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "top_left_column"),
-    2: .standard(proto: "top_left_row"),
-    3: .standard(proto: "bottom_right_column"),
-    4: .standard(proto: "bottom_right_row"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}top_left_column\0\u{3}top_left_row\0\u{3}bottom_right_column\0\u{3}bottom_right_row\0")
 
   public var isInitialized: Bool {
     if self._topLeftColumn == nil {return false}
@@ -14452,12 +13480,9 @@ extension TSCE_RangeCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSCE_TableTransposeInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_TableTransposeInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TableTransposeInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    3: .standard(proto: "number_of_footer_rows"),
-    4: .standard(proto: "body_range_for_transposed_table"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{4}\u{3}number_of_footer_rows\0\u{3}body_range_for_transposed_table\0")
 
   public var isInitialized: Bool {
     if self._numberOfFooterRows == nil {return false}
@@ -14501,14 +13526,9 @@ extension TSCE_TableTransposeInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSCE_MergeOriginMovedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_MergeOriginMovedArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MergeOriginMovedArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "src_column"),
-    2: .standard(proto: "src_row"),
-    3: .standard(proto: "dst_column"),
-    4: .standard(proto: "dst_row"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}src_column\0\u{3}src_row\0\u{3}dst_column\0\u{3}dst_row\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -14551,28 +13571,9 @@ extension TSCE_MergeOriginMovedArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSCE_OwnerUIDMapperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_OwnerUIDMapperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OwnerUIDMapperArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_uid"),
-    2: .standard(proto: "next_table_uid"),
-    3: .standard(proto: "hidden_state_for_rows_owner_uid"),
-    4: .standard(proto: "next_hidden_state_for_rows_owner_uid"),
-    5: .standard(proto: "hidden_state_for_columns_owner_uid"),
-    6: .standard(proto: "next_hidden_state_for_columns_owner_uid"),
-    7: .standard(proto: "conditional_style_owner_uid"),
-    8: .standard(proto: "next_conditional_style_owner_uid"),
-    9: .standard(proto: "sort_rule_reference_tracker_owner_uid"),
-    10: .standard(proto: "next_sort_rule_reference_tracker_owner_uid"),
-    11: .standard(proto: "merge_owner_uid"),
-    12: .standard(proto: "next_merge_owner_uid"),
-    15: .standard(proto: "category_aggregates_owner_uid"),
-    16: .standard(proto: "next_category_aggregates_owner_uid"),
-    17: .standard(proto: "group_by_uid"),
-    18: .standard(proto: "next_group_by_uid"),
-    19: .standard(proto: "pencil_annotation_owner_uid"),
-    20: .standard(proto: "next_pencil_annotation_owner_uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_uid\0\u{3}next_table_uid\0\u{3}hidden_state_for_rows_owner_uid\0\u{3}next_hidden_state_for_rows_owner_uid\0\u{3}hidden_state_for_columns_owner_uid\0\u{3}next_hidden_state_for_columns_owner_uid\0\u{3}conditional_style_owner_uid\0\u{3}next_conditional_style_owner_uid\0\u{3}sort_rule_reference_tracker_owner_uid\0\u{3}next_sort_rule_reference_tracker_owner_uid\0\u{3}merge_owner_uid\0\u{3}next_merge_owner_uid\0\u{4}\u{3}category_aggregates_owner_uid\0\u{3}next_category_aggregates_owner_uid\0\u{3}group_by_uid\0\u{3}next_group_by_uid\0\u{3}pencil_annotation_owner_uid\0\u{3}next_pencil_annotation_owner_uid\0")
 
   fileprivate class _StorageClass {
     var _tableUid: TSP_UUID? = nil
@@ -14594,15 +13595,11 @@ extension TSCE_OwnerUIDMapperArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _pencilAnnotationOwnerUid: TSP_UUID? = nil
     var _nextPencilAnnotationOwnerUid: TSP_UUID? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -14805,11 +13802,9 @@ extension TSCE_OwnerUIDMapperArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCE_RewriteTableUIDInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RewriteTableUIDInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RewriteTableUIDInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_uid_map"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_uid_map\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.tableUidMap) {return false}
@@ -14842,12 +13837,9 @@ extension TSCE_RewriteTableUIDInfoArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCE_RewriteTableUIDInfoArchive.TableUIDMapEntryArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RewriteTableUIDInfoArchive.TableUIDMapEntryArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_RewriteTableUIDInfoArchive.protoMessageName + ".TableUIDMapEntryArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "prev_table_uid"),
-    2: .standard(proto: "new_table_uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}prev_table_uid\0\u{3}new_table_uid\0")
 
   public var isInitialized: Bool {
     if self._prevTableUid == nil {return false}
@@ -14892,18 +13884,9 @@ extension TSCE_RewriteTableUIDInfoArchive.TableUIDMapEntryArchive: SwiftProtobuf
   }
 }
 
-extension TSCE_GroupByChangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_GroupByChangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GroupByChangeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "change_type"),
-    2: .standard(proto: "group_by_uid"),
-    3: .standard(proto: "previous_level"),
-    4: .standard(proto: "updated_level"),
-    5: .standard(proto: "previous_to_updated_map"),
-    6: .standard(proto: "updated_to_previous_map"),
-    7: .standard(proto: "removed_group_uids"),
-    8: .standard(proto: "grouping_column_changes"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}change_type\0\u{3}group_by_uid\0\u{3}previous_level\0\u{3}updated_level\0\u{3}previous_to_updated_map\0\u{3}updated_to_previous_map\0\u{3}removed_group_uids\0\u{3}grouping_column_changes\0")
 
   public var isInitialized: Bool {
     if self._changeType == nil {return false}
@@ -14981,24 +13964,13 @@ extension TSCE_GroupByChangeArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSCE_GroupByChangeArchive.ChangeType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "NONE"),
-    1: .same(proto: "GROUP_VALUE_CHANGE"),
-    2: .same(proto: "GROUP_DEFINITION_CHANGE"),
-    3: .same(proto: "REMOVE_GROUP_LEVEL"),
-    4: .same(proto: "ADD_GROUP_LEVEL"),
-    5: .same(proto: "PROMOTE"),
-    6: .same(proto: "DEMOTE"),
-  ]
+nonisolated extension TSCE_GroupByChangeArchive.ChangeType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0NONE\0\u{1}GROUP_VALUE_CHANGE\0\u{1}GROUP_DEFINITION_CHANGE\0\u{1}REMOVE_GROUP_LEVEL\0\u{1}ADD_GROUP_LEVEL\0\u{1}PROMOTE\0\u{1}DEMOTE\0")
 }
 
-extension TSCE_GroupByChangeArchive.GroupingColumnChangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_GroupByChangeArchive.GroupingColumnChangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_GroupByChangeArchive.protoMessageName + ".GroupingColumnChangeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "old_level"),
-    2: .standard(proto: "new_level"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}old_level\0\u{3}new_level\0")
 
   public var isInitialized: Bool {
     if self._oldLevel == nil {return false}
@@ -15041,12 +14013,9 @@ extension TSCE_GroupByChangeArchive.GroupingColumnChangeArchive: SwiftProtobuf.M
   }
 }
 
-extension TSCE_RewriteGroupNodeUIDInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RewriteGroupNodeUIDInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RewriteGroupNodeUIDInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "group_by_uid"),
-    2: .standard(proto: "group_node_uid_map"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}group_by_uid\0\u{3}group_node_uid_map\0")
 
   public var isInitialized: Bool {
     if self._groupNodeUidMap == nil {return false}
@@ -15090,11 +14059,9 @@ extension TSCE_RewriteGroupNodeUIDInfoArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCE_IndexedUidsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_IndexedUidsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".IndexedUidsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uids"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uids\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.uids) {return false}
@@ -15127,12 +14094,9 @@ extension TSCE_IndexedUidsArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSCE_IndexedUidsArchive.IndexedUid: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_IndexedUidsArchive.IndexedUid: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCE_IndexedUidsArchive.protoMessageName + ".IndexedUid"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "uid_for_index"),
-    2: .standard(proto: "index_for_uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}uid_for_index\0\u{3}index_for_uid\0")
 
   public var isInitialized: Bool {
     if self._uidForIndex == nil {return false}
@@ -15176,14 +14140,9 @@ extension TSCE_IndexedUidsArchive.IndexedUid: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCE_RewriteRangeEntryArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RewriteRangeEntryArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RewriteRangeEntryArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "range_location"),
-    2: .standard(proto: "range_length"),
-    3: .standard(proto: "range_uids"),
-    4: .same(proto: "offset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}range_location\0\u{3}range_length\0\u{3}range_uids\0\u{1}offset\0")
 
   public var isInitialized: Bool {
     if self._rangeLocation == nil {return false}
@@ -15238,19 +14197,9 @@ extension TSCE_RewriteRangeEntryArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCE_ColumnOrRowUuidsInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ColumnOrRowUuidsInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ColumnOrRowUuidsInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "is_rows"),
-    2: .standard(proto: "table_uid"),
-    3: .standard(proto: "cond_style_owner_uid"),
-    4: .standard(proto: "group_by_uid"),
-    5: .same(proto: "uids"),
-    6: .standard(proto: "range_entries"),
-    7: .standard(proto: "table_range"),
-    8: .standard(proto: "insert_at_uid"),
-    9: .standard(proto: "insert_opposite_uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}is_rows\0\u{3}table_uid\0\u{3}cond_style_owner_uid\0\u{3}group_by_uid\0\u{1}uids\0\u{3}range_entries\0\u{3}table_range\0\u{3}insert_at_uid\0\u{3}insert_opposite_uid\0")
 
   fileprivate class _StorageClass {
     var _isRows: Bool? = nil
@@ -15263,15 +14212,11 @@ extension TSCE_ColumnOrRowUuidsInfoArchive: SwiftProtobuf.Message, SwiftProtobuf
     var _insertAtUid: TSP_UUID? = nil
     var _insertOppositeUid: TSP_UUID? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -15398,13 +14343,9 @@ extension TSCE_ColumnOrRowUuidsInfoArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCE_RegionInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RegionInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RegionInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_uid"),
-    2: .standard(proto: "column_uids"),
-    3: .standard(proto: "row_uids"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_uid\0\u{3}column_uids\0\u{3}row_uids\0")
 
   public var isInitialized: Bool {
     if self._tableUid == nil {return false}
@@ -15456,16 +14397,9 @@ extension TSCE_RegionInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSCE_RegionMovedInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_RegionMovedInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RegionMovedInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "src_region"),
-    2: .standard(proto: "dst_region"),
-    3: .standard(proto: "span_rows"),
-    4: .standard(proto: "span_columns"),
-    5: .standard(proto: "original_src_region"),
-    6: .standard(proto: "final_dest_table_uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}src_region\0\u{3}dst_region\0\u{3}span_rows\0\u{3}span_columns\0\u{3}original_src_region\0\u{3}final_dest_table_uid\0")
 
   public var isInitialized: Bool {
     if self._srcRegion == nil {return false}
@@ -15532,12 +14466,9 @@ extension TSCE_RegionMovedInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSCE_MergeSourceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_MergeSourceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MergeSourceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "coord_column"),
-    2: .standard(proto: "coord_row"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}coord_column\0\u{3}coord_row\0")
 
   public var isInitialized: Bool {
     if self._coordColumn == nil {return false}
@@ -15580,11 +14511,9 @@ extension TSCE_MergeSourceArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSCE_HauntedOwnerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_HauntedOwnerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".HauntedOwnerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_uid\0")
 
   public var isInitialized: Bool {
     if self._ownerUid == nil {return false}
@@ -15622,11 +14551,9 @@ extension TSCE_HauntedOwnerArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSCE_SpillOwnerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_SpillOwnerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpillOwnerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_uid\0")
 
   public var isInitialized: Bool {
     if self._ownerUid == nil {return false}
@@ -15664,13 +14591,9 @@ extension TSCE_SpillOwnerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSCE_CellCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellCoordinateArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "packedData"),
-    2: .same(proto: "column"),
-    3: .same(proto: "row"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}packedData\0\u{1}column\0\u{1}row\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -15712,11 +14635,9 @@ extension TSCE_CellCoordinateArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCE_CellCoordinateVectorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellCoordinateVectorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellCoordinateVectorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cell_coord"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cell_coord\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -15744,12 +14665,9 @@ extension TSCE_CellCoordinateVectorArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCE_ExpandedCellRefObjectPairArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ExpandedCellRefObjectPairArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ExpandedCellRefObjectPairArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cell_ref"),
-    2: .same(proto: "object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cell_ref\0\u{1}object\0")
 
   public var isInitialized: Bool {
     if self._cellRef == nil {return false}
@@ -15794,11 +14712,9 @@ extension TSCE_ExpandedCellRefObjectPairArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSCE_ExpandedCellRefObjectMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ExpandedCellRefObjectMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ExpandedCellRefObjectMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cell_ref_object_pair"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cell_ref_object_pair\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.cellRefObjectPair) {return false}
@@ -15831,14 +14747,9 @@ extension TSCE_ExpandedCellRefObjectMapArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCE_FormulaAtCoordArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_FormulaAtCoordArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormulaAtCoordArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "column"),
-    2: .same(proto: "row"),
-    3: .same(proto: "formula"),
-    4: .standard(proto: "repeat_previous_formula"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}column\0\u{1}row\0\u{1}formula\0\u{3}repeat_previous_formula\0")
 
   fileprivate class _StorageClass {
     var _column: UInt32? = nil
@@ -15846,15 +14757,11 @@ extension TSCE_FormulaAtCoordArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _formula: TSCE_FormulaArchive? = nil
     var _repeatPreviousFormula: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -15940,13 +14847,9 @@ extension TSCE_FormulaAtCoordArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCE_FormulaCoordPairsByOwnerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_FormulaCoordPairsByOwnerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormulaCoordPairsByOwnerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "owner_kind"),
-    2: .standard(proto: "owner_uid"),
-    3: .standard(proto: "formula_at_coords"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}owner_kind\0\u{3}owner_uid\0\u{3}formula_at_coords\0")
 
   public var isInitialized: Bool {
     if self._ownerKind == nil {return false}
@@ -15995,11 +14898,9 @@ extension TSCE_FormulaCoordPairsByOwnerArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCE_FormulasForUndoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_FormulasForUndoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormulasForUndoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "formulas_for_owner"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}formulas_for_owner\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.formulasForOwner) {return false}
@@ -16032,12 +14933,9 @@ extension TSCE_FormulasForUndoArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSCE_FormulaRewriteCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_FormulaRewriteCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FormulaRewriteCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_rewrite_command"),
-    2: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_rewrite_command\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if let v = self._tableRewriteCommand, !v.isInitialized {return false}
@@ -16080,12 +14978,9 @@ extension TSCE_FormulaRewriteCommandArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCE_TrackedReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_TrackedReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TrackedReferenceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "ast"),
-    2: .standard(proto: "formula_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}ast\0\u{3}formula_id\0")
 
   public var isInitialized: Bool {
     if self._ast == nil {return false}
@@ -16129,13 +15024,9 @@ extension TSCE_TrackedReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSCE_ExpandedTrackedReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ExpandedTrackedReferenceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ExpandedTrackedReferenceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "ast"),
-    2: .standard(proto: "formula_column"),
-    3: .standard(proto: "formula_row"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}ast\0\u{3}formula_column\0\u{3}formula_row\0")
 
   public var isInitialized: Bool {
     if self._ast == nil {return false}
@@ -16185,14 +15076,9 @@ extension TSCE_ExpandedTrackedReferenceArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCE_TrackedReferenceStoreArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_TrackedReferenceStoreArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TrackedReferenceStoreArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuid"),
-    2: .standard(proto: "tracked_reference"),
-    3: .standard(proto: "contained_tracked_reference"),
-    4: .standard(proto: "contained_expanded_tracked_reference"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uuid\0\u{3}tracked_reference\0\u{3}contained_tracked_reference\0\u{3}contained_expanded_tracked_reference\0")
 
   public var isInitialized: Bool {
     if self._uuid == nil {return false}
@@ -16247,16 +15133,9 @@ extension TSCE_TrackedReferenceStoreArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCE_ViewTractRefArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ViewTractRefArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ViewTractRefArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_uid"),
-    2: .standard(proto: "uid_tract"),
-    3: .standard(proto: "preserve_flags"),
-    4: .standard(proto: "agg_index_level"),
-    5: .standard(proto: "column_group_level"),
-    6: .standard(proto: "row_group_level"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_uid\0\u{3}uid_tract\0\u{3}preserve_flags\0\u{3}agg_index_level\0\u{3}column_group_level\0\u{3}row_group_level\0")
 
   public var isInitialized: Bool {
     if self._tableUid == nil {return false}
@@ -16321,13 +15200,9 @@ extension TSCE_ViewTractRefArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSCE_BooleanCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_BooleanCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".BooleanCellValueArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "value"),
-    2: .same(proto: "format"),
-    3: .standard(proto: "format_is_explicit"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}value\0\u{1}format\0\u{3}format_is_explicit\0")
 
   public var isInitialized: Bool {
     if self._value == nil {return false}
@@ -16375,14 +15250,9 @@ extension TSCE_BooleanCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSCE_DateCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_DateCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DateCellValueArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "value"),
-    2: .same(proto: "format"),
-    3: .standard(proto: "format_is_implicit"),
-    4: .standard(proto: "format_is_explicit"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}value\0\u{1}format\0\u{3}format_is_implicit\0\u{3}format_is_explicit\0")
 
   public var isInitialized: Bool {
     if self._value == nil {return false}
@@ -16436,18 +15306,9 @@ extension TSCE_DateCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSCE_NumberCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_NumberCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".NumberCellValueArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "value"),
-    2: .standard(proto: "unit_index"),
-    5: .standard(proto: "currency_code"),
-    3: .same(proto: "format"),
-    4: .standard(proto: "format_is_implicit"),
-    6: .standard(proto: "format_is_explicit"),
-    7: .standard(proto: "decimal_low"),
-    8: .standard(proto: "decimal_high"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}value\0\u{3}unit_index\0\u{1}format\0\u{3}format_is_implicit\0\u{3}currency_code\0\u{3}format_is_explicit\0\u{3}decimal_low\0\u{3}decimal_high\0")
 
   public var isInitialized: Bool {
     if self._format == nil {return false}
@@ -16520,16 +15381,9 @@ extension TSCE_NumberCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSCE_StringCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_StringCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StringCellValueArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "value"),
-    2: .same(proto: "format"),
-    3: .standard(proto: "format_is_implicit"),
-    4: .standard(proto: "format_is_explicit"),
-    5: .standard(proto: "is_regex"),
-    6: .standard(proto: "is_case_sensitive_regex"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}value\0\u{1}format\0\u{3}format_is_implicit\0\u{3}format_is_explicit\0\u{3}is_regex\0\u{3}is_case_sensitive_regex\0")
 
   public var isInitialized: Bool {
     if self._value == nil {return false}
@@ -16593,14 +15447,9 @@ extension TSCE_StringCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSCE_ErrorCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_ErrorCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ErrorCellValueArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "error_type"),
-    3: .standard(proto: "extra_info_int"),
-    4: .standard(proto: "extra_info_string"),
-    5: .standard(proto: "extra_info_double"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}error_type\0\u{4}\u{2}extra_info_int\0\u{3}extra_info_string\0\u{3}extra_info_double\0")
 
   public var isInitialized: Bool {
     if self._errorType == nil {return false}
@@ -16652,16 +15501,9 @@ extension TSCE_ErrorCellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCE_CellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCE_CellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellValueArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cell_value_type"),
-    2: .standard(proto: "boolean_value"),
-    3: .standard(proto: "date_value"),
-    4: .standard(proto: "number_value"),
-    5: .standard(proto: "string_value"),
-    6: .standard(proto: "error_value"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cell_value_type\0\u{3}boolean_value\0\u{3}date_value\0\u{3}number_value\0\u{3}string_value\0\u{3}error_value\0")
 
   fileprivate class _StorageClass {
     var _cellValueType: TSCE_CellValueArchive.CellValueType? = nil
@@ -16671,15 +15513,11 @@ extension TSCE_CellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     var _stringValue: TSCE_StringCellValueArchive? = nil
     var _errorValue: TSCE_ErrorCellValueArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -16780,12 +15618,6 @@ extension TSCE_CellValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSCE_CellValueArchive.CellValueType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "NIL_TYPE"),
-    2: .same(proto: "BOOLEAN_TYPE"),
-    3: .same(proto: "DATE_TYPE"),
-    4: .same(proto: "NUMBER_TYPE"),
-    5: .same(proto: "STRING_TYPE"),
-  ]
+nonisolated extension TSCE_CellValueArchive.CellValueType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}NIL_TYPE\0\u{1}BOOLEAN_TYPE\0\u{1}DATE_TYPE\0\u{1}NUMBER_TYPE\0\u{1}STRING_TYPE\0")
 }

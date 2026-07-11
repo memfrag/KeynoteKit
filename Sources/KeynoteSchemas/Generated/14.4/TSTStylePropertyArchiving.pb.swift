@@ -15,52 +15,52 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TST_Deprecated_TableStrokeArchive: Sendable {
+public nonisolated struct TST_Deprecated_TableStrokeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var stroke: TSD_StrokeArchive {
-    get {return _stroke ?? TSD_StrokeArchive()}
+    get {_stroke ?? TSD_StrokeArchive()}
     set {_stroke = newValue}
   }
   /// Returns true if `stroke` has been explicitly set.
-  public var hasStroke: Bool {return self._stroke != nil}
+  public var hasStroke: Bool {self._stroke != nil}
   /// Clears the value of `stroke`. Subsequent reads from it will return its default value.
   public mutating func clearStroke() {self._stroke = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var background: Bool {
-    get {return _background ?? false}
+    get {_background ?? false}
     set {_background = newValue}
   }
   /// Returns true if `background` has been explicitly set.
-  public var hasBackground: Bool {return self._background != nil}
+  public var hasBackground: Bool {self._background != nil}
   /// Clears the value of `background`. Subsequent reads from it will return its default value.
   public mutating func clearBackground() {self._background = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var opacity: Float {
-    get {return _opacity ?? 0}
+    get {_opacity ?? 0}
     set {_opacity = newValue}
   }
   /// Returns true if `opacity` has been explicitly set.
-  public var hasOpacity: Bool {return self._opacity != nil}
+  public var hasOpacity: Bool {self._opacity != nil}
   /// Clears the value of `opacity`. Subsequent reads from it will return its default value.
   public mutating func clearOpacity() {self._opacity = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var empty: Bool {
-    get {return _empty ?? false}
+    get {_empty ?? false}
     set {_empty = newValue}
   }
   /// Returns true if `empty` has been explicitly set.
-  public var hasEmpty: Bool {return self._empty != nil}
+  public var hasEmpty: Bool {self._empty != nil}
   /// Clears the value of `empty`. Subsequent reads from it will return its default value.
   public mutating func clearEmpty() {self._empty = nil}
 
@@ -74,116 +74,116 @@ public struct TST_Deprecated_TableStrokeArchive: Sendable {
   fileprivate var _empty: Bool? = nil
 }
 
-public struct TST_CellStylePropertiesArchive: @unchecked Sendable {
+public nonisolated struct TST_CellStylePropertiesArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var cellFill: TSD_FillArchive {
-    get {return _storage._cellFill ?? TSD_FillArchive()}
+    get {_storage._cellFill ?? TSD_FillArchive()}
     set {_uniqueStorage()._cellFill = newValue}
   }
   /// Returns true if `cellFill` has been explicitly set.
-  public var hasCellFill: Bool {return _storage._cellFill != nil}
+  public var hasCellFill: Bool {_storage._cellFill != nil}
   /// Clears the value of `cellFill`. Subsequent reads from it will return its default value.
   public mutating func clearCellFill() {_uniqueStorage()._cellFill = nil}
 
   public var textWrap: Bool {
-    get {return _storage._textWrap ?? false}
+    get {_storage._textWrap ?? false}
     set {_uniqueStorage()._textWrap = newValue}
   }
   /// Returns true if `textWrap` has been explicitly set.
-  public var hasTextWrap: Bool {return _storage._textWrap != nil}
+  public var hasTextWrap: Bool {_storage._textWrap != nil}
   /// Clears the value of `textWrap`. Subsequent reads from it will return its default value.
   public mutating func clearTextWrap() {_uniqueStorage()._textWrap = nil}
 
   public var deprecatedTopStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedTopStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedTopStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedTopStroke = newValue}
   }
   /// Returns true if `deprecatedTopStroke` has been explicitly set.
-  public var hasDeprecatedTopStroke: Bool {return _storage._deprecatedTopStroke != nil}
+  public var hasDeprecatedTopStroke: Bool {_storage._deprecatedTopStroke != nil}
   /// Clears the value of `deprecatedTopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedTopStroke() {_uniqueStorage()._deprecatedTopStroke = nil}
 
   public var deprecatedRightStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedRightStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedRightStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedRightStroke = newValue}
   }
   /// Returns true if `deprecatedRightStroke` has been explicitly set.
-  public var hasDeprecatedRightStroke: Bool {return _storage._deprecatedRightStroke != nil}
+  public var hasDeprecatedRightStroke: Bool {_storage._deprecatedRightStroke != nil}
   /// Clears the value of `deprecatedRightStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedRightStroke() {_uniqueStorage()._deprecatedRightStroke = nil}
 
   public var deprecatedBottomStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedBottomStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedBottomStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedBottomStroke = newValue}
   }
   /// Returns true if `deprecatedBottomStroke` has been explicitly set.
-  public var hasDeprecatedBottomStroke: Bool {return _storage._deprecatedBottomStroke != nil}
+  public var hasDeprecatedBottomStroke: Bool {_storage._deprecatedBottomStroke != nil}
   /// Clears the value of `deprecatedBottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedBottomStroke() {_uniqueStorage()._deprecatedBottomStroke = nil}
 
   public var deprecatedLeftStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedLeftStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedLeftStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedLeftStroke = newValue}
   }
   /// Returns true if `deprecatedLeftStroke` has been explicitly set.
-  public var hasDeprecatedLeftStroke: Bool {return _storage._deprecatedLeftStroke != nil}
+  public var hasDeprecatedLeftStroke: Bool {_storage._deprecatedLeftStroke != nil}
   /// Clears the value of `deprecatedLeftStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedLeftStroke() {_uniqueStorage()._deprecatedLeftStroke = nil}
 
   public var verticalAlignment: Int32 {
-    get {return _storage._verticalAlignment ?? 0}
+    get {_storage._verticalAlignment ?? 0}
     set {_uniqueStorage()._verticalAlignment = newValue}
   }
   /// Returns true if `verticalAlignment` has been explicitly set.
-  public var hasVerticalAlignment: Bool {return _storage._verticalAlignment != nil}
+  public var hasVerticalAlignment: Bool {_storage._verticalAlignment != nil}
   /// Clears the value of `verticalAlignment`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalAlignment() {_uniqueStorage()._verticalAlignment = nil}
 
   public var padding: TSWP_PaddingArchive {
-    get {return _storage._padding ?? TSWP_PaddingArchive()}
+    get {_storage._padding ?? TSWP_PaddingArchive()}
     set {_uniqueStorage()._padding = newValue}
   }
   /// Returns true if `padding` has been explicitly set.
-  public var hasPadding: Bool {return _storage._padding != nil}
+  public var hasPadding: Bool {_storage._padding != nil}
   /// Clears the value of `padding`. Subsequent reads from it will return its default value.
   public mutating func clearPadding() {_uniqueStorage()._padding = nil}
 
   public var topStroke: TSD_StrokeArchive {
-    get {return _storage._topStroke ?? TSD_StrokeArchive()}
+    get {_storage._topStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._topStroke = newValue}
   }
   /// Returns true if `topStroke` has been explicitly set.
-  public var hasTopStroke: Bool {return _storage._topStroke != nil}
+  public var hasTopStroke: Bool {_storage._topStroke != nil}
   /// Clears the value of `topStroke`. Subsequent reads from it will return its default value.
   public mutating func clearTopStroke() {_uniqueStorage()._topStroke = nil}
 
   public var rightStroke: TSD_StrokeArchive {
-    get {return _storage._rightStroke ?? TSD_StrokeArchive()}
+    get {_storage._rightStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._rightStroke = newValue}
   }
   /// Returns true if `rightStroke` has been explicitly set.
-  public var hasRightStroke: Bool {return _storage._rightStroke != nil}
+  public var hasRightStroke: Bool {_storage._rightStroke != nil}
   /// Clears the value of `rightStroke`. Subsequent reads from it will return its default value.
   public mutating func clearRightStroke() {_uniqueStorage()._rightStroke = nil}
 
   public var bottomStroke: TSD_StrokeArchive {
-    get {return _storage._bottomStroke ?? TSD_StrokeArchive()}
+    get {_storage._bottomStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._bottomStroke = newValue}
   }
   /// Returns true if `bottomStroke` has been explicitly set.
-  public var hasBottomStroke: Bool {return _storage._bottomStroke != nil}
+  public var hasBottomStroke: Bool {_storage._bottomStroke != nil}
   /// Clears the value of `bottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearBottomStroke() {_uniqueStorage()._bottomStroke = nil}
 
   public var leftStroke: TSD_StrokeArchive {
-    get {return _storage._leftStroke ?? TSD_StrokeArchive()}
+    get {_storage._leftStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._leftStroke = newValue}
   }
   /// Returns true if `leftStroke` has been explicitly set.
-  public var hasLeftStroke: Bool {return _storage._leftStroke != nil}
+  public var hasLeftStroke: Bool {_storage._leftStroke != nil}
   /// Clears the value of `leftStroke`. Subsequent reads from it will return its default value.
   public mutating func clearLeftStroke() {_uniqueStorage()._leftStroke = nil}
 
@@ -194,44 +194,44 @@ public struct TST_CellStylePropertiesArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TST_Deprecated_StrokePresetDataArchive: Sendable {
+public nonisolated struct TST_Deprecated_StrokePresetDataArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var deprecatedHorizontalStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _deprecatedHorizontalStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_deprecatedHorizontalStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_deprecatedHorizontalStroke = newValue}
   }
   /// Returns true if `deprecatedHorizontalStroke` has been explicitly set.
-  public var hasDeprecatedHorizontalStroke: Bool {return self._deprecatedHorizontalStroke != nil}
+  public var hasDeprecatedHorizontalStroke: Bool {self._deprecatedHorizontalStroke != nil}
   /// Clears the value of `deprecatedHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedHorizontalStroke() {self._deprecatedHorizontalStroke = nil}
 
   public var deprecatedVerticalStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _deprecatedVerticalStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_deprecatedVerticalStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_deprecatedVerticalStroke = newValue}
   }
   /// Returns true if `deprecatedVerticalStroke` has been explicitly set.
-  public var hasDeprecatedVerticalStroke: Bool {return self._deprecatedVerticalStroke != nil}
+  public var hasDeprecatedVerticalStroke: Bool {self._deprecatedVerticalStroke != nil}
   /// Clears the value of `deprecatedVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedVerticalStroke() {self._deprecatedVerticalStroke = nil}
 
   public var deprecatedExteriorStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _deprecatedExteriorStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_deprecatedExteriorStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_deprecatedExteriorStroke = newValue}
   }
   /// Returns true if `deprecatedExteriorStroke` has been explicitly set.
-  public var hasDeprecatedExteriorStroke: Bool {return self._deprecatedExteriorStroke != nil}
+  public var hasDeprecatedExteriorStroke: Bool {self._deprecatedExteriorStroke != nil}
   /// Clears the value of `deprecatedExteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedExteriorStroke() {self._deprecatedExteriorStroke = nil}
 
   public var deprecatedVisibleMask: Int32 {
-    get {return _deprecatedVisibleMask ?? 0}
+    get {_deprecatedVisibleMask ?? 0}
     set {_deprecatedVisibleMask = newValue}
   }
   /// Returns true if `deprecatedVisibleMask` has been explicitly set.
-  public var hasDeprecatedVisibleMask: Bool {return self._deprecatedVisibleMask != nil}
+  public var hasDeprecatedVisibleMask: Bool {self._deprecatedVisibleMask != nil}
   /// Clears the value of `deprecatedVisibleMask`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedVisibleMask() {self._deprecatedVisibleMask = nil}
 
@@ -245,44 +245,44 @@ public struct TST_Deprecated_StrokePresetDataArchive: Sendable {
   fileprivate var _deprecatedVisibleMask: Int32? = nil
 }
 
-public struct TST_StrokePresetDataArchive: Sendable {
+public nonisolated struct TST_StrokePresetDataArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var horizontalStroke: TSD_StrokeArchive {
-    get {return _horizontalStroke ?? TSD_StrokeArchive()}
+    get {_horizontalStroke ?? TSD_StrokeArchive()}
     set {_horizontalStroke = newValue}
   }
   /// Returns true if `horizontalStroke` has been explicitly set.
-  public var hasHorizontalStroke: Bool {return self._horizontalStroke != nil}
+  public var hasHorizontalStroke: Bool {self._horizontalStroke != nil}
   /// Clears the value of `horizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHorizontalStroke() {self._horizontalStroke = nil}
 
   public var verticalStroke: TSD_StrokeArchive {
-    get {return _verticalStroke ?? TSD_StrokeArchive()}
+    get {_verticalStroke ?? TSD_StrokeArchive()}
     set {_verticalStroke = newValue}
   }
   /// Returns true if `verticalStroke` has been explicitly set.
-  public var hasVerticalStroke: Bool {return self._verticalStroke != nil}
+  public var hasVerticalStroke: Bool {self._verticalStroke != nil}
   /// Clears the value of `verticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalStroke() {self._verticalStroke = nil}
 
   public var exteriorStroke: TSD_StrokeArchive {
-    get {return _exteriorStroke ?? TSD_StrokeArchive()}
+    get {_exteriorStroke ?? TSD_StrokeArchive()}
     set {_exteriorStroke = newValue}
   }
   /// Returns true if `exteriorStroke` has been explicitly set.
-  public var hasExteriorStroke: Bool {return self._exteriorStroke != nil}
+  public var hasExteriorStroke: Bool {self._exteriorStroke != nil}
   /// Clears the value of `exteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearExteriorStroke() {self._exteriorStroke = nil}
 
   public var visibleMask: Int32 {
-    get {return _visibleMask ?? 0}
+    get {_visibleMask ?? 0}
     set {_visibleMask = newValue}
   }
   /// Returns true if `visibleMask` has been explicitly set.
-  public var hasVisibleMask: Bool {return self._visibleMask != nil}
+  public var hasVisibleMask: Bool {self._visibleMask != nil}
   /// Clears the value of `visibleMask`. Subsequent reads from it will return its default value.
   public mutating func clearVisibleMask() {self._visibleMask = nil}
 
@@ -296,17 +296,17 @@ public struct TST_StrokePresetDataArchive: Sendable {
   fileprivate var _visibleMask: Int32? = nil
 }
 
-public struct TST_StrokePresetListArchive: Sendable {
+public nonisolated struct TST_StrokePresetListArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var count: Int32 {
-    get {return _count ?? 0}
+    get {_count ?? 0}
     set {_count = newValue}
   }
   /// Returns true if `count` has been explicitly set.
-  public var hasCount: Bool {return self._count != nil}
+  public var hasCount: Bool {self._count != nil}
   /// Clears the value of `count`. Subsequent reads from it will return its default value.
   public mutating func clearCount() {self._count = nil}
 
@@ -321,737 +321,737 @@ public struct TST_StrokePresetListArchive: Sendable {
   fileprivate var _count: Int32? = nil
 }
 
-public struct TST_TableStylePropertiesArchive: @unchecked Sendable {
+public nonisolated struct TST_TableStylePropertiesArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var bandedRows: Bool {
-    get {return _storage._bandedRows ?? false}
+    get {_storage._bandedRows ?? false}
     set {_uniqueStorage()._bandedRows = newValue}
   }
   /// Returns true if `bandedRows` has been explicitly set.
-  public var hasBandedRows: Bool {return _storage._bandedRows != nil}
+  public var hasBandedRows: Bool {_storage._bandedRows != nil}
   /// Clears the value of `bandedRows`. Subsequent reads from it will return its default value.
   public mutating func clearBandedRows() {_uniqueStorage()._bandedRows = nil}
 
   public var bandedFill: TSD_FillArchive {
-    get {return _storage._bandedFill ?? TSD_FillArchive()}
+    get {_storage._bandedFill ?? TSD_FillArchive()}
     set {_uniqueStorage()._bandedFill = newValue}
   }
   /// Returns true if `bandedFill` has been explicitly set.
-  public var hasBandedFill: Bool {return _storage._bandedFill != nil}
+  public var hasBandedFill: Bool {_storage._bandedFill != nil}
   /// Clears the value of `bandedFill`. Subsequent reads from it will return its default value.
   public mutating func clearBandedFill() {_uniqueStorage()._bandedFill = nil}
 
   public var behavesLikeSpreadsheet: Bool {
-    get {return _storage._behavesLikeSpreadsheet ?? false}
+    get {_storage._behavesLikeSpreadsheet ?? false}
     set {_uniqueStorage()._behavesLikeSpreadsheet = newValue}
   }
   /// Returns true if `behavesLikeSpreadsheet` has been explicitly set.
-  public var hasBehavesLikeSpreadsheet: Bool {return _storage._behavesLikeSpreadsheet != nil}
+  public var hasBehavesLikeSpreadsheet: Bool {_storage._behavesLikeSpreadsheet != nil}
   /// Clears the value of `behavesLikeSpreadsheet`. Subsequent reads from it will return its default value.
   public mutating func clearBehavesLikeSpreadsheet() {_uniqueStorage()._behavesLikeSpreadsheet = nil}
 
   public var autoResize: Bool {
-    get {return _storage._autoResize ?? false}
+    get {_storage._autoResize ?? false}
     set {_uniqueStorage()._autoResize = newValue}
   }
   /// Returns true if `autoResize` has been explicitly set.
-  public var hasAutoResize: Bool {return _storage._autoResize != nil}
+  public var hasAutoResize: Bool {_storage._autoResize != nil}
   /// Clears the value of `autoResize`. Subsequent reads from it will return its default value.
   public mutating func clearAutoResize() {_uniqueStorage()._autoResize = nil}
 
   public var deprecatedHeaderRowSeparatorStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedHeaderRowSeparatorStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedHeaderRowSeparatorStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedHeaderRowSeparatorStroke = newValue}
   }
   /// Returns true if `deprecatedHeaderRowSeparatorStroke` has been explicitly set.
-  public var hasDeprecatedHeaderRowSeparatorStroke: Bool {return _storage._deprecatedHeaderRowSeparatorStroke != nil}
+  public var hasDeprecatedHeaderRowSeparatorStroke: Bool {_storage._deprecatedHeaderRowSeparatorStroke != nil}
   /// Clears the value of `deprecatedHeaderRowSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedHeaderRowSeparatorStroke() {_uniqueStorage()._deprecatedHeaderRowSeparatorStroke = nil}
 
   public var deprecatedHeaderRowBorderStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedHeaderRowBorderStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedHeaderRowBorderStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedHeaderRowBorderStroke = newValue}
   }
   /// Returns true if `deprecatedHeaderRowBorderStroke` has been explicitly set.
-  public var hasDeprecatedHeaderRowBorderStroke: Bool {return _storage._deprecatedHeaderRowBorderStroke != nil}
+  public var hasDeprecatedHeaderRowBorderStroke: Bool {_storage._deprecatedHeaderRowBorderStroke != nil}
   /// Clears the value of `deprecatedHeaderRowBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedHeaderRowBorderStroke() {_uniqueStorage()._deprecatedHeaderRowBorderStroke = nil}
 
   public var deprecatedHeaderRowHorizontalStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedHeaderRowHorizontalStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedHeaderRowHorizontalStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedHeaderRowHorizontalStroke = newValue}
   }
   /// Returns true if `deprecatedHeaderRowHorizontalStroke` has been explicitly set.
-  public var hasDeprecatedHeaderRowHorizontalStroke: Bool {return _storage._deprecatedHeaderRowHorizontalStroke != nil}
+  public var hasDeprecatedHeaderRowHorizontalStroke: Bool {_storage._deprecatedHeaderRowHorizontalStroke != nil}
   /// Clears the value of `deprecatedHeaderRowHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedHeaderRowHorizontalStroke() {_uniqueStorage()._deprecatedHeaderRowHorizontalStroke = nil}
 
   public var deprecatedHeaderRowVerticalStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedHeaderRowVerticalStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedHeaderRowVerticalStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedHeaderRowVerticalStroke = newValue}
   }
   /// Returns true if `deprecatedHeaderRowVerticalStroke` has been explicitly set.
-  public var hasDeprecatedHeaderRowVerticalStroke: Bool {return _storage._deprecatedHeaderRowVerticalStroke != nil}
+  public var hasDeprecatedHeaderRowVerticalStroke: Bool {_storage._deprecatedHeaderRowVerticalStroke != nil}
   /// Clears the value of `deprecatedHeaderRowVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedHeaderRowVerticalStroke() {_uniqueStorage()._deprecatedHeaderRowVerticalStroke = nil}
 
   public var deprecatedHeaderColumnBorderStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedHeaderColumnBorderStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedHeaderColumnBorderStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedHeaderColumnBorderStroke = newValue}
   }
   /// Returns true if `deprecatedHeaderColumnBorderStroke` has been explicitly set.
-  public var hasDeprecatedHeaderColumnBorderStroke: Bool {return _storage._deprecatedHeaderColumnBorderStroke != nil}
+  public var hasDeprecatedHeaderColumnBorderStroke: Bool {_storage._deprecatedHeaderColumnBorderStroke != nil}
   /// Clears the value of `deprecatedHeaderColumnBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedHeaderColumnBorderStroke() {_uniqueStorage()._deprecatedHeaderColumnBorderStroke = nil}
 
   public var deprecatedHeaderColumnSeparatorStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedHeaderColumnSeparatorStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedHeaderColumnSeparatorStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedHeaderColumnSeparatorStroke = newValue}
   }
   /// Returns true if `deprecatedHeaderColumnSeparatorStroke` has been explicitly set.
-  public var hasDeprecatedHeaderColumnSeparatorStroke: Bool {return _storage._deprecatedHeaderColumnSeparatorStroke != nil}
+  public var hasDeprecatedHeaderColumnSeparatorStroke: Bool {_storage._deprecatedHeaderColumnSeparatorStroke != nil}
   /// Clears the value of `deprecatedHeaderColumnSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedHeaderColumnSeparatorStroke() {_uniqueStorage()._deprecatedHeaderColumnSeparatorStroke = nil}
 
   public var deprecatedHeaderColumnHorizontalStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedHeaderColumnHorizontalStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedHeaderColumnHorizontalStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedHeaderColumnHorizontalStroke = newValue}
   }
   /// Returns true if `deprecatedHeaderColumnHorizontalStroke` has been explicitly set.
-  public var hasDeprecatedHeaderColumnHorizontalStroke: Bool {return _storage._deprecatedHeaderColumnHorizontalStroke != nil}
+  public var hasDeprecatedHeaderColumnHorizontalStroke: Bool {_storage._deprecatedHeaderColumnHorizontalStroke != nil}
   /// Clears the value of `deprecatedHeaderColumnHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedHeaderColumnHorizontalStroke() {_uniqueStorage()._deprecatedHeaderColumnHorizontalStroke = nil}
 
   public var deprecatedHeaderColumnVerticalStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedHeaderColumnVerticalStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedHeaderColumnVerticalStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedHeaderColumnVerticalStroke = newValue}
   }
   /// Returns true if `deprecatedHeaderColumnVerticalStroke` has been explicitly set.
-  public var hasDeprecatedHeaderColumnVerticalStroke: Bool {return _storage._deprecatedHeaderColumnVerticalStroke != nil}
+  public var hasDeprecatedHeaderColumnVerticalStroke: Bool {_storage._deprecatedHeaderColumnVerticalStroke != nil}
   /// Clears the value of `deprecatedHeaderColumnVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedHeaderColumnVerticalStroke() {_uniqueStorage()._deprecatedHeaderColumnVerticalStroke = nil}
 
   public var deprecatedFooterRowSeparatorStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedFooterRowSeparatorStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedFooterRowSeparatorStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedFooterRowSeparatorStroke = newValue}
   }
   /// Returns true if `deprecatedFooterRowSeparatorStroke` has been explicitly set.
-  public var hasDeprecatedFooterRowSeparatorStroke: Bool {return _storage._deprecatedFooterRowSeparatorStroke != nil}
+  public var hasDeprecatedFooterRowSeparatorStroke: Bool {_storage._deprecatedFooterRowSeparatorStroke != nil}
   /// Clears the value of `deprecatedFooterRowSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedFooterRowSeparatorStroke() {_uniqueStorage()._deprecatedFooterRowSeparatorStroke = nil}
 
   public var deprecatedFooterRowBorderStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedFooterRowBorderStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedFooterRowBorderStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedFooterRowBorderStroke = newValue}
   }
   /// Returns true if `deprecatedFooterRowBorderStroke` has been explicitly set.
-  public var hasDeprecatedFooterRowBorderStroke: Bool {return _storage._deprecatedFooterRowBorderStroke != nil}
+  public var hasDeprecatedFooterRowBorderStroke: Bool {_storage._deprecatedFooterRowBorderStroke != nil}
   /// Clears the value of `deprecatedFooterRowBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedFooterRowBorderStroke() {_uniqueStorage()._deprecatedFooterRowBorderStroke = nil}
 
   public var deprecatedFooterRowHorizontalStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedFooterRowHorizontalStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedFooterRowHorizontalStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedFooterRowHorizontalStroke = newValue}
   }
   /// Returns true if `deprecatedFooterRowHorizontalStroke` has been explicitly set.
-  public var hasDeprecatedFooterRowHorizontalStroke: Bool {return _storage._deprecatedFooterRowHorizontalStroke != nil}
+  public var hasDeprecatedFooterRowHorizontalStroke: Bool {_storage._deprecatedFooterRowHorizontalStroke != nil}
   /// Clears the value of `deprecatedFooterRowHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedFooterRowHorizontalStroke() {_uniqueStorage()._deprecatedFooterRowHorizontalStroke = nil}
 
   public var deprecatedFooterRowVerticalStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedFooterRowVerticalStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedFooterRowVerticalStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedFooterRowVerticalStroke = newValue}
   }
   /// Returns true if `deprecatedFooterRowVerticalStroke` has been explicitly set.
-  public var hasDeprecatedFooterRowVerticalStroke: Bool {return _storage._deprecatedFooterRowVerticalStroke != nil}
+  public var hasDeprecatedFooterRowVerticalStroke: Bool {_storage._deprecatedFooterRowVerticalStroke != nil}
   /// Clears the value of `deprecatedFooterRowVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedFooterRowVerticalStroke() {_uniqueStorage()._deprecatedFooterRowVerticalStroke = nil}
 
   public var deprecatedTableBodyHorizontalBorderStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedTableBodyHorizontalBorderStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedTableBodyHorizontalBorderStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedTableBodyHorizontalBorderStroke = newValue}
   }
   /// Returns true if `deprecatedTableBodyHorizontalBorderStroke` has been explicitly set.
-  public var hasDeprecatedTableBodyHorizontalBorderStroke: Bool {return _storage._deprecatedTableBodyHorizontalBorderStroke != nil}
+  public var hasDeprecatedTableBodyHorizontalBorderStroke: Bool {_storage._deprecatedTableBodyHorizontalBorderStroke != nil}
   /// Clears the value of `deprecatedTableBodyHorizontalBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedTableBodyHorizontalBorderStroke() {_uniqueStorage()._deprecatedTableBodyHorizontalBorderStroke = nil}
 
   public var deprecatedTableBodyVerticalBorderStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedTableBodyVerticalBorderStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedTableBodyVerticalBorderStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedTableBodyVerticalBorderStroke = newValue}
   }
   /// Returns true if `deprecatedTableBodyVerticalBorderStroke` has been explicitly set.
-  public var hasDeprecatedTableBodyVerticalBorderStroke: Bool {return _storage._deprecatedTableBodyVerticalBorderStroke != nil}
+  public var hasDeprecatedTableBodyVerticalBorderStroke: Bool {_storage._deprecatedTableBodyVerticalBorderStroke != nil}
   /// Clears the value of `deprecatedTableBodyVerticalBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedTableBodyVerticalBorderStroke() {_uniqueStorage()._deprecatedTableBodyVerticalBorderStroke = nil}
 
   public var deprecatedTableBodyHorizontalStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedTableBodyHorizontalStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedTableBodyHorizontalStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedTableBodyHorizontalStroke = newValue}
   }
   /// Returns true if `deprecatedTableBodyHorizontalStroke` has been explicitly set.
-  public var hasDeprecatedTableBodyHorizontalStroke: Bool {return _storage._deprecatedTableBodyHorizontalStroke != nil}
+  public var hasDeprecatedTableBodyHorizontalStroke: Bool {_storage._deprecatedTableBodyHorizontalStroke != nil}
   /// Clears the value of `deprecatedTableBodyHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedTableBodyHorizontalStroke() {_uniqueStorage()._deprecatedTableBodyHorizontalStroke = nil}
 
   public var deprecatedTableBodyVerticalStroke: TST_Deprecated_TableStrokeArchive {
-    get {return _storage._deprecatedTableBodyVerticalStroke ?? TST_Deprecated_TableStrokeArchive()}
+    get {_storage._deprecatedTableBodyVerticalStroke ?? TST_Deprecated_TableStrokeArchive()}
     set {_uniqueStorage()._deprecatedTableBodyVerticalStroke = newValue}
   }
   /// Returns true if `deprecatedTableBodyVerticalStroke` has been explicitly set.
-  public var hasDeprecatedTableBodyVerticalStroke: Bool {return _storage._deprecatedTableBodyVerticalStroke != nil}
+  public var hasDeprecatedTableBodyVerticalStroke: Bool {_storage._deprecatedTableBodyVerticalStroke != nil}
   /// Clears the value of `deprecatedTableBodyVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedTableBodyVerticalStroke() {_uniqueStorage()._deprecatedTableBodyVerticalStroke = nil}
 
   public var strokePresetList: TST_StrokePresetListArchive {
-    get {return _storage._strokePresetList ?? TST_StrokePresetListArchive()}
+    get {_storage._strokePresetList ?? TST_StrokePresetListArchive()}
     set {_uniqueStorage()._strokePresetList = newValue}
   }
   /// Returns true if `strokePresetList` has been explicitly set.
-  public var hasStrokePresetList: Bool {return _storage._strokePresetList != nil}
+  public var hasStrokePresetList: Bool {_storage._strokePresetList != nil}
   /// Clears the value of `strokePresetList`. Subsequent reads from it will return its default value.
   public mutating func clearStrokePresetList() {_uniqueStorage()._strokePresetList = nil}
 
   public var vStrokesVisible: Bool {
-    get {return _storage._vStrokesVisible ?? false}
+    get {_storage._vStrokesVisible ?? false}
     set {_uniqueStorage()._vStrokesVisible = newValue}
   }
   /// Returns true if `vStrokesVisible` has been explicitly set.
-  public var hasVStrokesVisible: Bool {return _storage._vStrokesVisible != nil}
+  public var hasVStrokesVisible: Bool {_storage._vStrokesVisible != nil}
   /// Clears the value of `vStrokesVisible`. Subsequent reads from it will return its default value.
   public mutating func clearVStrokesVisible() {_uniqueStorage()._vStrokesVisible = nil}
 
   public var hStrokesVisible: Bool {
-    get {return _storage._hStrokesVisible ?? false}
+    get {_storage._hStrokesVisible ?? false}
     set {_uniqueStorage()._hStrokesVisible = newValue}
   }
   /// Returns true if `hStrokesVisible` has been explicitly set.
-  public var hasHStrokesVisible: Bool {return _storage._hStrokesVisible != nil}
+  public var hasHStrokesVisible: Bool {_storage._hStrokesVisible != nil}
   /// Clears the value of `hStrokesVisible`. Subsequent reads from it will return its default value.
   public mutating func clearHStrokesVisible() {_uniqueStorage()._hStrokesVisible = nil}
 
   public var hrSeparatorVisible: Bool {
-    get {return _storage._hrSeparatorVisible ?? false}
+    get {_storage._hrSeparatorVisible ?? false}
     set {_uniqueStorage()._hrSeparatorVisible = newValue}
   }
   /// Returns true if `hrSeparatorVisible` has been explicitly set.
-  public var hasHrSeparatorVisible: Bool {return _storage._hrSeparatorVisible != nil}
+  public var hasHrSeparatorVisible: Bool {_storage._hrSeparatorVisible != nil}
   /// Clears the value of `hrSeparatorVisible`. Subsequent reads from it will return its default value.
   public mutating func clearHrSeparatorVisible() {_uniqueStorage()._hrSeparatorVisible = nil}
 
   public var hcSeparatorVisible: Bool {
-    get {return _storage._hcSeparatorVisible ?? false}
+    get {_storage._hcSeparatorVisible ?? false}
     set {_uniqueStorage()._hcSeparatorVisible = newValue}
   }
   /// Returns true if `hcSeparatorVisible` has been explicitly set.
-  public var hasHcSeparatorVisible: Bool {return _storage._hcSeparatorVisible != nil}
+  public var hasHcSeparatorVisible: Bool {_storage._hcSeparatorVisible != nil}
   /// Clears the value of `hcSeparatorVisible`. Subsequent reads from it will return its default value.
   public mutating func clearHcSeparatorVisible() {_uniqueStorage()._hcSeparatorVisible = nil}
 
   public var footerSeparatorVisible: Bool {
-    get {return _storage._footerSeparatorVisible ?? false}
+    get {_storage._footerSeparatorVisible ?? false}
     set {_uniqueStorage()._footerSeparatorVisible = newValue}
   }
   /// Returns true if `footerSeparatorVisible` has been explicitly set.
-  public var hasFooterSeparatorVisible: Bool {return _storage._footerSeparatorVisible != nil}
+  public var hasFooterSeparatorVisible: Bool {_storage._footerSeparatorVisible != nil}
   /// Clears the value of `footerSeparatorVisible`. Subsequent reads from it will return its default value.
   public mutating func clearFooterSeparatorVisible() {_uniqueStorage()._footerSeparatorVisible = nil}
 
   public var tableBorderVisible: Bool {
-    get {return _storage._tableBorderVisible ?? false}
+    get {_storage._tableBorderVisible ?? false}
     set {_uniqueStorage()._tableBorderVisible = newValue}
   }
   /// Returns true if `tableBorderVisible` has been explicitly set.
-  public var hasTableBorderVisible: Bool {return _storage._tableBorderVisible != nil}
+  public var hasTableBorderVisible: Bool {_storage._tableBorderVisible != nil}
   /// Clears the value of `tableBorderVisible`. Subsequent reads from it will return its default value.
   public mutating func clearTableBorderVisible() {_uniqueStorage()._tableBorderVisible = nil}
 
   public var tableHeaderBorderVisible: Bool {
-    get {return _storage._tableHeaderBorderVisible ?? false}
+    get {_storage._tableHeaderBorderVisible ?? false}
     set {_uniqueStorage()._tableHeaderBorderVisible = newValue}
   }
   /// Returns true if `tableHeaderBorderVisible` has been explicitly set.
-  public var hasTableHeaderBorderVisible: Bool {return _storage._tableHeaderBorderVisible != nil}
+  public var hasTableHeaderBorderVisible: Bool {_storage._tableHeaderBorderVisible != nil}
   /// Clears the value of `tableHeaderBorderVisible`. Subsequent reads from it will return its default value.
   public mutating func clearTableHeaderBorderVisible() {_uniqueStorage()._tableHeaderBorderVisible = nil}
 
   public var tableHcDividerVisible: Bool {
-    get {return _storage._tableHcDividerVisible ?? false}
+    get {_storage._tableHcDividerVisible ?? false}
     set {_uniqueStorage()._tableHcDividerVisible = newValue}
   }
   /// Returns true if `tableHcDividerVisible` has been explicitly set.
-  public var hasTableHcDividerVisible: Bool {return _storage._tableHcDividerVisible != nil}
+  public var hasTableHcDividerVisible: Bool {_storage._tableHcDividerVisible != nil}
   /// Clears the value of `tableHcDividerVisible`. Subsequent reads from it will return its default value.
   public mutating func clearTableHcDividerVisible() {_uniqueStorage()._tableHcDividerVisible = nil}
 
   public var tableHrDividerVisible: Bool {
-    get {return _storage._tableHrDividerVisible ?? false}
+    get {_storage._tableHrDividerVisible ?? false}
     set {_uniqueStorage()._tableHrDividerVisible = newValue}
   }
   /// Returns true if `tableHrDividerVisible` has been explicitly set.
-  public var hasTableHrDividerVisible: Bool {return _storage._tableHrDividerVisible != nil}
+  public var hasTableHrDividerVisible: Bool {_storage._tableHrDividerVisible != nil}
   /// Clears the value of `tableHrDividerVisible`. Subsequent reads from it will return its default value.
   public mutating func clearTableHrDividerVisible() {_uniqueStorage()._tableHrDividerVisible = nil}
 
   public var tableFooterDividerVisible: Bool {
-    get {return _storage._tableFooterDividerVisible ?? false}
+    get {_storage._tableFooterDividerVisible ?? false}
     set {_uniqueStorage()._tableFooterDividerVisible = newValue}
   }
   /// Returns true if `tableFooterDividerVisible` has been explicitly set.
-  public var hasTableFooterDividerVisible: Bool {return _storage._tableFooterDividerVisible != nil}
+  public var hasTableFooterDividerVisible: Bool {_storage._tableFooterDividerVisible != nil}
   /// Clears the value of `tableFooterDividerVisible`. Subsequent reads from it will return its default value.
   public mutating func clearTableFooterDividerVisible() {_uniqueStorage()._tableFooterDividerVisible = nil}
 
   public var obsoleteMasterFontSize: Int32 {
-    get {return _storage._obsoleteMasterFontSize ?? 0}
+    get {_storage._obsoleteMasterFontSize ?? 0}
     set {_uniqueStorage()._obsoleteMasterFontSize = newValue}
   }
   /// Returns true if `obsoleteMasterFontSize` has been explicitly set.
-  public var hasObsoleteMasterFontSize: Bool {return _storage._obsoleteMasterFontSize != nil}
+  public var hasObsoleteMasterFontSize: Bool {_storage._obsoleteMasterFontSize != nil}
   /// Clears the value of `obsoleteMasterFontSize`. Subsequent reads from it will return its default value.
   public mutating func clearObsoleteMasterFontSize() {_uniqueStorage()._obsoleteMasterFontSize = nil}
 
   public var masterFontFamily: String {
-    get {return _storage._masterFontFamily ?? String()}
+    get {_storage._masterFontFamily ?? String()}
     set {_uniqueStorage()._masterFontFamily = newValue}
   }
   /// Returns true if `masterFontFamily` has been explicitly set.
-  public var hasMasterFontFamily: Bool {return _storage._masterFontFamily != nil}
+  public var hasMasterFontFamily: Bool {_storage._masterFontFamily != nil}
   /// Clears the value of `masterFontFamily`. Subsequent reads from it will return its default value.
   public mutating func clearMasterFontFamily() {_uniqueStorage()._masterFontFamily = nil}
 
   public var writingDirection: TSWP_WritingDirectionType {
-    get {return _storage._writingDirection ?? .kWritingDirectionNatural}
+    get {_storage._writingDirection ?? .kWritingDirectionNatural}
     set {_uniqueStorage()._writingDirection = newValue}
   }
   /// Returns true if `writingDirection` has been explicitly set.
-  public var hasWritingDirection: Bool {return _storage._writingDirection != nil}
+  public var hasWritingDirection: Bool {_storage._writingDirection != nil}
   /// Clears the value of `writingDirection`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirection() {_uniqueStorage()._writingDirection = nil}
 
   public var headerRowSeparatorStroke: TSD_StrokeArchive {
-    get {return _storage._headerRowSeparatorStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerRowSeparatorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerRowSeparatorStroke = newValue}
   }
   /// Returns true if `headerRowSeparatorStroke` has been explicitly set.
-  public var hasHeaderRowSeparatorStroke: Bool {return _storage._headerRowSeparatorStroke != nil}
+  public var hasHeaderRowSeparatorStroke: Bool {_storage._headerRowSeparatorStroke != nil}
   /// Clears the value of `headerRowSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowSeparatorStroke() {_uniqueStorage()._headerRowSeparatorStroke = nil}
 
   public var headerRowBorderStroke: TSD_StrokeArchive {
-    get {return _storage._headerRowBorderStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerRowBorderStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerRowBorderStroke = newValue}
   }
   /// Returns true if `headerRowBorderStroke` has been explicitly set.
-  public var hasHeaderRowBorderStroke: Bool {return _storage._headerRowBorderStroke != nil}
+  public var hasHeaderRowBorderStroke: Bool {_storage._headerRowBorderStroke != nil}
   /// Clears the value of `headerRowBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowBorderStroke() {_uniqueStorage()._headerRowBorderStroke = nil}
 
   public var headerRowHorizontalStroke: TSD_StrokeArchive {
-    get {return _storage._headerRowHorizontalStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerRowHorizontalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerRowHorizontalStroke = newValue}
   }
   /// Returns true if `headerRowHorizontalStroke` has been explicitly set.
-  public var hasHeaderRowHorizontalStroke: Bool {return _storage._headerRowHorizontalStroke != nil}
+  public var hasHeaderRowHorizontalStroke: Bool {_storage._headerRowHorizontalStroke != nil}
   /// Clears the value of `headerRowHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowHorizontalStroke() {_uniqueStorage()._headerRowHorizontalStroke = nil}
 
   public var headerRowVerticalStroke: TSD_StrokeArchive {
-    get {return _storage._headerRowVerticalStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerRowVerticalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerRowVerticalStroke = newValue}
   }
   /// Returns true if `headerRowVerticalStroke` has been explicitly set.
-  public var hasHeaderRowVerticalStroke: Bool {return _storage._headerRowVerticalStroke != nil}
+  public var hasHeaderRowVerticalStroke: Bool {_storage._headerRowVerticalStroke != nil}
   /// Clears the value of `headerRowVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowVerticalStroke() {_uniqueStorage()._headerRowVerticalStroke = nil}
 
   public var headerColumnBorderStroke: TSD_StrokeArchive {
-    get {return _storage._headerColumnBorderStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerColumnBorderStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerColumnBorderStroke = newValue}
   }
   /// Returns true if `headerColumnBorderStroke` has been explicitly set.
-  public var hasHeaderColumnBorderStroke: Bool {return _storage._headerColumnBorderStroke != nil}
+  public var hasHeaderColumnBorderStroke: Bool {_storage._headerColumnBorderStroke != nil}
   /// Clears the value of `headerColumnBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnBorderStroke() {_uniqueStorage()._headerColumnBorderStroke = nil}
 
   public var headerColumnSeparatorStroke: TSD_StrokeArchive {
-    get {return _storage._headerColumnSeparatorStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerColumnSeparatorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerColumnSeparatorStroke = newValue}
   }
   /// Returns true if `headerColumnSeparatorStroke` has been explicitly set.
-  public var hasHeaderColumnSeparatorStroke: Bool {return _storage._headerColumnSeparatorStroke != nil}
+  public var hasHeaderColumnSeparatorStroke: Bool {_storage._headerColumnSeparatorStroke != nil}
   /// Clears the value of `headerColumnSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnSeparatorStroke() {_uniqueStorage()._headerColumnSeparatorStroke = nil}
 
   public var headerColumnHorizontalStroke: TSD_StrokeArchive {
-    get {return _storage._headerColumnHorizontalStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerColumnHorizontalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerColumnHorizontalStroke = newValue}
   }
   /// Returns true if `headerColumnHorizontalStroke` has been explicitly set.
-  public var hasHeaderColumnHorizontalStroke: Bool {return _storage._headerColumnHorizontalStroke != nil}
+  public var hasHeaderColumnHorizontalStroke: Bool {_storage._headerColumnHorizontalStroke != nil}
   /// Clears the value of `headerColumnHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnHorizontalStroke() {_uniqueStorage()._headerColumnHorizontalStroke = nil}
 
   public var headerColumnVerticalStroke: TSD_StrokeArchive {
-    get {return _storage._headerColumnVerticalStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerColumnVerticalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerColumnVerticalStroke = newValue}
   }
   /// Returns true if `headerColumnVerticalStroke` has been explicitly set.
-  public var hasHeaderColumnVerticalStroke: Bool {return _storage._headerColumnVerticalStroke != nil}
+  public var hasHeaderColumnVerticalStroke: Bool {_storage._headerColumnVerticalStroke != nil}
   /// Clears the value of `headerColumnVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnVerticalStroke() {_uniqueStorage()._headerColumnVerticalStroke = nil}
 
   public var footerRowSeparatorStroke: TSD_StrokeArchive {
-    get {return _storage._footerRowSeparatorStroke ?? TSD_StrokeArchive()}
+    get {_storage._footerRowSeparatorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._footerRowSeparatorStroke = newValue}
   }
   /// Returns true if `footerRowSeparatorStroke` has been explicitly set.
-  public var hasFooterRowSeparatorStroke: Bool {return _storage._footerRowSeparatorStroke != nil}
+  public var hasFooterRowSeparatorStroke: Bool {_storage._footerRowSeparatorStroke != nil}
   /// Clears the value of `footerRowSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowSeparatorStroke() {_uniqueStorage()._footerRowSeparatorStroke = nil}
 
   public var footerRowBorderStroke: TSD_StrokeArchive {
-    get {return _storage._footerRowBorderStroke ?? TSD_StrokeArchive()}
+    get {_storage._footerRowBorderStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._footerRowBorderStroke = newValue}
   }
   /// Returns true if `footerRowBorderStroke` has been explicitly set.
-  public var hasFooterRowBorderStroke: Bool {return _storage._footerRowBorderStroke != nil}
+  public var hasFooterRowBorderStroke: Bool {_storage._footerRowBorderStroke != nil}
   /// Clears the value of `footerRowBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowBorderStroke() {_uniqueStorage()._footerRowBorderStroke = nil}
 
   public var footerRowHorizontalStroke: TSD_StrokeArchive {
-    get {return _storage._footerRowHorizontalStroke ?? TSD_StrokeArchive()}
+    get {_storage._footerRowHorizontalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._footerRowHorizontalStroke = newValue}
   }
   /// Returns true if `footerRowHorizontalStroke` has been explicitly set.
-  public var hasFooterRowHorizontalStroke: Bool {return _storage._footerRowHorizontalStroke != nil}
+  public var hasFooterRowHorizontalStroke: Bool {_storage._footerRowHorizontalStroke != nil}
   /// Clears the value of `footerRowHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowHorizontalStroke() {_uniqueStorage()._footerRowHorizontalStroke = nil}
 
   public var footerRowVerticalStroke: TSD_StrokeArchive {
-    get {return _storage._footerRowVerticalStroke ?? TSD_StrokeArchive()}
+    get {_storage._footerRowVerticalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._footerRowVerticalStroke = newValue}
   }
   /// Returns true if `footerRowVerticalStroke` has been explicitly set.
-  public var hasFooterRowVerticalStroke: Bool {return _storage._footerRowVerticalStroke != nil}
+  public var hasFooterRowVerticalStroke: Bool {_storage._footerRowVerticalStroke != nil}
   /// Clears the value of `footerRowVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowVerticalStroke() {_uniqueStorage()._footerRowVerticalStroke = nil}
 
   public var tableBodyHorizontalBorderStroke: TSD_StrokeArchive {
-    get {return _storage._tableBodyHorizontalBorderStroke ?? TSD_StrokeArchive()}
+    get {_storage._tableBodyHorizontalBorderStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tableBodyHorizontalBorderStroke = newValue}
   }
   /// Returns true if `tableBodyHorizontalBorderStroke` has been explicitly set.
-  public var hasTableBodyHorizontalBorderStroke: Bool {return _storage._tableBodyHorizontalBorderStroke != nil}
+  public var hasTableBodyHorizontalBorderStroke: Bool {_storage._tableBodyHorizontalBorderStroke != nil}
   /// Clears the value of `tableBodyHorizontalBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearTableBodyHorizontalBorderStroke() {_uniqueStorage()._tableBodyHorizontalBorderStroke = nil}
 
   public var tableBodyVerticalBorderStroke: TSD_StrokeArchive {
-    get {return _storage._tableBodyVerticalBorderStroke ?? TSD_StrokeArchive()}
+    get {_storage._tableBodyVerticalBorderStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tableBodyVerticalBorderStroke = newValue}
   }
   /// Returns true if `tableBodyVerticalBorderStroke` has been explicitly set.
-  public var hasTableBodyVerticalBorderStroke: Bool {return _storage._tableBodyVerticalBorderStroke != nil}
+  public var hasTableBodyVerticalBorderStroke: Bool {_storage._tableBodyVerticalBorderStroke != nil}
   /// Clears the value of `tableBodyVerticalBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearTableBodyVerticalBorderStroke() {_uniqueStorage()._tableBodyVerticalBorderStroke = nil}
 
   public var tableBodyHorizontalStroke: TSD_StrokeArchive {
-    get {return _storage._tableBodyHorizontalStroke ?? TSD_StrokeArchive()}
+    get {_storage._tableBodyHorizontalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tableBodyHorizontalStroke = newValue}
   }
   /// Returns true if `tableBodyHorizontalStroke` has been explicitly set.
-  public var hasTableBodyHorizontalStroke: Bool {return _storage._tableBodyHorizontalStroke != nil}
+  public var hasTableBodyHorizontalStroke: Bool {_storage._tableBodyHorizontalStroke != nil}
   /// Clears the value of `tableBodyHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearTableBodyHorizontalStroke() {_uniqueStorage()._tableBodyHorizontalStroke = nil}
 
   public var tableBodyVerticalStroke: TSD_StrokeArchive {
-    get {return _storage._tableBodyVerticalStroke ?? TSD_StrokeArchive()}
+    get {_storage._tableBodyVerticalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tableBodyVerticalStroke = newValue}
   }
   /// Returns true if `tableBodyVerticalStroke` has been explicitly set.
-  public var hasTableBodyVerticalStroke: Bool {return _storage._tableBodyVerticalStroke != nil}
+  public var hasTableBodyVerticalStroke: Bool {_storage._tableBodyVerticalStroke != nil}
   /// Clears the value of `tableBodyVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearTableBodyVerticalStroke() {_uniqueStorage()._tableBodyVerticalStroke = nil}
 
   public var categoryLevel1TopStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel1TopStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel1TopStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel1TopStroke = newValue}
   }
   /// Returns true if `categoryLevel1TopStroke` has been explicitly set.
-  public var hasCategoryLevel1TopStroke: Bool {return _storage._categoryLevel1TopStroke != nil}
+  public var hasCategoryLevel1TopStroke: Bool {_storage._categoryLevel1TopStroke != nil}
   /// Clears the value of `categoryLevel1TopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1TopStroke() {_uniqueStorage()._categoryLevel1TopStroke = nil}
 
   public var categoryLevel2TopStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel2TopStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel2TopStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel2TopStroke = newValue}
   }
   /// Returns true if `categoryLevel2TopStroke` has been explicitly set.
-  public var hasCategoryLevel2TopStroke: Bool {return _storage._categoryLevel2TopStroke != nil}
+  public var hasCategoryLevel2TopStroke: Bool {_storage._categoryLevel2TopStroke != nil}
   /// Clears the value of `categoryLevel2TopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2TopStroke() {_uniqueStorage()._categoryLevel2TopStroke = nil}
 
   public var categoryLevel3TopStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel3TopStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel3TopStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel3TopStroke = newValue}
   }
   /// Returns true if `categoryLevel3TopStroke` has been explicitly set.
-  public var hasCategoryLevel3TopStroke: Bool {return _storage._categoryLevel3TopStroke != nil}
+  public var hasCategoryLevel3TopStroke: Bool {_storage._categoryLevel3TopStroke != nil}
   /// Clears the value of `categoryLevel3TopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3TopStroke() {_uniqueStorage()._categoryLevel3TopStroke = nil}
 
   public var categoryLevel4TopStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel4TopStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel4TopStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel4TopStroke = newValue}
   }
   /// Returns true if `categoryLevel4TopStroke` has been explicitly set.
-  public var hasCategoryLevel4TopStroke: Bool {return _storage._categoryLevel4TopStroke != nil}
+  public var hasCategoryLevel4TopStroke: Bool {_storage._categoryLevel4TopStroke != nil}
   /// Clears the value of `categoryLevel4TopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4TopStroke() {_uniqueStorage()._categoryLevel4TopStroke = nil}
 
   public var categoryLevel5TopStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel5TopStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel5TopStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel5TopStroke = newValue}
   }
   /// Returns true if `categoryLevel5TopStroke` has been explicitly set.
-  public var hasCategoryLevel5TopStroke: Bool {return _storage._categoryLevel5TopStroke != nil}
+  public var hasCategoryLevel5TopStroke: Bool {_storage._categoryLevel5TopStroke != nil}
   /// Clears the value of `categoryLevel5TopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5TopStroke() {_uniqueStorage()._categoryLevel5TopStroke = nil}
 
   public var categoryLevel1BottomStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel1BottomStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel1BottomStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel1BottomStroke = newValue}
   }
   /// Returns true if `categoryLevel1BottomStroke` has been explicitly set.
-  public var hasCategoryLevel1BottomStroke: Bool {return _storage._categoryLevel1BottomStroke != nil}
+  public var hasCategoryLevel1BottomStroke: Bool {_storage._categoryLevel1BottomStroke != nil}
   /// Clears the value of `categoryLevel1BottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1BottomStroke() {_uniqueStorage()._categoryLevel1BottomStroke = nil}
 
   public var categoryLevel2BottomStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel2BottomStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel2BottomStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel2BottomStroke = newValue}
   }
   /// Returns true if `categoryLevel2BottomStroke` has been explicitly set.
-  public var hasCategoryLevel2BottomStroke: Bool {return _storage._categoryLevel2BottomStroke != nil}
+  public var hasCategoryLevel2BottomStroke: Bool {_storage._categoryLevel2BottomStroke != nil}
   /// Clears the value of `categoryLevel2BottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2BottomStroke() {_uniqueStorage()._categoryLevel2BottomStroke = nil}
 
   public var categoryLevel3BottomStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel3BottomStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel3BottomStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel3BottomStroke = newValue}
   }
   /// Returns true if `categoryLevel3BottomStroke` has been explicitly set.
-  public var hasCategoryLevel3BottomStroke: Bool {return _storage._categoryLevel3BottomStroke != nil}
+  public var hasCategoryLevel3BottomStroke: Bool {_storage._categoryLevel3BottomStroke != nil}
   /// Clears the value of `categoryLevel3BottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3BottomStroke() {_uniqueStorage()._categoryLevel3BottomStroke = nil}
 
   public var categoryLevel4BottomStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel4BottomStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel4BottomStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel4BottomStroke = newValue}
   }
   /// Returns true if `categoryLevel4BottomStroke` has been explicitly set.
-  public var hasCategoryLevel4BottomStroke: Bool {return _storage._categoryLevel4BottomStroke != nil}
+  public var hasCategoryLevel4BottomStroke: Bool {_storage._categoryLevel4BottomStroke != nil}
   /// Clears the value of `categoryLevel4BottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4BottomStroke() {_uniqueStorage()._categoryLevel4BottomStroke = nil}
 
   public var categoryLevel5BottomStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel5BottomStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel5BottomStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel5BottomStroke = newValue}
   }
   /// Returns true if `categoryLevel5BottomStroke` has been explicitly set.
-  public var hasCategoryLevel5BottomStroke: Bool {return _storage._categoryLevel5BottomStroke != nil}
+  public var hasCategoryLevel5BottomStroke: Bool {_storage._categoryLevel5BottomStroke != nil}
   /// Clears the value of `categoryLevel5BottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5BottomStroke() {_uniqueStorage()._categoryLevel5BottomStroke = nil}
 
   public var categoryLevel1InteriorStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel1InteriorStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel1InteriorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel1InteriorStroke = newValue}
   }
   /// Returns true if `categoryLevel1InteriorStroke` has been explicitly set.
-  public var hasCategoryLevel1InteriorStroke: Bool {return _storage._categoryLevel1InteriorStroke != nil}
+  public var hasCategoryLevel1InteriorStroke: Bool {_storage._categoryLevel1InteriorStroke != nil}
   /// Clears the value of `categoryLevel1InteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1InteriorStroke() {_uniqueStorage()._categoryLevel1InteriorStroke = nil}
 
   public var categoryLevel2InteriorStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel2InteriorStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel2InteriorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel2InteriorStroke = newValue}
   }
   /// Returns true if `categoryLevel2InteriorStroke` has been explicitly set.
-  public var hasCategoryLevel2InteriorStroke: Bool {return _storage._categoryLevel2InteriorStroke != nil}
+  public var hasCategoryLevel2InteriorStroke: Bool {_storage._categoryLevel2InteriorStroke != nil}
   /// Clears the value of `categoryLevel2InteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2InteriorStroke() {_uniqueStorage()._categoryLevel2InteriorStroke = nil}
 
   public var categoryLevel3InteriorStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel3InteriorStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel3InteriorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel3InteriorStroke = newValue}
   }
   /// Returns true if `categoryLevel3InteriorStroke` has been explicitly set.
-  public var hasCategoryLevel3InteriorStroke: Bool {return _storage._categoryLevel3InteriorStroke != nil}
+  public var hasCategoryLevel3InteriorStroke: Bool {_storage._categoryLevel3InteriorStroke != nil}
   /// Clears the value of `categoryLevel3InteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3InteriorStroke() {_uniqueStorage()._categoryLevel3InteriorStroke = nil}
 
   public var categoryLevel4InteriorStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel4InteriorStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel4InteriorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel4InteriorStroke = newValue}
   }
   /// Returns true if `categoryLevel4InteriorStroke` has been explicitly set.
-  public var hasCategoryLevel4InteriorStroke: Bool {return _storage._categoryLevel4InteriorStroke != nil}
+  public var hasCategoryLevel4InteriorStroke: Bool {_storage._categoryLevel4InteriorStroke != nil}
   /// Clears the value of `categoryLevel4InteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4InteriorStroke() {_uniqueStorage()._categoryLevel4InteriorStroke = nil}
 
   public var categoryLevel5InteriorStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel5InteriorStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel5InteriorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel5InteriorStroke = newValue}
   }
   /// Returns true if `categoryLevel5InteriorStroke` has been explicitly set.
-  public var hasCategoryLevel5InteriorStroke: Bool {return _storage._categoryLevel5InteriorStroke != nil}
+  public var hasCategoryLevel5InteriorStroke: Bool {_storage._categoryLevel5InteriorStroke != nil}
   /// Clears the value of `categoryLevel5InteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5InteriorStroke() {_uniqueStorage()._categoryLevel5InteriorStroke = nil}
 
   public var categoryLevel1LabelSeparatorStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel1LabelSeparatorStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel1LabelSeparatorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel1LabelSeparatorStroke = newValue}
   }
   /// Returns true if `categoryLevel1LabelSeparatorStroke` has been explicitly set.
-  public var hasCategoryLevel1LabelSeparatorStroke: Bool {return _storage._categoryLevel1LabelSeparatorStroke != nil}
+  public var hasCategoryLevel1LabelSeparatorStroke: Bool {_storage._categoryLevel1LabelSeparatorStroke != nil}
   /// Clears the value of `categoryLevel1LabelSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1LabelSeparatorStroke() {_uniqueStorage()._categoryLevel1LabelSeparatorStroke = nil}
 
   public var categoryLevel2LabelSeparatorStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel2LabelSeparatorStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel2LabelSeparatorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel2LabelSeparatorStroke = newValue}
   }
   /// Returns true if `categoryLevel2LabelSeparatorStroke` has been explicitly set.
-  public var hasCategoryLevel2LabelSeparatorStroke: Bool {return _storage._categoryLevel2LabelSeparatorStroke != nil}
+  public var hasCategoryLevel2LabelSeparatorStroke: Bool {_storage._categoryLevel2LabelSeparatorStroke != nil}
   /// Clears the value of `categoryLevel2LabelSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2LabelSeparatorStroke() {_uniqueStorage()._categoryLevel2LabelSeparatorStroke = nil}
 
   public var categoryLevel3LabelSeparatorStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel3LabelSeparatorStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel3LabelSeparatorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel3LabelSeparatorStroke = newValue}
   }
   /// Returns true if `categoryLevel3LabelSeparatorStroke` has been explicitly set.
-  public var hasCategoryLevel3LabelSeparatorStroke: Bool {return _storage._categoryLevel3LabelSeparatorStroke != nil}
+  public var hasCategoryLevel3LabelSeparatorStroke: Bool {_storage._categoryLevel3LabelSeparatorStroke != nil}
   /// Clears the value of `categoryLevel3LabelSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3LabelSeparatorStroke() {_uniqueStorage()._categoryLevel3LabelSeparatorStroke = nil}
 
   public var categoryLevel4LabelSeparatorStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel4LabelSeparatorStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel4LabelSeparatorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel4LabelSeparatorStroke = newValue}
   }
   /// Returns true if `categoryLevel4LabelSeparatorStroke` has been explicitly set.
-  public var hasCategoryLevel4LabelSeparatorStroke: Bool {return _storage._categoryLevel4LabelSeparatorStroke != nil}
+  public var hasCategoryLevel4LabelSeparatorStroke: Bool {_storage._categoryLevel4LabelSeparatorStroke != nil}
   /// Clears the value of `categoryLevel4LabelSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4LabelSeparatorStroke() {_uniqueStorage()._categoryLevel4LabelSeparatorStroke = nil}
 
   public var categoryLevel5LabelSeparatorStroke: TSD_StrokeArchive {
-    get {return _storage._categoryLevel5LabelSeparatorStroke ?? TSD_StrokeArchive()}
+    get {_storage._categoryLevel5LabelSeparatorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._categoryLevel5LabelSeparatorStroke = newValue}
   }
   /// Returns true if `categoryLevel5LabelSeparatorStroke` has been explicitly set.
-  public var hasCategoryLevel5LabelSeparatorStroke: Bool {return _storage._categoryLevel5LabelSeparatorStroke != nil}
+  public var hasCategoryLevel5LabelSeparatorStroke: Bool {_storage._categoryLevel5LabelSeparatorStroke != nil}
   /// Clears the value of `categoryLevel5LabelSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5LabelSeparatorStroke() {_uniqueStorage()._categoryLevel5LabelSeparatorStroke = nil}
 
   public var tableBodyPivotGroupHorizontalStroke: TSD_StrokeArchive {
-    get {return _storage._tableBodyPivotGroupHorizontalStroke ?? TSD_StrokeArchive()}
+    get {_storage._tableBodyPivotGroupHorizontalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tableBodyPivotGroupHorizontalStroke = newValue}
   }
   /// Returns true if `tableBodyPivotGroupHorizontalStroke` has been explicitly set.
-  public var hasTableBodyPivotGroupHorizontalStroke: Bool {return _storage._tableBodyPivotGroupHorizontalStroke != nil}
+  public var hasTableBodyPivotGroupHorizontalStroke: Bool {_storage._tableBodyPivotGroupHorizontalStroke != nil}
   /// Clears the value of `tableBodyPivotGroupHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearTableBodyPivotGroupHorizontalStroke() {_uniqueStorage()._tableBodyPivotGroupHorizontalStroke = nil}
 
   public var tableBodyPivotGroupVerticalStroke: TSD_StrokeArchive {
-    get {return _storage._tableBodyPivotGroupVerticalStroke ?? TSD_StrokeArchive()}
+    get {_storage._tableBodyPivotGroupVerticalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tableBodyPivotGroupVerticalStroke = newValue}
   }
   /// Returns true if `tableBodyPivotGroupVerticalStroke` has been explicitly set.
-  public var hasTableBodyPivotGroupVerticalStroke: Bool {return _storage._tableBodyPivotGroupVerticalStroke != nil}
+  public var hasTableBodyPivotGroupVerticalStroke: Bool {_storage._tableBodyPivotGroupVerticalStroke != nil}
   /// Clears the value of `tableBodyPivotGroupVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearTableBodyPivotGroupVerticalStroke() {_uniqueStorage()._tableBodyPivotGroupVerticalStroke = nil}
 
   public var tableBodyPivotDeemphasisHorizontalStroke: TSD_StrokeArchive {
-    get {return _storage._tableBodyPivotDeemphasisHorizontalStroke ?? TSD_StrokeArchive()}
+    get {_storage._tableBodyPivotDeemphasisHorizontalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tableBodyPivotDeemphasisHorizontalStroke = newValue}
   }
   /// Returns true if `tableBodyPivotDeemphasisHorizontalStroke` has been explicitly set.
-  public var hasTableBodyPivotDeemphasisHorizontalStroke: Bool {return _storage._tableBodyPivotDeemphasisHorizontalStroke != nil}
+  public var hasTableBodyPivotDeemphasisHorizontalStroke: Bool {_storage._tableBodyPivotDeemphasisHorizontalStroke != nil}
   /// Clears the value of `tableBodyPivotDeemphasisHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearTableBodyPivotDeemphasisHorizontalStroke() {_uniqueStorage()._tableBodyPivotDeemphasisHorizontalStroke = nil}
 
   public var tableBodyPivotEmphasisVerticalStroke: TSD_StrokeArchive {
-    get {return _storage._tableBodyPivotEmphasisVerticalStroke ?? TSD_StrokeArchive()}
+    get {_storage._tableBodyPivotEmphasisVerticalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tableBodyPivotEmphasisVerticalStroke = newValue}
   }
   /// Returns true if `tableBodyPivotEmphasisVerticalStroke` has been explicitly set.
-  public var hasTableBodyPivotEmphasisVerticalStroke: Bool {return _storage._tableBodyPivotEmphasisVerticalStroke != nil}
+  public var hasTableBodyPivotEmphasisVerticalStroke: Bool {_storage._tableBodyPivotEmphasisVerticalStroke != nil}
   /// Clears the value of `tableBodyPivotEmphasisVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearTableBodyPivotEmphasisVerticalStroke() {_uniqueStorage()._tableBodyPivotEmphasisVerticalStroke = nil}
 
   public var headerColumnPivotGroupHorizontalStroke: TSD_StrokeArchive {
-    get {return _storage._headerColumnPivotGroupHorizontalStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerColumnPivotGroupHorizontalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerColumnPivotGroupHorizontalStroke = newValue}
   }
   /// Returns true if `headerColumnPivotGroupHorizontalStroke` has been explicitly set.
-  public var hasHeaderColumnPivotGroupHorizontalStroke: Bool {return _storage._headerColumnPivotGroupHorizontalStroke != nil}
+  public var hasHeaderColumnPivotGroupHorizontalStroke: Bool {_storage._headerColumnPivotGroupHorizontalStroke != nil}
   /// Clears the value of `headerColumnPivotGroupHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnPivotGroupHorizontalStroke() {_uniqueStorage()._headerColumnPivotGroupHorizontalStroke = nil}
 
   public var headerColumnPivotGroupDeemphasisStroke: TSD_StrokeArchive {
-    get {return _storage._headerColumnPivotGroupDeemphasisStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerColumnPivotGroupDeemphasisStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerColumnPivotGroupDeemphasisStroke = newValue}
   }
   /// Returns true if `headerColumnPivotGroupDeemphasisStroke` has been explicitly set.
-  public var hasHeaderColumnPivotGroupDeemphasisStroke: Bool {return _storage._headerColumnPivotGroupDeemphasisStroke != nil}
+  public var hasHeaderColumnPivotGroupDeemphasisStroke: Bool {_storage._headerColumnPivotGroupDeemphasisStroke != nil}
   /// Clears the value of `headerColumnPivotGroupDeemphasisStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnPivotGroupDeemphasisStroke() {_uniqueStorage()._headerColumnPivotGroupDeemphasisStroke = nil}
 
   public var headerColumnPivotSeparatorStroke: TSD_StrokeArchive {
-    get {return _storage._headerColumnPivotSeparatorStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerColumnPivotSeparatorStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerColumnPivotSeparatorStroke = newValue}
   }
   /// Returns true if `headerColumnPivotSeparatorStroke` has been explicitly set.
-  public var hasHeaderColumnPivotSeparatorStroke: Bool {return _storage._headerColumnPivotSeparatorStroke != nil}
+  public var hasHeaderColumnPivotSeparatorStroke: Bool {_storage._headerColumnPivotSeparatorStroke != nil}
   /// Clears the value of `headerColumnPivotSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnPivotSeparatorStroke() {_uniqueStorage()._headerColumnPivotSeparatorStroke = nil}
 
   public var headerRowPivotGroupVerticalStroke: TSD_StrokeArchive {
-    get {return _storage._headerRowPivotGroupVerticalStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerRowPivotGroupVerticalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerRowPivotGroupVerticalStroke = newValue}
   }
   /// Returns true if `headerRowPivotGroupVerticalStroke` has been explicitly set.
-  public var hasHeaderRowPivotGroupVerticalStroke: Bool {return _storage._headerRowPivotGroupVerticalStroke != nil}
+  public var hasHeaderRowPivotGroupVerticalStroke: Bool {_storage._headerRowPivotGroupVerticalStroke != nil}
   /// Clears the value of `headerRowPivotGroupVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowPivotGroupVerticalStroke() {_uniqueStorage()._headerRowPivotGroupVerticalStroke = nil}
 
   public var headerRowPivotGroupDeemphasisStroke: TSD_StrokeArchive {
-    get {return _storage._headerRowPivotGroupDeemphasisStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerRowPivotGroupDeemphasisStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerRowPivotGroupDeemphasisStroke = newValue}
   }
   /// Returns true if `headerRowPivotGroupDeemphasisStroke` has been explicitly set.
-  public var hasHeaderRowPivotGroupDeemphasisStroke: Bool {return _storage._headerRowPivotGroupDeemphasisStroke != nil}
+  public var hasHeaderRowPivotGroupDeemphasisStroke: Bool {_storage._headerRowPivotGroupDeemphasisStroke != nil}
   /// Clears the value of `headerRowPivotGroupDeemphasisStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowPivotGroupDeemphasisStroke() {_uniqueStorage()._headerRowPivotGroupDeemphasisStroke = nil}
 
   public var headerRowPivotTitleStroke: TSD_StrokeArchive {
-    get {return _storage._headerRowPivotTitleStroke ?? TSD_StrokeArchive()}
+    get {_storage._headerRowPivotTitleStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._headerRowPivotTitleStroke = newValue}
   }
   /// Returns true if `headerRowPivotTitleStroke` has been explicitly set.
-  public var hasHeaderRowPivotTitleStroke: Bool {return _storage._headerRowPivotTitleStroke != nil}
+  public var hasHeaderRowPivotTitleStroke: Bool {_storage._headerRowPivotTitleStroke != nil}
   /// Clears the value of `headerRowPivotTitleStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowPivotTitleStroke() {_uniqueStorage()._headerRowPivotTitleStroke = nil}
 
   public var footerRowPivotGroupVerticalStroke: TSD_StrokeArchive {
-    get {return _storage._footerRowPivotGroupVerticalStroke ?? TSD_StrokeArchive()}
+    get {_storage._footerRowPivotGroupVerticalStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._footerRowPivotGroupVerticalStroke = newValue}
   }
   /// Returns true if `footerRowPivotGroupVerticalStroke` has been explicitly set.
-  public var hasFooterRowPivotGroupVerticalStroke: Bool {return _storage._footerRowPivotGroupVerticalStroke != nil}
+  public var hasFooterRowPivotGroupVerticalStroke: Bool {_storage._footerRowPivotGroupVerticalStroke != nil}
   /// Clears the value of `footerRowPivotGroupVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowPivotGroupVerticalStroke() {_uniqueStorage()._footerRowPivotGroupVerticalStroke = nil}
 
@@ -1062,35 +1062,35 @@ public struct TST_TableStylePropertiesArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TST_TableStylePresetArchive: Sendable {
+public nonisolated struct TST_TableStylePresetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var index: Int32 {
-    get {return _index ?? 0}
+    get {_index ?? 0}
     set {_index = newValue}
   }
   /// Returns true if `index` has been explicitly set.
-  public var hasIndex: Bool {return self._index != nil}
+  public var hasIndex: Bool {self._index != nil}
   /// Clears the value of `index`. Subsequent reads from it will return its default value.
   public mutating func clearIndex() {self._index = nil}
 
   public var image: TSP_Reference {
-    get {return _image ?? TSP_Reference()}
+    get {_image ?? TSP_Reference()}
     set {_image = newValue}
   }
   /// Returns true if `image` has been explicitly set.
-  public var hasImage: Bool {return self._image != nil}
+  public var hasImage: Bool {self._image != nil}
   /// Clears the value of `image`. Subsequent reads from it will return its default value.
   public mutating func clearImage() {self._image = nil}
 
   public var styleNetwork: TSP_Reference {
-    get {return _styleNetwork ?? TSP_Reference()}
+    get {_styleNetwork ?? TSP_Reference()}
     set {_styleNetwork = newValue}
   }
   /// Returns true if `styleNetwork` has been explicitly set.
-  public var hasStyleNetwork: Bool {return self._styleNetwork != nil}
+  public var hasStyleNetwork: Bool {self._styleNetwork != nil}
   /// Clears the value of `styleNetwork`. Subsequent reads from it will return its default value.
   public mutating func clearStyleNetwork() {self._styleNetwork = nil}
 
@@ -1103,17 +1103,17 @@ public struct TST_TableStylePresetArchive: Sendable {
   fileprivate var _styleNetwork: TSP_Reference? = nil
 }
 
-public struct TST_TableStrokePresetArchive: Sendable {
+public nonisolated struct TST_TableStrokePresetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var index: Int32 {
-    get {return _index ?? 0}
+    get {_index ?? 0}
     set {_index = newValue}
   }
   /// Returns true if `index` has been explicitly set.
-  public var hasIndex: Bool {return self._index != nil}
+  public var hasIndex: Bool {self._index != nil}
   /// Clears the value of `index`. Subsequent reads from it will return its default value.
   public mutating func clearIndex() {self._index = nil}
 
@@ -1124,7 +1124,7 @@ public struct TST_TableStrokePresetArchive: Sendable {
   fileprivate var _index: Int32? = nil
 }
 
-public struct TST_ThemePresetsArchive: Sendable {
+public nonisolated struct TST_ThemePresetsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1147,7 +1147,7 @@ public struct TST_ThemePresetsArchive: Sendable {
 // declaration. To avoid naming collisions, the names are prefixed with the name of
 // the scope where the extend directive occurs.
 
-extension TSS_ThemeArchive {
+nonisolated extension TSS_ThemeArchive {
 
   public var TST_ThemePresetsArchive_extension: TST_ThemePresetsArchive {
     get {return getExtensionValue(ext: TST_ThemePresetsArchive.Extensions.extension) ?? TST_ThemePresetsArchive()}
@@ -1172,7 +1172,7 @@ extension TSS_ThemeArchive {
 /// this .proto file. It can be used any place an `SwiftProtobuf.ExtensionMap` is needed
 /// in parsing, or it can be combined with other `SwiftProtobuf.SimpleExtensionMap`s to create
 /// a larger `SwiftProtobuf.SimpleExtensionMap`.
-public let TST_TststylePropertyArchiving_Extensions: SwiftProtobuf.SimpleExtensionMap = [
+public nonisolated let TST_TststylePropertyArchiving_Extensions: SwiftProtobuf.SimpleExtensionMap = [
   TST_ThemePresetsArchive.Extensions.extension
 ]
 
@@ -1180,7 +1180,7 @@ public let TST_TststylePropertyArchiving_Extensions: SwiftProtobuf.SimpleExtensi
 // constructing a `SimpleExtensionMap`, otherwise, use the above _Extension Properties_
 // accessors for the extension fields on the messages directly.
 
-extension TST_ThemePresetsArchive {
+nonisolated extension TST_ThemePresetsArchive {
   public enum Extensions {
     public static let `extension` = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TST_ThemePresetsArchive>, TSS_ThemeArchive>(
       _protobuf_fieldNumber: 200,
@@ -1191,16 +1191,11 @@ extension TST_ThemePresetsArchive {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TST"
+fileprivate nonisolated let _protobuf_package = "TST"
 
-extension TST_Deprecated_TableStrokeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TST_Deprecated_TableStrokeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Deprecated_TableStrokeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "stroke"),
-    2: .same(proto: "background"),
-    3: .same(proto: "opacity"),
-    4: .same(proto: "empty"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}stroke\0\u{1}background\0\u{1}opacity\0\u{1}empty\0")
 
   public var isInitialized: Bool {
     if let v = self._stroke, !v.isInitialized {return false}
@@ -1252,22 +1247,9 @@ extension TST_Deprecated_TableStrokeArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TST_CellStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TST_CellStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CellStylePropertiesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cell_fill"),
-    3: .standard(proto: "text_wrap"),
-    4: .standard(proto: "deprecated_top_stroke"),
-    5: .standard(proto: "deprecated_right_stroke"),
-    6: .standard(proto: "deprecated_bottom_stroke"),
-    7: .standard(proto: "deprecated_left_stroke"),
-    8: .standard(proto: "vertical_alignment"),
-    9: .same(proto: "padding"),
-    10: .standard(proto: "top_stroke"),
-    11: .standard(proto: "right_stroke"),
-    12: .standard(proto: "bottom_stroke"),
-    13: .standard(proto: "left_stroke"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cell_fill\0\u{4}\u{2}text_wrap\0\u{3}deprecated_top_stroke\0\u{3}deprecated_right_stroke\0\u{3}deprecated_bottom_stroke\0\u{3}deprecated_left_stroke\0\u{3}vertical_alignment\0\u{1}padding\0\u{3}top_stroke\0\u{3}right_stroke\0\u{3}bottom_stroke\0\u{3}left_stroke\0")
 
   fileprivate class _StorageClass {
     var _cellFill: TSD_FillArchive? = nil
@@ -1283,15 +1265,11 @@ extension TST_CellStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._
     var _bottomStroke: TSD_StrokeArchive? = nil
     var _leftStroke: TSD_StrokeArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -1431,14 +1409,9 @@ extension TST_CellStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TST_Deprecated_StrokePresetDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TST_Deprecated_StrokePresetDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Deprecated_StrokePresetDataArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    2: .standard(proto: "deprecated_horizontal_stroke"),
-    1: .standard(proto: "deprecated_vertical_stroke"),
-    3: .standard(proto: "deprecated_exterior_stroke"),
-    5: .standard(proto: "deprecated_visible_mask"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}deprecated_vertical_stroke\0\u{3}deprecated_horizontal_stroke\0\u{3}deprecated_exterior_stroke\0\u{4}\u{2}deprecated_visible_mask\0")
 
   public var isInitialized: Bool {
     if self._deprecatedHorizontalStroke == nil {return false}
@@ -1496,14 +1469,9 @@ extension TST_Deprecated_StrokePresetDataArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TST_StrokePresetDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TST_StrokePresetDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StrokePresetDataArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "horizontal_stroke"),
-    2: .standard(proto: "vertical_stroke"),
-    3: .standard(proto: "exterior_stroke"),
-    4: .standard(proto: "visible_mask"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}horizontal_stroke\0\u{3}vertical_stroke\0\u{3}exterior_stroke\0\u{3}visible_mask\0")
 
   public var isInitialized: Bool {
     if let v = self._horizontalStroke, !v.isInitialized {return false}
@@ -1557,13 +1525,9 @@ extension TST_StrokePresetDataArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TST_StrokePresetListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TST_StrokePresetListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StrokePresetListArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "count"),
-    2: .standard(proto: "deprecated_preset"),
-    3: .same(proto: "preset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}count\0\u{3}deprecated_preset\0\u{1}preset\0")
 
   public var isInitialized: Bool {
     if self._count == nil {return false}
@@ -1612,91 +1576,9 @@ extension TST_StrokePresetListArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TST_TableStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TST_TableStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TableStylePropertiesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "banded_rows"),
-    2: .standard(proto: "banded_fill"),
-    21: .standard(proto: "behaves_like_spreadsheet"),
-    22: .standard(proto: "auto_resize"),
-    4: .standard(proto: "deprecated_header_row_separator_stroke"),
-    5: .standard(proto: "deprecated_header_row_border_stroke"),
-    23: .standard(proto: "deprecated_header_row_horizontal_stroke"),
-    24: .standard(proto: "deprecated_header_row_vertical_stroke"),
-    7: .standard(proto: "deprecated_header_column_border_stroke"),
-    8: .standard(proto: "deprecated_header_column_separator_stroke"),
-    25: .standard(proto: "deprecated_header_column_horizontal_stroke"),
-    26: .standard(proto: "deprecated_header_column_vertical_stroke"),
-    10: .standard(proto: "deprecated_footer_row_separator_stroke"),
-    11: .standard(proto: "deprecated_footer_row_border_stroke"),
-    27: .standard(proto: "deprecated_footer_row_horizontal_stroke"),
-    28: .standard(proto: "deprecated_footer_row_vertical_stroke"),
-    12: .standard(proto: "deprecated_table_body_horizontal_border_stroke"),
-    29: .standard(proto: "deprecated_table_body_vertical_border_stroke"),
-    30: .standard(proto: "deprecated_table_body_horizontal_stroke"),
-    31: .standard(proto: "deprecated_table_body_vertical_stroke"),
-    32: .standard(proto: "stroke_preset_list"),
-    33: .standard(proto: "v_strokes_visible"),
-    34: .standard(proto: "h_strokes_visible"),
-    35: .standard(proto: "hr_separator_visible"),
-    36: .standard(proto: "hc_separator_visible"),
-    37: .standard(proto: "footer_separator_visible"),
-    38: .standard(proto: "table_border_visible"),
-    39: .standard(proto: "table_header_border_visible"),
-    42: .standard(proto: "table_hc_divider_visible"),
-    43: .standard(proto: "table_hr_divider_visible"),
-    44: .standard(proto: "table_footer_divider_visible"),
-    40: .standard(proto: "OBSOLETE_master_font_size"),
-    41: .standard(proto: "master_font_family"),
-    45: .standard(proto: "writing_direction"),
-    46: .standard(proto: "header_row_separator_stroke"),
-    47: .standard(proto: "header_row_border_stroke"),
-    48: .standard(proto: "header_row_horizontal_stroke"),
-    49: .standard(proto: "header_row_vertical_stroke"),
-    50: .standard(proto: "header_column_border_stroke"),
-    51: .standard(proto: "header_column_separator_stroke"),
-    52: .standard(proto: "header_column_horizontal_stroke"),
-    53: .standard(proto: "header_column_vertical_stroke"),
-    54: .standard(proto: "footer_row_separator_stroke"),
-    55: .standard(proto: "footer_row_border_stroke"),
-    56: .standard(proto: "footer_row_horizontal_stroke"),
-    57: .standard(proto: "footer_row_vertical_stroke"),
-    58: .standard(proto: "table_body_horizontal_border_stroke"),
-    59: .standard(proto: "table_body_vertical_border_stroke"),
-    60: .standard(proto: "table_body_horizontal_stroke"),
-    61: .standard(proto: "table_body_vertical_stroke"),
-    62: .standard(proto: "category_level1_top_stroke"),
-    63: .standard(proto: "category_level2_top_stroke"),
-    64: .standard(proto: "category_level3_top_stroke"),
-    65: .standard(proto: "category_level4_top_stroke"),
-    66: .standard(proto: "category_level5_top_stroke"),
-    67: .standard(proto: "category_level1_bottom_stroke"),
-    68: .standard(proto: "category_level2_bottom_stroke"),
-    69: .standard(proto: "category_level3_bottom_stroke"),
-    70: .standard(proto: "category_level4_bottom_stroke"),
-    71: .standard(proto: "category_level5_bottom_stroke"),
-    72: .standard(proto: "category_level1_interior_stroke"),
-    73: .standard(proto: "category_level2_interior_stroke"),
-    74: .standard(proto: "category_level3_interior_stroke"),
-    75: .standard(proto: "category_level4_interior_stroke"),
-    76: .standard(proto: "category_level5_interior_stroke"),
-    77: .standard(proto: "category_level1_label_separator_stroke"),
-    78: .standard(proto: "category_level2_label_separator_stroke"),
-    79: .standard(proto: "category_level3_label_separator_stroke"),
-    80: .standard(proto: "category_level4_label_separator_stroke"),
-    81: .standard(proto: "category_level5_label_separator_stroke"),
-    82: .standard(proto: "table_body_pivot_group_horizontal_stroke"),
-    83: .standard(proto: "table_body_pivot_group_vertical_stroke"),
-    84: .standard(proto: "table_body_pivot_deemphasis_horizontal_stroke"),
-    85: .standard(proto: "table_body_pivot_emphasis_vertical_stroke"),
-    86: .standard(proto: "header_column_pivot_group_horizontal_stroke"),
-    87: .standard(proto: "header_column_pivot_group_deemphasis_stroke"),
-    88: .standard(proto: "header_column_pivot_separator_stroke"),
-    89: .standard(proto: "header_row_pivot_group_vertical_stroke"),
-    90: .standard(proto: "header_row_pivot_group_deemphasis_stroke"),
-    91: .standard(proto: "header_row_pivot_title_stroke"),
-    92: .standard(proto: "footer_row_pivot_group_vertical_stroke"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}banded_rows\0\u{3}banded_fill\0\u{4}\u{2}deprecated_header_row_separator_stroke\0\u{3}deprecated_header_row_border_stroke\0\u{4}\u{2}deprecated_header_column_border_stroke\0\u{3}deprecated_header_column_separator_stroke\0\u{4}\u{2}deprecated_footer_row_separator_stroke\0\u{3}deprecated_footer_row_border_stroke\0\u{3}deprecated_table_body_horizontal_border_stroke\0\u{4}\u{9}behaves_like_spreadsheet\0\u{3}auto_resize\0\u{3}deprecated_header_row_horizontal_stroke\0\u{3}deprecated_header_row_vertical_stroke\0\u{3}deprecated_header_column_horizontal_stroke\0\u{3}deprecated_header_column_vertical_stroke\0\u{3}deprecated_footer_row_horizontal_stroke\0\u{3}deprecated_footer_row_vertical_stroke\0\u{3}deprecated_table_body_vertical_border_stroke\0\u{3}deprecated_table_body_horizontal_stroke\0\u{3}deprecated_table_body_vertical_stroke\0\u{3}stroke_preset_list\0\u{3}v_strokes_visible\0\u{3}h_strokes_visible\0\u{3}hr_separator_visible\0\u{3}hc_separator_visible\0\u{3}footer_separator_visible\0\u{3}table_border_visible\0\u{3}table_header_border_visible\0\u{3}OBSOLETE_master_font_size\0\u{3}master_font_family\0\u{3}table_hc_divider_visible\0\u{3}table_hr_divider_visible\0\u{3}table_footer_divider_visible\0\u{3}writing_direction\0\u{3}header_row_separator_stroke\0\u{3}header_row_border_stroke\0\u{3}header_row_horizontal_stroke\0\u{3}header_row_vertical_stroke\0\u{3}header_column_border_stroke\0\u{3}header_column_separator_stroke\0\u{3}header_column_horizontal_stroke\0\u{3}header_column_vertical_stroke\0\u{3}footer_row_separator_stroke\0\u{3}footer_row_border_stroke\0\u{3}footer_row_horizontal_stroke\0\u{3}footer_row_vertical_stroke\0\u{3}table_body_horizontal_border_stroke\0\u{3}table_body_vertical_border_stroke\0\u{3}table_body_horizontal_stroke\0\u{3}table_body_vertical_stroke\0\u{3}category_level1_top_stroke\0\u{3}category_level2_top_stroke\0\u{3}category_level3_top_stroke\0\u{3}category_level4_top_stroke\0\u{3}category_level5_top_stroke\0\u{3}category_level1_bottom_stroke\0\u{3}category_level2_bottom_stroke\0\u{3}category_level3_bottom_stroke\0\u{3}category_level4_bottom_stroke\0\u{3}category_level5_bottom_stroke\0\u{3}category_level1_interior_stroke\0\u{3}category_level2_interior_stroke\0\u{3}category_level3_interior_stroke\0\u{3}category_level4_interior_stroke\0\u{3}category_level5_interior_stroke\0\u{3}category_level1_label_separator_stroke\0\u{3}category_level2_label_separator_stroke\0\u{3}category_level3_label_separator_stroke\0\u{3}category_level4_label_separator_stroke\0\u{3}category_level5_label_separator_stroke\0\u{3}table_body_pivot_group_horizontal_stroke\0\u{3}table_body_pivot_group_vertical_stroke\0\u{3}table_body_pivot_deemphasis_horizontal_stroke\0\u{3}table_body_pivot_emphasis_vertical_stroke\0\u{3}header_column_pivot_group_horizontal_stroke\0\u{3}header_column_pivot_group_deemphasis_stroke\0\u{3}header_column_pivot_separator_stroke\0\u{3}header_row_pivot_group_vertical_stroke\0\u{3}header_row_pivot_group_deemphasis_stroke\0\u{3}header_row_pivot_title_stroke\0\u{3}footer_row_pivot_group_vertical_stroke\0")
 
   fileprivate class _StorageClass {
     var _bandedRows: Bool? = nil
@@ -1781,15 +1663,11 @@ extension TST_TableStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf.
     var _headerRowPivotTitleStroke: TSD_StrokeArchive? = nil
     var _footerRowPivotGroupVerticalStroke: TSD_StrokeArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -2399,13 +2277,9 @@ extension TST_TableStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TST_TableStylePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TST_TableStylePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TableStylePresetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "index"),
-    2: .same(proto: "image"),
-    3: .standard(proto: "style_network"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}index\0\u{1}image\0\u{3}style_network\0")
 
   public var isInitialized: Bool {
     if let v = self._image, !v.isInitialized {return false}
@@ -2453,11 +2327,9 @@ extension TST_TableStylePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TST_TableStrokePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TST_TableStrokePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TableStrokePresetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}index\0")
 
   public var isInitialized: Bool {
     if self._index == nil {return false}
@@ -2494,12 +2366,9 @@ extension TST_TableStrokePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TST_ThemePresetsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TST_ThemePresetsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ThemePresetsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_style_presets"),
-    2: .standard(proto: "table_cell_stroke_presets"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_style_presets\0\u{3}table_cell_stroke_presets\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.tableStylePresets) {return false}

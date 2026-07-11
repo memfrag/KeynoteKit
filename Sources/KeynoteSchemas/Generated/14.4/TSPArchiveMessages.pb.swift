@@ -8,7 +8,11 @@
 // For information on using the generated types, please see the documentation:
 //   https://github.com/apple/swift-protobuf/
 
+#if canImport(FoundationEssentials)
+import FoundationEssentials
+#else
 import Foundation
+#endif
 import SwiftProtobuf
 
 // If the compiler emits an error on this type, it is because this file
@@ -16,33 +20,33 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSP_ArchiveInfo: Sendable {
+public nonisolated struct TSP_ArchiveInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var identifier: UInt64 {
-    get {return _identifier ?? 0}
+    get {_identifier ?? 0}
     set {_identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return self._identifier != nil}
+  public var hasIdentifier: Bool {self._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {self._identifier = nil}
 
   public var messageInfos: [TSP_MessageInfo] = []
 
   public var shouldMerge: Bool {
-    get {return _shouldMerge ?? false}
+    get {_shouldMerge ?? false}
     set {_shouldMerge = newValue}
   }
   /// Returns true if `shouldMerge` has been explicitly set.
-  public var hasShouldMerge: Bool {return self._shouldMerge != nil}
+  public var hasShouldMerge: Bool {self._shouldMerge != nil}
   /// Clears the value of `shouldMerge`. Subsequent reads from it will return its default value.
   public mutating func clearShouldMerge() {self._shouldMerge = nil}
 
@@ -54,28 +58,28 @@ public struct TSP_ArchiveInfo: Sendable {
   fileprivate var _shouldMerge: Bool? = nil
 }
 
-public struct TSP_MessageInfo: Sendable {
+public nonisolated struct TSP_MessageInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var type: UInt32 {
-    get {return _type ?? 0}
+    get {_type ?? 0}
     set {_type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return self._type != nil}
+  public var hasType: Bool {self._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {self._type = nil}
 
   public var version: [UInt32] = []
 
   public var length: UInt32 {
-    get {return _length ?? 0}
+    get {_length ?? 0}
     set {_length = newValue}
   }
   /// Returns true if `length` has been explicitly set.
-  public var hasLength: Bool {return self._length != nil}
+  public var hasLength: Bool {self._length != nil}
   /// Clears the value of `length`. Subsequent reads from it will return its default value.
   public mutating func clearLength() {self._length = nil}
 
@@ -86,22 +90,22 @@ public struct TSP_MessageInfo: Sendable {
   public var dataReferences: [UInt64] = []
 
   public var baseMessageIndex: UInt32 {
-    get {return _baseMessageIndex ?? 0}
+    get {_baseMessageIndex ?? 0}
     set {_baseMessageIndex = newValue}
   }
   /// Returns true if `baseMessageIndex` has been explicitly set.
-  public var hasBaseMessageIndex: Bool {return self._baseMessageIndex != nil}
+  public var hasBaseMessageIndex: Bool {self._baseMessageIndex != nil}
   /// Clears the value of `baseMessageIndex`. Subsequent reads from it will return its default value.
   public mutating func clearBaseMessageIndex() {self._baseMessageIndex = nil}
 
   public var diffMergeVersion: [UInt32] = []
 
   public var diffFieldPath: TSP_FieldPath {
-    get {return _diffFieldPath ?? TSP_FieldPath()}
+    get {_diffFieldPath ?? TSP_FieldPath()}
     set {_diffFieldPath = newValue}
   }
   /// Returns true if `diffFieldPath` has been explicitly set.
-  public var hasDiffFieldPath: Bool {return self._diffFieldPath != nil}
+  public var hasDiffFieldPath: Bool {self._diffFieldPath != nil}
   /// Clears the value of `diffFieldPath`. Subsequent reads from it will return its default value.
   public mutating func clearDiffFieldPath() {self._diffFieldPath = nil}
 
@@ -119,35 +123,35 @@ public struct TSP_MessageInfo: Sendable {
   fileprivate var _diffFieldPath: TSP_FieldPath? = nil
 }
 
-public struct TSP_FieldInfo: Sendable {
+public nonisolated struct TSP_FieldInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var path: TSP_FieldPath {
-    get {return _path ?? TSP_FieldPath()}
+    get {_path ?? TSP_FieldPath()}
     set {_path = newValue}
   }
   /// Returns true if `path` has been explicitly set.
-  public var hasPath: Bool {return self._path != nil}
+  public var hasPath: Bool {self._path != nil}
   /// Clears the value of `path`. Subsequent reads from it will return its default value.
   public mutating func clearPath() {self._path = nil}
 
   public var type: TSP_FieldInfo.TypeEnum {
-    get {return _type ?? .value}
+    get {_type ?? .value}
     set {_type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return self._type != nil}
+  public var hasType: Bool {self._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {self._type = nil}
 
   public var unknownFieldRule: TSP_FieldInfo.UnknownFieldRule {
-    get {return _unknownFieldRule ?? .ignoreAndPreserveUntilModified}
+    get {_unknownFieldRule ?? .ignoreAndPreserveUntilModified}
     set {_unknownFieldRule = newValue}
   }
   /// Returns true if `unknownFieldRule` has been explicitly set.
-  public var hasUnknownFieldRule: Bool {return self._unknownFieldRule != nil}
+  public var hasUnknownFieldRule: Bool {self._unknownFieldRule != nil}
   /// Clears the value of `unknownFieldRule`. Subsequent reads from it will return its default value.
   public mutating func clearUnknownFieldRule() {self._unknownFieldRule = nil}
 
@@ -156,116 +160,58 @@ public struct TSP_FieldInfo: Sendable {
   public var dataReferences: [UInt64] = []
 
   public var knownFieldRule: TSP_FieldInfo.KnownFieldRule {
-    get {return _knownFieldRule ?? .none}
+    get {_knownFieldRule ?? .none}
     set {_knownFieldRule = newValue}
   }
   /// Returns true if `knownFieldRule` has been explicitly set.
-  public var hasKnownFieldRule: Bool {return self._knownFieldRule != nil}
+  public var hasKnownFieldRule: Bool {self._knownFieldRule != nil}
   /// Clears the value of `knownFieldRule`. Subsequent reads from it will return its default value.
   public mutating func clearKnownFieldRule() {self._knownFieldRule = nil}
 
   public var knownFieldVersion: [UInt32] = []
 
   public var knownFieldFeatureIdentifier: String {
-    get {return _knownFieldFeatureIdentifier ?? String()}
+    get {_knownFieldFeatureIdentifier ?? String()}
     set {_knownFieldFeatureIdentifier = newValue}
   }
   /// Returns true if `knownFieldFeatureIdentifier` has been explicitly set.
-  public var hasKnownFieldFeatureIdentifier: Bool {return self._knownFieldFeatureIdentifier != nil}
+  public var hasKnownFieldFeatureIdentifier: Bool {self._knownFieldFeatureIdentifier != nil}
   /// Clears the value of `knownFieldFeatureIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearKnownFieldFeatureIdentifier() {self._knownFieldFeatureIdentifier = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum TypeEnum: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case value // = 0
-    case objectReference // = 1
-    case dataReference // = 2
-    case message // = 3
+  public nonisolated enum TypeEnum: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case value = 0
+    case objectReference = 1
+    case dataReference = 2
+    case message = 3
 
     public init() {
       self = .value
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .value
-      case 1: self = .objectReference
-      case 2: self = .dataReference
-      case 3: self = .message
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .value: return 0
-      case .objectReference: return 1
-      case .dataReference: return 2
-      case .message: return 3
-      }
-    }
-
   }
 
-  public enum UnknownFieldRule: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case ignoreAndPreserveUntilModified // = 0
-    case ignoreAndPreserve // = 1
-    case mustUnderstand // = 2
-    case notSupported // = -1
+  public nonisolated enum UnknownFieldRule: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case ignoreAndPreserveUntilModified = 0
+    case ignoreAndPreserve = 1
+    case mustUnderstand = 2
+    case notSupported = -1
 
     public init() {
       self = .ignoreAndPreserveUntilModified
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case -1: self = .notSupported
-      case 0: self = .ignoreAndPreserveUntilModified
-      case 1: self = .ignoreAndPreserve
-      case 2: self = .mustUnderstand
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .notSupported: return -1
-      case .ignoreAndPreserveUntilModified: return 0
-      case .ignoreAndPreserve: return 1
-      case .mustUnderstand: return 2
-      }
-    }
-
   }
 
-  public enum KnownFieldRule: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case none // = 0
-    case preserveNewerValueUntilModified // = 1
-    case preserveNewerValue // = 2
+  public nonisolated enum KnownFieldRule: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case none = 0
+    case preserveNewerValueUntilModified = 1
+    case preserveNewerValue = 2
 
     public init() {
       self = .none
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .none
-      case 1: self = .preserveNewerValueUntilModified
-      case 2: self = .preserveNewerValue
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .none: return 0
-      case .preserveNewerValueUntilModified: return 1
-      case .preserveNewerValue: return 2
-      }
     }
 
   }
@@ -279,7 +225,7 @@ public struct TSP_FieldInfo: Sendable {
   fileprivate var _knownFieldFeatureIdentifier: String? = nil
 }
 
-public struct TSP_FieldPath: Sendable {
+public nonisolated struct TSP_FieldPath: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -291,139 +237,139 @@ public struct TSP_FieldPath: Sendable {
   public init() {}
 }
 
-public struct TSP_ComponentInfo: @unchecked Sendable {
+public nonisolated struct TSP_ComponentInfo: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var identifier: UInt64 {
-    get {return _storage._identifier ?? 0}
+    get {_storage._identifier ?? 0}
     set {_uniqueStorage()._identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return _storage._identifier != nil}
+  public var hasIdentifier: Bool {_storage._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {_uniqueStorage()._identifier = nil}
 
   public var preferredLocator: String {
-    get {return _storage._preferredLocator ?? String()}
+    get {_storage._preferredLocator ?? String()}
     set {_uniqueStorage()._preferredLocator = newValue}
   }
   /// Returns true if `preferredLocator` has been explicitly set.
-  public var hasPreferredLocator: Bool {return _storage._preferredLocator != nil}
+  public var hasPreferredLocator: Bool {_storage._preferredLocator != nil}
   /// Clears the value of `preferredLocator`. Subsequent reads from it will return its default value.
   public mutating func clearPreferredLocator() {_uniqueStorage()._preferredLocator = nil}
 
   public var locator: String {
-    get {return _storage._locator ?? String()}
+    get {_storage._locator ?? String()}
     set {_uniqueStorage()._locator = newValue}
   }
   /// Returns true if `locator` has been explicitly set.
-  public var hasLocator: Bool {return _storage._locator != nil}
+  public var hasLocator: Bool {_storage._locator != nil}
   /// Clears the value of `locator`. Subsequent reads from it will return its default value.
   public mutating func clearLocator() {_uniqueStorage()._locator = nil}
 
   public var documentReadVersion: [UInt32] {
-    get {return _storage._documentReadVersion}
+    get {_storage._documentReadVersion}
     set {_uniqueStorage()._documentReadVersion = newValue}
   }
 
   public var documentWriteVersion: [UInt32] {
-    get {return _storage._documentWriteVersion}
+    get {_storage._documentWriteVersion}
     set {_uniqueStorage()._documentWriteVersion = newValue}
   }
 
   public var externalReferences: [TSP_ComponentExternalReference] {
-    get {return _storage._externalReferences}
+    get {_storage._externalReferences}
     set {_uniqueStorage()._externalReferences = newValue}
   }
 
   public var dataReferences: [TSP_ComponentDataReference] {
-    get {return _storage._dataReferences}
+    get {_storage._dataReferences}
     set {_uniqueStorage()._dataReferences = newValue}
   }
 
   public var isStoredOutsideObjectArchive: Bool {
-    get {return _storage._isStoredOutsideObjectArchive ?? false}
+    get {_storage._isStoredOutsideObjectArchive ?? false}
     set {_uniqueStorage()._isStoredOutsideObjectArchive = newValue}
   }
   /// Returns true if `isStoredOutsideObjectArchive` has been explicitly set.
-  public var hasIsStoredOutsideObjectArchive: Bool {return _storage._isStoredOutsideObjectArchive != nil}
+  public var hasIsStoredOutsideObjectArchive: Bool {_storage._isStoredOutsideObjectArchive != nil}
   /// Clears the value of `isStoredOutsideObjectArchive`. Subsequent reads from it will return its default value.
   public mutating func clearIsStoredOutsideObjectArchive() {_uniqueStorage()._isStoredOutsideObjectArchive = nil}
 
   public var objectUuidMapEntries: [TSP_ObjectUUIDMapEntry] {
-    get {return _storage._objectUuidMapEntries}
+    get {_storage._objectUuidMapEntries}
     set {_uniqueStorage()._objectUuidMapEntries = newValue}
   }
 
   public var saveToken: UInt64 {
-    get {return _storage._saveToken ?? 0}
+    get {_storage._saveToken ?? 0}
     set {_uniqueStorage()._saveToken = newValue}
   }
   /// Returns true if `saveToken` has been explicitly set.
-  public var hasSaveToken: Bool {return _storage._saveToken != nil}
+  public var hasSaveToken: Bool {_storage._saveToken != nil}
   /// Clears the value of `saveToken`. Subsequent reads from it will return its default value.
   public mutating func clearSaveToken() {_uniqueStorage()._saveToken = nil}
 
   public var featureInfos: [TSP_FeatureInfo] {
-    get {return _storage._featureInfos}
+    get {_storage._featureInfos}
     set {_uniqueStorage()._featureInfos = newValue}
   }
 
   public var componentReadVersion: [UInt32] {
-    get {return _storage._componentReadVersion}
+    get {_storage._componentReadVersion}
     set {_uniqueStorage()._componentReadVersion = newValue}
   }
 
   public var componentRequiredVersion: [UInt32] {
-    get {return _storage._componentRequiredVersion}
+    get {_storage._componentRequiredVersion}
     set {_uniqueStorage()._componentRequiredVersion = newValue}
   }
 
   public var compressionAlgorithm: UInt32 {
-    get {return _storage._compressionAlgorithm ?? 0}
+    get {_storage._compressionAlgorithm ?? 0}
     set {_uniqueStorage()._compressionAlgorithm = newValue}
   }
   /// Returns true if `compressionAlgorithm` has been explicitly set.
-  public var hasCompressionAlgorithm: Bool {return _storage._compressionAlgorithm != nil}
+  public var hasCompressionAlgorithm: Bool {_storage._compressionAlgorithm != nil}
   /// Clears the value of `compressionAlgorithm`. Subsequent reads from it will return its default value.
   public mutating func clearCompressionAlgorithm() {_uniqueStorage()._compressionAlgorithm = nil}
 
   public var canBeDropped: Bool {
-    get {return _storage._canBeDropped ?? false}
+    get {_storage._canBeDropped ?? false}
     set {_uniqueStorage()._canBeDropped = newValue}
   }
   /// Returns true if `canBeDropped` has been explicitly set.
-  public var hasCanBeDropped: Bool {return _storage._canBeDropped != nil}
+  public var hasCanBeDropped: Bool {_storage._canBeDropped != nil}
   /// Clears the value of `canBeDropped`. Subsequent reads from it will return its default value.
   public mutating func clearCanBeDropped() {_uniqueStorage()._canBeDropped = nil}
 
   public var versionedExternalReferences: [TSP_ComponentExternalReference] {
-    get {return _storage._versionedExternalReferences}
+    get {_storage._versionedExternalReferences}
     set {_uniqueStorage()._versionedExternalReferences = newValue}
   }
 
   public var isWasteful: Bool {
-    get {return _storage._isWasteful ?? false}
+    get {_storage._isWasteful ?? false}
     set {_uniqueStorage()._isWasteful = newValue}
   }
   /// Returns true if `isWasteful` has been explicitly set.
-  public var hasIsWasteful: Bool {return _storage._isWasteful != nil}
+  public var hasIsWasteful: Bool {_storage._isWasteful != nil}
   /// Clears the value of `isWasteful`. Subsequent reads from it will return its default value.
   public mutating func clearIsWasteful() {_uniqueStorage()._isWasteful = nil}
 
   public var ambiguousObjectIdentifiers: [UInt64] {
-    get {return _storage._ambiguousObjectIdentifiers}
+    get {_storage._ambiguousObjectIdentifiers}
     set {_uniqueStorage()._ambiguousObjectIdentifiers = newValue}
   }
 
   public var requiredPackageIdentifier: UInt32 {
-    get {return _storage._requiredPackageIdentifier ?? 0}
+    get {_storage._requiredPackageIdentifier ?? 0}
     set {_uniqueStorage()._requiredPackageIdentifier = newValue}
   }
   /// Returns true if `requiredPackageIdentifier` has been explicitly set.
-  public var hasRequiredPackageIdentifier: Bool {return _storage._requiredPackageIdentifier != nil}
+  public var hasRequiredPackageIdentifier: Bool {_storage._requiredPackageIdentifier != nil}
   /// Clears the value of `requiredPackageIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearRequiredPackageIdentifier() {_uniqueStorage()._requiredPackageIdentifier = nil}
 
@@ -434,35 +380,35 @@ public struct TSP_ComponentInfo: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSP_ComponentExternalReference: Sendable {
+public nonisolated struct TSP_ComponentExternalReference: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var componentIdentifier: UInt64 {
-    get {return _componentIdentifier ?? 0}
+    get {_componentIdentifier ?? 0}
     set {_componentIdentifier = newValue}
   }
   /// Returns true if `componentIdentifier` has been explicitly set.
-  public var hasComponentIdentifier: Bool {return self._componentIdentifier != nil}
+  public var hasComponentIdentifier: Bool {self._componentIdentifier != nil}
   /// Clears the value of `componentIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearComponentIdentifier() {self._componentIdentifier = nil}
 
   public var objectIdentifier: UInt64 {
-    get {return _objectIdentifier ?? 0}
+    get {_objectIdentifier ?? 0}
     set {_objectIdentifier = newValue}
   }
   /// Returns true if `objectIdentifier` has been explicitly set.
-  public var hasObjectIdentifier: Bool {return self._objectIdentifier != nil}
+  public var hasObjectIdentifier: Bool {self._objectIdentifier != nil}
   /// Clears the value of `objectIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearObjectIdentifier() {self._objectIdentifier = nil}
 
   public var isWeak: Bool {
-    get {return _isWeak ?? false}
+    get {_isWeak ?? false}
     set {_isWeak = newValue}
   }
   /// Returns true if `isWeak` has been explicitly set.
-  public var hasIsWeak: Bool {return self._isWeak != nil}
+  public var hasIsWeak: Bool {self._isWeak != nil}
   /// Clears the value of `isWeak`. Subsequent reads from it will return its default value.
   public mutating func clearIsWeak() {self._isWeak = nil}
 
@@ -475,17 +421,17 @@ public struct TSP_ComponentExternalReference: Sendable {
   fileprivate var _isWeak: Bool? = nil
 }
 
-public struct TSP_ComponentDataReference: Sendable {
+public nonisolated struct TSP_ComponentDataReference: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var dataIdentifier: UInt64 {
-    get {return _dataIdentifier ?? 0}
+    get {_dataIdentifier ?? 0}
     set {_dataIdentifier = newValue}
   }
   /// Returns true if `dataIdentifier` has been explicitly set.
-  public var hasDataIdentifier: Bool {return self._dataIdentifier != nil}
+  public var hasDataIdentifier: Bool {self._dataIdentifier != nil}
   /// Clears the value of `dataIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearDataIdentifier() {self._dataIdentifier = nil}
 
@@ -493,26 +439,26 @@ public struct TSP_ComponentDataReference: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ObjectReference: Sendable {
+  public nonisolated struct ObjectReference: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var objectIdentifier: UInt64 {
-      get {return _objectIdentifier ?? 0}
+      get {_objectIdentifier ?? 0}
       set {_objectIdentifier = newValue}
     }
     /// Returns true if `objectIdentifier` has been explicitly set.
-    public var hasObjectIdentifier: Bool {return self._objectIdentifier != nil}
+    public var hasObjectIdentifier: Bool {self._objectIdentifier != nil}
     /// Clears the value of `objectIdentifier`. Subsequent reads from it will return its default value.
     public mutating func clearObjectIdentifier() {self._objectIdentifier = nil}
 
     public var count: UInt32 {
-      get {return _count ?? 0}
+      get {_count ?? 0}
       set {_count = newValue}
     }
     /// Returns true if `count` has been explicitly set.
-    public var hasCount: Bool {return self._count != nil}
+    public var hasCount: Bool {self._count != nil}
     /// Clears the value of `count`. Subsequent reads from it will return its default value.
     public mutating func clearCount() {self._count = nil}
 
@@ -529,26 +475,26 @@ public struct TSP_ComponentDataReference: Sendable {
   fileprivate var _dataIdentifier: UInt64? = nil
 }
 
-public struct TSP_ObjectUUIDMapEntry: Sendable {
+public nonisolated struct TSP_ObjectUUIDMapEntry: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var identifier: UInt64 {
-    get {return _identifier ?? 0}
+    get {_identifier ?? 0}
     set {_identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return self._identifier != nil}
+  public var hasIdentifier: Bool {self._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {self._identifier = nil}
 
   public var uuid: TSP_UUID {
-    get {return _uuid ?? TSP_UUID()}
+    get {_uuid ?? TSP_UUID()}
     set {_uuid = newValue}
   }
   /// Returns true if `uuid` has been explicitly set.
-  public var hasUuid: Bool {return self._uuid != nil}
+  public var hasUuid: Bool {self._uuid != nil}
   /// Clears the value of `uuid`. Subsequent reads from it will return its default value.
   public mutating func clearUuid() {self._uuid = nil}
 
@@ -560,17 +506,17 @@ public struct TSP_ObjectUUIDMapEntry: Sendable {
   fileprivate var _uuid: TSP_UUID? = nil
 }
 
-public struct TSP_FeatureInfo: Sendable {
+public nonisolated struct TSP_FeatureInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var identifier: String {
-    get {return _identifier ?? String()}
+    get {_identifier ?? String()}
     set {_identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return self._identifier != nil}
+  public var hasIdentifier: Bool {self._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {self._identifier = nil}
 
@@ -585,26 +531,26 @@ public struct TSP_FeatureInfo: Sendable {
   fileprivate var _identifier: String? = nil
 }
 
-public struct TSP_PackageMetadata: Sendable {
+public nonisolated struct TSP_PackageMetadata: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var lastObjectIdentifier: UInt64 {
-    get {return _lastObjectIdentifier ?? 0}
+    get {_lastObjectIdentifier ?? 0}
     set {_lastObjectIdentifier = newValue}
   }
   /// Returns true if `lastObjectIdentifier` has been explicitly set.
-  public var hasLastObjectIdentifier: Bool {return self._lastObjectIdentifier != nil}
+  public var hasLastObjectIdentifier: Bool {self._lastObjectIdentifier != nil}
   /// Clears the value of `lastObjectIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearLastObjectIdentifier() {self._lastObjectIdentifier = nil}
 
   public var revision: TSP_DocumentRevision {
-    get {return _revision ?? TSP_DocumentRevision()}
+    get {_revision ?? TSP_DocumentRevision()}
     set {_revision = newValue}
   }
   /// Returns true if `revision` has been explicitly set.
-  public var hasRevision: Bool {return self._revision != nil}
+  public var hasRevision: Bool {self._revision != nil}
   /// Clears the value of `revision`. Subsequent reads from it will return its default value.
   public mutating func clearRevision() {self._revision = nil}
 
@@ -619,29 +565,29 @@ public struct TSP_PackageMetadata: Sendable {
   public var fileFormatVersion: [UInt32] = []
 
   public var saveToken: UInt64 {
-    get {return _saveToken ?? 0}
+    get {_saveToken ?? 0}
     set {_saveToken = newValue}
   }
   /// Returns true if `saveToken` has been explicitly set.
-  public var hasSaveToken: Bool {return self._saveToken != nil}
+  public var hasSaveToken: Bool {self._saveToken != nil}
   /// Clears the value of `saveToken`. Subsequent reads from it will return its default value.
   public mutating func clearSaveToken() {self._saveToken = nil}
 
   public var preferredPackageType: TSP_PackageMetadata.PackageType {
-    get {return _preferredPackageType ?? .default}
+    get {_preferredPackageType ?? .default}
     set {_preferredPackageType = newValue}
   }
   /// Returns true if `preferredPackageType` has been explicitly set.
-  public var hasPreferredPackageType: Bool {return self._preferredPackageType != nil}
+  public var hasPreferredPackageType: Bool {self._preferredPackageType != nil}
   /// Clears the value of `preferredPackageType`. Subsequent reads from it will return its default value.
   public mutating func clearPreferredPackageType() {self._preferredPackageType = nil}
 
   public var dataMetadataMap: TSP_Reference {
-    get {return _dataMetadataMap ?? TSP_Reference()}
+    get {_dataMetadataMap ?? TSP_Reference()}
     set {_dataMetadataMap = newValue}
   }
   /// Returns true if `dataMetadataMap` has been explicitly set.
-  public var hasDataMetadataMap: Bool {return self._dataMetadataMap != nil}
+  public var hasDataMetadataMap: Bool {self._dataMetadataMap != nil}
   /// Clears the value of `dataMetadataMap`. Subsequent reads from it will return its default value.
   public mutating func clearDataMetadataMap() {self._dataMetadataMap = nil}
 
@@ -649,31 +595,13 @@ public struct TSP_PackageMetadata: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum PackageType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case `default` // = 0
-    case directory // = 1
-    case singleFile // = 2
+  public nonisolated enum PackageType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case `default` = 0
+    case directory = 1
+    case singleFile = 2
 
     public init() {
       self = .default
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .default
-      case 1: self = .directory
-      case 2: self = .singleFile
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .default: return 0
-      case .directory: return 1
-      case .singleFile: return 2
-      }
     }
 
   }
@@ -687,35 +615,35 @@ public struct TSP_PackageMetadata: Sendable {
   fileprivate var _dataMetadataMap: TSP_Reference? = nil
 }
 
-public struct TSP_DocumentRevision: Sendable {
+public nonisolated struct TSP_DocumentRevision: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var sequence32: Int32 {
-    get {return _sequence32 ?? 0}
+    get {_sequence32 ?? 0}
     set {_sequence32 = newValue}
   }
   /// Returns true if `sequence32` has been explicitly set.
-  public var hasSequence32: Bool {return self._sequence32 != nil}
+  public var hasSequence32: Bool {self._sequence32 != nil}
   /// Clears the value of `sequence32`. Subsequent reads from it will return its default value.
   public mutating func clearSequence32() {self._sequence32 = nil}
 
   public var identifier: String {
-    get {return _identifier ?? String()}
+    get {_identifier ?? String()}
     set {_identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return self._identifier != nil}
+  public var hasIdentifier: Bool {self._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {self._identifier = nil}
 
   public var sequence64: UInt64 {
-    get {return _sequence64 ?? 0}
+    get {_sequence64 ?? 0}
     set {_sequence64 = newValue}
   }
   /// Returns true if `sequence64` has been explicitly set.
-  public var hasSequence64: Bool {return self._sequence64 != nil}
+  public var hasSequence64: Bool {self._sequence64 != nil}
   /// Clears the value of `sequence64`. Subsequent reads from it will return its default value.
   public mutating func clearSequence64() {self._sequence64 = nil}
 
@@ -728,7 +656,7 @@ public struct TSP_DocumentRevision: Sendable {
   fileprivate var _sequence64: UInt64? = nil
 }
 
-public struct TSP_PasteboardMetadata: Sendable {
+public nonisolated struct TSP_PasteboardMetadata: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -736,31 +664,31 @@ public struct TSP_PasteboardMetadata: Sendable {
   public var version: [UInt32] = []
 
   public var appName: String {
-    get {return _appName ?? String()}
+    get {_appName ?? String()}
     set {_appName = newValue}
   }
   /// Returns true if `appName` has been explicitly set.
-  public var hasAppName: Bool {return self._appName != nil}
+  public var hasAppName: Bool {self._appName != nil}
   /// Clears the value of `appName`. Subsequent reads from it will return its default value.
   public mutating func clearAppName() {self._appName = nil}
 
   public var datas: [TSP_DataInfo] = []
 
   public var sourceDocumentUuid: TSP_UUID {
-    get {return _sourceDocumentUuid ?? TSP_UUID()}
+    get {_sourceDocumentUuid ?? TSP_UUID()}
     set {_sourceDocumentUuid = newValue}
   }
   /// Returns true if `sourceDocumentUuid` has been explicitly set.
-  public var hasSourceDocumentUuid: Bool {return self._sourceDocumentUuid != nil}
+  public var hasSourceDocumentUuid: Bool {self._sourceDocumentUuid != nil}
   /// Clears the value of `sourceDocumentUuid`. Subsequent reads from it will return its default value.
   public mutating func clearSourceDocumentUuid() {self._sourceDocumentUuid = nil}
 
   public var dataMetadataMap: TSP_Reference {
-    get {return _dataMetadataMap ?? TSP_Reference()}
+    get {_dataMetadataMap ?? TSP_Reference()}
     set {_dataMetadataMap = newValue}
   }
   /// Returns true if `dataMetadataMap` has been explicitly set.
-  public var hasDataMetadataMap: Bool {return self._dataMetadataMap != nil}
+  public var hasDataMetadataMap: Bool {self._dataMetadataMap != nil}
   /// Clears the value of `dataMetadataMap`. Subsequent reads from it will return its default value.
   public mutating func clearDataMetadataMap() {self._dataMetadataMap = nil}
 
@@ -775,206 +703,190 @@ public struct TSP_PasteboardMetadata: Sendable {
   fileprivate var _dataMetadataMap: TSP_Reference? = nil
 }
 
-public struct TSP_DataInfo: @unchecked Sendable {
+public nonisolated struct TSP_DataInfo: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var identifier: UInt64 {
-    get {return _storage._identifier ?? 0}
+    get {_storage._identifier ?? 0}
     set {_uniqueStorage()._identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return _storage._identifier != nil}
+  public var hasIdentifier: Bool {_storage._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {_uniqueStorage()._identifier = nil}
 
   public var digest: Data {
-    get {return _storage._digest ?? Data()}
+    get {_storage._digest ?? Data()}
     set {_uniqueStorage()._digest = newValue}
   }
   /// Returns true if `digest` has been explicitly set.
-  public var hasDigest: Bool {return _storage._digest != nil}
+  public var hasDigest: Bool {_storage._digest != nil}
   /// Clears the value of `digest`. Subsequent reads from it will return its default value.
   public mutating func clearDigest() {_uniqueStorage()._digest = nil}
 
   public var preferredFileName: String {
-    get {return _storage._preferredFileName ?? String()}
+    get {_storage._preferredFileName ?? String()}
     set {_uniqueStorage()._preferredFileName = newValue}
   }
   /// Returns true if `preferredFileName` has been explicitly set.
-  public var hasPreferredFileName: Bool {return _storage._preferredFileName != nil}
+  public var hasPreferredFileName: Bool {_storage._preferredFileName != nil}
   /// Clears the value of `preferredFileName`. Subsequent reads from it will return its default value.
   public mutating func clearPreferredFileName() {_uniqueStorage()._preferredFileName = nil}
 
   public var fileName: String {
-    get {return _storage._fileName ?? String()}
+    get {_storage._fileName ?? String()}
     set {_uniqueStorage()._fileName = newValue}
   }
   /// Returns true if `fileName` has been explicitly set.
-  public var hasFileName: Bool {return _storage._fileName != nil}
+  public var hasFileName: Bool {_storage._fileName != nil}
   /// Clears the value of `fileName`. Subsequent reads from it will return its default value.
   public mutating func clearFileName() {_uniqueStorage()._fileName = nil}
 
   public var documentResourceLocator: String {
-    get {return _storage._documentResourceLocator ?? String()}
+    get {_storage._documentResourceLocator ?? String()}
     set {_uniqueStorage()._documentResourceLocator = newValue}
   }
   /// Returns true if `documentResourceLocator` has been explicitly set.
-  public var hasDocumentResourceLocator: Bool {return _storage._documentResourceLocator != nil}
+  public var hasDocumentResourceLocator: Bool {_storage._documentResourceLocator != nil}
   /// Clears the value of `documentResourceLocator`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentResourceLocator() {_uniqueStorage()._documentResourceLocator = nil}
 
   public var sourceBookmarkData: Data {
-    get {return _storage._sourceBookmarkData ?? Data()}
+    get {_storage._sourceBookmarkData ?? Data()}
     set {_uniqueStorage()._sourceBookmarkData = newValue}
   }
   /// Returns true if `sourceBookmarkData` has been explicitly set.
-  public var hasSourceBookmarkData: Bool {return _storage._sourceBookmarkData != nil}
+  public var hasSourceBookmarkData: Bool {_storage._sourceBookmarkData != nil}
   /// Clears the value of `sourceBookmarkData`. Subsequent reads from it will return its default value.
   public mutating func clearSourceBookmarkData() {_uniqueStorage()._sourceBookmarkData = nil}
 
   public var remoteURL: String {
-    get {return _storage._remoteURL ?? String()}
+    get {_storage._remoteURL ?? String()}
     set {_uniqueStorage()._remoteURL = newValue}
   }
   /// Returns true if `remoteURL` has been explicitly set.
-  public var hasRemoteURL: Bool {return _storage._remoteURL != nil}
+  public var hasRemoteURL: Bool {_storage._remoteURL != nil}
   /// Clears the value of `remoteURL`. Subsequent reads from it will return its default value.
   public mutating func clearRemoteURL() {_uniqueStorage()._remoteURL = nil}
 
   public var canDownload: Bool {
-    get {return _storage._canDownload ?? false}
+    get {_storage._canDownload ?? false}
     set {_uniqueStorage()._canDownload = newValue}
   }
   /// Returns true if `canDownload` has been explicitly set.
-  public var hasCanDownload: Bool {return _storage._canDownload != nil}
+  public var hasCanDownload: Bool {_storage._canDownload != nil}
   /// Clears the value of `canDownload`. Subsequent reads from it will return its default value.
   public mutating func clearCanDownload() {_uniqueStorage()._canDownload = nil}
 
   public var downloadPriority: TSP_DataInfo.DownloadPriority {
-    get {return _storage._downloadPriority ?? .default}
+    get {_storage._downloadPriority ?? .default}
     set {_uniqueStorage()._downloadPriority = newValue}
   }
   /// Returns true if `downloadPriority` has been explicitly set.
-  public var hasDownloadPriority: Bool {return _storage._downloadPriority != nil}
+  public var hasDownloadPriority: Bool {_storage._downloadPriority != nil}
   /// Clears the value of `downloadPriority`. Subsequent reads from it will return its default value.
   public mutating func clearDownloadPriority() {_uniqueStorage()._downloadPriority = nil}
 
   public var attributes: TSP_DataAttributes {
-    get {return _storage._attributes ?? TSP_DataAttributes()}
+    get {_storage._attributes ?? TSP_DataAttributes()}
     set {_uniqueStorage()._attributes = newValue}
   }
   /// Returns true if `attributes` has been explicitly set.
-  public var hasAttributes: Bool {return _storage._attributes != nil}
+  public var hasAttributes: Bool {_storage._attributes != nil}
   /// Clears the value of `attributes`. Subsequent reads from it will return its default value.
   public mutating func clearAttributes() {_uniqueStorage()._attributes = nil}
 
   public var encryptionInfo: TSP_EncryptionInfo {
-    get {return _storage._encryptionInfo ?? TSP_EncryptionInfo()}
+    get {_storage._encryptionInfo ?? TSP_EncryptionInfo()}
     set {_uniqueStorage()._encryptionInfo = newValue}
   }
   /// Returns true if `encryptionInfo` has been explicitly set.
-  public var hasEncryptionInfo: Bool {return _storage._encryptionInfo != nil}
+  public var hasEncryptionInfo: Bool {_storage._encryptionInfo != nil}
   /// Clears the value of `encryptionInfo`. Subsequent reads from it will return its default value.
   public mutating func clearEncryptionInfo() {_uniqueStorage()._encryptionInfo = nil}
 
   public var lastMismatchedDigest: Data {
-    get {return _storage._lastMismatchedDigest ?? Data()}
+    get {_storage._lastMismatchedDigest ?? Data()}
     set {_uniqueStorage()._lastMismatchedDigest = newValue}
   }
   /// Returns true if `lastMismatchedDigest` has been explicitly set.
-  public var hasLastMismatchedDigest: Bool {return _storage._lastMismatchedDigest != nil}
+  public var hasLastMismatchedDigest: Bool {_storage._lastMismatchedDigest != nil}
   /// Clears the value of `lastMismatchedDigest`. Subsequent reads from it will return its default value.
   public mutating func clearLastMismatchedDigest() {_uniqueStorage()._lastMismatchedDigest = nil}
 
   public var unmaterializedRanges: TSP_IndexSet {
-    get {return _storage._unmaterializedRanges ?? TSP_IndexSet()}
+    get {_storage._unmaterializedRanges ?? TSP_IndexSet()}
     set {_uniqueStorage()._unmaterializedRanges = newValue}
   }
   /// Returns true if `unmaterializedRanges` has been explicitly set.
-  public var hasUnmaterializedRanges: Bool {return _storage._unmaterializedRanges != nil}
+  public var hasUnmaterializedRanges: Bool {_storage._unmaterializedRanges != nil}
   /// Clears the value of `unmaterializedRanges`. Subsequent reads from it will return its default value.
   public mutating func clearUnmaterializedRanges() {_uniqueStorage()._unmaterializedRanges = nil}
 
   public var remoteDataLength: UInt64 {
-    get {return _storage._remoteDataLength ?? 0}
+    get {_storage._remoteDataLength ?? 0}
     set {_uniqueStorage()._remoteDataLength = newValue}
   }
   /// Returns true if `remoteDataLength` has been explicitly set.
-  public var hasRemoteDataLength: Bool {return _storage._remoteDataLength != nil}
+  public var hasRemoteDataLength: Bool {_storage._remoteDataLength != nil}
   /// Clears the value of `remoteDataLength`. Subsequent reads from it will return its default value.
   public mutating func clearRemoteDataLength() {_uniqueStorage()._remoteDataLength = nil}
 
   public var remoteDataHasPackageStorage: Bool {
-    get {return _storage._remoteDataHasPackageStorage ?? false}
+    get {_storage._remoteDataHasPackageStorage ?? false}
     set {_uniqueStorage()._remoteDataHasPackageStorage = newValue}
   }
   /// Returns true if `remoteDataHasPackageStorage` has been explicitly set.
-  public var hasRemoteDataHasPackageStorage: Bool {return _storage._remoteDataHasPackageStorage != nil}
+  public var hasRemoteDataHasPackageStorage: Bool {_storage._remoteDataHasPackageStorage != nil}
   /// Clears the value of `remoteDataHasPackageStorage`. Subsequent reads from it will return its default value.
   public mutating func clearRemoteDataHasPackageStorage() {_uniqueStorage()._remoteDataHasPackageStorage = nil}
 
   public var uploadStatus: TSP_DataUploadStatus {
-    get {return _storage._uploadStatus ?? .pending}
+    get {_storage._uploadStatus ?? .pending}
     set {_uniqueStorage()._uploadStatus = newValue}
   }
   /// Returns true if `uploadStatus` has been explicitly set.
-  public var hasUploadStatus: Bool {return _storage._uploadStatus != nil}
+  public var hasUploadStatus: Bool {_storage._uploadStatus != nil}
   /// Clears the value of `uploadStatus`. Subsequent reads from it will return its default value.
   public mutating func clearUploadStatus() {_uniqueStorage()._uploadStatus = nil}
 
   public var remoteDataMtime: Double {
-    get {return _storage._remoteDataMtime ?? 0}
+    get {_storage._remoteDataMtime ?? 0}
     set {_uniqueStorage()._remoteDataMtime = newValue}
   }
   /// Returns true if `remoteDataMtime` has been explicitly set.
-  public var hasRemoteDataMtime: Bool {return _storage._remoteDataMtime != nil}
+  public var hasRemoteDataMtime: Bool {_storage._remoteDataMtime != nil}
   /// Clears the value of `remoteDataMtime`. Subsequent reads from it will return its default value.
   public mutating func clearRemoteDataMtime() {_uniqueStorage()._remoteDataMtime = nil}
 
   public var materializedLength: UInt64 {
-    get {return _storage._materializedLength ?? 0}
+    get {_storage._materializedLength ?? 0}
     set {_uniqueStorage()._materializedLength = newValue}
   }
   /// Returns true if `materializedLength` has been explicitly set.
-  public var hasMaterializedLength: Bool {return _storage._materializedLength != nil}
+  public var hasMaterializedLength: Bool {_storage._materializedLength != nil}
   /// Clears the value of `materializedLength`. Subsequent reads from it will return its default value.
   public mutating func clearMaterializedLength() {_uniqueStorage()._materializedLength = nil}
 
   public var pasteboardExternalFilePath: String {
-    get {return _storage._pasteboardExternalFilePath ?? String()}
+    get {_storage._pasteboardExternalFilePath ?? String()}
     set {_uniqueStorage()._pasteboardExternalFilePath = newValue}
   }
   /// Returns true if `pasteboardExternalFilePath` has been explicitly set.
-  public var hasPasteboardExternalFilePath: Bool {return _storage._pasteboardExternalFilePath != nil}
+  public var hasPasteboardExternalFilePath: Bool {_storage._pasteboardExternalFilePath != nil}
   /// Clears the value of `pasteboardExternalFilePath`. Subsequent reads from it will return its default value.
   public mutating func clearPasteboardExternalFilePath() {_uniqueStorage()._pasteboardExternalFilePath = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum DownloadPriority: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case high // = 0
-    case `default` // = 1
+  public nonisolated enum DownloadPriority: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case high = 0
+    case `default` = 1
 
     public init() {
       self = .high
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .high
-      case 1: self = .default
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .high: return 0
-      case .default: return 1
-      }
     }
 
   }
@@ -984,7 +896,7 @@ public struct TSP_DataInfo: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSP_DataMetadataMap: Sendable {
+public nonisolated struct TSP_DataMetadataMap: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -993,26 +905,26 @@ public struct TSP_DataMetadataMap: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct DataMetadataMapEntry: Sendable {
+  public nonisolated struct DataMetadataMapEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var dataIdentifier: UInt64 {
-      get {return _dataIdentifier ?? 0}
+      get {_dataIdentifier ?? 0}
       set {_dataIdentifier = newValue}
     }
     /// Returns true if `dataIdentifier` has been explicitly set.
-    public var hasDataIdentifier: Bool {return self._dataIdentifier != nil}
+    public var hasDataIdentifier: Bool {self._dataIdentifier != nil}
     /// Clears the value of `dataIdentifier`. Subsequent reads from it will return its default value.
     public mutating func clearDataIdentifier() {self._dataIdentifier = nil}
 
     public var dataMetadata: TSP_Reference {
-      get {return _dataMetadata ?? TSP_Reference()}
+      get {_dataMetadata ?? TSP_Reference()}
       set {_dataMetadata = newValue}
     }
     /// Returns true if `dataMetadata` has been explicitly set.
-    public var hasDataMetadata: Bool {return self._dataMetadata != nil}
+    public var hasDataMetadata: Bool {self._dataMetadata != nil}
     /// Clears the value of `dataMetadata`. Subsequent reads from it will return its default value.
     public mutating func clearDataMetadata() {self._dataMetadata = nil}
 
@@ -1027,17 +939,17 @@ public struct TSP_DataMetadataMap: Sendable {
   public init() {}
 }
 
-public struct TSP_DataMetadata: Sendable {
+public nonisolated struct TSP_DataMetadata: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var fallbackColor: TSP_Color {
-    get {return _fallbackColor ?? TSP_Color()}
+    get {_fallbackColor ?? TSP_Color()}
     set {_fallbackColor = newValue}
   }
   /// Returns true if `fallbackColor` has been explicitly set.
-  public var hasFallbackColor: Bool {return self._fallbackColor != nil}
+  public var hasFallbackColor: Bool {self._fallbackColor != nil}
   /// Clears the value of `fallbackColor`. Subsequent reads from it will return its default value.
   public mutating func clearFallbackColor() {self._fallbackColor = nil}
 
@@ -1048,26 +960,26 @@ public struct TSP_DataMetadata: Sendable {
   fileprivate var _fallbackColor: TSP_Color? = nil
 }
 
-public struct TSP_EncryptionInfo: Sendable {
+public nonisolated struct TSP_EncryptionInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var decodedLength: UInt64 {
-    get {return _decodedLength ?? 0}
+    get {_decodedLength ?? 0}
     set {_decodedLength = newValue}
   }
   /// Returns true if `decodedLength` has been explicitly set.
-  public var hasDecodedLength: Bool {return self._decodedLength != nil}
+  public var hasDecodedLength: Bool {self._decodedLength != nil}
   /// Clears the value of `decodedLength`. Subsequent reads from it will return its default value.
   public mutating func clearDecodedLength() {self._decodedLength = nil}
 
   public var preferredBlockSize: UInt64 {
-    get {return _preferredBlockSize ?? 0}
+    get {_preferredBlockSize ?? 0}
     set {_preferredBlockSize = newValue}
   }
   /// Returns true if `preferredBlockSize` has been explicitly set.
-  public var hasPreferredBlockSize: Bool {return self._preferredBlockSize != nil}
+  public var hasPreferredBlockSize: Bool {self._preferredBlockSize != nil}
   /// Clears the value of `preferredBlockSize`. Subsequent reads from it will return its default value.
   public mutating func clearPreferredBlockSize() {self._preferredBlockSize = nil}
 
@@ -1081,26 +993,26 @@ public struct TSP_EncryptionInfo: Sendable {
   fileprivate var _preferredBlockSize: UInt64? = nil
 }
 
-public struct TSP_EncryptionBlockInfo: Sendable {
+public nonisolated struct TSP_EncryptionBlockInfo: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var encodedLength: UInt64 {
-    get {return _encodedLength ?? 0}
+    get {_encodedLength ?? 0}
     set {_encodedLength = newValue}
   }
   /// Returns true if `encodedLength` has been explicitly set.
-  public var hasEncodedLength: Bool {return self._encodedLength != nil}
+  public var hasEncodedLength: Bool {self._encodedLength != nil}
   /// Clears the value of `encodedLength`. Subsequent reads from it will return its default value.
   public mutating func clearEncodedLength() {self._encodedLength = nil}
 
   public var decodedLength: UInt64 {
-    get {return _decodedLength ?? 0}
+    get {_decodedLength ?? 0}
     set {_decodedLength = newValue}
   }
   /// Returns true if `decodedLength` has been explicitly set.
-  public var hasDecodedLength: Bool {return self._decodedLength != nil}
+  public var hasDecodedLength: Bool {self._decodedLength != nil}
   /// Clears the value of `decodedLength`. Subsequent reads from it will return its default value.
   public mutating func clearDecodedLength() {self._decodedLength = nil}
 
@@ -1112,7 +1024,7 @@ public struct TSP_EncryptionBlockInfo: Sendable {
   fileprivate var _decodedLength: UInt64? = nil
 }
 
-public struct TSP_ViewStateMetadata: Sendable {
+public nonisolated struct TSP_ViewStateMetadata: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1120,20 +1032,20 @@ public struct TSP_ViewStateMetadata: Sendable {
   public var version: [UInt32] = []
 
   public var versionUuid: TSP_UUID {
-    get {return _versionUuid ?? TSP_UUID()}
+    get {_versionUuid ?? TSP_UUID()}
     set {_versionUuid = newValue}
   }
   /// Returns true if `versionUuid` has been explicitly set.
-  public var hasVersionUuid: Bool {return self._versionUuid != nil}
+  public var hasVersionUuid: Bool {self._versionUuid != nil}
   /// Clears the value of `versionUuid`. Subsequent reads from it will return its default value.
   public mutating func clearVersionUuid() {self._versionUuid = nil}
 
   public var component: TSP_ComponentInfo {
-    get {return _component ?? TSP_ComponentInfo()}
+    get {_component ?? TSP_ComponentInfo()}
     set {_component = newValue}
   }
   /// Returns true if `component` has been explicitly set.
-  public var hasComponent: Bool {return self._component != nil}
+  public var hasComponent: Bool {self._component != nil}
   /// Clears the value of `component`. Subsequent reads from it will return its default value.
   public mutating func clearComponent() {self._component = nil}
 
@@ -1149,7 +1061,7 @@ public struct TSP_ViewStateMetadata: Sendable {
   fileprivate var _component: TSP_ComponentInfo? = nil
 }
 
-public struct TSP_ObjectSerializationMetadata: Sendable {
+public nonisolated struct TSP_ObjectSerializationMetadata: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1157,29 +1069,29 @@ public struct TSP_ObjectSerializationMetadata: Sendable {
   public var version: [UInt32] = []
 
   public var sourceDocumentUuid: TSP_UUID {
-    get {return _sourceDocumentUuid ?? TSP_UUID()}
+    get {_sourceDocumentUuid ?? TSP_UUID()}
     set {_sourceDocumentUuid = newValue}
   }
   /// Returns true if `sourceDocumentUuid` has been explicitly set.
-  public var hasSourceDocumentUuid: Bool {return self._sourceDocumentUuid != nil}
+  public var hasSourceDocumentUuid: Bool {self._sourceDocumentUuid != nil}
   /// Clears the value of `sourceDocumentUuid`. Subsequent reads from it will return its default value.
   public mutating func clearSourceDocumentUuid() {self._sourceDocumentUuid = nil}
 
   public var versionUuid: TSP_UUID {
-    get {return _versionUuid ?? TSP_UUID()}
+    get {_versionUuid ?? TSP_UUID()}
     set {_versionUuid = newValue}
   }
   /// Returns true if `versionUuid` has been explicitly set.
-  public var hasVersionUuid: Bool {return self._versionUuid != nil}
+  public var hasVersionUuid: Bool {self._versionUuid != nil}
   /// Clears the value of `versionUuid`. Subsequent reads from it will return its default value.
   public mutating func clearVersionUuid() {self._versionUuid = nil}
 
   public var component: TSP_ComponentInfo {
-    get {return _component ?? TSP_ComponentInfo()}
+    get {_component ?? TSP_ComponentInfo()}
     set {_component = newValue}
   }
   /// Returns true if `component` has been explicitly set.
-  public var hasComponent: Bool {return self._component != nil}
+  public var hasComponent: Bool {self._component != nil}
   /// Clears the value of `component`. Subsequent reads from it will return its default value.
   public mutating func clearComponent() {self._component = nil}
 
@@ -1188,11 +1100,11 @@ public struct TSP_ObjectSerializationMetadata: Sendable {
   public var externalObjectUuidMapEntries: [TSP_ObjectUUIDMapEntry] = []
 
   public var dataMetadataMap: TSP_Reference {
-    get {return _dataMetadataMap ?? TSP_Reference()}
+    get {_dataMetadataMap ?? TSP_Reference()}
     set {_dataMetadataMap = newValue}
   }
   /// Returns true if `dataMetadataMap` has been explicitly set.
-  public var hasDataMetadataMap: Bool {return self._dataMetadataMap != nil}
+  public var hasDataMetadataMap: Bool {self._dataMetadataMap != nil}
   /// Clears the value of `dataMetadataMap`. Subsequent reads from it will return its default value.
   public mutating func clearDataMetadataMap() {self._dataMetadataMap = nil}
 
@@ -1208,7 +1120,7 @@ public struct TSP_ObjectSerializationMetadata: Sendable {
   fileprivate var _dataMetadataMap: TSP_Reference? = nil
 }
 
-public struct TSP_ObjectSerializationDirectory: Sendable {
+public nonisolated struct TSP_ObjectSerializationDirectory: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1217,35 +1129,35 @@ public struct TSP_ObjectSerializationDirectory: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct Entry: Sendable {
+  public nonisolated struct Entry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var locator: String {
-      get {return _locator ?? String()}
+      get {_locator ?? String()}
       set {_locator = newValue}
     }
     /// Returns true if `locator` has been explicitly set.
-    public var hasLocator: Bool {return self._locator != nil}
+    public var hasLocator: Bool {self._locator != nil}
     /// Clears the value of `locator`. Subsequent reads from it will return its default value.
     public mutating func clearLocator() {self._locator = nil}
 
     public var offset: UInt64 {
-      get {return _offset ?? 0}
+      get {_offset ?? 0}
       set {_offset = newValue}
     }
     /// Returns true if `offset` has been explicitly set.
-    public var hasOffset: Bool {return self._offset != nil}
+    public var hasOffset: Bool {self._offset != nil}
     /// Clears the value of `offset`. Subsequent reads from it will return its default value.
     public mutating func clearOffset() {self._offset = nil}
 
     public var size: UInt64 {
-      get {return _size ?? 0}
+      get {_size ?? 0}
       set {_size = newValue}
     }
     /// Returns true if `size` has been explicitly set.
-    public var hasSize: Bool {return self._size != nil}
+    public var hasSize: Bool {self._size != nil}
     /// Clears the value of `size`. Subsequent reads from it will return its default value.
     public mutating func clearSize() {self._size = nil}
 
@@ -1261,46 +1173,46 @@ public struct TSP_ObjectSerializationDirectory: Sendable {
   public init() {}
 }
 
-public struct TSP_DataPropertiesEntryV1: @unchecked Sendable {
+public nonisolated struct TSP_DataPropertiesEntryV1: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var digest: Data {
-    get {return _digest ?? Data()}
+    get {_digest ?? Data()}
     set {_digest = newValue}
   }
   /// Returns true if `digest` has been explicitly set.
-  public var hasDigest: Bool {return self._digest != nil}
+  public var hasDigest: Bool {self._digest != nil}
   /// Clears the value of `digest`. Subsequent reads from it will return its default value.
   public mutating func clearDigest() {self._digest = nil}
 
   public var expectsMatchedDigest: Bool {
-    get {return _expectsMatchedDigest ?? false}
+    get {_expectsMatchedDigest ?? false}
     set {_expectsMatchedDigest = newValue}
   }
   /// Returns true if `expectsMatchedDigest` has been explicitly set.
-  public var hasExpectsMatchedDigest: Bool {return self._expectsMatchedDigest != nil}
+  public var hasExpectsMatchedDigest: Bool {self._expectsMatchedDigest != nil}
   /// Clears the value of `expectsMatchedDigest`. Subsequent reads from it will return its default value.
   public mutating func clearExpectsMatchedDigest() {self._expectsMatchedDigest = nil}
 
   public var creationTimeIntervalSince1970: Double {
-    get {return _creationTimeIntervalSince1970 ?? 0}
+    get {_creationTimeIntervalSince1970 ?? 0}
     set {_creationTimeIntervalSince1970 = newValue}
   }
   /// Returns true if `creationTimeIntervalSince1970` has been explicitly set.
-  public var hasCreationTimeIntervalSince1970: Bool {return self._creationTimeIntervalSince1970 != nil}
+  public var hasCreationTimeIntervalSince1970: Bool {self._creationTimeIntervalSince1970 != nil}
   /// Clears the value of `creationTimeIntervalSince1970`. Subsequent reads from it will return its default value.
   public mutating func clearCreationTimeIntervalSince1970() {self._creationTimeIntervalSince1970 = nil}
 
   public var creationVersion: [UInt32] = []
 
   public var lastMismatchedDigest: Data {
-    get {return _lastMismatchedDigest ?? Data()}
+    get {_lastMismatchedDigest ?? Data()}
     set {_lastMismatchedDigest = newValue}
   }
   /// Returns true if `lastMismatchedDigest` has been explicitly set.
-  public var hasLastMismatchedDigest: Bool {return self._lastMismatchedDigest != nil}
+  public var hasLastMismatchedDigest: Bool {self._lastMismatchedDigest != nil}
   /// Clears the value of `lastMismatchedDigest`. Subsequent reads from it will return its default value.
   public mutating func clearLastMismatchedDigest() {self._lastMismatchedDigest = nil}
 
@@ -1314,7 +1226,7 @@ public struct TSP_DataPropertiesEntryV1: @unchecked Sendable {
   fileprivate var _lastMismatchedDigest: Data? = nil
 }
 
-public struct TSP_DataPropertiesV1: Sendable {
+public nonisolated struct TSP_DataPropertiesV1: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1326,26 +1238,26 @@ public struct TSP_DataPropertiesV1: Sendable {
   public init() {}
 }
 
-public struct TSP_DocumentMetadata: Sendable {
+public nonisolated struct TSP_DocumentMetadata: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var isInCollaborationMode: Bool {
-    get {return _isInCollaborationMode ?? false}
+    get {_isInCollaborationMode ?? false}
     set {_isInCollaborationMode = newValue}
   }
   /// Returns true if `isInCollaborationMode` has been explicitly set.
-  public var hasIsInCollaborationMode: Bool {return self._isInCollaborationMode != nil}
+  public var hasIsInCollaborationMode: Bool {self._isInCollaborationMode != nil}
   /// Clears the value of `isInCollaborationMode`. Subsequent reads from it will return its default value.
   public mutating func clearIsInCollaborationMode() {self._isInCollaborationMode = nil}
 
   public var dataPropertiesV1: TSP_DataPropertiesV1 {
-    get {return _dataPropertiesV1 ?? TSP_DataPropertiesV1()}
+    get {_dataPropertiesV1 ?? TSP_DataPropertiesV1()}
     set {_dataPropertiesV1 = newValue}
   }
   /// Returns true if `dataPropertiesV1` has been explicitly set.
-  public var hasDataPropertiesV1: Bool {return self._dataPropertiesV1 != nil}
+  public var hasDataPropertiesV1: Bool {self._dataPropertiesV1 != nil}
   /// Clears the value of `dataPropertiesV1`. Subsequent reads from it will return its default value.
   public mutating func clearDataPropertiesV1() {self._dataPropertiesV1 = nil}
 
@@ -1357,17 +1269,17 @@ public struct TSP_DocumentMetadata: Sendable {
   fileprivate var _dataPropertiesV1: TSP_DataPropertiesV1? = nil
 }
 
-public struct TSP_SupportMetadata: Sendable {
+public nonisolated struct TSP_SupportMetadata: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var isInCollaborationMode: Bool {
-    get {return _isInCollaborationMode ?? false}
+    get {_isInCollaborationMode ?? false}
     set {_isInCollaborationMode = newValue}
   }
   /// Returns true if `isInCollaborationMode` has been explicitly set.
-  public var hasIsInCollaborationMode: Bool {return self._isInCollaborationMode != nil}
+  public var hasIsInCollaborationMode: Bool {self._isInCollaborationMode != nil}
   /// Clears the value of `isInCollaborationMode`. Subsequent reads from it will return its default value.
   public mutating func clearIsInCollaborationMode() {self._isInCollaborationMode = nil}
 
@@ -1375,71 +1287,71 @@ public struct TSP_SupportMetadata: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct DataCollaborationProperties: @unchecked Sendable {
+  public nonisolated struct DataCollaborationProperties: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var digest: Data {
-      get {return _digest ?? Data()}
+      get {_digest ?? Data()}
       set {_digest = newValue}
     }
     /// Returns true if `digest` has been explicitly set.
-    public var hasDigest: Bool {return self._digest != nil}
+    public var hasDigest: Bool {self._digest != nil}
     /// Clears the value of `digest`. Subsequent reads from it will return its default value.
     public mutating func clearDigest() {self._digest = nil}
 
     public var acknowledgedByServer: Bool {
-      get {return _acknowledgedByServer ?? false}
+      get {_acknowledgedByServer ?? false}
       set {_acknowledgedByServer = newValue}
     }
     /// Returns true if `acknowledgedByServer` has been explicitly set.
-    public var hasAcknowledgedByServer: Bool {return self._acknowledgedByServer != nil}
+    public var hasAcknowledgedByServer: Bool {self._acknowledgedByServer != nil}
     /// Clears the value of `acknowledgedByServer`. Subsequent reads from it will return its default value.
     public mutating func clearAcknowledgedByServer() {self._acknowledgedByServer = nil}
 
     public var materializedOnServer: Bool {
-      get {return _materializedOnServer ?? false}
+      get {_materializedOnServer ?? false}
       set {_materializedOnServer = newValue}
     }
     /// Returns true if `materializedOnServer` has been explicitly set.
-    public var hasMaterializedOnServer: Bool {return self._materializedOnServer != nil}
+    public var hasMaterializedOnServer: Bool {self._materializedOnServer != nil}
     /// Clears the value of `materializedOnServer`. Subsequent reads from it will return its default value.
     public mutating func clearMaterializedOnServer() {self._materializedOnServer = nil}
 
     public var revisionSequenceForMaterializedOnServer: Int32 {
-      get {return _revisionSequenceForMaterializedOnServer ?? 0}
+      get {_revisionSequenceForMaterializedOnServer ?? 0}
       set {_revisionSequenceForMaterializedOnServer = newValue}
     }
     /// Returns true if `revisionSequenceForMaterializedOnServer` has been explicitly set.
-    public var hasRevisionSequenceForMaterializedOnServer: Bool {return self._revisionSequenceForMaterializedOnServer != nil}
+    public var hasRevisionSequenceForMaterializedOnServer: Bool {self._revisionSequenceForMaterializedOnServer != nil}
     /// Clears the value of `revisionSequenceForMaterializedOnServer`. Subsequent reads from it will return its default value.
     public mutating func clearRevisionSequenceForMaterializedOnServer() {self._revisionSequenceForMaterializedOnServer = nil}
 
     public var uploadStatus: TSP_DataUploadStatus {
-      get {return _uploadStatus ?? .pending}
+      get {_uploadStatus ?? .pending}
       set {_uploadStatus = newValue}
     }
     /// Returns true if `uploadStatus` has been explicitly set.
-    public var hasUploadStatus: Bool {return self._uploadStatus != nil}
+    public var hasUploadStatus: Bool {self._uploadStatus != nil}
     /// Clears the value of `uploadStatus`. Subsequent reads from it will return its default value.
     public mutating func clearUploadStatus() {self._uploadStatus = nil}
 
     public var isRemoteDataEver: Bool {
-      get {return _isRemoteDataEver ?? false}
+      get {_isRemoteDataEver ?? false}
       set {_isRemoteDataEver = newValue}
     }
     /// Returns true if `isRemoteDataEver` has been explicitly set.
-    public var hasIsRemoteDataEver: Bool {return self._isRemoteDataEver != nil}
+    public var hasIsRemoteDataEver: Bool {self._isRemoteDataEver != nil}
     /// Clears the value of `isRemoteDataEver`. Subsequent reads from it will return its default value.
     public mutating func clearIsRemoteDataEver() {self._isRemoteDataEver = nil}
 
     public var revisionSequenceForAcknowledgedByServer: Int32 {
-      get {return _revisionSequenceForAcknowledgedByServer ?? 0}
+      get {_revisionSequenceForAcknowledgedByServer ?? 0}
       set {_revisionSequenceForAcknowledgedByServer = newValue}
     }
     /// Returns true if `revisionSequenceForAcknowledgedByServer` has been explicitly set.
-    public var hasRevisionSequenceForAcknowledgedByServer: Bool {return self._revisionSequenceForAcknowledgedByServer != nil}
+    public var hasRevisionSequenceForAcknowledgedByServer: Bool {self._revisionSequenceForAcknowledgedByServer != nil}
     /// Clears the value of `revisionSequenceForAcknowledgedByServer`. Subsequent reads from it will return its default value.
     public mutating func clearRevisionSequenceForAcknowledgedByServer() {self._revisionSequenceForAcknowledgedByServer = nil}
 
@@ -1463,15 +1375,11 @@ public struct TSP_SupportMetadata: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSP"
+fileprivate nonisolated let _protobuf_package = "TSP"
 
-extension TSP_ArchiveInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ArchiveInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ArchiveInfo"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .standard(proto: "message_infos"),
-    3: .standard(proto: "should_merge"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{3}message_infos\0\u{3}should_merge\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.messageInfos) {return false}
@@ -1518,21 +1426,9 @@ extension TSP_ArchiveInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 }
 
-extension TSP_MessageInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_MessageInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MessageInfo"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .same(proto: "version"),
-    3: .same(proto: "length"),
-    4: .standard(proto: "field_infos"),
-    5: .standard(proto: "object_references"),
-    6: .standard(proto: "data_references"),
-    7: .standard(proto: "base_message_index"),
-    8: .standard(proto: "diff_merge_version"),
-    9: .standard(proto: "diff_field_path"),
-    10: .standard(proto: "fields_to_remove"),
-    11: .standard(proto: "diff_read_version"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}version\0\u{1}length\0\u{3}field_infos\0\u{3}object_references\0\u{3}data_references\0\u{3}base_message_index\0\u{3}diff_merge_version\0\u{3}diff_field_path\0\u{3}fields_to_remove\0\u{3}diff_read_version\0")
 
   public var isInitialized: Bool {
     if self._type == nil {return false}
@@ -1621,18 +1517,9 @@ extension TSP_MessageInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 }
 
-extension TSP_FieldInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_FieldInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FieldInfo"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "path"),
-    2: .same(proto: "type"),
-    3: .standard(proto: "unknown_field_rule"),
-    4: .standard(proto: "object_references"),
-    5: .standard(proto: "data_references"),
-    6: .standard(proto: "known_field_rule"),
-    7: .standard(proto: "known_field_version"),
-    8: .standard(proto: "known_field_feature_identifier"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}path\0\u{1}type\0\u{3}unknown_field_rule\0\u{3}object_references\0\u{3}data_references\0\u{3}known_field_rule\0\u{3}known_field_version\0\u{3}known_field_feature_identifier\0")
 
   public var isInitialized: Bool {
     if self._path == nil {return false}
@@ -1704,37 +1591,21 @@ extension TSP_FieldInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 }
 
-extension TSP_FieldInfo.TypeEnum: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "Value"),
-    1: .same(proto: "ObjectReference"),
-    2: .same(proto: "DataReference"),
-    3: .same(proto: "Message"),
-  ]
+nonisolated extension TSP_FieldInfo.TypeEnum: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0Value\0\u{1}ObjectReference\0\u{1}DataReference\0\u{1}Message\0")
 }
 
-extension TSP_FieldInfo.UnknownFieldRule: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    -1: .same(proto: "NotSupported"),
-    0: .same(proto: "IgnoreAndPreserveUntilModified"),
-    1: .same(proto: "IgnoreAndPreserve"),
-    2: .same(proto: "MustUnderstand"),
-  ]
+nonisolated extension TSP_FieldInfo.UnknownFieldRule: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\u{7f}\u{7f}\u{7f}\u{7f}\u{7f}\u{3}NotSupported\0\u{1}IgnoreAndPreserveUntilModified\0\u{1}IgnoreAndPreserve\0\u{1}MustUnderstand\0")
 }
 
-extension TSP_FieldInfo.KnownFieldRule: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "None"),
-    1: .same(proto: "PreserveNewerValueUntilModified"),
-    2: .same(proto: "PreserveNewerValue"),
-  ]
+nonisolated extension TSP_FieldInfo.KnownFieldRule: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0None\0\u{1}PreserveNewerValueUntilModified\0\u{1}PreserveNewerValue\0")
 }
 
-extension TSP_FieldPath: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_FieldPath: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FieldPath"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "path"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}path\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1762,29 +1633,9 @@ extension TSP_FieldPath: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 }
 
-extension TSP_ComponentInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ComponentInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ComponentInfo"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .standard(proto: "preferred_locator"),
-    3: .same(proto: "locator"),
-    4: .standard(proto: "document_read_version"),
-    5: .standard(proto: "document_write_version"),
-    6: .standard(proto: "external_references"),
-    7: .standard(proto: "data_references"),
-    10: .standard(proto: "is_stored_outside_object_archive"),
-    11: .standard(proto: "object_uuid_map_entries"),
-    12: .standard(proto: "save_token"),
-    13: .standard(proto: "feature_infos"),
-    14: .standard(proto: "component_read_version"),
-    15: .standard(proto: "component_required_version"),
-    16: .standard(proto: "compression_algorithm"),
-    17: .standard(proto: "can_be_dropped"),
-    18: .standard(proto: "versioned_external_references"),
-    19: .standard(proto: "is_wasteful"),
-    20: .standard(proto: "ambiguous_object_identifiers"),
-    21: .standard(proto: "required_package_identifier"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{3}preferred_locator\0\u{1}locator\0\u{3}document_read_version\0\u{3}document_write_version\0\u{3}external_references\0\u{3}data_references\0\u{4}\u{3}is_stored_outside_object_archive\0\u{3}object_uuid_map_entries\0\u{3}save_token\0\u{3}feature_infos\0\u{3}component_read_version\0\u{3}component_required_version\0\u{3}compression_algorithm\0\u{3}can_be_dropped\0\u{3}versioned_external_references\0\u{3}is_wasteful\0\u{3}ambiguous_object_identifiers\0\u{3}required_package_identifier\0")
 
   fileprivate class _StorageClass {
     var _identifier: UInt64? = nil
@@ -1807,15 +1658,11 @@ extension TSP_ComponentInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     var _ambiguousObjectIdentifiers: [UInt64] = []
     var _requiredPackageIdentifier: UInt32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -1995,13 +1842,9 @@ extension TSP_ComponentInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension TSP_ComponentExternalReference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ComponentExternalReference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ComponentExternalReference"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "component_identifier"),
-    2: .standard(proto: "object_identifier"),
-    3: .standard(proto: "is_weak"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}component_identifier\0\u{3}object_identifier\0\u{3}is_weak\0")
 
   public var isInitialized: Bool {
     if self._componentIdentifier == nil {return false}
@@ -2048,12 +1891,9 @@ extension TSP_ComponentExternalReference: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSP_ComponentDataReference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ComponentDataReference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ComponentDataReference"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "data_identifier"),
-    2: .standard(proto: "object_reference_list"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}data_identifier\0\u{3}object_reference_list\0")
 
   public var isInitialized: Bool {
     if self._dataIdentifier == nil {return false}
@@ -2096,12 +1936,9 @@ extension TSP_ComponentDataReference: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSP_ComponentDataReference.ObjectReference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ComponentDataReference.ObjectReference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSP_ComponentDataReference.protoMessageName + ".ObjectReference"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "object_identifier"),
-    2: .same(proto: "count"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}object_identifier\0\u{1}count\0")
 
   public var isInitialized: Bool {
     if self._objectIdentifier == nil {return false}
@@ -2144,12 +1981,9 @@ extension TSP_ComponentDataReference.ObjectReference: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSP_ObjectUUIDMapEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ObjectUUIDMapEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ObjectUUIDMapEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .same(proto: "uuid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{1}uuid\0")
 
   public var isInitialized: Bool {
     if self._identifier == nil {return false}
@@ -2193,13 +2027,9 @@ extension TSP_ObjectUUIDMapEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSP_FeatureInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_FeatureInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FeatureInfo"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .standard(proto: "read_version"),
-    3: .standard(proto: "write_version"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{3}read_version\0\u{3}write_version\0")
 
   public var isInitialized: Bool {
     if self._identifier == nil {return false}
@@ -2246,21 +2076,9 @@ extension TSP_FeatureInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 }
 
-extension TSP_PackageMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_PackageMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PackageMetadata"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "last_object_identifier"),
-    2: .same(proto: "revision"),
-    3: .same(proto: "components"),
-    4: .same(proto: "datas"),
-    5: .standard(proto: "read_version"),
-    6: .standard(proto: "write_version"),
-    7: .standard(proto: "file_format_version"),
-    8: .standard(proto: "save_token"),
-    9: .standard(proto: "preferred_package_type"),
-    10: .standard(proto: "data_metadata_map"),
-    11: .standard(proto: "versioned_components"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}last_object_identifier\0\u{1}revision\0\u{1}components\0\u{1}datas\0\u{3}read_version\0\u{3}write_version\0\u{3}file_format_version\0\u{3}save_token\0\u{3}preferred_package_type\0\u{3}data_metadata_map\0\u{3}versioned_components\0")
 
   public var isInitialized: Bool {
     if self._lastObjectIdentifier == nil {return false}
@@ -2351,21 +2169,13 @@ extension TSP_PackageMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSP_PackageMetadata.PackageType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "Default"),
-    1: .same(proto: "Directory"),
-    2: .same(proto: "SingleFile"),
-  ]
+nonisolated extension TSP_PackageMetadata.PackageType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0Default\0\u{1}Directory\0\u{1}SingleFile\0")
 }
 
-extension TSP_DocumentRevision: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DocumentRevision: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DocumentRevision"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    3: .standard(proto: "sequence_32"),
-    2: .same(proto: "identifier"),
-    1: .standard(proto: "sequence_64"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}sequence_64\0\u{1}identifier\0\u{3}sequence_32\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2407,16 +2217,9 @@ extension TSP_DocumentRevision: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSP_PasteboardMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_PasteboardMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PasteboardMetadata"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "version"),
-    2: .standard(proto: "app_name"),
-    3: .same(proto: "datas"),
-    5: .standard(proto: "source_document_uuid"),
-    6: .standard(proto: "data_metadata_map"),
-    7: .standard(proto: "read_version"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}version\0\u{3}app_name\0\u{1}datas\0\u{4}\u{2}source_document_uuid\0\u{3}data_metadata_map\0\u{3}read_version\0")
 
   public var isInitialized: Bool {
     if self._appName == nil {return false}
@@ -2481,29 +2284,9 @@ extension TSP_PasteboardMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSP_DataInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DataInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DataInfo"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .same(proto: "digest"),
-    3: .standard(proto: "preferred_file_name"),
-    4: .standard(proto: "file_name"),
-    5: .standard(proto: "document_resource_locator"),
-    6: .standard(proto: "source_bookmark_data"),
-    7: .standard(proto: "remote_url"),
-    8: .standard(proto: "can_download"),
-    9: .standard(proto: "download_priority"),
-    10: .same(proto: "attributes"),
-    11: .standard(proto: "encryption_info"),
-    12: .standard(proto: "last_mismatched_digest"),
-    13: .standard(proto: "unmaterialized_ranges"),
-    14: .standard(proto: "remote_data_length"),
-    15: .standard(proto: "remote_data_has_package_storage"),
-    16: .standard(proto: "upload_status"),
-    17: .standard(proto: "remote_data_mtime"),
-    18: .standard(proto: "materialized_length"),
-    99: .standard(proto: "pasteboard_external_file_path"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{1}digest\0\u{3}preferred_file_name\0\u{3}file_name\0\u{3}document_resource_locator\0\u{3}source_bookmark_data\0\u{3}remote_url\0\u{3}can_download\0\u{3}download_priority\0\u{1}attributes\0\u{3}encryption_info\0\u{3}last_mismatched_digest\0\u{3}unmaterialized_ranges\0\u{3}remote_data_length\0\u{3}remote_data_has_package_storage\0\u{3}upload_status\0\u{3}remote_data_mtime\0\u{3}materialized_length\0\u{4}Q\u{1}pasteboard_external_file_path\0")
 
   fileprivate class _StorageClass {
     var _identifier: UInt64? = nil
@@ -2526,15 +2309,11 @@ extension TSP_DataInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
     var _materializedLength: UInt64? = nil
     var _pasteboardExternalFilePath: String? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -2713,18 +2492,13 @@ extension TSP_DataInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   }
 }
 
-extension TSP_DataInfo.DownloadPriority: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "High"),
-    1: .same(proto: "Default"),
-  ]
+nonisolated extension TSP_DataInfo.DownloadPriority: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0High\0\u{1}Default\0")
 }
 
-extension TSP_DataMetadataMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DataMetadataMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DataMetadataMap"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "data_metadata_entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}data_metadata_entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.dataMetadataEntries) {return false}
@@ -2757,12 +2531,9 @@ extension TSP_DataMetadataMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSP_DataMetadataMap.DataMetadataMapEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DataMetadataMap.DataMetadataMapEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSP_DataMetadataMap.protoMessageName + ".DataMetadataMapEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "data_identifier"),
-    2: .standard(proto: "data_metadata"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}data_identifier\0\u{3}data_metadata\0")
 
   public var isInitialized: Bool {
     if self._dataIdentifier == nil {return false}
@@ -2806,11 +2577,9 @@ extension TSP_DataMetadataMap.DataMetadataMapEntry: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSP_DataMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DataMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DataMetadata"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "fallback_color"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}fallback_color\0")
 
   public var isInitialized: Bool {
     if let v = self._fallbackColor, !v.isInitialized {return false}
@@ -2847,13 +2616,9 @@ extension TSP_DataMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension TSP_EncryptionInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_EncryptionInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".EncryptionInfo"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "decoded_length"),
-    2: .standard(proto: "preferred_block_size"),
-    3: .standard(proto: "block_infos"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}decoded_length\0\u{3}preferred_block_size\0\u{3}block_infos\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.blockInfos) {return false}
@@ -2900,12 +2665,9 @@ extension TSP_EncryptionInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension TSP_EncryptionBlockInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_EncryptionBlockInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".EncryptionBlockInfo"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "encoded_length"),
-    2: .standard(proto: "decoded_length"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}encoded_length\0\u{3}decoded_length\0")
 
   public var isInitialized: Bool {
     if self._encodedLength == nil {return false}
@@ -2947,15 +2709,9 @@ extension TSP_EncryptionBlockInfo: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSP_ViewStateMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ViewStateMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ViewStateMetadata"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "version"),
-    4: .standard(proto: "version_uuid"),
-    3: .same(proto: "component"),
-    5: .standard(proto: "external_object_uuid_map_entries"),
-    6: .standard(proto: "read_version"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}version\0\u{2}\u{2}component\0\u{3}version_uuid\0\u{3}external_object_uuid_map_entries\0\u{3}read_version\0")
 
   public var isInitialized: Bool {
     if self._component == nil {return false}
@@ -3015,18 +2771,9 @@ extension TSP_ViewStateMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSP_ObjectSerializationMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ObjectSerializationMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ObjectSerializationMetadata"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "version"),
-    2: .standard(proto: "source_document_uuid"),
-    3: .standard(proto: "version_uuid"),
-    4: .same(proto: "component"),
-    5: .same(proto: "datas"),
-    6: .standard(proto: "external_object_uuid_map_entries"),
-    7: .standard(proto: "data_metadata_map"),
-    8: .standard(proto: "read_version"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}version\0\u{3}source_document_uuid\0\u{3}version_uuid\0\u{1}component\0\u{1}datas\0\u{3}external_object_uuid_map_entries\0\u{3}data_metadata_map\0\u{3}read_version\0")
 
   public var isInitialized: Bool {
     if self._component == nil {return false}
@@ -3104,11 +2851,9 @@ extension TSP_ObjectSerializationMetadata: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSP_ObjectSerializationDirectory: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ObjectSerializationDirectory: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ObjectSerializationDirectory"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.entries) {return false}
@@ -3141,13 +2886,9 @@ extension TSP_ObjectSerializationDirectory: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSP_ObjectSerializationDirectory.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ObjectSerializationDirectory.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSP_ObjectSerializationDirectory.protoMessageName + ".Entry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "locator"),
-    2: .same(proto: "offset"),
-    3: .same(proto: "size"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}locator\0\u{1}offset\0\u{1}size\0")
 
   public var isInitialized: Bool {
     if self._locator == nil {return false}
@@ -3196,15 +2937,9 @@ extension TSP_ObjectSerializationDirectory.Entry: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSP_DataPropertiesEntryV1: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DataPropertiesEntryV1: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DataPropertiesEntryV1"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "digest"),
-    2: .standard(proto: "expects_matched_digest"),
-    3: .standard(proto: "creation_time_interval_since_1970"),
-    4: .standard(proto: "creation_version"),
-    5: .standard(proto: "last_mismatched_digest"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}digest\0\u{3}expects_matched_digest\0\u{3}creation_time_interval_since_1970\0\u{3}creation_version\0\u{3}last_mismatched_digest\0")
 
   public var isInitialized: Bool {
     if self._digest == nil {return false}
@@ -3261,11 +2996,9 @@ extension TSP_DataPropertiesEntryV1: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSP_DataPropertiesV1: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DataPropertiesV1: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DataPropertiesV1"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "properties"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}properties\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.properties) {return false}
@@ -3298,12 +3031,9 @@ extension TSP_DataPropertiesV1: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSP_DocumentMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DocumentMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DocumentMetadata"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "is_in_collaboration_mode"),
-    3: .standard(proto: "data_properties_v1"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}is_in_collaboration_mode\0\u{4}\u{2}data_properties_v1\0")
 
   public var isInitialized: Bool {
     if let v = self._dataPropertiesV1, !v.isInitialized {return false}
@@ -3345,12 +3075,9 @@ extension TSP_DocumentMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSP_SupportMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_SupportMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SupportMetadata"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "is_in_collaboration_mode"),
-    2: .standard(proto: "data_collaboration_properties"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}is_in_collaboration_mode\0\u{3}data_collaboration_properties\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.dataCollaborationProperties) {return false}
@@ -3392,17 +3119,9 @@ extension TSP_SupportMetadata: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSP_SupportMetadata.DataCollaborationProperties: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_SupportMetadata.DataCollaborationProperties: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSP_SupportMetadata.protoMessageName + ".DataCollaborationProperties"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "digest"),
-    2: .standard(proto: "acknowledged_by_server"),
-    3: .standard(proto: "materialized_on_server"),
-    5: .standard(proto: "revision_sequence_for_materialized_on_server"),
-    4: .standard(proto: "upload_status"),
-    6: .standard(proto: "is_remote_data_ever"),
-    7: .standard(proto: "revision_sequence_for_acknowledged_by_server"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}digest\0\u{3}acknowledged_by_server\0\u{3}materialized_on_server\0\u{3}upload_status\0\u{3}revision_sequence_for_materialized_on_server\0\u{3}is_remote_data_ever\0\u{3}revision_sequence_for_acknowledged_by_server\0")
 
   public var isInitialized: Bool {
     if self._digest == nil {return false}

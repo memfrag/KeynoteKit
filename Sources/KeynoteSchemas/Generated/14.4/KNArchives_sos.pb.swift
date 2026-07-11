@@ -15,31 +15,31 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct KNSOS_SpecSetTransitionAttributesArchive: Sendable {
+public nonisolated struct KNSOS_SpecSetTransitionAttributesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var transitionAttributes: KN_TransitionAttributesArchive {
-    get {return _transitionAttributes ?? KN_TransitionAttributesArchive()}
+    get {_transitionAttributes ?? KN_TransitionAttributesArchive()}
     set {_transitionAttributes = newValue}
   }
   /// Returns true if `transitionAttributes` has been explicitly set.
-  public var hasTransitionAttributes: Bool {return self._transitionAttributes != nil}
+  public var hasTransitionAttributes: Bool {self._transitionAttributes != nil}
   /// Clears the value of `transitionAttributes`. Subsequent reads from it will return its default value.
   public mutating func clearTransitionAttributes() {self._transitionAttributes = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -51,17 +51,17 @@ public struct KNSOS_SpecSetTransitionAttributesArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct KNSOS_SpecTransitionAttributesArchive: Sendable {
+public nonisolated struct KNSOS_SpecTransitionAttributesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetTransitionAttributes: KNSOS_SpecSetTransitionAttributesArchive {
-    get {return _specSetTransitionAttributes ?? KNSOS_SpecSetTransitionAttributesArchive()}
+    get {_specSetTransitionAttributes ?? KNSOS_SpecSetTransitionAttributesArchive()}
     set {_specSetTransitionAttributes = newValue}
   }
   /// Returns true if `specSetTransitionAttributes` has been explicitly set.
-  public var hasSpecSetTransitionAttributes: Bool {return self._specSetTransitionAttributes != nil}
+  public var hasSpecSetTransitionAttributes: Bool {self._specSetTransitionAttributes != nil}
   /// Clears the value of `specSetTransitionAttributes`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetTransitionAttributes() {self._specSetTransitionAttributes = nil}
 
@@ -72,1934 +72,1934 @@ public struct KNSOS_SpecTransitionAttributesArchive: Sendable {
   fileprivate var _specSetTransitionAttributes: KNSOS_SpecSetTransitionAttributesArchive? = nil
 }
 
-public struct KNSOS_MotionBackgroundStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct KNSOS_MotionBackgroundStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var name: TSSSOS_SpecStringArchive {
-    get {return _storage._name ?? TSSSOS_SpecStringArchive()}
+    get {_storage._name ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return _storage._name != nil}
+  public var hasName: Bool {_storage._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {_uniqueStorage()._name = nil}
 
   public var nameUndefined: Bool {
-    get {return _storage._nameUndefined ?? false}
+    get {_storage._nameUndefined ?? false}
     set {_uniqueStorage()._nameUndefined = newValue}
   }
   /// Returns true if `nameUndefined` has been explicitly set.
-  public var hasNameUndefined: Bool {return _storage._nameUndefined != nil}
+  public var hasNameUndefined: Bool {_storage._nameUndefined != nil}
   /// Clears the value of `nameUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNameUndefined() {_uniqueStorage()._nameUndefined = nil}
 
   public var variant: TSSSOS_SpecStringArchive {
-    get {return _storage._variant ?? TSSSOS_SpecStringArchive()}
+    get {_storage._variant ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._variant = newValue}
   }
   /// Returns true if `variant` has been explicitly set.
-  public var hasVariant: Bool {return _storage._variant != nil}
+  public var hasVariant: Bool {_storage._variant != nil}
   /// Clears the value of `variant`. Subsequent reads from it will return its default value.
   public mutating func clearVariant() {_uniqueStorage()._variant = nil}
 
   public var variantUndefined: Bool {
-    get {return _storage._variantUndefined ?? false}
+    get {_storage._variantUndefined ?? false}
     set {_uniqueStorage()._variantUndefined = newValue}
   }
   /// Returns true if `variantUndefined` has been explicitly set.
-  public var hasVariantUndefined: Bool {return _storage._variantUndefined != nil}
+  public var hasVariantUndefined: Bool {_storage._variantUndefined != nil}
   /// Clears the value of `variantUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearVariantUndefined() {_uniqueStorage()._variantUndefined = nil}
 
   public var colorGradient: TSDSOS_SpecFillArchive {
-    get {return _storage._colorGradient ?? TSDSOS_SpecFillArchive()}
+    get {_storage._colorGradient ?? TSDSOS_SpecFillArchive()}
     set {_uniqueStorage()._colorGradient = newValue}
   }
   /// Returns true if `colorGradient` has been explicitly set.
-  public var hasColorGradient: Bool {return _storage._colorGradient != nil}
+  public var hasColorGradient: Bool {_storage._colorGradient != nil}
   /// Clears the value of `colorGradient`. Subsequent reads from it will return its default value.
   public mutating func clearColorGradient() {_uniqueStorage()._colorGradient = nil}
 
   public var colorGradientUndefined: Bool {
-    get {return _storage._colorGradientUndefined ?? false}
+    get {_storage._colorGradientUndefined ?? false}
     set {_uniqueStorage()._colorGradientUndefined = newValue}
   }
   /// Returns true if `colorGradientUndefined` has been explicitly set.
-  public var hasColorGradientUndefined: Bool {return _storage._colorGradientUndefined != nil}
+  public var hasColorGradientUndefined: Bool {_storage._colorGradientUndefined != nil}
   /// Clears the value of `colorGradientUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColorGradientUndefined() {_uniqueStorage()._colorGradientUndefined = nil}
 
   public var randomSeed: TSSSOS_SpecIntegerArchive {
-    get {return _storage._randomSeed ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._randomSeed ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._randomSeed = newValue}
   }
   /// Returns true if `randomSeed` has been explicitly set.
-  public var hasRandomSeed: Bool {return _storage._randomSeed != nil}
+  public var hasRandomSeed: Bool {_storage._randomSeed != nil}
   /// Clears the value of `randomSeed`. Subsequent reads from it will return its default value.
   public mutating func clearRandomSeed() {_uniqueStorage()._randomSeed = nil}
 
   public var randomSeedUndefined: Bool {
-    get {return _storage._randomSeedUndefined ?? false}
+    get {_storage._randomSeedUndefined ?? false}
     set {_uniqueStorage()._randomSeedUndefined = newValue}
   }
   /// Returns true if `randomSeedUndefined` has been explicitly set.
-  public var hasRandomSeedUndefined: Bool {return _storage._randomSeedUndefined != nil}
+  public var hasRandomSeedUndefined: Bool {_storage._randomSeedUndefined != nil}
   /// Clears the value of `randomSeedUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearRandomSeedUndefined() {_uniqueStorage()._randomSeedUndefined = nil}
 
   public var colorBlurSigma: TSSSOS_SpecDoubleArchive {
-    get {return _storage._colorBlurSigma ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._colorBlurSigma ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._colorBlurSigma = newValue}
   }
   /// Returns true if `colorBlurSigma` has been explicitly set.
-  public var hasColorBlurSigma: Bool {return _storage._colorBlurSigma != nil}
+  public var hasColorBlurSigma: Bool {_storage._colorBlurSigma != nil}
   /// Clears the value of `colorBlurSigma`. Subsequent reads from it will return its default value.
   public mutating func clearColorBlurSigma() {_uniqueStorage()._colorBlurSigma = nil}
 
   public var colorBlurSigmaUndefined: Bool {
-    get {return _storage._colorBlurSigmaUndefined ?? false}
+    get {_storage._colorBlurSigmaUndefined ?? false}
     set {_uniqueStorage()._colorBlurSigmaUndefined = newValue}
   }
   /// Returns true if `colorBlurSigmaUndefined` has been explicitly set.
-  public var hasColorBlurSigmaUndefined: Bool {return _storage._colorBlurSigmaUndefined != nil}
+  public var hasColorBlurSigmaUndefined: Bool {_storage._colorBlurSigmaUndefined != nil}
   /// Clears the value of `colorBlurSigmaUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColorBlurSigmaUndefined() {_uniqueStorage()._colorBlurSigmaUndefined = nil}
 
   public var colorContrast: TSSSOS_SpecDoubleArchive {
-    get {return _storage._colorContrast ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._colorContrast ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._colorContrast = newValue}
   }
   /// Returns true if `colorContrast` has been explicitly set.
-  public var hasColorContrast: Bool {return _storage._colorContrast != nil}
+  public var hasColorContrast: Bool {_storage._colorContrast != nil}
   /// Clears the value of `colorContrast`. Subsequent reads from it will return its default value.
   public mutating func clearColorContrast() {_uniqueStorage()._colorContrast = nil}
 
   public var colorContrastUndefined: Bool {
-    get {return _storage._colorContrastUndefined ?? false}
+    get {_storage._colorContrastUndefined ?? false}
     set {_uniqueStorage()._colorContrastUndefined = newValue}
   }
   /// Returns true if `colorContrastUndefined` has been explicitly set.
-  public var hasColorContrastUndefined: Bool {return _storage._colorContrastUndefined != nil}
+  public var hasColorContrastUndefined: Bool {_storage._colorContrastUndefined != nil}
   /// Clears the value of `colorContrastUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColorContrastUndefined() {_uniqueStorage()._colorContrastUndefined = nil}
 
   public var colorGamma: TSSSOS_SpecDoubleArchive {
-    get {return _storage._colorGamma ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._colorGamma ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._colorGamma = newValue}
   }
   /// Returns true if `colorGamma` has been explicitly set.
-  public var hasColorGamma: Bool {return _storage._colorGamma != nil}
+  public var hasColorGamma: Bool {_storage._colorGamma != nil}
   /// Clears the value of `colorGamma`. Subsequent reads from it will return its default value.
   public mutating func clearColorGamma() {_uniqueStorage()._colorGamma = nil}
 
   public var colorGammaUndefined: Bool {
-    get {return _storage._colorGammaUndefined ?? false}
+    get {_storage._colorGammaUndefined ?? false}
     set {_uniqueStorage()._colorGammaUndefined = newValue}
   }
   /// Returns true if `colorGammaUndefined` has been explicitly set.
-  public var hasColorGammaUndefined: Bool {return _storage._colorGammaUndefined != nil}
+  public var hasColorGammaUndefined: Bool {_storage._colorGammaUndefined != nil}
   /// Clears the value of `colorGammaUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColorGammaUndefined() {_uniqueStorage()._colorGammaUndefined = nil}
 
   public var colorSaturation: TSSSOS_SpecDoubleArchive {
-    get {return _storage._colorSaturation ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._colorSaturation ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._colorSaturation = newValue}
   }
   /// Returns true if `colorSaturation` has been explicitly set.
-  public var hasColorSaturation: Bool {return _storage._colorSaturation != nil}
+  public var hasColorSaturation: Bool {_storage._colorSaturation != nil}
   /// Clears the value of `colorSaturation`. Subsequent reads from it will return its default value.
   public mutating func clearColorSaturation() {_uniqueStorage()._colorSaturation = nil}
 
   public var colorSaturationUndefined: Bool {
-    get {return _storage._colorSaturationUndefined ?? false}
+    get {_storage._colorSaturationUndefined ?? false}
     set {_uniqueStorage()._colorSaturationUndefined = newValue}
   }
   /// Returns true if `colorSaturationUndefined` has been explicitly set.
-  public var hasColorSaturationUndefined: Bool {return _storage._colorSaturationUndefined != nil}
+  public var hasColorSaturationUndefined: Bool {_storage._colorSaturationUndefined != nil}
   /// Clears the value of `colorSaturationUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColorSaturationUndefined() {_uniqueStorage()._colorSaturationUndefined = nil}
 
   public var colorBrightness: TSSSOS_SpecDoubleArchive {
-    get {return _storage._colorBrightness ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._colorBrightness ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._colorBrightness = newValue}
   }
   /// Returns true if `colorBrightness` has been explicitly set.
-  public var hasColorBrightness: Bool {return _storage._colorBrightness != nil}
+  public var hasColorBrightness: Bool {_storage._colorBrightness != nil}
   /// Clears the value of `colorBrightness`. Subsequent reads from it will return its default value.
   public mutating func clearColorBrightness() {_uniqueStorage()._colorBrightness = nil}
 
   public var colorBrightnessUndefined: Bool {
-    get {return _storage._colorBrightnessUndefined ?? false}
+    get {_storage._colorBrightnessUndefined ?? false}
     set {_uniqueStorage()._colorBrightnessUndefined = newValue}
   }
   /// Returns true if `colorBrightnessUndefined` has been explicitly set.
-  public var hasColorBrightnessUndefined: Bool {return _storage._colorBrightnessUndefined != nil}
+  public var hasColorBrightnessUndefined: Bool {_storage._colorBrightnessUndefined != nil}
   /// Clears the value of `colorBrightnessUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColorBrightnessUndefined() {_uniqueStorage()._colorBrightnessUndefined = nil}
 
   public var colorHue: TSSSOS_SpecDoubleArchive {
-    get {return _storage._colorHue ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._colorHue ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._colorHue = newValue}
   }
   /// Returns true if `colorHue` has been explicitly set.
-  public var hasColorHue: Bool {return _storage._colorHue != nil}
+  public var hasColorHue: Bool {_storage._colorHue != nil}
   /// Clears the value of `colorHue`. Subsequent reads from it will return its default value.
   public mutating func clearColorHue() {_uniqueStorage()._colorHue = nil}
 
   public var colorHueUndefined: Bool {
-    get {return _storage._colorHueUndefined ?? false}
+    get {_storage._colorHueUndefined ?? false}
     set {_uniqueStorage()._colorHueUndefined = newValue}
   }
   /// Returns true if `colorHueUndefined` has been explicitly set.
-  public var hasColorHueUndefined: Bool {return _storage._colorHueUndefined != nil}
+  public var hasColorHueUndefined: Bool {_storage._colorHueUndefined != nil}
   /// Clears the value of `colorHueUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColorHueUndefined() {_uniqueStorage()._colorHueUndefined = nil}
 
   public var colorVibrance: TSSSOS_SpecDoubleArchive {
-    get {return _storage._colorVibrance ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._colorVibrance ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._colorVibrance = newValue}
   }
   /// Returns true if `colorVibrance` has been explicitly set.
-  public var hasColorVibrance: Bool {return _storage._colorVibrance != nil}
+  public var hasColorVibrance: Bool {_storage._colorVibrance != nil}
   /// Clears the value of `colorVibrance`. Subsequent reads from it will return its default value.
   public mutating func clearColorVibrance() {_uniqueStorage()._colorVibrance = nil}
 
   public var colorVibranceUndefined: Bool {
-    get {return _storage._colorVibranceUndefined ?? false}
+    get {_storage._colorVibranceUndefined ?? false}
     set {_uniqueStorage()._colorVibranceUndefined = newValue}
   }
   /// Returns true if `colorVibranceUndefined` has been explicitly set.
-  public var hasColorVibranceUndefined: Bool {return _storage._colorVibranceUndefined != nil}
+  public var hasColorVibranceUndefined: Bool {_storage._colorVibranceUndefined != nil}
   /// Clears the value of `colorVibranceUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColorVibranceUndefined() {_uniqueStorage()._colorVibranceUndefined = nil}
 
   public var noiseAmplitude: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseAmplitude ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseAmplitude ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseAmplitude = newValue}
   }
   /// Returns true if `noiseAmplitude` has been explicitly set.
-  public var hasNoiseAmplitude: Bool {return _storage._noiseAmplitude != nil}
+  public var hasNoiseAmplitude: Bool {_storage._noiseAmplitude != nil}
   /// Clears the value of `noiseAmplitude`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseAmplitude() {_uniqueStorage()._noiseAmplitude = nil}
 
   public var noiseAmplitudeUndefined: Bool {
-    get {return _storage._noiseAmplitudeUndefined ?? false}
+    get {_storage._noiseAmplitudeUndefined ?? false}
     set {_uniqueStorage()._noiseAmplitudeUndefined = newValue}
   }
   /// Returns true if `noiseAmplitudeUndefined` has been explicitly set.
-  public var hasNoiseAmplitudeUndefined: Bool {return _storage._noiseAmplitudeUndefined != nil}
+  public var hasNoiseAmplitudeUndefined: Bool {_storage._noiseAmplitudeUndefined != nil}
   /// Clears the value of `noiseAmplitudeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseAmplitudeUndefined() {_uniqueStorage()._noiseAmplitudeUndefined = nil}
 
   public var noiseMovement: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseMovement ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseMovement ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseMovement = newValue}
   }
   /// Returns true if `noiseMovement` has been explicitly set.
-  public var hasNoiseMovement: Bool {return _storage._noiseMovement != nil}
+  public var hasNoiseMovement: Bool {_storage._noiseMovement != nil}
   /// Clears the value of `noiseMovement`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseMovement() {_uniqueStorage()._noiseMovement = nil}
 
   public var noiseMovementUndefined: Bool {
-    get {return _storage._noiseMovementUndefined ?? false}
+    get {_storage._noiseMovementUndefined ?? false}
     set {_uniqueStorage()._noiseMovementUndefined = newValue}
   }
   /// Returns true if `noiseMovementUndefined` has been explicitly set.
-  public var hasNoiseMovementUndefined: Bool {return _storage._noiseMovementUndefined != nil}
+  public var hasNoiseMovementUndefined: Bool {_storage._noiseMovementUndefined != nil}
   /// Clears the value of `noiseMovementUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseMovementUndefined() {_uniqueStorage()._noiseMovementUndefined = nil}
 
   public var noiseOctaves: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseOctaves ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseOctaves ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseOctaves = newValue}
   }
   /// Returns true if `noiseOctaves` has been explicitly set.
-  public var hasNoiseOctaves: Bool {return _storage._noiseOctaves != nil}
+  public var hasNoiseOctaves: Bool {_storage._noiseOctaves != nil}
   /// Clears the value of `noiseOctaves`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseOctaves() {_uniqueStorage()._noiseOctaves = nil}
 
   public var noiseOctavesUndefined: Bool {
-    get {return _storage._noiseOctavesUndefined ?? false}
+    get {_storage._noiseOctavesUndefined ?? false}
     set {_uniqueStorage()._noiseOctavesUndefined = newValue}
   }
   /// Returns true if `noiseOctavesUndefined` has been explicitly set.
-  public var hasNoiseOctavesUndefined: Bool {return _storage._noiseOctavesUndefined != nil}
+  public var hasNoiseOctavesUndefined: Bool {_storage._noiseOctavesUndefined != nil}
   /// Clears the value of `noiseOctavesUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseOctavesUndefined() {_uniqueStorage()._noiseOctavesUndefined = nil}
 
   public var noiseScale: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseScale ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseScale ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseScale = newValue}
   }
   /// Returns true if `noiseScale` has been explicitly set.
-  public var hasNoiseScale: Bool {return _storage._noiseScale != nil}
+  public var hasNoiseScale: Bool {_storage._noiseScale != nil}
   /// Clears the value of `noiseScale`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseScale() {_uniqueStorage()._noiseScale = nil}
 
   public var noiseScaleUndefined: Bool {
-    get {return _storage._noiseScaleUndefined ?? false}
+    get {_storage._noiseScaleUndefined ?? false}
     set {_uniqueStorage()._noiseScaleUndefined = newValue}
   }
   /// Returns true if `noiseScaleUndefined` has been explicitly set.
-  public var hasNoiseScaleUndefined: Bool {return _storage._noiseScaleUndefined != nil}
+  public var hasNoiseScaleUndefined: Bool {_storage._noiseScaleUndefined != nil}
   /// Clears the value of `noiseScaleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseScaleUndefined() {_uniqueStorage()._noiseScaleUndefined = nil}
 
   public var noiseScaleHorizontal: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseScaleHorizontal ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseScaleHorizontal ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseScaleHorizontal = newValue}
   }
   /// Returns true if `noiseScaleHorizontal` has been explicitly set.
-  public var hasNoiseScaleHorizontal: Bool {return _storage._noiseScaleHorizontal != nil}
+  public var hasNoiseScaleHorizontal: Bool {_storage._noiseScaleHorizontal != nil}
   /// Clears the value of `noiseScaleHorizontal`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseScaleHorizontal() {_uniqueStorage()._noiseScaleHorizontal = nil}
 
   public var noiseScaleHorizontalUndefined: Bool {
-    get {return _storage._noiseScaleHorizontalUndefined ?? false}
+    get {_storage._noiseScaleHorizontalUndefined ?? false}
     set {_uniqueStorage()._noiseScaleHorizontalUndefined = newValue}
   }
   /// Returns true if `noiseScaleHorizontalUndefined` has been explicitly set.
-  public var hasNoiseScaleHorizontalUndefined: Bool {return _storage._noiseScaleHorizontalUndefined != nil}
+  public var hasNoiseScaleHorizontalUndefined: Bool {_storage._noiseScaleHorizontalUndefined != nil}
   /// Clears the value of `noiseScaleHorizontalUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseScaleHorizontalUndefined() {_uniqueStorage()._noiseScaleHorizontalUndefined = nil}
 
   public var noiseScaleVertical: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseScaleVertical ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseScaleVertical ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseScaleVertical = newValue}
   }
   /// Returns true if `noiseScaleVertical` has been explicitly set.
-  public var hasNoiseScaleVertical: Bool {return _storage._noiseScaleVertical != nil}
+  public var hasNoiseScaleVertical: Bool {_storage._noiseScaleVertical != nil}
   /// Clears the value of `noiseScaleVertical`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseScaleVertical() {_uniqueStorage()._noiseScaleVertical = nil}
 
   public var noiseScaleVerticalUndefined: Bool {
-    get {return _storage._noiseScaleVerticalUndefined ?? false}
+    get {_storage._noiseScaleVerticalUndefined ?? false}
     set {_uniqueStorage()._noiseScaleVerticalUndefined = newValue}
   }
   /// Returns true if `noiseScaleVerticalUndefined` has been explicitly set.
-  public var hasNoiseScaleVerticalUndefined: Bool {return _storage._noiseScaleVerticalUndefined != nil}
+  public var hasNoiseScaleVerticalUndefined: Bool {_storage._noiseScaleVerticalUndefined != nil}
   /// Clears the value of `noiseScaleVerticalUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseScaleVerticalUndefined() {_uniqueStorage()._noiseScaleVerticalUndefined = nil}
 
   public var noiseGain: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseGain ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseGain ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseGain = newValue}
   }
   /// Returns true if `noiseGain` has been explicitly set.
-  public var hasNoiseGain: Bool {return _storage._noiseGain != nil}
+  public var hasNoiseGain: Bool {_storage._noiseGain != nil}
   /// Clears the value of `noiseGain`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseGain() {_uniqueStorage()._noiseGain = nil}
 
   public var noiseGainUndefined: Bool {
-    get {return _storage._noiseGainUndefined ?? false}
+    get {_storage._noiseGainUndefined ?? false}
     set {_uniqueStorage()._noiseGainUndefined = newValue}
   }
   /// Returns true if `noiseGainUndefined` has been explicitly set.
-  public var hasNoiseGainUndefined: Bool {return _storage._noiseGainUndefined != nil}
+  public var hasNoiseGainUndefined: Bool {_storage._noiseGainUndefined != nil}
   /// Clears the value of `noiseGainUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseGainUndefined() {_uniqueStorage()._noiseGainUndefined = nil}
 
   public var noiseLacunarity: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseLacunarity ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseLacunarity ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseLacunarity = newValue}
   }
   /// Returns true if `noiseLacunarity` has been explicitly set.
-  public var hasNoiseLacunarity: Bool {return _storage._noiseLacunarity != nil}
+  public var hasNoiseLacunarity: Bool {_storage._noiseLacunarity != nil}
   /// Clears the value of `noiseLacunarity`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseLacunarity() {_uniqueStorage()._noiseLacunarity = nil}
 
   public var noiseLacunarityUndefined: Bool {
-    get {return _storage._noiseLacunarityUndefined ?? false}
+    get {_storage._noiseLacunarityUndefined ?? false}
     set {_uniqueStorage()._noiseLacunarityUndefined = newValue}
   }
   /// Returns true if `noiseLacunarityUndefined` has been explicitly set.
-  public var hasNoiseLacunarityUndefined: Bool {return _storage._noiseLacunarityUndefined != nil}
+  public var hasNoiseLacunarityUndefined: Bool {_storage._noiseLacunarityUndefined != nil}
   /// Clears the value of `noiseLacunarityUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseLacunarityUndefined() {_uniqueStorage()._noiseLacunarityUndefined = nil}
 
   public var noiseSpeed: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseSpeed ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseSpeed ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseSpeed = newValue}
   }
   /// Returns true if `noiseSpeed` has been explicitly set.
-  public var hasNoiseSpeed: Bool {return _storage._noiseSpeed != nil}
+  public var hasNoiseSpeed: Bool {_storage._noiseSpeed != nil}
   /// Clears the value of `noiseSpeed`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseSpeed() {_uniqueStorage()._noiseSpeed = nil}
 
   public var noiseSpeedUndefined: Bool {
-    get {return _storage._noiseSpeedUndefined ?? false}
+    get {_storage._noiseSpeedUndefined ?? false}
     set {_uniqueStorage()._noiseSpeedUndefined = newValue}
   }
   /// Returns true if `noiseSpeedUndefined` has been explicitly set.
-  public var hasNoiseSpeedUndefined: Bool {return _storage._noiseSpeedUndefined != nil}
+  public var hasNoiseSpeedUndefined: Bool {_storage._noiseSpeedUndefined != nil}
   /// Clears the value of `noiseSpeedUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseSpeedUndefined() {_uniqueStorage()._noiseSpeedUndefined = nil}
 
   public var colorPaletteOffset: TSSSOS_SpecIntegerArchive {
-    get {return _storage._colorPaletteOffset ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._colorPaletteOffset ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._colorPaletteOffset = newValue}
   }
   /// Returns true if `colorPaletteOffset` has been explicitly set.
-  public var hasColorPaletteOffset: Bool {return _storage._colorPaletteOffset != nil}
+  public var hasColorPaletteOffset: Bool {_storage._colorPaletteOffset != nil}
   /// Clears the value of `colorPaletteOffset`. Subsequent reads from it will return its default value.
   public mutating func clearColorPaletteOffset() {_uniqueStorage()._colorPaletteOffset = nil}
 
   public var colorPaletteOffsetUndefined: Bool {
-    get {return _storage._colorPaletteOffsetUndefined ?? false}
+    get {_storage._colorPaletteOffsetUndefined ?? false}
     set {_uniqueStorage()._colorPaletteOffsetUndefined = newValue}
   }
   /// Returns true if `colorPaletteOffsetUndefined` has been explicitly set.
-  public var hasColorPaletteOffsetUndefined: Bool {return _storage._colorPaletteOffsetUndefined != nil}
+  public var hasColorPaletteOffsetUndefined: Bool {_storage._colorPaletteOffsetUndefined != nil}
   /// Clears the value of `colorPaletteOffsetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColorPaletteOffsetUndefined() {_uniqueStorage()._colorPaletteOffsetUndefined = nil}
 
   public var zoom: TSSSOS_SpecDoubleArchive {
-    get {return _storage._zoom ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._zoom ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._zoom = newValue}
   }
   /// Returns true if `zoom` has been explicitly set.
-  public var hasZoom: Bool {return _storage._zoom != nil}
+  public var hasZoom: Bool {_storage._zoom != nil}
   /// Clears the value of `zoom`. Subsequent reads from it will return its default value.
   public mutating func clearZoom() {_uniqueStorage()._zoom = nil}
 
   public var zoomUndefined: Bool {
-    get {return _storage._zoomUndefined ?? false}
+    get {_storage._zoomUndefined ?? false}
     set {_uniqueStorage()._zoomUndefined = newValue}
   }
   /// Returns true if `zoomUndefined` has been explicitly set.
-  public var hasZoomUndefined: Bool {return _storage._zoomUndefined != nil}
+  public var hasZoomUndefined: Bool {_storage._zoomUndefined != nil}
   /// Clears the value of `zoomUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearZoomUndefined() {_uniqueStorage()._zoomUndefined = nil}
 
   public var invert: TSSSOS_SpecBoolArchive {
-    get {return _storage._invert ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._invert ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._invert = newValue}
   }
   /// Returns true if `invert` has been explicitly set.
-  public var hasInvert: Bool {return _storage._invert != nil}
+  public var hasInvert: Bool {_storage._invert != nil}
   /// Clears the value of `invert`. Subsequent reads from it will return its default value.
   public mutating func clearInvert() {_uniqueStorage()._invert = nil}
 
   public var invertUndefined: Bool {
-    get {return _storage._invertUndefined ?? false}
+    get {_storage._invertUndefined ?? false}
     set {_uniqueStorage()._invertUndefined = newValue}
   }
   /// Returns true if `invertUndefined` has been explicitly set.
-  public var hasInvertUndefined: Bool {return _storage._invertUndefined != nil}
+  public var hasInvertUndefined: Bool {_storage._invertUndefined != nil}
   /// Clears the value of `invertUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearInvertUndefined() {_uniqueStorage()._invertUndefined = nil}
 
   public var blendMode: TSSSOS_SpecStringArchive {
-    get {return _storage._blendMode ?? TSSSOS_SpecStringArchive()}
+    get {_storage._blendMode ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._blendMode = newValue}
   }
   /// Returns true if `blendMode` has been explicitly set.
-  public var hasBlendMode: Bool {return _storage._blendMode != nil}
+  public var hasBlendMode: Bool {_storage._blendMode != nil}
   /// Clears the value of `blendMode`. Subsequent reads from it will return its default value.
   public mutating func clearBlendMode() {_uniqueStorage()._blendMode = nil}
 
   public var blendModeUndefined: Bool {
-    get {return _storage._blendModeUndefined ?? false}
+    get {_storage._blendModeUndefined ?? false}
     set {_uniqueStorage()._blendModeUndefined = newValue}
   }
   /// Returns true if `blendModeUndefined` has been explicitly set.
-  public var hasBlendModeUndefined: Bool {return _storage._blendModeUndefined != nil}
+  public var hasBlendModeUndefined: Bool {_storage._blendModeUndefined != nil}
   /// Clears the value of `blendModeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBlendModeUndefined() {_uniqueStorage()._blendModeUndefined = nil}
 
   public var sourceBlendFactor: TSSSOS_SpecStringArchive {
-    get {return _storage._sourceBlendFactor ?? TSSSOS_SpecStringArchive()}
+    get {_storage._sourceBlendFactor ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._sourceBlendFactor = newValue}
   }
   /// Returns true if `sourceBlendFactor` has been explicitly set.
-  public var hasSourceBlendFactor: Bool {return _storage._sourceBlendFactor != nil}
+  public var hasSourceBlendFactor: Bool {_storage._sourceBlendFactor != nil}
   /// Clears the value of `sourceBlendFactor`. Subsequent reads from it will return its default value.
   public mutating func clearSourceBlendFactor() {_uniqueStorage()._sourceBlendFactor = nil}
 
   public var sourceBlendFactorUndefined: Bool {
-    get {return _storage._sourceBlendFactorUndefined ?? false}
+    get {_storage._sourceBlendFactorUndefined ?? false}
     set {_uniqueStorage()._sourceBlendFactorUndefined = newValue}
   }
   /// Returns true if `sourceBlendFactorUndefined` has been explicitly set.
-  public var hasSourceBlendFactorUndefined: Bool {return _storage._sourceBlendFactorUndefined != nil}
+  public var hasSourceBlendFactorUndefined: Bool {_storage._sourceBlendFactorUndefined != nil}
   /// Clears the value of `sourceBlendFactorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSourceBlendFactorUndefined() {_uniqueStorage()._sourceBlendFactorUndefined = nil}
 
   public var destBlendFactor: TSSSOS_SpecStringArchive {
-    get {return _storage._destBlendFactor ?? TSSSOS_SpecStringArchive()}
+    get {_storage._destBlendFactor ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._destBlendFactor = newValue}
   }
   /// Returns true if `destBlendFactor` has been explicitly set.
-  public var hasDestBlendFactor: Bool {return _storage._destBlendFactor != nil}
+  public var hasDestBlendFactor: Bool {_storage._destBlendFactor != nil}
   /// Clears the value of `destBlendFactor`. Subsequent reads from it will return its default value.
   public mutating func clearDestBlendFactor() {_uniqueStorage()._destBlendFactor = nil}
 
   public var destBlendFactorUndefined: Bool {
-    get {return _storage._destBlendFactorUndefined ?? false}
+    get {_storage._destBlendFactorUndefined ?? false}
     set {_uniqueStorage()._destBlendFactorUndefined = newValue}
   }
   /// Returns true if `destBlendFactorUndefined` has been explicitly set.
-  public var hasDestBlendFactorUndefined: Bool {return _storage._destBlendFactorUndefined != nil}
+  public var hasDestBlendFactorUndefined: Bool {_storage._destBlendFactorUndefined != nil}
   /// Clears the value of `destBlendFactorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDestBlendFactorUndefined() {_uniqueStorage()._destBlendFactorUndefined = nil}
 
   public var motion: TSSSOS_SpecStringArchive {
-    get {return _storage._motion ?? TSSSOS_SpecStringArchive()}
+    get {_storage._motion ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._motion = newValue}
   }
   /// Returns true if `motion` has been explicitly set.
-  public var hasMotion: Bool {return _storage._motion != nil}
+  public var hasMotion: Bool {_storage._motion != nil}
   /// Clears the value of `motion`. Subsequent reads from it will return its default value.
   public mutating func clearMotion() {_uniqueStorage()._motion = nil}
 
   public var motionUndefined: Bool {
-    get {return _storage._motionUndefined ?? false}
+    get {_storage._motionUndefined ?? false}
     set {_uniqueStorage()._motionUndefined = newValue}
   }
   /// Returns true if `motionUndefined` has been explicitly set.
-  public var hasMotionUndefined: Bool {return _storage._motionUndefined != nil}
+  public var hasMotionUndefined: Bool {_storage._motionUndefined != nil}
   /// Clears the value of `motionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearMotionUndefined() {_uniqueStorage()._motionUndefined = nil}
 
   public var backgroundColor: TSSSOS_SpecColorArchive {
-    get {return _storage._backgroundColor ?? TSSSOS_SpecColorArchive()}
+    get {_storage._backgroundColor ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._backgroundColor = newValue}
   }
   /// Returns true if `backgroundColor` has been explicitly set.
-  public var hasBackgroundColor: Bool {return _storage._backgroundColor != nil}
+  public var hasBackgroundColor: Bool {_storage._backgroundColor != nil}
   /// Clears the value of `backgroundColor`. Subsequent reads from it will return its default value.
   public mutating func clearBackgroundColor() {_uniqueStorage()._backgroundColor = nil}
 
   public var backgroundColorUndefined: Bool {
-    get {return _storage._backgroundColorUndefined ?? false}
+    get {_storage._backgroundColorUndefined ?? false}
     set {_uniqueStorage()._backgroundColorUndefined = newValue}
   }
   /// Returns true if `backgroundColorUndefined` has been explicitly set.
-  public var hasBackgroundColorUndefined: Bool {return _storage._backgroundColorUndefined != nil}
+  public var hasBackgroundColorUndefined: Bool {_storage._backgroundColorUndefined != nil}
   /// Clears the value of `backgroundColorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBackgroundColorUndefined() {_uniqueStorage()._backgroundColorUndefined = nil}
 
   public var foregroundColor: TSSSOS_SpecColorArchive {
-    get {return _storage._foregroundColor ?? TSSSOS_SpecColorArchive()}
+    get {_storage._foregroundColor ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._foregroundColor = newValue}
   }
   /// Returns true if `foregroundColor` has been explicitly set.
-  public var hasForegroundColor: Bool {return _storage._foregroundColor != nil}
+  public var hasForegroundColor: Bool {_storage._foregroundColor != nil}
   /// Clears the value of `foregroundColor`. Subsequent reads from it will return its default value.
   public mutating func clearForegroundColor() {_uniqueStorage()._foregroundColor = nil}
 
   public var foregroundColorUndefined: Bool {
-    get {return _storage._foregroundColorUndefined ?? false}
+    get {_storage._foregroundColorUndefined ?? false}
     set {_uniqueStorage()._foregroundColorUndefined = newValue}
   }
   /// Returns true if `foregroundColorUndefined` has been explicitly set.
-  public var hasForegroundColorUndefined: Bool {return _storage._foregroundColorUndefined != nil}
+  public var hasForegroundColorUndefined: Bool {_storage._foregroundColorUndefined != nil}
   /// Clears the value of `foregroundColorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearForegroundColorUndefined() {_uniqueStorage()._foregroundColorUndefined = nil}
 
   public var lineColor: TSSSOS_SpecColorArchive {
-    get {return _storage._lineColor ?? TSSSOS_SpecColorArchive()}
+    get {_storage._lineColor ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._lineColor = newValue}
   }
   /// Returns true if `lineColor` has been explicitly set.
-  public var hasLineColor: Bool {return _storage._lineColor != nil}
+  public var hasLineColor: Bool {_storage._lineColor != nil}
   /// Clears the value of `lineColor`. Subsequent reads from it will return its default value.
   public mutating func clearLineColor() {_uniqueStorage()._lineColor = nil}
 
   public var lineColorUndefined: Bool {
-    get {return _storage._lineColorUndefined ?? false}
+    get {_storage._lineColorUndefined ?? false}
     set {_uniqueStorage()._lineColorUndefined = newValue}
   }
   /// Returns true if `lineColorUndefined` has been explicitly set.
-  public var hasLineColorUndefined: Bool {return _storage._lineColorUndefined != nil}
+  public var hasLineColorUndefined: Bool {_storage._lineColorUndefined != nil}
   /// Clears the value of `lineColorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLineColorUndefined() {_uniqueStorage()._lineColorUndefined = nil}
 
   public var pointColor: TSSSOS_SpecColorArchive {
-    get {return _storage._pointColor ?? TSSSOS_SpecColorArchive()}
+    get {_storage._pointColor ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._pointColor = newValue}
   }
   /// Returns true if `pointColor` has been explicitly set.
-  public var hasPointColor: Bool {return _storage._pointColor != nil}
+  public var hasPointColor: Bool {_storage._pointColor != nil}
   /// Clears the value of `pointColor`. Subsequent reads from it will return its default value.
   public mutating func clearPointColor() {_uniqueStorage()._pointColor = nil}
 
   public var pointColorUndefined: Bool {
-    get {return _storage._pointColorUndefined ?? false}
+    get {_storage._pointColorUndefined ?? false}
     set {_uniqueStorage()._pointColorUndefined = newValue}
   }
   /// Returns true if `pointColorUndefined` has been explicitly set.
-  public var hasPointColorUndefined: Bool {return _storage._pointColorUndefined != nil}
+  public var hasPointColorUndefined: Bool {_storage._pointColorUndefined != nil}
   /// Clears the value of `pointColorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearPointColorUndefined() {_uniqueStorage()._pointColorUndefined = nil}
 
   public var alpha: TSSSOS_SpecDoubleArchive {
-    get {return _storage._alpha ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._alpha ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._alpha = newValue}
   }
   /// Returns true if `alpha` has been explicitly set.
-  public var hasAlpha: Bool {return _storage._alpha != nil}
+  public var hasAlpha: Bool {_storage._alpha != nil}
   /// Clears the value of `alpha`. Subsequent reads from it will return its default value.
   public mutating func clearAlpha() {_uniqueStorage()._alpha = nil}
 
   public var alphaUndefined: Bool {
-    get {return _storage._alphaUndefined ?? false}
+    get {_storage._alphaUndefined ?? false}
     set {_uniqueStorage()._alphaUndefined = newValue}
   }
   /// Returns true if `alphaUndefined` has been explicitly set.
-  public var hasAlphaUndefined: Bool {return _storage._alphaUndefined != nil}
+  public var hasAlphaUndefined: Bool {_storage._alphaUndefined != nil}
   /// Clears the value of `alphaUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearAlphaUndefined() {_uniqueStorage()._alphaUndefined = nil}
 
   public var border: TSSSOS_SpecDoubleArchive {
-    get {return _storage._border ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._border ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._border = newValue}
   }
   /// Returns true if `border` has been explicitly set.
-  public var hasBorder: Bool {return _storage._border != nil}
+  public var hasBorder: Bool {_storage._border != nil}
   /// Clears the value of `border`. Subsequent reads from it will return its default value.
   public mutating func clearBorder() {_uniqueStorage()._border = nil}
 
   public var borderUndefined: Bool {
-    get {return _storage._borderUndefined ?? false}
+    get {_storage._borderUndefined ?? false}
     set {_uniqueStorage()._borderUndefined = newValue}
   }
   /// Returns true if `borderUndefined` has been explicitly set.
-  public var hasBorderUndefined: Bool {return _storage._borderUndefined != nil}
+  public var hasBorderUndefined: Bool {_storage._borderUndefined != nil}
   /// Clears the value of `borderUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBorderUndefined() {_uniqueStorage()._borderUndefined = nil}
 
   public var blend: TSSSOS_SpecDoubleArchive {
-    get {return _storage._blend ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._blend ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._blend = newValue}
   }
   /// Returns true if `blend` has been explicitly set.
-  public var hasBlend: Bool {return _storage._blend != nil}
+  public var hasBlend: Bool {_storage._blend != nil}
   /// Clears the value of `blend`. Subsequent reads from it will return its default value.
   public mutating func clearBlend() {_uniqueStorage()._blend = nil}
 
   public var blendUndefined: Bool {
-    get {return _storage._blendUndefined ?? false}
+    get {_storage._blendUndefined ?? false}
     set {_uniqueStorage()._blendUndefined = newValue}
   }
   /// Returns true if `blendUndefined` has been explicitly set.
-  public var hasBlendUndefined: Bool {return _storage._blendUndefined != nil}
+  public var hasBlendUndefined: Bool {_storage._blendUndefined != nil}
   /// Clears the value of `blendUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBlendUndefined() {_uniqueStorage()._blendUndefined = nil}
 
   public var brightness: TSSSOS_SpecDoubleArchive {
-    get {return _storage._brightness ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._brightness ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._brightness = newValue}
   }
   /// Returns true if `brightness` has been explicitly set.
-  public var hasBrightness: Bool {return _storage._brightness != nil}
+  public var hasBrightness: Bool {_storage._brightness != nil}
   /// Clears the value of `brightness`. Subsequent reads from it will return its default value.
   public mutating func clearBrightness() {_uniqueStorage()._brightness = nil}
 
   public var brightnessUndefined: Bool {
-    get {return _storage._brightnessUndefined ?? false}
+    get {_storage._brightnessUndefined ?? false}
     set {_uniqueStorage()._brightnessUndefined = newValue}
   }
   /// Returns true if `brightnessUndefined` has been explicitly set.
-  public var hasBrightnessUndefined: Bool {return _storage._brightnessUndefined != nil}
+  public var hasBrightnessUndefined: Bool {_storage._brightnessUndefined != nil}
   /// Clears the value of `brightnessUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBrightnessUndefined() {_uniqueStorage()._brightnessUndefined = nil}
 
   public var borderLightness: TSSSOS_SpecDoubleArchive {
-    get {return _storage._borderLightness ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._borderLightness ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._borderLightness = newValue}
   }
   /// Returns true if `borderLightness` has been explicitly set.
-  public var hasBorderLightness: Bool {return _storage._borderLightness != nil}
+  public var hasBorderLightness: Bool {_storage._borderLightness != nil}
   /// Clears the value of `borderLightness`. Subsequent reads from it will return its default value.
   public mutating func clearBorderLightness() {_uniqueStorage()._borderLightness = nil}
 
   public var borderLightnessUndefined: Bool {
-    get {return _storage._borderLightnessUndefined ?? false}
+    get {_storage._borderLightnessUndefined ?? false}
     set {_uniqueStorage()._borderLightnessUndefined = newValue}
   }
   /// Returns true if `borderLightnessUndefined` has been explicitly set.
-  public var hasBorderLightnessUndefined: Bool {return _storage._borderLightnessUndefined != nil}
+  public var hasBorderLightnessUndefined: Bool {_storage._borderLightnessUndefined != nil}
   /// Clears the value of `borderLightnessUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBorderLightnessUndefined() {_uniqueStorage()._borderLightnessUndefined = nil}
 
   public var contrast: TSSSOS_SpecDoubleArchive {
-    get {return _storage._contrast ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._contrast ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._contrast = newValue}
   }
   /// Returns true if `contrast` has been explicitly set.
-  public var hasContrast: Bool {return _storage._contrast != nil}
+  public var hasContrast: Bool {_storage._contrast != nil}
   /// Clears the value of `contrast`. Subsequent reads from it will return its default value.
   public mutating func clearContrast() {_uniqueStorage()._contrast = nil}
 
   public var contrastUndefined: Bool {
-    get {return _storage._contrastUndefined ?? false}
+    get {_storage._contrastUndefined ?? false}
     set {_uniqueStorage()._contrastUndefined = newValue}
   }
   /// Returns true if `contrastUndefined` has been explicitly set.
-  public var hasContrastUndefined: Bool {return _storage._contrastUndefined != nil}
+  public var hasContrastUndefined: Bool {_storage._contrastUndefined != nil}
   /// Clears the value of `contrastUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearContrastUndefined() {_uniqueStorage()._contrastUndefined = nil}
 
   public var damping: TSSSOS_SpecDoubleArchive {
-    get {return _storage._damping ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._damping ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._damping = newValue}
   }
   /// Returns true if `damping` has been explicitly set.
-  public var hasDamping: Bool {return _storage._damping != nil}
+  public var hasDamping: Bool {_storage._damping != nil}
   /// Clears the value of `damping`. Subsequent reads from it will return its default value.
   public mutating func clearDamping() {_uniqueStorage()._damping = nil}
 
   public var dampingUndefined: Bool {
-    get {return _storage._dampingUndefined ?? false}
+    get {_storage._dampingUndefined ?? false}
     set {_uniqueStorage()._dampingUndefined = newValue}
   }
   /// Returns true if `dampingUndefined` has been explicitly set.
-  public var hasDampingUndefined: Bool {return _storage._dampingUndefined != nil}
+  public var hasDampingUndefined: Bool {_storage._dampingUndefined != nil}
   /// Clears the value of `dampingUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDampingUndefined() {_uniqueStorage()._dampingUndefined = nil}
 
   public var density: TSSSOS_SpecDoubleArchive {
-    get {return _storage._density ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._density ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._density = newValue}
   }
   /// Returns true if `density` has been explicitly set.
-  public var hasDensity: Bool {return _storage._density != nil}
+  public var hasDensity: Bool {_storage._density != nil}
   /// Clears the value of `density`. Subsequent reads from it will return its default value.
   public mutating func clearDensity() {_uniqueStorage()._density = nil}
 
   public var densityUndefined: Bool {
-    get {return _storage._densityUndefined ?? false}
+    get {_storage._densityUndefined ?? false}
     set {_uniqueStorage()._densityUndefined = newValue}
   }
   /// Returns true if `densityUndefined` has been explicitly set.
-  public var hasDensityUndefined: Bool {return _storage._densityUndefined != nil}
+  public var hasDensityUndefined: Bool {_storage._densityUndefined != nil}
   /// Clears the value of `densityUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDensityUndefined() {_uniqueStorage()._densityUndefined = nil}
 
   public var diffusePower: TSSSOS_SpecDoubleArchive {
-    get {return _storage._diffusePower ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._diffusePower ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._diffusePower = newValue}
   }
   /// Returns true if `diffusePower` has been explicitly set.
-  public var hasDiffusePower: Bool {return _storage._diffusePower != nil}
+  public var hasDiffusePower: Bool {_storage._diffusePower != nil}
   /// Clears the value of `diffusePower`. Subsequent reads from it will return its default value.
   public mutating func clearDiffusePower() {_uniqueStorage()._diffusePower = nil}
 
   public var diffusePowerUndefined: Bool {
-    get {return _storage._diffusePowerUndefined ?? false}
+    get {_storage._diffusePowerUndefined ?? false}
     set {_uniqueStorage()._diffusePowerUndefined = newValue}
   }
   /// Returns true if `diffusePowerUndefined` has been explicitly set.
-  public var hasDiffusePowerUndefined: Bool {return _storage._diffusePowerUndefined != nil}
+  public var hasDiffusePowerUndefined: Bool {_storage._diffusePowerUndefined != nil}
   /// Clears the value of `diffusePowerUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDiffusePowerUndefined() {_uniqueStorage()._diffusePowerUndefined = nil}
 
   public var distortion: TSSSOS_SpecDoubleArchive {
-    get {return _storage._distortion ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._distortion ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._distortion = newValue}
   }
   /// Returns true if `distortion` has been explicitly set.
-  public var hasDistortion: Bool {return _storage._distortion != nil}
+  public var hasDistortion: Bool {_storage._distortion != nil}
   /// Clears the value of `distortion`. Subsequent reads from it will return its default value.
   public mutating func clearDistortion() {_uniqueStorage()._distortion = nil}
 
   public var distortionUndefined: Bool {
-    get {return _storage._distortionUndefined ?? false}
+    get {_storage._distortionUndefined ?? false}
     set {_uniqueStorage()._distortionUndefined = newValue}
   }
   /// Returns true if `distortionUndefined` has been explicitly set.
-  public var hasDistortionUndefined: Bool {return _storage._distortionUndefined != nil}
+  public var hasDistortionUndefined: Bool {_storage._distortionUndefined != nil}
   /// Clears the value of `distortionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDistortionUndefined() {_uniqueStorage()._distortionUndefined = nil}
 
   public var entropy: TSSSOS_SpecDoubleArchive {
-    get {return _storage._entropy ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._entropy ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._entropy = newValue}
   }
   /// Returns true if `entropy` has been explicitly set.
-  public var hasEntropy: Bool {return _storage._entropy != nil}
+  public var hasEntropy: Bool {_storage._entropy != nil}
   /// Clears the value of `entropy`. Subsequent reads from it will return its default value.
   public mutating func clearEntropy() {_uniqueStorage()._entropy = nil}
 
   public var entropyUndefined: Bool {
-    get {return _storage._entropyUndefined ?? false}
+    get {_storage._entropyUndefined ?? false}
     set {_uniqueStorage()._entropyUndefined = newValue}
   }
   /// Returns true if `entropyUndefined` has been explicitly set.
-  public var hasEntropyUndefined: Bool {return _storage._entropyUndefined != nil}
+  public var hasEntropyUndefined: Bool {_storage._entropyUndefined != nil}
   /// Clears the value of `entropyUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearEntropyUndefined() {_uniqueStorage()._entropyUndefined = nil}
 
   public var exposure: TSSSOS_SpecDoubleArchive {
-    get {return _storage._exposure ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._exposure ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._exposure = newValue}
   }
   /// Returns true if `exposure` has been explicitly set.
-  public var hasExposure: Bool {return _storage._exposure != nil}
+  public var hasExposure: Bool {_storage._exposure != nil}
   /// Clears the value of `exposure`. Subsequent reads from it will return its default value.
   public mutating func clearExposure() {_uniqueStorage()._exposure = nil}
 
   public var exposureUndefined: Bool {
-    get {return _storage._exposureUndefined ?? false}
+    get {_storage._exposureUndefined ?? false}
     set {_uniqueStorage()._exposureUndefined = newValue}
   }
   /// Returns true if `exposureUndefined` has been explicitly set.
-  public var hasExposureUndefined: Bool {return _storage._exposureUndefined != nil}
+  public var hasExposureUndefined: Bool {_storage._exposureUndefined != nil}
   /// Clears the value of `exposureUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearExposureUndefined() {_uniqueStorage()._exposureUndefined = nil}
 
   public var filter: TSSSOS_SpecDoubleArchive {
-    get {return _storage._filter ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._filter ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._filter = newValue}
   }
   /// Returns true if `filter` has been explicitly set.
-  public var hasFilter: Bool {return _storage._filter != nil}
+  public var hasFilter: Bool {_storage._filter != nil}
   /// Clears the value of `filter`. Subsequent reads from it will return its default value.
   public mutating func clearFilter() {_uniqueStorage()._filter = nil}
 
   public var filterUndefined: Bool {
-    get {return _storage._filterUndefined ?? false}
+    get {_storage._filterUndefined ?? false}
     set {_uniqueStorage()._filterUndefined = newValue}
   }
   /// Returns true if `filterUndefined` has been explicitly set.
-  public var hasFilterUndefined: Bool {return _storage._filterUndefined != nil}
+  public var hasFilterUndefined: Bool {_storage._filterUndefined != nil}
   /// Clears the value of `filterUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFilterUndefined() {_uniqueStorage()._filterUndefined = nil}
 
   public var fogDistance: TSSSOS_SpecDoubleArchive {
-    get {return _storage._fogDistance ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._fogDistance ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._fogDistance = newValue}
   }
   /// Returns true if `fogDistance` has been explicitly set.
-  public var hasFogDistance: Bool {return _storage._fogDistance != nil}
+  public var hasFogDistance: Bool {_storage._fogDistance != nil}
   /// Clears the value of `fogDistance`. Subsequent reads from it will return its default value.
   public mutating func clearFogDistance() {_uniqueStorage()._fogDistance = nil}
 
   public var fogDistanceUndefined: Bool {
-    get {return _storage._fogDistanceUndefined ?? false}
+    get {_storage._fogDistanceUndefined ?? false}
     set {_uniqueStorage()._fogDistanceUndefined = newValue}
   }
   /// Returns true if `fogDistanceUndefined` has been explicitly set.
-  public var hasFogDistanceUndefined: Bool {return _storage._fogDistanceUndefined != nil}
+  public var hasFogDistanceUndefined: Bool {_storage._fogDistanceUndefined != nil}
   /// Clears the value of `fogDistanceUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFogDistanceUndefined() {_uniqueStorage()._fogDistanceUndefined = nil}
 
   public var fogPower: TSSSOS_SpecDoubleArchive {
-    get {return _storage._fogPower ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._fogPower ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._fogPower = newValue}
   }
   /// Returns true if `fogPower` has been explicitly set.
-  public var hasFogPower: Bool {return _storage._fogPower != nil}
+  public var hasFogPower: Bool {_storage._fogPower != nil}
   /// Clears the value of `fogPower`. Subsequent reads from it will return its default value.
   public mutating func clearFogPower() {_uniqueStorage()._fogPower = nil}
 
   public var fogPowerUndefined: Bool {
-    get {return _storage._fogPowerUndefined ?? false}
+    get {_storage._fogPowerUndefined ?? false}
     set {_uniqueStorage()._fogPowerUndefined = newValue}
   }
   /// Returns true if `fogPowerUndefined` has been explicitly set.
-  public var hasFogPowerUndefined: Bool {return _storage._fogPowerUndefined != nil}
+  public var hasFogPowerUndefined: Bool {_storage._fogPowerUndefined != nil}
   /// Clears the value of `fogPowerUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFogPowerUndefined() {_uniqueStorage()._fogPowerUndefined = nil}
 
   public var gamma: TSSSOS_SpecDoubleArchive {
-    get {return _storage._gamma ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._gamma ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._gamma = newValue}
   }
   /// Returns true if `gamma` has been explicitly set.
-  public var hasGamma: Bool {return _storage._gamma != nil}
+  public var hasGamma: Bool {_storage._gamma != nil}
   /// Clears the value of `gamma`. Subsequent reads from it will return its default value.
   public mutating func clearGamma() {_uniqueStorage()._gamma = nil}
 
   public var gammaUndefined: Bool {
-    get {return _storage._gammaUndefined ?? false}
+    get {_storage._gammaUndefined ?? false}
     set {_uniqueStorage()._gammaUndefined = newValue}
   }
   /// Returns true if `gammaUndefined` has been explicitly set.
-  public var hasGammaUndefined: Bool {return _storage._gammaUndefined != nil}
+  public var hasGammaUndefined: Bool {_storage._gammaUndefined != nil}
   /// Clears the value of `gammaUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearGammaUndefined() {_uniqueStorage()._gammaUndefined = nil}
 
   public var grainAmount: TSSSOS_SpecDoubleArchive {
-    get {return _storage._grainAmount ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._grainAmount ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._grainAmount = newValue}
   }
   /// Returns true if `grainAmount` has been explicitly set.
-  public var hasGrainAmount: Bool {return _storage._grainAmount != nil}
+  public var hasGrainAmount: Bool {_storage._grainAmount != nil}
   /// Clears the value of `grainAmount`. Subsequent reads from it will return its default value.
   public mutating func clearGrainAmount() {_uniqueStorage()._grainAmount = nil}
 
   public var grainAmountUndefined: Bool {
-    get {return _storage._grainAmountUndefined ?? false}
+    get {_storage._grainAmountUndefined ?? false}
     set {_uniqueStorage()._grainAmountUndefined = newValue}
   }
   /// Returns true if `grainAmountUndefined` has been explicitly set.
-  public var hasGrainAmountUndefined: Bool {return _storage._grainAmountUndefined != nil}
+  public var hasGrainAmountUndefined: Bool {_storage._grainAmountUndefined != nil}
   /// Clears the value of `grainAmountUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearGrainAmountUndefined() {_uniqueStorage()._grainAmountUndefined = nil}
 
   public var grainIntensity: TSSSOS_SpecDoubleArchive {
-    get {return _storage._grainIntensity ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._grainIntensity ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._grainIntensity = newValue}
   }
   /// Returns true if `grainIntensity` has been explicitly set.
-  public var hasGrainIntensity: Bool {return _storage._grainIntensity != nil}
+  public var hasGrainIntensity: Bool {_storage._grainIntensity != nil}
   /// Clears the value of `grainIntensity`. Subsequent reads from it will return its default value.
   public mutating func clearGrainIntensity() {_uniqueStorage()._grainIntensity = nil}
 
   public var grainIntensityUndefined: Bool {
-    get {return _storage._grainIntensityUndefined ?? false}
+    get {_storage._grainIntensityUndefined ?? false}
     set {_uniqueStorage()._grainIntensityUndefined = newValue}
   }
   /// Returns true if `grainIntensityUndefined` has been explicitly set.
-  public var hasGrainIntensityUndefined: Bool {return _storage._grainIntensityUndefined != nil}
+  public var hasGrainIntensityUndefined: Bool {_storage._grainIntensityUndefined != nil}
   /// Clears the value of `grainIntensityUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearGrainIntensityUndefined() {_uniqueStorage()._grainIntensityUndefined = nil}
 
   public var hue: TSSSOS_SpecDoubleArchive {
-    get {return _storage._hue ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._hue ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._hue = newValue}
   }
   /// Returns true if `hue` has been explicitly set.
-  public var hasHue: Bool {return _storage._hue != nil}
+  public var hasHue: Bool {_storage._hue != nil}
   /// Clears the value of `hue`. Subsequent reads from it will return its default value.
   public mutating func clearHue() {_uniqueStorage()._hue = nil}
 
   public var hueUndefined: Bool {
-    get {return _storage._hueUndefined ?? false}
+    get {_storage._hueUndefined ?? false}
     set {_uniqueStorage()._hueUndefined = newValue}
   }
   /// Returns true if `hueUndefined` has been explicitly set.
-  public var hasHueUndefined: Bool {return _storage._hueUndefined != nil}
+  public var hasHueUndefined: Bool {_storage._hueUndefined != nil}
   /// Clears the value of `hueUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHueUndefined() {_uniqueStorage()._hueUndefined = nil}
 
   public var lightness: TSSSOS_SpecDoubleArchive {
-    get {return _storage._lightness ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._lightness ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._lightness = newValue}
   }
   /// Returns true if `lightness` has been explicitly set.
-  public var hasLightness: Bool {return _storage._lightness != nil}
+  public var hasLightness: Bool {_storage._lightness != nil}
   /// Clears the value of `lightness`. Subsequent reads from it will return its default value.
   public mutating func clearLightness() {_uniqueStorage()._lightness = nil}
 
   public var lightnessUndefined: Bool {
-    get {return _storage._lightnessUndefined ?? false}
+    get {_storage._lightnessUndefined ?? false}
     set {_uniqueStorage()._lightnessUndefined = newValue}
   }
   /// Returns true if `lightnessUndefined` has been explicitly set.
-  public var hasLightnessUndefined: Bool {return _storage._lightnessUndefined != nil}
+  public var hasLightnessUndefined: Bool {_storage._lightnessUndefined != nil}
   /// Clears the value of `lightnessUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLightnessUndefined() {_uniqueStorage()._lightnessUndefined = nil}
 
   public var lineAlpha: TSSSOS_SpecDoubleArchive {
-    get {return _storage._lineAlpha ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._lineAlpha ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._lineAlpha = newValue}
   }
   /// Returns true if `lineAlpha` has been explicitly set.
-  public var hasLineAlpha: Bool {return _storage._lineAlpha != nil}
+  public var hasLineAlpha: Bool {_storage._lineAlpha != nil}
   /// Clears the value of `lineAlpha`. Subsequent reads from it will return its default value.
   public mutating func clearLineAlpha() {_uniqueStorage()._lineAlpha = nil}
 
   public var lineAlphaUndefined: Bool {
-    get {return _storage._lineAlphaUndefined ?? false}
+    get {_storage._lineAlphaUndefined ?? false}
     set {_uniqueStorage()._lineAlphaUndefined = newValue}
   }
   /// Returns true if `lineAlphaUndefined` has been explicitly set.
-  public var hasLineAlphaUndefined: Bool {return _storage._lineAlphaUndefined != nil}
+  public var hasLineAlphaUndefined: Bool {_storage._lineAlphaUndefined != nil}
   /// Clears the value of `lineAlphaUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLineAlphaUndefined() {_uniqueStorage()._lineAlphaUndefined = nil}
 
   public var lineCenter: TSSSOS_SpecDoubleArchive {
-    get {return _storage._lineCenter ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._lineCenter ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._lineCenter = newValue}
   }
   /// Returns true if `lineCenter` has been explicitly set.
-  public var hasLineCenter: Bool {return _storage._lineCenter != nil}
+  public var hasLineCenter: Bool {_storage._lineCenter != nil}
   /// Clears the value of `lineCenter`. Subsequent reads from it will return its default value.
   public mutating func clearLineCenter() {_uniqueStorage()._lineCenter = nil}
 
   public var lineCenterUndefined: Bool {
-    get {return _storage._lineCenterUndefined ?? false}
+    get {_storage._lineCenterUndefined ?? false}
     set {_uniqueStorage()._lineCenterUndefined = newValue}
   }
   /// Returns true if `lineCenterUndefined` has been explicitly set.
-  public var hasLineCenterUndefined: Bool {return _storage._lineCenterUndefined != nil}
+  public var hasLineCenterUndefined: Bool {_storage._lineCenterUndefined != nil}
   /// Clears the value of `lineCenterUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLineCenterUndefined() {_uniqueStorage()._lineCenterUndefined = nil}
 
   public var lineFade: TSSSOS_SpecDoubleArchive {
-    get {return _storage._lineFade ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._lineFade ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._lineFade = newValue}
   }
   /// Returns true if `lineFade` has been explicitly set.
-  public var hasLineFade: Bool {return _storage._lineFade != nil}
+  public var hasLineFade: Bool {_storage._lineFade != nil}
   /// Clears the value of `lineFade`. Subsequent reads from it will return its default value.
   public mutating func clearLineFade() {_uniqueStorage()._lineFade = nil}
 
   public var lineFadeUndefined: Bool {
-    get {return _storage._lineFadeUndefined ?? false}
+    get {_storage._lineFadeUndefined ?? false}
     set {_uniqueStorage()._lineFadeUndefined = newValue}
   }
   /// Returns true if `lineFadeUndefined` has been explicitly set.
-  public var hasLineFadeUndefined: Bool {return _storage._lineFadeUndefined != nil}
+  public var hasLineFadeUndefined: Bool {_storage._lineFadeUndefined != nil}
   /// Clears the value of `lineFadeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLineFadeUndefined() {_uniqueStorage()._lineFadeUndefined = nil}
 
   public var lineFadePower: TSSSOS_SpecDoubleArchive {
-    get {return _storage._lineFadePower ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._lineFadePower ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._lineFadePower = newValue}
   }
   /// Returns true if `lineFadePower` has been explicitly set.
-  public var hasLineFadePower: Bool {return _storage._lineFadePower != nil}
+  public var hasLineFadePower: Bool {_storage._lineFadePower != nil}
   /// Clears the value of `lineFadePower`. Subsequent reads from it will return its default value.
   public mutating func clearLineFadePower() {_uniqueStorage()._lineFadePower = nil}
 
   public var lineFadePowerUndefined: Bool {
-    get {return _storage._lineFadePowerUndefined ?? false}
+    get {_storage._lineFadePowerUndefined ?? false}
     set {_uniqueStorage()._lineFadePowerUndefined = newValue}
   }
   /// Returns true if `lineFadePowerUndefined` has been explicitly set.
-  public var hasLineFadePowerUndefined: Bool {return _storage._lineFadePowerUndefined != nil}
+  public var hasLineFadePowerUndefined: Bool {_storage._lineFadePowerUndefined != nil}
   /// Clears the value of `lineFadePowerUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLineFadePowerUndefined() {_uniqueStorage()._lineFadePowerUndefined = nil}
 
   public var lineLength: TSSSOS_SpecDoubleArchive {
-    get {return _storage._lineLength ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._lineLength ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._lineLength = newValue}
   }
   /// Returns true if `lineLength` has been explicitly set.
-  public var hasLineLength: Bool {return _storage._lineLength != nil}
+  public var hasLineLength: Bool {_storage._lineLength != nil}
   /// Clears the value of `lineLength`. Subsequent reads from it will return its default value.
   public mutating func clearLineLength() {_uniqueStorage()._lineLength = nil}
 
   public var lineLengthUndefined: Bool {
-    get {return _storage._lineLengthUndefined ?? false}
+    get {_storage._lineLengthUndefined ?? false}
     set {_uniqueStorage()._lineLengthUndefined = newValue}
   }
   /// Returns true if `lineLengthUndefined` has been explicitly set.
-  public var hasLineLengthUndefined: Bool {return _storage._lineLengthUndefined != nil}
+  public var hasLineLengthUndefined: Bool {_storage._lineLengthUndefined != nil}
   /// Clears the value of `lineLengthUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLineLengthUndefined() {_uniqueStorage()._lineLengthUndefined = nil}
 
   public var lineWidth: TSSSOS_SpecDoubleArchive {
-    get {return _storage._lineWidth ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._lineWidth ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._lineWidth = newValue}
   }
   /// Returns true if `lineWidth` has been explicitly set.
-  public var hasLineWidth: Bool {return _storage._lineWidth != nil}
+  public var hasLineWidth: Bool {_storage._lineWidth != nil}
   /// Clears the value of `lineWidth`. Subsequent reads from it will return its default value.
   public mutating func clearLineWidth() {_uniqueStorage()._lineWidth = nil}
 
   public var lineWidthUndefined: Bool {
-    get {return _storage._lineWidthUndefined ?? false}
+    get {_storage._lineWidthUndefined ?? false}
     set {_uniqueStorage()._lineWidthUndefined = newValue}
   }
   /// Returns true if `lineWidthUndefined` has been explicitly set.
-  public var hasLineWidthUndefined: Bool {return _storage._lineWidthUndefined != nil}
+  public var hasLineWidthUndefined: Bool {_storage._lineWidthUndefined != nil}
   /// Clears the value of `lineWidthUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLineWidthUndefined() {_uniqueStorage()._lineWidthUndefined = nil}
 
   public var noiseSizeScale: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseSizeScale ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseSizeScale ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseSizeScale = newValue}
   }
   /// Returns true if `noiseSizeScale` has been explicitly set.
-  public var hasNoiseSizeScale: Bool {return _storage._noiseSizeScale != nil}
+  public var hasNoiseSizeScale: Bool {_storage._noiseSizeScale != nil}
   /// Clears the value of `noiseSizeScale`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseSizeScale() {_uniqueStorage()._noiseSizeScale = nil}
 
   public var noiseSizeScaleUndefined: Bool {
-    get {return _storage._noiseSizeScaleUndefined ?? false}
+    get {_storage._noiseSizeScaleUndefined ?? false}
     set {_uniqueStorage()._noiseSizeScaleUndefined = newValue}
   }
   /// Returns true if `noiseSizeScaleUndefined` has been explicitly set.
-  public var hasNoiseSizeScaleUndefined: Bool {return _storage._noiseSizeScaleUndefined != nil}
+  public var hasNoiseSizeScaleUndefined: Bool {_storage._noiseSizeScaleUndefined != nil}
   /// Clears the value of `noiseSizeScaleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseSizeScaleUndefined() {_uniqueStorage()._noiseSizeScaleUndefined = nil}
 
   public var noiseSizeWeight: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseSizeWeight ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseSizeWeight ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseSizeWeight = newValue}
   }
   /// Returns true if `noiseSizeWeight` has been explicitly set.
-  public var hasNoiseSizeWeight: Bool {return _storage._noiseSizeWeight != nil}
+  public var hasNoiseSizeWeight: Bool {_storage._noiseSizeWeight != nil}
   /// Clears the value of `noiseSizeWeight`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseSizeWeight() {_uniqueStorage()._noiseSizeWeight = nil}
 
   public var noiseSizeWeightUndefined: Bool {
-    get {return _storage._noiseSizeWeightUndefined ?? false}
+    get {_storage._noiseSizeWeightUndefined ?? false}
     set {_uniqueStorage()._noiseSizeWeightUndefined = newValue}
   }
   /// Returns true if `noiseSizeWeightUndefined` has been explicitly set.
-  public var hasNoiseSizeWeightUndefined: Bool {return _storage._noiseSizeWeightUndefined != nil}
+  public var hasNoiseSizeWeightUndefined: Bool {_storage._noiseSizeWeightUndefined != nil}
   /// Clears the value of `noiseSizeWeightUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseSizeWeightUndefined() {_uniqueStorage()._noiseSizeWeightUndefined = nil}
 
   public var noiseVariance: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseVariance ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseVariance ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseVariance = newValue}
   }
   /// Returns true if `noiseVariance` has been explicitly set.
-  public var hasNoiseVariance: Bool {return _storage._noiseVariance != nil}
+  public var hasNoiseVariance: Bool {_storage._noiseVariance != nil}
   /// Clears the value of `noiseVariance`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseVariance() {_uniqueStorage()._noiseVariance = nil}
 
   public var noiseVarianceUndefined: Bool {
-    get {return _storage._noiseVarianceUndefined ?? false}
+    get {_storage._noiseVarianceUndefined ?? false}
     set {_uniqueStorage()._noiseVarianceUndefined = newValue}
   }
   /// Returns true if `noiseVarianceUndefined` has been explicitly set.
-  public var hasNoiseVarianceUndefined: Bool {return _storage._noiseVarianceUndefined != nil}
+  public var hasNoiseVarianceUndefined: Bool {_storage._noiseVarianceUndefined != nil}
   /// Clears the value of `noiseVarianceUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseVarianceUndefined() {_uniqueStorage()._noiseVarianceUndefined = nil}
 
   public var offset: TSSSOS_SpecDoubleArchive {
-    get {return _storage._offset ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._offset ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._offset = newValue}
   }
   /// Returns true if `offset` has been explicitly set.
-  public var hasOffset: Bool {return _storage._offset != nil}
+  public var hasOffset: Bool {_storage._offset != nil}
   /// Clears the value of `offset`. Subsequent reads from it will return its default value.
   public mutating func clearOffset() {_uniqueStorage()._offset = nil}
 
   public var offsetUndefined: Bool {
-    get {return _storage._offsetUndefined ?? false}
+    get {_storage._offsetUndefined ?? false}
     set {_uniqueStorage()._offsetUndefined = newValue}
   }
   /// Returns true if `offsetUndefined` has been explicitly set.
-  public var hasOffsetUndefined: Bool {return _storage._offsetUndefined != nil}
+  public var hasOffsetUndefined: Bool {_storage._offsetUndefined != nil}
   /// Clears the value of `offsetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearOffsetUndefined() {_uniqueStorage()._offsetUndefined = nil}
 
   public var motionBackgroundOpacity: TSSSOS_SpecDoubleArchive {
-    get {return _storage._motionBackgroundOpacity ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._motionBackgroundOpacity ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._motionBackgroundOpacity = newValue}
   }
   /// Returns true if `motionBackgroundOpacity` has been explicitly set.
-  public var hasMotionBackgroundOpacity: Bool {return _storage._motionBackgroundOpacity != nil}
+  public var hasMotionBackgroundOpacity: Bool {_storage._motionBackgroundOpacity != nil}
   /// Clears the value of `motionBackgroundOpacity`. Subsequent reads from it will return its default value.
   public mutating func clearMotionBackgroundOpacity() {_uniqueStorage()._motionBackgroundOpacity = nil}
 
   public var motionBackgroundOpacityUndefined: Bool {
-    get {return _storage._motionBackgroundOpacityUndefined ?? false}
+    get {_storage._motionBackgroundOpacityUndefined ?? false}
     set {_uniqueStorage()._motionBackgroundOpacityUndefined = newValue}
   }
   /// Returns true if `motionBackgroundOpacityUndefined` has been explicitly set.
-  public var hasMotionBackgroundOpacityUndefined: Bool {return _storage._motionBackgroundOpacityUndefined != nil}
+  public var hasMotionBackgroundOpacityUndefined: Bool {_storage._motionBackgroundOpacityUndefined != nil}
   /// Clears the value of `motionBackgroundOpacityUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearMotionBackgroundOpacityUndefined() {_uniqueStorage()._motionBackgroundOpacityUndefined = nil}
 
   public var pointDepthAlpha: TSSSOS_SpecDoubleArchive {
-    get {return _storage._pointDepthAlpha ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._pointDepthAlpha ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._pointDepthAlpha = newValue}
   }
   /// Returns true if `pointDepthAlpha` has been explicitly set.
-  public var hasPointDepthAlpha: Bool {return _storage._pointDepthAlpha != nil}
+  public var hasPointDepthAlpha: Bool {_storage._pointDepthAlpha != nil}
   /// Clears the value of `pointDepthAlpha`. Subsequent reads from it will return its default value.
   public mutating func clearPointDepthAlpha() {_uniqueStorage()._pointDepthAlpha = nil}
 
   public var pointDepthAlphaUndefined: Bool {
-    get {return _storage._pointDepthAlphaUndefined ?? false}
+    get {_storage._pointDepthAlphaUndefined ?? false}
     set {_uniqueStorage()._pointDepthAlphaUndefined = newValue}
   }
   /// Returns true if `pointDepthAlphaUndefined` has been explicitly set.
-  public var hasPointDepthAlphaUndefined: Bool {return _storage._pointDepthAlphaUndefined != nil}
+  public var hasPointDepthAlphaUndefined: Bool {_storage._pointDepthAlphaUndefined != nil}
   /// Clears the value of `pointDepthAlphaUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearPointDepthAlphaUndefined() {_uniqueStorage()._pointDepthAlphaUndefined = nil}
 
   public var pointSize: TSSSOS_SpecDoubleArchive {
-    get {return _storage._pointSize ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._pointSize ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._pointSize = newValue}
   }
   /// Returns true if `pointSize` has been explicitly set.
-  public var hasPointSize: Bool {return _storage._pointSize != nil}
+  public var hasPointSize: Bool {_storage._pointSize != nil}
   /// Clears the value of `pointSize`. Subsequent reads from it will return its default value.
   public mutating func clearPointSize() {_uniqueStorage()._pointSize = nil}
 
   public var pointSizeUndefined: Bool {
-    get {return _storage._pointSizeUndefined ?? false}
+    get {_storage._pointSizeUndefined ?? false}
     set {_uniqueStorage()._pointSizeUndefined = newValue}
   }
   /// Returns true if `pointSizeUndefined` has been explicitly set.
-  public var hasPointSizeUndefined: Bool {return _storage._pointSizeUndefined != nil}
+  public var hasPointSizeUndefined: Bool {_storage._pointSizeUndefined != nil}
   /// Clears the value of `pointSizeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearPointSizeUndefined() {_uniqueStorage()._pointSizeUndefined = nil}
 
   public var power: TSSSOS_SpecDoubleArchive {
-    get {return _storage._power ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._power ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._power = newValue}
   }
   /// Returns true if `power` has been explicitly set.
-  public var hasPower: Bool {return _storage._power != nil}
+  public var hasPower: Bool {_storage._power != nil}
   /// Clears the value of `power`. Subsequent reads from it will return its default value.
   public mutating func clearPower() {_uniqueStorage()._power = nil}
 
   public var powerUndefined: Bool {
-    get {return _storage._powerUndefined ?? false}
+    get {_storage._powerUndefined ?? false}
     set {_uniqueStorage()._powerUndefined = newValue}
   }
   /// Returns true if `powerUndefined` has been explicitly set.
-  public var hasPowerUndefined: Bool {return _storage._powerUndefined != nil}
+  public var hasPowerUndefined: Bool {_storage._powerUndefined != nil}
   /// Clears the value of `powerUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearPowerUndefined() {_uniqueStorage()._powerUndefined = nil}
 
   public var radius: TSSSOS_SpecDoubleArchive {
-    get {return _storage._radius ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._radius ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._radius = newValue}
   }
   /// Returns true if `radius` has been explicitly set.
-  public var hasRadius: Bool {return _storage._radius != nil}
+  public var hasRadius: Bool {_storage._radius != nil}
   /// Clears the value of `radius`. Subsequent reads from it will return its default value.
   public mutating func clearRadius() {_uniqueStorage()._radius = nil}
 
   public var radiusUndefined: Bool {
-    get {return _storage._radiusUndefined ?? false}
+    get {_storage._radiusUndefined ?? false}
     set {_uniqueStorage()._radiusUndefined = newValue}
   }
   /// Returns true if `radiusUndefined` has been explicitly set.
-  public var hasRadiusUndefined: Bool {return _storage._radiusUndefined != nil}
+  public var hasRadiusUndefined: Bool {_storage._radiusUndefined != nil}
   /// Clears the value of `radiusUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearRadiusUndefined() {_uniqueStorage()._radiusUndefined = nil}
 
   public var refraction: TSSSOS_SpecDoubleArchive {
-    get {return _storage._refraction ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._refraction ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._refraction = newValue}
   }
   /// Returns true if `refraction` has been explicitly set.
-  public var hasRefraction: Bool {return _storage._refraction != nil}
+  public var hasRefraction: Bool {_storage._refraction != nil}
   /// Clears the value of `refraction`. Subsequent reads from it will return its default value.
   public mutating func clearRefraction() {_uniqueStorage()._refraction = nil}
 
   public var refractionUndefined: Bool {
-    get {return _storage._refractionUndefined ?? false}
+    get {_storage._refractionUndefined ?? false}
     set {_uniqueStorage()._refractionUndefined = newValue}
   }
   /// Returns true if `refractionUndefined` has been explicitly set.
-  public var hasRefractionUndefined: Bool {return _storage._refractionUndefined != nil}
+  public var hasRefractionUndefined: Bool {_storage._refractionUndefined != nil}
   /// Clears the value of `refractionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearRefractionUndefined() {_uniqueStorage()._refractionUndefined = nil}
 
   public var resolution: TSSSOS_SpecDoubleArchive {
-    get {return _storage._resolution ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._resolution ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._resolution = newValue}
   }
   /// Returns true if `resolution` has been explicitly set.
-  public var hasResolution: Bool {return _storage._resolution != nil}
+  public var hasResolution: Bool {_storage._resolution != nil}
   /// Clears the value of `resolution`. Subsequent reads from it will return its default value.
   public mutating func clearResolution() {_uniqueStorage()._resolution = nil}
 
   public var resolutionUndefined: Bool {
-    get {return _storage._resolutionUndefined ?? false}
+    get {_storage._resolutionUndefined ?? false}
     set {_uniqueStorage()._resolutionUndefined = newValue}
   }
   /// Returns true if `resolutionUndefined` has been explicitly set.
-  public var hasResolutionUndefined: Bool {return _storage._resolutionUndefined != nil}
+  public var hasResolutionUndefined: Bool {_storage._resolutionUndefined != nil}
   /// Clears the value of `resolutionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearResolutionUndefined() {_uniqueStorage()._resolutionUndefined = nil}
 
   public var saturation: TSSSOS_SpecDoubleArchive {
-    get {return _storage._saturation ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._saturation ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._saturation = newValue}
   }
   /// Returns true if `saturation` has been explicitly set.
-  public var hasSaturation: Bool {return _storage._saturation != nil}
+  public var hasSaturation: Bool {_storage._saturation != nil}
   /// Clears the value of `saturation`. Subsequent reads from it will return its default value.
   public mutating func clearSaturation() {_uniqueStorage()._saturation = nil}
 
   public var saturationUndefined: Bool {
-    get {return _storage._saturationUndefined ?? false}
+    get {_storage._saturationUndefined ?? false}
     set {_uniqueStorage()._saturationUndefined = newValue}
   }
   /// Returns true if `saturationUndefined` has been explicitly set.
-  public var hasSaturationUndefined: Bool {return _storage._saturationUndefined != nil}
+  public var hasSaturationUndefined: Bool {_storage._saturationUndefined != nil}
   /// Clears the value of `saturationUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSaturationUndefined() {_uniqueStorage()._saturationUndefined = nil}
 
   public var scale: TSSSOS_SpecDoubleArchive {
-    get {return _storage._scale ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._scale ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._scale = newValue}
   }
   /// Returns true if `scale` has been explicitly set.
-  public var hasScale: Bool {return _storage._scale != nil}
+  public var hasScale: Bool {_storage._scale != nil}
   /// Clears the value of `scale`. Subsequent reads from it will return its default value.
   public mutating func clearScale() {_uniqueStorage()._scale = nil}
 
   public var scaleUndefined: Bool {
-    get {return _storage._scaleUndefined ?? false}
+    get {_storage._scaleUndefined ?? false}
     set {_uniqueStorage()._scaleUndefined = newValue}
   }
   /// Returns true if `scaleUndefined` has been explicitly set.
-  public var hasScaleUndefined: Bool {return _storage._scaleUndefined != nil}
+  public var hasScaleUndefined: Bool {_storage._scaleUndefined != nil}
   /// Clears the value of `scaleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearScaleUndefined() {_uniqueStorage()._scaleUndefined = nil}
 
   public var shadowAlpha: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowAlpha ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowAlpha ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowAlpha = newValue}
   }
   /// Returns true if `shadowAlpha` has been explicitly set.
-  public var hasShadowAlpha: Bool {return _storage._shadowAlpha != nil}
+  public var hasShadowAlpha: Bool {_storage._shadowAlpha != nil}
   /// Clears the value of `shadowAlpha`. Subsequent reads from it will return its default value.
   public mutating func clearShadowAlpha() {_uniqueStorage()._shadowAlpha = nil}
 
   public var shadowAlphaUndefined: Bool {
-    get {return _storage._shadowAlphaUndefined ?? false}
+    get {_storage._shadowAlphaUndefined ?? false}
     set {_uniqueStorage()._shadowAlphaUndefined = newValue}
   }
   /// Returns true if `shadowAlphaUndefined` has been explicitly set.
-  public var hasShadowAlphaUndefined: Bool {return _storage._shadowAlphaUndefined != nil}
+  public var hasShadowAlphaUndefined: Bool {_storage._shadowAlphaUndefined != nil}
   /// Clears the value of `shadowAlphaUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowAlphaUndefined() {_uniqueStorage()._shadowAlphaUndefined = nil}
 
   public var shadowAngle: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowAngle ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowAngle ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowAngle = newValue}
   }
   /// Returns true if `shadowAngle` has been explicitly set.
-  public var hasShadowAngle: Bool {return _storage._shadowAngle != nil}
+  public var hasShadowAngle: Bool {_storage._shadowAngle != nil}
   /// Clears the value of `shadowAngle`. Subsequent reads from it will return its default value.
   public mutating func clearShadowAngle() {_uniqueStorage()._shadowAngle = nil}
 
   public var shadowAngleUndefined: Bool {
-    get {return _storage._shadowAngleUndefined ?? false}
+    get {_storage._shadowAngleUndefined ?? false}
     set {_uniqueStorage()._shadowAngleUndefined = newValue}
   }
   /// Returns true if `shadowAngleUndefined` has been explicitly set.
-  public var hasShadowAngleUndefined: Bool {return _storage._shadowAngleUndefined != nil}
+  public var hasShadowAngleUndefined: Bool {_storage._shadowAngleUndefined != nil}
   /// Clears the value of `shadowAngleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowAngleUndefined() {_uniqueStorage()._shadowAngleUndefined = nil}
 
   public var shadowOffset: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowOffset ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowOffset ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowOffset = newValue}
   }
   /// Returns true if `shadowOffset` has been explicitly set.
-  public var hasShadowOffset: Bool {return _storage._shadowOffset != nil}
+  public var hasShadowOffset: Bool {_storage._shadowOffset != nil}
   /// Clears the value of `shadowOffset`. Subsequent reads from it will return its default value.
   public mutating func clearShadowOffset() {_uniqueStorage()._shadowOffset = nil}
 
   public var shadowOffsetUndefined: Bool {
-    get {return _storage._shadowOffsetUndefined ?? false}
+    get {_storage._shadowOffsetUndefined ?? false}
     set {_uniqueStorage()._shadowOffsetUndefined = newValue}
   }
   /// Returns true if `shadowOffsetUndefined` has been explicitly set.
-  public var hasShadowOffsetUndefined: Bool {return _storage._shadowOffsetUndefined != nil}
+  public var hasShadowOffsetUndefined: Bool {_storage._shadowOffsetUndefined != nil}
   /// Clears the value of `shadowOffsetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowOffsetUndefined() {_uniqueStorage()._shadowOffsetUndefined = nil}
 
   public var shadowScale: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowScale ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowScale ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowScale = newValue}
   }
   /// Returns true if `shadowScale` has been explicitly set.
-  public var hasShadowScale: Bool {return _storage._shadowScale != nil}
+  public var hasShadowScale: Bool {_storage._shadowScale != nil}
   /// Clears the value of `shadowScale`. Subsequent reads from it will return its default value.
   public mutating func clearShadowScale() {_uniqueStorage()._shadowScale = nil}
 
   public var shadowScaleUndefined: Bool {
-    get {return _storage._shadowScaleUndefined ?? false}
+    get {_storage._shadowScaleUndefined ?? false}
     set {_uniqueStorage()._shadowScaleUndefined = newValue}
   }
   /// Returns true if `shadowScaleUndefined` has been explicitly set.
-  public var hasShadowScaleUndefined: Bool {return _storage._shadowScaleUndefined != nil}
+  public var hasShadowScaleUndefined: Bool {_storage._shadowScaleUndefined != nil}
   /// Clears the value of `shadowScaleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowScaleUndefined() {_uniqueStorage()._shadowScaleUndefined = nil}
 
   public var shadowValue: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowValue ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowValue ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowValue = newValue}
   }
   /// Returns true if `shadowValue` has been explicitly set.
-  public var hasShadowValue: Bool {return _storage._shadowValue != nil}
+  public var hasShadowValue: Bool {_storage._shadowValue != nil}
   /// Clears the value of `shadowValue`. Subsequent reads from it will return its default value.
   public mutating func clearShadowValue() {_uniqueStorage()._shadowValue = nil}
 
   public var shadowValueUndefined: Bool {
-    get {return _storage._shadowValueUndefined ?? false}
+    get {_storage._shadowValueUndefined ?? false}
     set {_uniqueStorage()._shadowValueUndefined = newValue}
   }
   /// Returns true if `shadowValueUndefined` has been explicitly set.
-  public var hasShadowValueUndefined: Bool {return _storage._shadowValueUndefined != nil}
+  public var hasShadowValueUndefined: Bool {_storage._shadowValueUndefined != nil}
   /// Clears the value of `shadowValueUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowValueUndefined() {_uniqueStorage()._shadowValueUndefined = nil}
 
   public var speed: TSSSOS_SpecDoubleArchive {
-    get {return _storage._speed ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._speed ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._speed = newValue}
   }
   /// Returns true if `speed` has been explicitly set.
-  public var hasSpeed: Bool {return _storage._speed != nil}
+  public var hasSpeed: Bool {_storage._speed != nil}
   /// Clears the value of `speed`. Subsequent reads from it will return its default value.
   public mutating func clearSpeed() {_uniqueStorage()._speed = nil}
 
   public var speedUndefined: Bool {
-    get {return _storage._speedUndefined ?? false}
+    get {_storage._speedUndefined ?? false}
     set {_uniqueStorage()._speedUndefined = newValue}
   }
   /// Returns true if `speedUndefined` has been explicitly set.
-  public var hasSpeedUndefined: Bool {return _storage._speedUndefined != nil}
+  public var hasSpeedUndefined: Bool {_storage._speedUndefined != nil}
   /// Clears the value of `speedUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSpeedUndefined() {_uniqueStorage()._speedUndefined = nil}
 
   public var texturePower: TSSSOS_SpecDoubleArchive {
-    get {return _storage._texturePower ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._texturePower ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._texturePower = newValue}
   }
   /// Returns true if `texturePower` has been explicitly set.
-  public var hasTexturePower: Bool {return _storage._texturePower != nil}
+  public var hasTexturePower: Bool {_storage._texturePower != nil}
   /// Clears the value of `texturePower`. Subsequent reads from it will return its default value.
   public mutating func clearTexturePower() {_uniqueStorage()._texturePower = nil}
 
   public var texturePowerUndefined: Bool {
-    get {return _storage._texturePowerUndefined ?? false}
+    get {_storage._texturePowerUndefined ?? false}
     set {_uniqueStorage()._texturePowerUndefined = newValue}
   }
   /// Returns true if `texturePowerUndefined` has been explicitly set.
-  public var hasTexturePowerUndefined: Bool {return _storage._texturePowerUndefined != nil}
+  public var hasTexturePowerUndefined: Bool {_storage._texturePowerUndefined != nil}
   /// Clears the value of `texturePowerUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTexturePowerUndefined() {_uniqueStorage()._texturePowerUndefined = nil}
 
   public var time: TSSSOS_SpecDoubleArchive {
-    get {return _storage._time ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._time ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._time = newValue}
   }
   /// Returns true if `time` has been explicitly set.
-  public var hasTime: Bool {return _storage._time != nil}
+  public var hasTime: Bool {_storage._time != nil}
   /// Clears the value of `time`. Subsequent reads from it will return its default value.
   public mutating func clearTime() {_uniqueStorage()._time = nil}
 
   public var timeUndefined: Bool {
-    get {return _storage._timeUndefined ?? false}
+    get {_storage._timeUndefined ?? false}
     set {_uniqueStorage()._timeUndefined = newValue}
   }
   /// Returns true if `timeUndefined` has been explicitly set.
-  public var hasTimeUndefined: Bool {return _storage._timeUndefined != nil}
+  public var hasTimeUndefined: Bool {_storage._timeUndefined != nil}
   /// Clears the value of `timeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTimeUndefined() {_uniqueStorage()._timeUndefined = nil}
 
   public var drawPoints: TSSSOS_SpecBoolArchive {
-    get {return _storage._drawPoints ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._drawPoints ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._drawPoints = newValue}
   }
   /// Returns true if `drawPoints` has been explicitly set.
-  public var hasDrawPoints: Bool {return _storage._drawPoints != nil}
+  public var hasDrawPoints: Bool {_storage._drawPoints != nil}
   /// Clears the value of `drawPoints`. Subsequent reads from it will return its default value.
   public mutating func clearDrawPoints() {_uniqueStorage()._drawPoints = nil}
 
   public var drawPointsUndefined: Bool {
-    get {return _storage._drawPointsUndefined ?? false}
+    get {_storage._drawPointsUndefined ?? false}
     set {_uniqueStorage()._drawPointsUndefined = newValue}
   }
   /// Returns true if `drawPointsUndefined` has been explicitly set.
-  public var hasDrawPointsUndefined: Bool {return _storage._drawPointsUndefined != nil}
+  public var hasDrawPointsUndefined: Bool {_storage._drawPointsUndefined != nil}
   /// Clears the value of `drawPointsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDrawPointsUndefined() {_uniqueStorage()._drawPointsUndefined = nil}
 
   public var drawLines: TSSSOS_SpecBoolArchive {
-    get {return _storage._drawLines ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._drawLines ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._drawLines = newValue}
   }
   /// Returns true if `drawLines` has been explicitly set.
-  public var hasDrawLines: Bool {return _storage._drawLines != nil}
+  public var hasDrawLines: Bool {_storage._drawLines != nil}
   /// Clears the value of `drawLines`. Subsequent reads from it will return its default value.
   public mutating func clearDrawLines() {_uniqueStorage()._drawLines = nil}
 
   public var drawLinesUndefined: Bool {
-    get {return _storage._drawLinesUndefined ?? false}
+    get {_storage._drawLinesUndefined ?? false}
     set {_uniqueStorage()._drawLinesUndefined = newValue}
   }
   /// Returns true if `drawLinesUndefined` has been explicitly set.
-  public var hasDrawLinesUndefined: Bool {return _storage._drawLinesUndefined != nil}
+  public var hasDrawLinesUndefined: Bool {_storage._drawLinesUndefined != nil}
   /// Clears the value of `drawLinesUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDrawLinesUndefined() {_uniqueStorage()._drawLinesUndefined = nil}
 
   public var drawShadows: TSSSOS_SpecBoolArchive {
-    get {return _storage._drawShadows ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._drawShadows ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._drawShadows = newValue}
   }
   /// Returns true if `drawShadows` has been explicitly set.
-  public var hasDrawShadows: Bool {return _storage._drawShadows != nil}
+  public var hasDrawShadows: Bool {_storage._drawShadows != nil}
   /// Clears the value of `drawShadows`. Subsequent reads from it will return its default value.
   public mutating func clearDrawShadows() {_uniqueStorage()._drawShadows = nil}
 
   public var drawShadowsUndefined: Bool {
-    get {return _storage._drawShadowsUndefined ?? false}
+    get {_storage._drawShadowsUndefined ?? false}
     set {_uniqueStorage()._drawShadowsUndefined = newValue}
   }
   /// Returns true if `drawShadowsUndefined` has been explicitly set.
-  public var hasDrawShadowsUndefined: Bool {return _storage._drawShadowsUndefined != nil}
+  public var hasDrawShadowsUndefined: Bool {_storage._drawShadowsUndefined != nil}
   /// Clears the value of `drawShadowsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDrawShadowsUndefined() {_uniqueStorage()._drawShadowsUndefined = nil}
 
   public var pixelsPerDivision: TSSSOS_SpecIntegerArchive {
-    get {return _storage._pixelsPerDivision ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._pixelsPerDivision ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._pixelsPerDivision = newValue}
   }
   /// Returns true if `pixelsPerDivision` has been explicitly set.
-  public var hasPixelsPerDivision: Bool {return _storage._pixelsPerDivision != nil}
+  public var hasPixelsPerDivision: Bool {_storage._pixelsPerDivision != nil}
   /// Clears the value of `pixelsPerDivision`. Subsequent reads from it will return its default value.
   public mutating func clearPixelsPerDivision() {_uniqueStorage()._pixelsPerDivision = nil}
 
   public var pixelsPerDivisionUndefined: Bool {
-    get {return _storage._pixelsPerDivisionUndefined ?? false}
+    get {_storage._pixelsPerDivisionUndefined ?? false}
     set {_uniqueStorage()._pixelsPerDivisionUndefined = newValue}
   }
   /// Returns true if `pixelsPerDivisionUndefined` has been explicitly set.
-  public var hasPixelsPerDivisionUndefined: Bool {return _storage._pixelsPerDivisionUndefined != nil}
+  public var hasPixelsPerDivisionUndefined: Bool {_storage._pixelsPerDivisionUndefined != nil}
   /// Clears the value of `pixelsPerDivisionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearPixelsPerDivisionUndefined() {_uniqueStorage()._pixelsPerDivisionUndefined = nil}
 
   public var symmetry: TSSSOS_SpecBoolArchive {
-    get {return _storage._symmetry ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._symmetry ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._symmetry = newValue}
   }
   /// Returns true if `symmetry` has been explicitly set.
-  public var hasSymmetry: Bool {return _storage._symmetry != nil}
+  public var hasSymmetry: Bool {_storage._symmetry != nil}
   /// Clears the value of `symmetry`. Subsequent reads from it will return its default value.
   public mutating func clearSymmetry() {_uniqueStorage()._symmetry = nil}
 
   public var symmetryUndefined: Bool {
-    get {return _storage._symmetryUndefined ?? false}
+    get {_storage._symmetryUndefined ?? false}
     set {_uniqueStorage()._symmetryUndefined = newValue}
   }
   /// Returns true if `symmetryUndefined` has been explicitly set.
-  public var hasSymmetryUndefined: Bool {return _storage._symmetryUndefined != nil}
+  public var hasSymmetryUndefined: Bool {_storage._symmetryUndefined != nil}
   /// Clears the value of `symmetryUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSymmetryUndefined() {_uniqueStorage()._symmetryUndefined = nil}
 
   public var lockFocus: TSSSOS_SpecBoolArchive {
-    get {return _storage._lockFocus ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._lockFocus ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._lockFocus = newValue}
   }
   /// Returns true if `lockFocus` has been explicitly set.
-  public var hasLockFocus: Bool {return _storage._lockFocus != nil}
+  public var hasLockFocus: Bool {_storage._lockFocus != nil}
   /// Clears the value of `lockFocus`. Subsequent reads from it will return its default value.
   public mutating func clearLockFocus() {_uniqueStorage()._lockFocus = nil}
 
   public var lockFocusUndefined: Bool {
-    get {return _storage._lockFocusUndefined ?? false}
+    get {_storage._lockFocusUndefined ?? false}
     set {_uniqueStorage()._lockFocusUndefined = newValue}
   }
   /// Returns true if `lockFocusUndefined` has been explicitly set.
-  public var hasLockFocusUndefined: Bool {return _storage._lockFocusUndefined != nil}
+  public var hasLockFocusUndefined: Bool {_storage._lockFocusUndefined != nil}
   /// Clears the value of `lockFocusUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearLockFocusUndefined() {_uniqueStorage()._lockFocusUndefined = nil}
 
   public var amplitude: TSSSOS_SpecDoubleArchive {
-    get {return _storage._amplitude ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._amplitude ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._amplitude = newValue}
   }
   /// Returns true if `amplitude` has been explicitly set.
-  public var hasAmplitude: Bool {return _storage._amplitude != nil}
+  public var hasAmplitude: Bool {_storage._amplitude != nil}
   /// Clears the value of `amplitude`. Subsequent reads from it will return its default value.
   public mutating func clearAmplitude() {_uniqueStorage()._amplitude = nil}
 
   public var amplitudeUndefined: Bool {
-    get {return _storage._amplitudeUndefined ?? false}
+    get {_storage._amplitudeUndefined ?? false}
     set {_uniqueStorage()._amplitudeUndefined = newValue}
   }
   /// Returns true if `amplitudeUndefined` has been explicitly set.
-  public var hasAmplitudeUndefined: Bool {return _storage._amplitudeUndefined != nil}
+  public var hasAmplitudeUndefined: Bool {_storage._amplitudeUndefined != nil}
   /// Clears the value of `amplitudeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearAmplitudeUndefined() {_uniqueStorage()._amplitudeUndefined = nil}
 
   public var envelope: TSSSOS_SpecDoubleArchive {
-    get {return _storage._envelope ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._envelope ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._envelope = newValue}
   }
   /// Returns true if `envelope` has been explicitly set.
-  public var hasEnvelope: Bool {return _storage._envelope != nil}
+  public var hasEnvelope: Bool {_storage._envelope != nil}
   /// Clears the value of `envelope`. Subsequent reads from it will return its default value.
   public mutating func clearEnvelope() {_uniqueStorage()._envelope = nil}
 
   public var envelopeUndefined: Bool {
-    get {return _storage._envelopeUndefined ?? false}
+    get {_storage._envelopeUndefined ?? false}
     set {_uniqueStorage()._envelopeUndefined = newValue}
   }
   /// Returns true if `envelopeUndefined` has been explicitly set.
-  public var hasEnvelopeUndefined: Bool {return _storage._envelopeUndefined != nil}
+  public var hasEnvelopeUndefined: Bool {_storage._envelopeUndefined != nil}
   /// Clears the value of `envelopeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearEnvelopeUndefined() {_uniqueStorage()._envelopeUndefined = nil}
 
   public var yOffset: TSSSOS_SpecDoubleArchive {
-    get {return _storage._yOffset ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._yOffset ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._yOffset = newValue}
   }
   /// Returns true if `yOffset` has been explicitly set.
-  public var hasYOffset: Bool {return _storage._yOffset != nil}
+  public var hasYOffset: Bool {_storage._yOffset != nil}
   /// Clears the value of `yOffset`. Subsequent reads from it will return its default value.
   public mutating func clearYOffset() {_uniqueStorage()._yOffset = nil}
 
   public var yOffsetUndefined: Bool {
-    get {return _storage._yOffsetUndefined ?? false}
+    get {_storage._yOffsetUndefined ?? false}
     set {_uniqueStorage()._yOffsetUndefined = newValue}
   }
   /// Returns true if `yOffsetUndefined` has been explicitly set.
-  public var hasYOffsetUndefined: Bool {return _storage._yOffsetUndefined != nil}
+  public var hasYOffsetUndefined: Bool {_storage._yOffsetUndefined != nil}
   /// Clears the value of `yOffsetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearYOffsetUndefined() {_uniqueStorage()._yOffsetUndefined = nil}
 
   public var focus: TSSSOS_SpecDoubleArchive {
-    get {return _storage._focus ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._focus ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._focus = newValue}
   }
   /// Returns true if `focus` has been explicitly set.
-  public var hasFocus: Bool {return _storage._focus != nil}
+  public var hasFocus: Bool {_storage._focus != nil}
   /// Clears the value of `focus`. Subsequent reads from it will return its default value.
   public mutating func clearFocus() {_uniqueStorage()._focus = nil}
 
   public var focusUndefined: Bool {
-    get {return _storage._focusUndefined ?? false}
+    get {_storage._focusUndefined ?? false}
     set {_uniqueStorage()._focusUndefined = newValue}
   }
   /// Returns true if `focusUndefined` has been explicitly set.
-  public var hasFocusUndefined: Bool {return _storage._focusUndefined != nil}
+  public var hasFocusUndefined: Bool {_storage._focusUndefined != nil}
   /// Clears the value of `focusUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFocusUndefined() {_uniqueStorage()._focusUndefined = nil}
 
   public var blur: TSSSOS_SpecDoubleArchive {
-    get {return _storage._blur ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._blur ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._blur = newValue}
   }
   /// Returns true if `blur` has been explicitly set.
-  public var hasBlur: Bool {return _storage._blur != nil}
+  public var hasBlur: Bool {_storage._blur != nil}
   /// Clears the value of `blur`. Subsequent reads from it will return its default value.
   public mutating func clearBlur() {_uniqueStorage()._blur = nil}
 
   public var blurUndefined: Bool {
-    get {return _storage._blurUndefined ?? false}
+    get {_storage._blurUndefined ?? false}
     set {_uniqueStorage()._blurUndefined = newValue}
   }
   /// Returns true if `blurUndefined` has been explicitly set.
-  public var hasBlurUndefined: Bool {return _storage._blurUndefined != nil}
+  public var hasBlurUndefined: Bool {_storage._blurUndefined != nil}
   /// Clears the value of `blurUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBlurUndefined() {_uniqueStorage()._blurUndefined = nil}
 
   public var grainSpeed: TSSSOS_SpecDoubleArchive {
-    get {return _storage._grainSpeed ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._grainSpeed ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._grainSpeed = newValue}
   }
   /// Returns true if `grainSpeed` has been explicitly set.
-  public var hasGrainSpeed: Bool {return _storage._grainSpeed != nil}
+  public var hasGrainSpeed: Bool {_storage._grainSpeed != nil}
   /// Clears the value of `grainSpeed`. Subsequent reads from it will return its default value.
   public mutating func clearGrainSpeed() {_uniqueStorage()._grainSpeed = nil}
 
   public var grainSpeedUndefined: Bool {
-    get {return _storage._grainSpeedUndefined ?? false}
+    get {_storage._grainSpeedUndefined ?? false}
     set {_uniqueStorage()._grainSpeedUndefined = newValue}
   }
   /// Returns true if `grainSpeedUndefined` has been explicitly set.
-  public var hasGrainSpeedUndefined: Bool {return _storage._grainSpeedUndefined != nil}
+  public var hasGrainSpeedUndefined: Bool {_storage._grainSpeedUndefined != nil}
   /// Clears the value of `grainSpeedUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearGrainSpeedUndefined() {_uniqueStorage()._grainSpeedUndefined = nil}
 
   public var meshColor: TSSSOS_SpecColorArchive {
-    get {return _storage._meshColor ?? TSSSOS_SpecColorArchive()}
+    get {_storage._meshColor ?? TSSSOS_SpecColorArchive()}
     set {_uniqueStorage()._meshColor = newValue}
   }
   /// Returns true if `meshColor` has been explicitly set.
-  public var hasMeshColor: Bool {return _storage._meshColor != nil}
+  public var hasMeshColor: Bool {_storage._meshColor != nil}
   /// Clears the value of `meshColor`. Subsequent reads from it will return its default value.
   public mutating func clearMeshColor() {_uniqueStorage()._meshColor = nil}
 
   public var meshColorUndefined: Bool {
-    get {return _storage._meshColorUndefined ?? false}
+    get {_storage._meshColorUndefined ?? false}
     set {_uniqueStorage()._meshColorUndefined = newValue}
   }
   /// Returns true if `meshColorUndefined` has been explicitly set.
-  public var hasMeshColorUndefined: Bool {return _storage._meshColorUndefined != nil}
+  public var hasMeshColorUndefined: Bool {_storage._meshColorUndefined != nil}
   /// Clears the value of `meshColorUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearMeshColorUndefined() {_uniqueStorage()._meshColorUndefined = nil}
 
   public var angle: TSSSOS_SpecDoubleArchive {
-    get {return _storage._angle ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._angle ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._angle = newValue}
   }
   /// Returns true if `angle` has been explicitly set.
-  public var hasAngle: Bool {return _storage._angle != nil}
+  public var hasAngle: Bool {_storage._angle != nil}
   /// Clears the value of `angle`. Subsequent reads from it will return its default value.
   public mutating func clearAngle() {_uniqueStorage()._angle = nil}
 
   public var angleUndefined: Bool {
-    get {return _storage._angleUndefined ?? false}
+    get {_storage._angleUndefined ?? false}
     set {_uniqueStorage()._angleUndefined = newValue}
   }
   /// Returns true if `angleUndefined` has been explicitly set.
-  public var hasAngleUndefined: Bool {return _storage._angleUndefined != nil}
+  public var hasAngleUndefined: Bool {_storage._angleUndefined != nil}
   /// Clears the value of `angleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearAngleUndefined() {_uniqueStorage()._angleUndefined = nil}
 
   public var meshLineWidth: TSSSOS_SpecDoubleArchive {
-    get {return _storage._meshLineWidth ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._meshLineWidth ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._meshLineWidth = newValue}
   }
   /// Returns true if `meshLineWidth` has been explicitly set.
-  public var hasMeshLineWidth: Bool {return _storage._meshLineWidth != nil}
+  public var hasMeshLineWidth: Bool {_storage._meshLineWidth != nil}
   /// Clears the value of `meshLineWidth`. Subsequent reads from it will return its default value.
   public mutating func clearMeshLineWidth() {_uniqueStorage()._meshLineWidth = nil}
 
   public var meshLineWidthUndefined: Bool {
-    get {return _storage._meshLineWidthUndefined ?? false}
+    get {_storage._meshLineWidthUndefined ?? false}
     set {_uniqueStorage()._meshLineWidthUndefined = newValue}
   }
   /// Returns true if `meshLineWidthUndefined` has been explicitly set.
-  public var hasMeshLineWidthUndefined: Bool {return _storage._meshLineWidthUndefined != nil}
+  public var hasMeshLineWidthUndefined: Bool {_storage._meshLineWidthUndefined != nil}
   /// Clears the value of `meshLineWidthUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearMeshLineWidthUndefined() {_uniqueStorage()._meshLineWidthUndefined = nil}
 
   public var deltaTime: TSSSOS_SpecDoubleArchive {
-    get {return _storage._deltaTime ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._deltaTime ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._deltaTime = newValue}
   }
   /// Returns true if `deltaTime` has been explicitly set.
-  public var hasDeltaTime: Bool {return _storage._deltaTime != nil}
+  public var hasDeltaTime: Bool {_storage._deltaTime != nil}
   /// Clears the value of `deltaTime`. Subsequent reads from it will return its default value.
   public mutating func clearDeltaTime() {_uniqueStorage()._deltaTime = nil}
 
   public var deltaTimeUndefined: Bool {
-    get {return _storage._deltaTimeUndefined ?? false}
+    get {_storage._deltaTimeUndefined ?? false}
     set {_uniqueStorage()._deltaTimeUndefined = newValue}
   }
   /// Returns true if `deltaTimeUndefined` has been explicitly set.
-  public var hasDeltaTimeUndefined: Bool {return _storage._deltaTimeUndefined != nil}
+  public var hasDeltaTimeUndefined: Bool {_storage._deltaTimeUndefined != nil}
   /// Clears the value of `deltaTimeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDeltaTimeUndefined() {_uniqueStorage()._deltaTimeUndefined = nil}
 
   public var threshold: TSSSOS_SpecDoubleArchive {
-    get {return _storage._threshold ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._threshold ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._threshold = newValue}
   }
   /// Returns true if `threshold` has been explicitly set.
-  public var hasThreshold: Bool {return _storage._threshold != nil}
+  public var hasThreshold: Bool {_storage._threshold != nil}
   /// Clears the value of `threshold`. Subsequent reads from it will return its default value.
   public mutating func clearThreshold() {_uniqueStorage()._threshold = nil}
 
   public var thresholdUndefined: Bool {
-    get {return _storage._thresholdUndefined ?? false}
+    get {_storage._thresholdUndefined ?? false}
     set {_uniqueStorage()._thresholdUndefined = newValue}
   }
   /// Returns true if `thresholdUndefined` has been explicitly set.
-  public var hasThresholdUndefined: Bool {return _storage._thresholdUndefined != nil}
+  public var hasThresholdUndefined: Bool {_storage._thresholdUndefined != nil}
   /// Clears the value of `thresholdUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearThresholdUndefined() {_uniqueStorage()._thresholdUndefined = nil}
 
   public var timeStart: TSSSOS_SpecDoubleArchive {
-    get {return _storage._timeStart ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._timeStart ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._timeStart = newValue}
   }
   /// Returns true if `timeStart` has been explicitly set.
-  public var hasTimeStart: Bool {return _storage._timeStart != nil}
+  public var hasTimeStart: Bool {_storage._timeStart != nil}
   /// Clears the value of `timeStart`. Subsequent reads from it will return its default value.
   public mutating func clearTimeStart() {_uniqueStorage()._timeStart = nil}
 
   public var timeStartUndefined: Bool {
-    get {return _storage._timeStartUndefined ?? false}
+    get {_storage._timeStartUndefined ?? false}
     set {_uniqueStorage()._timeStartUndefined = newValue}
   }
   /// Returns true if `timeStartUndefined` has been explicitly set.
-  public var hasTimeStartUndefined: Bool {return _storage._timeStartUndefined != nil}
+  public var hasTimeStartUndefined: Bool {_storage._timeStartUndefined != nil}
   /// Clears the value of `timeStartUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTimeStartUndefined() {_uniqueStorage()._timeStartUndefined = nil}
 
   public var instanceCount: TSSSOS_SpecIntegerArchive {
-    get {return _storage._instanceCount ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._instanceCount ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._instanceCount = newValue}
   }
   /// Returns true if `instanceCount` has been explicitly set.
-  public var hasInstanceCount: Bool {return _storage._instanceCount != nil}
+  public var hasInstanceCount: Bool {_storage._instanceCount != nil}
   /// Clears the value of `instanceCount`. Subsequent reads from it will return its default value.
   public mutating func clearInstanceCount() {_uniqueStorage()._instanceCount = nil}
 
   public var instanceCountUndefined: Bool {
-    get {return _storage._instanceCountUndefined ?? false}
+    get {_storage._instanceCountUndefined ?? false}
     set {_uniqueStorage()._instanceCountUndefined = newValue}
   }
   /// Returns true if `instanceCountUndefined` has been explicitly set.
-  public var hasInstanceCountUndefined: Bool {return _storage._instanceCountUndefined != nil}
+  public var hasInstanceCountUndefined: Bool {_storage._instanceCountUndefined != nil}
   /// Clears the value of `instanceCountUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearInstanceCountUndefined() {_uniqueStorage()._instanceCountUndefined = nil}
 
   public var extrusion: TSSSOS_SpecDoubleArchive {
-    get {return _storage._extrusion ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._extrusion ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._extrusion = newValue}
   }
   /// Returns true if `extrusion` has been explicitly set.
-  public var hasExtrusion: Bool {return _storage._extrusion != nil}
+  public var hasExtrusion: Bool {_storage._extrusion != nil}
   /// Clears the value of `extrusion`. Subsequent reads from it will return its default value.
   public mutating func clearExtrusion() {_uniqueStorage()._extrusion = nil}
 
   public var extrusionUndefined: Bool {
-    get {return _storage._extrusionUndefined ?? false}
+    get {_storage._extrusionUndefined ?? false}
     set {_uniqueStorage()._extrusionUndefined = newValue}
   }
   /// Returns true if `extrusionUndefined` has been explicitly set.
-  public var hasExtrusionUndefined: Bool {return _storage._extrusionUndefined != nil}
+  public var hasExtrusionUndefined: Bool {_storage._extrusionUndefined != nil}
   /// Clears the value of `extrusionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearExtrusionUndefined() {_uniqueStorage()._extrusionUndefined = nil}
 
   public var noiseOffset: TSSSOS_SpecDoubleArchive {
-    get {return _storage._noiseOffset ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._noiseOffset ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._noiseOffset = newValue}
   }
   /// Returns true if `noiseOffset` has been explicitly set.
-  public var hasNoiseOffset: Bool {return _storage._noiseOffset != nil}
+  public var hasNoiseOffset: Bool {_storage._noiseOffset != nil}
   /// Clears the value of `noiseOffset`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseOffset() {_uniqueStorage()._noiseOffset = nil}
 
   public var noiseOffsetUndefined: Bool {
-    get {return _storage._noiseOffsetUndefined ?? false}
+    get {_storage._noiseOffsetUndefined ?? false}
     set {_uniqueStorage()._noiseOffsetUndefined = newValue}
   }
   /// Returns true if `noiseOffsetUndefined` has been explicitly set.
-  public var hasNoiseOffsetUndefined: Bool {return _storage._noiseOffsetUndefined != nil}
+  public var hasNoiseOffsetUndefined: Bool {_storage._noiseOffsetUndefined != nil}
   /// Clears the value of `noiseOffsetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseOffsetUndefined() {_uniqueStorage()._noiseOffsetUndefined = nil}
 
   public var colorHueOffset: TSSSOS_SpecDoubleArchive {
-    get {return _storage._colorHueOffset ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._colorHueOffset ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._colorHueOffset = newValue}
   }
   /// Returns true if `colorHueOffset` has been explicitly set.
-  public var hasColorHueOffset: Bool {return _storage._colorHueOffset != nil}
+  public var hasColorHueOffset: Bool {_storage._colorHueOffset != nil}
   /// Clears the value of `colorHueOffset`. Subsequent reads from it will return its default value.
   public mutating func clearColorHueOffset() {_uniqueStorage()._colorHueOffset = nil}
 
   public var colorHueOffsetUndefined: Bool {
-    get {return _storage._colorHueOffsetUndefined ?? false}
+    get {_storage._colorHueOffsetUndefined ?? false}
     set {_uniqueStorage()._colorHueOffsetUndefined = newValue}
   }
   /// Returns true if `colorHueOffsetUndefined` has been explicitly set.
-  public var hasColorHueOffsetUndefined: Bool {return _storage._colorHueOffsetUndefined != nil}
+  public var hasColorHueOffsetUndefined: Bool {_storage._colorHueOffsetUndefined != nil}
   /// Clears the value of `colorHueOffsetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearColorHueOffsetUndefined() {_uniqueStorage()._colorHueOffsetUndefined = nil}
 
   public var shadowHue: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowHue ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowHue ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowHue = newValue}
   }
   /// Returns true if `shadowHue` has been explicitly set.
-  public var hasShadowHue: Bool {return _storage._shadowHue != nil}
+  public var hasShadowHue: Bool {_storage._shadowHue != nil}
   /// Clears the value of `shadowHue`. Subsequent reads from it will return its default value.
   public mutating func clearShadowHue() {_uniqueStorage()._shadowHue = nil}
 
   public var shadowHueUndefined: Bool {
-    get {return _storage._shadowHueUndefined ?? false}
+    get {_storage._shadowHueUndefined ?? false}
     set {_uniqueStorage()._shadowHueUndefined = newValue}
   }
   /// Returns true if `shadowHueUndefined` has been explicitly set.
-  public var hasShadowHueUndefined: Bool {return _storage._shadowHueUndefined != nil}
+  public var hasShadowHueUndefined: Bool {_storage._shadowHueUndefined != nil}
   /// Clears the value of `shadowHueUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowHueUndefined() {_uniqueStorage()._shadowHueUndefined = nil}
 
   public var shadowHueOffset: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowHueOffset ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowHueOffset ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowHueOffset = newValue}
   }
   /// Returns true if `shadowHueOffset` has been explicitly set.
-  public var hasShadowHueOffset: Bool {return _storage._shadowHueOffset != nil}
+  public var hasShadowHueOffset: Bool {_storage._shadowHueOffset != nil}
   /// Clears the value of `shadowHueOffset`. Subsequent reads from it will return its default value.
   public mutating func clearShadowHueOffset() {_uniqueStorage()._shadowHueOffset = nil}
 
   public var shadowHueOffsetUndefined: Bool {
-    get {return _storage._shadowHueOffsetUndefined ?? false}
+    get {_storage._shadowHueOffsetUndefined ?? false}
     set {_uniqueStorage()._shadowHueOffsetUndefined = newValue}
   }
   /// Returns true if `shadowHueOffsetUndefined` has been explicitly set.
-  public var hasShadowHueOffsetUndefined: Bool {return _storage._shadowHueOffsetUndefined != nil}
+  public var hasShadowHueOffsetUndefined: Bool {_storage._shadowHueOffsetUndefined != nil}
   /// Clears the value of `shadowHueOffsetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowHueOffsetUndefined() {_uniqueStorage()._shadowHueOffsetUndefined = nil}
 
   public var shadowSaturation: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowSaturation ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowSaturation ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowSaturation = newValue}
   }
   /// Returns true if `shadowSaturation` has been explicitly set.
-  public var hasShadowSaturation: Bool {return _storage._shadowSaturation != nil}
+  public var hasShadowSaturation: Bool {_storage._shadowSaturation != nil}
   /// Clears the value of `shadowSaturation`. Subsequent reads from it will return its default value.
   public mutating func clearShadowSaturation() {_uniqueStorage()._shadowSaturation = nil}
 
   public var shadowSaturationUndefined: Bool {
-    get {return _storage._shadowSaturationUndefined ?? false}
+    get {_storage._shadowSaturationUndefined ?? false}
     set {_uniqueStorage()._shadowSaturationUndefined = newValue}
   }
   /// Returns true if `shadowSaturationUndefined` has been explicitly set.
-  public var hasShadowSaturationUndefined: Bool {return _storage._shadowSaturationUndefined != nil}
+  public var hasShadowSaturationUndefined: Bool {_storage._shadowSaturationUndefined != nil}
   /// Clears the value of `shadowSaturationUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowSaturationUndefined() {_uniqueStorage()._shadowSaturationUndefined = nil}
 
   public var shadowBrightness: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowBrightness ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowBrightness ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowBrightness = newValue}
   }
   /// Returns true if `shadowBrightness` has been explicitly set.
-  public var hasShadowBrightness: Bool {return _storage._shadowBrightness != nil}
+  public var hasShadowBrightness: Bool {_storage._shadowBrightness != nil}
   /// Clears the value of `shadowBrightness`. Subsequent reads from it will return its default value.
   public mutating func clearShadowBrightness() {_uniqueStorage()._shadowBrightness = nil}
 
   public var shadowBrightnessUndefined: Bool {
-    get {return _storage._shadowBrightnessUndefined ?? false}
+    get {_storage._shadowBrightnessUndefined ?? false}
     set {_uniqueStorage()._shadowBrightnessUndefined = newValue}
   }
   /// Returns true if `shadowBrightnessUndefined` has been explicitly set.
-  public var hasShadowBrightnessUndefined: Bool {return _storage._shadowBrightnessUndefined != nil}
+  public var hasShadowBrightnessUndefined: Bool {_storage._shadowBrightnessUndefined != nil}
   /// Clears the value of `shadowBrightnessUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowBrightnessUndefined() {_uniqueStorage()._shadowBrightnessUndefined = nil}
 
   public var shadowIntensity: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowIntensity ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowIntensity ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowIntensity = newValue}
   }
   /// Returns true if `shadowIntensity` has been explicitly set.
-  public var hasShadowIntensity: Bool {return _storage._shadowIntensity != nil}
+  public var hasShadowIntensity: Bool {_storage._shadowIntensity != nil}
   /// Clears the value of `shadowIntensity`. Subsequent reads from it will return its default value.
   public mutating func clearShadowIntensity() {_uniqueStorage()._shadowIntensity = nil}
 
   public var shadowIntensityUndefined: Bool {
-    get {return _storage._shadowIntensityUndefined ?? false}
+    get {_storage._shadowIntensityUndefined ?? false}
     set {_uniqueStorage()._shadowIntensityUndefined = newValue}
   }
   /// Returns true if `shadowIntensityUndefined` has been explicitly set.
-  public var hasShadowIntensityUndefined: Bool {return _storage._shadowIntensityUndefined != nil}
+  public var hasShadowIntensityUndefined: Bool {_storage._shadowIntensityUndefined != nil}
   /// Clears the value of `shadowIntensityUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowIntensityUndefined() {_uniqueStorage()._shadowIntensityUndefined = nil}
 
   public var shadowPower: TSSSOS_SpecDoubleArchive {
-    get {return _storage._shadowPower ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._shadowPower ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._shadowPower = newValue}
   }
   /// Returns true if `shadowPower` has been explicitly set.
-  public var hasShadowPower: Bool {return _storage._shadowPower != nil}
+  public var hasShadowPower: Bool {_storage._shadowPower != nil}
   /// Clears the value of `shadowPower`. Subsequent reads from it will return its default value.
   public mutating func clearShadowPower() {_uniqueStorage()._shadowPower = nil}
 
   public var shadowPowerUndefined: Bool {
-    get {return _storage._shadowPowerUndefined ?? false}
+    get {_storage._shadowPowerUndefined ?? false}
     set {_uniqueStorage()._shadowPowerUndefined = newValue}
   }
   /// Returns true if `shadowPowerUndefined` has been explicitly set.
-  public var hasShadowPowerUndefined: Bool {return _storage._shadowPowerUndefined != nil}
+  public var hasShadowPowerUndefined: Bool {_storage._shadowPowerUndefined != nil}
   /// Clears the value of `shadowPowerUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowPowerUndefined() {_uniqueStorage()._shadowPowerUndefined = nil}
 
   public var noiseOctavesIterations: TSSSOS_SpecIntegerArchive {
-    get {return _storage._noiseOctavesIterations ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._noiseOctavesIterations ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._noiseOctavesIterations = newValue}
   }
   /// Returns true if `noiseOctavesIterations` has been explicitly set.
-  public var hasNoiseOctavesIterations: Bool {return _storage._noiseOctavesIterations != nil}
+  public var hasNoiseOctavesIterations: Bool {_storage._noiseOctavesIterations != nil}
   /// Clears the value of `noiseOctavesIterations`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseOctavesIterations() {_uniqueStorage()._noiseOctavesIterations = nil}
 
   public var noiseOctavesIterationsUndefined: Bool {
-    get {return _storage._noiseOctavesIterationsUndefined ?? false}
+    get {_storage._noiseOctavesIterationsUndefined ?? false}
     set {_uniqueStorage()._noiseOctavesIterationsUndefined = newValue}
   }
   /// Returns true if `noiseOctavesIterationsUndefined` has been explicitly set.
-  public var hasNoiseOctavesIterationsUndefined: Bool {return _storage._noiseOctavesIterationsUndefined != nil}
+  public var hasNoiseOctavesIterationsUndefined: Bool {_storage._noiseOctavesIterationsUndefined != nil}
   /// Clears the value of `noiseOctavesIterationsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearNoiseOctavesIterationsUndefined() {_uniqueStorage()._noiseOctavesIterationsUndefined = nil}
 
@@ -2010,44 +2010,44 @@ public struct KNSOS_MotionBackgroundStylePropertyChangeSetArchive: @unchecked Se
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct KNSOS_SlideStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct KNSOS_SlideStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var fill: TSDSOS_SpecFillArchive {
-    get {return _storage._fill ?? TSDSOS_SpecFillArchive()}
+    get {_storage._fill ?? TSDSOS_SpecFillArchive()}
     set {_uniqueStorage()._fill = newValue}
   }
   /// Returns true if `fill` has been explicitly set.
-  public var hasFill: Bool {return _storage._fill != nil}
+  public var hasFill: Bool {_storage._fill != nil}
   /// Clears the value of `fill`. Subsequent reads from it will return its default value.
   public mutating func clearFill() {_uniqueStorage()._fill = nil}
 
   public var fillUndefined: Bool {
-    get {return _storage._fillUndefined ?? false}
+    get {_storage._fillUndefined ?? false}
     set {_uniqueStorage()._fillUndefined = newValue}
   }
   /// Returns true if `fillUndefined` has been explicitly set.
-  public var hasFillUndefined: Bool {return _storage._fillUndefined != nil}
+  public var hasFillUndefined: Bool {_storage._fillUndefined != nil}
   /// Clears the value of `fillUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFillUndefined() {_uniqueStorage()._fillUndefined = nil}
 
   public var slideTransition: KNSOS_SpecTransitionAttributesArchive {
-    get {return _storage._slideTransition ?? KNSOS_SpecTransitionAttributesArchive()}
+    get {_storage._slideTransition ?? KNSOS_SpecTransitionAttributesArchive()}
     set {_uniqueStorage()._slideTransition = newValue}
   }
   /// Returns true if `slideTransition` has been explicitly set.
-  public var hasSlideTransition: Bool {return _storage._slideTransition != nil}
+  public var hasSlideTransition: Bool {_storage._slideTransition != nil}
   /// Clears the value of `slideTransition`. Subsequent reads from it will return its default value.
   public mutating func clearSlideTransition() {_uniqueStorage()._slideTransition = nil}
 
   public var slideTransitionUndefined: Bool {
-    get {return _storage._slideTransitionUndefined ?? false}
+    get {_storage._slideTransitionUndefined ?? false}
     set {_uniqueStorage()._slideTransitionUndefined = newValue}
   }
   /// Returns true if `slideTransitionUndefined` has been explicitly set.
-  public var hasSlideTransitionUndefined: Bool {return _storage._slideTransitionUndefined != nil}
+  public var hasSlideTransitionUndefined: Bool {_storage._slideTransitionUndefined != nil}
   /// Clears the value of `slideTransitionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSlideTransitionUndefined() {_uniqueStorage()._slideTransitionUndefined = nil}
 
@@ -2060,14 +2060,11 @@ public struct KNSOS_SlideStylePropertyChangeSetArchive: @unchecked Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "KNSOS"
+fileprivate nonisolated let _protobuf_package = "KNSOS"
 
-extension KNSOS_SpecSetTransitionAttributesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension KNSOS_SpecSetTransitionAttributesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetTransitionAttributesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "transition_attributes"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}transition_attributes\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -2110,11 +2107,9 @@ extension KNSOS_SpecSetTransitionAttributesArchive: SwiftProtobuf.Message, Swift
   }
 }
 
-extension KNSOS_SpecTransitionAttributesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension KNSOS_SpecTransitionAttributesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecTransitionAttributesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_transition_attributes"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_transition_attributes\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetTransitionAttributes, !v.isInitialized {return false}
@@ -2151,224 +2146,9 @@ extension KNSOS_SpecTransitionAttributesArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension KNSOS_MotionBackgroundStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension KNSOS_MotionBackgroundStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MotionBackgroundStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .standard(proto: "name_undefined"),
-    3: .same(proto: "variant"),
-    4: .standard(proto: "variant_undefined"),
-    5: .standard(proto: "color_gradient"),
-    6: .standard(proto: "color_gradient_undefined"),
-    7: .standard(proto: "random_seed"),
-    8: .standard(proto: "random_seed_undefined"),
-    9: .standard(proto: "color_blur_sigma"),
-    10: .standard(proto: "color_blur_sigma_undefined"),
-    11: .standard(proto: "color_contrast"),
-    12: .standard(proto: "color_contrast_undefined"),
-    13: .standard(proto: "color_gamma"),
-    14: .standard(proto: "color_gamma_undefined"),
-    15: .standard(proto: "color_saturation"),
-    16: .standard(proto: "color_saturation_undefined"),
-    17: .standard(proto: "color_brightness"),
-    18: .standard(proto: "color_brightness_undefined"),
-    19: .standard(proto: "color_hue"),
-    20: .standard(proto: "color_hue_undefined"),
-    21: .standard(proto: "color_vibrance"),
-    22: .standard(proto: "color_vibrance_undefined"),
-    23: .standard(proto: "noise_amplitude"),
-    24: .standard(proto: "noise_amplitude_undefined"),
-    25: .standard(proto: "noise_movement"),
-    26: .standard(proto: "noise_movement_undefined"),
-    27: .standard(proto: "noise_octaves"),
-    28: .standard(proto: "noise_octaves_undefined"),
-    29: .standard(proto: "noise_scale"),
-    30: .standard(proto: "noise_scale_undefined"),
-    31: .standard(proto: "noise_scale_horizontal"),
-    32: .standard(proto: "noise_scale_horizontal_undefined"),
-    33: .standard(proto: "noise_scale_vertical"),
-    34: .standard(proto: "noise_scale_vertical_undefined"),
-    35: .standard(proto: "noise_gain"),
-    36: .standard(proto: "noise_gain_undefined"),
-    37: .standard(proto: "noise_lacunarity"),
-    38: .standard(proto: "noise_lacunarity_undefined"),
-    39: .standard(proto: "noise_speed"),
-    40: .standard(proto: "noise_speed_undefined"),
-    41: .standard(proto: "color_palette_offset"),
-    42: .standard(proto: "color_palette_offset_undefined"),
-    43: .same(proto: "zoom"),
-    44: .standard(proto: "zoom_undefined"),
-    45: .same(proto: "invert"),
-    46: .standard(proto: "invert_undefined"),
-    47: .standard(proto: "blend_mode"),
-    48: .standard(proto: "blend_mode_undefined"),
-    49: .standard(proto: "source_blend_factor"),
-    50: .standard(proto: "source_blend_factor_undefined"),
-    51: .standard(proto: "dest_blend_factor"),
-    52: .standard(proto: "dest_blend_factor_undefined"),
-    53: .same(proto: "motion"),
-    54: .standard(proto: "motion_undefined"),
-    55: .standard(proto: "background_color"),
-    56: .standard(proto: "background_color_undefined"),
-    57: .standard(proto: "foreground_color"),
-    58: .standard(proto: "foreground_color_undefined"),
-    59: .standard(proto: "line_color"),
-    60: .standard(proto: "line_color_undefined"),
-    61: .standard(proto: "point_color"),
-    62: .standard(proto: "point_color_undefined"),
-    63: .same(proto: "alpha"),
-    64: .standard(proto: "alpha_undefined"),
-    65: .same(proto: "border"),
-    66: .standard(proto: "border_undefined"),
-    67: .same(proto: "blend"),
-    68: .standard(proto: "blend_undefined"),
-    69: .same(proto: "brightness"),
-    70: .standard(proto: "brightness_undefined"),
-    71: .standard(proto: "border_lightness"),
-    72: .standard(proto: "border_lightness_undefined"),
-    73: .same(proto: "contrast"),
-    74: .standard(proto: "contrast_undefined"),
-    75: .same(proto: "damping"),
-    76: .standard(proto: "damping_undefined"),
-    77: .same(proto: "density"),
-    78: .standard(proto: "density_undefined"),
-    79: .standard(proto: "diffuse_power"),
-    80: .standard(proto: "diffuse_power_undefined"),
-    81: .same(proto: "distortion"),
-    82: .standard(proto: "distortion_undefined"),
-    83: .same(proto: "entropy"),
-    84: .standard(proto: "entropy_undefined"),
-    85: .same(proto: "exposure"),
-    86: .standard(proto: "exposure_undefined"),
-    87: .same(proto: "filter"),
-    88: .standard(proto: "filter_undefined"),
-    89: .standard(proto: "fog_distance"),
-    90: .standard(proto: "fog_distance_undefined"),
-    91: .standard(proto: "fog_power"),
-    92: .standard(proto: "fog_power_undefined"),
-    93: .same(proto: "gamma"),
-    94: .standard(proto: "gamma_undefined"),
-    95: .standard(proto: "grain_amount"),
-    96: .standard(proto: "grain_amount_undefined"),
-    97: .standard(proto: "grain_intensity"),
-    98: .standard(proto: "grain_intensity_undefined"),
-    99: .same(proto: "hue"),
-    100: .standard(proto: "hue_undefined"),
-    101: .same(proto: "lightness"),
-    102: .standard(proto: "lightness_undefined"),
-    103: .standard(proto: "line_alpha"),
-    104: .standard(proto: "line_alpha_undefined"),
-    105: .standard(proto: "line_center"),
-    106: .standard(proto: "line_center_undefined"),
-    107: .standard(proto: "line_fade"),
-    108: .standard(proto: "line_fade_undefined"),
-    109: .standard(proto: "line_fade_power"),
-    110: .standard(proto: "line_fade_power_undefined"),
-    111: .standard(proto: "line_length"),
-    112: .standard(proto: "line_length_undefined"),
-    113: .standard(proto: "line_width"),
-    114: .standard(proto: "line_width_undefined"),
-    115: .standard(proto: "noise_size_scale"),
-    116: .standard(proto: "noise_size_scale_undefined"),
-    117: .standard(proto: "noise_size_weight"),
-    118: .standard(proto: "noise_size_weight_undefined"),
-    119: .standard(proto: "noise_variance"),
-    120: .standard(proto: "noise_variance_undefined"),
-    121: .same(proto: "offset"),
-    122: .standard(proto: "offset_undefined"),
-    123: .standard(proto: "motion_background_opacity"),
-    124: .standard(proto: "motion_background_opacity_undefined"),
-    125: .standard(proto: "point_depth_alpha"),
-    126: .standard(proto: "point_depth_alpha_undefined"),
-    127: .standard(proto: "point_size"),
-    128: .standard(proto: "point_size_undefined"),
-    129: .same(proto: "power"),
-    130: .standard(proto: "power_undefined"),
-    131: .same(proto: "radius"),
-    132: .standard(proto: "radius_undefined"),
-    133: .same(proto: "refraction"),
-    134: .standard(proto: "refraction_undefined"),
-    135: .same(proto: "resolution"),
-    136: .standard(proto: "resolution_undefined"),
-    137: .same(proto: "saturation"),
-    138: .standard(proto: "saturation_undefined"),
-    139: .same(proto: "scale"),
-    140: .standard(proto: "scale_undefined"),
-    141: .standard(proto: "shadow_alpha"),
-    142: .standard(proto: "shadow_alpha_undefined"),
-    143: .standard(proto: "shadow_angle"),
-    144: .standard(proto: "shadow_angle_undefined"),
-    145: .standard(proto: "shadow_offset"),
-    146: .standard(proto: "shadow_offset_undefined"),
-    147: .standard(proto: "shadow_scale"),
-    148: .standard(proto: "shadow_scale_undefined"),
-    149: .standard(proto: "shadow_value"),
-    150: .standard(proto: "shadow_value_undefined"),
-    151: .same(proto: "speed"),
-    152: .standard(proto: "speed_undefined"),
-    153: .standard(proto: "texture_power"),
-    154: .standard(proto: "texture_power_undefined"),
-    155: .same(proto: "time"),
-    156: .standard(proto: "time_undefined"),
-    157: .standard(proto: "draw_points"),
-    158: .standard(proto: "draw_points_undefined"),
-    159: .standard(proto: "draw_lines"),
-    160: .standard(proto: "draw_lines_undefined"),
-    161: .standard(proto: "draw_shadows"),
-    162: .standard(proto: "draw_shadows_undefined"),
-    163: .standard(proto: "pixels_per_division"),
-    164: .standard(proto: "pixels_per_division_undefined"),
-    165: .same(proto: "symmetry"),
-    166: .standard(proto: "symmetry_undefined"),
-    167: .standard(proto: "lock_focus"),
-    168: .standard(proto: "lock_focus_undefined"),
-    169: .same(proto: "amplitude"),
-    170: .standard(proto: "amplitude_undefined"),
-    171: .same(proto: "envelope"),
-    172: .standard(proto: "envelope_undefined"),
-    173: .standard(proto: "y_offset"),
-    174: .standard(proto: "y_offset_undefined"),
-    175: .same(proto: "focus"),
-    176: .standard(proto: "focus_undefined"),
-    177: .same(proto: "blur"),
-    178: .standard(proto: "blur_undefined"),
-    179: .standard(proto: "grain_speed"),
-    180: .standard(proto: "grain_speed_undefined"),
-    181: .standard(proto: "mesh_color"),
-    182: .standard(proto: "mesh_color_undefined"),
-    183: .same(proto: "angle"),
-    184: .standard(proto: "angle_undefined"),
-    185: .standard(proto: "mesh_line_width"),
-    186: .standard(proto: "mesh_line_width_undefined"),
-    187: .standard(proto: "delta_time"),
-    188: .standard(proto: "delta_time_undefined"),
-    189: .same(proto: "threshold"),
-    190: .standard(proto: "threshold_undefined"),
-    191: .standard(proto: "time_start"),
-    192: .standard(proto: "time_start_undefined"),
-    193: .standard(proto: "instance_count"),
-    194: .standard(proto: "instance_count_undefined"),
-    195: .same(proto: "extrusion"),
-    196: .standard(proto: "extrusion_undefined"),
-    197: .standard(proto: "noise_offset"),
-    198: .standard(proto: "noise_offset_undefined"),
-    199: .standard(proto: "color_hue_offset"),
-    200: .standard(proto: "color_hue_offset_undefined"),
-    201: .standard(proto: "shadow_hue"),
-    202: .standard(proto: "shadow_hue_undefined"),
-    203: .standard(proto: "shadow_hue_offset"),
-    204: .standard(proto: "shadow_hue_offset_undefined"),
-    205: .standard(proto: "shadow_saturation"),
-    206: .standard(proto: "shadow_saturation_undefined"),
-    207: .standard(proto: "shadow_brightness"),
-    208: .standard(proto: "shadow_brightness_undefined"),
-    209: .standard(proto: "shadow_intensity"),
-    210: .standard(proto: "shadow_intensity_undefined"),
-    211: .standard(proto: "shadow_power"),
-    212: .standard(proto: "shadow_power_undefined"),
-    213: .standard(proto: "noise_octaves_iterations"),
-    214: .standard(proto: "noise_octaves_iterations_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{3}name_undefined\0\u{1}variant\0\u{3}variant_undefined\0\u{3}color_gradient\0\u{3}color_gradient_undefined\0\u{3}random_seed\0\u{3}random_seed_undefined\0\u{3}color_blur_sigma\0\u{3}color_blur_sigma_undefined\0\u{3}color_contrast\0\u{3}color_contrast_undefined\0\u{3}color_gamma\0\u{3}color_gamma_undefined\0\u{3}color_saturation\0\u{3}color_saturation_undefined\0\u{3}color_brightness\0\u{3}color_brightness_undefined\0\u{3}color_hue\0\u{3}color_hue_undefined\0\u{3}color_vibrance\0\u{3}color_vibrance_undefined\0\u{3}noise_amplitude\0\u{3}noise_amplitude_undefined\0\u{3}noise_movement\0\u{3}noise_movement_undefined\0\u{3}noise_octaves\0\u{3}noise_octaves_undefined\0\u{3}noise_scale\0\u{3}noise_scale_undefined\0\u{3}noise_scale_horizontal\0\u{3}noise_scale_horizontal_undefined\0\u{3}noise_scale_vertical\0\u{3}noise_scale_vertical_undefined\0\u{3}noise_gain\0\u{3}noise_gain_undefined\0\u{3}noise_lacunarity\0\u{3}noise_lacunarity_undefined\0\u{3}noise_speed\0\u{3}noise_speed_undefined\0\u{3}color_palette_offset\0\u{3}color_palette_offset_undefined\0\u{1}zoom\0\u{3}zoom_undefined\0\u{1}invert\0\u{3}invert_undefined\0\u{3}blend_mode\0\u{3}blend_mode_undefined\0\u{3}source_blend_factor\0\u{3}source_blend_factor_undefined\0\u{3}dest_blend_factor\0\u{3}dest_blend_factor_undefined\0\u{1}motion\0\u{3}motion_undefined\0\u{3}background_color\0\u{3}background_color_undefined\0\u{3}foreground_color\0\u{3}foreground_color_undefined\0\u{3}line_color\0\u{3}line_color_undefined\0\u{3}point_color\0\u{3}point_color_undefined\0\u{1}alpha\0\u{3}alpha_undefined\0\u{1}border\0\u{3}border_undefined\0\u{1}blend\0\u{3}blend_undefined\0\u{1}brightness\0\u{3}brightness_undefined\0\u{3}border_lightness\0\u{3}border_lightness_undefined\0\u{1}contrast\0\u{3}contrast_undefined\0\u{1}damping\0\u{3}damping_undefined\0\u{1}density\0\u{3}density_undefined\0\u{3}diffuse_power\0\u{3}diffuse_power_undefined\0\u{1}distortion\0\u{3}distortion_undefined\0\u{1}entropy\0\u{3}entropy_undefined\0\u{1}exposure\0\u{3}exposure_undefined\0\u{1}filter\0\u{3}filter_undefined\0\u{3}fog_distance\0\u{3}fog_distance_undefined\0\u{3}fog_power\0\u{3}fog_power_undefined\0\u{1}gamma\0\u{3}gamma_undefined\0\u{3}grain_amount\0\u{3}grain_amount_undefined\0\u{3}grain_intensity\0\u{3}grain_intensity_undefined\0\u{1}hue\0\u{3}hue_undefined\0\u{1}lightness\0\u{3}lightness_undefined\0\u{3}line_alpha\0\u{3}line_alpha_undefined\0\u{3}line_center\0\u{3}line_center_undefined\0\u{3}line_fade\0\u{3}line_fade_undefined\0\u{3}line_fade_power\0\u{3}line_fade_power_undefined\0\u{3}line_length\0\u{3}line_length_undefined\0\u{3}line_width\0\u{3}line_width_undefined\0\u{3}noise_size_scale\0\u{3}noise_size_scale_undefined\0\u{3}noise_size_weight\0\u{3}noise_size_weight_undefined\0\u{3}noise_variance\0\u{3}noise_variance_undefined\0\u{1}offset\0\u{3}offset_undefined\0\u{3}motion_background_opacity\0\u{3}motion_background_opacity_undefined\0\u{3}point_depth_alpha\0\u{3}point_depth_alpha_undefined\0\u{3}point_size\0\u{3}point_size_undefined\0\u{1}power\0\u{3}power_undefined\0\u{1}radius\0\u{3}radius_undefined\0\u{1}refraction\0\u{3}refraction_undefined\0\u{1}resolution\0\u{3}resolution_undefined\0\u{1}saturation\0\u{3}saturation_undefined\0\u{1}scale\0\u{3}scale_undefined\0\u{3}shadow_alpha\0\u{3}shadow_alpha_undefined\0\u{3}shadow_angle\0\u{3}shadow_angle_undefined\0\u{3}shadow_offset\0\u{3}shadow_offset_undefined\0\u{3}shadow_scale\0\u{3}shadow_scale_undefined\0\u{3}shadow_value\0\u{3}shadow_value_undefined\0\u{1}speed\0\u{3}speed_undefined\0\u{3}texture_power\0\u{3}texture_power_undefined\0\u{1}time\0\u{3}time_undefined\0\u{3}draw_points\0\u{3}draw_points_undefined\0\u{3}draw_lines\0\u{3}draw_lines_undefined\0\u{3}draw_shadows\0\u{3}draw_shadows_undefined\0\u{3}pixels_per_division\0\u{3}pixels_per_division_undefined\0\u{1}symmetry\0\u{3}symmetry_undefined\0\u{3}lock_focus\0\u{3}lock_focus_undefined\0\u{1}amplitude\0\u{3}amplitude_undefined\0\u{1}envelope\0\u{3}envelope_undefined\0\u{3}y_offset\0\u{3}y_offset_undefined\0\u{1}focus\0\u{3}focus_undefined\0\u{1}blur\0\u{3}blur_undefined\0\u{3}grain_speed\0\u{3}grain_speed_undefined\0\u{3}mesh_color\0\u{3}mesh_color_undefined\0\u{1}angle\0\u{3}angle_undefined\0\u{3}mesh_line_width\0\u{3}mesh_line_width_undefined\0\u{3}delta_time\0\u{3}delta_time_undefined\0\u{1}threshold\0\u{3}threshold_undefined\0\u{3}time_start\0\u{3}time_start_undefined\0\u{3}instance_count\0\u{3}instance_count_undefined\0\u{1}extrusion\0\u{3}extrusion_undefined\0\u{3}noise_offset\0\u{3}noise_offset_undefined\0\u{3}color_hue_offset\0\u{3}color_hue_offset_undefined\0\u{3}shadow_hue\0\u{3}shadow_hue_undefined\0\u{3}shadow_hue_offset\0\u{3}shadow_hue_offset_undefined\0\u{3}shadow_saturation\0\u{3}shadow_saturation_undefined\0\u{3}shadow_brightness\0\u{3}shadow_brightness_undefined\0\u{3}shadow_intensity\0\u{3}shadow_intensity_undefined\0\u{3}shadow_power\0\u{3}shadow_power_undefined\0\u{3}noise_octaves_iterations\0\u{3}noise_octaves_iterations_undefined\0")
 
   fileprivate class _StorageClass {
     var _name: TSSSOS_SpecStringArchive? = nil
@@ -2586,15 +2366,11 @@ extension KNSOS_MotionBackgroundStylePropertyChangeSetArchive: SwiftProtobuf.Mes
     var _noiseOctavesIterations: TSSSOS_SpecIntegerArchive? = nil
     var _noiseOctavesIterationsUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4044,14 +3820,9 @@ extension KNSOS_MotionBackgroundStylePropertyChangeSetArchive: SwiftProtobuf.Mes
   }
 }
 
-extension KNSOS_SlideStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension KNSOS_SlideStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SlideStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "fill"),
-    2: .standard(proto: "fill_undefined"),
-    3: .standard(proto: "slide_transition"),
-    4: .standard(proto: "slide_transition_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}fill\0\u{3}fill_undefined\0\u{3}slide_transition\0\u{3}slide_transition_undefined\0")
 
   fileprivate class _StorageClass {
     var _fill: TSDSOS_SpecFillArchive? = nil
@@ -4059,15 +3830,11 @@ extension KNSOS_SlideStylePropertyChangeSetArchive: SwiftProtobuf.Message, Swift
     var _slideTransition: KNSOS_SpecTransitionAttributesArchive? = nil
     var _slideTransitionUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 

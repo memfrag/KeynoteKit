@@ -6,8 +6,9 @@
 #
 # Requirements:
 #   - protoc            (https://github.com/protocolbuffers/protobuf/releases)
-#   - protoc-gen-swift  (build from https://github.com/apple/swift-protobuf:
-#                        swift build -c release --product protoc-gen-swift)
+#   - protoc-gen-swift  (build from https://github.com/apple/swift-protobuf
+#                        at the SAME tag Package.swift resolves for the runtime,
+#                        e.g. 1.38.1: swift build -c release --product protoc-gen-swift)
 #
 # Usage:
 #   PROTOC=/path/to/protoc PROTOC_GEN_SWIFT=/path/to/protoc-gen-swift \

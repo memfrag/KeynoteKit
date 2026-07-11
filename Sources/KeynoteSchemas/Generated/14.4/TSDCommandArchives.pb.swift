@@ -15,80 +15,44 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public enum TSD_CommentCommandVariant: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case baseComment // = 0
-  case addReply // = 1
-  case editReply // = 2
-  case deleteReply // = 3
+public nonisolated enum TSD_CommentCommandVariant: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case baseComment = 0
+  case addReply = 1
+  case editReply = 2
+  case deleteReply = 3
 
   public init() {
     self = .baseComment
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .baseComment
-    case 1: self = .addReply
-    case 2: self = .editReply
-    case 3: self = .deleteReply
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .baseComment: return 0
-    case .addReply: return 1
-    case .editReply: return 2
-    case .deleteReply: return 3
-    }
-  }
-
 }
 
-public enum TSD_CaptionOrTitleKind: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case caption // = 1
-  case title // = 2
+public nonisolated enum TSD_CaptionOrTitleKind: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case caption = 1
+  case title = 2
 
   public init() {
     self = .caption
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 1: self = .caption
-    case 2: self = .title
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .caption: return 1
-    case .title: return 2
-    }
-  }
-
 }
 
-public struct TSD_UndoObjectArchive: Sendable {
+public nonisolated struct TSD_UndoObjectArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var stylesheet: TSP_Reference {
-    get {return _stylesheet ?? TSP_Reference()}
+    get {_stylesheet ?? TSP_Reference()}
     set {_stylesheet = newValue}
   }
   /// Returns true if `stylesheet` has been explicitly set.
-  public var hasStylesheet: Bool {return self._stylesheet != nil}
+  public var hasStylesheet: Bool {self._stylesheet != nil}
   /// Clears the value of `stylesheet`. Subsequent reads from it will return its default value.
   public mutating func clearStylesheet() {self._stylesheet = nil}
 
@@ -105,28 +69,28 @@ public struct TSD_UndoObjectArchive: Sendable {
   fileprivate var _stylesheet: TSP_Reference? = nil
 }
 
-public struct TSD_GroupDrawablesCommandArchive: Sendable {
+public nonisolated struct TSD_GroupDrawablesCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var drawables: [TSP_Reference] = []
 
   public var group: TSP_Reference {
-    get {return _group ?? TSP_Reference()}
+    get {_group ?? TSP_Reference()}
     set {_group = newValue}
   }
   /// Returns true if `group` has been explicitly set.
-  public var hasGroup: Bool {return self._group != nil}
+  public var hasGroup: Bool {self._group != nil}
   /// Clears the value of `group`. Subsequent reads from it will return its default value.
   public mutating func clearGroup() {self._group = nil}
 
@@ -138,28 +102,28 @@ public struct TSD_GroupDrawablesCommandArchive: Sendable {
   fileprivate var _group: TSP_Reference? = nil
 }
 
-public struct TSD_UngroupGroupCommandArchive: Sendable {
+public nonisolated struct TSD_UngroupGroupCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var drawables: [TSP_Reference] = []
 
   public var group: TSP_Reference {
-    get {return _group ?? TSP_Reference()}
+    get {_group ?? TSP_Reference()}
     set {_group = newValue}
   }
   /// Returns true if `group` has been explicitly set.
-  public var hasGroup: Bool {return self._group != nil}
+  public var hasGroup: Bool {self._group != nil}
   /// Clears the value of `group`. Subsequent reads from it will return its default value.
   public mutating func clearGroup() {self._group = nil}
 
@@ -171,26 +135,26 @@ public struct TSD_UngroupGroupCommandArchive: Sendable {
   fileprivate var _group: TSP_Reference? = nil
 }
 
-public struct TSD_ContainerRemoveChildrenCommandArchive: Sendable {
+public nonisolated struct TSD_ContainerRemoveChildrenCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var containerIDPath: TSP_UUIDPath {
-    get {return _containerIDPath ?? TSP_UUIDPath()}
+    get {_containerIDPath ?? TSP_UUIDPath()}
     set {_containerIDPath = newValue}
   }
   /// Returns true if `containerIDPath` has been explicitly set.
-  public var hasContainerIDPath: Bool {return self._containerIDPath != nil}
+  public var hasContainerIDPath: Bool {self._containerIDPath != nil}
   /// Clears the value of `containerIDPath`. Subsequent reads from it will return its default value.
   public mutating func clearContainerIDPath() {self._containerIDPath = nil}
 
@@ -206,17 +170,17 @@ public struct TSD_ContainerRemoveChildrenCommandArchive: Sendable {
   fileprivate var _containerIDPath: TSP_UUIDPath? = nil
 }
 
-public struct TSD_ContainerRemoveDrawablesCommandArchive: Sendable {
+public nonisolated struct TSD_ContainerRemoveDrawablesCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_ContainerRemoveChildrenCommandArchive {
-    get {return _super ?? TSD_ContainerRemoveChildrenCommandArchive()}
+    get {_super ?? TSD_ContainerRemoveChildrenCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -227,50 +191,50 @@ public struct TSD_ContainerRemoveDrawablesCommandArchive: Sendable {
   fileprivate var _super: TSD_ContainerRemoveChildrenCommandArchive? = nil
 }
 
-public struct TSD_ContainerInsertChildrenCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_ContainerInsertChildrenCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var containerIDPath: TSP_UUIDPath {
-    get {return _storage._containerIDPath ?? TSP_UUIDPath()}
+    get {_storage._containerIDPath ?? TSP_UUIDPath()}
     set {_uniqueStorage()._containerIDPath = newValue}
   }
   /// Returns true if `containerIDPath` has been explicitly set.
-  public var hasContainerIDPath: Bool {return _storage._containerIDPath != nil}
+  public var hasContainerIDPath: Bool {_storage._containerIDPath != nil}
   /// Clears the value of `containerIDPath`. Subsequent reads from it will return its default value.
   public mutating func clearContainerIDPath() {_uniqueStorage()._containerIDPath = nil}
 
   public var children: [TSP_Reference] {
-    get {return _storage._children}
+    get {_storage._children}
     set {_uniqueStorage()._children = newValue}
   }
 
   public var argsList: [TSCK_AddIdOperationArgs] {
-    get {return _storage._argsList}
+    get {_storage._argsList}
     set {_uniqueStorage()._argsList = newValue}
   }
 
   public var customFormatKeys: [TSP_UUID] {
-    get {return _storage._customFormatKeys}
+    get {_storage._customFormatKeys}
     set {_uniqueStorage()._customFormatKeys = newValue}
   }
 
   public var undoObject: TSP_Reference {
-    get {return _storage._undoObject ?? TSP_Reference()}
+    get {_storage._undoObject ?? TSP_Reference()}
     set {_uniqueStorage()._undoObject = newValue}
   }
   /// Returns true if `undoObject` has been explicitly set.
-  public var hasUndoObject: Bool {return _storage._undoObject != nil}
+  public var hasUndoObject: Bool {_storage._undoObject != nil}
   /// Clears the value of `undoObject`. Subsequent reads from it will return its default value.
   public mutating func clearUndoObject() {_uniqueStorage()._undoObject = nil}
 
@@ -281,17 +245,17 @@ public struct TSD_ContainerInsertChildrenCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_ContainerInsertDrawablesCommandArchive: Sendable {
+public nonisolated struct TSD_ContainerInsertDrawablesCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_ContainerInsertChildrenCommandArchive {
-    get {return _super ?? TSD_ContainerInsertChildrenCommandArchive()}
+    get {_super ?? TSD_ContainerInsertChildrenCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -304,26 +268,26 @@ public struct TSD_ContainerInsertDrawablesCommandArchive: Sendable {
   fileprivate var _super: TSD_ContainerInsertChildrenCommandArchive? = nil
 }
 
-public struct TSD_ContainerReorderChildrenCommandArchive: Sendable {
+public nonisolated struct TSD_ContainerReorderChildrenCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var containerIDPath: TSP_UUIDPath {
-    get {return _containerIDPath ?? TSP_UUIDPath()}
+    get {_containerIDPath ?? TSP_UUIDPath()}
     set {_containerIDPath = newValue}
   }
   /// Returns true if `containerIDPath` has been explicitly set.
-  public var hasContainerIDPath: Bool {return self._containerIDPath != nil}
+  public var hasContainerIDPath: Bool {self._containerIDPath != nil}
   /// Clears the value of `containerIDPath`. Subsequent reads from it will return its default value.
   public mutating func clearContainerIDPath() {self._containerIDPath = nil}
 
@@ -337,17 +301,17 @@ public struct TSD_ContainerReorderChildrenCommandArchive: Sendable {
   fileprivate var _containerIDPath: TSP_UUIDPath? = nil
 }
 
-public struct TSD_GroupUngroupInformativeCommandArchive: Sendable {
+public nonisolated struct TSD_GroupUngroupInformativeCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -356,38 +320,22 @@ public struct TSD_GroupUngroupInformativeCommandArchive: Sendable {
   public var insertedInfos: [TSP_Reference] = []
 
   public var commandType: TSD_GroupUngroupInformativeCommandArchive.CommandType {
-    get {return _commandType ?? .group}
+    get {_commandType ?? .group}
     set {_commandType = newValue}
   }
   /// Returns true if `commandType` has been explicitly set.
-  public var hasCommandType: Bool {return self._commandType != nil}
+  public var hasCommandType: Bool {self._commandType != nil}
   /// Clears the value of `commandType`. Subsequent reads from it will return its default value.
   public mutating func clearCommandType() {self._commandType = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum CommandType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case group // = 0
-    case ungroup // = 1
+  public nonisolated enum CommandType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case group = 0
+    case ungroup = 1
 
     public init() {
       self = .group
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .group
-      case 1: self = .ungroup
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .group: return 0
-      case .ungroup: return 1
-      }
     }
 
   }
@@ -398,26 +346,26 @@ public struct TSD_GroupUngroupInformativeCommandArchive: Sendable {
   fileprivate var _commandType: TSD_GroupUngroupInformativeCommandArchive.CommandType? = nil
 }
 
-public struct TSD_InfoCommandArchive: Sendable {
+public nonisolated struct TSD_InfoCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var infoIDPath: TSP_UUIDPath {
-    get {return _infoIDPath ?? TSP_UUIDPath()}
+    get {_infoIDPath ?? TSP_UUIDPath()}
     set {_infoIDPath = newValue}
   }
   /// Returns true if `infoIDPath` has been explicitly set.
-  public var hasInfoIDPath: Bool {return self._infoIDPath != nil}
+  public var hasInfoIDPath: Bool {self._infoIDPath != nil}
   /// Clears the value of `infoIDPath`. Subsequent reads from it will return its default value.
   public mutating func clearInfoIDPath() {self._infoIDPath = nil}
 
@@ -429,53 +377,53 @@ public struct TSD_InfoCommandArchive: Sendable {
   fileprivate var _infoIDPath: TSP_UUIDPath? = nil
 }
 
-public struct TSD_ConnectionLineConnectCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_ConnectionLineConnectCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var connectedFromID: TSP_UUID {
-    get {return _storage._connectedFromID ?? TSP_UUID()}
+    get {_storage._connectedFromID ?? TSP_UUID()}
     set {_uniqueStorage()._connectedFromID = newValue}
   }
   /// Returns true if `connectedFromID` has been explicitly set.
-  public var hasConnectedFromID: Bool {return _storage._connectedFromID != nil}
+  public var hasConnectedFromID: Bool {_storage._connectedFromID != nil}
   /// Clears the value of `connectedFromID`. Subsequent reads from it will return its default value.
   public mutating func clearConnectedFromID() {_uniqueStorage()._connectedFromID = nil}
 
   public var connectedToID: TSP_UUID {
-    get {return _storage._connectedToID ?? TSP_UUID()}
+    get {_storage._connectedToID ?? TSP_UUID()}
     set {_uniqueStorage()._connectedToID = newValue}
   }
   /// Returns true if `connectedToID` has been explicitly set.
-  public var hasConnectedToID: Bool {return _storage._connectedToID != nil}
+  public var hasConnectedToID: Bool {_storage._connectedToID != nil}
   /// Clears the value of `connectedToID`. Subsequent reads from it will return its default value.
   public mutating func clearConnectedToID() {_uniqueStorage()._connectedToID = nil}
 
   public var oldConnectedToID: TSP_UUID {
-    get {return _storage._oldConnectedToID ?? TSP_UUID()}
+    get {_storage._oldConnectedToID ?? TSP_UUID()}
     set {_uniqueStorage()._oldConnectedToID = newValue}
   }
   /// Returns true if `oldConnectedToID` has been explicitly set.
-  public var hasOldConnectedToID: Bool {return _storage._oldConnectedToID != nil}
+  public var hasOldConnectedToID: Bool {_storage._oldConnectedToID != nil}
   /// Clears the value of `oldConnectedToID`. Subsequent reads from it will return its default value.
   public mutating func clearOldConnectedToID() {_uniqueStorage()._oldConnectedToID = nil}
 
   public var oldConnectedFromID: TSP_UUID {
-    get {return _storage._oldConnectedFromID ?? TSP_UUID()}
+    get {_storage._oldConnectedFromID ?? TSP_UUID()}
     set {_uniqueStorage()._oldConnectedFromID = newValue}
   }
   /// Returns true if `oldConnectedFromID` has been explicitly set.
-  public var hasOldConnectedFromID: Bool {return _storage._oldConnectedFromID != nil}
+  public var hasOldConnectedFromID: Bool {_storage._oldConnectedFromID != nil}
   /// Clears the value of `oldConnectedFromID`. Subsequent reads from it will return its default value.
   public mutating func clearOldConnectedFromID() {_uniqueStorage()._oldConnectedFromID = nil}
 
@@ -486,71 +434,71 @@ public struct TSD_ConnectionLineConnectCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_InfoGeometryCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_InfoGeometryCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var newGeometry: TSD_GeometryArchive {
-    get {return _storage._newGeometry ?? TSD_GeometryArchive()}
+    get {_storage._newGeometry ?? TSD_GeometryArchive()}
     set {_uniqueStorage()._newGeometry = newValue}
   }
   /// Returns true if `newGeometry` has been explicitly set.
-  public var hasNewGeometry: Bool {return _storage._newGeometry != nil}
+  public var hasNewGeometry: Bool {_storage._newGeometry != nil}
   /// Clears the value of `newGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearNewGeometry() {_uniqueStorage()._newGeometry = nil}
 
   public var oldGeometry: TSD_GeometryArchive {
-    get {return _storage._oldGeometry ?? TSD_GeometryArchive()}
+    get {_storage._oldGeometry ?? TSD_GeometryArchive()}
     set {_uniqueStorage()._oldGeometry = newValue}
   }
   /// Returns true if `oldGeometry` has been explicitly set.
-  public var hasOldGeometry: Bool {return _storage._oldGeometry != nil}
+  public var hasOldGeometry: Bool {_storage._oldGeometry != nil}
   /// Clears the value of `oldGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearOldGeometry() {_uniqueStorage()._oldGeometry = nil}
 
   public var matchObjectPlaceholderGeometry: Bool {
-    get {return _storage._matchObjectPlaceholderGeometry ?? false}
+    get {_storage._matchObjectPlaceholderGeometry ?? false}
     set {_uniqueStorage()._matchObjectPlaceholderGeometry = newValue}
   }
   /// Returns true if `matchObjectPlaceholderGeometry` has been explicitly set.
-  public var hasMatchObjectPlaceholderGeometry: Bool {return _storage._matchObjectPlaceholderGeometry != nil}
+  public var hasMatchObjectPlaceholderGeometry: Bool {_storage._matchObjectPlaceholderGeometry != nil}
   /// Clears the value of `matchObjectPlaceholderGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearMatchObjectPlaceholderGeometry() {_uniqueStorage()._matchObjectPlaceholderGeometry = nil}
 
   public var oldMatchObjectPlaceholderGeometry: Bool {
-    get {return _storage._oldMatchObjectPlaceholderGeometry ?? false}
+    get {_storage._oldMatchObjectPlaceholderGeometry ?? false}
     set {_uniqueStorage()._oldMatchObjectPlaceholderGeometry = newValue}
   }
   /// Returns true if `oldMatchObjectPlaceholderGeometry` has been explicitly set.
-  public var hasOldMatchObjectPlaceholderGeometry: Bool {return _storage._oldMatchObjectPlaceholderGeometry != nil}
+  public var hasOldMatchObjectPlaceholderGeometry: Bool {_storage._oldMatchObjectPlaceholderGeometry != nil}
   /// Clears the value of `oldMatchObjectPlaceholderGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearOldMatchObjectPlaceholderGeometry() {_uniqueStorage()._oldMatchObjectPlaceholderGeometry = nil}
 
   public var shouldTriggerRtuAnimation: Bool {
-    get {return _storage._shouldTriggerRtuAnimation ?? false}
+    get {_storage._shouldTriggerRtuAnimation ?? false}
     set {_uniqueStorage()._shouldTriggerRtuAnimation = newValue}
   }
   /// Returns true if `shouldTriggerRtuAnimation` has been explicitly set.
-  public var hasShouldTriggerRtuAnimation: Bool {return _storage._shouldTriggerRtuAnimation != nil}
+  public var hasShouldTriggerRtuAnimation: Bool {_storage._shouldTriggerRtuAnimation != nil}
   /// Clears the value of `shouldTriggerRtuAnimation`. Subsequent reads from it will return its default value.
   public mutating func clearShouldTriggerRtuAnimation() {_uniqueStorage()._shouldTriggerRtuAnimation = nil}
 
   public var initiatedOnWeb: Bool {
-    get {return _storage._initiatedOnWeb ?? false}
+    get {_storage._initiatedOnWeb ?? false}
     set {_uniqueStorage()._initiatedOnWeb = newValue}
   }
   /// Returns true if `initiatedOnWeb` has been explicitly set.
-  public var hasInitiatedOnWeb: Bool {return _storage._initiatedOnWeb != nil}
+  public var hasInitiatedOnWeb: Bool {_storage._initiatedOnWeb != nil}
   /// Clears the value of `initiatedOnWeb`. Subsequent reads from it will return its default value.
   public mutating func clearInitiatedOnWeb() {_uniqueStorage()._initiatedOnWeb = nil}
 
@@ -561,35 +509,35 @@ public struct TSD_InfoGeometryCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_DrawablePathSourceCommandArchive: Sendable {
+public nonisolated struct TSD_DrawablePathSourceCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var oldPathSource: TSD_PathSourceArchive {
-    get {return _oldPathSource ?? TSD_PathSourceArchive()}
+    get {_oldPathSource ?? TSD_PathSourceArchive()}
     set {_oldPathSource = newValue}
   }
   /// Returns true if `oldPathSource` has been explicitly set.
-  public var hasOldPathSource: Bool {return self._oldPathSource != nil}
+  public var hasOldPathSource: Bool {self._oldPathSource != nil}
   /// Clears the value of `oldPathSource`. Subsequent reads from it will return its default value.
   public mutating func clearOldPathSource() {self._oldPathSource = nil}
 
   public var newPathSource: TSD_PathSourceArchive {
-    get {return _newPathSource ?? TSD_PathSourceArchive()}
+    get {_newPathSource ?? TSD_PathSourceArchive()}
     set {_newPathSource = newValue}
   }
   /// Returns true if `newPathSource` has been explicitly set.
-  public var hasNewPathSource: Bool {return self._newPathSource != nil}
+  public var hasNewPathSource: Bool {self._newPathSource != nil}
   /// Clears the value of `newPathSource`. Subsequent reads from it will return its default value.
   public mutating func clearNewPathSource() {self._newPathSource = nil}
 
@@ -602,35 +550,35 @@ public struct TSD_DrawablePathSourceCommandArchive: Sendable {
   fileprivate var _newPathSource: TSD_PathSourceArchive? = nil
 }
 
-public struct TSD_InstantAlphaCommandArchive: Sendable {
+public nonisolated struct TSD_InstantAlphaCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var oldpath: TSP_Path {
-    get {return _oldpath ?? TSP_Path()}
+    get {_oldpath ?? TSP_Path()}
     set {_oldpath = newValue}
   }
   /// Returns true if `oldpath` has been explicitly set.
-  public var hasOldpath: Bool {return self._oldpath != nil}
+  public var hasOldpath: Bool {self._oldpath != nil}
   /// Clears the value of `oldpath`. Subsequent reads from it will return its default value.
   public mutating func clearOldpath() {self._oldpath = nil}
 
   public var newpath: TSP_Path {
-    get {return _newpath ?? TSP_Path()}
+    get {_newpath ?? TSP_Path()}
     set {_newpath = newValue}
   }
   /// Returns true if `newpath` has been explicitly set.
-  public var hasNewpath: Bool {return self._newpath != nil}
+  public var hasNewpath: Bool {self._newpath != nil}
   /// Clears the value of `newpath`. Subsequent reads from it will return its default value.
   public mutating func clearNewpath() {self._newpath = nil}
 
@@ -643,35 +591,35 @@ public struct TSD_InstantAlphaCommandArchive: Sendable {
   fileprivate var _newpath: TSP_Path? = nil
 }
 
-public struct TSD_DrawableApplyThemeCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_DrawableApplyThemeCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_ApplyThemeChildCommandArchive {
-    get {return _storage._super ?? TSS_ApplyThemeChildCommandArchive()}
+    get {_storage._super ?? TSS_ApplyThemeChildCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var info: TSP_Reference {
-    get {return _storage._info ?? TSP_Reference()}
+    get {_storage._info ?? TSP_Reference()}
     set {_uniqueStorage()._info = newValue}
   }
   /// Returns true if `info` has been explicitly set.
-  public var hasInfo: Bool {return _storage._info != nil}
+  public var hasInfo: Bool {_storage._info != nil}
   /// Clears the value of `info`. Subsequent reads from it will return its default value.
   public mutating func clearInfo() {_uniqueStorage()._info = nil}
 
   public var style: TSP_Reference {
-    get {return _storage._style ?? TSP_Reference()}
+    get {_storage._style ?? TSP_Reference()}
     set {_uniqueStorage()._style = newValue}
   }
   /// Returns true if `style` has been explicitly set.
-  public var hasStyle: Bool {return _storage._style != nil}
+  public var hasStyle: Bool {_storage._style != nil}
   /// Clears the value of `style`. Subsequent reads from it will return its default value.
   public mutating func clearStyle() {_uniqueStorage()._style = nil}
 
@@ -682,17 +630,17 @@ public struct TSD_DrawableApplyThemeCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_AbstractStyleCommandArchive: Sendable {
+public nonisolated struct TSD_AbstractStyleCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -703,35 +651,35 @@ public struct TSD_AbstractStyleCommandArchive: Sendable {
   fileprivate var _super: TSD_InfoCommandArchive? = nil
 }
 
-public struct TSD_StyledInfoSetStyleCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_StyledInfoSetStyleCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_AbstractStyleCommandArchive {
-    get {return _storage._super ?? TSD_AbstractStyleCommandArchive()}
+    get {_storage._super ?? TSD_AbstractStyleCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var newStyle: TSP_Reference {
-    get {return _storage._newStyle ?? TSP_Reference()}
+    get {_storage._newStyle ?? TSP_Reference()}
     set {_uniqueStorage()._newStyle = newValue}
   }
   /// Returns true if `newStyle` has been explicitly set.
-  public var hasNewStyle: Bool {return _storage._newStyle != nil}
+  public var hasNewStyle: Bool {_storage._newStyle != nil}
   /// Clears the value of `newStyle`. Subsequent reads from it will return its default value.
   public mutating func clearNewStyle() {_uniqueStorage()._newStyle = nil}
 
   public var rollbackStyle: TSP_Reference {
-    get {return _storage._rollbackStyle ?? TSP_Reference()}
+    get {_storage._rollbackStyle ?? TSP_Reference()}
     set {_uniqueStorage()._rollbackStyle = newValue}
   }
   /// Returns true if `rollbackStyle` has been explicitly set.
-  public var hasRollbackStyle: Bool {return _storage._rollbackStyle != nil}
+  public var hasRollbackStyle: Bool {_storage._rollbackStyle != nil}
   /// Clears the value of `rollbackStyle`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackStyle() {_uniqueStorage()._rollbackStyle = nil}
 
@@ -742,35 +690,35 @@ public struct TSD_StyledInfoSetStyleCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_BaseApplyPresetCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_BaseApplyPresetCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_AbstractStyleCommandArchive {
-    get {return _storage._super ?? TSD_AbstractStyleCommandArchive()}
+    get {_storage._super ?? TSD_AbstractStyleCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var presetStyle: TSP_Reference {
-    get {return _storage._presetStyle ?? TSP_Reference()}
+    get {_storage._presetStyle ?? TSP_Reference()}
     set {_uniqueStorage()._presetStyle = newValue}
   }
   /// Returns true if `presetStyle` has been explicitly set.
-  public var hasPresetStyle: Bool {return _storage._presetStyle != nil}
+  public var hasPresetStyle: Bool {_storage._presetStyle != nil}
   /// Clears the value of `presetStyle`. Subsequent reads from it will return its default value.
   public mutating func clearPresetStyle() {_uniqueStorage()._presetStyle = nil}
 
   public var rollbackStyle: TSP_Reference {
-    get {return _storage._rollbackStyle ?? TSP_Reference()}
+    get {_storage._rollbackStyle ?? TSP_Reference()}
     set {_uniqueStorage()._rollbackStyle = newValue}
   }
   /// Returns true if `rollbackStyle` has been explicitly set.
-  public var hasRollbackStyle: Bool {return _storage._rollbackStyle != nil}
+  public var hasRollbackStyle: Bool {_storage._rollbackStyle != nil}
   /// Clears the value of `rollbackStyle`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackStyle() {_uniqueStorage()._rollbackStyle = nil}
 
@@ -781,17 +729,17 @@ public struct TSD_BaseApplyPresetCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_ShapeApplyPresetCommandArchive: Sendable {
+public nonisolated struct TSD_ShapeApplyPresetCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_BaseApplyPresetCommandArchive {
-    get {return _super ?? TSD_BaseApplyPresetCommandArchive()}
+    get {_super ?? TSD_BaseApplyPresetCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -802,17 +750,17 @@ public struct TSD_ShapeApplyPresetCommandArchive: Sendable {
   fileprivate var _super: TSD_BaseApplyPresetCommandArchive? = nil
 }
 
-public struct TSD_MediaApplyPresetCommandArchive: Sendable {
+public nonisolated struct TSD_MediaApplyPresetCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_BaseApplyPresetCommandArchive {
-    get {return _super ?? TSD_BaseApplyPresetCommandArchive()}
+    get {_super ?? TSD_BaseApplyPresetCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -823,26 +771,26 @@ public struct TSD_MediaApplyPresetCommandArchive: Sendable {
   fileprivate var _super: TSD_BaseApplyPresetCommandArchive? = nil
 }
 
-public struct TSD_ShapeStyleSetValueCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_ShapeStyleSetValueCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_BaseStyleSetValueCommandArchive {
-    get {return _storage._super ?? TSD_BaseStyleSetValueCommandArchive()}
+    get {_storage._super ?? TSD_BaseStyleSetValueCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var change: TSDSOS_BaseShapeStylePropertyChangeSetArchive {
-    get {return _storage._change ?? TSDSOS_BaseShapeStylePropertyChangeSetArchive()}
+    get {_storage._change ?? TSDSOS_BaseShapeStylePropertyChangeSetArchive()}
     set {_uniqueStorage()._change = newValue}
   }
   /// Returns true if `change` has been explicitly set.
-  public var hasChange: Bool {return _storage._change != nil}
+  public var hasChange: Bool {_storage._change != nil}
   /// Clears the value of `change`. Subsequent reads from it will return its default value.
   public mutating func clearChange() {_uniqueStorage()._change = nil}
 
@@ -853,35 +801,35 @@ public struct TSD_ShapeStyleSetValueCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_BaseStyleSetValueCommandArchive: Sendable {
+public nonisolated struct TSD_BaseStyleSetValueCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_AbstractStyleCommandArchive {
-    get {return _super ?? TSD_AbstractStyleCommandArchive()}
+    get {_super ?? TSD_AbstractStyleCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var oldStyle: TSP_Reference {
-    get {return _oldStyle ?? TSP_Reference()}
+    get {_oldStyle ?? TSP_Reference()}
     set {_oldStyle = newValue}
   }
   /// Returns true if `oldStyle` has been explicitly set.
-  public var hasOldStyle: Bool {return self._oldStyle != nil}
+  public var hasOldStyle: Bool {self._oldStyle != nil}
   /// Clears the value of `oldStyle`. Subsequent reads from it will return its default value.
   public mutating func clearOldStyle() {self._oldStyle = nil}
 
   public var isBorderChange: Bool {
-    get {return _isBorderChange ?? false}
+    get {_isBorderChange ?? false}
     set {_isBorderChange = newValue}
   }
   /// Returns true if `isBorderChange` has been explicitly set.
-  public var hasIsBorderChange: Bool {return self._isBorderChange != nil}
+  public var hasIsBorderChange: Bool {self._isBorderChange != nil}
   /// Clears the value of `isBorderChange`. Subsequent reads from it will return its default value.
   public mutating func clearIsBorderChange() {self._isBorderChange = nil}
 
@@ -894,179 +842,161 @@ public struct TSD_BaseStyleSetValueCommandArchive: Sendable {
   fileprivate var _isBorderChange: Bool? = nil
 }
 
-public struct TSD_MovieSetValueCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_MovieSetValueCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var property: Int32 {
-    get {return _storage._property ?? 0}
+    get {_storage._property ?? 0}
     set {_uniqueStorage()._property = newValue}
   }
   /// Returns true if `property` has been explicitly set.
-  public var hasProperty: Bool {return _storage._property != nil}
+  public var hasProperty: Bool {_storage._property != nil}
   /// Clears the value of `property`. Subsequent reads from it will return its default value.
   public mutating func clearProperty() {_uniqueStorage()._property = nil}
 
   public var value: TSD_MovieSetValueCommandArchive.PropertyValue {
-    get {return _storage._value ?? TSD_MovieSetValueCommandArchive.PropertyValue()}
+    get {_storage._value ?? TSD_MovieSetValueCommandArchive.PropertyValue()}
     set {_uniqueStorage()._value = newValue}
   }
   /// Returns true if `value` has been explicitly set.
-  public var hasValue: Bool {return _storage._value != nil}
+  public var hasValue: Bool {_storage._value != nil}
   /// Clears the value of `value`. Subsequent reads from it will return its default value.
   public mutating func clearValue() {_uniqueStorage()._value = nil}
 
   public var oldValue: TSD_MovieSetValueCommandArchive.PropertyValue {
-    get {return _storage._oldValue ?? TSD_MovieSetValueCommandArchive.PropertyValue()}
+    get {_storage._oldValue ?? TSD_MovieSetValueCommandArchive.PropertyValue()}
     set {_uniqueStorage()._oldValue = newValue}
   }
   /// Returns true if `oldValue` has been explicitly set.
-  public var hasOldValue: Bool {return _storage._oldValue != nil}
+  public var hasOldValue: Bool {_storage._oldValue != nil}
   /// Clears the value of `oldValue`. Subsequent reads from it will return its default value.
   public mutating func clearOldValue() {_uniqueStorage()._oldValue = nil}
 
   public var importedauxiliarymedia: TSP_DataReference {
-    get {return _storage._importedauxiliarymedia ?? TSP_DataReference()}
+    get {_storage._importedauxiliarymedia ?? TSP_DataReference()}
     set {_uniqueStorage()._importedauxiliarymedia = newValue}
   }
   /// Returns true if `importedauxiliarymedia` has been explicitly set.
-  public var hasImportedauxiliarymedia: Bool {return _storage._importedauxiliarymedia != nil}
+  public var hasImportedauxiliarymedia: Bool {_storage._importedauxiliarymedia != nil}
   /// Clears the value of `importedauxiliarymedia`. Subsequent reads from it will return its default value.
   public mutating func clearImportedauxiliarymedia() {_uniqueStorage()._importedauxiliarymedia = nil}
 
   public var oldimportedauxiliarymedia: TSP_DataReference {
-    get {return _storage._oldimportedauxiliarymedia ?? TSP_DataReference()}
+    get {_storage._oldimportedauxiliarymedia ?? TSP_DataReference()}
     set {_uniqueStorage()._oldimportedauxiliarymedia = newValue}
   }
   /// Returns true if `oldimportedauxiliarymedia` has been explicitly set.
-  public var hasOldimportedauxiliarymedia: Bool {return _storage._oldimportedauxiliarymedia != nil}
+  public var hasOldimportedauxiliarymedia: Bool {_storage._oldimportedauxiliarymedia != nil}
   /// Clears the value of `oldimportedauxiliarymedia`. Subsequent reads from it will return its default value.
   public mutating func clearOldimportedauxiliarymedia() {_uniqueStorage()._oldimportedauxiliarymedia = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum LoopOption: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case none // = 0
-    case `repeat` // = 1
-    case backAndForth // = 2
+  public nonisolated enum LoopOption: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case none = 0
+    case `repeat` = 1
+    case backAndForth = 2
 
     public init() {
       self = .none
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .none
-      case 1: self = .repeat
-      case 2: self = .backAndForth
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .none: return 0
-      case .repeat: return 1
-      case .backAndForth: return 2
-      }
-    }
-
   }
 
-  public struct PropertyValue: Sendable {
+  public nonisolated struct PropertyValue: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var starttime: Double {
-      get {return _starttime ?? 0}
+      get {_starttime ?? 0}
       set {_starttime = newValue}
     }
     /// Returns true if `starttime` has been explicitly set.
-    public var hasStarttime: Bool {return self._starttime != nil}
+    public var hasStarttime: Bool {self._starttime != nil}
     /// Clears the value of `starttime`. Subsequent reads from it will return its default value.
     public mutating func clearStarttime() {self._starttime = nil}
 
     public var endtime: Double {
-      get {return _endtime ?? 0}
+      get {_endtime ?? 0}
       set {_endtime = newValue}
     }
     /// Returns true if `endtime` has been explicitly set.
-    public var hasEndtime: Bool {return self._endtime != nil}
+    public var hasEndtime: Bool {self._endtime != nil}
     /// Clears the value of `endtime`. Subsequent reads from it will return its default value.
     public mutating func clearEndtime() {self._endtime = nil}
 
     public var postertime: Double {
-      get {return _postertime ?? 0}
+      get {_postertime ?? 0}
       set {_postertime = newValue}
     }
     /// Returns true if `postertime` has been explicitly set.
-    public var hasPostertime: Bool {return self._postertime != nil}
+    public var hasPostertime: Bool {self._postertime != nil}
     /// Clears the value of `postertime`. Subsequent reads from it will return its default value.
     public mutating func clearPostertime() {self._postertime = nil}
 
     public var posterimagedata: TSP_DataReference {
-      get {return _posterimagedata ?? TSP_DataReference()}
+      get {_posterimagedata ?? TSP_DataReference()}
       set {_posterimagedata = newValue}
     }
     /// Returns true if `posterimagedata` has been explicitly set.
-    public var hasPosterimagedata: Bool {return self._posterimagedata != nil}
+    public var hasPosterimagedata: Bool {self._posterimagedata != nil}
     /// Clears the value of `posterimagedata`. Subsequent reads from it will return its default value.
     public mutating func clearPosterimagedata() {self._posterimagedata = nil}
 
     public var autoplay: Bool {
-      get {return _autoplay ?? false}
+      get {_autoplay ?? false}
       set {_autoplay = newValue}
     }
     /// Returns true if `autoplay` has been explicitly set.
-    public var hasAutoplay: Bool {return self._autoplay != nil}
+    public var hasAutoplay: Bool {self._autoplay != nil}
     /// Clears the value of `autoplay`. Subsequent reads from it will return its default value.
     public mutating func clearAutoplay() {self._autoplay = nil}
 
     public var loopOption: TSD_MovieSetValueCommandArchive.LoopOption {
-      get {return _loopOption ?? .none}
+      get {_loopOption ?? .none}
       set {_loopOption = newValue}
     }
     /// Returns true if `loopOption` has been explicitly set.
-    public var hasLoopOption: Bool {return self._loopOption != nil}
+    public var hasLoopOption: Bool {self._loopOption != nil}
     /// Clears the value of `loopOption`. Subsequent reads from it will return its default value.
     public mutating func clearLoopOption() {self._loopOption = nil}
 
     public var volume: Float {
-      get {return _volume ?? 0}
+      get {_volume ?? 0}
       set {_volume = newValue}
     }
     /// Returns true if `volume` has been explicitly set.
-    public var hasVolume: Bool {return self._volume != nil}
+    public var hasVolume: Bool {self._volume != nil}
     /// Clears the value of `volume`. Subsequent reads from it will return its default value.
     public mutating func clearVolume() {self._volume = nil}
 
     public var media: TSP_DataReference {
-      get {return _media ?? TSP_DataReference()}
+      get {_media ?? TSP_DataReference()}
       set {_media = newValue}
     }
     /// Returns true if `media` has been explicitly set.
-    public var hasMedia: Bool {return self._media != nil}
+    public var hasMedia: Bool {self._media != nil}
     /// Clears the value of `media`. Subsequent reads from it will return its default value.
     public mutating func clearMedia() {self._media = nil}
 
     public var playsAcrossSlides: Bool {
-      get {return _playsAcrossSlides ?? false}
+      get {_playsAcrossSlides ?? false}
       set {_playsAcrossSlides = newValue}
     }
     /// Returns true if `playsAcrossSlides` has been explicitly set.
-    public var hasPlaysAcrossSlides: Bool {return self._playsAcrossSlides != nil}
+    public var hasPlaysAcrossSlides: Bool {self._playsAcrossSlides != nil}
     /// Clears the value of `playsAcrossSlides`. Subsequent reads from it will return its default value.
     public mutating func clearPlaysAcrossSlides() {self._playsAcrossSlides = nil}
 
@@ -1090,26 +1020,26 @@ public struct TSD_MovieSetValueCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_MediaStyleSetValueCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_MediaStyleSetValueCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_BaseStyleSetValueCommandArchive {
-    get {return _storage._super ?? TSD_BaseStyleSetValueCommandArchive()}
+    get {_storage._super ?? TSD_BaseStyleSetValueCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var change: TSDSOS_MediaStylePropertyChangeSetArchive {
-    get {return _storage._change ?? TSDSOS_MediaStylePropertyChangeSetArchive()}
+    get {_storage._change ?? TSDSOS_MediaStylePropertyChangeSetArchive()}
     set {_uniqueStorage()._change = newValue}
   }
   /// Returns true if `change` has been explicitly set.
-  public var hasChange: Bool {return _storage._change != nil}
+  public var hasChange: Bool {_storage._change != nil}
   /// Clears the value of `change`. Subsequent reads from it will return its default value.
   public mutating func clearChange() {_uniqueStorage()._change = nil}
 
@@ -1120,188 +1050,188 @@ public struct TSD_MediaStyleSetValueCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_ImageMediaCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_ImageMediaCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var newImageData: TSP_DataReference {
-    get {return _storage._newImageData ?? TSP_DataReference()}
+    get {_storage._newImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._newImageData = newValue}
   }
   /// Returns true if `newImageData` has been explicitly set.
-  public var hasNewImageData: Bool {return _storage._newImageData != nil}
+  public var hasNewImageData: Bool {_storage._newImageData != nil}
   /// Clears the value of `newImageData`. Subsequent reads from it will return its default value.
   public mutating func clearNewImageData() {_uniqueStorage()._newImageData = nil}
 
   public var oldImageData: TSP_DataReference {
-    get {return _storage._oldImageData ?? TSP_DataReference()}
+    get {_storage._oldImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldImageData = newValue}
   }
   /// Returns true if `oldImageData` has been explicitly set.
-  public var hasOldImageData: Bool {return _storage._oldImageData != nil}
+  public var hasOldImageData: Bool {_storage._oldImageData != nil}
   /// Clears the value of `oldImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldImageData() {_uniqueStorage()._oldImageData = nil}
 
   public var oldOriginalImageData: TSP_DataReference {
-    get {return _storage._oldOriginalImageData ?? TSP_DataReference()}
+    get {_storage._oldOriginalImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldOriginalImageData = newValue}
   }
   /// Returns true if `oldOriginalImageData` has been explicitly set.
-  public var hasOldOriginalImageData: Bool {return _storage._oldOriginalImageData != nil}
+  public var hasOldOriginalImageData: Bool {_storage._oldOriginalImageData != nil}
   /// Clears the value of `oldOriginalImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldOriginalImageData() {_uniqueStorage()._oldOriginalImageData = nil}
 
   public var oldNaturalSize: TSP_Size {
-    get {return _storage._oldNaturalSize ?? TSP_Size()}
+    get {_storage._oldNaturalSize ?? TSP_Size()}
     set {_uniqueStorage()._oldNaturalSize = newValue}
   }
   /// Returns true if `oldNaturalSize` has been explicitly set.
-  public var hasOldNaturalSize: Bool {return _storage._oldNaturalSize != nil}
+  public var hasOldNaturalSize: Bool {_storage._oldNaturalSize != nil}
   /// Clears the value of `oldNaturalSize`. Subsequent reads from it will return its default value.
   public mutating func clearOldNaturalSize() {_uniqueStorage()._oldNaturalSize = nil}
 
   public var newOriginalImageData: TSP_DataReference {
-    get {return _storage._newOriginalImageData ?? TSP_DataReference()}
+    get {_storage._newOriginalImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._newOriginalImageData = newValue}
   }
   /// Returns true if `newOriginalImageData` has been explicitly set.
-  public var hasNewOriginalImageData: Bool {return _storage._newOriginalImageData != nil}
+  public var hasNewOriginalImageData: Bool {_storage._newOriginalImageData != nil}
   /// Clears the value of `newOriginalImageData`. Subsequent reads from it will return its default value.
   public mutating func clearNewOriginalImageData() {_uniqueStorage()._newOriginalImageData = nil}
 
   public var oldImageAdjustments: TSD_ImageAdjustmentsArchive {
-    get {return _storage._oldImageAdjustments ?? TSD_ImageAdjustmentsArchive()}
+    get {_storage._oldImageAdjustments ?? TSD_ImageAdjustmentsArchive()}
     set {_uniqueStorage()._oldImageAdjustments = newValue}
   }
   /// Returns true if `oldImageAdjustments` has been explicitly set.
-  public var hasOldImageAdjustments: Bool {return _storage._oldImageAdjustments != nil}
+  public var hasOldImageAdjustments: Bool {_storage._oldImageAdjustments != nil}
   /// Clears the value of `oldImageAdjustments`. Subsequent reads from it will return its default value.
   public mutating func clearOldImageAdjustments() {_uniqueStorage()._oldImageAdjustments = nil}
 
   public var oldAdjustedImageData: TSP_DataReference {
-    get {return _storage._oldAdjustedImageData ?? TSP_DataReference()}
+    get {_storage._oldAdjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldAdjustedImageData = newValue}
   }
   /// Returns true if `oldAdjustedImageData` has been explicitly set.
-  public var hasOldAdjustedImageData: Bool {return _storage._oldAdjustedImageData != nil}
+  public var hasOldAdjustedImageData: Bool {_storage._oldAdjustedImageData != nil}
   /// Clears the value of `oldAdjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldAdjustedImageData() {_uniqueStorage()._oldAdjustedImageData = nil}
 
   public var oldEnhancedImageData: TSP_DataReference {
-    get {return _storage._oldEnhancedImageData ?? TSP_DataReference()}
+    get {_storage._oldEnhancedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldEnhancedImageData = newValue}
   }
   /// Returns true if `oldEnhancedImageData` has been explicitly set.
-  public var hasOldEnhancedImageData: Bool {return _storage._oldEnhancedImageData != nil}
+  public var hasOldEnhancedImageData: Bool {_storage._oldEnhancedImageData != nil}
   /// Clears the value of `oldEnhancedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldEnhancedImageData() {_uniqueStorage()._oldEnhancedImageData = nil}
 
   public var imageAdjustments: TSD_ImageAdjustmentsArchive {
-    get {return _storage._imageAdjustments ?? TSD_ImageAdjustmentsArchive()}
+    get {_storage._imageAdjustments ?? TSD_ImageAdjustmentsArchive()}
     set {_uniqueStorage()._imageAdjustments = newValue}
   }
   /// Returns true if `imageAdjustments` has been explicitly set.
-  public var hasImageAdjustments: Bool {return _storage._imageAdjustments != nil}
+  public var hasImageAdjustments: Bool {_storage._imageAdjustments != nil}
   /// Clears the value of `imageAdjustments`. Subsequent reads from it will return its default value.
   public mutating func clearImageAdjustments() {_uniqueStorage()._imageAdjustments = nil}
 
   public var adjustedImageData: TSP_DataReference {
-    get {return _storage._adjustedImageData ?? TSP_DataReference()}
+    get {_storage._adjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._adjustedImageData = newValue}
   }
   /// Returns true if `adjustedImageData` has been explicitly set.
-  public var hasAdjustedImageData: Bool {return _storage._adjustedImageData != nil}
+  public var hasAdjustedImageData: Bool {_storage._adjustedImageData != nil}
   /// Clears the value of `adjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearAdjustedImageData() {_uniqueStorage()._adjustedImageData = nil}
 
   public var enhancedImageData: TSP_DataReference {
-    get {return _storage._enhancedImageData ?? TSP_DataReference()}
+    get {_storage._enhancedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._enhancedImageData = newValue}
   }
   /// Returns true if `enhancedImageData` has been explicitly set.
-  public var hasEnhancedImageData: Bool {return _storage._enhancedImageData != nil}
+  public var hasEnhancedImageData: Bool {_storage._enhancedImageData != nil}
   /// Clears the value of `enhancedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearEnhancedImageData() {_uniqueStorage()._enhancedImageData = nil}
 
   public var newThumbnailImageData: TSP_DataReference {
-    get {return _storage._newThumbnailImageData ?? TSP_DataReference()}
+    get {_storage._newThumbnailImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._newThumbnailImageData = newValue}
   }
   /// Returns true if `newThumbnailImageData` has been explicitly set.
-  public var hasNewThumbnailImageData: Bool {return _storage._newThumbnailImageData != nil}
+  public var hasNewThumbnailImageData: Bool {_storage._newThumbnailImageData != nil}
   /// Clears the value of `newThumbnailImageData`. Subsequent reads from it will return its default value.
   public mutating func clearNewThumbnailImageData() {_uniqueStorage()._newThumbnailImageData = nil}
 
   public var oldThumbnailImageData: TSP_DataReference {
-    get {return _storage._oldThumbnailImageData ?? TSP_DataReference()}
+    get {_storage._oldThumbnailImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldThumbnailImageData = newValue}
   }
   /// Returns true if `oldThumbnailImageData` has been explicitly set.
-  public var hasOldThumbnailImageData: Bool {return _storage._oldThumbnailImageData != nil}
+  public var hasOldThumbnailImageData: Bool {_storage._oldThumbnailImageData != nil}
   /// Clears the value of `oldThumbnailImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldThumbnailImageData() {_uniqueStorage()._oldThumbnailImageData = nil}
 
   public var thumbnailAdjustedImageData: TSP_DataReference {
-    get {return _storage._thumbnailAdjustedImageData ?? TSP_DataReference()}
+    get {_storage._thumbnailAdjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._thumbnailAdjustedImageData = newValue}
   }
   /// Returns true if `thumbnailAdjustedImageData` has been explicitly set.
-  public var hasThumbnailAdjustedImageData: Bool {return _storage._thumbnailAdjustedImageData != nil}
+  public var hasThumbnailAdjustedImageData: Bool {_storage._thumbnailAdjustedImageData != nil}
   /// Clears the value of `thumbnailAdjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearThumbnailAdjustedImageData() {_uniqueStorage()._thumbnailAdjustedImageData = nil}
 
   public var oldThumbnailAdjustedImageData: TSP_DataReference {
-    get {return _storage._oldThumbnailAdjustedImageData ?? TSP_DataReference()}
+    get {_storage._oldThumbnailAdjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldThumbnailAdjustedImageData = newValue}
   }
   /// Returns true if `oldThumbnailAdjustedImageData` has been explicitly set.
-  public var hasOldThumbnailAdjustedImageData: Bool {return _storage._oldThumbnailAdjustedImageData != nil}
+  public var hasOldThumbnailAdjustedImageData: Bool {_storage._oldThumbnailAdjustedImageData != nil}
   /// Clears the value of `oldThumbnailAdjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldThumbnailAdjustedImageData() {_uniqueStorage()._oldThumbnailAdjustedImageData = nil}
 
   public var databaseNewImageData: TSP_Reference {
-    get {return _storage._databaseNewImageData ?? TSP_Reference()}
+    get {_storage._databaseNewImageData ?? TSP_Reference()}
     set {_uniqueStorage()._databaseNewImageData = newValue}
   }
   /// Returns true if `databaseNewImageData` has been explicitly set.
-  public var hasDatabaseNewImageData: Bool {return _storage._databaseNewImageData != nil}
+  public var hasDatabaseNewImageData: Bool {_storage._databaseNewImageData != nil}
   /// Clears the value of `databaseNewImageData`. Subsequent reads from it will return its default value.
   public mutating func clearDatabaseNewImageData() {_uniqueStorage()._databaseNewImageData = nil}
 
   public var databaseOldImageData: TSP_Reference {
-    get {return _storage._databaseOldImageData ?? TSP_Reference()}
+    get {_storage._databaseOldImageData ?? TSP_Reference()}
     set {_uniqueStorage()._databaseOldImageData = newValue}
   }
   /// Returns true if `databaseOldImageData` has been explicitly set.
-  public var hasDatabaseOldImageData: Bool {return _storage._databaseOldImageData != nil}
+  public var hasDatabaseOldImageData: Bool {_storage._databaseOldImageData != nil}
   /// Clears the value of `databaseOldImageData`. Subsequent reads from it will return its default value.
   public mutating func clearDatabaseOldImageData() {_uniqueStorage()._databaseOldImageData = nil}
 
   public var databaseOldOriginalImageData: TSP_Reference {
-    get {return _storage._databaseOldOriginalImageData ?? TSP_Reference()}
+    get {_storage._databaseOldOriginalImageData ?? TSP_Reference()}
     set {_uniqueStorage()._databaseOldOriginalImageData = newValue}
   }
   /// Returns true if `databaseOldOriginalImageData` has been explicitly set.
-  public var hasDatabaseOldOriginalImageData: Bool {return _storage._databaseOldOriginalImageData != nil}
+  public var hasDatabaseOldOriginalImageData: Bool {_storage._databaseOldOriginalImageData != nil}
   /// Clears the value of `databaseOldOriginalImageData`. Subsequent reads from it will return its default value.
   public mutating func clearDatabaseOldOriginalImageData() {_uniqueStorage()._databaseOldOriginalImageData = nil}
 
   public var databaseNewOriginalImageData: TSP_Reference {
-    get {return _storage._databaseNewOriginalImageData ?? TSP_Reference()}
+    get {_storage._databaseNewOriginalImageData ?? TSP_Reference()}
     set {_uniqueStorage()._databaseNewOriginalImageData = newValue}
   }
   /// Returns true if `databaseNewOriginalImageData` has been explicitly set.
-  public var hasDatabaseNewOriginalImageData: Bool {return _storage._databaseNewOriginalImageData != nil}
+  public var hasDatabaseNewOriginalImageData: Bool {_storage._databaseNewOriginalImageData != nil}
   /// Clears the value of `databaseNewOriginalImageData`. Subsequent reads from it will return its default value.
   public mutating func clearDatabaseNewOriginalImageData() {_uniqueStorage()._databaseNewOriginalImageData = nil}
 
@@ -1312,44 +1242,44 @@ public struct TSD_ImageMediaCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_MediaOriginalSizeCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_MediaOriginalSizeCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var newOriginalSize: TSP_Size {
-    get {return _storage._newOriginalSize ?? TSP_Size()}
+    get {_storage._newOriginalSize ?? TSP_Size()}
     set {_uniqueStorage()._newOriginalSize = newValue}
   }
   /// Returns true if `newOriginalSize` has been explicitly set.
-  public var hasNewOriginalSize: Bool {return _storage._newOriginalSize != nil}
+  public var hasNewOriginalSize: Bool {_storage._newOriginalSize != nil}
   /// Clears the value of `newOriginalSize`. Subsequent reads from it will return its default value.
   public mutating func clearNewOriginalSize() {_uniqueStorage()._newOriginalSize = nil}
 
   public var oldOriginalSize: TSP_Size {
-    get {return _storage._oldOriginalSize ?? TSP_Size()}
+    get {_storage._oldOriginalSize ?? TSP_Size()}
     set {_uniqueStorage()._oldOriginalSize = newValue}
   }
   /// Returns true if `oldOriginalSize` has been explicitly set.
-  public var hasOldOriginalSize: Bool {return _storage._oldOriginalSize != nil}
+  public var hasOldOriginalSize: Bool {_storage._oldOriginalSize != nil}
   /// Clears the value of `oldOriginalSize`. Subsequent reads from it will return its default value.
   public mutating func clearOldOriginalSize() {_uniqueStorage()._oldOriginalSize = nil}
 
   public var propertyName: String {
-    get {return _storage._propertyName ?? String()}
+    get {_storage._propertyName ?? String()}
     set {_uniqueStorage()._propertyName = newValue}
   }
   /// Returns true if `propertyName` has been explicitly set.
-  public var hasPropertyName: Bool {return _storage._propertyName != nil}
+  public var hasPropertyName: Bool {_storage._propertyName != nil}
   /// Clears the value of `propertyName`. Subsequent reads from it will return its default value.
   public mutating func clearPropertyName() {_uniqueStorage()._propertyName = nil}
 
@@ -1360,35 +1290,35 @@ public struct TSD_MediaOriginalSizeCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_MediaInfoGeometryCommandArchive: Sendable {
+public nonisolated struct TSD_MediaInfoGeometryCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoGeometryCommandArchive {
-    get {return _super ?? TSD_InfoGeometryCommandArchive()}
+    get {_super ?? TSD_InfoGeometryCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var newOriginalSize: TSP_Size {
-    get {return _newOriginalSize ?? TSP_Size()}
+    get {_newOriginalSize ?? TSP_Size()}
     set {_newOriginalSize = newValue}
   }
   /// Returns true if `newOriginalSize` has been explicitly set.
-  public var hasNewOriginalSize: Bool {return self._newOriginalSize != nil}
+  public var hasNewOriginalSize: Bool {self._newOriginalSize != nil}
   /// Clears the value of `newOriginalSize`. Subsequent reads from it will return its default value.
   public mutating func clearNewOriginalSize() {self._newOriginalSize = nil}
 
   public var oldOriginalSize: TSP_Size {
-    get {return _oldOriginalSize ?? TSP_Size()}
+    get {_oldOriginalSize ?? TSP_Size()}
     set {_oldOriginalSize = newValue}
   }
   /// Returns true if `oldOriginalSize` has been explicitly set.
-  public var hasOldOriginalSize: Bool {return self._oldOriginalSize != nil}
+  public var hasOldOriginalSize: Bool {self._oldOriginalSize != nil}
   /// Clears the value of `oldOriginalSize`. Subsequent reads from it will return its default value.
   public mutating func clearOldOriginalSize() {self._oldOriginalSize = nil}
 
@@ -1401,35 +1331,35 @@ public struct TSD_MediaInfoGeometryCommandArchive: Sendable {
   fileprivate var _oldOriginalSize: TSP_Size? = nil
 }
 
-public struct TSD_ImageNaturalSizeCommandArchive: Sendable {
+public nonisolated struct TSD_ImageNaturalSizeCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var newNaturalSize: TSP_Size {
-    get {return _newNaturalSize ?? TSP_Size()}
+    get {_newNaturalSize ?? TSP_Size()}
     set {_newNaturalSize = newValue}
   }
   /// Returns true if `newNaturalSize` has been explicitly set.
-  public var hasNewNaturalSize: Bool {return self._newNaturalSize != nil}
+  public var hasNewNaturalSize: Bool {self._newNaturalSize != nil}
   /// Clears the value of `newNaturalSize`. Subsequent reads from it will return its default value.
   public mutating func clearNewNaturalSize() {self._newNaturalSize = nil}
 
   public var oldNaturalSize: TSP_Size {
-    get {return _oldNaturalSize ?? TSP_Size()}
+    get {_oldNaturalSize ?? TSP_Size()}
     set {_oldNaturalSize = newValue}
   }
   /// Returns true if `oldNaturalSize` has been explicitly set.
-  public var hasOldNaturalSize: Bool {return self._oldNaturalSize != nil}
+  public var hasOldNaturalSize: Bool {self._oldNaturalSize != nil}
   /// Clears the value of `oldNaturalSize`. Subsequent reads from it will return its default value.
   public mutating func clearOldNaturalSize() {self._oldNaturalSize = nil}
 
@@ -1442,53 +1372,53 @@ public struct TSD_ImageNaturalSizeCommandArchive: Sendable {
   fileprivate var _oldNaturalSize: TSP_Size? = nil
 }
 
-public struct TSD_ImageMaskCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_ImageMaskCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var newMaskInfo: TSP_Reference {
-    get {return _storage._newMaskInfo ?? TSP_Reference()}
+    get {_storage._newMaskInfo ?? TSP_Reference()}
     set {_uniqueStorage()._newMaskInfo = newValue}
   }
   /// Returns true if `newMaskInfo` has been explicitly set.
-  public var hasNewMaskInfo: Bool {return _storage._newMaskInfo != nil}
+  public var hasNewMaskInfo: Bool {_storage._newMaskInfo != nil}
   /// Clears the value of `newMaskInfo`. Subsequent reads from it will return its default value.
   public mutating func clearNewMaskInfo() {_uniqueStorage()._newMaskInfo = nil}
 
   public var oldMaskInfo: TSP_Reference {
-    get {return _storage._oldMaskInfo ?? TSP_Reference()}
+    get {_storage._oldMaskInfo ?? TSP_Reference()}
     set {_uniqueStorage()._oldMaskInfo = newValue}
   }
   /// Returns true if `oldMaskInfo` has been explicitly set.
-  public var hasOldMaskInfo: Bool {return _storage._oldMaskInfo != nil}
+  public var hasOldMaskInfo: Bool {_storage._oldMaskInfo != nil}
   /// Clears the value of `oldMaskInfo`. Subsequent reads from it will return its default value.
   public mutating func clearOldMaskInfo() {_uniqueStorage()._oldMaskInfo = nil}
 
   public var backgroundRemoved: Bool {
-    get {return _storage._backgroundRemoved ?? false}
+    get {_storage._backgroundRemoved ?? false}
     set {_uniqueStorage()._backgroundRemoved = newValue}
   }
   /// Returns true if `backgroundRemoved` has been explicitly set.
-  public var hasBackgroundRemoved: Bool {return _storage._backgroundRemoved != nil}
+  public var hasBackgroundRemoved: Bool {_storage._backgroundRemoved != nil}
   /// Clears the value of `backgroundRemoved`. Subsequent reads from it will return its default value.
   public mutating func clearBackgroundRemoved() {_uniqueStorage()._backgroundRemoved = nil}
 
   public var oldBackgroundRemoved: Bool {
-    get {return _storage._oldBackgroundRemoved ?? false}
+    get {_storage._oldBackgroundRemoved ?? false}
     set {_uniqueStorage()._oldBackgroundRemoved = newValue}
   }
   /// Returns true if `oldBackgroundRemoved` has been explicitly set.
-  public var hasOldBackgroundRemoved: Bool {return _storage._oldBackgroundRemoved != nil}
+  public var hasOldBackgroundRemoved: Bool {_storage._oldBackgroundRemoved != nil}
   /// Clears the value of `oldBackgroundRemoved`. Subsequent reads from it will return its default value.
   public mutating func clearOldBackgroundRemoved() {_uniqueStorage()._oldBackgroundRemoved = nil}
 
@@ -1499,89 +1429,89 @@ public struct TSD_ImageMaskCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_ImageAdjustmentsCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_ImageAdjustmentsCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var oldImageAdjustments: TSD_ImageAdjustmentsArchive {
-    get {return _storage._oldImageAdjustments ?? TSD_ImageAdjustmentsArchive()}
+    get {_storage._oldImageAdjustments ?? TSD_ImageAdjustmentsArchive()}
     set {_uniqueStorage()._oldImageAdjustments = newValue}
   }
   /// Returns true if `oldImageAdjustments` has been explicitly set.
-  public var hasOldImageAdjustments: Bool {return _storage._oldImageAdjustments != nil}
+  public var hasOldImageAdjustments: Bool {_storage._oldImageAdjustments != nil}
   /// Clears the value of `oldImageAdjustments`. Subsequent reads from it will return its default value.
   public mutating func clearOldImageAdjustments() {_uniqueStorage()._oldImageAdjustments = nil}
 
   public var newImageAdjustments: TSD_ImageAdjustmentsArchive {
-    get {return _storage._newImageAdjustments ?? TSD_ImageAdjustmentsArchive()}
+    get {_storage._newImageAdjustments ?? TSD_ImageAdjustmentsArchive()}
     set {_uniqueStorage()._newImageAdjustments = newValue}
   }
   /// Returns true if `newImageAdjustments` has been explicitly set.
-  public var hasNewImageAdjustments: Bool {return _storage._newImageAdjustments != nil}
+  public var hasNewImageAdjustments: Bool {_storage._newImageAdjustments != nil}
   /// Clears the value of `newImageAdjustments`. Subsequent reads from it will return its default value.
   public mutating func clearNewImageAdjustments() {_uniqueStorage()._newImageAdjustments = nil}
 
   public var adjustedImageData: TSP_DataReference {
-    get {return _storage._adjustedImageData ?? TSP_DataReference()}
+    get {_storage._adjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._adjustedImageData = newValue}
   }
   /// Returns true if `adjustedImageData` has been explicitly set.
-  public var hasAdjustedImageData: Bool {return _storage._adjustedImageData != nil}
+  public var hasAdjustedImageData: Bool {_storage._adjustedImageData != nil}
   /// Clears the value of `adjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearAdjustedImageData() {_uniqueStorage()._adjustedImageData = nil}
 
   public var replacedAdjustedImageData: TSP_DataReference {
-    get {return _storage._replacedAdjustedImageData ?? TSP_DataReference()}
+    get {_storage._replacedAdjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._replacedAdjustedImageData = newValue}
   }
   /// Returns true if `replacedAdjustedImageData` has been explicitly set.
-  public var hasReplacedAdjustedImageData: Bool {return _storage._replacedAdjustedImageData != nil}
+  public var hasReplacedAdjustedImageData: Bool {_storage._replacedAdjustedImageData != nil}
   /// Clears the value of `replacedAdjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearReplacedAdjustedImageData() {_uniqueStorage()._replacedAdjustedImageData = nil}
 
   public var enhancedImageData: TSP_DataReference {
-    get {return _storage._enhancedImageData ?? TSP_DataReference()}
+    get {_storage._enhancedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._enhancedImageData = newValue}
   }
   /// Returns true if `enhancedImageData` has been explicitly set.
-  public var hasEnhancedImageData: Bool {return _storage._enhancedImageData != nil}
+  public var hasEnhancedImageData: Bool {_storage._enhancedImageData != nil}
   /// Clears the value of `enhancedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearEnhancedImageData() {_uniqueStorage()._enhancedImageData = nil}
 
   public var replacedEnhancedImageData: TSP_DataReference {
-    get {return _storage._replacedEnhancedImageData ?? TSP_DataReference()}
+    get {_storage._replacedEnhancedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._replacedEnhancedImageData = newValue}
   }
   /// Returns true if `replacedEnhancedImageData` has been explicitly set.
-  public var hasReplacedEnhancedImageData: Bool {return _storage._replacedEnhancedImageData != nil}
+  public var hasReplacedEnhancedImageData: Bool {_storage._replacedEnhancedImageData != nil}
   /// Clears the value of `replacedEnhancedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearReplacedEnhancedImageData() {_uniqueStorage()._replacedEnhancedImageData = nil}
 
   public var thumbnailAdjustedImageData: TSP_DataReference {
-    get {return _storage._thumbnailAdjustedImageData ?? TSP_DataReference()}
+    get {_storage._thumbnailAdjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._thumbnailAdjustedImageData = newValue}
   }
   /// Returns true if `thumbnailAdjustedImageData` has been explicitly set.
-  public var hasThumbnailAdjustedImageData: Bool {return _storage._thumbnailAdjustedImageData != nil}
+  public var hasThumbnailAdjustedImageData: Bool {_storage._thumbnailAdjustedImageData != nil}
   /// Clears the value of `thumbnailAdjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearThumbnailAdjustedImageData() {_uniqueStorage()._thumbnailAdjustedImageData = nil}
 
   public var replacedThumbnailAdjustedImageData: TSP_DataReference {
-    get {return _storage._replacedThumbnailAdjustedImageData ?? TSP_DataReference()}
+    get {_storage._replacedThumbnailAdjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._replacedThumbnailAdjustedImageData = newValue}
   }
   /// Returns true if `replacedThumbnailAdjustedImageData` has been explicitly set.
-  public var hasReplacedThumbnailAdjustedImageData: Bool {return _storage._replacedThumbnailAdjustedImageData != nil}
+  public var hasReplacedThumbnailAdjustedImageData: Bool {_storage._replacedThumbnailAdjustedImageData != nil}
   /// Clears the value of `replacedThumbnailAdjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearReplacedThumbnailAdjustedImageData() {_uniqueStorage()._replacedThumbnailAdjustedImageData = nil}
 
@@ -1592,62 +1522,62 @@ public struct TSD_ImageAdjustmentsCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_MediaFlagsCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_MediaFlagsCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var wasMediaReplaced: Bool {
-    get {return _storage._wasMediaReplaced ?? false}
+    get {_storage._wasMediaReplaced ?? false}
     set {_uniqueStorage()._wasMediaReplaced = newValue}
   }
   /// Returns true if `wasMediaReplaced` has been explicitly set.
-  public var hasWasMediaReplaced: Bool {return _storage._wasMediaReplaced != nil}
+  public var hasWasMediaReplaced: Bool {_storage._wasMediaReplaced != nil}
   /// Clears the value of `wasMediaReplaced`. Subsequent reads from it will return its default value.
   public mutating func clearWasMediaReplaced() {_uniqueStorage()._wasMediaReplaced = nil}
 
   public var isPlaceholder: Bool {
-    get {return _storage._isPlaceholder ?? false}
+    get {_storage._isPlaceholder ?? false}
     set {_uniqueStorage()._isPlaceholder = newValue}
   }
   /// Returns true if `isPlaceholder` has been explicitly set.
-  public var hasIsPlaceholder: Bool {return _storage._isPlaceholder != nil}
+  public var hasIsPlaceholder: Bool {_storage._isPlaceholder != nil}
   /// Clears the value of `isPlaceholder`. Subsequent reads from it will return its default value.
   public mutating func clearIsPlaceholder() {_uniqueStorage()._isPlaceholder = nil}
 
   public var oldWasMediaReplaced: Bool {
-    get {return _storage._oldWasMediaReplaced ?? false}
+    get {_storage._oldWasMediaReplaced ?? false}
     set {_uniqueStorage()._oldWasMediaReplaced = newValue}
   }
   /// Returns true if `oldWasMediaReplaced` has been explicitly set.
-  public var hasOldWasMediaReplaced: Bool {return _storage._oldWasMediaReplaced != nil}
+  public var hasOldWasMediaReplaced: Bool {_storage._oldWasMediaReplaced != nil}
   /// Clears the value of `oldWasMediaReplaced`. Subsequent reads from it will return its default value.
   public mutating func clearOldWasMediaReplaced() {_uniqueStorage()._oldWasMediaReplaced = nil}
 
   public var oldIsPlaceholder: Bool {
-    get {return _storage._oldIsPlaceholder ?? false}
+    get {_storage._oldIsPlaceholder ?? false}
     set {_uniqueStorage()._oldIsPlaceholder = newValue}
   }
   /// Returns true if `oldIsPlaceholder` has been explicitly set.
-  public var hasOldIsPlaceholder: Bool {return _storage._oldIsPlaceholder != nil}
+  public var hasOldIsPlaceholder: Bool {_storage._oldIsPlaceholder != nil}
   /// Clears the value of `oldIsPlaceholder`. Subsequent reads from it will return its default value.
   public mutating func clearOldIsPlaceholder() {_uniqueStorage()._oldIsPlaceholder = nil}
 
   public var propertyName: String {
-    get {return _storage._propertyName ?? String()}
+    get {_storage._propertyName ?? String()}
     set {_uniqueStorage()._propertyName = newValue}
   }
   /// Returns true if `propertyName` has been explicitly set.
-  public var hasPropertyName: Bool {return _storage._propertyName != nil}
+  public var hasPropertyName: Bool {_storage._propertyName != nil}
   /// Clears the value of `propertyName`. Subsequent reads from it will return its default value.
   public mutating func clearPropertyName() {_uniqueStorage()._propertyName = nil}
 
@@ -1658,92 +1588,74 @@ public struct TSD_MediaFlagsCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_DrawablesCommandGroupArchive: @unchecked Sendable {
+public nonisolated struct TSD_DrawablesCommandGroupArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandGroupArchive {
-    get {return _storage._super ?? TSK_CommandGroupArchive()}
+    get {_storage._super ?? TSK_CommandGroupArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var obsoleteSelection: TSD_CanvasSelectionArchive {
-    get {return _storage._obsoleteSelection ?? TSD_CanvasSelectionArchive()}
+    get {_storage._obsoleteSelection ?? TSD_CanvasSelectionArchive()}
     set {_uniqueStorage()._obsoleteSelection = newValue}
   }
   /// Returns true if `obsoleteSelection` has been explicitly set.
-  public var hasObsoleteSelection: Bool {return _storage._obsoleteSelection != nil}
+  public var hasObsoleteSelection: Bool {_storage._obsoleteSelection != nil}
   /// Clears the value of `obsoleteSelection`. Subsequent reads from it will return its default value.
   public mutating func clearObsoleteSelection() {_uniqueStorage()._obsoleteSelection = nil}
 
   public var modelforselection: TSP_Reference {
-    get {return _storage._modelforselection ?? TSP_Reference()}
+    get {_storage._modelforselection ?? TSP_Reference()}
     set {_uniqueStorage()._modelforselection = newValue}
   }
   /// Returns true if `modelforselection` has been explicitly set.
-  public var hasModelforselection: Bool {return _storage._modelforselection != nil}
+  public var hasModelforselection: Bool {_storage._modelforselection != nil}
   /// Clears the value of `modelforselection`. Subsequent reads from it will return its default value.
   public mutating func clearModelforselection() {_uniqueStorage()._modelforselection = nil}
 
   public var type: TSD_DrawablesCommandGroupArchive.DrawablesCommandGroupType {
-    get {return _storage._type ?? .constructive}
+    get {_storage._type ?? .constructive}
     set {_uniqueStorage()._type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return _storage._type != nil}
+  public var hasType: Bool {_storage._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {_uniqueStorage()._type = nil}
 
   public var forDrag: Bool {
-    get {return _storage._forDrag ?? false}
+    get {_storage._forDrag ?? false}
     set {_uniqueStorage()._forDrag = newValue}
   }
   /// Returns true if `forDrag` has been explicitly set.
-  public var hasForDrag: Bool {return _storage._forDrag != nil}
+  public var hasForDrag: Bool {_storage._forDrag != nil}
   /// Clears the value of `forDrag`. Subsequent reads from it will return its default value.
   public mutating func clearForDrag() {_uniqueStorage()._forDrag = nil}
 
   public var archivedselection: TSP_Reference {
-    get {return _storage._archivedselection ?? TSP_Reference()}
+    get {_storage._archivedselection ?? TSP_Reference()}
     set {_uniqueStorage()._archivedselection = newValue}
   }
   /// Returns true if `archivedselection` has been explicitly set.
-  public var hasArchivedselection: Bool {return _storage._archivedselection != nil}
+  public var hasArchivedselection: Bool {_storage._archivedselection != nil}
   /// Clears the value of `archivedselection`. Subsequent reads from it will return its default value.
   public mutating func clearArchivedselection() {_uniqueStorage()._archivedselection = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum DrawablesCommandGroupType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case constructive // = 1
-    case destructive // = 2
-    case inPlace // = 3
+  public nonisolated enum DrawablesCommandGroupType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case constructive = 1
+    case destructive = 2
+    case inPlace = 3
 
     public init() {
       self = .constructive
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 1: self = .constructive
-      case 2: self = .destructive
-      case 3: self = .inPlace
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .constructive: return 1
-      case .destructive: return 2
-      case .inPlace: return 3
-      }
     }
 
   }
@@ -1753,80 +1665,80 @@ public struct TSD_DrawablesCommandGroupArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_ExteriorTextWrapCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_ExteriorTextWrapCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var oldExteriorTextWrap: TSD_ExteriorTextWrapArchive {
-    get {return _storage._oldExteriorTextWrap ?? TSD_ExteriorTextWrapArchive()}
+    get {_storage._oldExteriorTextWrap ?? TSD_ExteriorTextWrapArchive()}
     set {_uniqueStorage()._oldExteriorTextWrap = newValue}
   }
   /// Returns true if `oldExteriorTextWrap` has been explicitly set.
-  public var hasOldExteriorTextWrap: Bool {return _storage._oldExteriorTextWrap != nil}
+  public var hasOldExteriorTextWrap: Bool {_storage._oldExteriorTextWrap != nil}
   /// Clears the value of `oldExteriorTextWrap`. Subsequent reads from it will return its default value.
   public mutating func clearOldExteriorTextWrap() {_uniqueStorage()._oldExteriorTextWrap = nil}
 
   public var type: UInt32 {
-    get {return _storage._type ?? 0}
+    get {_storage._type ?? 0}
     set {_uniqueStorage()._type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return _storage._type != nil}
+  public var hasType: Bool {_storage._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {_uniqueStorage()._type = nil}
 
   public var direction: UInt32 {
-    get {return _storage._direction ?? 0}
+    get {_storage._direction ?? 0}
     set {_uniqueStorage()._direction = newValue}
   }
   /// Returns true if `direction` has been explicitly set.
-  public var hasDirection: Bool {return _storage._direction != nil}
+  public var hasDirection: Bool {_storage._direction != nil}
   /// Clears the value of `direction`. Subsequent reads from it will return its default value.
   public mutating func clearDirection() {_uniqueStorage()._direction = nil}
 
   public var fitType: UInt32 {
-    get {return _storage._fitType ?? 0}
+    get {_storage._fitType ?? 0}
     set {_uniqueStorage()._fitType = newValue}
   }
   /// Returns true if `fitType` has been explicitly set.
-  public var hasFitType: Bool {return _storage._fitType != nil}
+  public var hasFitType: Bool {_storage._fitType != nil}
   /// Clears the value of `fitType`. Subsequent reads from it will return its default value.
   public mutating func clearFitType() {_uniqueStorage()._fitType = nil}
 
   public var margin: Float {
-    get {return _storage._margin ?? 0}
+    get {_storage._margin ?? 0}
     set {_uniqueStorage()._margin = newValue}
   }
   /// Returns true if `margin` has been explicitly set.
-  public var hasMargin: Bool {return _storage._margin != nil}
+  public var hasMargin: Bool {_storage._margin != nil}
   /// Clears the value of `margin`. Subsequent reads from it will return its default value.
   public mutating func clearMargin() {_uniqueStorage()._margin = nil}
 
   public var alphaThreshold: Float {
-    get {return _storage._alphaThreshold ?? 0}
+    get {_storage._alphaThreshold ?? 0}
     set {_uniqueStorage()._alphaThreshold = newValue}
   }
   /// Returns true if `alphaThreshold` has been explicitly set.
-  public var hasAlphaThreshold: Bool {return _storage._alphaThreshold != nil}
+  public var hasAlphaThreshold: Bool {_storage._alphaThreshold != nil}
   /// Clears the value of `alphaThreshold`. Subsequent reads from it will return its default value.
   public mutating func clearAlphaThreshold() {_uniqueStorage()._alphaThreshold = nil}
 
   public var isHtmlWrap: Bool {
-    get {return _storage._isHtmlWrap ?? false}
+    get {_storage._isHtmlWrap ?? false}
     set {_uniqueStorage()._isHtmlWrap = newValue}
   }
   /// Returns true if `isHtmlWrap` has been explicitly set.
-  public var hasIsHtmlWrap: Bool {return _storage._isHtmlWrap != nil}
+  public var hasIsHtmlWrap: Bool {_storage._isHtmlWrap != nil}
   /// Clears the value of `isHtmlWrap`. Subsequent reads from it will return its default value.
   public mutating func clearIsHtmlWrap() {_uniqueStorage()._isHtmlWrap = nil}
 
@@ -1837,35 +1749,35 @@ public struct TSD_ExteriorTextWrapCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_DrawableHyperlinkCommandArchive: Sendable {
+public nonisolated struct TSD_DrawableHyperlinkCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var oldhyperlinkURL: String {
-    get {return _oldhyperlinkURL ?? String()}
+    get {_oldhyperlinkURL ?? String()}
     set {_oldhyperlinkURL = newValue}
   }
   /// Returns true if `oldhyperlinkURL` has been explicitly set.
-  public var hasOldhyperlinkURL: Bool {return self._oldhyperlinkURL != nil}
+  public var hasOldhyperlinkURL: Bool {self._oldhyperlinkURL != nil}
   /// Clears the value of `oldhyperlinkURL`. Subsequent reads from it will return its default value.
   public mutating func clearOldhyperlinkURL() {self._oldhyperlinkURL = nil}
 
   public var newhyperlinkURL: String {
-    get {return _newhyperlinkURL ?? String()}
+    get {_newhyperlinkURL ?? String()}
     set {_newhyperlinkURL = newValue}
   }
   /// Returns true if `newhyperlinkURL` has been explicitly set.
-  public var hasNewhyperlinkURL: Bool {return self._newhyperlinkURL != nil}
+  public var hasNewhyperlinkURL: Bool {self._newhyperlinkURL != nil}
   /// Clears the value of `newhyperlinkURL`. Subsequent reads from it will return its default value.
   public mutating func clearNewhyperlinkURL() {self._newhyperlinkURL = nil}
 
@@ -1878,62 +1790,62 @@ public struct TSD_DrawableHyperlinkCommandArchive: Sendable {
   fileprivate var _newhyperlinkURL: String? = nil
 }
 
-public struct TSD_CommentInvalidatingCommandSelectionBehaviorArchive: Sendable {
+public nonisolated struct TSD_CommentInvalidatingCommandSelectionBehaviorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandSelectionBehaviorArchive {
-    get {return _super ?? TSK_CommandSelectionBehaviorArchive()}
+    get {_super ?? TSK_CommandSelectionBehaviorArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var annotationDisplayingCommand: TSP_Reference {
-    get {return _annotationDisplayingCommand ?? TSP_Reference()}
+    get {_annotationDisplayingCommand ?? TSP_Reference()}
     set {_annotationDisplayingCommand = newValue}
   }
   /// Returns true if `annotationDisplayingCommand` has been explicitly set.
-  public var hasAnnotationDisplayingCommand: Bool {return self._annotationDisplayingCommand != nil}
+  public var hasAnnotationDisplayingCommand: Bool {self._annotationDisplayingCommand != nil}
   /// Clears the value of `annotationDisplayingCommand`. Subsequent reads from it will return its default value.
   public mutating func clearAnnotationDisplayingCommand() {self._annotationDisplayingCommand = nil}
 
   public var beginEditingOnUndo: Bool {
-    get {return _beginEditingOnUndo ?? false}
+    get {_beginEditingOnUndo ?? false}
     set {_beginEditingOnUndo = newValue}
   }
   /// Returns true if `beginEditingOnUndo` has been explicitly set.
-  public var hasBeginEditingOnUndo: Bool {return self._beginEditingOnUndo != nil}
+  public var hasBeginEditingOnUndo: Bool {self._beginEditingOnUndo != nil}
   /// Clears the value of `beginEditingOnUndo`. Subsequent reads from it will return its default value.
   public mutating func clearBeginEditingOnUndo() {self._beginEditingOnUndo = nil}
 
   public var beginEditingOnRedo: Bool {
-    get {return _beginEditingOnRedo ?? false}
+    get {_beginEditingOnRedo ?? false}
     set {_beginEditingOnRedo = newValue}
   }
   /// Returns true if `beginEditingOnRedo` has been explicitly set.
-  public var hasBeginEditingOnRedo: Bool {return self._beginEditingOnRedo != nil}
+  public var hasBeginEditingOnRedo: Bool {self._beginEditingOnRedo != nil}
   /// Clears the value of `beginEditingOnRedo`. Subsequent reads from it will return its default value.
   public mutating func clearBeginEditingOnRedo() {self._beginEditingOnRedo = nil}
 
   public var shouldInvalidateOnUndo: Bool {
-    get {return _shouldInvalidateOnUndo ?? false}
+    get {_shouldInvalidateOnUndo ?? false}
     set {_shouldInvalidateOnUndo = newValue}
   }
   /// Returns true if `shouldInvalidateOnUndo` has been explicitly set.
-  public var hasShouldInvalidateOnUndo: Bool {return self._shouldInvalidateOnUndo != nil}
+  public var hasShouldInvalidateOnUndo: Bool {self._shouldInvalidateOnUndo != nil}
   /// Clears the value of `shouldInvalidateOnUndo`. Subsequent reads from it will return its default value.
   public mutating func clearShouldInvalidateOnUndo() {self._shouldInvalidateOnUndo = nil}
 
   public var shouldInvalidateOnRedo: Bool {
-    get {return _shouldInvalidateOnRedo ?? false}
+    get {_shouldInvalidateOnRedo ?? false}
     set {_shouldInvalidateOnRedo = newValue}
   }
   /// Returns true if `shouldInvalidateOnRedo` has been explicitly set.
-  public var hasShouldInvalidateOnRedo: Bool {return self._shouldInvalidateOnRedo != nil}
+  public var hasShouldInvalidateOnRedo: Bool {self._shouldInvalidateOnRedo != nil}
   /// Clears the value of `shouldInvalidateOnRedo`. Subsequent reads from it will return its default value.
   public mutating func clearShouldInvalidateOnRedo() {self._shouldInvalidateOnRedo = nil}
 
@@ -1949,233 +1861,233 @@ public struct TSD_CommentInvalidatingCommandSelectionBehaviorArchive: Sendable {
   fileprivate var _shouldInvalidateOnRedo: Bool? = nil
 }
 
-public struct TSD_ImageReplaceCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_ImageReplaceCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var newImageData: TSP_DataReference {
-    get {return _storage._newImageData ?? TSP_DataReference()}
+    get {_storage._newImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._newImageData = newValue}
   }
   /// Returns true if `newImageData` has been explicitly set.
-  public var hasNewImageData: Bool {return _storage._newImageData != nil}
+  public var hasNewImageData: Bool {_storage._newImageData != nil}
   /// Clears the value of `newImageData`. Subsequent reads from it will return its default value.
   public mutating func clearNewImageData() {_uniqueStorage()._newImageData = nil}
 
   public var newOriginalImageData: TSP_DataReference {
-    get {return _storage._newOriginalImageData ?? TSP_DataReference()}
+    get {_storage._newOriginalImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._newOriginalImageData = newValue}
   }
   /// Returns true if `newOriginalImageData` has been explicitly set.
-  public var hasNewOriginalImageData: Bool {return _storage._newOriginalImageData != nil}
+  public var hasNewOriginalImageData: Bool {_storage._newOriginalImageData != nil}
   /// Clears the value of `newOriginalImageData`. Subsequent reads from it will return its default value.
   public mutating func clearNewOriginalImageData() {_uniqueStorage()._newOriginalImageData = nil}
 
   public var oldImageData: TSP_DataReference {
-    get {return _storage._oldImageData ?? TSP_DataReference()}
+    get {_storage._oldImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldImageData = newValue}
   }
   /// Returns true if `oldImageData` has been explicitly set.
-  public var hasOldImageData: Bool {return _storage._oldImageData != nil}
+  public var hasOldImageData: Bool {_storage._oldImageData != nil}
   /// Clears the value of `oldImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldImageData() {_uniqueStorage()._oldImageData = nil}
 
   public var oldOriginalImageData: TSP_DataReference {
-    get {return _storage._oldOriginalImageData ?? TSP_DataReference()}
+    get {_storage._oldOriginalImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldOriginalImageData = newValue}
   }
   /// Returns true if `oldOriginalImageData` has been explicitly set.
-  public var hasOldOriginalImageData: Bool {return _storage._oldOriginalImageData != nil}
+  public var hasOldOriginalImageData: Bool {_storage._oldOriginalImageData != nil}
   /// Clears the value of `oldOriginalImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldOriginalImageData() {_uniqueStorage()._oldOriginalImageData = nil}
 
   public var instantAlphaPath: TSP_Path {
-    get {return _storage._instantAlphaPath ?? TSP_Path()}
+    get {_storage._instantAlphaPath ?? TSP_Path()}
     set {_uniqueStorage()._instantAlphaPath = newValue}
   }
   /// Returns true if `instantAlphaPath` has been explicitly set.
-  public var hasInstantAlphaPath: Bool {return _storage._instantAlphaPath != nil}
+  public var hasInstantAlphaPath: Bool {_storage._instantAlphaPath != nil}
   /// Clears the value of `instantAlphaPath`. Subsequent reads from it will return its default value.
   public mutating func clearInstantAlphaPath() {_uniqueStorage()._instantAlphaPath = nil}
 
   public var oldInstantAlphaPath: TSP_Path {
-    get {return _storage._oldInstantAlphaPath ?? TSP_Path()}
+    get {_storage._oldInstantAlphaPath ?? TSP_Path()}
     set {_uniqueStorage()._oldInstantAlphaPath = newValue}
   }
   /// Returns true if `oldInstantAlphaPath` has been explicitly set.
-  public var hasOldInstantAlphaPath: Bool {return _storage._oldInstantAlphaPath != nil}
+  public var hasOldInstantAlphaPath: Bool {_storage._oldInstantAlphaPath != nil}
   /// Clears the value of `oldInstantAlphaPath`. Subsequent reads from it will return its default value.
   public mutating func clearOldInstantAlphaPath() {_uniqueStorage()._oldInstantAlphaPath = nil}
 
   public var naturalSizeForIapath: TSP_Size {
-    get {return _storage._naturalSizeForIapath ?? TSP_Size()}
+    get {_storage._naturalSizeForIapath ?? TSP_Size()}
     set {_uniqueStorage()._naturalSizeForIapath = newValue}
   }
   /// Returns true if `naturalSizeForIapath` has been explicitly set.
-  public var hasNaturalSizeForIapath: Bool {return _storage._naturalSizeForIapath != nil}
+  public var hasNaturalSizeForIapath: Bool {_storage._naturalSizeForIapath != nil}
   /// Clears the value of `naturalSizeForIapath`. Subsequent reads from it will return its default value.
   public mutating func clearNaturalSizeForIapath() {_uniqueStorage()._naturalSizeForIapath = nil}
 
   public var oldNaturalSizeForIapath: TSP_Size {
-    get {return _storage._oldNaturalSizeForIapath ?? TSP_Size()}
+    get {_storage._oldNaturalSizeForIapath ?? TSP_Size()}
     set {_uniqueStorage()._oldNaturalSizeForIapath = newValue}
   }
   /// Returns true if `oldNaturalSizeForIapath` has been explicitly set.
-  public var hasOldNaturalSizeForIapath: Bool {return _storage._oldNaturalSizeForIapath != nil}
+  public var hasOldNaturalSizeForIapath: Bool {_storage._oldNaturalSizeForIapath != nil}
   /// Clears the value of `oldNaturalSizeForIapath`. Subsequent reads from it will return its default value.
   public mutating func clearOldNaturalSizeForIapath() {_uniqueStorage()._oldNaturalSizeForIapath = nil}
 
   public var targetImageGeometry: TSD_GeometryArchive {
-    get {return _storage._targetImageGeometry ?? TSD_GeometryArchive()}
+    get {_storage._targetImageGeometry ?? TSD_GeometryArchive()}
     set {_uniqueStorage()._targetImageGeometry = newValue}
   }
   /// Returns true if `targetImageGeometry` has been explicitly set.
-  public var hasTargetImageGeometry: Bool {return _storage._targetImageGeometry != nil}
+  public var hasTargetImageGeometry: Bool {_storage._targetImageGeometry != nil}
   /// Clears the value of `targetImageGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearTargetImageGeometry() {_uniqueStorage()._targetImageGeometry = nil}
 
   public var oldTargetImageGeometry: TSD_GeometryArchive {
-    get {return _storage._oldTargetImageGeometry ?? TSD_GeometryArchive()}
+    get {_storage._oldTargetImageGeometry ?? TSD_GeometryArchive()}
     set {_uniqueStorage()._oldTargetImageGeometry = newValue}
   }
   /// Returns true if `oldTargetImageGeometry` has been explicitly set.
-  public var hasOldTargetImageGeometry: Bool {return _storage._oldTargetImageGeometry != nil}
+  public var hasOldTargetImageGeometry: Bool {_storage._oldTargetImageGeometry != nil}
   /// Clears the value of `oldTargetImageGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearOldTargetImageGeometry() {_uniqueStorage()._oldTargetImageGeometry = nil}
 
   public var targetMaskGeometry: TSD_GeometryArchive {
-    get {return _storage._targetMaskGeometry ?? TSD_GeometryArchive()}
+    get {_storage._targetMaskGeometry ?? TSD_GeometryArchive()}
     set {_uniqueStorage()._targetMaskGeometry = newValue}
   }
   /// Returns true if `targetMaskGeometry` has been explicitly set.
-  public var hasTargetMaskGeometry: Bool {return _storage._targetMaskGeometry != nil}
+  public var hasTargetMaskGeometry: Bool {_storage._targetMaskGeometry != nil}
   /// Clears the value of `targetMaskGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearTargetMaskGeometry() {_uniqueStorage()._targetMaskGeometry = nil}
 
   public var oldTargetMaskGeometry: TSD_GeometryArchive {
-    get {return _storage._oldTargetMaskGeometry ?? TSD_GeometryArchive()}
+    get {_storage._oldTargetMaskGeometry ?? TSD_GeometryArchive()}
     set {_uniqueStorage()._oldTargetMaskGeometry = newValue}
   }
   /// Returns true if `oldTargetMaskGeometry` has been explicitly set.
-  public var hasOldTargetMaskGeometry: Bool {return _storage._oldTargetMaskGeometry != nil}
+  public var hasOldTargetMaskGeometry: Bool {_storage._oldTargetMaskGeometry != nil}
   /// Clears the value of `oldTargetMaskGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearOldTargetMaskGeometry() {_uniqueStorage()._oldTargetMaskGeometry = nil}
 
   public var imageAdjustments: TSD_ImageAdjustmentsArchive {
-    get {return _storage._imageAdjustments ?? TSD_ImageAdjustmentsArchive()}
+    get {_storage._imageAdjustments ?? TSD_ImageAdjustmentsArchive()}
     set {_uniqueStorage()._imageAdjustments = newValue}
   }
   /// Returns true if `imageAdjustments` has been explicitly set.
-  public var hasImageAdjustments: Bool {return _storage._imageAdjustments != nil}
+  public var hasImageAdjustments: Bool {_storage._imageAdjustments != nil}
   /// Clears the value of `imageAdjustments`. Subsequent reads from it will return its default value.
   public mutating func clearImageAdjustments() {_uniqueStorage()._imageAdjustments = nil}
 
   public var adjustedImageData: TSP_DataReference {
-    get {return _storage._adjustedImageData ?? TSP_DataReference()}
+    get {_storage._adjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._adjustedImageData = newValue}
   }
   /// Returns true if `adjustedImageData` has been explicitly set.
-  public var hasAdjustedImageData: Bool {return _storage._adjustedImageData != nil}
+  public var hasAdjustedImageData: Bool {_storage._adjustedImageData != nil}
   /// Clears the value of `adjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearAdjustedImageData() {_uniqueStorage()._adjustedImageData = nil}
 
   public var enhancedImageData: TSP_DataReference {
-    get {return _storage._enhancedImageData ?? TSP_DataReference()}
+    get {_storage._enhancedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._enhancedImageData = newValue}
   }
   /// Returns true if `enhancedImageData` has been explicitly set.
-  public var hasEnhancedImageData: Bool {return _storage._enhancedImageData != nil}
+  public var hasEnhancedImageData: Bool {_storage._enhancedImageData != nil}
   /// Clears the value of `enhancedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearEnhancedImageData() {_uniqueStorage()._enhancedImageData = nil}
 
   public var oldImageAdjustments: TSD_ImageAdjustmentsArchive {
-    get {return _storage._oldImageAdjustments ?? TSD_ImageAdjustmentsArchive()}
+    get {_storage._oldImageAdjustments ?? TSD_ImageAdjustmentsArchive()}
     set {_uniqueStorage()._oldImageAdjustments = newValue}
   }
   /// Returns true if `oldImageAdjustments` has been explicitly set.
-  public var hasOldImageAdjustments: Bool {return _storage._oldImageAdjustments != nil}
+  public var hasOldImageAdjustments: Bool {_storage._oldImageAdjustments != nil}
   /// Clears the value of `oldImageAdjustments`. Subsequent reads from it will return its default value.
   public mutating func clearOldImageAdjustments() {_uniqueStorage()._oldImageAdjustments = nil}
 
   public var oldAdjustedImageData: TSP_DataReference {
-    get {return _storage._oldAdjustedImageData ?? TSP_DataReference()}
+    get {_storage._oldAdjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldAdjustedImageData = newValue}
   }
   /// Returns true if `oldAdjustedImageData` has been explicitly set.
-  public var hasOldAdjustedImageData: Bool {return _storage._oldAdjustedImageData != nil}
+  public var hasOldAdjustedImageData: Bool {_storage._oldAdjustedImageData != nil}
   /// Clears the value of `oldAdjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldAdjustedImageData() {_uniqueStorage()._oldAdjustedImageData = nil}
 
   public var oldEnhancedImageData: TSP_DataReference {
-    get {return _storage._oldEnhancedImageData ?? TSP_DataReference()}
+    get {_storage._oldEnhancedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldEnhancedImageData = newValue}
   }
   /// Returns true if `oldEnhancedImageData` has been explicitly set.
-  public var hasOldEnhancedImageData: Bool {return _storage._oldEnhancedImageData != nil}
+  public var hasOldEnhancedImageData: Bool {_storage._oldEnhancedImageData != nil}
   /// Clears the value of `oldEnhancedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldEnhancedImageData() {_uniqueStorage()._oldEnhancedImageData = nil}
 
   public var thumbnailImageData: TSP_DataReference {
-    get {return _storage._thumbnailImageData ?? TSP_DataReference()}
+    get {_storage._thumbnailImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._thumbnailImageData = newValue}
   }
   /// Returns true if `thumbnailImageData` has been explicitly set.
-  public var hasThumbnailImageData: Bool {return _storage._thumbnailImageData != nil}
+  public var hasThumbnailImageData: Bool {_storage._thumbnailImageData != nil}
   /// Clears the value of `thumbnailImageData`. Subsequent reads from it will return its default value.
   public mutating func clearThumbnailImageData() {_uniqueStorage()._thumbnailImageData = nil}
 
   public var oldThumbnailImageData: TSP_DataReference {
-    get {return _storage._oldThumbnailImageData ?? TSP_DataReference()}
+    get {_storage._oldThumbnailImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldThumbnailImageData = newValue}
   }
   /// Returns true if `oldThumbnailImageData` has been explicitly set.
-  public var hasOldThumbnailImageData: Bool {return _storage._oldThumbnailImageData != nil}
+  public var hasOldThumbnailImageData: Bool {_storage._oldThumbnailImageData != nil}
   /// Clears the value of `oldThumbnailImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldThumbnailImageData() {_uniqueStorage()._oldThumbnailImageData = nil}
 
   public var thumbnailAdjustedImageData: TSP_DataReference {
-    get {return _storage._thumbnailAdjustedImageData ?? TSP_DataReference()}
+    get {_storage._thumbnailAdjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._thumbnailAdjustedImageData = newValue}
   }
   /// Returns true if `thumbnailAdjustedImageData` has been explicitly set.
-  public var hasThumbnailAdjustedImageData: Bool {return _storage._thumbnailAdjustedImageData != nil}
+  public var hasThumbnailAdjustedImageData: Bool {_storage._thumbnailAdjustedImageData != nil}
   /// Clears the value of `thumbnailAdjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearThumbnailAdjustedImageData() {_uniqueStorage()._thumbnailAdjustedImageData = nil}
 
   public var oldThumbnailAdjustedImageData: TSP_DataReference {
-    get {return _storage._oldThumbnailAdjustedImageData ?? TSP_DataReference()}
+    get {_storage._oldThumbnailAdjustedImageData ?? TSP_DataReference()}
     set {_uniqueStorage()._oldThumbnailAdjustedImageData = newValue}
   }
   /// Returns true if `oldThumbnailAdjustedImageData` has been explicitly set.
-  public var hasOldThumbnailAdjustedImageData: Bool {return _storage._oldThumbnailAdjustedImageData != nil}
+  public var hasOldThumbnailAdjustedImageData: Bool {_storage._oldThumbnailAdjustedImageData != nil}
   /// Clears the value of `oldThumbnailAdjustedImageData`. Subsequent reads from it will return its default value.
   public mutating func clearOldThumbnailAdjustedImageData() {_uniqueStorage()._oldThumbnailAdjustedImageData = nil}
 
   public var naturalSize: TSP_Size {
-    get {return _storage._naturalSize ?? TSP_Size()}
+    get {_storage._naturalSize ?? TSP_Size()}
     set {_uniqueStorage()._naturalSize = newValue}
   }
   /// Returns true if `naturalSize` has been explicitly set.
-  public var hasNaturalSize: Bool {return _storage._naturalSize != nil}
+  public var hasNaturalSize: Bool {_storage._naturalSize != nil}
   /// Clears the value of `naturalSize`. Subsequent reads from it will return its default value.
   public mutating func clearNaturalSize() {_uniqueStorage()._naturalSize = nil}
 
   public var oldNaturalSize: TSP_Size {
-    get {return _storage._oldNaturalSize ?? TSP_Size()}
+    get {_storage._oldNaturalSize ?? TSP_Size()}
     set {_uniqueStorage()._oldNaturalSize = newValue}
   }
   /// Returns true if `oldNaturalSize` has been explicitly set.
-  public var hasOldNaturalSize: Bool {return _storage._oldNaturalSize != nil}
+  public var hasOldNaturalSize: Bool {_storage._oldNaturalSize != nil}
   /// Clears the value of `oldNaturalSize`. Subsequent reads from it will return its default value.
   public mutating func clearOldNaturalSize() {_uniqueStorage()._oldNaturalSize = nil}
 
@@ -2186,35 +2098,35 @@ public struct TSD_ImageReplaceCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_DrawableLockCommandArchive: Sendable {
+public nonisolated struct TSD_DrawableLockCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var locked: Bool {
-    get {return _locked ?? false}
+    get {_locked ?? false}
     set {_locked = newValue}
   }
   /// Returns true if `locked` has been explicitly set.
-  public var hasLocked: Bool {return self._locked != nil}
+  public var hasLocked: Bool {self._locked != nil}
   /// Clears the value of `locked`. Subsequent reads from it will return its default value.
   public mutating func clearLocked() {self._locked = nil}
 
   public var wasLocked: Bool {
-    get {return _wasLocked ?? false}
+    get {_wasLocked ?? false}
     set {_wasLocked = newValue}
   }
   /// Returns true if `wasLocked` has been explicitly set.
-  public var hasWasLocked: Bool {return self._wasLocked != nil}
+  public var hasWasLocked: Bool {self._wasLocked != nil}
   /// Clears the value of `wasLocked`. Subsequent reads from it will return its default value.
   public mutating func clearWasLocked() {self._wasLocked = nil}
 
@@ -2227,53 +2139,53 @@ public struct TSD_DrawableLockCommandArchive: Sendable {
   fileprivate var _wasLocked: Bool? = nil
 }
 
-public struct TSD_DrawableInfoCommentCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_DrawableInfoCommentCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var oldComment: TSP_Reference {
-    get {return _storage._oldComment ?? TSP_Reference()}
+    get {_storage._oldComment ?? TSP_Reference()}
     set {_uniqueStorage()._oldComment = newValue}
   }
   /// Returns true if `oldComment` has been explicitly set.
-  public var hasOldComment: Bool {return _storage._oldComment != nil}
+  public var hasOldComment: Bool {_storage._oldComment != nil}
   /// Clears the value of `oldComment`. Subsequent reads from it will return its default value.
   public mutating func clearOldComment() {_uniqueStorage()._oldComment = nil}
 
   public var newComment: TSP_Reference {
-    get {return _storage._newComment ?? TSP_Reference()}
+    get {_storage._newComment ?? TSP_Reference()}
     set {_uniqueStorage()._newComment = newValue}
   }
   /// Returns true if `newComment` has been explicitly set.
-  public var hasNewComment: Bool {return _storage._newComment != nil}
+  public var hasNewComment: Bool {_storage._newComment != nil}
   /// Clears the value of `newComment`. Subsequent reads from it will return its default value.
   public mutating func clearNewComment() {_uniqueStorage()._newComment = nil}
 
   public var forwardVariant: TSD_CommentCommandVariant {
-    get {return _storage._forwardVariant ?? .baseComment}
+    get {_storage._forwardVariant ?? .baseComment}
     set {_uniqueStorage()._forwardVariant = newValue}
   }
   /// Returns true if `forwardVariant` has been explicitly set.
-  public var hasForwardVariant: Bool {return _storage._forwardVariant != nil}
+  public var hasForwardVariant: Bool {_storage._forwardVariant != nil}
   /// Clears the value of `forwardVariant`. Subsequent reads from it will return its default value.
   public mutating func clearForwardVariant() {_uniqueStorage()._forwardVariant = nil}
 
   public var inverseVariant: TSD_CommentCommandVariant {
-    get {return _storage._inverseVariant ?? .baseComment}
+    get {_storage._inverseVariant ?? .baseComment}
     set {_uniqueStorage()._inverseVariant = newValue}
   }
   /// Returns true if `inverseVariant` has been explicitly set.
-  public var hasInverseVariant: Bool {return _storage._inverseVariant != nil}
+  public var hasInverseVariant: Bool {_storage._inverseVariant != nil}
   /// Clears the value of `inverseVariant`. Subsequent reads from it will return its default value.
   public mutating func clearInverseVariant() {_uniqueStorage()._inverseVariant = nil}
 
@@ -2284,35 +2196,35 @@ public struct TSD_DrawableInfoCommentCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_DrawablePencilAnnotationCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_DrawablePencilAnnotationCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var pencilAnnotationToAdd: TSP_Reference {
-    get {return _storage._pencilAnnotationToAdd ?? TSP_Reference()}
+    get {_storage._pencilAnnotationToAdd ?? TSP_Reference()}
     set {_uniqueStorage()._pencilAnnotationToAdd = newValue}
   }
   /// Returns true if `pencilAnnotationToAdd` has been explicitly set.
-  public var hasPencilAnnotationToAdd: Bool {return _storage._pencilAnnotationToAdd != nil}
+  public var hasPencilAnnotationToAdd: Bool {_storage._pencilAnnotationToAdd != nil}
   /// Clears the value of `pencilAnnotationToAdd`. Subsequent reads from it will return its default value.
   public mutating func clearPencilAnnotationToAdd() {_uniqueStorage()._pencilAnnotationToAdd = nil}
 
   public var pencilAnnotationToRemove: TSP_Reference {
-    get {return _storage._pencilAnnotationToRemove ?? TSP_Reference()}
+    get {_storage._pencilAnnotationToRemove ?? TSP_Reference()}
     set {_uniqueStorage()._pencilAnnotationToRemove = newValue}
   }
   /// Returns true if `pencilAnnotationToRemove` has been explicitly set.
-  public var hasPencilAnnotationToRemove: Bool {return _storage._pencilAnnotationToRemove != nil}
+  public var hasPencilAnnotationToRemove: Bool {_storage._pencilAnnotationToRemove != nil}
   /// Clears the value of `pencilAnnotationToRemove`. Subsequent reads from it will return its default value.
   public mutating func clearPencilAnnotationToRemove() {_uniqueStorage()._pencilAnnotationToRemove = nil}
 
@@ -2323,17 +2235,17 @@ public struct TSD_DrawablePencilAnnotationCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_AbstractGuideCommandArchive: Sendable {
+public nonisolated struct TSD_AbstractGuideCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2348,26 +2260,26 @@ public struct TSD_AbstractGuideCommandArchive: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSD_GuideCommandArchive: Sendable {
+public nonisolated struct TSD_GuideCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_AbstractGuideCommandArchive {
-    get {return _super ?? TSD_AbstractGuideCommandArchive()}
+    get {_super ?? TSD_AbstractGuideCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var storageIDPath: TSP_UUIDPath {
-    get {return _storageIDPath ?? TSP_UUIDPath()}
+    get {_storageIDPath ?? TSP_UUIDPath()}
     set {_storageIDPath = newValue}
   }
   /// Returns true if `storageIDPath` has been explicitly set.
-  public var hasStorageIDPath: Bool {return self._storageIDPath != nil}
+  public var hasStorageIDPath: Bool {self._storageIDPath != nil}
   /// Clears the value of `storageIDPath`. Subsequent reads from it will return its default value.
   public mutating func clearStorageIDPath() {self._storageIDPath = nil}
 
@@ -2379,35 +2291,35 @@ public struct TSD_GuideCommandArchive: Sendable {
   fileprivate var _storageIDPath: TSP_UUIDPath? = nil
 }
 
-public struct TSD_DrawableAspectRatioLockedCommandArchive: Sendable {
+public nonisolated struct TSD_DrawableAspectRatioLockedCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var aspectRatioLocked: Bool {
-    get {return _aspectRatioLocked ?? false}
+    get {_aspectRatioLocked ?? false}
     set {_aspectRatioLocked = newValue}
   }
   /// Returns true if `aspectRatioLocked` has been explicitly set.
-  public var hasAspectRatioLocked: Bool {return self._aspectRatioLocked != nil}
+  public var hasAspectRatioLocked: Bool {self._aspectRatioLocked != nil}
   /// Clears the value of `aspectRatioLocked`. Subsequent reads from it will return its default value.
   public mutating func clearAspectRatioLocked() {self._aspectRatioLocked = nil}
 
   public var wasAspectRatioLocked: Bool {
-    get {return _wasAspectRatioLocked ?? false}
+    get {_wasAspectRatioLocked ?? false}
     set {_wasAspectRatioLocked = newValue}
   }
   /// Returns true if `wasAspectRatioLocked` has been explicitly set.
-  public var hasWasAspectRatioLocked: Bool {return self._wasAspectRatioLocked != nil}
+  public var hasWasAspectRatioLocked: Bool {self._wasAspectRatioLocked != nil}
   /// Clears the value of `wasAspectRatioLocked`. Subsequent reads from it will return its default value.
   public mutating func clearWasAspectRatioLocked() {self._wasAspectRatioLocked = nil}
 
@@ -2420,35 +2332,35 @@ public struct TSD_DrawableAspectRatioLockedCommandArchive: Sendable {
   fileprivate var _wasAspectRatioLocked: Bool? = nil
 }
 
-public struct TSD_DrawableAccessibilityDescriptionCommandArchive: Sendable {
+public nonisolated struct TSD_DrawableAccessibilityDescriptionCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var accessibilityDescription: String {
-    get {return _accessibilityDescription ?? String()}
+    get {_accessibilityDescription ?? String()}
     set {_accessibilityDescription = newValue}
   }
   /// Returns true if `accessibilityDescription` has been explicitly set.
-  public var hasAccessibilityDescription: Bool {return self._accessibilityDescription != nil}
+  public var hasAccessibilityDescription: Bool {self._accessibilityDescription != nil}
   /// Clears the value of `accessibilityDescription`. Subsequent reads from it will return its default value.
   public mutating func clearAccessibilityDescription() {self._accessibilityDescription = nil}
 
   public var oldAccessibilityDescription: String {
-    get {return _oldAccessibilityDescription ?? String()}
+    get {_oldAccessibilityDescription ?? String()}
     set {_oldAccessibilityDescription = newValue}
   }
   /// Returns true if `oldAccessibilityDescription` has been explicitly set.
-  public var hasOldAccessibilityDescription: Bool {return self._oldAccessibilityDescription != nil}
+  public var hasOldAccessibilityDescription: Bool {self._oldAccessibilityDescription != nil}
   /// Clears the value of `oldAccessibilityDescription`. Subsequent reads from it will return its default value.
   public mutating func clearOldAccessibilityDescription() {self._oldAccessibilityDescription = nil}
 
@@ -2461,44 +2373,44 @@ public struct TSD_DrawableAccessibilityDescriptionCommandArchive: Sendable {
   fileprivate var _oldAccessibilityDescription: String? = nil
 }
 
-public struct TSD_PasteStyleCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_PasteStyleCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_AbstractStyleCommandArchive {
-    get {return _storage._super ?? TSD_AbstractStyleCommandArchive()}
+    get {_storage._super ?? TSD_AbstractStyleCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var newStyle: TSP_Reference {
-    get {return _storage._newStyle ?? TSP_Reference()}
+    get {_storage._newStyle ?? TSP_Reference()}
     set {_uniqueStorage()._newStyle = newValue}
   }
   /// Returns true if `newStyle` has been explicitly set.
-  public var hasNewStyle: Bool {return _storage._newStyle != nil}
+  public var hasNewStyle: Bool {_storage._newStyle != nil}
   /// Clears the value of `newStyle`. Subsequent reads from it will return its default value.
   public mutating func clearNewStyle() {_uniqueStorage()._newStyle = nil}
 
   public var rollbackStyle: TSP_Reference {
-    get {return _storage._rollbackStyle ?? TSP_Reference()}
+    get {_storage._rollbackStyle ?? TSP_Reference()}
     set {_uniqueStorage()._rollbackStyle = newValue}
   }
   /// Returns true if `rollbackStyle` has been explicitly set.
-  public var hasRollbackStyle: Bool {return _storage._rollbackStyle != nil}
+  public var hasRollbackStyle: Bool {_storage._rollbackStyle != nil}
   /// Clears the value of `rollbackStyle`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackStyle() {_uniqueStorage()._rollbackStyle = nil}
 
   public var tailEndOnLeft: Bool {
-    get {return _storage._tailEndOnLeft ?? false}
+    get {_storage._tailEndOnLeft ?? false}
     set {_uniqueStorage()._tailEndOnLeft = newValue}
   }
   /// Returns true if `tailEndOnLeft` has been explicitly set.
-  public var hasTailEndOnLeft: Bool {return _storage._tailEndOnLeft != nil}
+  public var hasTailEndOnLeft: Bool {_storage._tailEndOnLeft != nil}
   /// Clears the value of `tailEndOnLeft`. Subsequent reads from it will return its default value.
   public mutating func clearTailEndOnLeft() {_uniqueStorage()._tailEndOnLeft = nil}
 
@@ -2509,107 +2421,107 @@ public struct TSD_PasteStyleCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_ImageInfoAbstractGeometryCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_ImageInfoAbstractGeometryCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _storage._super ?? TSD_InfoCommandArchive()}
+    get {_storage._super ?? TSD_InfoCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var newImageGeometry: TSD_GeometryArchive {
-    get {return _storage._newImageGeometry ?? TSD_GeometryArchive()}
+    get {_storage._newImageGeometry ?? TSD_GeometryArchive()}
     set {_uniqueStorage()._newImageGeometry = newValue}
   }
   /// Returns true if `newImageGeometry` has been explicitly set.
-  public var hasNewImageGeometry: Bool {return _storage._newImageGeometry != nil}
+  public var hasNewImageGeometry: Bool {_storage._newImageGeometry != nil}
   /// Clears the value of `newImageGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearNewImageGeometry() {_uniqueStorage()._newImageGeometry = nil}
 
   public var oldImageGeometry: TSD_GeometryArchive {
-    get {return _storage._oldImageGeometry ?? TSD_GeometryArchive()}
+    get {_storage._oldImageGeometry ?? TSD_GeometryArchive()}
     set {_uniqueStorage()._oldImageGeometry = newValue}
   }
   /// Returns true if `oldImageGeometry` has been explicitly set.
-  public var hasOldImageGeometry: Bool {return _storage._oldImageGeometry != nil}
+  public var hasOldImageGeometry: Bool {_storage._oldImageGeometry != nil}
   /// Clears the value of `oldImageGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearOldImageGeometry() {_uniqueStorage()._oldImageGeometry = nil}
 
   public var newMaskGeometry: TSD_GeometryArchive {
-    get {return _storage._newMaskGeometry ?? TSD_GeometryArchive()}
+    get {_storage._newMaskGeometry ?? TSD_GeometryArchive()}
     set {_uniqueStorage()._newMaskGeometry = newValue}
   }
   /// Returns true if `newMaskGeometry` has been explicitly set.
-  public var hasNewMaskGeometry: Bool {return _storage._newMaskGeometry != nil}
+  public var hasNewMaskGeometry: Bool {_storage._newMaskGeometry != nil}
   /// Clears the value of `newMaskGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearNewMaskGeometry() {_uniqueStorage()._newMaskGeometry = nil}
 
   public var oldMaskGeometry: TSD_GeometryArchive {
-    get {return _storage._oldMaskGeometry ?? TSD_GeometryArchive()}
+    get {_storage._oldMaskGeometry ?? TSD_GeometryArchive()}
     set {_uniqueStorage()._oldMaskGeometry = newValue}
   }
   /// Returns true if `oldMaskGeometry` has been explicitly set.
-  public var hasOldMaskGeometry: Bool {return _storage._oldMaskGeometry != nil}
+  public var hasOldMaskGeometry: Bool {_storage._oldMaskGeometry != nil}
   /// Clears the value of `oldMaskGeometry`. Subsequent reads from it will return its default value.
   public mutating func clearOldMaskGeometry() {_uniqueStorage()._oldMaskGeometry = nil}
 
   public var newMaskPathSource: TSD_PathSourceArchive {
-    get {return _storage._newMaskPathSource ?? TSD_PathSourceArchive()}
+    get {_storage._newMaskPathSource ?? TSD_PathSourceArchive()}
     set {_uniqueStorage()._newMaskPathSource = newValue}
   }
   /// Returns true if `newMaskPathSource` has been explicitly set.
-  public var hasNewMaskPathSource: Bool {return _storage._newMaskPathSource != nil}
+  public var hasNewMaskPathSource: Bool {_storage._newMaskPathSource != nil}
   /// Clears the value of `newMaskPathSource`. Subsequent reads from it will return its default value.
   public mutating func clearNewMaskPathSource() {_uniqueStorage()._newMaskPathSource = nil}
 
   public var oldMaskPathSource: TSD_PathSourceArchive {
-    get {return _storage._oldMaskPathSource ?? TSD_PathSourceArchive()}
+    get {_storage._oldMaskPathSource ?? TSD_PathSourceArchive()}
     set {_uniqueStorage()._oldMaskPathSource = newValue}
   }
   /// Returns true if `oldMaskPathSource` has been explicitly set.
-  public var hasOldMaskPathSource: Bool {return _storage._oldMaskPathSource != nil}
+  public var hasOldMaskPathSource: Bool {_storage._oldMaskPathSource != nil}
   /// Clears the value of `oldMaskPathSource`. Subsequent reads from it will return its default value.
   public mutating func clearOldMaskPathSource() {_uniqueStorage()._oldMaskPathSource = nil}
 
   public var newImageOriginalSize: TSP_Size {
-    get {return _storage._newImageOriginalSize ?? TSP_Size()}
+    get {_storage._newImageOriginalSize ?? TSP_Size()}
     set {_uniqueStorage()._newImageOriginalSize = newValue}
   }
   /// Returns true if `newImageOriginalSize` has been explicitly set.
-  public var hasNewImageOriginalSize: Bool {return _storage._newImageOriginalSize != nil}
+  public var hasNewImageOriginalSize: Bool {_storage._newImageOriginalSize != nil}
   /// Clears the value of `newImageOriginalSize`. Subsequent reads from it will return its default value.
   public mutating func clearNewImageOriginalSize() {_uniqueStorage()._newImageOriginalSize = nil}
 
   public var oldImageOriginalSize: TSP_Size {
-    get {return _storage._oldImageOriginalSize ?? TSP_Size()}
+    get {_storage._oldImageOriginalSize ?? TSP_Size()}
     set {_uniqueStorage()._oldImageOriginalSize = newValue}
   }
   /// Returns true if `oldImageOriginalSize` has been explicitly set.
-  public var hasOldImageOriginalSize: Bool {return _storage._oldImageOriginalSize != nil}
+  public var hasOldImageOriginalSize: Bool {_storage._oldImageOriginalSize != nil}
   /// Clears the value of `oldImageOriginalSize`. Subsequent reads from it will return its default value.
   public mutating func clearOldImageOriginalSize() {_uniqueStorage()._oldImageOriginalSize = nil}
 
   public var backgroundRemoved: Bool {
-    get {return _storage._backgroundRemoved ?? false}
+    get {_storage._backgroundRemoved ?? false}
     set {_uniqueStorage()._backgroundRemoved = newValue}
   }
   /// Returns true if `backgroundRemoved` has been explicitly set.
-  public var hasBackgroundRemoved: Bool {return _storage._backgroundRemoved != nil}
+  public var hasBackgroundRemoved: Bool {_storage._backgroundRemoved != nil}
   /// Clears the value of `backgroundRemoved`. Subsequent reads from it will return its default value.
   public mutating func clearBackgroundRemoved() {_uniqueStorage()._backgroundRemoved = nil}
 
   public var oldBackgroundRemoved: Bool {
-    get {return _storage._oldBackgroundRemoved ?? false}
+    get {_storage._oldBackgroundRemoved ?? false}
     set {_uniqueStorage()._oldBackgroundRemoved = newValue}
   }
   /// Returns true if `oldBackgroundRemoved` has been explicitly set.
-  public var hasOldBackgroundRemoved: Bool {return _storage._oldBackgroundRemoved != nil}
+  public var hasOldBackgroundRemoved: Bool {_storage._oldBackgroundRemoved != nil}
   /// Clears the value of `oldBackgroundRemoved`. Subsequent reads from it will return its default value.
   public mutating func clearOldBackgroundRemoved() {_uniqueStorage()._oldBackgroundRemoved = nil}
 
@@ -2620,17 +2532,17 @@ public struct TSD_ImageInfoAbstractGeometryCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_ImageInfoGeometryCommandArchive: Sendable {
+public nonisolated struct TSD_ImageInfoGeometryCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_ImageInfoAbstractGeometryCommandArchive {
-    get {return _super ?? TSD_ImageInfoAbstractGeometryCommandArchive()}
+    get {_super ?? TSD_ImageInfoAbstractGeometryCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2641,17 +2553,17 @@ public struct TSD_ImageInfoGeometryCommandArchive: Sendable {
   fileprivate var _super: TSD_ImageInfoAbstractGeometryCommandArchive? = nil
 }
 
-public struct TSD_ImageInfoMaskGeometryCommandArchive: Sendable {
+public nonisolated struct TSD_ImageInfoMaskGeometryCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_ImageInfoAbstractGeometryCommandArchive {
-    get {return _super ?? TSD_ImageInfoAbstractGeometryCommandArchive()}
+    get {_super ?? TSD_ImageInfoAbstractGeometryCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2662,7 +2574,7 @@ public struct TSD_ImageInfoMaskGeometryCommandArchive: Sendable {
   fileprivate var _super: TSD_ImageInfoAbstractGeometryCommandArchive? = nil
 }
 
-public struct TSD_InfoCollectionSelectionTransformerHelperArchive: Sendable {
+public nonisolated struct TSD_InfoCollectionSelectionTransformerHelperArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2674,26 +2586,26 @@ public struct TSD_InfoCollectionSelectionTransformerHelperArchive: Sendable {
   public init() {}
 }
 
-public struct TSD_DrawableSelectionTransformerArchive: Sendable {
+public nonisolated struct TSD_DrawableSelectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var transformerHelper: TSD_InfoCollectionSelectionTransformerHelperArchive {
-    get {return _transformerHelper ?? TSD_InfoCollectionSelectionTransformerHelperArchive()}
+    get {_transformerHelper ?? TSD_InfoCollectionSelectionTransformerHelperArchive()}
     set {_transformerHelper = newValue}
   }
   /// Returns true if `transformerHelper` has been explicitly set.
-  public var hasTransformerHelper: Bool {return self._transformerHelper != nil}
+  public var hasTransformerHelper: Bool {self._transformerHelper != nil}
   /// Clears the value of `transformerHelper`. Subsequent reads from it will return its default value.
   public mutating func clearTransformerHelper() {self._transformerHelper = nil}
 
   public var untransformedDrawableSelection: TSP_Reference {
-    get {return _untransformedDrawableSelection ?? TSP_Reference()}
+    get {_untransformedDrawableSelection ?? TSP_Reference()}
     set {_untransformedDrawableSelection = newValue}
   }
   /// Returns true if `untransformedDrawableSelection` has been explicitly set.
-  public var hasUntransformedDrawableSelection: Bool {return self._untransformedDrawableSelection != nil}
+  public var hasUntransformedDrawableSelection: Bool {self._untransformedDrawableSelection != nil}
   /// Clears the value of `untransformedDrawableSelection`. Subsequent reads from it will return its default value.
   public mutating func clearUntransformedDrawableSelection() {self._untransformedDrawableSelection = nil}
 
@@ -2705,7 +2617,7 @@ public struct TSD_DrawableSelectionTransformerArchive: Sendable {
   fileprivate var _untransformedDrawableSelection: TSP_Reference? = nil
 }
 
-public struct TSD_InfoHyperlinkSelectionTransformerArchive: Sendable {
+public nonisolated struct TSD_InfoHyperlinkSelectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2715,17 +2627,17 @@ public struct TSD_InfoHyperlinkSelectionTransformerArchive: Sendable {
   public init() {}
 }
 
-public struct TSD_CanvasSelectionTransformerArchive: Sendable {
+public nonisolated struct TSD_CanvasSelectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var transformerHelper: TSD_InfoCollectionSelectionTransformerHelperArchive {
-    get {return _transformerHelper ?? TSD_InfoCollectionSelectionTransformerHelperArchive()}
+    get {_transformerHelper ?? TSD_InfoCollectionSelectionTransformerHelperArchive()}
     set {_transformerHelper = newValue}
   }
   /// Returns true if `transformerHelper` has been explicitly set.
-  public var hasTransformerHelper: Bool {return self._transformerHelper != nil}
+  public var hasTransformerHelper: Bool {self._transformerHelper != nil}
   /// Clears the value of `transformerHelper`. Subsequent reads from it will return its default value.
   public mutating func clearTransformerHelper() {self._transformerHelper = nil}
 
@@ -2736,7 +2648,7 @@ public struct TSD_CanvasSelectionTransformerArchive: Sendable {
   fileprivate var _transformerHelper: TSD_InfoCollectionSelectionTransformerHelperArchive? = nil
 }
 
-public struct TSD_PathSelectionTransformerArchive: Sendable {
+public nonisolated struct TSD_PathSelectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -2746,17 +2658,17 @@ public struct TSD_PathSelectionTransformerArchive: Sendable {
   public init() {}
 }
 
-public struct TSD_ShapeSelectionTransformerArchive: Sendable {
+public nonisolated struct TSD_ShapeSelectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_DrawableSelectionTransformerArchive {
-    get {return _super ?? TSD_DrawableSelectionTransformerArchive()}
+    get {_super ?? TSD_DrawableSelectionTransformerArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2767,17 +2679,17 @@ public struct TSD_ShapeSelectionTransformerArchive: Sendable {
   fileprivate var _super: TSD_DrawableSelectionTransformerArchive? = nil
 }
 
-public struct TSD_GroupSelectionTransformerArchive: Sendable {
+public nonisolated struct TSD_GroupSelectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_DrawableSelectionTransformerArchive {
-    get {return _super ?? TSD_DrawableSelectionTransformerArchive()}
+    get {_super ?? TSD_DrawableSelectionTransformerArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2788,17 +2700,17 @@ public struct TSD_GroupSelectionTransformerArchive: Sendable {
   fileprivate var _super: TSD_DrawableSelectionTransformerArchive? = nil
 }
 
-public struct TSD_PencilAnnotationSelectionTransformerArchive: Sendable {
+public nonisolated struct TSD_PencilAnnotationSelectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var pencilAnnotationUuid: TSP_UUID {
-    get {return _pencilAnnotationUuid ?? TSP_UUID()}
+    get {_pencilAnnotationUuid ?? TSP_UUID()}
     set {_pencilAnnotationUuid = newValue}
   }
   /// Returns true if `pencilAnnotationUuid` has been explicitly set.
-  public var hasPencilAnnotationUuid: Bool {return self._pencilAnnotationUuid != nil}
+  public var hasPencilAnnotationUuid: Bool {self._pencilAnnotationUuid != nil}
   /// Clears the value of `pencilAnnotationUuid`. Subsequent reads from it will return its default value.
   public mutating func clearPencilAnnotationUuid() {self._pencilAnnotationUuid = nil}
 
@@ -2809,35 +2721,35 @@ public struct TSD_PencilAnnotationSelectionTransformerArchive: Sendable {
   fileprivate var _pencilAnnotationUuid: TSP_UUID? = nil
 }
 
-public struct TSD_FreehandDrawingOpacityCommandArchive: Sendable {
+public nonisolated struct TSD_FreehandDrawingOpacityCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var opacity: Double {
-    get {return _opacity ?? 0}
+    get {_opacity ?? 0}
     set {_opacity = newValue}
   }
   /// Returns true if `opacity` has been explicitly set.
-  public var hasOpacity: Bool {return self._opacity != nil}
+  public var hasOpacity: Bool {self._opacity != nil}
   /// Clears the value of `opacity`. Subsequent reads from it will return its default value.
   public mutating func clearOpacity() {self._opacity = nil}
 
   public var oldOpacity: Double {
-    get {return _oldOpacity ?? 0}
+    get {_oldOpacity ?? 0}
     set {_oldOpacity = newValue}
   }
   /// Returns true if `oldOpacity` has been explicitly set.
-  public var hasOldOpacity: Bool {return self._oldOpacity != nil}
+  public var hasOldOpacity: Bool {self._oldOpacity != nil}
   /// Clears the value of `oldOpacity`. Subsequent reads from it will return its default value.
   public mutating func clearOldOpacity() {self._oldOpacity = nil}
 
@@ -2850,35 +2762,35 @@ public struct TSD_FreehandDrawingOpacityCommandArchive: Sendable {
   fileprivate var _oldOpacity: Double? = nil
 }
 
-public struct TSD_FreehandDrawingAnimationCommandArchive: Sendable {
+public nonisolated struct TSD_FreehandDrawingAnimationCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var animation: TSD_FreehandDrawingAnimationArchive {
-    get {return _animation ?? TSD_FreehandDrawingAnimationArchive()}
+    get {_animation ?? TSD_FreehandDrawingAnimationArchive()}
     set {_animation = newValue}
   }
   /// Returns true if `animation` has been explicitly set.
-  public var hasAnimation: Bool {return self._animation != nil}
+  public var hasAnimation: Bool {self._animation != nil}
   /// Clears the value of `animation`. Subsequent reads from it will return its default value.
   public mutating func clearAnimation() {self._animation = nil}
 
   public var oldAnimation: TSD_FreehandDrawingAnimationArchive {
-    get {return _oldAnimation ?? TSD_FreehandDrawingAnimationArchive()}
+    get {_oldAnimation ?? TSD_FreehandDrawingAnimationArchive()}
     set {_oldAnimation = newValue}
   }
   /// Returns true if `oldAnimation` has been explicitly set.
-  public var hasOldAnimation: Bool {return self._oldAnimation != nil}
+  public var hasOldAnimation: Bool {self._oldAnimation != nil}
   /// Clears the value of `oldAnimation`. Subsequent reads from it will return its default value.
   public mutating func clearOldAnimation() {self._oldAnimation = nil}
 
@@ -2891,62 +2803,62 @@ public struct TSD_FreehandDrawingAnimationCommandArchive: Sendable {
   fileprivate var _oldAnimation: TSD_FreehandDrawingAnimationArchive? = nil
 }
 
-public struct TSD_InsertCaptionOrTitleCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_InsertCaptionOrTitleCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var drawableInfoIDPath: TSP_UUIDPath {
-    get {return _storage._drawableInfoIDPath ?? TSP_UUIDPath()}
+    get {_storage._drawableInfoIDPath ?? TSP_UUIDPath()}
     set {_uniqueStorage()._drawableInfoIDPath = newValue}
   }
   /// Returns true if `drawableInfoIDPath` has been explicitly set.
-  public var hasDrawableInfoIDPath: Bool {return _storage._drawableInfoIDPath != nil}
+  public var hasDrawableInfoIDPath: Bool {_storage._drawableInfoIDPath != nil}
   /// Clears the value of `drawableInfoIDPath`. Subsequent reads from it will return its default value.
   public mutating func clearDrawableInfoIDPath() {_uniqueStorage()._drawableInfoIDPath = nil}
 
   public var captionOrTitleInfo: TSP_Reference {
-    get {return _storage._captionOrTitleInfo ?? TSP_Reference()}
+    get {_storage._captionOrTitleInfo ?? TSP_Reference()}
     set {_uniqueStorage()._captionOrTitleInfo = newValue}
   }
   /// Returns true if `captionOrTitleInfo` has been explicitly set.
-  public var hasCaptionOrTitleInfo: Bool {return _storage._captionOrTitleInfo != nil}
+  public var hasCaptionOrTitleInfo: Bool {_storage._captionOrTitleInfo != nil}
   /// Clears the value of `captionOrTitleInfo`. Subsequent reads from it will return its default value.
   public mutating func clearCaptionOrTitleInfo() {_uniqueStorage()._captionOrTitleInfo = nil}
 
   public var addedCaptionOrTitleUuid: TSP_UUID {
-    get {return _storage._addedCaptionOrTitleUuid ?? TSP_UUID()}
+    get {_storage._addedCaptionOrTitleUuid ?? TSP_UUID()}
     set {_uniqueStorage()._addedCaptionOrTitleUuid = newValue}
   }
   /// Returns true if `addedCaptionOrTitleUuid` has been explicitly set.
-  public var hasAddedCaptionOrTitleUuid: Bool {return _storage._addedCaptionOrTitleUuid != nil}
+  public var hasAddedCaptionOrTitleUuid: Bool {_storage._addedCaptionOrTitleUuid != nil}
   /// Clears the value of `addedCaptionOrTitleUuid`. Subsequent reads from it will return its default value.
   public mutating func clearAddedCaptionOrTitleUuid() {_uniqueStorage()._addedCaptionOrTitleUuid = nil}
 
   public var captionOrTitleKind: TSD_CaptionOrTitleKind {
-    get {return _storage._captionOrTitleKind ?? .caption}
+    get {_storage._captionOrTitleKind ?? .caption}
     set {_uniqueStorage()._captionOrTitleKind = newValue}
   }
   /// Returns true if `captionOrTitleKind` has been explicitly set.
-  public var hasCaptionOrTitleKind: Bool {return _storage._captionOrTitleKind != nil}
+  public var hasCaptionOrTitleKind: Bool {_storage._captionOrTitleKind != nil}
   /// Clears the value of `captionOrTitleKind`. Subsequent reads from it will return its default value.
   public mutating func clearCaptionOrTitleKind() {_uniqueStorage()._captionOrTitleKind = nil}
 
   public var undoObject: TSP_Reference {
-    get {return _storage._undoObject ?? TSP_Reference()}
+    get {_storage._undoObject ?? TSP_Reference()}
     set {_uniqueStorage()._undoObject = newValue}
   }
   /// Returns true if `undoObject` has been explicitly set.
-  public var hasUndoObject: Bool {return _storage._undoObject != nil}
+  public var hasUndoObject: Bool {_storage._undoObject != nil}
   /// Clears the value of `undoObject`. Subsequent reads from it will return its default value.
   public mutating func clearUndoObject() {_uniqueStorage()._undoObject = nil}
 
@@ -2957,53 +2869,53 @@ public struct TSD_InsertCaptionOrTitleCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_RemoveCaptionOrTitleCommandArchive: @unchecked Sendable {
+public nonisolated struct TSD_RemoveCaptionOrTitleCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var drawableInfoIDPath: TSP_UUIDPath {
-    get {return _storage._drawableInfoIDPath ?? TSP_UUIDPath()}
+    get {_storage._drawableInfoIDPath ?? TSP_UUIDPath()}
     set {_uniqueStorage()._drawableInfoIDPath = newValue}
   }
   /// Returns true if `drawableInfoIDPath` has been explicitly set.
-  public var hasDrawableInfoIDPath: Bool {return _storage._drawableInfoIDPath != nil}
+  public var hasDrawableInfoIDPath: Bool {_storage._drawableInfoIDPath != nil}
   /// Clears the value of `drawableInfoIDPath`. Subsequent reads from it will return its default value.
   public mutating func clearDrawableInfoIDPath() {_uniqueStorage()._drawableInfoIDPath = nil}
 
   public var removedCaptionOrTitleInfo: TSP_Reference {
-    get {return _storage._removedCaptionOrTitleInfo ?? TSP_Reference()}
+    get {_storage._removedCaptionOrTitleInfo ?? TSP_Reference()}
     set {_uniqueStorage()._removedCaptionOrTitleInfo = newValue}
   }
   /// Returns true if `removedCaptionOrTitleInfo` has been explicitly set.
-  public var hasRemovedCaptionOrTitleInfo: Bool {return _storage._removedCaptionOrTitleInfo != nil}
+  public var hasRemovedCaptionOrTitleInfo: Bool {_storage._removedCaptionOrTitleInfo != nil}
   /// Clears the value of `removedCaptionOrTitleInfo`. Subsequent reads from it will return its default value.
   public mutating func clearRemovedCaptionOrTitleInfo() {_uniqueStorage()._removedCaptionOrTitleInfo = nil}
 
   public var removedCaptionOrTitleUuid: TSP_UUID {
-    get {return _storage._removedCaptionOrTitleUuid ?? TSP_UUID()}
+    get {_storage._removedCaptionOrTitleUuid ?? TSP_UUID()}
     set {_uniqueStorage()._removedCaptionOrTitleUuid = newValue}
   }
   /// Returns true if `removedCaptionOrTitleUuid` has been explicitly set.
-  public var hasRemovedCaptionOrTitleUuid: Bool {return _storage._removedCaptionOrTitleUuid != nil}
+  public var hasRemovedCaptionOrTitleUuid: Bool {_storage._removedCaptionOrTitleUuid != nil}
   /// Clears the value of `removedCaptionOrTitleUuid`. Subsequent reads from it will return its default value.
   public mutating func clearRemovedCaptionOrTitleUuid() {_uniqueStorage()._removedCaptionOrTitleUuid = nil}
 
   public var captionOrTitleKind: TSD_CaptionOrTitleKind {
-    get {return _storage._captionOrTitleKind ?? .caption}
+    get {_storage._captionOrTitleKind ?? .caption}
     set {_uniqueStorage()._captionOrTitleKind = newValue}
   }
   /// Returns true if `captionOrTitleKind` has been explicitly set.
-  public var hasCaptionOrTitleKind: Bool {return _storage._captionOrTitleKind != nil}
+  public var hasCaptionOrTitleKind: Bool {_storage._captionOrTitleKind != nil}
   /// Clears the value of `captionOrTitleKind`. Subsequent reads from it will return its default value.
   public mutating func clearCaptionOrTitleKind() {_uniqueStorage()._captionOrTitleKind = nil}
 
@@ -3014,44 +2926,44 @@ public struct TSD_RemoveCaptionOrTitleCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSD_SetCaptionOrTitleVisibilityCommandArchive: Sendable {
+public nonisolated struct TSD_SetCaptionOrTitleVisibilityCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_InfoCommandArchive {
-    get {return _super ?? TSD_InfoCommandArchive()}
+    get {_super ?? TSD_InfoCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var captionOrTitleKind: TSD_CaptionOrTitleKind {
-    get {return _captionOrTitleKind ?? .caption}
+    get {_captionOrTitleKind ?? .caption}
     set {_captionOrTitleKind = newValue}
   }
   /// Returns true if `captionOrTitleKind` has been explicitly set.
-  public var hasCaptionOrTitleKind: Bool {return self._captionOrTitleKind != nil}
+  public var hasCaptionOrTitleKind: Bool {self._captionOrTitleKind != nil}
   /// Clears the value of `captionOrTitleKind`. Subsequent reads from it will return its default value.
   public mutating func clearCaptionOrTitleKind() {self._captionOrTitleKind = nil}
 
   public var hidden: Bool {
-    get {return _hidden ?? false}
+    get {_hidden ?? false}
     set {_hidden = newValue}
   }
   /// Returns true if `hidden` has been explicitly set.
-  public var hasHidden: Bool {return self._hidden != nil}
+  public var hasHidden: Bool {self._hidden != nil}
   /// Clears the value of `hidden`. Subsequent reads from it will return its default value.
   public mutating func clearHidden() {self._hidden = nil}
 
   public var wasHidden: Bool {
-    get {return _wasHidden ?? false}
+    get {_wasHidden ?? false}
     set {_wasHidden = newValue}
   }
   /// Returns true if `wasHidden` has been explicitly set.
-  public var hasWasHidden: Bool {return self._wasHidden != nil}
+  public var hasWasHidden: Bool {self._wasHidden != nil}
   /// Clears the value of `wasHidden`. Subsequent reads from it will return its default value.
   public mutating func clearWasHidden() {self._wasHidden = nil}
 
@@ -3067,32 +2979,19 @@ public struct TSD_SetCaptionOrTitleVisibilityCommandArchive: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSD"
+fileprivate nonisolated let _protobuf_package = "TSD"
 
-extension TSD_CommentCommandVariant: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "BaseComment"),
-    1: .same(proto: "AddReply"),
-    2: .same(proto: "EditReply"),
-    3: .same(proto: "DeleteReply"),
-  ]
+nonisolated extension TSD_CommentCommandVariant: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0BaseComment\0\u{1}AddReply\0\u{1}EditReply\0\u{1}DeleteReply\0")
 }
 
-extension TSD_CaptionOrTitleKind: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "Caption"),
-    2: .same(proto: "Title"),
-  ]
+nonisolated extension TSD_CaptionOrTitleKind: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}Caption\0\u{1}Title\0")
 }
 
-extension TSD_UndoObjectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_UndoObjectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UndoObjectArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    2: .same(proto: "stylesheet"),
-    1: .same(proto: "objects"),
-    3: .same(proto: "keys"),
-    4: .same(proto: "counts"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}objects\0\u{1}stylesheet\0\u{1}keys\0\u{1}counts\0")
 
   public var isInitialized: Bool {
     if let v = self._stylesheet, !v.isInitialized {return false}
@@ -3145,13 +3044,9 @@ extension TSD_UndoObjectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSD_GroupDrawablesCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_GroupDrawablesCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GroupDrawablesCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "drawables"),
-    3: .same(proto: "group"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}drawables\0\u{1}group\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3201,13 +3096,9 @@ extension TSD_GroupDrawablesCommandArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSD_UngroupGroupCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_UngroupGroupCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UngroupGroupCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "drawables"),
-    3: .same(proto: "group"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}drawables\0\u{1}group\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3257,14 +3148,9 @@ extension TSD_UngroupGroupCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSD_ContainerRemoveChildrenCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ContainerRemoveChildrenCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ContainerRemoveChildrenCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "container_id_path"),
-    3: .standard(proto: "args_list"),
-    4: .same(proto: "children"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}container_id_path\0\u{3}args_list\0\u{1}children\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3320,11 +3206,9 @@ extension TSD_ContainerRemoveChildrenCommandArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSD_ContainerRemoveDrawablesCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ContainerRemoveDrawablesCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ContainerRemoveDrawablesCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3362,16 +3246,9 @@ extension TSD_ContainerRemoveDrawablesCommandArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSD_ContainerInsertChildrenCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ContainerInsertChildrenCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ContainerInsertChildrenCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "container_id_path"),
-    3: .same(proto: "children"),
-    4: .standard(proto: "args_list"),
-    5: .standard(proto: "custom_format_keys"),
-    6: .standard(proto: "undo_object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}container_id_path\0\u{1}children\0\u{3}args_list\0\u{3}custom_format_keys\0\u{3}undo_object\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -3381,15 +3258,11 @@ extension TSD_ContainerInsertChildrenCommandArchive: SwiftProtobuf.Message, Swif
     var _customFormatKeys: [TSP_UUID] = []
     var _undoObject: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3491,12 +3364,9 @@ extension TSD_ContainerInsertChildrenCommandArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSD_ContainerInsertDrawablesCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ContainerInsertDrawablesCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ContainerInsertDrawablesCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "drawables"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}drawables\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3540,13 +3410,9 @@ extension TSD_ContainerInsertDrawablesCommandArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSD_ContainerReorderChildrenCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ContainerReorderChildrenCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ContainerReorderChildrenCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "container_id_path"),
-    3: .standard(proto: "args_list"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}container_id_path\0\u{3}args_list\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3596,14 +3462,9 @@ extension TSD_ContainerReorderChildrenCommandArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSD_GroupUngroupInformativeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_GroupUngroupInformativeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GroupUngroupInformativeCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "removed_infos"),
-    3: .standard(proto: "inserted_infos"),
-    4: .standard(proto: "command_type"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}removed_infos\0\u{3}inserted_infos\0\u{3}command_type\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3658,19 +3519,13 @@ extension TSD_GroupUngroupInformativeCommandArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSD_GroupUngroupInformativeCommandArchive.CommandType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "Group"),
-    1: .same(proto: "Ungroup"),
-  ]
+nonisolated extension TSD_GroupUngroupInformativeCommandArchive.CommandType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0Group\0\u{1}Ungroup\0")
 }
 
-extension TSD_InfoCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_InfoCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InfoCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "info_id_path"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}info_id_path\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3714,15 +3569,9 @@ extension TSD_InfoCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSD_ConnectionLineConnectCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ConnectionLineConnectCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ConnectionLineConnectCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    4: .standard(proto: "connected_from_id"),
-    5: .standard(proto: "connected_to_id"),
-    6: .standard(proto: "old_connected_to_id"),
-    7: .standard(proto: "old_connected_from_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{3}connected_from_id\0\u{3}connected_to_id\0\u{3}old_connected_to_id\0\u{3}old_connected_from_id\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -3731,15 +3580,11 @@ extension TSD_ConnectionLineConnectCommandArchive: SwiftProtobuf.Message, SwiftP
     var _oldConnectedToID: TSP_UUID? = nil
     var _oldConnectedFromID: TSP_UUID? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3834,17 +3679,9 @@ extension TSD_ConnectionLineConnectCommandArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSD_InfoGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_InfoGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InfoGeometryCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "newGeometry"),
-    3: .same(proto: "oldGeometry"),
-    4: .same(proto: "matchObjectPlaceholderGeometry"),
-    5: .same(proto: "oldMatchObjectPlaceholderGeometry"),
-    6: .same(proto: "shouldTriggerRtuAnimation"),
-    7: .same(proto: "initiatedOnWeb"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}newGeometry\0\u{1}oldGeometry\0\u{1}matchObjectPlaceholderGeometry\0\u{1}oldMatchObjectPlaceholderGeometry\0\u{1}shouldTriggerRtuAnimation\0\u{1}initiatedOnWeb\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -3855,15 +3692,11 @@ extension TSD_InfoGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._
     var _shouldTriggerRtuAnimation: Bool? = nil
     var _initiatedOnWeb: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3968,13 +3801,9 @@ extension TSD_InfoGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSD_DrawablePathSourceCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_DrawablePathSourceCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawablePathSourceCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "old_path_source"),
-    3: .standard(proto: "new_path_source"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}old_path_source\0\u{3}new_path_source\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4024,13 +3853,9 @@ extension TSD_DrawablePathSourceCommandArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSD_InstantAlphaCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_InstantAlphaCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InstantAlphaCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "oldpath"),
-    3: .same(proto: "newpath"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}oldpath\0\u{1}newpath\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4080,28 +3905,20 @@ extension TSD_InstantAlphaCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSD_DrawableApplyThemeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_DrawableApplyThemeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawableApplyThemeCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "info"),
-    3: .same(proto: "style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}info\0\u{1}style\0")
 
   fileprivate class _StorageClass {
     var _super: TSS_ApplyThemeChildCommandArchive? = nil
     var _info: TSP_Reference? = nil
     var _style: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4182,11 +3999,9 @@ extension TSD_DrawableApplyThemeCommandArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSD_AbstractStyleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_AbstractStyleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AbstractStyleCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4224,28 +4039,20 @@ extension TSD_AbstractStyleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSD_StyledInfoSetStyleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_StyledInfoSetStyleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StyledInfoSetStyleCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "new_style"),
-    4: .standard(proto: "rollback_style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}new_style\0\u{4}\u{2}rollback_style\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_AbstractStyleCommandArchive? = nil
     var _newStyle: TSP_Reference? = nil
     var _rollbackStyle: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4326,28 +4133,20 @@ extension TSD_StyledInfoSetStyleCommandArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSD_BaseApplyPresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_BaseApplyPresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".BaseApplyPresetCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "preset_style"),
-    4: .standard(proto: "rollback_style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}preset_style\0\u{4}\u{2}rollback_style\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_AbstractStyleCommandArchive? = nil
     var _presetStyle: TSP_Reference? = nil
     var _rollbackStyle: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4428,11 +4227,9 @@ extension TSD_BaseApplyPresetCommandArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSD_ShapeApplyPresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ShapeApplyPresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ShapeApplyPresetCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4470,11 +4267,9 @@ extension TSD_ShapeApplyPresetCommandArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSD_MediaApplyPresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_MediaApplyPresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MediaApplyPresetCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4512,26 +4307,19 @@ extension TSD_MediaApplyPresetCommandArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSD_ShapeStyleSetValueCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ShapeStyleSetValueCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ShapeStyleSetValueCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    4: .same(proto: "change"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{2}\u{3}change\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_BaseStyleSetValueCommandArchive? = nil
     var _change: TSDSOS_BaseShapeStylePropertyChangeSetArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4605,13 +4393,9 @@ extension TSD_ShapeStyleSetValueCommandArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSD_BaseStyleSetValueCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_BaseStyleSetValueCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".BaseStyleSetValueCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    4: .standard(proto: "old_style"),
-    5: .standard(proto: "is_border_change"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{3}old_style\0\u{3}is_border_change\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4661,16 +4445,9 @@ extension TSD_BaseStyleSetValueCommandArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSD_MovieSetValueCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_MovieSetValueCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MovieSetValueCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "property"),
-    3: .same(proto: "value"),
-    4: .same(proto: "oldValue"),
-    5: .same(proto: "importedauxiliarymedia"),
-    6: .same(proto: "oldimportedauxiliarymedia"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}property\0\u{1}value\0\u{1}oldValue\0\u{1}importedauxiliarymedia\0\u{1}oldimportedauxiliarymedia\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -4680,15 +4457,11 @@ extension TSD_MovieSetValueCommandArchive: SwiftProtobuf.Message, SwiftProtobuf.
     var _importedauxiliarymedia: TSP_DataReference? = nil
     var _oldimportedauxiliarymedia: TSP_DataReference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4789,27 +4562,13 @@ extension TSD_MovieSetValueCommandArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSD_MovieSetValueCommandArchive.LoopOption: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "None"),
-    1: .same(proto: "Repeat"),
-    2: .same(proto: "BackAndForth"),
-  ]
+nonisolated extension TSD_MovieSetValueCommandArchive.LoopOption: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0None\0\u{1}Repeat\0\u{1}BackAndForth\0")
 }
 
-extension TSD_MovieSetValueCommandArchive.PropertyValue: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_MovieSetValueCommandArchive.PropertyValue: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSD_MovieSetValueCommandArchive.protoMessageName + ".PropertyValue"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "starttime"),
-    2: .same(proto: "endtime"),
-    3: .same(proto: "postertime"),
-    4: .same(proto: "posterimagedata"),
-    5: .same(proto: "autoplay"),
-    6: .same(proto: "loopOption"),
-    7: .same(proto: "volume"),
-    8: .same(proto: "media"),
-    9: .same(proto: "playsAcrossSlides"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}starttime\0\u{1}endtime\0\u{1}postertime\0\u{1}posterimagedata\0\u{1}autoplay\0\u{1}loopOption\0\u{1}volume\0\u{1}media\0\u{1}playsAcrossSlides\0")
 
   public var isInitialized: Bool {
     if let v = self._posterimagedata, !v.isInitialized {return false}
@@ -4887,26 +4646,19 @@ extension TSD_MovieSetValueCommandArchive.PropertyValue: SwiftProtobuf.Message, 
   }
 }
 
-extension TSD_MediaStyleSetValueCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_MediaStyleSetValueCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MediaStyleSetValueCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    4: .same(proto: "change"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{2}\u{3}change\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_BaseStyleSetValueCommandArchive? = nil
     var _change: TSDSOS_MediaStylePropertyChangeSetArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4980,30 +4732,9 @@ extension TSD_MediaStyleSetValueCommandArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSD_ImageMediaCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ImageMediaCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ImageMediaCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    8: .same(proto: "newImageData"),
-    9: .same(proto: "oldImageData"),
-    10: .same(proto: "oldOriginalImageData"),
-    6: .same(proto: "oldNaturalSize"),
-    11: .same(proto: "newOriginalImageData"),
-    12: .same(proto: "oldImageAdjustments"),
-    13: .same(proto: "oldAdjustedImageData"),
-    14: .same(proto: "oldEnhancedImageData"),
-    15: .same(proto: "imageAdjustments"),
-    16: .same(proto: "adjustedImageData"),
-    17: .same(proto: "enhancedImageData"),
-    18: .same(proto: "newThumbnailImageData"),
-    19: .same(proto: "oldThumbnailImageData"),
-    20: .same(proto: "thumbnailAdjustedImageData"),
-    21: .same(proto: "oldThumbnailAdjustedImageData"),
-    3: .standard(proto: "database_newImageData"),
-    4: .standard(proto: "database_oldImageData"),
-    5: .standard(proto: "database_oldOriginalImageData"),
-    7: .standard(proto: "database_newOriginalImageData"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{2}database_newImageData\0\u{3}database_oldImageData\0\u{3}database_oldOriginalImageData\0\u{1}oldNaturalSize\0\u{3}database_newOriginalImageData\0\u{1}newImageData\0\u{1}oldImageData\0\u{1}oldOriginalImageData\0\u{1}newOriginalImageData\0\u{1}oldImageAdjustments\0\u{1}oldAdjustedImageData\0\u{1}oldEnhancedImageData\0\u{1}imageAdjustments\0\u{1}adjustedImageData\0\u{1}enhancedImageData\0\u{1}newThumbnailImageData\0\u{1}oldThumbnailImageData\0\u{1}thumbnailAdjustedImageData\0\u{1}oldThumbnailAdjustedImageData\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -5027,15 +4758,11 @@ extension TSD_ImageMediaCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _databaseOldOriginalImageData: TSP_Reference? = nil
     var _databaseNewOriginalImageData: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5233,14 +4960,9 @@ extension TSD_ImageMediaCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSD_MediaOriginalSizeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_MediaOriginalSizeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MediaOriginalSizeCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "newOriginalSize"),
-    3: .same(proto: "oldOriginalSize"),
-    4: .same(proto: "propertyName"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}newOriginalSize\0\u{1}oldOriginalSize\0\u{1}propertyName\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -5248,15 +4970,11 @@ extension TSD_MediaOriginalSizeCommandArchive: SwiftProtobuf.Message, SwiftProto
     var _oldOriginalSize: TSP_Size? = nil
     var _propertyName: String? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5344,13 +5062,9 @@ extension TSD_MediaOriginalSizeCommandArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSD_MediaInfoGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_MediaInfoGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MediaInfoGeometryCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "newOriginalSize"),
-    3: .same(proto: "oldOriginalSize"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}newOriginalSize\0\u{1}oldOriginalSize\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5402,13 +5116,9 @@ extension TSD_MediaInfoGeometryCommandArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSD_ImageNaturalSizeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ImageNaturalSizeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ImageNaturalSizeCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "new_natural_size"),
-    3: .standard(proto: "old_natural_size"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}new_natural_size\0\u{3}old_natural_size\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5458,15 +5168,9 @@ extension TSD_ImageNaturalSizeCommandArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSD_ImageMaskCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ImageMaskCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ImageMaskCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "newMaskInfo"),
-    3: .same(proto: "oldMaskInfo"),
-    4: .standard(proto: "background_removed"),
-    5: .standard(proto: "old_background_removed"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}newMaskInfo\0\u{1}oldMaskInfo\0\u{3}background_removed\0\u{3}old_background_removed\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -5475,15 +5179,11 @@ extension TSD_ImageMaskCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _backgroundRemoved: Bool? = nil
     var _oldBackgroundRemoved: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5576,19 +5276,9 @@ extension TSD_ImageMaskCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSD_ImageAdjustmentsCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ImageAdjustmentsCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ImageAdjustmentsCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "old_image_adjustments"),
-    3: .standard(proto: "new_image_adjustments"),
-    4: .same(proto: "adjustedImageData"),
-    5: .same(proto: "replacedAdjustedImageData"),
-    6: .same(proto: "enhancedImageData"),
-    7: .same(proto: "replacedEnhancedImageData"),
-    8: .same(proto: "thumbnailAdjustedImageData"),
-    9: .same(proto: "replacedThumbnailAdjustedImageData"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}old_image_adjustments\0\u{3}new_image_adjustments\0\u{1}adjustedImageData\0\u{1}replacedAdjustedImageData\0\u{1}enhancedImageData\0\u{1}replacedEnhancedImageData\0\u{1}thumbnailAdjustedImageData\0\u{1}replacedThumbnailAdjustedImageData\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -5601,15 +5291,11 @@ extension TSD_ImageAdjustmentsCommandArchive: SwiftProtobuf.Message, SwiftProtob
     var _thumbnailAdjustedImageData: TSP_DataReference? = nil
     var _replacedThumbnailAdjustedImageData: TSP_DataReference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5730,16 +5416,9 @@ extension TSD_ImageAdjustmentsCommandArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSD_MediaFlagsCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_MediaFlagsCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MediaFlagsCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    5: .standard(proto: "was_media_replaced"),
-    6: .standard(proto: "is_placeholder"),
-    7: .standard(proto: "old_was_media_replaced"),
-    8: .standard(proto: "old_is_placeholder"),
-    4: .standard(proto: "property_name"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{3}property_name\0\u{3}was_media_replaced\0\u{3}is_placeholder\0\u{3}old_was_media_replaced\0\u{3}old_is_placeholder\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -5749,15 +5428,11 @@ extension TSD_MediaFlagsCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _oldIsPlaceholder: Bool? = nil
     var _propertyName: String? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5855,16 +5530,9 @@ extension TSD_MediaFlagsCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSD_DrawablesCommandGroupArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_DrawablesCommandGroupArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawablesCommandGroupArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "obsolete_selection"),
-    3: .same(proto: "modelforselection"),
-    4: .same(proto: "type"),
-    5: .same(proto: "forDrag"),
-    6: .same(proto: "archivedselection"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}obsolete_selection\0\u{1}modelforselection\0\u{1}type\0\u{1}forDrag\0\u{1}archivedselection\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandGroupArchive? = nil
@@ -5874,15 +5542,11 @@ extension TSD_DrawablesCommandGroupArchive: SwiftProtobuf.Message, SwiftProtobuf
     var _forDrag: Bool? = nil
     var _archivedselection: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5982,26 +5646,13 @@ extension TSD_DrawablesCommandGroupArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSD_DrawablesCommandGroupArchive.DrawablesCommandGroupType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "Constructive"),
-    2: .same(proto: "Destructive"),
-    3: .same(proto: "InPlace"),
-  ]
+nonisolated extension TSD_DrawablesCommandGroupArchive.DrawablesCommandGroupType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}Constructive\0\u{1}Destructive\0\u{1}InPlace\0")
 }
 
-extension TSD_ExteriorTextWrapCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ExteriorTextWrapCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ExteriorTextWrapCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    3: .standard(proto: "old_exterior_text_wrap"),
-    4: .same(proto: "type"),
-    5: .same(proto: "direction"),
-    6: .standard(proto: "fit_type"),
-    7: .same(proto: "margin"),
-    8: .standard(proto: "alpha_threshold"),
-    9: .standard(proto: "is_html_wrap"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{2}old_exterior_text_wrap\0\u{1}type\0\u{1}direction\0\u{3}fit_type\0\u{1}margin\0\u{3}alpha_threshold\0\u{3}is_html_wrap\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -6013,15 +5664,11 @@ extension TSD_ExteriorTextWrapCommandArchive: SwiftProtobuf.Message, SwiftProtob
     var _alphaThreshold: Float? = nil
     var _isHtmlWrap: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -6130,13 +5777,9 @@ extension TSD_ExteriorTextWrapCommandArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSD_DrawableHyperlinkCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_DrawableHyperlinkCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawableHyperlinkCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "oldhyperlink_url"),
-    3: .standard(proto: "newhyperlink_url"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}oldhyperlink_url\0\u{3}newhyperlink_url\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6184,16 +5827,9 @@ extension TSD_DrawableHyperlinkCommandArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSD_CommentInvalidatingCommandSelectionBehaviorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_CommentInvalidatingCommandSelectionBehaviorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommentInvalidatingCommandSelectionBehaviorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "annotation_displaying_command"),
-    3: .standard(proto: "begin_editing_on_undo"),
-    4: .standard(proto: "begin_editing_on_redo"),
-    5: .standard(proto: "should_invalidate_on_undo"),
-    6: .standard(proto: "should_invalidate_on_redo"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}annotation_displaying_command\0\u{3}begin_editing_on_undo\0\u{3}begin_editing_on_redo\0\u{3}should_invalidate_on_undo\0\u{3}should_invalidate_on_redo\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6257,35 +5893,9 @@ extension TSD_CommentInvalidatingCommandSelectionBehaviorArchive: SwiftProtobuf.
   }
 }
 
-extension TSD_ImageReplaceCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ImageReplaceCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ImageReplaceCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "new_image_data"),
-    3: .standard(proto: "new_original_image_data"),
-    4: .standard(proto: "old_image_data"),
-    5: .standard(proto: "old_original_image_data"),
-    6: .standard(proto: "instant_alpha_path"),
-    7: .standard(proto: "old_instant_alpha_path"),
-    8: .standard(proto: "natural_size_for_IAPath"),
-    9: .standard(proto: "old_natural_size_for_IAPath"),
-    10: .standard(proto: "target_image_geometry"),
-    12: .standard(proto: "old_target_image_geometry"),
-    13: .standard(proto: "target_mask_geometry"),
-    14: .standard(proto: "old_target_mask_geometry"),
-    15: .standard(proto: "image_adjustments"),
-    16: .standard(proto: "adjusted_image_data"),
-    17: .standard(proto: "enhanced_image_data"),
-    18: .standard(proto: "old_image_adjustments"),
-    19: .standard(proto: "old_adjusted_image_data"),
-    20: .standard(proto: "old_enhanced_image_data"),
-    21: .standard(proto: "thumbnail_image_data"),
-    22: .standard(proto: "old_thumbnail_image_data"),
-    23: .standard(proto: "thumbnail_adjusted_image_data"),
-    24: .standard(proto: "old_thumbnail_adjusted_image_data"),
-    25: .standard(proto: "natural_size"),
-    26: .standard(proto: "old_natural_size"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}new_image_data\0\u{3}new_original_image_data\0\u{3}old_image_data\0\u{3}old_original_image_data\0\u{3}instant_alpha_path\0\u{3}old_instant_alpha_path\0\u{3}natural_size_for_IAPath\0\u{3}old_natural_size_for_IAPath\0\u{3}target_image_geometry\0\u{4}\u{2}old_target_image_geometry\0\u{3}target_mask_geometry\0\u{3}old_target_mask_geometry\0\u{3}image_adjustments\0\u{3}adjusted_image_data\0\u{3}enhanced_image_data\0\u{3}old_image_adjustments\0\u{3}old_adjusted_image_data\0\u{3}old_enhanced_image_data\0\u{3}thumbnail_image_data\0\u{3}old_thumbnail_image_data\0\u{3}thumbnail_adjusted_image_data\0\u{3}old_thumbnail_adjusted_image_data\0\u{3}natural_size\0\u{3}old_natural_size\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -6314,15 +5924,11 @@ extension TSD_ImageReplaceCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._
     var _naturalSize: TSP_Size? = nil
     var _oldNaturalSize: TSP_Size? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -6555,13 +6161,9 @@ extension TSD_ImageReplaceCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSD_DrawableLockCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_DrawableLockCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawableLockCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "locked"),
-    3: .standard(proto: "was_locked"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}locked\0\u{3}was_locked\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6609,15 +6211,9 @@ extension TSD_DrawableLockCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSD_DrawableInfoCommentCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_DrawableInfoCommentCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawableInfoCommentCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "old_comment"),
-    3: .standard(proto: "new_comment"),
-    4: .standard(proto: "forward_variant"),
-    5: .standard(proto: "inverse_variant"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}old_comment\0\u{3}new_comment\0\u{3}forward_variant\0\u{3}inverse_variant\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -6626,15 +6222,11 @@ extension TSD_DrawableInfoCommentCommandArchive: SwiftProtobuf.Message, SwiftPro
     var _forwardVariant: TSD_CommentCommandVariant? = nil
     var _inverseVariant: TSD_CommentCommandVariant? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -6727,28 +6319,20 @@ extension TSD_DrawableInfoCommentCommandArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSD_DrawablePencilAnnotationCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_DrawablePencilAnnotationCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawablePencilAnnotationCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "pencil_annotation_to_add"),
-    3: .standard(proto: "pencil_annotation_to_remove"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}pencil_annotation_to_add\0\u{3}pencil_annotation_to_remove\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
     var _pencilAnnotationToAdd: TSP_Reference? = nil
     var _pencilAnnotationToRemove: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -6829,13 +6413,9 @@ extension TSD_DrawablePencilAnnotationCommandArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSD_AbstractGuideCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_AbstractGuideCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".AbstractGuideCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    7: .standard(proto: "old_guides"),
-    8: .standard(proto: "new_guides"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{6}old_guides\0\u{3}new_guides\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6883,12 +6463,9 @@ extension TSD_AbstractGuideCommandArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSD_GuideCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_GuideCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GuideCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "storage_id_path"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}storage_id_path\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6933,13 +6510,9 @@ extension TSD_GuideCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSD_DrawableAspectRatioLockedCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_DrawableAspectRatioLockedCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawableAspectRatioLockedCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "aspect_ratio_locked"),
-    3: .standard(proto: "was_aspect_ratio_locked"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}aspect_ratio_locked\0\u{3}was_aspect_ratio_locked\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6987,13 +6560,9 @@ extension TSD_DrawableAspectRatioLockedCommandArchive: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSD_DrawableAccessibilityDescriptionCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_DrawableAccessibilityDescriptionCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawableAccessibilityDescriptionCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "accessibility_description"),
-    3: .standard(proto: "old_accessibility_description"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}accessibility_description\0\u{3}old_accessibility_description\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -7041,14 +6610,9 @@ extension TSD_DrawableAccessibilityDescriptionCommandArchive: SwiftProtobuf.Mess
   }
 }
 
-extension TSD_PasteStyleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_PasteStyleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PasteStyleCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "new_style"),
-    5: .standard(proto: "rollback_style"),
-    4: .standard(proto: "tail_end_on_left"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}new_style\0\u{4}\u{2}tail_end_on_left\0\u{3}rollback_style\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_AbstractStyleCommandArchive? = nil
@@ -7056,15 +6620,11 @@ extension TSD_PasteStyleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _rollbackStyle: TSP_Reference? = nil
     var _tailEndOnLeft: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -7151,21 +6711,9 @@ extension TSD_PasteStyleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSD_ImageInfoAbstractGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ImageInfoAbstractGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ImageInfoAbstractGeometryCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "new_image_geometry"),
-    3: .standard(proto: "old_image_geometry"),
-    4: .standard(proto: "new_mask_geometry"),
-    5: .standard(proto: "old_mask_geometry"),
-    6: .standard(proto: "new_mask_path_source"),
-    7: .standard(proto: "old_mask_path_source"),
-    8: .standard(proto: "new_image_original_size"),
-    9: .standard(proto: "old_image_original_size"),
-    10: .standard(proto: "background_removed"),
-    11: .standard(proto: "old_background_removed"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}new_image_geometry\0\u{3}old_image_geometry\0\u{3}new_mask_geometry\0\u{3}old_mask_geometry\0\u{3}new_mask_path_source\0\u{3}old_mask_path_source\0\u{3}new_image_original_size\0\u{3}old_image_original_size\0\u{3}background_removed\0\u{3}old_background_removed\0")
 
   fileprivate class _StorageClass {
     var _super: TSD_InfoCommandArchive? = nil
@@ -7180,15 +6728,11 @@ extension TSD_ImageInfoAbstractGeometryCommandArchive: SwiftProtobuf.Message, Sw
     var _backgroundRemoved: Bool? = nil
     var _oldBackgroundRemoved: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -7323,11 +6867,9 @@ extension TSD_ImageInfoAbstractGeometryCommandArchive: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSD_ImageInfoGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ImageInfoGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ImageInfoGeometryCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -7365,11 +6907,9 @@ extension TSD_ImageInfoGeometryCommandArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSD_ImageInfoMaskGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ImageInfoMaskGeometryCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ImageInfoMaskGeometryCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -7407,11 +6947,9 @@ extension TSD_ImageInfoMaskGeometryCommandArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSD_InfoCollectionSelectionTransformerHelperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_InfoCollectionSelectionTransformerHelperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InfoCollectionSelectionTransformerHelperArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "info_uuid_path_list"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}info_uuid_path_list\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.infoUuidPathList) {return false}
@@ -7444,12 +6982,9 @@ extension TSD_InfoCollectionSelectionTransformerHelperArchive: SwiftProtobuf.Mes
   }
 }
 
-extension TSD_DrawableSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_DrawableSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawableSelectionTransformerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "transformer_helper"),
-    2: .standard(proto: "untransformed_drawable_selection"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}transformer_helper\0\u{3}untransformed_drawable_selection\0")
 
   public var isInitialized: Bool {
     if self._transformerHelper == nil {return false}
@@ -7494,7 +7029,7 @@ extension TSD_DrawableSelectionTransformerArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSD_InfoHyperlinkSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_InfoHyperlinkSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InfoHyperlinkSelectionTransformerArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -7513,11 +7048,9 @@ extension TSD_InfoHyperlinkSelectionTransformerArchive: SwiftProtobuf.Message, S
   }
 }
 
-extension TSD_CanvasSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_CanvasSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CanvasSelectionTransformerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "transformer_helper"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}transformer_helper\0")
 
   public var isInitialized: Bool {
     if self._transformerHelper == nil {return false}
@@ -7555,7 +7088,7 @@ extension TSD_CanvasSelectionTransformerArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSD_PathSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_PathSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PathSelectionTransformerArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -7574,11 +7107,9 @@ extension TSD_PathSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSD_ShapeSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_ShapeSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ShapeSelectionTransformerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -7616,11 +7147,9 @@ extension TSD_ShapeSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSD_GroupSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_GroupSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GroupSelectionTransformerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -7658,11 +7187,9 @@ extension TSD_GroupSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSD_PencilAnnotationSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_PencilAnnotationSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PencilAnnotationSelectionTransformerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "pencil_annotation_uuid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}pencil_annotation_uuid\0")
 
   public var isInitialized: Bool {
     if self._pencilAnnotationUuid == nil {return false}
@@ -7700,13 +7227,9 @@ extension TSD_PencilAnnotationSelectionTransformerArchive: SwiftProtobuf.Message
   }
 }
 
-extension TSD_FreehandDrawingOpacityCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_FreehandDrawingOpacityCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FreehandDrawingOpacityCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "opacity"),
-    3: .standard(proto: "old_opacity"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}opacity\0\u{3}old_opacity\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -7754,13 +7277,9 @@ extension TSD_FreehandDrawingOpacityCommandArchive: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSD_FreehandDrawingAnimationCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_FreehandDrawingAnimationCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FreehandDrawingAnimationCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "animation"),
-    3: .standard(proto: "old_animation"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}animation\0\u{3}old_animation\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -7808,16 +7327,9 @@ extension TSD_FreehandDrawingAnimationCommandArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSD_InsertCaptionOrTitleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_InsertCaptionOrTitleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InsertCaptionOrTitleCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "drawable_info_id_path"),
-    3: .standard(proto: "caption_or_title_info"),
-    4: .standard(proto: "added_caption_or_title_uuid"),
-    5: .standard(proto: "caption_or_title_kind"),
-    6: .standard(proto: "undo_object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}drawable_info_id_path\0\u{3}caption_or_title_info\0\u{3}added_caption_or_title_uuid\0\u{3}caption_or_title_kind\0\u{3}undo_object\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -7827,15 +7339,11 @@ extension TSD_InsertCaptionOrTitleCommandArchive: SwiftProtobuf.Message, SwiftPr
     var _captionOrTitleKind: TSD_CaptionOrTitleKind? = nil
     var _undoObject: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -7936,15 +7444,9 @@ extension TSD_InsertCaptionOrTitleCommandArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSD_RemoveCaptionOrTitleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_RemoveCaptionOrTitleCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RemoveCaptionOrTitleCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "drawable_info_id_path"),
-    3: .standard(proto: "removed_caption_or_title_info"),
-    4: .standard(proto: "removed_caption_or_title_uuid"),
-    5: .standard(proto: "caption_or_title_kind"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}drawable_info_id_path\0\u{3}removed_caption_or_title_info\0\u{3}removed_caption_or_title_uuid\0\u{3}caption_or_title_kind\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -7953,15 +7455,11 @@ extension TSD_RemoveCaptionOrTitleCommandArchive: SwiftProtobuf.Message, SwiftPr
     var _removedCaptionOrTitleUuid: TSP_UUID? = nil
     var _captionOrTitleKind: TSD_CaptionOrTitleKind? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -8055,14 +7553,9 @@ extension TSD_RemoveCaptionOrTitleCommandArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSD_SetCaptionOrTitleVisibilityCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSD_SetCaptionOrTitleVisibilityCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SetCaptionOrTitleVisibilityCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "caption_or_title_kind"),
-    3: .same(proto: "hidden"),
-    4: .standard(proto: "was_hidden"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}caption_or_title_kind\0\u{1}hidden\0\u{3}was_hidden\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}

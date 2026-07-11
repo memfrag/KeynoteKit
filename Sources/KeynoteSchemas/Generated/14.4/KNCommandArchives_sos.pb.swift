@@ -15,44 +15,44 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct KNSOS_InducedVerifyDocumentWithServerCommandArchive: Sendable {
+public nonisolated struct KNSOS_InducedVerifyDocumentWithServerCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var slideNodeIDList: [TSP_UUID] = []
 
   public var slideNodeIDListUndefined: Bool {
-    get {return _slideNodeIDListUndefined ?? false}
+    get {_slideNodeIDListUndefined ?? false}
     set {_slideNodeIDListUndefined = newValue}
   }
   /// Returns true if `slideNodeIDListUndefined` has been explicitly set.
-  public var hasSlideNodeIDListUndefined: Bool {return self._slideNodeIDListUndefined != nil}
+  public var hasSlideNodeIDListUndefined: Bool {self._slideNodeIDListUndefined != nil}
   /// Clears the value of `slideNodeIDListUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearSlideNodeIDListUndefined() {self._slideNodeIDListUndefined = nil}
 
   public var templateSlideNodeIDList: [TSP_UUID] = []
 
   public var templateSlideNodeIDListUndefined: Bool {
-    get {return _templateSlideNodeIDListUndefined ?? false}
+    get {_templateSlideNodeIDListUndefined ?? false}
     set {_templateSlideNodeIDListUndefined = newValue}
   }
   /// Returns true if `templateSlideNodeIDListUndefined` has been explicitly set.
-  public var hasTemplateSlideNodeIDListUndefined: Bool {return self._templateSlideNodeIDListUndefined != nil}
+  public var hasTemplateSlideNodeIDListUndefined: Bool {self._templateSlideNodeIDListUndefined != nil}
   /// Clears the value of `templateSlideNodeIDListUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTemplateSlideNodeIDListUndefined() {self._templateSlideNodeIDListUndefined = nil}
 
@@ -65,17 +65,17 @@ public struct KNSOS_InducedVerifyDocumentWithServerCommandArchive: Sendable {
   fileprivate var _templateSlideNodeIDListUndefined: Bool? = nil
 }
 
-public struct KNSOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: Sendable {
+public nonisolated struct KNSOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSASOS_InducedVerifyDrawableZOrdersWithServerCommandArchive {
-    get {return _super ?? TSASOS_InducedVerifyDrawableZOrdersWithServerCommandArchive()}
+    get {_super ?? TSASOS_InducedVerifyDrawableZOrdersWithServerCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -86,17 +86,17 @@ public struct KNSOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: Sendab
   fileprivate var _super: TSASOS_InducedVerifyDrawableZOrdersWithServerCommandArchive? = nil
 }
 
-public struct KNSOS_CommandSlideReapplyTemplateSlideArchive: Sendable {
+public nonisolated struct KNSOS_CommandSlideReapplyTemplateSlideArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSASOS_CommandReapplyMasterArchive {
-    get {return _super ?? TSASOS_CommandReapplyMasterArchive()}
+    get {_super ?? TSASOS_CommandReapplyMasterArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -109,17 +109,11 @@ public struct KNSOS_CommandSlideReapplyTemplateSlideArchive: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "KNSOS"
+fileprivate nonisolated let _protobuf_package = "KNSOS"
 
-extension KNSOS_InducedVerifyDocumentWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension KNSOS_InducedVerifyDocumentWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InducedVerifyDocumentWithServerCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "slide_node_id_list"),
-    3: .standard(proto: "slide_node_id_list_undefined"),
-    4: .standard(proto: "template_slide_node_id_list"),
-    5: .standard(proto: "template_slide_node_id_list_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}slide_node_id_list\0\u{3}slide_node_id_list_undefined\0\u{3}template_slide_node_id_list\0\u{3}template_slide_node_id_list_undefined\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -179,11 +173,9 @@ extension KNSOS_InducedVerifyDocumentWithServerCommandArchive: SwiftProtobuf.Mes
   }
 }
 
-extension KNSOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension KNSOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InducedVerifyDrawableZOrdersWithServerCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -221,11 +213,9 @@ extension KNSOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: SwiftProto
   }
 }
 
-extension KNSOS_CommandSlideReapplyTemplateSlideArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension KNSOS_CommandSlideReapplyTemplateSlideArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSlideReapplyTemplateSlideArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}

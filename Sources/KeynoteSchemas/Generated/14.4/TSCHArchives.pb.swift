@@ -8,7 +8,11 @@
 // For information on using the generated types, please see the documentation:
 //   https://github.com/apple/swift-protobuf/
 
+#if canImport(FoundationEssentials)
+import FoundationEssentials
+#else
 import Foundation
+#endif
 import SwiftProtobuf
 
 // If the compiler emits an error on this type, it is because this file
@@ -16,22 +20,22 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSCH_ChartDrawableArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_ChartDrawableArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_DrawableArchive {
-    get {return _super ?? TSD_DrawableArchive()}
+    get {_super ?? TSD_DrawableArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -43,200 +47,200 @@ public struct TSCH_ChartDrawableArchive: SwiftProtobuf.ExtensibleMessage, Sendab
   fileprivate var _super: TSD_DrawableArchive? = nil
 }
 
-public struct TSCH_ChartArchive: SwiftProtobuf.ExtensibleMessage, @unchecked Sendable {
+public nonisolated struct TSCH_ChartArchive: SwiftProtobuf.ExtensibleMessage, @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var chartType: TSCH_ChartType {
-    get {return _storage._chartType ?? .undefinedChartType}
+    get {_storage._chartType ?? .undefinedChartType}
     set {_uniqueStorage()._chartType = newValue}
   }
   /// Returns true if `chartType` has been explicitly set.
-  public var hasChartType: Bool {return _storage._chartType != nil}
+  public var hasChartType: Bool {_storage._chartType != nil}
   /// Clears the value of `chartType`. Subsequent reads from it will return its default value.
   public mutating func clearChartType() {_uniqueStorage()._chartType = nil}
 
   public var scatterFormat: TSCH_ScatterFormat {
-    get {return _storage._scatterFormat ?? .unknown}
+    get {_storage._scatterFormat ?? .unknown}
     set {_uniqueStorage()._scatterFormat = newValue}
   }
   /// Returns true if `scatterFormat` has been explicitly set.
-  public var hasScatterFormat: Bool {return _storage._scatterFormat != nil}
+  public var hasScatterFormat: Bool {_storage._scatterFormat != nil}
   /// Clears the value of `scatterFormat`. Subsequent reads from it will return its default value.
   public mutating func clearScatterFormat() {_uniqueStorage()._scatterFormat = nil}
 
   public var legendFrame: TSCH_RectArchive {
-    get {return _storage._legendFrame ?? TSCH_RectArchive()}
+    get {_storage._legendFrame ?? TSCH_RectArchive()}
     set {_uniqueStorage()._legendFrame = newValue}
   }
   /// Returns true if `legendFrame` has been explicitly set.
-  public var hasLegendFrame: Bool {return _storage._legendFrame != nil}
+  public var hasLegendFrame: Bool {_storage._legendFrame != nil}
   /// Clears the value of `legendFrame`. Subsequent reads from it will return its default value.
   public mutating func clearLegendFrame() {_uniqueStorage()._legendFrame = nil}
 
   public var preset: TSP_Reference {
-    get {return _storage._preset ?? TSP_Reference()}
+    get {_storage._preset ?? TSP_Reference()}
     set {_uniqueStorage()._preset = newValue}
   }
   /// Returns true if `preset` has been explicitly set.
-  public var hasPreset: Bool {return _storage._preset != nil}
+  public var hasPreset: Bool {_storage._preset != nil}
   /// Clears the value of `preset`. Subsequent reads from it will return its default value.
   public mutating func clearPreset() {_uniqueStorage()._preset = nil}
 
   public var seriesDirection: TSCH_SeriesDirection {
-    get {return _storage._seriesDirection ?? .unknown}
+    get {_storage._seriesDirection ?? .unknown}
     set {_uniqueStorage()._seriesDirection = newValue}
   }
   /// Returns true if `seriesDirection` has been explicitly set.
-  public var hasSeriesDirection: Bool {return _storage._seriesDirection != nil}
+  public var hasSeriesDirection: Bool {_storage._seriesDirection != nil}
   /// Clears the value of `seriesDirection`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesDirection() {_uniqueStorage()._seriesDirection = nil}
 
   public var containsDefaultData: Bool {
-    get {return _storage._containsDefaultData ?? false}
+    get {_storage._containsDefaultData ?? false}
     set {_uniqueStorage()._containsDefaultData = newValue}
   }
   /// Returns true if `containsDefaultData` has been explicitly set.
-  public var hasContainsDefaultData: Bool {return _storage._containsDefaultData != nil}
+  public var hasContainsDefaultData: Bool {_storage._containsDefaultData != nil}
   /// Clears the value of `containsDefaultData`. Subsequent reads from it will return its default value.
   public mutating func clearContainsDefaultData() {_uniqueStorage()._containsDefaultData = nil}
 
   public var grid: TSCH_ChartGridArchive {
-    get {return _storage._grid ?? TSCH_ChartGridArchive()}
+    get {_storage._grid ?? TSCH_ChartGridArchive()}
     set {_uniqueStorage()._grid = newValue}
   }
   /// Returns true if `grid` has been explicitly set.
-  public var hasGrid: Bool {return _storage._grid != nil}
+  public var hasGrid: Bool {_storage._grid != nil}
   /// Clears the value of `grid`. Subsequent reads from it will return its default value.
   public mutating func clearGrid() {_uniqueStorage()._grid = nil}
 
   public var mediator: TSP_Reference {
-    get {return _storage._mediator ?? TSP_Reference()}
+    get {_storage._mediator ?? TSP_Reference()}
     set {_uniqueStorage()._mediator = newValue}
   }
   /// Returns true if `mediator` has been explicitly set.
-  public var hasMediator: Bool {return _storage._mediator != nil}
+  public var hasMediator: Bool {_storage._mediator != nil}
   /// Clears the value of `mediator`. Subsequent reads from it will return its default value.
   public mutating func clearMediator() {_uniqueStorage()._mediator = nil}
 
   public var chartStyle: TSP_Reference {
-    get {return _storage._chartStyle ?? TSP_Reference()}
+    get {_storage._chartStyle ?? TSP_Reference()}
     set {_uniqueStorage()._chartStyle = newValue}
   }
   /// Returns true if `chartStyle` has been explicitly set.
-  public var hasChartStyle: Bool {return _storage._chartStyle != nil}
+  public var hasChartStyle: Bool {_storage._chartStyle != nil}
   /// Clears the value of `chartStyle`. Subsequent reads from it will return its default value.
   public mutating func clearChartStyle() {_uniqueStorage()._chartStyle = nil}
 
   public var chartNonStyle: TSP_Reference {
-    get {return _storage._chartNonStyle ?? TSP_Reference()}
+    get {_storage._chartNonStyle ?? TSP_Reference()}
     set {_uniqueStorage()._chartNonStyle = newValue}
   }
   /// Returns true if `chartNonStyle` has been explicitly set.
-  public var hasChartNonStyle: Bool {return _storage._chartNonStyle != nil}
+  public var hasChartNonStyle: Bool {_storage._chartNonStyle != nil}
   /// Clears the value of `chartNonStyle`. Subsequent reads from it will return its default value.
   public mutating func clearChartNonStyle() {_uniqueStorage()._chartNonStyle = nil}
 
   public var legendStyle: TSP_Reference {
-    get {return _storage._legendStyle ?? TSP_Reference()}
+    get {_storage._legendStyle ?? TSP_Reference()}
     set {_uniqueStorage()._legendStyle = newValue}
   }
   /// Returns true if `legendStyle` has been explicitly set.
-  public var hasLegendStyle: Bool {return _storage._legendStyle != nil}
+  public var hasLegendStyle: Bool {_storage._legendStyle != nil}
   /// Clears the value of `legendStyle`. Subsequent reads from it will return its default value.
   public mutating func clearLegendStyle() {_uniqueStorage()._legendStyle = nil}
 
   public var legendNonStyle: TSP_Reference {
-    get {return _storage._legendNonStyle ?? TSP_Reference()}
+    get {_storage._legendNonStyle ?? TSP_Reference()}
     set {_uniqueStorage()._legendNonStyle = newValue}
   }
   /// Returns true if `legendNonStyle` has been explicitly set.
-  public var hasLegendNonStyle: Bool {return _storage._legendNonStyle != nil}
+  public var hasLegendNonStyle: Bool {_storage._legendNonStyle != nil}
   /// Clears the value of `legendNonStyle`. Subsequent reads from it will return its default value.
   public mutating func clearLegendNonStyle() {_uniqueStorage()._legendNonStyle = nil}
 
   public var valueAxisStyles: [TSP_Reference] {
-    get {return _storage._valueAxisStyles}
+    get {_storage._valueAxisStyles}
     set {_uniqueStorage()._valueAxisStyles = newValue}
   }
 
   public var valueAxisNonstyles: [TSP_Reference] {
-    get {return _storage._valueAxisNonstyles}
+    get {_storage._valueAxisNonstyles}
     set {_uniqueStorage()._valueAxisNonstyles = newValue}
   }
 
   public var categoryAxisStyles: [TSP_Reference] {
-    get {return _storage._categoryAxisStyles}
+    get {_storage._categoryAxisStyles}
     set {_uniqueStorage()._categoryAxisStyles = newValue}
   }
 
   public var categoryAxisNonstyles: [TSP_Reference] {
-    get {return _storage._categoryAxisNonstyles}
+    get {_storage._categoryAxisNonstyles}
     set {_uniqueStorage()._categoryAxisNonstyles = newValue}
   }
 
   public var seriesThemeStyles: [TSP_Reference] {
-    get {return _storage._seriesThemeStyles}
+    get {_storage._seriesThemeStyles}
     set {_uniqueStorage()._seriesThemeStyles = newValue}
   }
 
   public var seriesPrivateStyles: TSP_SparseReferenceArray {
-    get {return _storage._seriesPrivateStyles ?? TSP_SparseReferenceArray()}
+    get {_storage._seriesPrivateStyles ?? TSP_SparseReferenceArray()}
     set {_uniqueStorage()._seriesPrivateStyles = newValue}
   }
   /// Returns true if `seriesPrivateStyles` has been explicitly set.
-  public var hasSeriesPrivateStyles: Bool {return _storage._seriesPrivateStyles != nil}
+  public var hasSeriesPrivateStyles: Bool {_storage._seriesPrivateStyles != nil}
   /// Clears the value of `seriesPrivateStyles`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesPrivateStyles() {_uniqueStorage()._seriesPrivateStyles = nil}
 
   public var seriesNonStyles: TSP_SparseReferenceArray {
-    get {return _storage._seriesNonStyles ?? TSP_SparseReferenceArray()}
+    get {_storage._seriesNonStyles ?? TSP_SparseReferenceArray()}
     set {_uniqueStorage()._seriesNonStyles = newValue}
   }
   /// Returns true if `seriesNonStyles` has been explicitly set.
-  public var hasSeriesNonStyles: Bool {return _storage._seriesNonStyles != nil}
+  public var hasSeriesNonStyles: Bool {_storage._seriesNonStyles != nil}
   /// Clears the value of `seriesNonStyles`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesNonStyles() {_uniqueStorage()._seriesNonStyles = nil}
 
   public var paragraphStyles: [TSP_Reference] {
-    get {return _storage._paragraphStyles}
+    get {_storage._paragraphStyles}
     set {_uniqueStorage()._paragraphStyles = newValue}
   }
 
   public var multidatasetIndex: UInt32 {
-    get {return _storage._multidatasetIndex ?? 0}
+    get {_storage._multidatasetIndex ?? 0}
     set {_uniqueStorage()._multidatasetIndex = newValue}
   }
   /// Returns true if `multidatasetIndex` has been explicitly set.
-  public var hasMultidatasetIndex: Bool {return _storage._multidatasetIndex != nil}
+  public var hasMultidatasetIndex: Bool {_storage._multidatasetIndex != nil}
   /// Clears the value of `multidatasetIndex`. Subsequent reads from it will return its default value.
   public mutating func clearMultidatasetIndex() {_uniqueStorage()._multidatasetIndex = nil}
 
   public var needsCalcEngineDeferredImportAction: Bool {
-    get {return _storage._needsCalcEngineDeferredImportAction ?? false}
+    get {_storage._needsCalcEngineDeferredImportAction ?? false}
     set {_uniqueStorage()._needsCalcEngineDeferredImportAction = newValue}
   }
   /// Returns true if `needsCalcEngineDeferredImportAction` has been explicitly set.
-  public var hasNeedsCalcEngineDeferredImportAction: Bool {return _storage._needsCalcEngineDeferredImportAction != nil}
+  public var hasNeedsCalcEngineDeferredImportAction: Bool {_storage._needsCalcEngineDeferredImportAction != nil}
   /// Clears the value of `needsCalcEngineDeferredImportAction`. Subsequent reads from it will return its default value.
   public mutating func clearNeedsCalcEngineDeferredImportAction() {_uniqueStorage()._needsCalcEngineDeferredImportAction = nil}
 
   public var ownedPreset: TSP_Reference {
-    get {return _storage._ownedPreset ?? TSP_Reference()}
+    get {_storage._ownedPreset ?? TSP_Reference()}
     set {_uniqueStorage()._ownedPreset = newValue}
   }
   /// Returns true if `ownedPreset` has been explicitly set.
-  public var hasOwnedPreset: Bool {return _storage._ownedPreset != nil}
+  public var hasOwnedPreset: Bool {_storage._ownedPreset != nil}
   /// Clears the value of `ownedPreset`. Subsequent reads from it will return its default value.
   public mutating func clearOwnedPreset() {_uniqueStorage()._ownedPreset = nil}
 
   public var isDirty: Bool {
-    get {return _storage._isDirty ?? false}
+    get {_storage._isDirty ?? false}
     set {_uniqueStorage()._isDirty = newValue}
   }
   /// Returns true if `isDirty` has been explicitly set.
-  public var hasIsDirty: Bool {return _storage._isDirty != nil}
+  public var hasIsDirty: Bool {_storage._isDirty != nil}
   /// Clears the value of `isDirty`. Subsequent reads from it will return its default value.
   public mutating func clearIsDirty() {_uniqueStorage()._isDirty = nil}
 
@@ -248,7 +252,7 @@ public struct TSCH_ChartArchive: SwiftProtobuf.ExtensibleMessage, @unchecked Sen
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_ChartMultiDataIndexUpgrade: Sendable {
+public nonisolated struct TSCH_ChartMultiDataIndexUpgrade: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -258,44 +262,44 @@ public struct TSCH_ChartMultiDataIndexUpgrade: Sendable {
   public init() {}
 }
 
-public struct TSCH_ChartGarlicMinMaxUpgrade: Sendable {
+public nonisolated struct TSCH_ChartGarlicMinMaxUpgrade: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var horizontalMin: Double {
-    get {return _horizontalMin ?? 0}
+    get {_horizontalMin ?? 0}
     set {_horizontalMin = newValue}
   }
   /// Returns true if `horizontalMin` has been explicitly set.
-  public var hasHorizontalMin: Bool {return self._horizontalMin != nil}
+  public var hasHorizontalMin: Bool {self._horizontalMin != nil}
   /// Clears the value of `horizontalMin`. Subsequent reads from it will return its default value.
   public mutating func clearHorizontalMin() {self._horizontalMin = nil}
 
   public var horizontalMax: Double {
-    get {return _horizontalMax ?? 0}
+    get {_horizontalMax ?? 0}
     set {_horizontalMax = newValue}
   }
   /// Returns true if `horizontalMax` has been explicitly set.
-  public var hasHorizontalMax: Bool {return self._horizontalMax != nil}
+  public var hasHorizontalMax: Bool {self._horizontalMax != nil}
   /// Clears the value of `horizontalMax`. Subsequent reads from it will return its default value.
   public mutating func clearHorizontalMax() {self._horizontalMax = nil}
 
   public var valueMin: Double {
-    get {return _valueMin ?? 0}
+    get {_valueMin ?? 0}
     set {_valueMin = newValue}
   }
   /// Returns true if `valueMin` has been explicitly set.
-  public var hasValueMin: Bool {return self._valueMin != nil}
+  public var hasValueMin: Bool {self._valueMin != nil}
   /// Clears the value of `valueMin`. Subsequent reads from it will return its default value.
   public mutating func clearValueMin() {self._valueMin = nil}
 
   public var valueMax: Double {
-    get {return _valueMax ?? 0}
+    get {_valueMax ?? 0}
     set {_valueMax = newValue}
   }
   /// Returns true if `valueMax` has been explicitly set.
-  public var hasValueMax: Bool {return self._valueMax != nil}
+  public var hasValueMax: Bool {self._valueMax != nil}
   /// Clears the value of `valueMax`. Subsequent reads from it will return its default value.
   public mutating func clearValueMax() {self._valueMax = nil}
 
@@ -309,62 +313,62 @@ public struct TSCH_ChartGarlicMinMaxUpgrade: Sendable {
   fileprivate var _valueMax: Double? = nil
 }
 
-public struct TSCH_ChartGarlicLabelFormatUpgrade: Sendable {
+public nonisolated struct TSCH_ChartGarlicLabelFormatUpgrade: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var valuePrefix: String {
-    get {return _valuePrefix ?? String()}
+    get {_valuePrefix ?? String()}
     set {_valuePrefix = newValue}
   }
   /// Returns true if `valuePrefix` has been explicitly set.
-  public var hasValuePrefix: Bool {return self._valuePrefix != nil}
+  public var hasValuePrefix: Bool {self._valuePrefix != nil}
   /// Clears the value of `valuePrefix`. Subsequent reads from it will return its default value.
   public mutating func clearValuePrefix() {self._valuePrefix = nil}
 
   public var valueSuffix: String {
-    get {return _valueSuffix ?? String()}
+    get {_valueSuffix ?? String()}
     set {_valueSuffix = newValue}
   }
   /// Returns true if `valueSuffix` has been explicitly set.
-  public var hasValueSuffix: Bool {return self._valueSuffix != nil}
+  public var hasValueSuffix: Bool {self._valueSuffix != nil}
   /// Clears the value of `valueSuffix`. Subsequent reads from it will return its default value.
   public mutating func clearValueSuffix() {self._valueSuffix = nil}
 
   public var valueUseSeparator: Bool {
-    get {return _valueUseSeparator ?? false}
+    get {_valueUseSeparator ?? false}
     set {_valueUseSeparator = newValue}
   }
   /// Returns true if `valueUseSeparator` has been explicitly set.
-  public var hasValueUseSeparator: Bool {return self._valueUseSeparator != nil}
+  public var hasValueUseSeparator: Bool {self._valueUseSeparator != nil}
   /// Clears the value of `valueUseSeparator`. Subsequent reads from it will return its default value.
   public mutating func clearValueUseSeparator() {self._valueUseSeparator = nil}
 
   public var horizontalPrefix: String {
-    get {return _horizontalPrefix ?? String()}
+    get {_horizontalPrefix ?? String()}
     set {_horizontalPrefix = newValue}
   }
   /// Returns true if `horizontalPrefix` has been explicitly set.
-  public var hasHorizontalPrefix: Bool {return self._horizontalPrefix != nil}
+  public var hasHorizontalPrefix: Bool {self._horizontalPrefix != nil}
   /// Clears the value of `horizontalPrefix`. Subsequent reads from it will return its default value.
   public mutating func clearHorizontalPrefix() {self._horizontalPrefix = nil}
 
   public var horizontalSuffix: String {
-    get {return _horizontalSuffix ?? String()}
+    get {_horizontalSuffix ?? String()}
     set {_horizontalSuffix = newValue}
   }
   /// Returns true if `horizontalSuffix` has been explicitly set.
-  public var hasHorizontalSuffix: Bool {return self._horizontalSuffix != nil}
+  public var hasHorizontalSuffix: Bool {self._horizontalSuffix != nil}
   /// Clears the value of `horizontalSuffix`. Subsequent reads from it will return its default value.
   public mutating func clearHorizontalSuffix() {self._horizontalSuffix = nil}
 
   public var horizontalUseSeparator: Bool {
-    get {return _horizontalUseSeparator ?? false}
+    get {_horizontalUseSeparator ?? false}
     set {_horizontalUseSeparator = newValue}
   }
   /// Returns true if `horizontalUseSeparator` has been explicitly set.
-  public var hasHorizontalUseSeparator: Bool {return self._horizontalUseSeparator != nil}
+  public var hasHorizontalUseSeparator: Bool {self._horizontalUseSeparator != nil}
   /// Clears the value of `horizontalUseSeparator`. Subsequent reads from it will return its default value.
   public mutating func clearHorizontalUseSeparator() {self._horizontalUseSeparator = nil}
 
@@ -380,7 +384,7 @@ public struct TSCH_ChartGarlicLabelFormatUpgrade: Sendable {
   fileprivate var _horizontalUseSeparator: Bool? = nil
 }
 
-public struct TSCH_ChartPasteboardAdditionsArchive: Sendable {
+public nonisolated struct TSCH_ChartPasteboardAdditionsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -390,7 +394,7 @@ public struct TSCH_ChartPasteboardAdditionsArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_ChartPreserveAppearanceForPresetArchive: Sendable {
+public nonisolated struct TSCH_ChartPreserveAppearanceForPresetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -400,7 +404,7 @@ public struct TSCH_ChartPreserveAppearanceForPresetArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_ChartSupportsProportionalBendedCalloutLinesArchive: Sendable {
+public nonisolated struct TSCH_ChartSupportsProportionalBendedCalloutLinesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -410,7 +414,7 @@ public struct TSCH_ChartSupportsProportionalBendedCalloutLinesArchive: Sendable 
   public init() {}
 }
 
-public struct TSCH_ChartSupportsRoundedCornersArchive: Sendable {
+public nonisolated struct TSCH_ChartSupportsRoundedCornersArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -420,7 +424,7 @@ public struct TSCH_ChartSupportsRoundedCornersArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_ChartSupportsSeriesPropertySpacingArchive: Sendable {
+public nonisolated struct TSCH_ChartSupportsSeriesPropertySpacingArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -430,7 +434,7 @@ public struct TSCH_ChartSupportsSeriesPropertySpacingArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_ChartSupportsStackedSummaryLabelsArchive: Sendable {
+public nonisolated struct TSCH_ChartSupportsStackedSummaryLabelsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -440,7 +444,7 @@ public struct TSCH_ChartSupportsStackedSummaryLabelsArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_ChartGridArchive: Sendable {
+public nonisolated struct TSCH_ChartGridArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -452,17 +456,17 @@ public struct TSCH_ChartGridArchive: Sendable {
   public var gridRow: [TSCH_GridRow] = []
 
   public var idMap: TSCH_ChartGridArchive.ChartGridRowColumnIdMap {
-    get {return _idMap ?? TSCH_ChartGridArchive.ChartGridRowColumnIdMap()}
+    get {_idMap ?? TSCH_ChartGridArchive.ChartGridRowColumnIdMap()}
     set {_idMap = newValue}
   }
   /// Returns true if `idMap` has been explicitly set.
-  public var hasIDMap: Bool {return self._idMap != nil}
+  public var hasIDMap: Bool {self._idMap != nil}
   /// Clears the value of `idMap`. Subsequent reads from it will return its default value.
   public mutating func clearIDMap() {self._idMap = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ChartGridRowColumnIdMap: Sendable {
+  public nonisolated struct ChartGridRowColumnIdMap: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -473,26 +477,26 @@ public struct TSCH_ChartGridArchive: Sendable {
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    public struct Entry: Sendable {
+    public nonisolated struct Entry: Sendable {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
       public var uniqueID: String {
-        get {return _uniqueID ?? String()}
+        get {_uniqueID ?? String()}
         set {_uniqueID = newValue}
       }
       /// Returns true if `uniqueID` has been explicitly set.
-      public var hasUniqueID: Bool {return self._uniqueID != nil}
+      public var hasUniqueID: Bool {self._uniqueID != nil}
       /// Clears the value of `uniqueID`. Subsequent reads from it will return its default value.
       public mutating func clearUniqueID() {self._uniqueID = nil}
 
       public var index: UInt32 {
-        get {return _index ?? 0}
+        get {_index ?? 0}
         set {_index = newValue}
       }
       /// Returns true if `index` has been explicitly set.
-      public var hasIndex: Bool {return self._index != nil}
+      public var hasIndex: Bool {self._index != nil}
       /// Clears the value of `index`. Subsequent reads from it will return its default value.
       public mutating func clearIndex() {self._index = nil}
 
@@ -512,17 +516,17 @@ public struct TSCH_ChartGridArchive: Sendable {
   fileprivate var _idMap: TSCH_ChartGridArchive.ChartGridRowColumnIdMap? = nil
 }
 
-public struct TSCH_ChartMediatorArchive: Sendable {
+public nonisolated struct TSCH_ChartMediatorArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var info: TSP_Reference {
-    get {return _info ?? TSP_Reference()}
+    get {_info ?? TSP_Reference()}
     set {_info = newValue}
   }
   /// Returns true if `info` has been explicitly set.
-  public var hasInfo: Bool {return self._info != nil}
+  public var hasInfo: Bool {self._info != nil}
   /// Clears the value of `info`. Subsequent reads from it will return its default value.
   public mutating func clearInfo() {self._info = nil}
 
@@ -537,35 +541,35 @@ public struct TSCH_ChartMediatorArchive: Sendable {
   fileprivate var _info: TSP_Reference? = nil
 }
 
-public struct TSCH_ChartFillSetArchive: Sendable {
+public nonisolated struct TSCH_ChartFillSetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var identifier: String {
-    get {return _identifier ?? String()}
+    get {_identifier ?? String()}
     set {_identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return self._identifier != nil}
+  public var hasIdentifier: Bool {self._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {self._identifier = nil}
 
   public var lookupString: String {
-    get {return _lookupString ?? String()}
+    get {_lookupString ?? String()}
     set {_lookupString = newValue}
   }
   /// Returns true if `lookupString` has been explicitly set.
-  public var hasLookupString: Bool {return self._lookupString != nil}
+  public var hasLookupString: Bool {self._lookupString != nil}
   /// Clears the value of `lookupString`. Subsequent reads from it will return its default value.
   public mutating func clearLookupString() {self._lookupString = nil}
 
   public var numberOfThemeSeriesStyles: UInt32 {
-    get {return _numberOfThemeSeriesStyles ?? 0}
+    get {_numberOfThemeSeriesStyles ?? 0}
     set {_numberOfThemeSeriesStyles = newValue}
   }
   /// Returns true if `numberOfThemeSeriesStyles` has been explicitly set.
-  public var hasNumberOfThemeSeriesStyles: Bool {return self._numberOfThemeSeriesStyles != nil}
+  public var hasNumberOfThemeSeriesStyles: Bool {self._numberOfThemeSeriesStyles != nil}
   /// Clears the value of `numberOfThemeSeriesStyles`. Subsequent reads from it will return its default value.
   public mutating func clearNumberOfThemeSeriesStyles() {self._numberOfThemeSeriesStyles = nil}
 
@@ -580,26 +584,26 @@ public struct TSCH_ChartFillSetArchive: Sendable {
   fileprivate var _numberOfThemeSeriesStyles: UInt32? = nil
 }
 
-public struct TSCH_ChartStylePreset: SwiftProtobuf.ExtensibleMessage, @unchecked Sendable {
+public nonisolated struct TSCH_ChartStylePreset: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var chartStyle: TSP_Reference {
-    get {return _chartStyle ?? TSP_Reference()}
+    get {_chartStyle ?? TSP_Reference()}
     set {_chartStyle = newValue}
   }
   /// Returns true if `chartStyle` has been explicitly set.
-  public var hasChartStyle: Bool {return self._chartStyle != nil}
+  public var hasChartStyle: Bool {self._chartStyle != nil}
   /// Clears the value of `chartStyle`. Subsequent reads from it will return its default value.
   public mutating func clearChartStyle() {self._chartStyle = nil}
 
   public var legendStyle: TSP_Reference {
-    get {return _legendStyle ?? TSP_Reference()}
+    get {_legendStyle ?? TSP_Reference()}
     set {_legendStyle = newValue}
   }
   /// Returns true if `legendStyle` has been explicitly set.
-  public var hasLegendStyle: Bool {return self._legendStyle != nil}
+  public var hasLegendStyle: Bool {self._legendStyle != nil}
   /// Clears the value of `legendStyle`. Subsequent reads from it will return its default value.
   public mutating func clearLegendStyle() {self._legendStyle = nil}
 
@@ -612,11 +616,11 @@ public struct TSCH_ChartStylePreset: SwiftProtobuf.ExtensibleMessage, @unchecked
   public var paragraphStyles: [TSP_Reference] = []
 
   public var uuid: Data {
-    get {return _uuid ?? Data()}
+    get {_uuid ?? Data()}
     set {_uuid = newValue}
   }
   /// Returns true if `uuid` has been explicitly set.
-  public var hasUuid: Bool {return self._uuid != nil}
+  public var hasUuid: Bool {self._uuid != nil}
   /// Clears the value of `uuid`. Subsequent reads from it will return its default value.
   public mutating func clearUuid() {self._uuid = nil}
 
@@ -630,7 +634,7 @@ public struct TSCH_ChartStylePreset: SwiftProtobuf.ExtensibleMessage, @unchecked
   fileprivate var _uuid: Data? = nil
 }
 
-public struct TSCH_ChartPresetsArchive: Sendable {
+public nonisolated struct TSCH_ChartPresetsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -642,116 +646,116 @@ public struct TSCH_ChartPresetsArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_PropertyValueStorageContainerArchive: SwiftProtobuf.ExtensibleMessage, @unchecked Sendable {
+public nonisolated struct TSCH_PropertyValueStorageContainerArchive: SwiftProtobuf.ExtensibleMessage, @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var chartStyle: TSP_Reference {
-    get {return _storage._chartStyle ?? TSP_Reference()}
+    get {_storage._chartStyle ?? TSP_Reference()}
     set {_uniqueStorage()._chartStyle = newValue}
   }
   /// Returns true if `chartStyle` has been explicitly set.
-  public var hasChartStyle: Bool {return _storage._chartStyle != nil}
+  public var hasChartStyle: Bool {_storage._chartStyle != nil}
   /// Clears the value of `chartStyle`. Subsequent reads from it will return its default value.
   public mutating func clearChartStyle() {_uniqueStorage()._chartStyle = nil}
 
   public var chartNonstyle: TSP_Reference {
-    get {return _storage._chartNonstyle ?? TSP_Reference()}
+    get {_storage._chartNonstyle ?? TSP_Reference()}
     set {_uniqueStorage()._chartNonstyle = newValue}
   }
   /// Returns true if `chartNonstyle` has been explicitly set.
-  public var hasChartNonstyle: Bool {return _storage._chartNonstyle != nil}
+  public var hasChartNonstyle: Bool {_storage._chartNonstyle != nil}
   /// Clears the value of `chartNonstyle`. Subsequent reads from it will return its default value.
   public mutating func clearChartNonstyle() {_uniqueStorage()._chartNonstyle = nil}
 
   public var legendStyle: TSP_Reference {
-    get {return _storage._legendStyle ?? TSP_Reference()}
+    get {_storage._legendStyle ?? TSP_Reference()}
     set {_uniqueStorage()._legendStyle = newValue}
   }
   /// Returns true if `legendStyle` has been explicitly set.
-  public var hasLegendStyle: Bool {return _storage._legendStyle != nil}
+  public var hasLegendStyle: Bool {_storage._legendStyle != nil}
   /// Clears the value of `legendStyle`. Subsequent reads from it will return its default value.
   public mutating func clearLegendStyle() {_uniqueStorage()._legendStyle = nil}
 
   public var legendNonstyle: TSP_Reference {
-    get {return _storage._legendNonstyle ?? TSP_Reference()}
+    get {_storage._legendNonstyle ?? TSP_Reference()}
     set {_uniqueStorage()._legendNonstyle = newValue}
   }
   /// Returns true if `legendNonstyle` has been explicitly set.
-  public var hasLegendNonstyle: Bool {return _storage._legendNonstyle != nil}
+  public var hasLegendNonstyle: Bool {_storage._legendNonstyle != nil}
   /// Clears the value of `legendNonstyle`. Subsequent reads from it will return its default value.
   public mutating func clearLegendNonstyle() {_uniqueStorage()._legendNonstyle = nil}
 
   public var valueAxisStyles: TSP_SparseReferenceArray {
-    get {return _storage._valueAxisStyles ?? TSP_SparseReferenceArray()}
+    get {_storage._valueAxisStyles ?? TSP_SparseReferenceArray()}
     set {_uniqueStorage()._valueAxisStyles = newValue}
   }
   /// Returns true if `valueAxisStyles` has been explicitly set.
-  public var hasValueAxisStyles: Bool {return _storage._valueAxisStyles != nil}
+  public var hasValueAxisStyles: Bool {_storage._valueAxisStyles != nil}
   /// Clears the value of `valueAxisStyles`. Subsequent reads from it will return its default value.
   public mutating func clearValueAxisStyles() {_uniqueStorage()._valueAxisStyles = nil}
 
   public var valueAxisNonstyles: TSP_SparseReferenceArray {
-    get {return _storage._valueAxisNonstyles ?? TSP_SparseReferenceArray()}
+    get {_storage._valueAxisNonstyles ?? TSP_SparseReferenceArray()}
     set {_uniqueStorage()._valueAxisNonstyles = newValue}
   }
   /// Returns true if `valueAxisNonstyles` has been explicitly set.
-  public var hasValueAxisNonstyles: Bool {return _storage._valueAxisNonstyles != nil}
+  public var hasValueAxisNonstyles: Bool {_storage._valueAxisNonstyles != nil}
   /// Clears the value of `valueAxisNonstyles`. Subsequent reads from it will return its default value.
   public mutating func clearValueAxisNonstyles() {_uniqueStorage()._valueAxisNonstyles = nil}
 
   public var categoryAxisStyles: TSP_SparseReferenceArray {
-    get {return _storage._categoryAxisStyles ?? TSP_SparseReferenceArray()}
+    get {_storage._categoryAxisStyles ?? TSP_SparseReferenceArray()}
     set {_uniqueStorage()._categoryAxisStyles = newValue}
   }
   /// Returns true if `categoryAxisStyles` has been explicitly set.
-  public var hasCategoryAxisStyles: Bool {return _storage._categoryAxisStyles != nil}
+  public var hasCategoryAxisStyles: Bool {_storage._categoryAxisStyles != nil}
   /// Clears the value of `categoryAxisStyles`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryAxisStyles() {_uniqueStorage()._categoryAxisStyles = nil}
 
   public var categoryAxisNonstyles: TSP_SparseReferenceArray {
-    get {return _storage._categoryAxisNonstyles ?? TSP_SparseReferenceArray()}
+    get {_storage._categoryAxisNonstyles ?? TSP_SparseReferenceArray()}
     set {_uniqueStorage()._categoryAxisNonstyles = newValue}
   }
   /// Returns true if `categoryAxisNonstyles` has been explicitly set.
-  public var hasCategoryAxisNonstyles: Bool {return _storage._categoryAxisNonstyles != nil}
+  public var hasCategoryAxisNonstyles: Bool {_storage._categoryAxisNonstyles != nil}
   /// Clears the value of `categoryAxisNonstyles`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryAxisNonstyles() {_uniqueStorage()._categoryAxisNonstyles = nil}
 
   public var seriesThemeStyles: TSP_SparseReferenceArray {
-    get {return _storage._seriesThemeStyles ?? TSP_SparseReferenceArray()}
+    get {_storage._seriesThemeStyles ?? TSP_SparseReferenceArray()}
     set {_uniqueStorage()._seriesThemeStyles = newValue}
   }
   /// Returns true if `seriesThemeStyles` has been explicitly set.
-  public var hasSeriesThemeStyles: Bool {return _storage._seriesThemeStyles != nil}
+  public var hasSeriesThemeStyles: Bool {_storage._seriesThemeStyles != nil}
   /// Clears the value of `seriesThemeStyles`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesThemeStyles() {_uniqueStorage()._seriesThemeStyles = nil}
 
   public var seriesPrivateStyles: TSP_SparseReferenceArray {
-    get {return _storage._seriesPrivateStyles ?? TSP_SparseReferenceArray()}
+    get {_storage._seriesPrivateStyles ?? TSP_SparseReferenceArray()}
     set {_uniqueStorage()._seriesPrivateStyles = newValue}
   }
   /// Returns true if `seriesPrivateStyles` has been explicitly set.
-  public var hasSeriesPrivateStyles: Bool {return _storage._seriesPrivateStyles != nil}
+  public var hasSeriesPrivateStyles: Bool {_storage._seriesPrivateStyles != nil}
   /// Clears the value of `seriesPrivateStyles`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesPrivateStyles() {_uniqueStorage()._seriesPrivateStyles = nil}
 
   public var seriesNonstyles: TSP_SparseReferenceArray {
-    get {return _storage._seriesNonstyles ?? TSP_SparseReferenceArray()}
+    get {_storage._seriesNonstyles ?? TSP_SparseReferenceArray()}
     set {_uniqueStorage()._seriesNonstyles = newValue}
   }
   /// Returns true if `seriesNonstyles` has been explicitly set.
-  public var hasSeriesNonstyles: Bool {return _storage._seriesNonstyles != nil}
+  public var hasSeriesNonstyles: Bool {_storage._seriesNonstyles != nil}
   /// Clears the value of `seriesNonstyles`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesNonstyles() {_uniqueStorage()._seriesNonstyles = nil}
 
   public var paragraphStyles: TSP_SparseReferenceArray {
-    get {return _storage._paragraphStyles ?? TSP_SparseReferenceArray()}
+    get {_storage._paragraphStyles ?? TSP_SparseReferenceArray()}
     set {_uniqueStorage()._paragraphStyles = newValue}
   }
   /// Returns true if `paragraphStyles` has been explicitly set.
-  public var hasParagraphStyles: Bool {return _storage._paragraphStyles != nil}
+  public var hasParagraphStyles: Bool {_storage._paragraphStyles != nil}
   /// Clears the value of `paragraphStyles`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphStyles() {_uniqueStorage()._paragraphStyles = nil}
 
@@ -763,35 +767,35 @@ public struct TSCH_PropertyValueStorageContainerArchive: SwiftProtobuf.Extensibl
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_StylePasteboardDataArchive: Sendable {
+public nonisolated struct TSCH_StylePasteboardDataArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var styleNetwork: TSCH_PropertyValueStorageContainerArchive {
-    get {return _styleNetwork ?? TSCH_PropertyValueStorageContainerArchive()}
+    get {_styleNetwork ?? TSCH_PropertyValueStorageContainerArchive()}
     set {_styleNetwork = newValue}
   }
   /// Returns true if `styleNetwork` has been explicitly set.
-  public var hasStyleNetwork: Bool {return self._styleNetwork != nil}
+  public var hasStyleNetwork: Bool {self._styleNetwork != nil}
   /// Clears the value of `styleNetwork`. Subsequent reads from it will return its default value.
   public mutating func clearStyleNetwork() {self._styleNetwork = nil}
 
   public var copiedFromEntireChart: Bool {
-    get {return _copiedFromEntireChart ?? false}
+    get {_copiedFromEntireChart ?? false}
     set {_copiedFromEntireChart = newValue}
   }
   /// Returns true if `copiedFromEntireChart` has been explicitly set.
-  public var hasCopiedFromEntireChart: Bool {return self._copiedFromEntireChart != nil}
+  public var hasCopiedFromEntireChart: Bool {self._copiedFromEntireChart != nil}
   /// Clears the value of `copiedFromEntireChart`. Subsequent reads from it will return its default value.
   public mutating func clearCopiedFromEntireChart() {self._copiedFromEntireChart = nil}
 
@@ -804,26 +808,26 @@ public struct TSCH_StylePasteboardDataArchive: Sendable {
   fileprivate var _copiedFromEntireChart: Bool? = nil
 }
 
-public struct TSCH_ChartSelectionPathTypeArchive: Sendable {
+public nonisolated struct TSCH_ChartSelectionPathTypeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var pathType: String {
-    get {return _pathType ?? String()}
+    get {_pathType ?? String()}
     set {_pathType = newValue}
   }
   /// Returns true if `pathType` has been explicitly set.
-  public var hasPathType: Bool {return self._pathType != nil}
+  public var hasPathType: Bool {self._pathType != nil}
   /// Clears the value of `pathType`. Subsequent reads from it will return its default value.
   public mutating func clearPathType() {self._pathType = nil}
 
   public var pathName: String {
-    get {return _pathName ?? String()}
+    get {_pathName ?? String()}
     set {_pathName = newValue}
   }
   /// Returns true if `pathName` has been explicitly set.
-  public var hasPathName: Bool {return self._pathName != nil}
+  public var hasPathName: Bool {self._pathName != nil}
   /// Clears the value of `pathName`. Subsequent reads from it will return its default value.
   public mutating func clearPathName() {self._pathName = nil}
 
@@ -835,26 +839,26 @@ public struct TSCH_ChartSelectionPathTypeArchive: Sendable {
   fileprivate var _pathName: String? = nil
 }
 
-public struct TSCH_ChartAxisIDArchive: Sendable {
+public nonisolated struct TSCH_ChartAxisIDArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var axisType: TSCH_AxisType {
-    get {return _axisType ?? .unknown}
+    get {_axisType ?? .unknown}
     set {_axisType = newValue}
   }
   /// Returns true if `axisType` has been explicitly set.
-  public var hasAxisType: Bool {return self._axisType != nil}
+  public var hasAxisType: Bool {self._axisType != nil}
   /// Clears the value of `axisType`. Subsequent reads from it will return its default value.
   public mutating func clearAxisType() {self._axisType = nil}
 
   public var ordinal: UInt32 {
-    get {return _ordinal ?? 0}
+    get {_ordinal ?? 0}
     set {_ordinal = newValue}
   }
   /// Returns true if `ordinal` has been explicitly set.
-  public var hasOrdinal: Bool {return self._ordinal != nil}
+  public var hasOrdinal: Bool {self._ordinal != nil}
   /// Clears the value of `ordinal`. Subsequent reads from it will return its default value.
   public mutating func clearOrdinal() {self._ordinal = nil}
 
@@ -866,26 +870,26 @@ public struct TSCH_ChartAxisIDArchive: Sendable {
   fileprivate var _ordinal: UInt32? = nil
 }
 
-public struct TSCH_ChartSelectionPathArgumentArchive: Sendable {
+public nonisolated struct TSCH_ChartSelectionPathArgumentArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var number: UInt32 {
-    get {return _number ?? 0}
+    get {_number ?? 0}
     set {_number = newValue}
   }
   /// Returns true if `number` has been explicitly set.
-  public var hasNumber: Bool {return self._number != nil}
+  public var hasNumber: Bool {self._number != nil}
   /// Clears the value of `number`. Subsequent reads from it will return its default value.
   public mutating func clearNumber() {self._number = nil}
 
   public var axisID: TSCH_ChartAxisIDArchive {
-    get {return _axisID ?? TSCH_ChartAxisIDArchive()}
+    get {_axisID ?? TSCH_ChartAxisIDArchive()}
     set {_axisID = newValue}
   }
   /// Returns true if `axisID` has been explicitly set.
-  public var hasAxisID: Bool {return self._axisID != nil}
+  public var hasAxisID: Bool {self._axisID != nil}
   /// Clears the value of `axisID`. Subsequent reads from it will return its default value.
   public mutating func clearAxisID() {self._axisID = nil}
 
@@ -897,31 +901,31 @@ public struct TSCH_ChartSelectionPathArgumentArchive: Sendable {
   fileprivate var _axisID: TSCH_ChartAxisIDArchive? = nil
 }
 
-public struct TSCH_ChartSelectionPathArchive: @unchecked Sendable {
+public nonisolated struct TSCH_ChartSelectionPathArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var pathType: TSCH_ChartSelectionPathTypeArchive {
-    get {return _storage._pathType ?? TSCH_ChartSelectionPathTypeArchive()}
+    get {_storage._pathType ?? TSCH_ChartSelectionPathTypeArchive()}
     set {_uniqueStorage()._pathType = newValue}
   }
   /// Returns true if `pathType` has been explicitly set.
-  public var hasPathType: Bool {return _storage._pathType != nil}
+  public var hasPathType: Bool {_storage._pathType != nil}
   /// Clears the value of `pathType`. Subsequent reads from it will return its default value.
   public mutating func clearPathType() {_uniqueStorage()._pathType = nil}
 
   public var subSelection: TSCH_ChartSelectionPathArchive {
-    get {return _storage._subSelection ?? TSCH_ChartSelectionPathArchive()}
+    get {_storage._subSelection ?? TSCH_ChartSelectionPathArchive()}
     set {_uniqueStorage()._subSelection = newValue}
   }
   /// Returns true if `subSelection` has been explicitly set.
-  public var hasSubSelection: Bool {return _storage._subSelection != nil}
+  public var hasSubSelection: Bool {_storage._subSelection != nil}
   /// Clears the value of `subSelection`. Subsequent reads from it will return its default value.
   public mutating func clearSubSelection() {_uniqueStorage()._subSelection = nil}
 
   public var arguments: [TSCH_ChartSelectionPathArgumentArchive] {
-    get {return _storage._arguments}
+    get {_storage._arguments}
     set {_uniqueStorage()._arguments = newValue}
   }
 
@@ -932,26 +936,26 @@ public struct TSCH_ChartSelectionPathArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_ChartSelectionArchive: Sendable {
+public nonisolated struct TSCH_ChartSelectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_DrawableSelectionArchive {
-    get {return _super ?? TSD_DrawableSelectionArchive()}
+    get {_super ?? TSD_DrawableSelectionArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var chart: TSP_Reference {
-    get {return _chart ?? TSP_Reference()}
+    get {_chart ?? TSP_Reference()}
     set {_chart = newValue}
   }
   /// Returns true if `chart` has been explicitly set.
-  public var hasChart: Bool {return self._chart != nil}
+  public var hasChart: Bool {self._chart != nil}
   /// Clears the value of `chart`. Subsequent reads from it will return its default value.
   public mutating func clearChart() {self._chart = nil}
 
@@ -965,62 +969,62 @@ public struct TSCH_ChartSelectionArchive: Sendable {
   fileprivate var _chart: TSP_Reference? = nil
 }
 
-public struct TSCH_ChartCDESelectionArchive: Sendable {
+public nonisolated struct TSCH_ChartCDESelectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var chart: TSP_Reference {
-    get {return _chart ?? TSP_Reference()}
+    get {_chart ?? TSP_Reference()}
     set {_chart = newValue}
   }
   /// Returns true if `chart` has been explicitly set.
-  public var hasChart: Bool {return self._chart != nil}
+  public var hasChart: Bool {self._chart != nil}
   /// Clears the value of `chart`. Subsequent reads from it will return its default value.
   public mutating func clearChart() {self._chart = nil}
 
   public var selectionType: Int32 {
-    get {return _selectionType ?? 0}
+    get {_selectionType ?? 0}
     set {_selectionType = newValue}
   }
   /// Returns true if `selectionType` has been explicitly set.
-  public var hasSelectionType: Bool {return self._selectionType != nil}
+  public var hasSelectionType: Bool {self._selectionType != nil}
   /// Clears the value of `selectionType`. Subsequent reads from it will return its default value.
   public mutating func clearSelectionType() {self._selectionType = nil}
 
   public var rowLocation: UInt32 {
-    get {return _rowLocation ?? 0}
+    get {_rowLocation ?? 0}
     set {_rowLocation = newValue}
   }
   /// Returns true if `rowLocation` has been explicitly set.
-  public var hasRowLocation: Bool {return self._rowLocation != nil}
+  public var hasRowLocation: Bool {self._rowLocation != nil}
   /// Clears the value of `rowLocation`. Subsequent reads from it will return its default value.
   public mutating func clearRowLocation() {self._rowLocation = nil}
 
   public var rowLength: UInt32 {
-    get {return _rowLength ?? 0}
+    get {_rowLength ?? 0}
     set {_rowLength = newValue}
   }
   /// Returns true if `rowLength` has been explicitly set.
-  public var hasRowLength: Bool {return self._rowLength != nil}
+  public var hasRowLength: Bool {self._rowLength != nil}
   /// Clears the value of `rowLength`. Subsequent reads from it will return its default value.
   public mutating func clearRowLength() {self._rowLength = nil}
 
   public var columnLocation: UInt32 {
-    get {return _columnLocation ?? 0}
+    get {_columnLocation ?? 0}
     set {_columnLocation = newValue}
   }
   /// Returns true if `columnLocation` has been explicitly set.
-  public var hasColumnLocation: Bool {return self._columnLocation != nil}
+  public var hasColumnLocation: Bool {self._columnLocation != nil}
   /// Clears the value of `columnLocation`. Subsequent reads from it will return its default value.
   public mutating func clearColumnLocation() {self._columnLocation = nil}
 
   public var columnLength: UInt32 {
-    get {return _columnLength ?? 0}
+    get {_columnLength ?? 0}
     set {_columnLength = newValue}
   }
   /// Returns true if `columnLength` has been explicitly set.
-  public var hasColumnLength: Bool {return self._columnLength != nil}
+  public var hasColumnLength: Bool {self._columnLength != nil}
   /// Clears the value of `columnLength`. Subsequent reads from it will return its default value.
   public mutating func clearColumnLength() {self._columnLength = nil}
 
@@ -1036,80 +1040,80 @@ public struct TSCH_ChartCDESelectionArchive: Sendable {
   fileprivate var _columnLength: UInt32? = nil
 }
 
-public struct TSCH_ChartUIState: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_ChartUIState: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var chart: TSP_Reference {
-    get {return _chart ?? TSP_Reference()}
+    get {_chart ?? TSP_Reference()}
     set {_chart = newValue}
   }
   /// Returns true if `chart` has been explicitly set.
-  public var hasChart: Bool {return self._chart != nil}
+  public var hasChart: Bool {self._chart != nil}
   /// Clears the value of `chart`. Subsequent reads from it will return its default value.
   public mutating func clearChart() {self._chart = nil}
 
   public var cdeLastRowSelected: Int32 {
-    get {return _cdeLastRowSelected ?? 0}
+    get {_cdeLastRowSelected ?? 0}
     set {_cdeLastRowSelected = newValue}
   }
   /// Returns true if `cdeLastRowSelected` has been explicitly set.
-  public var hasCdeLastRowSelected: Bool {return self._cdeLastRowSelected != nil}
+  public var hasCdeLastRowSelected: Bool {self._cdeLastRowSelected != nil}
   /// Clears the value of `cdeLastRowSelected`. Subsequent reads from it will return its default value.
   public mutating func clearCdeLastRowSelected() {self._cdeLastRowSelected = nil}
 
   public var cdeLastColSelected: Int32 {
-    get {return _cdeLastColSelected ?? 0}
+    get {_cdeLastColSelected ?? 0}
     set {_cdeLastColSelected = newValue}
   }
   /// Returns true if `cdeLastColSelected` has been explicitly set.
-  public var hasCdeLastColSelected: Bool {return self._cdeLastColSelected != nil}
+  public var hasCdeLastColSelected: Bool {self._cdeLastColSelected != nil}
   /// Clears the value of `cdeLastColSelected`. Subsequent reads from it will return its default value.
   public mutating func clearCdeLastColSelected() {self._cdeLastColSelected = nil}
 
   public var cdeLastRowCount: Int32 {
-    get {return _cdeLastRowCount ?? 0}
+    get {_cdeLastRowCount ?? 0}
     set {_cdeLastRowCount = newValue}
   }
   /// Returns true if `cdeLastRowCount` has been explicitly set.
-  public var hasCdeLastRowCount: Bool {return self._cdeLastRowCount != nil}
+  public var hasCdeLastRowCount: Bool {self._cdeLastRowCount != nil}
   /// Clears the value of `cdeLastRowCount`. Subsequent reads from it will return its default value.
   public mutating func clearCdeLastRowCount() {self._cdeLastRowCount = nil}
 
   public var cdeLastColCount: Int32 {
-    get {return _cdeLastColCount ?? 0}
+    get {_cdeLastColCount ?? 0}
     set {_cdeLastColCount = newValue}
   }
   /// Returns true if `cdeLastColCount` has been explicitly set.
-  public var hasCdeLastColCount: Bool {return self._cdeLastColCount != nil}
+  public var hasCdeLastColCount: Bool {self._cdeLastColCount != nil}
   /// Clears the value of `cdeLastColCount`. Subsequent reads from it will return its default value.
   public mutating func clearCdeLastColCount() {self._cdeLastColCount = nil}
 
   public var cdeUseFullKeyboard: Bool {
-    get {return _cdeUseFullKeyboard ?? false}
+    get {_cdeUseFullKeyboard ?? false}
     set {_cdeUseFullKeyboard = newValue}
   }
   /// Returns true if `cdeUseFullKeyboard` has been explicitly set.
-  public var hasCdeUseFullKeyboard: Bool {return self._cdeUseFullKeyboard != nil}
+  public var hasCdeUseFullKeyboard: Bool {self._cdeUseFullKeyboard != nil}
   /// Clears the value of `cdeUseFullKeyboard`. Subsequent reads from it will return its default value.
   public mutating func clearCdeUseFullKeyboard() {self._cdeUseFullKeyboard = nil}
 
   public var multiDataSetIndex: Int32 {
-    get {return _multiDataSetIndex ?? 0}
+    get {_multiDataSetIndex ?? 0}
     set {_multiDataSetIndex = newValue}
   }
   /// Returns true if `multiDataSetIndex` has been explicitly set.
-  public var hasMultiDataSetIndex: Bool {return self._multiDataSetIndex != nil}
+  public var hasMultiDataSetIndex: Bool {self._multiDataSetIndex != nil}
   /// Clears the value of `multiDataSetIndex`. Subsequent reads from it will return its default value.
   public mutating func clearMultiDataSetIndex() {self._multiDataSetIndex = nil}
 
   public var isValidMultiDataSetIndex: Bool {
-    get {return _isValidMultiDataSetIndex ?? false}
+    get {_isValidMultiDataSetIndex ?? false}
     set {_isValidMultiDataSetIndex = newValue}
   }
   /// Returns true if `isValidMultiDataSetIndex` has been explicitly set.
-  public var hasIsValidMultiDataSetIndex: Bool {return self._isValidMultiDataSetIndex != nil}
+  public var hasIsValidMultiDataSetIndex: Bool {self._isValidMultiDataSetIndex != nil}
   /// Clears the value of `isValidMultiDataSetIndex`. Subsequent reads from it will return its default value.
   public mutating func clearIsValidMultiDataSetIndex() {self._isValidMultiDataSetIndex = nil}
 
@@ -1128,7 +1132,7 @@ public struct TSCH_ChartUIState: SwiftProtobuf.ExtensibleMessage, Sendable {
   fileprivate var _isValidMultiDataSetIndex: Bool? = nil
 }
 
-public struct TSCH_ChartUIStateMultiDataIndexUpgrade: Sendable {
+public nonisolated struct TSCH_ChartUIStateMultiDataIndexUpgrade: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1138,7 +1142,7 @@ public struct TSCH_ChartUIStateMultiDataIndexUpgrade: Sendable {
   public init() {}
 }
 
-public struct TSCH_ChartFormatStructExtensions: Sendable {
+public nonisolated struct TSCH_ChartFormatStructExtensions: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1148,26 +1152,26 @@ public struct TSCH_ChartFormatStructExtensions: Sendable {
   public init() {}
 }
 
-public struct TSCH_ChartReferenceLineNonStyleItem: Sendable {
+public nonisolated struct TSCH_ChartReferenceLineNonStyleItem: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var nonStyle: TSP_Reference {
-    get {return _nonStyle ?? TSP_Reference()}
+    get {_nonStyle ?? TSP_Reference()}
     set {_nonStyle = newValue}
   }
   /// Returns true if `nonStyle` has been explicitly set.
-  public var hasNonStyle: Bool {return self._nonStyle != nil}
+  public var hasNonStyle: Bool {self._nonStyle != nil}
   /// Clears the value of `nonStyle`. Subsequent reads from it will return its default value.
   public mutating func clearNonStyle() {self._nonStyle = nil}
 
   public var uuid: TSP_UUID {
-    get {return _uuid ?? TSP_UUID()}
+    get {_uuid ?? TSP_UUID()}
     set {_uuid = newValue}
   }
   /// Returns true if `uuid` has been explicitly set.
-  public var hasUuid: Bool {return self._uuid != nil}
+  public var hasUuid: Bool {self._uuid != nil}
   /// Clears the value of `uuid`. Subsequent reads from it will return its default value.
   public mutating func clearUuid() {self._uuid = nil}
 
@@ -1179,17 +1183,17 @@ public struct TSCH_ChartReferenceLineNonStyleItem: Sendable {
   fileprivate var _uuid: TSP_UUID? = nil
 }
 
-public struct TSCH_ChartAxisReferenceLineNonStylesArchive: Sendable {
+public nonisolated struct TSCH_ChartAxisReferenceLineNonStylesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var axisID: TSCH_ChartAxisIDArchive {
-    get {return _axisID ?? TSCH_ChartAxisIDArchive()}
+    get {_axisID ?? TSCH_ChartAxisIDArchive()}
     set {_axisID = newValue}
   }
   /// Returns true if `axisID` has been explicitly set.
-  public var hasAxisID: Bool {return self._axisID != nil}
+  public var hasAxisID: Bool {self._axisID != nil}
   /// Clears the value of `axisID`. Subsequent reads from it will return its default value.
   public mutating func clearAxisID() {self._axisID = nil}
 
@@ -1202,26 +1206,26 @@ public struct TSCH_ChartAxisReferenceLineNonStylesArchive: Sendable {
   fileprivate var _axisID: TSCH_ChartAxisIDArchive? = nil
 }
 
-public struct TSCH_ChartAxisReferenceLineStylesArchive: Sendable {
+public nonisolated struct TSCH_ChartAxisReferenceLineStylesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var axisID: TSCH_ChartAxisIDArchive {
-    get {return _axisID ?? TSCH_ChartAxisIDArchive()}
+    get {_axisID ?? TSCH_ChartAxisIDArchive()}
     set {_axisID = newValue}
   }
   /// Returns true if `axisID` has been explicitly set.
-  public var hasAxisID: Bool {return self._axisID != nil}
+  public var hasAxisID: Bool {self._axisID != nil}
   /// Clears the value of `axisID`. Subsequent reads from it will return its default value.
   public mutating func clearAxisID() {self._axisID = nil}
 
   public var referenceLineStyles: TSP_SparseReferenceArray {
-    get {return _referenceLineStyles ?? TSP_SparseReferenceArray()}
+    get {_referenceLineStyles ?? TSP_SparseReferenceArray()}
     set {_referenceLineStyles = newValue}
   }
   /// Returns true if `referenceLineStyles` has been explicitly set.
-  public var hasReferenceLineStyles: Bool {return self._referenceLineStyles != nil}
+  public var hasReferenceLineStyles: Bool {self._referenceLineStyles != nil}
   /// Clears the value of `referenceLineStyles`. Subsequent reads from it will return its default value.
   public mutating func clearReferenceLineStyles() {self._referenceLineStyles = nil}
 
@@ -1233,7 +1237,7 @@ public struct TSCH_ChartAxisReferenceLineStylesArchive: Sendable {
   fileprivate var _referenceLineStyles: TSP_SparseReferenceArray? = nil
 }
 
-public struct TSCH_ChartReferenceLinesArchive: Sendable {
+public nonisolated struct TSCH_ChartReferenceLinesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1243,11 +1247,11 @@ public struct TSCH_ChartReferenceLinesArchive: Sendable {
   public var referenceLineStylesMap: [TSCH_ChartAxisReferenceLineStylesArchive] = []
 
   public var themePresetReferenceLineStyle: TSP_Reference {
-    get {return _themePresetReferenceLineStyle ?? TSP_Reference()}
+    get {_themePresetReferenceLineStyle ?? TSP_Reference()}
     set {_themePresetReferenceLineStyle = newValue}
   }
   /// Returns true if `themePresetReferenceLineStyle` has been explicitly set.
-  public var hasThemePresetReferenceLineStyle: Bool {return self._themePresetReferenceLineStyle != nil}
+  public var hasThemePresetReferenceLineStyle: Bool {self._themePresetReferenceLineStyle != nil}
   /// Clears the value of `themePresetReferenceLineStyle`. Subsequent reads from it will return its default value.
   public mutating func clearThemePresetReferenceLineStyle() {self._themePresetReferenceLineStyle = nil}
 
@@ -1258,7 +1262,7 @@ public struct TSCH_ChartReferenceLinesArchive: Sendable {
   fileprivate var _themePresetReferenceLineStyle: TSP_Reference? = nil
 }
 
-public struct TSCH_ChartPresetReferenceLineStylesArchive: Sendable {
+public nonisolated struct TSCH_ChartPresetReferenceLineStylesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1270,17 +1274,17 @@ public struct TSCH_ChartPresetReferenceLineStylesArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_ChartAxisReferenceLineSparseNonStylesArchive: Sendable {
+public nonisolated struct TSCH_ChartAxisReferenceLineSparseNonStylesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var axisID: TSCH_ChartAxisIDArchive {
-    get {return _axisID ?? TSCH_ChartAxisIDArchive()}
+    get {_axisID ?? TSCH_ChartAxisIDArchive()}
     set {_axisID = newValue}
   }
   /// Returns true if `axisID` has been explicitly set.
-  public var hasAxisID: Bool {return self._axisID != nil}
+  public var hasAxisID: Bool {self._axisID != nil}
   /// Clears the value of `axisID`. Subsequent reads from it will return its default value.
   public mutating func clearAxisID() {self._axisID = nil}
 
@@ -1293,7 +1297,7 @@ public struct TSCH_ChartAxisReferenceLineSparseNonStylesArchive: Sendable {
   fileprivate var _axisID: TSCH_ChartAxisIDArchive? = nil
 }
 
-public struct TSCH_PropertyValueStorageContainerReferenceLinesArchive: Sendable {
+public nonisolated struct TSCH_PropertyValueStorageContainerReferenceLinesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1303,11 +1307,11 @@ public struct TSCH_PropertyValueStorageContainerReferenceLinesArchive: Sendable 
   public var referenceLineStylesMap: [TSCH_ChartAxisReferenceLineStylesArchive] = []
 
   public var themePresetReferenceLineStyle: TSP_Reference {
-    get {return _themePresetReferenceLineStyle ?? TSP_Reference()}
+    get {_themePresetReferenceLineStyle ?? TSP_Reference()}
     set {_themePresetReferenceLineStyle = newValue}
   }
   /// Returns true if `themePresetReferenceLineStyle` has been explicitly set.
-  public var hasThemePresetReferenceLineStyle: Bool {return self._themePresetReferenceLineStyle != nil}
+  public var hasThemePresetReferenceLineStyle: Bool {self._themePresetReferenceLineStyle != nil}
   /// Clears the value of `themePresetReferenceLineStyle`. Subsequent reads from it will return its default value.
   public mutating func clearThemePresetReferenceLineStyle() {self._themePresetReferenceLineStyle = nil}
 
@@ -1318,44 +1322,44 @@ public struct TSCH_PropertyValueStorageContainerReferenceLinesArchive: Sendable 
   fileprivate var _themePresetReferenceLineStyle: TSP_Reference? = nil
 }
 
-public struct TSCH_CollaboratorCDECursorSubselectionArchive: Sendable {
+public nonisolated struct TSCH_CollaboratorCDECursorSubselectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var rowLocation: Int32 {
-    get {return _rowLocation ?? 0}
+    get {_rowLocation ?? 0}
     set {_rowLocation = newValue}
   }
   /// Returns true if `rowLocation` has been explicitly set.
-  public var hasRowLocation: Bool {return self._rowLocation != nil}
+  public var hasRowLocation: Bool {self._rowLocation != nil}
   /// Clears the value of `rowLocation`. Subsequent reads from it will return its default value.
   public mutating func clearRowLocation() {self._rowLocation = nil}
 
   public var rowLength: Int32 {
-    get {return _rowLength ?? 0}
+    get {_rowLength ?? 0}
     set {_rowLength = newValue}
   }
   /// Returns true if `rowLength` has been explicitly set.
-  public var hasRowLength: Bool {return self._rowLength != nil}
+  public var hasRowLength: Bool {self._rowLength != nil}
   /// Clears the value of `rowLength`. Subsequent reads from it will return its default value.
   public mutating func clearRowLength() {self._rowLength = nil}
 
   public var columnLocation: Int32 {
-    get {return _columnLocation ?? 0}
+    get {_columnLocation ?? 0}
     set {_columnLocation = newValue}
   }
   /// Returns true if `columnLocation` has been explicitly set.
-  public var hasColumnLocation: Bool {return self._columnLocation != nil}
+  public var hasColumnLocation: Bool {self._columnLocation != nil}
   /// Clears the value of `columnLocation`. Subsequent reads from it will return its default value.
   public mutating func clearColumnLocation() {self._columnLocation = nil}
 
   public var columnLength: Int32 {
-    get {return _columnLength ?? 0}
+    get {_columnLength ?? 0}
     set {_columnLength = newValue}
   }
   /// Returns true if `columnLength` has been explicitly set.
-  public var hasColumnLength: Bool {return self._columnLength != nil}
+  public var hasColumnLength: Bool {self._columnLength != nil}
   /// Clears the value of `columnLength`. Subsequent reads from it will return its default value.
   public mutating func clearColumnLength() {self._columnLength = nil}
 
@@ -1369,17 +1373,17 @@ public struct TSCH_CollaboratorCDECursorSubselectionArchive: Sendable {
   fileprivate var _columnLength: Int32? = nil
 }
 
-public struct TSCH_CollaboratorChartTitleCursorSubselectionArchive: Sendable {
+public nonisolated struct TSCH_CollaboratorChartTitleCursorSubselectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var chartTitleSelected: Bool {
-    get {return _chartTitleSelected ?? false}
+    get {_chartTitleSelected ?? false}
     set {_chartTitleSelected = newValue}
   }
   /// Returns true if `chartTitleSelected` has been explicitly set.
-  public var hasChartTitleSelected: Bool {return self._chartTitleSelected != nil}
+  public var hasChartTitleSelected: Bool {self._chartTitleSelected != nil}
   /// Clears the value of `chartTitleSelected`. Subsequent reads from it will return its default value.
   public mutating func clearChartTitleSelected() {self._chartTitleSelected = nil}
 
@@ -1390,26 +1394,26 @@ public struct TSCH_CollaboratorChartTitleCursorSubselectionArchive: Sendable {
   fileprivate var _chartTitleSelected: Bool? = nil
 }
 
-public struct TSCH_CachedAxisDataFormatterPersistableStyleObject: Sendable {
+public nonisolated struct TSCH_CachedAxisDataFormatterPersistableStyleObject: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var axisID: TSCH_ChartAxisIDArchive {
-    get {return _axisID ?? TSCH_ChartAxisIDArchive()}
+    get {_axisID ?? TSCH_ChartAxisIDArchive()}
     set {_axisID = newValue}
   }
   /// Returns true if `axisID` has been explicitly set.
-  public var hasAxisID: Bool {return self._axisID != nil}
+  public var hasAxisID: Bool {self._axisID != nil}
   /// Clears the value of `axisID`. Subsequent reads from it will return its default value.
   public mutating func clearAxisID() {self._axisID = nil}
 
   public var styleObject: TSK_FormatStructArchive {
-    get {return _styleObject ?? TSK_FormatStructArchive()}
+    get {_styleObject ?? TSK_FormatStructArchive()}
     set {_styleObject = newValue}
   }
   /// Returns true if `styleObject` has been explicitly set.
-  public var hasStyleObject: Bool {return self._styleObject != nil}
+  public var hasStyleObject: Bool {self._styleObject != nil}
   /// Clears the value of `styleObject`. Subsequent reads from it will return its default value.
   public mutating func clearStyleObject() {self._styleObject = nil}
 
@@ -1421,26 +1425,26 @@ public struct TSCH_CachedAxisDataFormatterPersistableStyleObject: Sendable {
   fileprivate var _styleObject: TSK_FormatStructArchive? = nil
 }
 
-public struct TSCH_CachedSeriesDataFormatterPersistableStyleObject: Sendable {
+public nonisolated struct TSCH_CachedSeriesDataFormatterPersistableStyleObject: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var seriesIndex: Int32 {
-    get {return _seriesIndex ?? 0}
+    get {_seriesIndex ?? 0}
     set {_seriesIndex = newValue}
   }
   /// Returns true if `seriesIndex` has been explicitly set.
-  public var hasSeriesIndex: Bool {return self._seriesIndex != nil}
+  public var hasSeriesIndex: Bool {self._seriesIndex != nil}
   /// Clears the value of `seriesIndex`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesIndex() {self._seriesIndex = nil}
 
   public var styleObject: TSK_FormatStructArchive {
-    get {return _styleObject ?? TSK_FormatStructArchive()}
+    get {_styleObject ?? TSK_FormatStructArchive()}
     set {_styleObject = newValue}
   }
   /// Returns true if `styleObject` has been explicitly set.
-  public var hasStyleObject: Bool {return self._styleObject != nil}
+  public var hasStyleObject: Bool {self._styleObject != nil}
   /// Clears the value of `styleObject`. Subsequent reads from it will return its default value.
   public mutating func clearStyleObject() {self._styleObject = nil}
 
@@ -1452,7 +1456,7 @@ public struct TSCH_CachedSeriesDataFormatterPersistableStyleObject: Sendable {
   fileprivate var _styleObject: TSK_FormatStructArchive? = nil
 }
 
-public struct TSCH_CachedDataFormatterPersistableStyleObjects: Sendable {
+public nonisolated struct TSCH_CachedDataFormatterPersistableStyleObjects: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1462,11 +1466,11 @@ public struct TSCH_CachedDataFormatterPersistableStyleObjects: Sendable {
   public var seriesDataFormatterList: [TSCH_CachedSeriesDataFormatterPersistableStyleObject] = []
 
   public var summaryLabelStyleObject: TSK_FormatStructArchive {
-    get {return _summaryLabelStyleObject ?? TSK_FormatStructArchive()}
+    get {_summaryLabelStyleObject ?? TSK_FormatStructArchive()}
     set {_summaryLabelStyleObject = newValue}
   }
   /// Returns true if `summaryLabelStyleObject` has been explicitly set.
-  public var hasSummaryLabelStyleObject: Bool {return self._summaryLabelStyleObject != nil}
+  public var hasSummaryLabelStyleObject: Bool {self._summaryLabelStyleObject != nil}
   /// Clears the value of `summaryLabelStyleObject`. Subsequent reads from it will return its default value.
   public mutating func clearSummaryLabelStyleObject() {self._summaryLabelStyleObject = nil}
 
@@ -1486,7 +1490,7 @@ public struct TSCH_CachedDataFormatterPersistableStyleObjects: Sendable {
 // declaration. To avoid naming collisions, the names are prefixed with the name of
 // the scope where the extend directive occurs.
 
-extension TSCH_ChartArchive {
+nonisolated extension TSCH_ChartArchive {
 
   public var TSCH_scene3DSettingsConstantDepth: Bool {
     get {return getExtensionValue(ext: TSCH_Extensions_scene3d_settings_constant_depth) ?? false}
@@ -1744,7 +1748,7 @@ extension TSCH_ChartArchive {
   }
 }
 
-extension TSCH_ChartAxisNonStyleArchive {
+nonisolated extension TSCH_ChartAxisNonStyleArchive {
 
   public var TSCH_axisSupportsCustomNumberFormat: Bool {
     get {return getExtensionValue(ext: TSCH_Extensions_axis_supports_custom_number_format) ?? false}
@@ -1777,7 +1781,7 @@ extension TSCH_ChartAxisNonStyleArchive {
   }
 }
 
-extension TSCH_ChartAxisStyleArchive {
+nonisolated extension TSCH_ChartAxisStyleArchive {
 
   public var TSCH_axisSupportsRadar: Bool {
     get {return getExtensionValue(ext: TSCH_Extensions_axis_supports_radar) ?? false}
@@ -1795,7 +1799,7 @@ extension TSCH_ChartAxisStyleArchive {
   }
 }
 
-extension TSCH_ChartDrawableArchive {
+nonisolated extension TSCH_ChartDrawableArchive {
 
   public var TSCH_ChartArchive_unity: TSCH_ChartArchive {
     get {return getExtensionValue(ext: TSCH_ChartArchive.Extensions.unity) ?? TSCH_ChartArchive()}
@@ -1813,7 +1817,7 @@ extension TSCH_ChartDrawableArchive {
   }
 }
 
-extension TSCH_ChartSeriesNonStyleArchive {
+nonisolated extension TSCH_ChartSeriesNonStyleArchive {
 
   public var TSCH_seriesSupportsCustomNumberFormat: Bool {
     get {return getExtensionValue(ext: TSCH_Extensions_series_supports_custom_number_format) ?? false}
@@ -1861,7 +1865,7 @@ extension TSCH_ChartSeriesNonStyleArchive {
   }
 }
 
-extension TSCH_ChartSeriesStyleArchive {
+nonisolated extension TSCH_ChartSeriesStyleArchive {
 
   public var TSCH_seriesSupportsDonut: Bool {
     get {return getExtensionValue(ext: TSCH_Extensions_series_supports_donut) ?? false}
@@ -1894,7 +1898,7 @@ extension TSCH_ChartSeriesStyleArchive {
   }
 }
 
-extension TSCH_ChartStyleArchive {
+nonisolated extension TSCH_ChartStyleArchive {
 
   public var TSCH_chartSupportsSeriesSummaryLabels: Bool {
     get {return getExtensionValue(ext: TSCH_Extensions_chart_supports_series_summary_labels) ?? false}
@@ -1912,7 +1916,7 @@ extension TSCH_ChartStyleArchive {
   }
 }
 
-extension TSCH_ChartStylePreset {
+nonisolated extension TSCH_ChartStylePreset {
 
   public var TSCH_presetReferenceLineStyles: TSCH_ChartPresetReferenceLineStylesArchive {
     get {return getExtensionValue(ext: TSCH_Extensions_preset_reference_line_styles) ?? TSCH_ChartPresetReferenceLineStylesArchive()}
@@ -1930,7 +1934,7 @@ extension TSCH_ChartStylePreset {
   }
 }
 
-extension TSCH_ChartUIState {
+nonisolated extension TSCH_ChartUIState {
 
   public var TSCH_ChartUIStateMultiDataIndexUpgrade_upgradedFromModel: Bool {
     get {return getExtensionValue(ext: TSCH_ChartUIStateMultiDataIndexUpgrade.Extensions.upgraded_from_model) ?? false}
@@ -1948,7 +1952,7 @@ extension TSCH_ChartUIState {
   }
 }
 
-extension TSCH_PropertyValueStorageContainerArchive {
+nonisolated extension TSCH_PropertyValueStorageContainerArchive {
 
   public var TSCH_propertyValueStorageContainerReferenceLines: TSCH_PropertyValueStorageContainerReferenceLinesArchive {
     get {return getExtensionValue(ext: TSCH_Extensions_property_value_storage_container_reference_lines) ?? TSCH_PropertyValueStorageContainerReferenceLinesArchive()}
@@ -1966,7 +1970,7 @@ extension TSCH_PropertyValueStorageContainerArchive {
   }
 }
 
-extension TSCK_CollaboratorCursorArchive {
+nonisolated extension TSCK_CollaboratorCursorArchive {
 
   public var TSCH_CollaboratorCDECursorSubselectionArchive_cdeCursorSubselection: TSCH_CollaboratorCDECursorSubselectionArchive {
     get {return getExtensionValue(ext: TSCH_CollaboratorCDECursorSubselectionArchive.Extensions.cde_cursor_subselection) ?? TSCH_CollaboratorCDECursorSubselectionArchive()}
@@ -1999,7 +2003,7 @@ extension TSCK_CollaboratorCursorArchive {
   }
 }
 
-extension TSK_FormatStructArchive {
+nonisolated extension TSK_FormatStructArchive {
 
   public var TSCH_ChartFormatStructExtensions_prefix: String {
     get {return getExtensionValue(ext: TSCH_ChartFormatStructExtensions.Extensions.prefix) ?? String()}
@@ -2032,7 +2036,7 @@ extension TSK_FormatStructArchive {
   }
 }
 
-extension TSS_ThemeArchive {
+nonisolated extension TSS_ThemeArchive {
 
   public var TSCH_ChartPresetsArchive_extension: TSCH_ChartPresetsArchive {
     get {return getExtensionValue(ext: TSCH_ChartPresetsArchive.Extensions.extension) ?? TSCH_ChartPresetsArchive()}
@@ -2057,7 +2061,7 @@ extension TSS_ThemeArchive {
 /// this .proto file. It can be used any place an `SwiftProtobuf.ExtensionMap` is needed
 /// in parsing, or it can be combined with other `SwiftProtobuf.SimpleExtensionMap`s to create
 /// a larger `SwiftProtobuf.SimpleExtensionMap`.
-public let TSCH_Tscharchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
+public nonisolated let TSCH_Tscharchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
   TSCH_Extensions_scene3d_settings_constant_depth,
   TSCH_Extensions_last_applied_fill_set_lookup_string,
   TSCH_Extensions_reference_lines,
@@ -2099,77 +2103,77 @@ public let TSCH_Tscharchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
 // constructing a `SimpleExtensionMap`, otherwise, use the above _Extension Properties_
 // accessors for the extension fields on the messages directly.
 
-public let TSCH_Extensions_scene3d_settings_constant_depth = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartArchive>(
+public nonisolated let TSCH_Extensions_scene3d_settings_constant_depth = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartArchive>(
   _protobuf_fieldNumber: 10002,
   fieldName: "TSCH.scene3d_settings_constant_depth"
 )
 
-public let TSCH_Extensions_last_applied_fill_set_lookup_string = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, TSCH_ChartArchive>(
+public nonisolated let TSCH_Extensions_last_applied_fill_set_lookup_string = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, TSCH_ChartArchive>(
   _protobuf_fieldNumber: 10004,
   fieldName: "TSCH.last_applied_fill_set_lookup_string"
 )
 
-public let TSCH_Extensions_reference_lines = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_ChartReferenceLinesArchive>, TSCH_ChartArchive>(
+public nonisolated let TSCH_Extensions_reference_lines = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_ChartReferenceLinesArchive>, TSCH_ChartArchive>(
   _protobuf_fieldNumber: 10005,
   fieldName: "TSCH.reference_lines"
 )
 
-public let TSCH_Extensions_chart_supports_series_summary_labels = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartStyleArchive>(
+public nonisolated let TSCH_Extensions_chart_supports_series_summary_labels = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartStyleArchive>(
   _protobuf_fieldNumber: 10001,
   fieldName: "TSCH.chart_supports_series_summary_labels"
 )
 
-public let TSCH_Extensions_series_supports_donut = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartSeriesStyleArchive>(
+public nonisolated let TSCH_Extensions_series_supports_donut = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartSeriesStyleArchive>(
   _protobuf_fieldNumber: 10001,
   fieldName: "TSCH.series_supports_donut"
 )
 
-public let TSCH_Extensions_series_supports_radar = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartSeriesStyleArchive>(
+public nonisolated let TSCH_Extensions_series_supports_radar = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartSeriesStyleArchive>(
   _protobuf_fieldNumber: 10002,
   fieldName: "TSCH.series_supports_radar"
 )
 
-public let TSCH_Extensions_series_supports_custom_number_format = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartSeriesNonStyleArchive>(
+public nonisolated let TSCH_Extensions_series_supports_custom_number_format = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartSeriesNonStyleArchive>(
   _protobuf_fieldNumber: 10001,
   fieldName: "TSCH.series_supports_custom_number_format"
 )
 
-public let TSCH_Extensions_series_supports_custom_date_format = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartSeriesNonStyleArchive>(
+public nonisolated let TSCH_Extensions_series_supports_custom_date_format = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartSeriesNonStyleArchive>(
   _protobuf_fieldNumber: 10002,
   fieldName: "TSCH.series_supports_custom_date_format"
 )
 
-public let TSCH_Extensions_series_supports_callout_lines = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartSeriesNonStyleArchive>(
+public nonisolated let TSCH_Extensions_series_supports_callout_lines = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartSeriesNonStyleArchive>(
   _protobuf_fieldNumber: 10003,
   fieldName: "TSCH.series_supports_callout_lines"
 )
 
-public let TSCH_Extensions_axis_supports_radar = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartAxisStyleArchive>(
+public nonisolated let TSCH_Extensions_axis_supports_radar = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartAxisStyleArchive>(
   _protobuf_fieldNumber: 10001,
   fieldName: "TSCH.axis_supports_radar"
 )
 
-public let TSCH_Extensions_axis_supports_custom_number_format = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartAxisNonStyleArchive>(
+public nonisolated let TSCH_Extensions_axis_supports_custom_number_format = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartAxisNonStyleArchive>(
   _protobuf_fieldNumber: 10001,
   fieldName: "TSCH.axis_supports_custom_number_format"
 )
 
-public let TSCH_Extensions_axis_supports_custom_date_format = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartAxisNonStyleArchive>(
+public nonisolated let TSCH_Extensions_axis_supports_custom_date_format = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartAxisNonStyleArchive>(
   _protobuf_fieldNumber: 10002,
   fieldName: "TSCH.axis_supports_custom_date_format"
 )
 
-public let TSCH_Extensions_preset_reference_line_styles = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_ChartPresetReferenceLineStylesArchive>, TSCH_ChartStylePreset>(
+public nonisolated let TSCH_Extensions_preset_reference_line_styles = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_ChartPresetReferenceLineStylesArchive>, TSCH_ChartStylePreset>(
   _protobuf_fieldNumber: 10000,
   fieldName: "TSCH.preset_reference_line_styles"
 )
 
-public let TSCH_Extensions_property_value_storage_container_reference_lines = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_PropertyValueStorageContainerReferenceLinesArchive>, TSCH_PropertyValueStorageContainerArchive>(
+public nonisolated let TSCH_Extensions_property_value_storage_container_reference_lines = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_PropertyValueStorageContainerReferenceLinesArchive>, TSCH_PropertyValueStorageContainerArchive>(
   _protobuf_fieldNumber: 10000,
   fieldName: "TSCH.property_value_storage_container_reference_lines"
 )
 
-extension TSCH_ChartArchive {
+nonisolated extension TSCH_ChartArchive {
   public enum Extensions {
     public static let unity = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_ChartArchive>, TSCH_ChartDrawableArchive>(
       _protobuf_fieldNumber: 10000,
@@ -2178,7 +2182,7 @@ extension TSCH_ChartArchive {
   }
 }
 
-extension TSCH_ChartMultiDataIndexUpgrade {
+nonisolated extension TSCH_ChartMultiDataIndexUpgrade {
   public enum Extensions {
     public static let upgraded_to_ui_state = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartArchive>(
       _protobuf_fieldNumber: 10021,
@@ -2187,7 +2191,7 @@ extension TSCH_ChartMultiDataIndexUpgrade {
   }
 }
 
-extension TSCH_ChartGarlicMinMaxUpgrade {
+nonisolated extension TSCH_ChartGarlicMinMaxUpgrade {
   public enum Extensions {
     public static let garlic_min_max_upgrade = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_ChartGarlicMinMaxUpgrade>, TSCH_ChartArchive>(
       _protobuf_fieldNumber: 10010,
@@ -2196,7 +2200,7 @@ extension TSCH_ChartGarlicMinMaxUpgrade {
   }
 }
 
-extension TSCH_ChartGarlicLabelFormatUpgrade {
+nonisolated extension TSCH_ChartGarlicLabelFormatUpgrade {
   public enum Extensions {
     public static let garlic_label_format_upgrade = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_ChartGarlicLabelFormatUpgrade>, TSCH_ChartArchive>(
       _protobuf_fieldNumber: 10011,
@@ -2205,7 +2209,7 @@ extension TSCH_ChartGarlicLabelFormatUpgrade {
   }
 }
 
-extension TSCH_ChartPasteboardAdditionsArchive {
+nonisolated extension TSCH_ChartPasteboardAdditionsArchive {
   public enum Extensions {
     public static let preset_index_for_pasteboard = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufUInt32>, TSCH_ChartArchive>(
       _protobuf_fieldNumber: 10000,
@@ -2224,7 +2228,7 @@ extension TSCH_ChartPasteboardAdditionsArchive {
   }
 }
 
-extension TSCH_ChartPreserveAppearanceForPresetArchive {
+nonisolated extension TSCH_ChartPreserveAppearanceForPresetArchive {
   public enum Extensions {
     public static let appearance_preserved_for_preset = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartArchive>(
       _protobuf_fieldNumber: 10023,
@@ -2233,7 +2237,7 @@ extension TSCH_ChartPreserveAppearanceForPresetArchive {
   }
 }
 
-extension TSCH_ChartSupportsProportionalBendedCalloutLinesArchive {
+nonisolated extension TSCH_ChartSupportsProportionalBendedCalloutLinesArchive {
   public enum Extensions {
     public static let supports_proportional_bended_callout_lines = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartArchive>(
       _protobuf_fieldNumber: 10024,
@@ -2242,7 +2246,7 @@ extension TSCH_ChartSupportsProportionalBendedCalloutLinesArchive {
   }
 }
 
-extension TSCH_ChartSupportsRoundedCornersArchive {
+nonisolated extension TSCH_ChartSupportsRoundedCornersArchive {
   public enum Extensions {
     public static let deprecated_supports_rounded_corners = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartArchive>(
       _protobuf_fieldNumber: 10025,
@@ -2256,7 +2260,7 @@ extension TSCH_ChartSupportsRoundedCornersArchive {
   }
 }
 
-extension TSCH_ChartSupportsSeriesPropertySpacingArchive {
+nonisolated extension TSCH_ChartSupportsSeriesPropertySpacingArchive {
   public enum Extensions {
     public static let supports_series_value_label_spacing = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartArchive>(
       _protobuf_fieldNumber: 10027,
@@ -2270,7 +2274,7 @@ extension TSCH_ChartSupportsSeriesPropertySpacingArchive {
   }
 }
 
-extension TSCH_ChartSupportsStackedSummaryLabelsArchive {
+nonisolated extension TSCH_ChartSupportsStackedSummaryLabelsArchive {
   public enum Extensions {
     public static let supports_stacked_summary_labels = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartArchive>(
       _protobuf_fieldNumber: 10029,
@@ -2279,7 +2283,7 @@ extension TSCH_ChartSupportsStackedSummaryLabelsArchive {
   }
 }
 
-extension TSCH_ChartPresetsArchive {
+nonisolated extension TSCH_ChartPresetsArchive {
   public enum Extensions {
     public static let `extension` = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_ChartPresetsArchive>, TSS_ThemeArchive>(
       _protobuf_fieldNumber: 120,
@@ -2288,7 +2292,7 @@ extension TSCH_ChartPresetsArchive {
   }
 }
 
-extension TSCH_ChartUIStateMultiDataIndexUpgrade {
+nonisolated extension TSCH_ChartUIStateMultiDataIndexUpgrade {
   public enum Extensions {
     public static let upgraded_from_model = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufBool>, TSCH_ChartUIState>(
       _protobuf_fieldNumber: 10022,
@@ -2297,7 +2301,7 @@ extension TSCH_ChartUIStateMultiDataIndexUpgrade {
   }
 }
 
-extension TSCH_ChartFormatStructExtensions {
+nonisolated extension TSCH_ChartFormatStructExtensions {
   public enum Extensions {
     public static let prefix = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, TSK_FormatStructArchive>(
       _protobuf_fieldNumber: 10000,
@@ -2311,7 +2315,7 @@ extension TSCH_ChartFormatStructExtensions {
   }
 }
 
-extension TSCH_CollaboratorCDECursorSubselectionArchive {
+nonisolated extension TSCH_CollaboratorCDECursorSubselectionArchive {
   public enum Extensions {
     public static let cde_cursor_subselection = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_CollaboratorCDECursorSubselectionArchive>, TSCK_CollaboratorCursorArchive>(
       _protobuf_fieldNumber: 300,
@@ -2320,7 +2324,7 @@ extension TSCH_CollaboratorCDECursorSubselectionArchive {
   }
 }
 
-extension TSCH_CollaboratorChartTitleCursorSubselectionArchive {
+nonisolated extension TSCH_CollaboratorChartTitleCursorSubselectionArchive {
   public enum Extensions {
     public static let chart_title_cursor_subselection = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_CollaboratorChartTitleCursorSubselectionArchive>, TSCK_CollaboratorCursorArchive>(
       _protobuf_fieldNumber: 301,
@@ -2329,7 +2333,7 @@ extension TSCH_CollaboratorChartTitleCursorSubselectionArchive {
   }
 }
 
-extension TSCH_CachedDataFormatterPersistableStyleObjects {
+nonisolated extension TSCH_CachedDataFormatterPersistableStyleObjects {
   public enum Extensions {
     public static let cached_data_formatter_persistable_style_objects = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSCH_CachedDataFormatterPersistableStyleObjects>, TSCH_ChartArchive>(
       _protobuf_fieldNumber: 10030,
@@ -2340,13 +2344,11 @@ extension TSCH_CachedDataFormatterPersistableStyleObjects {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSCH"
+fileprivate nonisolated let _protobuf_package = "TSCH"
 
-extension TSCH_ChartDrawableArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartDrawableArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartDrawableArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -2388,34 +2390,9 @@ extension TSCH_ChartDrawableArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSCH_ChartArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "chart_type"),
-    2: .standard(proto: "scatter_format"),
-    3: .standard(proto: "legend_frame"),
-    4: .same(proto: "preset"),
-    5: .standard(proto: "series_direction"),
-    6: .standard(proto: "contains_default_data"),
-    7: .same(proto: "grid"),
-    8: .same(proto: "mediator"),
-    9: .standard(proto: "chart_style"),
-    10: .standard(proto: "chart_non_style"),
-    11: .standard(proto: "legend_style"),
-    12: .standard(proto: "legend_non_style"),
-    13: .standard(proto: "value_axis_styles"),
-    14: .standard(proto: "value_axis_nonstyles"),
-    15: .standard(proto: "category_axis_styles"),
-    16: .standard(proto: "category_axis_nonstyles"),
-    17: .standard(proto: "series_theme_styles"),
-    18: .standard(proto: "series_private_styles"),
-    19: .standard(proto: "series_non_styles"),
-    20: .standard(proto: "paragraph_styles"),
-    21: .standard(proto: "multidataset_index"),
-    22: .standard(proto: "needs_calc_engine_deferred_import_action"),
-    23: .standard(proto: "owned_preset"),
-    24: .standard(proto: "is_dirty"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}chart_type\0\u{3}scatter_format\0\u{3}legend_frame\0\u{1}preset\0\u{3}series_direction\0\u{3}contains_default_data\0\u{1}grid\0\u{1}mediator\0\u{3}chart_style\0\u{3}chart_non_style\0\u{3}legend_style\0\u{3}legend_non_style\0\u{3}value_axis_styles\0\u{3}value_axis_nonstyles\0\u{3}category_axis_styles\0\u{3}category_axis_nonstyles\0\u{3}series_theme_styles\0\u{3}series_private_styles\0\u{3}series_non_styles\0\u{3}paragraph_styles\0\u{3}multidataset_index\0\u{3}needs_calc_engine_deferred_import_action\0\u{3}owned_preset\0\u{3}is_dirty\0")
 
   fileprivate class _StorageClass {
     var _chartType: TSCH_ChartType? = nil
@@ -2443,15 +2420,11 @@ extension TSCH_ChartArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     var _ownedPreset: TSP_Reference? = nil
     var _isDirty: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -2676,7 +2649,7 @@ extension TSCH_ChartArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension TSCH_ChartMultiDataIndexUpgrade: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartMultiDataIndexUpgrade: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartMultiDataIndexUpgrade"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -2695,14 +2668,9 @@ extension TSCH_ChartMultiDataIndexUpgrade: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCH_ChartGarlicMinMaxUpgrade: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartGarlicMinMaxUpgrade: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartGarlicMinMaxUpgrade"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "horizontal_min"),
-    2: .standard(proto: "horizontal_max"),
-    3: .standard(proto: "value_min"),
-    4: .standard(proto: "value_max"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}horizontal_min\0\u{3}horizontal_max\0\u{3}value_min\0\u{3}value_max\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2749,16 +2717,9 @@ extension TSCH_ChartGarlicMinMaxUpgrade: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCH_ChartGarlicLabelFormatUpgrade: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartGarlicLabelFormatUpgrade: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartGarlicLabelFormatUpgrade"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "value_prefix"),
-    2: .standard(proto: "value_suffix"),
-    3: .standard(proto: "value_use_separator"),
-    4: .standard(proto: "horizontal_prefix"),
-    5: .standard(proto: "horizontal_suffix"),
-    6: .standard(proto: "horizontal_use_separator"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}value_prefix\0\u{3}value_suffix\0\u{3}value_use_separator\0\u{3}horizontal_prefix\0\u{3}horizontal_suffix\0\u{3}horizontal_use_separator\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2815,7 +2776,7 @@ extension TSCH_ChartGarlicLabelFormatUpgrade: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCH_ChartPasteboardAdditionsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartPasteboardAdditionsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartPasteboardAdditionsArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -2834,7 +2795,7 @@ extension TSCH_ChartPasteboardAdditionsArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCH_ChartPreserveAppearanceForPresetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartPreserveAppearanceForPresetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartPreserveAppearanceForPresetArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -2853,7 +2814,7 @@ extension TSCH_ChartPreserveAppearanceForPresetArchive: SwiftProtobuf.Message, S
   }
 }
 
-extension TSCH_ChartSupportsProportionalBendedCalloutLinesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSupportsProportionalBendedCalloutLinesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSupportsProportionalBendedCalloutLinesArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -2872,7 +2833,7 @@ extension TSCH_ChartSupportsProportionalBendedCalloutLinesArchive: SwiftProtobuf
   }
 }
 
-extension TSCH_ChartSupportsRoundedCornersArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSupportsRoundedCornersArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSupportsRoundedCornersArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -2891,7 +2852,7 @@ extension TSCH_ChartSupportsRoundedCornersArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSCH_ChartSupportsSeriesPropertySpacingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSupportsSeriesPropertySpacingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSupportsSeriesPropertySpacingArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -2910,7 +2871,7 @@ extension TSCH_ChartSupportsSeriesPropertySpacingArchive: SwiftProtobuf.Message,
   }
 }
 
-extension TSCH_ChartSupportsStackedSummaryLabelsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSupportsStackedSummaryLabelsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSupportsStackedSummaryLabelsArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -2929,14 +2890,9 @@ extension TSCH_ChartSupportsStackedSummaryLabelsArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCH_ChartGridArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartGridArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartGridArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "row_name"),
-    2: .standard(proto: "column_name"),
-    3: .standard(proto: "grid_row"),
-    4: .same(proto: "idMap"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}row_name\0\u{3}column_name\0\u{3}grid_row\0\u{1}idMap\0")
 
   public var isInitialized: Bool {
     if let v = self._idMap, !v.isInitialized {return false}
@@ -2988,12 +2944,9 @@ extension TSCH_ChartGridArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSCH_ChartGridArchive.ChartGridRowColumnIdMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartGridArchive.ChartGridRowColumnIdMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_ChartGridArchive.protoMessageName + ".ChartGridRowColumnIdMap"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "row_id_map"),
-    2: .standard(proto: "column_id_map"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}row_id_map\0\u{3}column_id_map\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.rowIDMap) {return false}
@@ -3032,12 +2985,9 @@ extension TSCH_ChartGridArchive.ChartGridRowColumnIdMap: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCH_ChartGridArchive.ChartGridRowColumnIdMap.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartGridArchive.ChartGridRowColumnIdMap.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_ChartGridArchive.ChartGridRowColumnIdMap.protoMessageName + ".Entry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uniqueId"),
-    2: .same(proto: "index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uniqueId\0\u{1}index\0")
 
   public var isInitialized: Bool {
     if self._uniqueID == nil {return false}
@@ -3080,13 +3030,9 @@ extension TSCH_ChartGridArchive.ChartGridRowColumnIdMap.Entry: SwiftProtobuf.Mes
   }
 }
 
-extension TSCH_ChartMediatorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartMediatorArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartMediatorArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "info"),
-    2: .standard(proto: "local_series_indexes"),
-    3: .standard(proto: "remote_series_indexes"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}info\0\u{3}local_series_indexes\0\u{3}remote_series_indexes\0")
 
   public var isInitialized: Bool {
     if let v = self._info, !v.isInitialized {return false}
@@ -3133,14 +3079,9 @@ extension TSCH_ChartMediatorArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSCH_ChartFillSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartFillSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartFillSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .standard(proto: "lookup_string"),
-    3: .standard(proto: "number_of_theme_series_styles"),
-    4: .standard(proto: "series_styles"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{3}lookup_string\0\u{3}number_of_theme_series_styles\0\u{3}series_styles\0")
 
   public var isInitialized: Bool {
     if self._identifier == nil {return false}
@@ -3194,17 +3135,9 @@ extension TSCH_ChartFillSetArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSCH_ChartStylePreset: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartStylePreset: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartStylePreset"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "chart_style"),
-    2: .standard(proto: "legend_style"),
-    3: .standard(proto: "value_axis_styles"),
-    4: .standard(proto: "category_axis_styles"),
-    5: .standard(proto: "series_styles"),
-    6: .standard(proto: "paragraph_styles"),
-    7: .same(proto: "uuid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}chart_style\0\u{3}legend_style\0\u{3}value_axis_styles\0\u{3}category_axis_styles\0\u{3}series_styles\0\u{3}paragraph_styles\0\u{1}uuid\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -3281,11 +3214,9 @@ extension TSCH_ChartStylePreset: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSCH_ChartPresetsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartPresetsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartPresetsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "chart_presets"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}chart_presets\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.chartPresets) {return false}
@@ -3318,22 +3249,9 @@ extension TSCH_ChartPresetsArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSCH_PropertyValueStorageContainerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_PropertyValueStorageContainerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PropertyValueStorageContainerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "chart_style"),
-    2: .standard(proto: "chart_nonstyle"),
-    3: .standard(proto: "legend_style"),
-    4: .standard(proto: "legend_nonstyle"),
-    5: .standard(proto: "value_axis_styles"),
-    6: .standard(proto: "value_axis_nonstyles"),
-    7: .standard(proto: "category_axis_styles"),
-    8: .standard(proto: "category_axis_nonstyles"),
-    9: .standard(proto: "series_theme_styles"),
-    10: .standard(proto: "series_private_styles"),
-    11: .standard(proto: "series_nonstyles"),
-    12: .standard(proto: "paragraph_styles"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}chart_style\0\u{3}chart_nonstyle\0\u{3}legend_style\0\u{3}legend_nonstyle\0\u{3}value_axis_styles\0\u{3}value_axis_nonstyles\0\u{3}category_axis_styles\0\u{3}category_axis_nonstyles\0\u{3}series_theme_styles\0\u{3}series_private_styles\0\u{3}series_nonstyles\0\u{3}paragraph_styles\0")
 
   fileprivate class _StorageClass {
     var _chartStyle: TSP_Reference? = nil
@@ -3349,15 +3267,11 @@ extension TSCH_PropertyValueStorageContainerArchive: SwiftProtobuf.Message, Swif
     var _seriesNonstyles: TSP_SparseReferenceArray? = nil
     var _paragraphStyles: TSP_SparseReferenceArray? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3505,13 +3419,9 @@ extension TSCH_PropertyValueStorageContainerArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSCH_StylePasteboardDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_StylePasteboardDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StylePasteboardDataArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "style_network"),
-    3: .standard(proto: "copied_from_entire_chart"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}style_network\0\u{3}copied_from_entire_chart\0")
 
   public var isInitialized: Bool {
     if let v = self._super, !v.isInitialized {return false}
@@ -3559,12 +3469,9 @@ extension TSCH_StylePasteboardDataArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCH_ChartSelectionPathTypeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSelectionPathTypeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSelectionPathTypeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "path_type"),
-    2: .standard(proto: "path_name"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}path_type\0\u{3}path_name\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3601,12 +3508,9 @@ extension TSCH_ChartSelectionPathTypeArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCH_ChartAxisIDArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartAxisIDArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartAxisIDArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "axis_type"),
-    2: .same(proto: "ordinal"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}axis_type\0\u{1}ordinal\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3643,12 +3547,9 @@ extension TSCH_ChartAxisIDArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSCH_ChartSelectionPathArgumentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSelectionPathArgumentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSelectionPathArgumentArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "number"),
-    2: .standard(proto: "axis_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}number\0\u{3}axis_id\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3685,28 +3586,20 @@ extension TSCH_ChartSelectionPathArgumentArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCH_ChartSelectionPathArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSelectionPathArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSelectionPathArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "path_type"),
-    2: .standard(proto: "sub_selection"),
-    3: .same(proto: "arguments"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}path_type\0\u{3}sub_selection\0\u{1}arguments\0")
 
   fileprivate class _StorageClass {
     var _pathType: TSCH_ChartSelectionPathTypeArchive? = nil
     var _subSelection: TSCH_ChartSelectionPathArchive? = nil
     var _arguments: [TSCH_ChartSelectionPathArgumentArchive] = []
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3777,13 +3670,9 @@ extension TSCH_ChartSelectionPathArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSCH_ChartSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSelectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    3: .same(proto: "super"),
-    1: .same(proto: "chart"),
-    2: .same(proto: "paths"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}chart\0\u{1}paths\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if let v = self._super, !v.isInitialized {return false}
@@ -3831,16 +3720,9 @@ extension TSCH_ChartSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCH_ChartCDESelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartCDESelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartCDESelectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "chart"),
-    2: .standard(proto: "selection_type"),
-    3: .standard(proto: "row_location"),
-    4: .standard(proto: "row_length"),
-    5: .standard(proto: "column_location"),
-    6: .standard(proto: "column_length"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}chart\0\u{3}selection_type\0\u{3}row_location\0\u{3}row_length\0\u{3}column_location\0\u{3}column_length\0")
 
   public var isInitialized: Bool {
     if let v = self._chart, !v.isInitialized {return false}
@@ -3902,18 +3784,9 @@ extension TSCH_ChartCDESelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCH_ChartUIState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartUIState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartUIState"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "chart"),
-    2: .standard(proto: "cde_last_row_selected"),
-    3: .standard(proto: "cde_last_col_selected"),
-    4: .standard(proto: "cde_last_row_count"),
-    5: .standard(proto: "cde_last_col_count"),
-    6: .standard(proto: "cde_use_full_keyboard"),
-    7: .standard(proto: "multi_data_set_index"),
-    8: .standard(proto: "is_valid_multi_data_set_index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}chart\0\u{3}cde_last_row_selected\0\u{3}cde_last_col_selected\0\u{3}cde_last_row_count\0\u{3}cde_last_col_count\0\u{3}cde_use_full_keyboard\0\u{3}multi_data_set_index\0\u{3}is_valid_multi_data_set_index\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -3990,7 +3863,7 @@ extension TSCH_ChartUIState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension TSCH_ChartUIStateMultiDataIndexUpgrade: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartUIStateMultiDataIndexUpgrade: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartUIStateMultiDataIndexUpgrade"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -4009,7 +3882,7 @@ extension TSCH_ChartUIStateMultiDataIndexUpgrade: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCH_ChartFormatStructExtensions: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartFormatStructExtensions: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartFormatStructExtensions"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -4028,12 +3901,9 @@ extension TSCH_ChartFormatStructExtensions: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCH_ChartReferenceLineNonStyleItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartReferenceLineNonStyleItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartReferenceLineNonStyleItem"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "non_style"),
-    2: .same(proto: "uuid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}non_style\0\u{1}uuid\0")
 
   public var isInitialized: Bool {
     if self._nonStyle == nil {return false}
@@ -4078,12 +3948,9 @@ extension TSCH_ChartReferenceLineNonStyleItem: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_ChartAxisReferenceLineNonStylesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartAxisReferenceLineNonStylesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartAxisReferenceLineNonStylesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "axis_id"),
-    2: .standard(proto: "reference_line_non_style_items"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}axis_id\0\u{3}reference_line_non_style_items\0")
 
   public var isInitialized: Bool {
     if self._axisID == nil {return false}
@@ -4126,12 +3993,9 @@ extension TSCH_ChartAxisReferenceLineNonStylesArchive: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSCH_ChartAxisReferenceLineStylesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartAxisReferenceLineStylesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartAxisReferenceLineStylesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "axis_id"),
-    2: .standard(proto: "reference_line_styles"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}axis_id\0\u{3}reference_line_styles\0")
 
   public var isInitialized: Bool {
     if self._axisID == nil {return false}
@@ -4174,13 +4038,9 @@ extension TSCH_ChartAxisReferenceLineStylesArchive: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSCH_ChartReferenceLinesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartReferenceLinesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartReferenceLinesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "reference_line_non_styles_map"),
-    2: .standard(proto: "reference_line_styles_map"),
-    3: .standard(proto: "theme_preset_reference_line_style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}reference_line_non_styles_map\0\u{3}reference_line_styles_map\0\u{3}theme_preset_reference_line_style\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.referenceLineNonStylesMap) {return false}
@@ -4229,11 +4089,9 @@ extension TSCH_ChartReferenceLinesArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCH_ChartPresetReferenceLineStylesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartPresetReferenceLineStylesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartPresetReferenceLineStylesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "reference_line_styles"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}reference_line_styles\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.referenceLineStyles) {return false}
@@ -4266,12 +4124,9 @@ extension TSCH_ChartPresetReferenceLineStylesArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSCH_ChartAxisReferenceLineSparseNonStylesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartAxisReferenceLineSparseNonStylesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartAxisReferenceLineSparseNonStylesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "axis_id"),
-    2: .standard(proto: "reference_line_non_style_items"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}axis_id\0\u{3}reference_line_non_style_items\0")
 
   public var isInitialized: Bool {
     if self._axisID == nil {return false}
@@ -4314,13 +4169,9 @@ extension TSCH_ChartAxisReferenceLineSparseNonStylesArchive: SwiftProtobuf.Messa
   }
 }
 
-extension TSCH_PropertyValueStorageContainerReferenceLinesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_PropertyValueStorageContainerReferenceLinesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PropertyValueStorageContainerReferenceLinesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "reference_line_non_styles_map"),
-    2: .standard(proto: "reference_line_styles_map"),
-    3: .standard(proto: "theme_preset_reference_line_style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}reference_line_non_styles_map\0\u{3}reference_line_styles_map\0\u{3}theme_preset_reference_line_style\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.referenceLineNonStylesMap) {return false}
@@ -4369,14 +4220,9 @@ extension TSCH_PropertyValueStorageContainerReferenceLinesArchive: SwiftProtobuf
   }
 }
 
-extension TSCH_CollaboratorCDECursorSubselectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CollaboratorCDECursorSubselectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaboratorCDECursorSubselectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "row_location"),
-    2: .standard(proto: "row_length"),
-    3: .standard(proto: "column_location"),
-    4: .standard(proto: "column_length"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}row_location\0\u{3}row_length\0\u{3}column_location\0\u{3}column_length\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -4423,11 +4269,9 @@ extension TSCH_CollaboratorCDECursorSubselectionArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCH_CollaboratorChartTitleCursorSubselectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CollaboratorChartTitleCursorSubselectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaboratorChartTitleCursorSubselectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "chart_title_selected"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}chart_title_selected\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -4459,12 +4303,9 @@ extension TSCH_CollaboratorChartTitleCursorSubselectionArchive: SwiftProtobuf.Me
   }
 }
 
-extension TSCH_CachedAxisDataFormatterPersistableStyleObject: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CachedAxisDataFormatterPersistableStyleObject: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CachedAxisDataFormatterPersistableStyleObject"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "axis_id"),
-    2: .standard(proto: "style_object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}axis_id\0\u{3}style_object\0")
 
   public var isInitialized: Bool {
     if let v = self._styleObject, !v.isInitialized {return false}
@@ -4506,12 +4347,9 @@ extension TSCH_CachedAxisDataFormatterPersistableStyleObject: SwiftProtobuf.Mess
   }
 }
 
-extension TSCH_CachedSeriesDataFormatterPersistableStyleObject: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CachedSeriesDataFormatterPersistableStyleObject: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CachedSeriesDataFormatterPersistableStyleObject"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "series_index"),
-    2: .standard(proto: "style_object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}series_index\0\u{3}style_object\0")
 
   public var isInitialized: Bool {
     if let v = self._styleObject, !v.isInitialized {return false}
@@ -4553,13 +4391,9 @@ extension TSCH_CachedSeriesDataFormatterPersistableStyleObject: SwiftProtobuf.Me
   }
 }
 
-extension TSCH_CachedDataFormatterPersistableStyleObjects: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CachedDataFormatterPersistableStyleObjects: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CachedDataFormatterPersistableStyleObjects"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "axis_data_formatter_list"),
-    2: .standard(proto: "series_data_formatter_list"),
-    3: .standard(proto: "summary_label_style_object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}axis_data_formatter_list\0\u{3}series_data_formatter_list\0\u{3}summary_label_style_object\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.axisDataFormatterList) {return false}

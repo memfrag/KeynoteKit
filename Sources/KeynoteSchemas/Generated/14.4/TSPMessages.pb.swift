@@ -8,7 +8,11 @@
 // For information on using the generated types, please see the documentation:
 //   https://github.com/apple/swift-protobuf/
 
+#if canImport(FoundationEssentials)
+import FoundationEssentials
+#else
 import Foundation
+#endif
 import SwiftProtobuf
 
 // If the compiler emits an error on this type, it is because this file
@@ -16,122 +20,70 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public enum TSP_DataUploadStatus: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case pending // = 0
-  case reserved // = 1
-  case unableToReserve // = 2
-  case corrupted // = 3
-  case documentMayExceedDocumentSizeLimit // = 4
-  case expired // = 5
+public nonisolated enum TSP_DataUploadStatus: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case pending = 0
+  case reserved = 1
+  case unableToReserve = 2
+  case corrupted = 3
+  case documentMayExceedDocumentSizeLimit = 4
+  case expired = 5
 
   public init() {
     self = .pending
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .pending
-    case 1: self = .reserved
-    case 2: self = .unableToReserve
-    case 3: self = .corrupted
-    case 4: self = .documentMayExceedDocumentSizeLimit
-    case 5: self = .expired
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .pending: return 0
-    case .reserved: return 1
-    case .unableToReserve: return 2
-    case .corrupted: return 3
-    case .documentMayExceedDocumentSizeLimit: return 4
-    case .expired: return 5
-    }
-  }
-
 }
 
-public enum TSP_SpotlightMetadataType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case none // = 0
-  case text // = 1
-  case author // = 2
-  case font // = 3
-  case table // = 4
-  case sheet // = 5
-  case chart // = 6
-  case media // = 7
+public nonisolated enum TSP_SpotlightMetadataType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case none = 0
+  case text = 1
+  case author = 2
+  case font = 3
+  case table = 4
+  case sheet = 5
+  case chart = 6
+  case media = 7
 
   public init() {
     self = .none
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .none
-    case 1: self = .text
-    case 2: self = .author
-    case 3: self = .font
-    case 4: self = .table
-    case 5: self = .sheet
-    case 6: self = .chart
-    case 7: self = .media
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .none: return 0
-    case .text: return 1
-    case .author: return 2
-    case .font: return 3
-    case .table: return 4
-    case .sheet: return 5
-    case .chart: return 6
-    case .media: return 7
-    }
-  }
-
 }
 
-public struct TSP_Reference: Sendable {
+public nonisolated struct TSP_Reference: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var identifier: UInt64 {
-    get {return _identifier ?? 0}
+    get {_identifier ?? 0}
     set {_identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return self._identifier != nil}
+  public var hasIdentifier: Bool {self._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {self._identifier = nil}
 
   public var deprecatedType: Int32 {
-    get {return _deprecatedType ?? 0}
+    get {_deprecatedType ?? 0}
     set {_deprecatedType = newValue}
   }
   /// Returns true if `deprecatedType` has been explicitly set.
-  public var hasDeprecatedType: Bool {return self._deprecatedType != nil}
+  public var hasDeprecatedType: Bool {self._deprecatedType != nil}
   /// Clears the value of `deprecatedType`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedType() {self._deprecatedType = nil}
 
   public var deprecatedIsExternal: Bool {
-    get {return _deprecatedIsExternal ?? false}
+    get {_deprecatedIsExternal ?? false}
     set {_deprecatedIsExternal = newValue}
   }
   /// Returns true if `deprecatedIsExternal` has been explicitly set.
-  public var hasDeprecatedIsExternal: Bool {return self._deprecatedIsExternal != nil}
+  public var hasDeprecatedIsExternal: Bool {self._deprecatedIsExternal != nil}
   /// Clears the value of `deprecatedIsExternal`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedIsExternal() {self._deprecatedIsExternal = nil}
 
@@ -144,17 +96,17 @@ public struct TSP_Reference: Sendable {
   fileprivate var _deprecatedIsExternal: Bool? = nil
 }
 
-public struct TSP_DataReference: Sendable {
+public nonisolated struct TSP_DataReference: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var identifier: UInt64 {
-    get {return _identifier ?? 0}
+    get {_identifier ?? 0}
     set {_identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return self._identifier != nil}
+  public var hasIdentifier: Bool {self._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {self._identifier = nil}
 
@@ -165,17 +117,17 @@ public struct TSP_DataReference: Sendable {
   fileprivate var _identifier: UInt64? = nil
 }
 
-public struct TSP_SparseReferenceArray: Sendable {
+public nonisolated struct TSP_SparseReferenceArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var count: UInt32 {
-    get {return _count ?? 0}
+    get {_count ?? 0}
     set {_count = newValue}
   }
   /// Returns true if `count` has been explicitly set.
-  public var hasCount: Bool {return self._count != nil}
+  public var hasCount: Bool {self._count != nil}
   /// Clears the value of `count`. Subsequent reads from it will return its default value.
   public mutating func clearCount() {self._count = nil}
 
@@ -183,26 +135,26 @@ public struct TSP_SparseReferenceArray: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct Entry: Sendable {
+  public nonisolated struct Entry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var index: UInt32 {
-      get {return _index ?? 0}
+      get {_index ?? 0}
       set {_index = newValue}
     }
     /// Returns true if `index` has been explicitly set.
-    public var hasIndex: Bool {return self._index != nil}
+    public var hasIndex: Bool {self._index != nil}
     /// Clears the value of `index`. Subsequent reads from it will return its default value.
     public mutating func clearIndex() {self._index = nil}
 
     public var reference: TSP_Reference {
-      get {return _reference ?? TSP_Reference()}
+      get {_reference ?? TSP_Reference()}
       set {_reference = newValue}
     }
     /// Returns true if `reference` has been explicitly set.
-    public var hasReference: Bool {return self._reference != nil}
+    public var hasReference: Bool {self._reference != nil}
     /// Clears the value of `reference`. Subsequent reads from it will return its default value.
     public mutating func clearReference() {self._reference = nil}
 
@@ -219,26 +171,26 @@ public struct TSP_SparseReferenceArray: Sendable {
   fileprivate var _count: UInt32? = nil
 }
 
-public struct TSP_Point: Sendable {
+public nonisolated struct TSP_Point: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var x: Float {
-    get {return _x ?? 0}
+    get {_x ?? 0}
     set {_x = newValue}
   }
   /// Returns true if `x` has been explicitly set.
-  public var hasX: Bool {return self._x != nil}
+  public var hasX: Bool {self._x != nil}
   /// Clears the value of `x`. Subsequent reads from it will return its default value.
   public mutating func clearX() {self._x = nil}
 
   public var y: Float {
-    get {return _y ?? 0}
+    get {_y ?? 0}
     set {_y = newValue}
   }
   /// Returns true if `y` has been explicitly set.
-  public var hasY: Bool {return self._y != nil}
+  public var hasY: Bool {self._y != nil}
   /// Clears the value of `y`. Subsequent reads from it will return its default value.
   public mutating func clearY() {self._y = nil}
 
@@ -250,35 +202,35 @@ public struct TSP_Point: Sendable {
   fileprivate var _y: Float? = nil
 }
 
-public struct TSP_Pose3D: Sendable {
+public nonisolated struct TSP_Pose3D: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var yaw: Float {
-    get {return _yaw ?? 0}
+    get {_yaw ?? 0}
     set {_yaw = newValue}
   }
   /// Returns true if `yaw` has been explicitly set.
-  public var hasYaw: Bool {return self._yaw != nil}
+  public var hasYaw: Bool {self._yaw != nil}
   /// Clears the value of `yaw`. Subsequent reads from it will return its default value.
   public mutating func clearYaw() {self._yaw = nil}
 
   public var pitch: Float {
-    get {return _pitch ?? 0}
+    get {_pitch ?? 0}
     set {_pitch = newValue}
   }
   /// Returns true if `pitch` has been explicitly set.
-  public var hasPitch: Bool {return self._pitch != nil}
+  public var hasPitch: Bool {self._pitch != nil}
   /// Clears the value of `pitch`. Subsequent reads from it will return its default value.
   public mutating func clearPitch() {self._pitch = nil}
 
   public var roll: Float {
-    get {return _roll ?? 0}
+    get {_roll ?? 0}
     set {_roll = newValue}
   }
   /// Returns true if `roll` has been explicitly set.
-  public var hasRoll: Bool {return self._roll != nil}
+  public var hasRoll: Bool {self._roll != nil}
   /// Clears the value of `roll`. Subsequent reads from it will return its default value.
   public mutating func clearRoll() {self._roll = nil}
 
@@ -291,26 +243,26 @@ public struct TSP_Pose3D: Sendable {
   fileprivate var _roll: Float? = nil
 }
 
-public struct TSP_Rect: Sendable {
+public nonisolated struct TSP_Rect: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var origin: TSP_Point {
-    get {return _origin ?? TSP_Point()}
+    get {_origin ?? TSP_Point()}
     set {_origin = newValue}
   }
   /// Returns true if `origin` has been explicitly set.
-  public var hasOrigin: Bool {return self._origin != nil}
+  public var hasOrigin: Bool {self._origin != nil}
   /// Clears the value of `origin`. Subsequent reads from it will return its default value.
   public mutating func clearOrigin() {self._origin = nil}
 
   public var size: TSP_Size {
-    get {return _size ?? TSP_Size()}
+    get {_size ?? TSP_Size()}
     set {_size = newValue}
   }
   /// Returns true if `size` has been explicitly set.
-  public var hasSize: Bool {return self._size != nil}
+  public var hasSize: Bool {self._size != nil}
   /// Clears the value of `size`. Subsequent reads from it will return its default value.
   public mutating func clearSize() {self._size = nil}
 
@@ -322,26 +274,26 @@ public struct TSP_Rect: Sendable {
   fileprivate var _size: TSP_Size? = nil
 }
 
-public struct TSP_Size: Sendable {
+public nonisolated struct TSP_Size: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var width: Float {
-    get {return _width ?? 0}
+    get {_width ?? 0}
     set {_width = newValue}
   }
   /// Returns true if `width` has been explicitly set.
-  public var hasWidth: Bool {return self._width != nil}
+  public var hasWidth: Bool {self._width != nil}
   /// Clears the value of `width`. Subsequent reads from it will return its default value.
   public mutating func clearWidth() {self._width = nil}
 
   public var height: Float {
-    get {return _height ?? 0}
+    get {_height ?? 0}
     set {_height = newValue}
   }
   /// Returns true if `height` has been explicitly set.
-  public var hasHeight: Bool {return self._height != nil}
+  public var hasHeight: Bool {self._height != nil}
   /// Clears the value of `height`. Subsequent reads from it will return its default value.
   public mutating func clearHeight() {self._height = nil}
 
@@ -353,26 +305,26 @@ public struct TSP_Size: Sendable {
   fileprivate var _height: Float? = nil
 }
 
-public struct TSP_Range: Sendable {
+public nonisolated struct TSP_Range: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var location: UInt32 {
-    get {return _location ?? 0}
+    get {_location ?? 0}
     set {_location = newValue}
   }
   /// Returns true if `location` has been explicitly set.
-  public var hasLocation: Bool {return self._location != nil}
+  public var hasLocation: Bool {self._location != nil}
   /// Clears the value of `location`. Subsequent reads from it will return its default value.
   public mutating func clearLocation() {self._location = nil}
 
   public var length: UInt32 {
-    get {return _length ?? 0}
+    get {_length ?? 0}
     set {_length = newValue}
   }
   /// Returns true if `length` has been explicitly set.
-  public var hasLength: Bool {return self._length != nil}
+  public var hasLength: Bool {self._length != nil}
   /// Clears the value of `length`. Subsequent reads from it will return its default value.
   public mutating func clearLength() {self._length = nil}
 
@@ -384,17 +336,17 @@ public struct TSP_Range: Sendable {
   fileprivate var _length: UInt32? = nil
 }
 
-public struct TSP_Date: Sendable {
+public nonisolated struct TSP_Date: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var seconds: Double {
-    get {return _seconds ?? 0}
+    get {_seconds ?? 0}
     set {_seconds = newValue}
   }
   /// Returns true if `seconds` has been explicitly set.
-  public var hasSeconds: Bool {return self._seconds != nil}
+  public var hasSeconds: Bool {self._seconds != nil}
   /// Clears the value of `seconds`. Subsequent reads from it will return its default value.
   public mutating func clearSeconds() {self._seconds = nil}
 
@@ -405,7 +357,7 @@ public struct TSP_Date: Sendable {
   fileprivate var _seconds: Double? = nil
 }
 
-public struct TSP_IndexSet: Sendable {
+public nonisolated struct TSP_IndexSet: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -417,163 +369,129 @@ public struct TSP_IndexSet: Sendable {
   public init() {}
 }
 
-public struct TSP_Color: Sendable {
+public nonisolated struct TSP_Color: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var model: TSP_Color.ColorModel {
-    get {return _model ?? .rgb}
+    get {_model ?? .rgb}
     set {_model = newValue}
   }
   /// Returns true if `model` has been explicitly set.
-  public var hasModel: Bool {return self._model != nil}
+  public var hasModel: Bool {self._model != nil}
   /// Clears the value of `model`. Subsequent reads from it will return its default value.
   public mutating func clearModel() {self._model = nil}
 
   public var r: Float {
-    get {return _r ?? 0}
+    get {_r ?? 0}
     set {_r = newValue}
   }
   /// Returns true if `r` has been explicitly set.
-  public var hasR: Bool {return self._r != nil}
+  public var hasR: Bool {self._r != nil}
   /// Clears the value of `r`. Subsequent reads from it will return its default value.
   public mutating func clearR() {self._r = nil}
 
   public var g: Float {
-    get {return _g ?? 0}
+    get {_g ?? 0}
     set {_g = newValue}
   }
   /// Returns true if `g` has been explicitly set.
-  public var hasG: Bool {return self._g != nil}
+  public var hasG: Bool {self._g != nil}
   /// Clears the value of `g`. Subsequent reads from it will return its default value.
   public mutating func clearG() {self._g = nil}
 
   public var b: Float {
-    get {return _b ?? 0}
+    get {_b ?? 0}
     set {_b = newValue}
   }
   /// Returns true if `b` has been explicitly set.
-  public var hasB: Bool {return self._b != nil}
+  public var hasB: Bool {self._b != nil}
   /// Clears the value of `b`. Subsequent reads from it will return its default value.
   public mutating func clearB() {self._b = nil}
 
   public var rgbspace: TSP_Color.RGBColorSpace {
-    get {return _rgbspace ?? .srgb}
+    get {_rgbspace ?? .srgb}
     set {_rgbspace = newValue}
   }
   /// Returns true if `rgbspace` has been explicitly set.
-  public var hasRgbspace: Bool {return self._rgbspace != nil}
+  public var hasRgbspace: Bool {self._rgbspace != nil}
   /// Clears the value of `rgbspace`. Subsequent reads from it will return its default value.
   public mutating func clearRgbspace() {self._rgbspace = nil}
 
   public var a: Float {
-    get {return _a ?? 1}
+    get {_a ?? 1}
     set {_a = newValue}
   }
   /// Returns true if `a` has been explicitly set.
-  public var hasA: Bool {return self._a != nil}
+  public var hasA: Bool {self._a != nil}
   /// Clears the value of `a`. Subsequent reads from it will return its default value.
   public mutating func clearA() {self._a = nil}
 
   public var c: Float {
-    get {return _c ?? 0}
+    get {_c ?? 0}
     set {_c = newValue}
   }
   /// Returns true if `c` has been explicitly set.
-  public var hasC: Bool {return self._c != nil}
+  public var hasC: Bool {self._c != nil}
   /// Clears the value of `c`. Subsequent reads from it will return its default value.
   public mutating func clearC() {self._c = nil}
 
   public var m: Float {
-    get {return _m ?? 0}
+    get {_m ?? 0}
     set {_m = newValue}
   }
   /// Returns true if `m` has been explicitly set.
-  public var hasM: Bool {return self._m != nil}
+  public var hasM: Bool {self._m != nil}
   /// Clears the value of `m`. Subsequent reads from it will return its default value.
   public mutating func clearM() {self._m = nil}
 
   public var y: Float {
-    get {return _y ?? 0}
+    get {_y ?? 0}
     set {_y = newValue}
   }
   /// Returns true if `y` has been explicitly set.
-  public var hasY: Bool {return self._y != nil}
+  public var hasY: Bool {self._y != nil}
   /// Clears the value of `y`. Subsequent reads from it will return its default value.
   public mutating func clearY() {self._y = nil}
 
   public var k: Float {
-    get {return _k ?? 0}
+    get {_k ?? 0}
     set {_k = newValue}
   }
   /// Returns true if `k` has been explicitly set.
-  public var hasK: Bool {return self._k != nil}
+  public var hasK: Bool {self._k != nil}
   /// Clears the value of `k`. Subsequent reads from it will return its default value.
   public mutating func clearK() {self._k = nil}
 
   public var w: Float {
-    get {return _w ?? 0}
+    get {_w ?? 0}
     set {_w = newValue}
   }
   /// Returns true if `w` has been explicitly set.
-  public var hasW: Bool {return self._w != nil}
+  public var hasW: Bool {self._w != nil}
   /// Clears the value of `w`. Subsequent reads from it will return its default value.
   public mutating func clearW() {self._w = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ColorModel: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case rgb // = 1
-    case cmyk // = 2
-    case white // = 3
+  public nonisolated enum ColorModel: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case rgb = 1
+    case cmyk = 2
+    case white = 3
 
     public init() {
       self = .rgb
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 1: self = .rgb
-      case 2: self = .cmyk
-      case 3: self = .white
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .rgb: return 1
-      case .cmyk: return 2
-      case .white: return 3
-      }
-    }
-
   }
 
-  public enum RGBColorSpace: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case srgb // = 1
-    case p3 // = 2
+  public nonisolated enum RGBColorSpace: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case srgb = 1
+    case p3 = 2
 
     public init() {
       self = .srgb
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 1: self = .srgb
-      case 2: self = .p3
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .srgb: return 1
-      case .p3: return 2
-      }
     }
 
   }
@@ -593,7 +511,7 @@ public struct TSP_Color: Sendable {
   fileprivate var _w: Float? = nil
 }
 
-public struct TSP_Path: Sendable {
+public nonisolated struct TSP_Path: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -602,52 +520,30 @@ public struct TSP_Path: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ElementType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case moveTo // = 1
-    case lineTo // = 2
-    case quadCurveTo // = 3
-    case curveTo // = 4
-    case closeSubpath // = 5
+  public nonisolated enum ElementType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case moveTo = 1
+    case lineTo = 2
+    case quadCurveTo = 3
+    case curveTo = 4
+    case closeSubpath = 5
 
     public init() {
       self = .moveTo
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 1: self = .moveTo
-      case 2: self = .lineTo
-      case 3: self = .quadCurveTo
-      case 4: self = .curveTo
-      case 5: self = .closeSubpath
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .moveTo: return 1
-      case .lineTo: return 2
-      case .quadCurveTo: return 3
-      case .curveTo: return 4
-      case .closeSubpath: return 5
-      }
-    }
-
   }
 
-  public struct Element: Sendable {
+  public nonisolated struct Element: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var type: TSP_Path.ElementType {
-      get {return _type ?? .moveTo}
+      get {_type ?? .moveTo}
       set {_type = newValue}
     }
     /// Returns true if `type` has been explicitly set.
-    public var hasType: Bool {return self._type != nil}
+    public var hasType: Bool {self._type != nil}
     /// Clears the value of `type`. Subsequent reads from it will return its default value.
     public mutating func clearType() {self._type = nil}
 
@@ -663,7 +559,7 @@ public struct TSP_Path: Sendable {
   public init() {}
 }
 
-public struct TSP_ReferenceDictionary: Sendable {
+public nonisolated struct TSP_ReferenceDictionary: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -672,26 +568,26 @@ public struct TSP_ReferenceDictionary: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct Entry: Sendable {
+  public nonisolated struct Entry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var key: TSP_Reference {
-      get {return _key ?? TSP_Reference()}
+      get {_key ?? TSP_Reference()}
       set {_key = newValue}
     }
     /// Returns true if `key` has been explicitly set.
-    public var hasKey: Bool {return self._key != nil}
+    public var hasKey: Bool {self._key != nil}
     /// Clears the value of `key`. Subsequent reads from it will return its default value.
     public mutating func clearKey() {self._key = nil}
 
     public var value: TSP_Reference {
-      get {return _value ?? TSP_Reference()}
+      get {_value ?? TSP_Reference()}
       set {_value = newValue}
     }
     /// Returns true if `value` has been explicitly set.
-    public var hasValue: Bool {return self._value != nil}
+    public var hasValue: Bool {self._value != nil}
     /// Clears the value of `value`. Subsequent reads from it will return its default value.
     public mutating func clearValue() {self._value = nil}
 
@@ -706,26 +602,26 @@ public struct TSP_ReferenceDictionary: Sendable {
   public init() {}
 }
 
-public struct TSP_UUID: Sendable {
+public nonisolated struct TSP_UUID: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var lower: UInt64 {
-    get {return _lower ?? 0}
+    get {_lower ?? 0}
     set {_lower = newValue}
   }
   /// Returns true if `lower` has been explicitly set.
-  public var hasLower: Bool {return self._lower != nil}
+  public var hasLower: Bool {self._lower != nil}
   /// Clears the value of `lower`. Subsequent reads from it will return its default value.
   public mutating func clearLower() {self._lower = nil}
 
   public var upper: UInt64 {
-    get {return _upper ?? 0}
+    get {_upper ?? 0}
     set {_upper = newValue}
   }
   /// Returns true if `upper` has been explicitly set.
-  public var hasUpper: Bool {return self._upper != nil}
+  public var hasUpper: Bool {self._upper != nil}
   /// Clears the value of `upper`. Subsequent reads from it will return its default value.
   public mutating func clearUpper() {self._upper = nil}
 
@@ -737,53 +633,53 @@ public struct TSP_UUID: Sendable {
   fileprivate var _upper: UInt64? = nil
 }
 
-public struct TSP_CFUUIDArchive: @unchecked Sendable {
+public nonisolated struct TSP_CFUUIDArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var uuidBytes: Data {
-    get {return _uuidBytes ?? Data()}
+    get {_uuidBytes ?? Data()}
     set {_uuidBytes = newValue}
   }
   /// Returns true if `uuidBytes` has been explicitly set.
-  public var hasUuidBytes: Bool {return self._uuidBytes != nil}
+  public var hasUuidBytes: Bool {self._uuidBytes != nil}
   /// Clears the value of `uuidBytes`. Subsequent reads from it will return its default value.
   public mutating func clearUuidBytes() {self._uuidBytes = nil}
 
   public var uuidW0: UInt32 {
-    get {return _uuidW0 ?? 0}
+    get {_uuidW0 ?? 0}
     set {_uuidW0 = newValue}
   }
   /// Returns true if `uuidW0` has been explicitly set.
-  public var hasUuidW0: Bool {return self._uuidW0 != nil}
+  public var hasUuidW0: Bool {self._uuidW0 != nil}
   /// Clears the value of `uuidW0`. Subsequent reads from it will return its default value.
   public mutating func clearUuidW0() {self._uuidW0 = nil}
 
   public var uuidW1: UInt32 {
-    get {return _uuidW1 ?? 0}
+    get {_uuidW1 ?? 0}
     set {_uuidW1 = newValue}
   }
   /// Returns true if `uuidW1` has been explicitly set.
-  public var hasUuidW1: Bool {return self._uuidW1 != nil}
+  public var hasUuidW1: Bool {self._uuidW1 != nil}
   /// Clears the value of `uuidW1`. Subsequent reads from it will return its default value.
   public mutating func clearUuidW1() {self._uuidW1 = nil}
 
   public var uuidW2: UInt32 {
-    get {return _uuidW2 ?? 0}
+    get {_uuidW2 ?? 0}
     set {_uuidW2 = newValue}
   }
   /// Returns true if `uuidW2` has been explicitly set.
-  public var hasUuidW2: Bool {return self._uuidW2 != nil}
+  public var hasUuidW2: Bool {self._uuidW2 != nil}
   /// Clears the value of `uuidW2`. Subsequent reads from it will return its default value.
   public mutating func clearUuidW2() {self._uuidW2 = nil}
 
   public var uuidW3: UInt32 {
-    get {return _uuidW3 ?? 0}
+    get {_uuidW3 ?? 0}
     set {_uuidW3 = newValue}
   }
   /// Returns true if `uuidW3` has been explicitly set.
-  public var hasUuidW3: Bool {return self._uuidW3 != nil}
+  public var hasUuidW3: Bool {self._uuidW3 != nil}
   /// Clears the value of `uuidW3`. Subsequent reads from it will return its default value.
   public mutating func clearUuidW3() {self._uuidW3 = nil}
 
@@ -798,7 +694,7 @@ public struct TSP_CFUUIDArchive: @unchecked Sendable {
   fileprivate var _uuidW3: UInt32? = nil
 }
 
-public struct TSP_UUIDSetArchive: Sendable {
+public nonisolated struct TSP_UUIDSetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -810,7 +706,7 @@ public struct TSP_UUIDSetArchive: Sendable {
   public init() {}
 }
 
-public struct TSP_UUIDMapArchive: Sendable {
+public nonisolated struct TSP_UUIDMapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -824,7 +720,7 @@ public struct TSP_UUIDMapArchive: Sendable {
   public init() {}
 }
 
-public struct TSP_UUIDMultiMapArchive: Sendable {
+public nonisolated struct TSP_UUIDMultiMapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -838,26 +734,26 @@ public struct TSP_UUIDMultiMapArchive: Sendable {
   public init() {}
 }
 
-public struct TSP_UUIDCoordArchive: Sendable {
+public nonisolated struct TSP_UUIDCoordArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var rowUid: TSP_UUID {
-    get {return _rowUid ?? TSP_UUID()}
+    get {_rowUid ?? TSP_UUID()}
     set {_rowUid = newValue}
   }
   /// Returns true if `rowUid` has been explicitly set.
-  public var hasRowUid: Bool {return self._rowUid != nil}
+  public var hasRowUid: Bool {self._rowUid != nil}
   /// Clears the value of `rowUid`. Subsequent reads from it will return its default value.
   public mutating func clearRowUid() {self._rowUid = nil}
 
   public var columnUid: TSP_UUID {
-    get {return _columnUid ?? TSP_UUID()}
+    get {_columnUid ?? TSP_UUID()}
     set {_columnUid = newValue}
   }
   /// Returns true if `columnUid` has been explicitly set.
-  public var hasColumnUid: Bool {return self._columnUid != nil}
+  public var hasColumnUid: Bool {self._columnUid != nil}
   /// Clears the value of `columnUid`. Subsequent reads from it will return its default value.
   public mutating func clearColumnUid() {self._columnUid = nil}
 
@@ -869,7 +765,7 @@ public struct TSP_UUIDCoordArchive: Sendable {
   fileprivate var _columnUid: TSP_UUID? = nil
 }
 
-public struct TSP_UUIDRectArchive: Sendable {
+public nonisolated struct TSP_UUIDRectArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -883,17 +779,17 @@ public struct TSP_UUIDRectArchive: Sendable {
   public init() {}
 }
 
-public struct TSP_SparseUUIDArray: Sendable {
+public nonisolated struct TSP_SparseUUIDArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var count: UInt32 {
-    get {return _count ?? 0}
+    get {_count ?? 0}
     set {_count = newValue}
   }
   /// Returns true if `count` has been explicitly set.
-  public var hasCount: Bool {return self._count != nil}
+  public var hasCount: Bool {self._count != nil}
   /// Clears the value of `count`. Subsequent reads from it will return its default value.
   public mutating func clearCount() {self._count = nil}
 
@@ -901,26 +797,26 @@ public struct TSP_SparseUUIDArray: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct Entry: Sendable {
+  public nonisolated struct Entry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var index: UInt32 {
-      get {return _index ?? 0}
+      get {_index ?? 0}
       set {_index = newValue}
     }
     /// Returns true if `index` has been explicitly set.
-    public var hasIndex: Bool {return self._index != nil}
+    public var hasIndex: Bool {self._index != nil}
     /// Clears the value of `index`. Subsequent reads from it will return its default value.
     public mutating func clearIndex() {self._index = nil}
 
     public var uuid: TSP_UUID {
-      get {return _uuid ?? TSP_UUID()}
+      get {_uuid ?? TSP_UUID()}
       set {_uuid = newValue}
     }
     /// Returns true if `uuid` has been explicitly set.
-    public var hasUuid: Bool {return self._uuid != nil}
+    public var hasUuid: Bool {self._uuid != nil}
     /// Clears the value of `uuid`. Subsequent reads from it will return its default value.
     public mutating func clearUuid() {self._uuid = nil}
 
@@ -937,7 +833,7 @@ public struct TSP_SparseUUIDArray: Sendable {
   fileprivate var _count: UInt32? = nil
 }
 
-public struct TSP_UUIDPath: Sendable {
+public nonisolated struct TSP_UUIDPath: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -949,17 +845,17 @@ public struct TSP_UUIDPath: Sendable {
   public init() {}
 }
 
-public struct TSP_SparseUUIDPathArray: Sendable {
+public nonisolated struct TSP_SparseUUIDPathArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var count: UInt32 {
-    get {return _count ?? 0}
+    get {_count ?? 0}
     set {_count = newValue}
   }
   /// Returns true if `count` has been explicitly set.
-  public var hasCount: Bool {return self._count != nil}
+  public var hasCount: Bool {self._count != nil}
   /// Clears the value of `count`. Subsequent reads from it will return its default value.
   public mutating func clearCount() {self._count = nil}
 
@@ -967,26 +863,26 @@ public struct TSP_SparseUUIDPathArray: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct Entry: Sendable {
+  public nonisolated struct Entry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var index: UInt32 {
-      get {return _index ?? 0}
+      get {_index ?? 0}
       set {_index = newValue}
     }
     /// Returns true if `index` has been explicitly set.
-    public var hasIndex: Bool {return self._index != nil}
+    public var hasIndex: Bool {self._index != nil}
     /// Clears the value of `index`. Subsequent reads from it will return its default value.
     public mutating func clearIndex() {self._index = nil}
 
     public var uuidPath: TSP_UUIDPath {
-      get {return _uuidPath ?? TSP_UUIDPath()}
+      get {_uuidPath ?? TSP_UUIDPath()}
       set {_uuidPath = newValue}
     }
     /// Returns true if `uuidPath` has been explicitly set.
-    public var hasUuidPath: Bool {return self._uuidPath != nil}
+    public var hasUuidPath: Bool {self._uuidPath != nil}
     /// Clears the value of `uuidPath`. Subsequent reads from it will return its default value.
     public mutating func clearUuidPath() {self._uuidPath = nil}
 
@@ -1003,96 +899,96 @@ public struct TSP_SparseUUIDPathArray: Sendable {
   fileprivate var _count: UInt32? = nil
 }
 
-public struct TSP_PasteboardObject: @unchecked Sendable {
+public nonisolated struct TSP_PasteboardObject: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var stylesheet: TSP_Reference {
-    get {return _storage._stylesheet ?? TSP_Reference()}
+    get {_storage._stylesheet ?? TSP_Reference()}
     set {_uniqueStorage()._stylesheet = newValue}
   }
   /// Returns true if `stylesheet` has been explicitly set.
-  public var hasStylesheet: Bool {return _storage._stylesheet != nil}
+  public var hasStylesheet: Bool {_storage._stylesheet != nil}
   /// Clears the value of `stylesheet`. Subsequent reads from it will return its default value.
   public mutating func clearStylesheet() {_uniqueStorage()._stylesheet = nil}
 
   public var drawables: [TSP_Reference] {
-    get {return _storage._drawables}
+    get {_storage._drawables}
     set {_uniqueStorage()._drawables = newValue}
   }
 
   public var styles: [TSP_Reference] {
-    get {return _storage._styles}
+    get {_storage._styles}
     set {_uniqueStorage()._styles = newValue}
   }
 
   public var wpStorage: TSP_Reference {
-    get {return _storage._wpStorage ?? TSP_Reference()}
+    get {_storage._wpStorage ?? TSP_Reference()}
     set {_uniqueStorage()._wpStorage = newValue}
   }
   /// Returns true if `wpStorage` has been explicitly set.
-  public var hasWpStorage: Bool {return _storage._wpStorage != nil}
+  public var hasWpStorage: Bool {_storage._wpStorage != nil}
   /// Clears the value of `wpStorage`. Subsequent reads from it will return its default value.
   public mutating func clearWpStorage() {_uniqueStorage()._wpStorage = nil}
 
   public var guideStorage: TSP_Reference {
-    get {return _storage._guideStorage ?? TSP_Reference()}
+    get {_storage._guideStorage ?? TSP_Reference()}
     set {_uniqueStorage()._guideStorage = newValue}
   }
   /// Returns true if `guideStorage` has been explicitly set.
-  public var hasGuideStorage: Bool {return _storage._guideStorage != nil}
+  public var hasGuideStorage: Bool {_storage._guideStorage != nil}
   /// Clears the value of `guideStorage`. Subsequent reads from it will return its default value.
   public mutating func clearGuideStorage() {_uniqueStorage()._guideStorage = nil}
 
   public var appNativeObject: TSP_Reference {
-    get {return _storage._appNativeObject ?? TSP_Reference()}
+    get {_storage._appNativeObject ?? TSP_Reference()}
     set {_uniqueStorage()._appNativeObject = newValue}
   }
   /// Returns true if `appNativeObject` has been explicitly set.
-  public var hasAppNativeObject: Bool {return _storage._appNativeObject != nil}
+  public var hasAppNativeObject: Bool {_storage._appNativeObject != nil}
   /// Clears the value of `appNativeObject`. Subsequent reads from it will return its default value.
   public mutating func clearAppNativeObject() {_uniqueStorage()._appNativeObject = nil}
 
   public var isTextPrimary: Bool {
-    get {return _storage._isTextPrimary ?? false}
+    get {_storage._isTextPrimary ?? false}
     set {_uniqueStorage()._isTextPrimary = newValue}
   }
   /// Returns true if `isTextPrimary` has been explicitly set.
-  public var hasIsTextPrimary: Bool {return _storage._isTextPrimary != nil}
+  public var hasIsTextPrimary: Bool {_storage._isTextPrimary != nil}
   /// Clears the value of `isTextPrimary`. Subsequent reads from it will return its default value.
   public mutating func clearIsTextPrimary() {_uniqueStorage()._isTextPrimary = nil}
 
   public var isSmart: Bool {
-    get {return _storage._isSmart ?? false}
+    get {_storage._isSmart ?? false}
     set {_uniqueStorage()._isSmart = newValue}
   }
   /// Returns true if `isSmart` has been explicitly set.
-  public var hasIsSmart: Bool {return _storage._isSmart != nil}
+  public var hasIsSmart: Bool {_storage._isSmart != nil}
   /// Clears the value of `isSmart`. Subsequent reads from it will return its default value.
   public mutating func clearIsSmart() {_uniqueStorage()._isSmart = nil}
 
   public var presets: [TSP_Reference] {
-    get {return _storage._presets}
+    get {_storage._presets}
     set {_uniqueStorage()._presets = newValue}
   }
 
   public var topLevelObjects: [TSP_Reference] {
-    get {return _storage._topLevelObjects}
+    get {_storage._topLevelObjects}
     set {_uniqueStorage()._topLevelObjects = newValue}
   }
 
   public var nativeContentDescription: TSP_Reference {
-    get {return _storage._nativeContentDescription ?? TSP_Reference()}
+    get {_storage._nativeContentDescription ?? TSP_Reference()}
     set {_uniqueStorage()._nativeContentDescription = newValue}
   }
   /// Returns true if `nativeContentDescription` has been explicitly set.
-  public var hasNativeContentDescription: Bool {return _storage._nativeContentDescription != nil}
+  public var hasNativeContentDescription: Bool {_storage._nativeContentDescription != nil}
   /// Clears the value of `nativeContentDescription`. Subsequent reads from it will return its default value.
   public mutating func clearNativeContentDescription() {_uniqueStorage()._nativeContentDescription = nil}
 
   public var textRanges: [TSP_Range] {
-    get {return _storage._textRanges}
+    get {_storage._textRanges}
     set {_uniqueStorage()._textRanges = newValue}
   }
 
@@ -1103,7 +999,7 @@ public struct TSP_PasteboardObject: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSP_ObjectCollection: Sendable {
+public nonisolated struct TSP_ObjectCollection: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1115,17 +1011,17 @@ public struct TSP_ObjectCollection: Sendable {
   public init() {}
 }
 
-public struct TSP_ObjectContainer: Sendable {
+public nonisolated struct TSP_ObjectContainer: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var identifier: UInt32 {
-    get {return _identifier ?? 0}
+    get {_identifier ?? 0}
     set {_identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return self._identifier != nil}
+  public var hasIdentifier: Bool {self._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {self._identifier = nil}
 
@@ -1138,7 +1034,7 @@ public struct TSP_ObjectContainer: Sendable {
   fileprivate var _identifier: UInt32? = nil
 }
 
-public struct TSP_DataAttributes: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSP_DataAttributes: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1150,35 +1046,35 @@ public struct TSP_DataAttributes: SwiftProtobuf.ExtensibleMessage, Sendable {
   public var _protobuf_extensionFieldValues = SwiftProtobuf.ExtensionFieldValueSet()
 }
 
-public struct TSP_LargeArraySegment: Sendable {
+public nonisolated struct TSP_LargeArraySegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var shouldDelayArchiving: Bool {
-    get {return _shouldDelayArchiving ?? false}
+    get {_shouldDelayArchiving ?? false}
     set {_shouldDelayArchiving = newValue}
   }
   /// Returns true if `shouldDelayArchiving` has been explicitly set.
-  public var hasShouldDelayArchiving: Bool {return self._shouldDelayArchiving != nil}
+  public var hasShouldDelayArchiving: Bool {self._shouldDelayArchiving != nil}
   /// Clears the value of `shouldDelayArchiving`. Subsequent reads from it will return its default value.
   public mutating func clearShouldDelayArchiving() {self._shouldDelayArchiving = nil}
 
   public var delayedArchivingPriority: UInt32 {
-    get {return _delayedArchivingPriority ?? 0}
+    get {_delayedArchivingPriority ?? 0}
     set {_delayedArchivingPriority = newValue}
   }
   /// Returns true if `delayedArchivingPriority` has been explicitly set.
-  public var hasDelayedArchivingPriority: Bool {return self._delayedArchivingPriority != nil}
+  public var hasDelayedArchivingPriority: Bool {self._delayedArchivingPriority != nil}
   /// Clears the value of `delayedArchivingPriority`. Subsequent reads from it will return its default value.
   public mutating func clearDelayedArchivingPriority() {self._delayedArchivingPriority = nil}
 
   public var packageLocator: String {
-    get {return _packageLocator ?? String()}
+    get {_packageLocator ?? String()}
     set {_packageLocator = newValue}
   }
   /// Returns true if `packageLocator` has been explicitly set.
-  public var hasPackageLocator: Bool {return self._packageLocator != nil}
+  public var hasPackageLocator: Bool {self._packageLocator != nil}
   /// Clears the value of `packageLocator`. Subsequent reads from it will return its default value.
   public mutating func clearPackageLocator() {self._packageLocator = nil}
 
@@ -1191,17 +1087,17 @@ public struct TSP_LargeArraySegment: Sendable {
   fileprivate var _packageLocator: String? = nil
 }
 
-public struct TSP_LargeNumberArraySegment: Sendable {
+public nonisolated struct TSP_LargeNumberArraySegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArraySegment: TSP_LargeArraySegment {
-    get {return _largeArraySegment ?? TSP_LargeArraySegment()}
+    get {_largeArraySegment ?? TSP_LargeArraySegment()}
     set {_largeArraySegment = newValue}
   }
   /// Returns true if `largeArraySegment` has been explicitly set.
-  public var hasLargeArraySegment: Bool {return self._largeArraySegment != nil}
+  public var hasLargeArraySegment: Bool {self._largeArraySegment != nil}
   /// Clears the value of `largeArraySegment`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArraySegment() {self._largeArraySegment = nil}
 
@@ -1214,17 +1110,17 @@ public struct TSP_LargeNumberArraySegment: Sendable {
   fileprivate var _largeArraySegment: TSP_LargeArraySegment? = nil
 }
 
-public struct TSP_LargeStringArraySegment: Sendable {
+public nonisolated struct TSP_LargeStringArraySegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArraySegment: TSP_LargeArraySegment {
-    get {return _largeArraySegment ?? TSP_LargeArraySegment()}
+    get {_largeArraySegment ?? TSP_LargeArraySegment()}
     set {_largeArraySegment = newValue}
   }
   /// Returns true if `largeArraySegment` has been explicitly set.
-  public var hasLargeArraySegment: Bool {return self._largeArraySegment != nil}
+  public var hasLargeArraySegment: Bool {self._largeArraySegment != nil}
   /// Clears the value of `largeArraySegment`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArraySegment() {self._largeArraySegment = nil}
 
@@ -1232,17 +1128,17 @@ public struct TSP_LargeStringArraySegment: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct OptionalElement: Sendable {
+  public nonisolated struct OptionalElement: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var element: String {
-      get {return _element ?? String()}
+      get {_element ?? String()}
       set {_element = newValue}
     }
     /// Returns true if `element` has been explicitly set.
-    public var hasElement: Bool {return self._element != nil}
+    public var hasElement: Bool {self._element != nil}
     /// Clears the value of `element`. Subsequent reads from it will return its default value.
     public mutating func clearElement() {self._element = nil}
 
@@ -1258,17 +1154,17 @@ public struct TSP_LargeStringArraySegment: Sendable {
   fileprivate var _largeArraySegment: TSP_LargeArraySegment? = nil
 }
 
-public struct TSP_LargeUUIDArraySegment: Sendable {
+public nonisolated struct TSP_LargeUUIDArraySegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArraySegment: TSP_LargeArraySegment {
-    get {return _largeArraySegment ?? TSP_LargeArraySegment()}
+    get {_largeArraySegment ?? TSP_LargeArraySegment()}
     set {_largeArraySegment = newValue}
   }
   /// Returns true if `largeArraySegment` has been explicitly set.
-  public var hasLargeArraySegment: Bool {return self._largeArraySegment != nil}
+  public var hasLargeArraySegment: Bool {self._largeArraySegment != nil}
   /// Clears the value of `largeArraySegment`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArraySegment() {self._largeArraySegment = nil}
 
@@ -1281,17 +1177,17 @@ public struct TSP_LargeUUIDArraySegment: Sendable {
   fileprivate var _largeArraySegment: TSP_LargeArraySegment? = nil
 }
 
-public struct TSP_LargeLazyObjectArraySegment: Sendable {
+public nonisolated struct TSP_LargeLazyObjectArraySegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArraySegment: TSP_LargeArraySegment {
-    get {return _largeArraySegment ?? TSP_LargeArraySegment()}
+    get {_largeArraySegment ?? TSP_LargeArraySegment()}
     set {_largeArraySegment = newValue}
   }
   /// Returns true if `largeArraySegment` has been explicitly set.
-  public var hasLargeArraySegment: Bool {return self._largeArraySegment != nil}
+  public var hasLargeArraySegment: Bool {self._largeArraySegment != nil}
   /// Clears the value of `largeArraySegment`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArraySegment() {self._largeArraySegment = nil}
 
@@ -1304,17 +1200,17 @@ public struct TSP_LargeLazyObjectArraySegment: Sendable {
   fileprivate var _largeArraySegment: TSP_LargeArraySegment? = nil
 }
 
-public struct TSP_LargeObjectArraySegment: Sendable {
+public nonisolated struct TSP_LargeObjectArraySegment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArraySegment: TSP_LargeArraySegment {
-    get {return _largeArraySegment ?? TSP_LargeArraySegment()}
+    get {_largeArraySegment ?? TSP_LargeArraySegment()}
     set {_largeArraySegment = newValue}
   }
   /// Returns true if `largeArraySegment` has been explicitly set.
-  public var hasLargeArraySegment: Bool {return self._largeArraySegment != nil}
+  public var hasLargeArraySegment: Bool {self._largeArraySegment != nil}
   /// Clears the value of `largeArraySegment`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArraySegment() {self._largeArraySegment = nil}
 
@@ -1327,7 +1223,7 @@ public struct TSP_LargeObjectArraySegment: Sendable {
   fileprivate var _largeArraySegment: TSP_LargeArraySegment? = nil
 }
 
-public struct TSP_LargeArray: Sendable {
+public nonisolated struct TSP_LargeArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1337,65 +1233,65 @@ public struct TSP_LargeArray: Sendable {
   public var segments: [TSP_Reference] = []
 
   public var maxSegmentElementCount: UInt64 {
-    get {return _maxSegmentElementCount ?? 0}
+    get {_maxSegmentElementCount ?? 0}
     set {_maxSegmentElementCount = newValue}
   }
   /// Returns true if `maxSegmentElementCount` has been explicitly set.
-  public var hasMaxSegmentElementCount: Bool {return self._maxSegmentElementCount != nil}
+  public var hasMaxSegmentElementCount: Bool {self._maxSegmentElementCount != nil}
   /// Clears the value of `maxSegmentElementCount`. Subsequent reads from it will return its default value.
   public mutating func clearMaxSegmentElementCount() {self._maxSegmentElementCount = nil}
 
   public var maxSegmentSize: UInt64 {
-    get {return _maxSegmentSize ?? 0}
+    get {_maxSegmentSize ?? 0}
     set {_maxSegmentSize = newValue}
   }
   /// Returns true if `maxSegmentSize` has been explicitly set.
-  public var hasMaxSegmentSize: Bool {return self._maxSegmentSize != nil}
+  public var hasMaxSegmentSize: Bool {self._maxSegmentSize != nil}
   /// Clears the value of `maxSegmentSize`. Subsequent reads from it will return its default value.
   public mutating func clearMaxSegmentSize() {self._maxSegmentSize = nil}
 
   public var shouldDelayArchiving: Bool {
-    get {return _shouldDelayArchiving ?? false}
+    get {_shouldDelayArchiving ?? false}
     set {_shouldDelayArchiving = newValue}
   }
   /// Returns true if `shouldDelayArchiving` has been explicitly set.
-  public var hasShouldDelayArchiving: Bool {return self._shouldDelayArchiving != nil}
+  public var hasShouldDelayArchiving: Bool {self._shouldDelayArchiving != nil}
   /// Clears the value of `shouldDelayArchiving`. Subsequent reads from it will return its default value.
   public mutating func clearShouldDelayArchiving() {self._shouldDelayArchiving = nil}
 
   public var delayedArchivingPriority: UInt32 {
-    get {return _delayedArchivingPriority ?? 0}
+    get {_delayedArchivingPriority ?? 0}
     set {_delayedArchivingPriority = newValue}
   }
   /// Returns true if `delayedArchivingPriority` has been explicitly set.
-  public var hasDelayedArchivingPriority: Bool {return self._delayedArchivingPriority != nil}
+  public var hasDelayedArchivingPriority: Bool {self._delayedArchivingPriority != nil}
   /// Clears the value of `delayedArchivingPriority`. Subsequent reads from it will return its default value.
   public mutating func clearDelayedArchivingPriority() {self._delayedArchivingPriority = nil}
 
   public var storeOutsideObjectArchive: Bool {
-    get {return _storeOutsideObjectArchive ?? false}
+    get {_storeOutsideObjectArchive ?? false}
     set {_storeOutsideObjectArchive = newValue}
   }
   /// Returns true if `storeOutsideObjectArchive` has been explicitly set.
-  public var hasStoreOutsideObjectArchive: Bool {return self._storeOutsideObjectArchive != nil}
+  public var hasStoreOutsideObjectArchive: Bool {self._storeOutsideObjectArchive != nil}
   /// Clears the value of `storeOutsideObjectArchive`. Subsequent reads from it will return its default value.
   public mutating func clearStoreOutsideObjectArchive() {self._storeOutsideObjectArchive = nil}
 
   public var estimatedByteSize: UInt64 {
-    get {return _estimatedByteSize ?? 0}
+    get {_estimatedByteSize ?? 0}
     set {_estimatedByteSize = newValue}
   }
   /// Returns true if `estimatedByteSize` has been explicitly set.
-  public var hasEstimatedByteSize: Bool {return self._estimatedByteSize != nil}
+  public var hasEstimatedByteSize: Bool {self._estimatedByteSize != nil}
   /// Clears the value of `estimatedByteSize`. Subsequent reads from it will return its default value.
   public mutating func clearEstimatedByteSize() {self._estimatedByteSize = nil}
 
   public var maxSegmentCost: UInt64 {
-    get {return _maxSegmentCost ?? 0}
+    get {_maxSegmentCost ?? 0}
     set {_maxSegmentCost = newValue}
   }
   /// Returns true if `maxSegmentCost` has been explicitly set.
-  public var hasMaxSegmentCost: Bool {return self._maxSegmentCost != nil}
+  public var hasMaxSegmentCost: Bool {self._maxSegmentCost != nil}
   /// Clears the value of `maxSegmentCost`. Subsequent reads from it will return its default value.
   public mutating func clearMaxSegmentCost() {self._maxSegmentCost = nil}
 
@@ -1412,17 +1308,17 @@ public struct TSP_LargeArray: Sendable {
   fileprivate var _maxSegmentCost: UInt64? = nil
 }
 
-public struct TSP_LargeNumberArray: Sendable {
+public nonisolated struct TSP_LargeNumberArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArray: TSP_LargeArray {
-    get {return _largeArray ?? TSP_LargeArray()}
+    get {_largeArray ?? TSP_LargeArray()}
     set {_largeArray = newValue}
   }
   /// Returns true if `largeArray` has been explicitly set.
-  public var hasLargeArray: Bool {return self._largeArray != nil}
+  public var hasLargeArray: Bool {self._largeArray != nil}
   /// Clears the value of `largeArray`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArray() {self._largeArray = nil}
 
@@ -1433,17 +1329,17 @@ public struct TSP_LargeNumberArray: Sendable {
   fileprivate var _largeArray: TSP_LargeArray? = nil
 }
 
-public struct TSP_LargeStringArray: Sendable {
+public nonisolated struct TSP_LargeStringArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArray: TSP_LargeArray {
-    get {return _largeArray ?? TSP_LargeArray()}
+    get {_largeArray ?? TSP_LargeArray()}
     set {_largeArray = newValue}
   }
   /// Returns true if `largeArray` has been explicitly set.
-  public var hasLargeArray: Bool {return self._largeArray != nil}
+  public var hasLargeArray: Bool {self._largeArray != nil}
   /// Clears the value of `largeArray`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArray() {self._largeArray = nil}
 
@@ -1454,17 +1350,17 @@ public struct TSP_LargeStringArray: Sendable {
   fileprivate var _largeArray: TSP_LargeArray? = nil
 }
 
-public struct TSP_LargeLazyObjectArray: Sendable {
+public nonisolated struct TSP_LargeLazyObjectArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArray: TSP_LargeArray {
-    get {return _largeArray ?? TSP_LargeArray()}
+    get {_largeArray ?? TSP_LargeArray()}
     set {_largeArray = newValue}
   }
   /// Returns true if `largeArray` has been explicitly set.
-  public var hasLargeArray: Bool {return self._largeArray != nil}
+  public var hasLargeArray: Bool {self._largeArray != nil}
   /// Clears the value of `largeArray`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArray() {self._largeArray = nil}
 
@@ -1475,17 +1371,17 @@ public struct TSP_LargeLazyObjectArray: Sendable {
   fileprivate var _largeArray: TSP_LargeArray? = nil
 }
 
-public struct TSP_LargeObjectArray: Sendable {
+public nonisolated struct TSP_LargeObjectArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArray: TSP_LargeArray {
-    get {return _largeArray ?? TSP_LargeArray()}
+    get {_largeArray ?? TSP_LargeArray()}
     set {_largeArray = newValue}
   }
   /// Returns true if `largeArray` has been explicitly set.
-  public var hasLargeArray: Bool {return self._largeArray != nil}
+  public var hasLargeArray: Bool {self._largeArray != nil}
   /// Clears the value of `largeArray`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArray() {self._largeArray = nil}
 
@@ -1496,17 +1392,17 @@ public struct TSP_LargeObjectArray: Sendable {
   fileprivate var _largeArray: TSP_LargeArray? = nil
 }
 
-public struct TSP_LargeUUIDArray: Sendable {
+public nonisolated struct TSP_LargeUUIDArray: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var largeArray: TSP_LargeArray {
-    get {return _largeArray ?? TSP_LargeArray()}
+    get {_largeArray ?? TSP_LargeArray()}
     set {_largeArray = newValue}
   }
   /// Returns true if `largeArray` has been explicitly set.
-  public var hasLargeArray: Bool {return self._largeArray != nil}
+  public var hasLargeArray: Bool {self._largeArray != nil}
   /// Clears the value of `largeArray`. Subsequent reads from it will return its default value.
   public mutating func clearLargeArray() {self._largeArray = nil}
 
@@ -1517,17 +1413,17 @@ public struct TSP_LargeUUIDArray: Sendable {
   fileprivate var _largeArray: TSP_LargeArray? = nil
 }
 
-public struct TSP_FieldOptions: Sendable {
+public nonisolated struct TSP_FieldOptions: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var metadataType: TSP_SpotlightMetadataType {
-    get {return _metadataType ?? .none}
+    get {_metadataType ?? .none}
     set {_metadataType = newValue}
   }
   /// Returns true if `metadataType` has been explicitly set.
-  public var hasMetadataType: Bool {return self._metadataType != nil}
+  public var hasMetadataType: Bool {self._metadataType != nil}
   /// Clears the value of `metadataType`. Subsequent reads from it will return its default value.
   public mutating func clearMetadataType() {self._metadataType = nil}
 
@@ -1547,7 +1443,7 @@ public struct TSP_FieldOptions: Sendable {
 // declaration. To avoid naming collisions, the names are prefixed with the name of
 // the scope where the extend directive occurs.
 
-extension SwiftProtobuf.Google_Protobuf_FieldOptions {
+nonisolated extension SwiftProtobuf.Google_Protobuf_FieldOptions {
 
   public var TSP_fieldOptions: TSP_FieldOptions {
     get {return getExtensionValue(ext: TSP_Extensions_field_options) ?? TSP_FieldOptions()}
@@ -1572,7 +1468,7 @@ extension SwiftProtobuf.Google_Protobuf_FieldOptions {
 /// this .proto file. It can be used any place an `SwiftProtobuf.ExtensionMap` is needed
 /// in parsing, or it can be combined with other `SwiftProtobuf.SimpleExtensionMap`s to create
 /// a larger `SwiftProtobuf.SimpleExtensionMap`.
-public let TSP_Tspmessages_Extensions: SwiftProtobuf.SimpleExtensionMap = [
+public nonisolated let TSP_Tspmessages_Extensions: SwiftProtobuf.SimpleExtensionMap = [
   TSP_Extensions_field_options
 ]
 
@@ -1580,46 +1476,26 @@ public let TSP_Tspmessages_Extensions: SwiftProtobuf.SimpleExtensionMap = [
 // constructing a `SimpleExtensionMap`, otherwise, use the above _Extension Properties_
 // accessors for the extension fields on the messages directly.
 
-public let TSP_Extensions_field_options = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSP_FieldOptions>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
+public nonisolated let TSP_Extensions_field_options = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSP_FieldOptions>, SwiftProtobuf.Google_Protobuf_FieldOptions>(
   _protobuf_fieldNumber: 51234,
   fieldName: "TSP.field_options"
 )
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSP"
+fileprivate nonisolated let _protobuf_package = "TSP"
 
-extension TSP_DataUploadStatus: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "DataUploadStatus_Pending"),
-    1: .same(proto: "DataUploadStatus_Reserved"),
-    2: .same(proto: "DataUploadStatus_UnableToReserve"),
-    3: .same(proto: "DataUploadStatus_Corrupted"),
-    4: .same(proto: "DataUploadStatus_DocumentMayExceedDocumentSizeLimit"),
-    5: .same(proto: "DataUploadStatus_Expired"),
-  ]
+nonisolated extension TSP_DataUploadStatus: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0DataUploadStatus_Pending\0\u{1}DataUploadStatus_Reserved\0\u{1}DataUploadStatus_UnableToReserve\0\u{1}DataUploadStatus_Corrupted\0\u{1}DataUploadStatus_DocumentMayExceedDocumentSizeLimit\0\u{1}DataUploadStatus_Expired\0")
 }
 
-extension TSP_SpotlightMetadataType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "None"),
-    1: .same(proto: "Text"),
-    2: .same(proto: "Author"),
-    3: .same(proto: "Font"),
-    4: .same(proto: "Table"),
-    5: .same(proto: "Sheet"),
-    6: .same(proto: "Chart"),
-    7: .same(proto: "Media"),
-  ]
+nonisolated extension TSP_SpotlightMetadataType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0None\0\u{1}Text\0\u{1}Author\0\u{1}Font\0\u{1}Table\0\u{1}Sheet\0\u{1}Chart\0\u{1}Media\0")
 }
 
-extension TSP_Reference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_Reference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Reference"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .standard(proto: "deprecated_type"),
-    3: .standard(proto: "deprecated_is_external"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{3}deprecated_type\0\u{3}deprecated_is_external\0")
 
   public var isInitialized: Bool {
     if self._identifier == nil {return false}
@@ -1666,11 +1542,9 @@ extension TSP_Reference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementa
   }
 }
 
-extension TSP_DataReference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DataReference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DataReference"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0")
 
   public var isInitialized: Bool {
     if self._identifier == nil {return false}
@@ -1707,12 +1581,9 @@ extension TSP_DataReference: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension TSP_SparseReferenceArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_SparseReferenceArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SparseReferenceArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "count"),
-    2: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}count\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if self._count == nil {return false}
@@ -1755,12 +1626,9 @@ extension TSP_SparseReferenceArray: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSP_SparseReferenceArray.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_SparseReferenceArray.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSP_SparseReferenceArray.protoMessageName + ".Entry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "index"),
-    2: .same(proto: "reference"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}index\0\u{1}reference\0")
 
   public var isInitialized: Bool {
     if self._index == nil {return false}
@@ -1804,12 +1672,9 @@ extension TSP_SparseReferenceArray.Entry: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSP_Point: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_Point: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Point"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "x"),
-    2: .same(proto: "y"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}x\0\u{1}y\0")
 
   public var isInitialized: Bool {
     if self._x == nil {return false}
@@ -1852,13 +1717,9 @@ extension TSP_Point: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementation
   }
 }
 
-extension TSP_Pose3D: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_Pose3D: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Pose3D"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "yaw"),
-    2: .same(proto: "pitch"),
-    3: .same(proto: "roll"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}yaw\0\u{1}pitch\0\u{1}roll\0")
 
   public var isInitialized: Bool {
     if self._yaw == nil {return false}
@@ -1907,12 +1768,9 @@ extension TSP_Pose3D: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementatio
   }
 }
 
-extension TSP_Rect: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_Rect: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Rect"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "origin"),
-    2: .same(proto: "size"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}origin\0\u{1}size\0")
 
   public var isInitialized: Bool {
     if self._origin == nil {return false}
@@ -1957,12 +1815,9 @@ extension TSP_Rect: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationB
   }
 }
 
-extension TSP_Size: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_Size: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Size"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "width"),
-    2: .same(proto: "height"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}width\0\u{1}height\0")
 
   public var isInitialized: Bool {
     if self._width == nil {return false}
@@ -2005,12 +1860,9 @@ extension TSP_Size: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationB
   }
 }
 
-extension TSP_Range: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_Range: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Range"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "location"),
-    2: .same(proto: "length"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}location\0\u{1}length\0")
 
   public var isInitialized: Bool {
     if self._location == nil {return false}
@@ -2053,11 +1905,9 @@ extension TSP_Range: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementation
   }
 }
 
-extension TSP_Date: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_Date: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Date"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "seconds"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}seconds\0")
 
   public var isInitialized: Bool {
     if self._seconds == nil {return false}
@@ -2094,11 +1944,9 @@ extension TSP_Date: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationB
   }
 }
 
-extension TSP_IndexSet: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_IndexSet: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".IndexSet"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "ranges"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}ranges\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.ranges) {return false}
@@ -2131,21 +1979,9 @@ extension TSP_IndexSet: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   }
 }
 
-extension TSP_Color: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_Color: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Color"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "model"),
-    3: .same(proto: "r"),
-    4: .same(proto: "g"),
-    5: .same(proto: "b"),
-    12: .same(proto: "rgbspace"),
-    6: .same(proto: "a"),
-    7: .same(proto: "c"),
-    8: .same(proto: "m"),
-    9: .same(proto: "y"),
-    10: .same(proto: "k"),
-    11: .same(proto: "w"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}model\0\u{2}\u{2}r\0\u{1}g\0\u{1}b\0\u{1}a\0\u{1}c\0\u{1}m\0\u{1}y\0\u{1}k\0\u{1}w\0\u{1}rgbspace\0")
 
   public var isInitialized: Bool {
     if self._model == nil {return false}
@@ -2232,26 +2068,17 @@ extension TSP_Color: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementation
   }
 }
 
-extension TSP_Color.ColorModel: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "rgb"),
-    2: .same(proto: "cmyk"),
-    3: .same(proto: "white"),
-  ]
+nonisolated extension TSP_Color.ColorModel: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}rgb\0\u{1}cmyk\0\u{1}white\0")
 }
 
-extension TSP_Color.RGBColorSpace: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "srgb"),
-    2: .same(proto: "p3"),
-  ]
+nonisolated extension TSP_Color.RGBColorSpace: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}srgb\0\u{1}p3\0")
 }
 
-extension TSP_Path: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_Path: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".Path"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "elements"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}elements\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.elements) {return false}
@@ -2284,22 +2111,13 @@ extension TSP_Path: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationB
   }
 }
 
-extension TSP_Path.ElementType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "moveTo"),
-    2: .same(proto: "lineTo"),
-    3: .same(proto: "quadCurveTo"),
-    4: .same(proto: "curveTo"),
-    5: .same(proto: "closeSubpath"),
-  ]
+nonisolated extension TSP_Path.ElementType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}moveTo\0\u{1}lineTo\0\u{1}quadCurveTo\0\u{1}curveTo\0\u{1}closeSubpath\0")
 }
 
-extension TSP_Path.Element: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_Path.Element: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSP_Path.protoMessageName + ".Element"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .same(proto: "points"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{1}points\0")
 
   public var isInitialized: Bool {
     if self._type == nil {return false}
@@ -2342,11 +2160,9 @@ extension TSP_Path.Element: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension TSP_ReferenceDictionary: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ReferenceDictionary: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ReferenceDictionary"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.entries) {return false}
@@ -2379,12 +2195,9 @@ extension TSP_ReferenceDictionary: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSP_ReferenceDictionary.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ReferenceDictionary.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSP_ReferenceDictionary.protoMessageName + ".Entry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "key"),
-    2: .same(proto: "value"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}key\0\u{1}value\0")
 
   public var isInitialized: Bool {
     if self._key == nil {return false}
@@ -2429,12 +2242,9 @@ extension TSP_ReferenceDictionary.Entry: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSP_UUID: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_UUID: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UUID"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "lower"),
-    2: .same(proto: "upper"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}lower\0\u{1}upper\0")
 
   public var isInitialized: Bool {
     if self._lower == nil {return false}
@@ -2477,15 +2287,9 @@ extension TSP_UUID: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationB
   }
 }
 
-extension TSP_CFUUIDArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_CFUUIDArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CFUUIDArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "uuid_bytes"),
-    2: .standard(proto: "uuid_w0"),
-    3: .standard(proto: "uuid_w1"),
-    4: .standard(proto: "uuid_w2"),
-    5: .standard(proto: "uuid_w3"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}uuid_bytes\0\u{3}uuid_w0\0\u{3}uuid_w1\0\u{3}uuid_w2\0\u{3}uuid_w3\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -2537,11 +2341,9 @@ extension TSP_CFUUIDArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   }
 }
 
-extension TSP_UUIDSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_UUIDSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UUIDSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uids"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uids\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.uids) {return false}
@@ -2574,12 +2376,9 @@ extension TSP_UUIDSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension TSP_UUIDMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_UUIDMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UUIDMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "source"),
-    2: .same(proto: "target"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}source\0\u{1}target\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.source) {return false}
@@ -2618,12 +2417,9 @@ extension TSP_UUIDMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension TSP_UUIDMultiMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_UUIDMultiMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UUIDMultiMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "source"),
-    2: .same(proto: "target"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}source\0\u{1}target\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.source) {return false}
@@ -2662,12 +2458,9 @@ extension TSP_UUIDMultiMapArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSP_UUIDCoordArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_UUIDCoordArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UUIDCoordArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "row_uid"),
-    2: .standard(proto: "column_uid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}row_uid\0\u{3}column_uid\0")
 
   public var isInitialized: Bool {
     if self._rowUid == nil {return false}
@@ -2712,12 +2505,9 @@ extension TSP_UUIDCoordArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSP_UUIDRectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_UUIDRectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UUIDRectArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "column_uids"),
-    2: .standard(proto: "row_uids"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}column_uids\0\u{3}row_uids\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.columnUids) {return false}
@@ -2756,12 +2546,9 @@ extension TSP_UUIDRectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSP_SparseUUIDArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_SparseUUIDArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SparseUUIDArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "count"),
-    2: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}count\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if self._count == nil {return false}
@@ -2804,12 +2591,9 @@ extension TSP_SparseUUIDArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSP_SparseUUIDArray.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_SparseUUIDArray.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSP_SparseUUIDArray.protoMessageName + ".Entry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "index"),
-    2: .same(proto: "uuid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}index\0\u{1}uuid\0")
 
   public var isInitialized: Bool {
     if self._index == nil {return false}
@@ -2853,11 +2637,9 @@ extension TSP_SparseUUIDArray.Entry: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSP_UUIDPath: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_UUIDPath: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UUIDPath"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuids"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uuids\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.uuids) {return false}
@@ -2890,12 +2672,9 @@ extension TSP_UUIDPath: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   }
 }
 
-extension TSP_SparseUUIDPathArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_SparseUUIDPathArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SparseUUIDPathArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "count"),
-    2: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}count\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if self._count == nil {return false}
@@ -2938,12 +2717,9 @@ extension TSP_SparseUUIDPathArray: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSP_SparseUUIDPathArray.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_SparseUUIDPathArray.Entry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSP_SparseUUIDPathArray.protoMessageName + ".Entry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "index"),
-    2: .standard(proto: "uuid_path"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}index\0\u{3}uuid_path\0")
 
   public var isInitialized: Bool {
     if self._index == nil {return false}
@@ -2987,22 +2763,9 @@ extension TSP_SparseUUIDPathArray.Entry: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSP_PasteboardObject: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_PasteboardObject: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PasteboardObject"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "stylesheet"),
-    2: .same(proto: "drawables"),
-    3: .same(proto: "styles"),
-    5: .standard(proto: "wp_storage"),
-    9: .standard(proto: "guide_storage"),
-    6: .standard(proto: "app_native_object"),
-    7: .standard(proto: "is_text_primary"),
-    8: .standard(proto: "is_smart"),
-    10: .same(proto: "presets"),
-    11: .standard(proto: "top_level_objects"),
-    12: .standard(proto: "native_content_description"),
-    13: .standard(proto: "text_ranges"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}stylesheet\0\u{1}drawables\0\u{1}styles\0\u{4}\u{2}wp_storage\0\u{3}app_native_object\0\u{3}is_text_primary\0\u{3}is_smart\0\u{3}guide_storage\0\u{1}presets\0\u{3}top_level_objects\0\u{3}native_content_description\0\u{3}text_ranges\0")
 
   fileprivate class _StorageClass {
     var _stylesheet: TSP_Reference? = nil
@@ -3018,15 +2781,11 @@ extension TSP_PasteboardObject: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
     var _nativeContentDescription: TSP_Reference? = nil
     var _textRanges: [TSP_Range] = []
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3167,11 +2926,9 @@ extension TSP_PasteboardObject: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSP_ObjectCollection: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ObjectCollection: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ObjectCollection"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "objects"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}objects\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.objects) {return false}
@@ -3204,12 +2961,9 @@ extension TSP_ObjectCollection: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSP_ObjectContainer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_ObjectContainer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ObjectContainer"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .same(proto: "objects"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{1}objects\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.objects) {return false}
@@ -3251,7 +3005,7 @@ extension TSP_ObjectContainer: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSP_DataAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_DataAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DataAttributes"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -3280,13 +3034,9 @@ extension TSP_DataAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension TSP_LargeArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeArraySegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "should_delay_archiving"),
-    2: .standard(proto: "delayed_archiving_priority"),
-    3: .standard(proto: "package_locator"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}should_delay_archiving\0\u{3}delayed_archiving_priority\0\u{3}package_locator\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3328,12 +3078,9 @@ extension TSP_LargeArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSP_LargeNumberArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeNumberArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeNumberArraySegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array_segment"),
-    2: .same(proto: "elements"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array_segment\0\u{1}elements\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3370,12 +3117,9 @@ extension TSP_LargeNumberArraySegment: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSP_LargeStringArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeStringArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeStringArraySegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array_segment"),
-    2: .same(proto: "elements"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array_segment\0\u{1}elements\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3412,11 +3156,9 @@ extension TSP_LargeStringArraySegment: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSP_LargeStringArraySegment.OptionalElement: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeStringArraySegment.OptionalElement: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSP_LargeStringArraySegment.protoMessageName + ".OptionalElement"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "element"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}element\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3448,12 +3190,9 @@ extension TSP_LargeStringArraySegment.OptionalElement: SwiftProtobuf.Message, Sw
   }
 }
 
-extension TSP_LargeUUIDArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeUUIDArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeUUIDArraySegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array_segment"),
-    2: .same(proto: "elements"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array_segment\0\u{1}elements\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.elements) {return false}
@@ -3495,12 +3234,9 @@ extension TSP_LargeUUIDArraySegment: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSP_LargeLazyObjectArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeLazyObjectArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeLazyObjectArraySegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array_segment"),
-    2: .same(proto: "elements"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array_segment\0\u{1}elements\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.elements) {return false}
@@ -3542,12 +3278,9 @@ extension TSP_LargeLazyObjectArraySegment: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSP_LargeObjectArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeObjectArraySegment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeObjectArraySegment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array_segment"),
-    2: .same(proto: "elements"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array_segment\0\u{1}elements\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.elements) {return false}
@@ -3589,19 +3322,9 @@ extension TSP_LargeObjectArraySegment: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSP_LargeArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "ranges"),
-    2: .same(proto: "segments"),
-    3: .standard(proto: "max_segment_element_count"),
-    4: .standard(proto: "max_segment_size"),
-    5: .standard(proto: "should_delay_archiving"),
-    6: .standard(proto: "delayed_archiving_priority"),
-    7: .standard(proto: "store_outside_object_archive"),
-    8: .standard(proto: "estimated_byte_size"),
-    9: .standard(proto: "max_segment_cost"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}ranges\0\u{1}segments\0\u{3}max_segment_element_count\0\u{3}max_segment_size\0\u{3}should_delay_archiving\0\u{3}delayed_archiving_priority\0\u{3}store_outside_object_archive\0\u{3}estimated_byte_size\0\u{3}max_segment_cost\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.ranges) {return false}
@@ -3679,11 +3402,9 @@ extension TSP_LargeArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
   }
 }
 
-extension TSP_LargeNumberArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeNumberArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeNumberArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array\0")
 
   public var isInitialized: Bool {
     if let v = self._largeArray, !v.isInitialized {return false}
@@ -3720,11 +3441,9 @@ extension TSP_LargeNumberArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSP_LargeStringArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeStringArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeStringArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array\0")
 
   public var isInitialized: Bool {
     if let v = self._largeArray, !v.isInitialized {return false}
@@ -3761,11 +3480,9 @@ extension TSP_LargeStringArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSP_LargeLazyObjectArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeLazyObjectArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeLazyObjectArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array\0")
 
   public var isInitialized: Bool {
     if let v = self._largeArray, !v.isInitialized {return false}
@@ -3802,11 +3519,9 @@ extension TSP_LargeLazyObjectArray: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSP_LargeObjectArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeObjectArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeObjectArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array\0")
 
   public var isInitialized: Bool {
     if let v = self._largeArray, !v.isInitialized {return false}
@@ -3843,11 +3558,9 @@ extension TSP_LargeObjectArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSP_LargeUUIDArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_LargeUUIDArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LargeUUIDArray"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "large_array"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}large_array\0")
 
   public var isInitialized: Bool {
     if let v = self._largeArray, !v.isInitialized {return false}
@@ -3884,11 +3597,9 @@ extension TSP_LargeUUIDArray: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension TSP_FieldOptions: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSP_FieldOptions: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FieldOptions"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "metadata_type"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}metadata_type\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {

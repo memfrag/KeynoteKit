@@ -15,33 +15,33 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSASOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: Sendable {
+public nonisolated struct TSASOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var serverDrawableZOrderLists: [TSASOS_DrawableZOrderListArchive] = []
 
   public var serverDrawableZOrderListsUndefined: Bool {
-    get {return _serverDrawableZOrderListsUndefined ?? false}
+    get {_serverDrawableZOrderListsUndefined ?? false}
     set {_serverDrawableZOrderListsUndefined = newValue}
   }
   /// Returns true if `serverDrawableZOrderListsUndefined` has been explicitly set.
-  public var hasServerDrawableZOrderListsUndefined: Bool {return self._serverDrawableZOrderListsUndefined != nil}
+  public var hasServerDrawableZOrderListsUndefined: Bool {self._serverDrawableZOrderListsUndefined != nil}
   /// Clears the value of `serverDrawableZOrderListsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearServerDrawableZOrderListsUndefined() {self._serverDrawableZOrderListsUndefined = nil}
 
@@ -53,28 +53,28 @@ public struct TSASOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: Senda
   fileprivate var _serverDrawableZOrderListsUndefined: Bool? = nil
 }
 
-public struct TSASOS_PropagateMasterChangeCommandArchive: Sendable {
+public nonisolated struct TSASOS_PropagateMasterChangeCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var uuidsOfPreviouslyVisitedObjects: [TSP_UUID] = []
 
   public var uuidsOfPreviouslyVisitedObjectsUndefined: Bool {
-    get {return _uuidsOfPreviouslyVisitedObjectsUndefined ?? false}
+    get {_uuidsOfPreviouslyVisitedObjectsUndefined ?? false}
     set {_uuidsOfPreviouslyVisitedObjectsUndefined = newValue}
   }
   /// Returns true if `uuidsOfPreviouslyVisitedObjectsUndefined` has been explicitly set.
-  public var hasUuidsOfPreviouslyVisitedObjectsUndefined: Bool {return self._uuidsOfPreviouslyVisitedObjectsUndefined != nil}
+  public var hasUuidsOfPreviouslyVisitedObjectsUndefined: Bool {self._uuidsOfPreviouslyVisitedObjectsUndefined != nil}
   /// Clears the value of `uuidsOfPreviouslyVisitedObjectsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearUuidsOfPreviouslyVisitedObjectsUndefined() {self._uuidsOfPreviouslyVisitedObjectsUndefined = nil}
 
@@ -86,37 +86,37 @@ public struct TSASOS_PropagateMasterChangeCommandArchive: Sendable {
   fileprivate var _uuidsOfPreviouslyVisitedObjectsUndefined: Bool? = nil
 }
 
-public struct TSASOS_CommandReapplyMasterArchive: Sendable {
+public nonisolated struct TSASOS_CommandReapplyMasterArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var itemsToVisit: [TSP_UUID] = []
 
   public var itemsToVisitUndefined: Bool {
-    get {return _itemsToVisitUndefined ?? false}
+    get {_itemsToVisitUndefined ?? false}
     set {_itemsToVisitUndefined = newValue}
   }
   /// Returns true if `itemsToVisitUndefined` has been explicitly set.
-  public var hasItemsToVisitUndefined: Bool {return self._itemsToVisitUndefined != nil}
+  public var hasItemsToVisitUndefined: Bool {self._itemsToVisitUndefined != nil}
   /// Clears the value of `itemsToVisitUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearItemsToVisitUndefined() {self._itemsToVisitUndefined = nil}
 
   public var isUndo: Bool {
-    get {return _isUndo ?? false}
+    get {_isUndo ?? false}
     set {_isUndo = newValue}
   }
   /// Returns true if `isUndo` has been explicitly set.
-  public var hasIsUndo: Bool {return self._isUndo != nil}
+  public var hasIsUndo: Bool {self._isUndo != nil}
   /// Clears the value of `isUndo`. Subsequent reads from it will return its default value.
   public mutating func clearIsUndo() {self._isUndo = nil}
 
@@ -129,17 +129,17 @@ public struct TSASOS_CommandReapplyMasterArchive: Sendable {
   fileprivate var _isUndo: Bool? = nil
 }
 
-public struct TSASOS_VerifyActivityStreamWithServerCommandArchive: Sendable {
+public nonisolated struct TSASOS_VerifyActivityStreamWithServerCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -150,17 +150,17 @@ public struct TSASOS_VerifyActivityStreamWithServerCommandArchive: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSASOS_VerifyDocumentWithServerCommandArchive: Sendable {
+public nonisolated struct TSASOS_VerifyDocumentWithServerCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -171,28 +171,28 @@ public struct TSASOS_VerifyDocumentWithServerCommandArchive: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSASOS_VerifyDrawableZOrdersWithServerCommandArchive: Sendable {
+public nonisolated struct TSASOS_VerifyDrawableZOrdersWithServerCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var drawableIDList: [TSP_UUID] = []
 
   public var drawableIDListUndefined: Bool {
-    get {return _drawableIDListUndefined ?? false}
+    get {_drawableIDListUndefined ?? false}
     set {_drawableIDListUndefined = newValue}
   }
   /// Returns true if `drawableIDListUndefined` has been explicitly set.
-  public var hasDrawableIDListUndefined: Bool {return self._drawableIDListUndefined != nil}
+  public var hasDrawableIDListUndefined: Bool {self._drawableIDListUndefined != nil}
   /// Clears the value of `drawableIDListUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearDrawableIDListUndefined() {self._drawableIDListUndefined = nil}
 
@@ -204,28 +204,28 @@ public struct TSASOS_VerifyDrawableZOrdersWithServerCommandArchive: Sendable {
   fileprivate var _drawableIDListUndefined: Bool? = nil
 }
 
-public struct TSASOS_VerifyObjectsWithServerCommandArchive: Sendable {
+public nonisolated struct TSASOS_VerifyObjectsWithServerCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var objectIDList: [TSP_UUID] = []
 
   public var objectIDListUndefined: Bool {
-    get {return _objectIDListUndefined ?? false}
+    get {_objectIDListUndefined ?? false}
     set {_objectIDListUndefined = newValue}
   }
   /// Returns true if `objectIDListUndefined` has been explicitly set.
-  public var hasObjectIDListUndefined: Bool {return self._objectIDListUndefined != nil}
+  public var hasObjectIDListUndefined: Bool {self._objectIDListUndefined != nil}
   /// Clears the value of `objectIDListUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearObjectIDListUndefined() {self._objectIDListUndefined = nil}
 
@@ -237,35 +237,35 @@ public struct TSASOS_VerifyObjectsWithServerCommandArchive: Sendable {
   fileprivate var _objectIDListUndefined: Bool? = nil
 }
 
-public struct TSASOS_VerifyTransformHistoryWithServerCommandArchive: Sendable {
+public nonisolated struct TSASOS_VerifyTransformHistoryWithServerCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var sequenceStart: Int32 {
-    get {return _sequenceStart ?? 0}
+    get {_sequenceStart ?? 0}
     set {_sequenceStart = newValue}
   }
   /// Returns true if `sequenceStart` has been explicitly set.
-  public var hasSequenceStart: Bool {return self._sequenceStart != nil}
+  public var hasSequenceStart: Bool {self._sequenceStart != nil}
   /// Clears the value of `sequenceStart`. Subsequent reads from it will return its default value.
   public mutating func clearSequenceStart() {self._sequenceStart = nil}
 
   public var sequenceEnd: Int32 {
-    get {return _sequenceEnd ?? 0}
+    get {_sequenceEnd ?? 0}
     set {_sequenceEnd = newValue}
   }
   /// Returns true if `sequenceEnd` has been explicitly set.
-  public var hasSequenceEnd: Bool {return self._sequenceEnd != nil}
+  public var hasSequenceEnd: Bool {self._sequenceEnd != nil}
   /// Clears the value of `sequenceEnd`. Subsequent reads from it will return its default value.
   public mutating func clearSequenceEnd() {self._sequenceEnd = nil}
 
@@ -280,15 +280,11 @@ public struct TSASOS_VerifyTransformHistoryWithServerCommandArchive: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSASOS"
+fileprivate nonisolated let _protobuf_package = "TSASOS"
 
-extension TSASOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSASOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InducedVerifyDrawableZOrdersWithServerCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "server_drawable_z_order_lists"),
-    3: .standard(proto: "server_drawable_z_order_lists_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}server_drawable_z_order_lists\0\u{3}server_drawable_z_order_lists_undefined\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -337,13 +333,9 @@ extension TSASOS_InducedVerifyDrawableZOrdersWithServerCommandArchive: SwiftProt
   }
 }
 
-extension TSASOS_PropagateMasterChangeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSASOS_PropagateMasterChangeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PropagateMasterChangeCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "uuids_of_previously_visited_objects"),
-    3: .standard(proto: "uuids_of_previously_visited_objects_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}uuids_of_previously_visited_objects\0\u{3}uuids_of_previously_visited_objects_undefined\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -392,14 +384,9 @@ extension TSASOS_PropagateMasterChangeCommandArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSASOS_CommandReapplyMasterArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSASOS_CommandReapplyMasterArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandReapplyMasterArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "items_to_visit"),
-    3: .standard(proto: "items_to_visit_undefined"),
-    4: .standard(proto: "is_undo"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}items_to_visit\0\u{3}items_to_visit_undefined\0\u{3}is_undo\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -454,11 +441,9 @@ extension TSASOS_CommandReapplyMasterArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSASOS_VerifyActivityStreamWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSASOS_VerifyActivityStreamWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".VerifyActivityStreamWithServerCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -496,11 +481,9 @@ extension TSASOS_VerifyActivityStreamWithServerCommandArchive: SwiftProtobuf.Mes
   }
 }
 
-extension TSASOS_VerifyDocumentWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSASOS_VerifyDocumentWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".VerifyDocumentWithServerCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -538,13 +521,9 @@ extension TSASOS_VerifyDocumentWithServerCommandArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSASOS_VerifyDrawableZOrdersWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSASOS_VerifyDrawableZOrdersWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".VerifyDrawableZOrdersWithServerCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "drawable_id_list"),
-    3: .standard(proto: "drawable_id_list_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}drawable_id_list\0\u{3}drawable_id_list_undefined\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -593,13 +572,9 @@ extension TSASOS_VerifyDrawableZOrdersWithServerCommandArchive: SwiftProtobuf.Me
   }
 }
 
-extension TSASOS_VerifyObjectsWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSASOS_VerifyObjectsWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".VerifyObjectsWithServerCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "object_id_list"),
-    3: .standard(proto: "object_id_list_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}object_id_list\0\u{3}object_id_list_undefined\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -648,13 +623,9 @@ extension TSASOS_VerifyObjectsWithServerCommandArchive: SwiftProtobuf.Message, S
   }
 }
 
-extension TSASOS_VerifyTransformHistoryWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSASOS_VerifyTransformHistoryWithServerCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".VerifyTransformHistoryWithServerCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "sequence_start"),
-    3: .standard(proto: "sequence_end"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}sequence_start\0\u{3}sequence_end\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}

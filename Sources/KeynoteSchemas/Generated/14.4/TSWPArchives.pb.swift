@@ -15,218 +15,136 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public enum TSWP_SelectionType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case normalDeprecated // = 0
-  case listLabel // = 1
-  case listTopic // = 2
-  case replace // = 3
-  case copyPasteStyle // = 4
-  case replace2 // = 5
-  case smartField // = 6
-  case visual // = 7
-  case logical // = 8
+public nonisolated enum TSWP_SelectionType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case normalDeprecated = 0
+  case listLabel = 1
+  case listTopic = 2
+  case replace = 3
+  case copyPasteStyle = 4
+  case replace2 = 5
+  case smartField = 6
+  case visual = 7
+  case logical = 8
 
   public init() {
     self = .normalDeprecated
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .normalDeprecated
-    case 1: self = .listLabel
-    case 2: self = .listTopic
-    case 3: self = .replace
-    case 4: self = .copyPasteStyle
-    case 5: self = .replace2
-    case 6: self = .smartField
-    case 7: self = .visual
-    case 8: self = .logical
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .normalDeprecated: return 0
-    case .listLabel: return 1
-    case .listTopic: return 2
-    case .replace: return 3
-    case .copyPasteStyle: return 4
-    case .replace2: return 5
-    case .smartField: return 6
-    case .visual: return 7
-    case .logical: return 8
-    }
-  }
-
 }
 
-public enum TSWP_StyleInsertionBehavior: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case noGrow // = 0
-  case growLeft // = 1
-  case growRight // = 2
+public nonisolated enum TSWP_StyleInsertionBehavior: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case noGrow = 0
+  case growLeft = 1
+  case growRight = 2
 
   public init() {
     self = .noGrow
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .noGrow
-    case 1: self = .growLeft
-    case 2: self = .growRight
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .noGrow: return 0
-    case .growLeft: return 1
-    case .growRight: return 2
-    }
-  }
-
 }
 
-public enum TSWP_CaretAffinity: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case start // = 0
-  case end // = 1
+public nonisolated enum TSWP_CaretAffinity: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case start = 0
+  case end = 1
 
   public init() {
     self = .start
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .start
-    case 1: self = .end
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .start: return 0
-    case .end: return 1
-    }
-  }
-
 }
 
-public enum TSWP_WritingDirectionType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case kWritingDirectionNatural // = -1
-  case kWritingDirectionLeftToRight // = 0
-  case kWritingDirectionRightToLeft // = 1
+public nonisolated enum TSWP_WritingDirectionType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case kWritingDirectionNatural = -1
+  case kWritingDirectionLeftToRight = 0
+  case kWritingDirectionRightToLeft = 1
 
   public init() {
     self = .kWritingDirectionNatural
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case -1: self = .kWritingDirectionNatural
-    case 0: self = .kWritingDirectionLeftToRight
-    case 1: self = .kWritingDirectionRightToLeft
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .kWritingDirectionNatural: return -1
-    case .kWritingDirectionLeftToRight: return 0
-    case .kWritingDirectionRightToLeft: return 1
-    }
-  }
-
 }
 
-public struct TSWP_SelectionArchive: Sendable {
+public nonisolated struct TSWP_SelectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var deprecatedType: TSWP_SelectionType {
-    get {return _deprecatedType ?? .normalDeprecated}
+    get {_deprecatedType ?? .normalDeprecated}
     set {_deprecatedType = newValue}
   }
   /// Returns true if `deprecatedType` has been explicitly set.
-  public var hasDeprecatedType: Bool {return self._deprecatedType != nil}
+  public var hasDeprecatedType: Bool {self._deprecatedType != nil}
   /// Clears the value of `deprecatedType`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedType() {self._deprecatedType = nil}
 
   public var visualDefinitionRange: TSP_Range {
-    get {return _visualDefinitionRange ?? TSP_Range()}
+    get {_visualDefinitionRange ?? TSP_Range()}
     set {_visualDefinitionRange = newValue}
   }
   /// Returns true if `visualDefinitionRange` has been explicitly set.
-  public var hasVisualDefinitionRange: Bool {return self._visualDefinitionRange != nil}
+  public var hasVisualDefinitionRange: Bool {self._visualDefinitionRange != nil}
   /// Clears the value of `visualDefinitionRange`. Subsequent reads from it will return its default value.
   public mutating func clearVisualDefinitionRange() {self._visualDefinitionRange = nil}
 
   public var styleInsertionBehavior: TSWP_StyleInsertionBehavior {
-    get {return _styleInsertionBehavior ?? .noGrow}
+    get {_styleInsertionBehavior ?? .noGrow}
     set {_styleInsertionBehavior = newValue}
   }
   /// Returns true if `styleInsertionBehavior` has been explicitly set.
-  public var hasStyleInsertionBehavior: Bool {return self._styleInsertionBehavior != nil}
+  public var hasStyleInsertionBehavior: Bool {self._styleInsertionBehavior != nil}
   /// Clears the value of `styleInsertionBehavior`. Subsequent reads from it will return its default value.
   public mutating func clearStyleInsertionBehavior() {self._styleInsertionBehavior = nil}
 
   public var caretAffinity: TSWP_CaretAffinity {
-    get {return _caretAffinity ?? .start}
+    get {_caretAffinity ?? .start}
     set {_caretAffinity = newValue}
   }
   /// Returns true if `caretAffinity` has been explicitly set.
-  public var hasCaretAffinity: Bool {return self._caretAffinity != nil}
+  public var hasCaretAffinity: Bool {self._caretAffinity != nil}
   /// Clears the value of `caretAffinity`. Subsequent reads from it will return its default value.
   public mutating func clearCaretAffinity() {self._caretAffinity = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var smartFieldRange: TSP_Range {
-    get {return _smartFieldRange ?? TSP_Range()}
+    get {_smartFieldRange ?? TSP_Range()}
     set {_smartFieldRange = newValue}
   }
   /// Returns true if `smartFieldRange` has been explicitly set.
-  public var hasSmartFieldRange: Bool {return self._smartFieldRange != nil}
+  public var hasSmartFieldRange: Bool {self._smartFieldRange != nil}
   /// Clears the value of `smartFieldRange`. Subsequent reads from it will return its default value.
   public mutating func clearSmartFieldRange() {self._smartFieldRange = nil}
 
   public var leadingEdge: Bool {
-    get {return _leadingEdge ?? false}
+    get {_leadingEdge ?? false}
     set {_leadingEdge = newValue}
   }
   /// Returns true if `leadingEdge` has been explicitly set.
-  public var hasLeadingEdge: Bool {return self._leadingEdge != nil}
+  public var hasLeadingEdge: Bool {self._leadingEdge != nil}
   /// Clears the value of `leadingEdge`. Subsequent reads from it will return its default value.
   public mutating func clearLeadingEdge() {self._leadingEdge = nil}
 
   public var leadingCharIndex: UInt32 {
-    get {return _leadingCharIndex ?? 0}
+    get {_leadingCharIndex ?? 0}
     set {_leadingCharIndex = newValue}
   }
   /// Returns true if `leadingCharIndex` has been explicitly set.
-  public var hasLeadingCharIndex: Bool {return self._leadingCharIndex != nil}
+  public var hasLeadingCharIndex: Bool {self._leadingCharIndex != nil}
   /// Clears the value of `leadingCharIndex`. Subsequent reads from it will return its default value.
   public mutating func clearLeadingCharIndex() {self._leadingCharIndex = nil}
 
   public var type: TSWP_SelectionType {
-    get {return _type ?? .normalDeprecated}
+    get {_type ?? .normalDeprecated}
     set {_type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return self._type != nil}
+  public var hasType: Bool {self._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {self._type = nil}
 
@@ -246,7 +164,7 @@ public struct TSWP_SelectionArchive: Sendable {
   fileprivate var _type: TSWP_SelectionType? = nil
 }
 
-public struct TSWP_ObjectAttributeTable: Sendable {
+public nonisolated struct TSWP_ObjectAttributeTable: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -255,26 +173,26 @@ public struct TSWP_ObjectAttributeTable: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ObjectAttribute: Sendable {
+  public nonisolated struct ObjectAttribute: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var characterIndex: UInt32 {
-      get {return _characterIndex ?? 0}
+      get {_characterIndex ?? 0}
       set {_characterIndex = newValue}
     }
     /// Returns true if `characterIndex` has been explicitly set.
-    public var hasCharacterIndex: Bool {return self._characterIndex != nil}
+    public var hasCharacterIndex: Bool {self._characterIndex != nil}
     /// Clears the value of `characterIndex`. Subsequent reads from it will return its default value.
     public mutating func clearCharacterIndex() {self._characterIndex = nil}
 
     public var object: TSP_Reference {
-      get {return _object ?? TSP_Reference()}
+      get {_object ?? TSP_Reference()}
       set {_object = newValue}
     }
     /// Returns true if `object` has been explicitly set.
-    public var hasObject: Bool {return self._object != nil}
+    public var hasObject: Bool {self._object != nil}
     /// Clears the value of `object`. Subsequent reads from it will return its default value.
     public mutating func clearObject() {self._object = nil}
 
@@ -289,7 +207,7 @@ public struct TSWP_ObjectAttributeTable: Sendable {
   public init() {}
 }
 
-public struct TSWP_StringAttributeTable: Sendable {
+public nonisolated struct TSWP_StringAttributeTable: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -298,26 +216,26 @@ public struct TSWP_StringAttributeTable: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct StringAttribute: Sendable {
+  public nonisolated struct StringAttribute: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var characterIndex: UInt32 {
-      get {return _characterIndex ?? 0}
+      get {_characterIndex ?? 0}
       set {_characterIndex = newValue}
     }
     /// Returns true if `characterIndex` has been explicitly set.
-    public var hasCharacterIndex: Bool {return self._characterIndex != nil}
+    public var hasCharacterIndex: Bool {self._characterIndex != nil}
     /// Clears the value of `characterIndex`. Subsequent reads from it will return its default value.
     public mutating func clearCharacterIndex() {self._characterIndex = nil}
 
     public var object: String {
-      get {return _object ?? String()}
+      get {_object ?? String()}
       set {_object = newValue}
     }
     /// Returns true if `object` has been explicitly set.
-    public var hasObject: Bool {return self._object != nil}
+    public var hasObject: Bool {self._object != nil}
     /// Clears the value of `object`. Subsequent reads from it will return its default value.
     public mutating func clearObject() {self._object = nil}
 
@@ -332,7 +250,7 @@ public struct TSWP_StringAttributeTable: Sendable {
   public init() {}
 }
 
-public struct TSWP_ParaDataAttributeTable: Sendable {
+public nonisolated struct TSWP_ParaDataAttributeTable: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -341,35 +259,35 @@ public struct TSWP_ParaDataAttributeTable: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct ParaDataAttribute: Sendable {
+  public nonisolated struct ParaDataAttribute: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var characterIndex: UInt32 {
-      get {return _characterIndex ?? 0}
+      get {_characterIndex ?? 0}
       set {_characterIndex = newValue}
     }
     /// Returns true if `characterIndex` has been explicitly set.
-    public var hasCharacterIndex: Bool {return self._characterIndex != nil}
+    public var hasCharacterIndex: Bool {self._characterIndex != nil}
     /// Clears the value of `characterIndex`. Subsequent reads from it will return its default value.
     public mutating func clearCharacterIndex() {self._characterIndex = nil}
 
     public var first: UInt32 {
-      get {return _first ?? 0}
+      get {_first ?? 0}
       set {_first = newValue}
     }
     /// Returns true if `first` has been explicitly set.
-    public var hasFirst: Bool {return self._first != nil}
+    public var hasFirst: Bool {self._first != nil}
     /// Clears the value of `first`. Subsequent reads from it will return its default value.
     public mutating func clearFirst() {self._first = nil}
 
     public var second: UInt32 {
-      get {return _second ?? 0}
+      get {_second ?? 0}
       set {_second = newValue}
     }
     /// Returns true if `second` has been explicitly set.
-    public var hasSecond: Bool {return self._second != nil}
+    public var hasSecond: Bool {self._second != nil}
     /// Clears the value of `second`. Subsequent reads from it will return its default value.
     public mutating func clearSecond() {self._second = nil}
 
@@ -385,7 +303,7 @@ public struct TSWP_ParaDataAttributeTable: Sendable {
   public init() {}
 }
 
-public struct TSWP_OverlappingFieldAttributeTable: Sendable {
+public nonisolated struct TSWP_OverlappingFieldAttributeTable: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -394,26 +312,26 @@ public struct TSWP_OverlappingFieldAttributeTable: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct OverlappingFieldAttribute: Sendable {
+  public nonisolated struct OverlappingFieldAttribute: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var range: TSP_Range {
-      get {return _range ?? TSP_Range()}
+      get {_range ?? TSP_Range()}
       set {_range = newValue}
     }
     /// Returns true if `range` has been explicitly set.
-    public var hasRange: Bool {return self._range != nil}
+    public var hasRange: Bool {self._range != nil}
     /// Clears the value of `range`. Subsequent reads from it will return its default value.
     public mutating func clearRange() {self._range = nil}
 
     public var field: TSP_Reference {
-      get {return _field ?? TSP_Reference()}
+      get {_field ?? TSP_Reference()}
       set {_field = newValue}
     }
     /// Returns true if `field` has been explicitly set.
-    public var hasField: Bool {return self._field != nil}
+    public var hasField: Bool {self._field != nil}
     /// Clears the value of `field`. Subsequent reads from it will return its default value.
     public mutating func clearField() {self._field = nil}
 
@@ -428,295 +346,265 @@ public struct TSWP_OverlappingFieldAttributeTable: Sendable {
   public init() {}
 }
 
-public struct TSWP_StorageArchive: @unchecked Sendable {
+public nonisolated struct TSWP_StorageArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var kind: TSWP_StorageArchive.KindType {
-    get {return _storage._kind ?? .textbox}
+    get {_storage._kind ?? .textbox}
     set {_uniqueStorage()._kind = newValue}
   }
   /// Returns true if `kind` has been explicitly set.
-  public var hasKind: Bool {return _storage._kind != nil}
+  public var hasKind: Bool {_storage._kind != nil}
   /// Clears the value of `kind`. Subsequent reads from it will return its default value.
   public mutating func clearKind() {_uniqueStorage()._kind = nil}
 
   public var styleSheet: TSP_Reference {
-    get {return _storage._styleSheet ?? TSP_Reference()}
+    get {_storage._styleSheet ?? TSP_Reference()}
     set {_uniqueStorage()._styleSheet = newValue}
   }
   /// Returns true if `styleSheet` has been explicitly set.
-  public var hasStyleSheet: Bool {return _storage._styleSheet != nil}
+  public var hasStyleSheet: Bool {_storage._styleSheet != nil}
   /// Clears the value of `styleSheet`. Subsequent reads from it will return its default value.
   public mutating func clearStyleSheet() {_uniqueStorage()._styleSheet = nil}
 
   public var text: [String] {
-    get {return _storage._text}
+    get {_storage._text}
     set {_uniqueStorage()._text = newValue}
   }
 
   public var hasItext_p: Bool {
-    get {return _storage._hasItext_p ?? false}
+    get {_storage._hasItext_p ?? false}
     set {_uniqueStorage()._hasItext_p = newValue}
   }
   /// Returns true if `hasItext_p` has been explicitly set.
-  public var hasHasItext_p: Bool {return _storage._hasItext_p != nil}
+  public var hasHasItext_p: Bool {_storage._hasItext_p != nil}
   /// Clears the value of `hasItext_p`. Subsequent reads from it will return its default value.
   public mutating func clearHasItext_p() {_uniqueStorage()._hasItext_p = nil}
 
   public var inDocument: Bool {
-    get {return _storage._inDocument ?? false}
+    get {_storage._inDocument ?? false}
     set {_uniqueStorage()._inDocument = newValue}
   }
   /// Returns true if `inDocument` has been explicitly set.
-  public var hasInDocument: Bool {return _storage._inDocument != nil}
+  public var hasInDocument: Bool {_storage._inDocument != nil}
   /// Clears the value of `inDocument`. Subsequent reads from it will return its default value.
   public mutating func clearInDocument() {_uniqueStorage()._inDocument = nil}
 
   public var tableParaStyle: TSWP_ObjectAttributeTable {
-    get {return _storage._tableParaStyle ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableParaStyle ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableParaStyle = newValue}
   }
   /// Returns true if `tableParaStyle` has been explicitly set.
-  public var hasTableParaStyle: Bool {return _storage._tableParaStyle != nil}
+  public var hasTableParaStyle: Bool {_storage._tableParaStyle != nil}
   /// Clears the value of `tableParaStyle`. Subsequent reads from it will return its default value.
   public mutating func clearTableParaStyle() {_uniqueStorage()._tableParaStyle = nil}
 
   public var tableParaData: TSWP_ParaDataAttributeTable {
-    get {return _storage._tableParaData ?? TSWP_ParaDataAttributeTable()}
+    get {_storage._tableParaData ?? TSWP_ParaDataAttributeTable()}
     set {_uniqueStorage()._tableParaData = newValue}
   }
   /// Returns true if `tableParaData` has been explicitly set.
-  public var hasTableParaData: Bool {return _storage._tableParaData != nil}
+  public var hasTableParaData: Bool {_storage._tableParaData != nil}
   /// Clears the value of `tableParaData`. Subsequent reads from it will return its default value.
   public mutating func clearTableParaData() {_uniqueStorage()._tableParaData = nil}
 
   public var tableListStyle: TSWP_ObjectAttributeTable {
-    get {return _storage._tableListStyle ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableListStyle ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableListStyle = newValue}
   }
   /// Returns true if `tableListStyle` has been explicitly set.
-  public var hasTableListStyle: Bool {return _storage._tableListStyle != nil}
+  public var hasTableListStyle: Bool {_storage._tableListStyle != nil}
   /// Clears the value of `tableListStyle`. Subsequent reads from it will return its default value.
   public mutating func clearTableListStyle() {_uniqueStorage()._tableListStyle = nil}
 
   public var tableCharStyle: TSWP_ObjectAttributeTable {
-    get {return _storage._tableCharStyle ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableCharStyle ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableCharStyle = newValue}
   }
   /// Returns true if `tableCharStyle` has been explicitly set.
-  public var hasTableCharStyle: Bool {return _storage._tableCharStyle != nil}
+  public var hasTableCharStyle: Bool {_storage._tableCharStyle != nil}
   /// Clears the value of `tableCharStyle`. Subsequent reads from it will return its default value.
   public mutating func clearTableCharStyle() {_uniqueStorage()._tableCharStyle = nil}
 
   public var tableAttachment: TSWP_ObjectAttributeTable {
-    get {return _storage._tableAttachment ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableAttachment ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableAttachment = newValue}
   }
   /// Returns true if `tableAttachment` has been explicitly set.
-  public var hasTableAttachment: Bool {return _storage._tableAttachment != nil}
+  public var hasTableAttachment: Bool {_storage._tableAttachment != nil}
   /// Clears the value of `tableAttachment`. Subsequent reads from it will return its default value.
   public mutating func clearTableAttachment() {_uniqueStorage()._tableAttachment = nil}
 
   public var tableSmartfield: TSWP_ObjectAttributeTable {
-    get {return _storage._tableSmartfield ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableSmartfield ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableSmartfield = newValue}
   }
   /// Returns true if `tableSmartfield` has been explicitly set.
-  public var hasTableSmartfield: Bool {return _storage._tableSmartfield != nil}
+  public var hasTableSmartfield: Bool {_storage._tableSmartfield != nil}
   /// Clears the value of `tableSmartfield`. Subsequent reads from it will return its default value.
   public mutating func clearTableSmartfield() {_uniqueStorage()._tableSmartfield = nil}
 
   public var tableLayoutStyle: TSWP_ObjectAttributeTable {
-    get {return _storage._tableLayoutStyle ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableLayoutStyle ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableLayoutStyle = newValue}
   }
   /// Returns true if `tableLayoutStyle` has been explicitly set.
-  public var hasTableLayoutStyle: Bool {return _storage._tableLayoutStyle != nil}
+  public var hasTableLayoutStyle: Bool {_storage._tableLayoutStyle != nil}
   /// Clears the value of `tableLayoutStyle`. Subsequent reads from it will return its default value.
   public mutating func clearTableLayoutStyle() {_uniqueStorage()._tableLayoutStyle = nil}
 
   public var tableParaStarts: TSWP_ParaDataAttributeTable {
-    get {return _storage._tableParaStarts ?? TSWP_ParaDataAttributeTable()}
+    get {_storage._tableParaStarts ?? TSWP_ParaDataAttributeTable()}
     set {_uniqueStorage()._tableParaStarts = newValue}
   }
   /// Returns true if `tableParaStarts` has been explicitly set.
-  public var hasTableParaStarts: Bool {return _storage._tableParaStarts != nil}
+  public var hasTableParaStarts: Bool {_storage._tableParaStarts != nil}
   /// Clears the value of `tableParaStarts`. Subsequent reads from it will return its default value.
   public mutating func clearTableParaStarts() {_uniqueStorage()._tableParaStarts = nil}
 
   public var tableBookmark: TSWP_ObjectAttributeTable {
-    get {return _storage._tableBookmark ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableBookmark ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableBookmark = newValue}
   }
   /// Returns true if `tableBookmark` has been explicitly set.
-  public var hasTableBookmark: Bool {return _storage._tableBookmark != nil}
+  public var hasTableBookmark: Bool {_storage._tableBookmark != nil}
   /// Clears the value of `tableBookmark`. Subsequent reads from it will return its default value.
   public mutating func clearTableBookmark() {_uniqueStorage()._tableBookmark = nil}
 
   public var tableFootnote: TSWP_ObjectAttributeTable {
-    get {return _storage._tableFootnote ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableFootnote ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableFootnote = newValue}
   }
   /// Returns true if `tableFootnote` has been explicitly set.
-  public var hasTableFootnote: Bool {return _storage._tableFootnote != nil}
+  public var hasTableFootnote: Bool {_storage._tableFootnote != nil}
   /// Clears the value of `tableFootnote`. Subsequent reads from it will return its default value.
   public mutating func clearTableFootnote() {_uniqueStorage()._tableFootnote = nil}
 
   public var tableSection: TSWP_ObjectAttributeTable {
-    get {return _storage._tableSection ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableSection ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableSection = newValue}
   }
   /// Returns true if `tableSection` has been explicitly set.
-  public var hasTableSection: Bool {return _storage._tableSection != nil}
+  public var hasTableSection: Bool {_storage._tableSection != nil}
   /// Clears the value of `tableSection`. Subsequent reads from it will return its default value.
   public mutating func clearTableSection() {_uniqueStorage()._tableSection = nil}
 
   public var tableRubyfield: TSWP_ObjectAttributeTable {
-    get {return _storage._tableRubyfield ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableRubyfield ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableRubyfield = newValue}
   }
   /// Returns true if `tableRubyfield` has been explicitly set.
-  public var hasTableRubyfield: Bool {return _storage._tableRubyfield != nil}
+  public var hasTableRubyfield: Bool {_storage._tableRubyfield != nil}
   /// Clears the value of `tableRubyfield`. Subsequent reads from it will return its default value.
   public mutating func clearTableRubyfield() {_uniqueStorage()._tableRubyfield = nil}
 
   public var tableLanguage: TSWP_StringAttributeTable {
-    get {return _storage._tableLanguage ?? TSWP_StringAttributeTable()}
+    get {_storage._tableLanguage ?? TSWP_StringAttributeTable()}
     set {_uniqueStorage()._tableLanguage = newValue}
   }
   /// Returns true if `tableLanguage` has been explicitly set.
-  public var hasTableLanguage: Bool {return _storage._tableLanguage != nil}
+  public var hasTableLanguage: Bool {_storage._tableLanguage != nil}
   /// Clears the value of `tableLanguage`. Subsequent reads from it will return its default value.
   public mutating func clearTableLanguage() {_uniqueStorage()._tableLanguage = nil}
 
   public var tableDictation: TSWP_StringAttributeTable {
-    get {return _storage._tableDictation ?? TSWP_StringAttributeTable()}
+    get {_storage._tableDictation ?? TSWP_StringAttributeTable()}
     set {_uniqueStorage()._tableDictation = newValue}
   }
   /// Returns true if `tableDictation` has been explicitly set.
-  public var hasTableDictation: Bool {return _storage._tableDictation != nil}
+  public var hasTableDictation: Bool {_storage._tableDictation != nil}
   /// Clears the value of `tableDictation`. Subsequent reads from it will return its default value.
   public mutating func clearTableDictation() {_uniqueStorage()._tableDictation = nil}
 
   public var tableInsertion: TSWP_ObjectAttributeTable {
-    get {return _storage._tableInsertion ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableInsertion ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableInsertion = newValue}
   }
   /// Returns true if `tableInsertion` has been explicitly set.
-  public var hasTableInsertion: Bool {return _storage._tableInsertion != nil}
+  public var hasTableInsertion: Bool {_storage._tableInsertion != nil}
   /// Clears the value of `tableInsertion`. Subsequent reads from it will return its default value.
   public mutating func clearTableInsertion() {_uniqueStorage()._tableInsertion = nil}
 
   public var tableDeletion: TSWP_ObjectAttributeTable {
-    get {return _storage._tableDeletion ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableDeletion ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableDeletion = newValue}
   }
   /// Returns true if `tableDeletion` has been explicitly set.
-  public var hasTableDeletion: Bool {return _storage._tableDeletion != nil}
+  public var hasTableDeletion: Bool {_storage._tableDeletion != nil}
   /// Clears the value of `tableDeletion`. Subsequent reads from it will return its default value.
   public mutating func clearTableDeletion() {_uniqueStorage()._tableDeletion = nil}
 
   public var tableHighlight: TSWP_ObjectAttributeTable {
-    get {return _storage._tableHighlight ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableHighlight ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableHighlight = newValue}
   }
   /// Returns true if `tableHighlight` has been explicitly set.
-  public var hasTableHighlight: Bool {return _storage._tableHighlight != nil}
+  public var hasTableHighlight: Bool {_storage._tableHighlight != nil}
   /// Clears the value of `tableHighlight`. Subsequent reads from it will return its default value.
   public mutating func clearTableHighlight() {_uniqueStorage()._tableHighlight = nil}
 
   public var tableParaBidi: TSWP_ParaDataAttributeTable {
-    get {return _storage._tableParaBidi ?? TSWP_ParaDataAttributeTable()}
+    get {_storage._tableParaBidi ?? TSWP_ParaDataAttributeTable()}
     set {_uniqueStorage()._tableParaBidi = newValue}
   }
   /// Returns true if `tableParaBidi` has been explicitly set.
-  public var hasTableParaBidi: Bool {return _storage._tableParaBidi != nil}
+  public var hasTableParaBidi: Bool {_storage._tableParaBidi != nil}
   /// Clears the value of `tableParaBidi`. Subsequent reads from it will return its default value.
   public mutating func clearTableParaBidi() {_uniqueStorage()._tableParaBidi = nil}
 
   public var tableOverlappingHighlight: TSWP_OverlappingFieldAttributeTable {
-    get {return _storage._tableOverlappingHighlight ?? TSWP_OverlappingFieldAttributeTable()}
+    get {_storage._tableOverlappingHighlight ?? TSWP_OverlappingFieldAttributeTable()}
     set {_uniqueStorage()._tableOverlappingHighlight = newValue}
   }
   /// Returns true if `tableOverlappingHighlight` has been explicitly set.
-  public var hasTableOverlappingHighlight: Bool {return _storage._tableOverlappingHighlight != nil}
+  public var hasTableOverlappingHighlight: Bool {_storage._tableOverlappingHighlight != nil}
   /// Clears the value of `tableOverlappingHighlight`. Subsequent reads from it will return its default value.
   public mutating func clearTableOverlappingHighlight() {_uniqueStorage()._tableOverlappingHighlight = nil}
 
   public var tablePencilAnnotation: TSWP_OverlappingFieldAttributeTable {
-    get {return _storage._tablePencilAnnotation ?? TSWP_OverlappingFieldAttributeTable()}
+    get {_storage._tablePencilAnnotation ?? TSWP_OverlappingFieldAttributeTable()}
     set {_uniqueStorage()._tablePencilAnnotation = newValue}
   }
   /// Returns true if `tablePencilAnnotation` has been explicitly set.
-  public var hasTablePencilAnnotation: Bool {return _storage._tablePencilAnnotation != nil}
+  public var hasTablePencilAnnotation: Bool {_storage._tablePencilAnnotation != nil}
   /// Clears the value of `tablePencilAnnotation`. Subsequent reads from it will return its default value.
   public mutating func clearTablePencilAnnotation() {_uniqueStorage()._tablePencilAnnotation = nil}
 
   public var tableTatechuyoko: TSWP_ObjectAttributeTable {
-    get {return _storage._tableTatechuyoko ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableTatechuyoko ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableTatechuyoko = newValue}
   }
   /// Returns true if `tableTatechuyoko` has been explicitly set.
-  public var hasTableTatechuyoko: Bool {return _storage._tableTatechuyoko != nil}
+  public var hasTableTatechuyoko: Bool {_storage._tableTatechuyoko != nil}
   /// Clears the value of `tableTatechuyoko`. Subsequent reads from it will return its default value.
   public mutating func clearTableTatechuyoko() {_uniqueStorage()._tableTatechuyoko = nil}
 
   public var tableDropCapStyle: TSWP_ObjectAttributeTable {
-    get {return _storage._tableDropCapStyle ?? TSWP_ObjectAttributeTable()}
+    get {_storage._tableDropCapStyle ?? TSWP_ObjectAttributeTable()}
     set {_uniqueStorage()._tableDropCapStyle = newValue}
   }
   /// Returns true if `tableDropCapStyle` has been explicitly set.
-  public var hasTableDropCapStyle: Bool {return _storage._tableDropCapStyle != nil}
+  public var hasTableDropCapStyle: Bool {_storage._tableDropCapStyle != nil}
   /// Clears the value of `tableDropCapStyle`. Subsequent reads from it will return its default value.
   public mutating func clearTableDropCapStyle() {_uniqueStorage()._tableDropCapStyle = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum KindType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case body // = 0
-    case header // = 1
-    case footnote // = 2
-    case textbox // = 3
-    case note // = 4
-    case cell // = 5
-    case unclassified // = 6
-    case tableofcontents // = 7
-    case undefined // = 8
+  public nonisolated enum KindType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case body = 0
+    case header = 1
+    case footnote = 2
+    case textbox = 3
+    case note = 4
+    case cell = 5
+    case unclassified = 6
+    case tableofcontents = 7
+    case undefined = 8
 
     public init() {
       self = .body
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .body
-      case 1: self = .header
-      case 2: self = .footnote
-      case 3: self = .textbox
-      case 4: self = .note
-      case 5: self = .cell
-      case 6: self = .unclassified
-      case 7: self = .tableofcontents
-      case 8: self = .undefined
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .body: return 0
-      case .header: return 1
-      case .footnote: return 2
-      case .textbox: return 3
-      case .note: return 4
-      case .cell: return 5
-      case .unclassified: return 6
-      case .tableofcontents: return 7
-      case .undefined: return 8
-      }
     }
 
   }
@@ -726,26 +614,26 @@ public struct TSWP_StorageArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWP_HighlightArchive: Sendable {
+public nonisolated struct TSWP_HighlightArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var commentStorage: TSP_Reference {
-    get {return _commentStorage ?? TSP_Reference()}
+    get {_commentStorage ?? TSP_Reference()}
     set {_commentStorage = newValue}
   }
   /// Returns true if `commentStorage` has been explicitly set.
-  public var hasCommentStorage: Bool {return self._commentStorage != nil}
+  public var hasCommentStorage: Bool {self._commentStorage != nil}
   /// Clears the value of `commentStorage`. Subsequent reads from it will return its default value.
   public mutating func clearCommentStorage() {self._commentStorage = nil}
 
   public var textAttributeUuidString: String {
-    get {return _textAttributeUuidString ?? String()}
+    get {_textAttributeUuidString ?? String()}
     set {_textAttributeUuidString = newValue}
   }
   /// Returns true if `textAttributeUuidString` has been explicitly set.
-  public var hasTextAttributeUuidString: Bool {return self._textAttributeUuidString != nil}
+  public var hasTextAttributeUuidString: Bool {self._textAttributeUuidString != nil}
   /// Clears the value of `textAttributeUuidString`. Subsequent reads from it will return its default value.
   public mutating func clearTextAttributeUuidString() {self._textAttributeUuidString = nil}
 
@@ -757,26 +645,26 @@ public struct TSWP_HighlightArchive: Sendable {
   fileprivate var _textAttributeUuidString: String? = nil
 }
 
-public struct TSWP_PencilAnnotationArchive: Sendable {
+public nonisolated struct TSWP_PencilAnnotationArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var pencilAnnotationStorage: TSP_Reference {
-    get {return _pencilAnnotationStorage ?? TSP_Reference()}
+    get {_pencilAnnotationStorage ?? TSP_Reference()}
     set {_pencilAnnotationStorage = newValue}
   }
   /// Returns true if `pencilAnnotationStorage` has been explicitly set.
-  public var hasPencilAnnotationStorage: Bool {return self._pencilAnnotationStorage != nil}
+  public var hasPencilAnnotationStorage: Bool {self._pencilAnnotationStorage != nil}
   /// Clears the value of `pencilAnnotationStorage`. Subsequent reads from it will return its default value.
   public mutating func clearPencilAnnotationStorage() {self._pencilAnnotationStorage = nil}
 
   public var textAttributeUuidString: String {
-    get {return _textAttributeUuidString ?? String()}
+    get {_textAttributeUuidString ?? String()}
     set {_textAttributeUuidString = newValue}
   }
   /// Returns true if `textAttributeUuidString` has been explicitly set.
-  public var hasTextAttributeUuidString: Bool {return self._textAttributeUuidString != nil}
+  public var hasTextAttributeUuidString: Bool {self._textAttributeUuidString != nil}
   /// Clears the value of `textAttributeUuidString`. Subsequent reads from it will return its default value.
   public mutating func clearTextAttributeUuidString() {self._textAttributeUuidString = nil}
 
@@ -788,26 +676,26 @@ public struct TSWP_PencilAnnotationArchive: Sendable {
   fileprivate var _textAttributeUuidString: String? = nil
 }
 
-public struct TSWP_FontFeatureArchive: Sendable {
+public nonisolated struct TSWP_FontFeatureArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var featureType: UInt32 {
-    get {return _featureType ?? 0}
+    get {_featureType ?? 0}
     set {_featureType = newValue}
   }
   /// Returns true if `featureType` has been explicitly set.
-  public var hasFeatureType: Bool {return self._featureType != nil}
+  public var hasFeatureType: Bool {self._featureType != nil}
   /// Clears the value of `featureType`. Subsequent reads from it will return its default value.
   public mutating func clearFeatureType() {self._featureType = nil}
 
   public var featureSelector: UInt32 {
-    get {return _featureSelector ?? 0}
+    get {_featureSelector ?? 0}
     set {_featureSelector = newValue}
   }
   /// Returns true if `featureSelector` has been explicitly set.
-  public var hasFeatureSelector: Bool {return self._featureSelector != nil}
+  public var hasFeatureSelector: Bool {self._featureSelector != nil}
   /// Clears the value of `featureSelector`. Subsequent reads from it will return its default value.
   public mutating func clearFeatureSelector() {self._featureSelector = nil}
 
@@ -819,582 +707,486 @@ public struct TSWP_FontFeatureArchive: Sendable {
   fileprivate var _featureSelector: UInt32? = nil
 }
 
-public struct TSWP_CharacterStylePropertiesArchive: @unchecked Sendable {
+public nonisolated struct TSWP_CharacterStylePropertiesArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var bold: Bool {
-    get {return _storage._bold ?? false}
+    get {_storage._bold ?? false}
     set {_uniqueStorage()._bold = newValue}
   }
   /// Returns true if `bold` has been explicitly set.
-  public var hasBold: Bool {return _storage._bold != nil}
+  public var hasBold: Bool {_storage._bold != nil}
   /// Clears the value of `bold`. Subsequent reads from it will return its default value.
   public mutating func clearBold() {_uniqueStorage()._bold = nil}
 
   public var italic: Bool {
-    get {return _storage._italic ?? false}
+    get {_storage._italic ?? false}
     set {_uniqueStorage()._italic = newValue}
   }
   /// Returns true if `italic` has been explicitly set.
-  public var hasItalic: Bool {return _storage._italic != nil}
+  public var hasItalic: Bool {_storage._italic != nil}
   /// Clears the value of `italic`. Subsequent reads from it will return its default value.
   public mutating func clearItalic() {_uniqueStorage()._italic = nil}
 
   public var fontSize: Float {
-    get {return _storage._fontSize ?? 0}
+    get {_storage._fontSize ?? 0}
     set {_uniqueStorage()._fontSize = newValue}
   }
   /// Returns true if `fontSize` has been explicitly set.
-  public var hasFontSize: Bool {return _storage._fontSize != nil}
+  public var hasFontSize: Bool {_storage._fontSize != nil}
   /// Clears the value of `fontSize`. Subsequent reads from it will return its default value.
   public mutating func clearFontSize() {_uniqueStorage()._fontSize = nil}
 
   public var fontNameNull: Bool {
-    get {return _storage._fontNameNull ?? false}
+    get {_storage._fontNameNull ?? false}
     set {_uniqueStorage()._fontNameNull = newValue}
   }
   /// Returns true if `fontNameNull` has been explicitly set.
-  public var hasFontNameNull: Bool {return _storage._fontNameNull != nil}
+  public var hasFontNameNull: Bool {_storage._fontNameNull != nil}
   /// Clears the value of `fontNameNull`. Subsequent reads from it will return its default value.
   public mutating func clearFontNameNull() {_uniqueStorage()._fontNameNull = nil}
 
   public var fontName: String {
-    get {return _storage._fontName ?? String()}
+    get {_storage._fontName ?? String()}
     set {_uniqueStorage()._fontName = newValue}
   }
   /// Returns true if `fontName` has been explicitly set.
-  public var hasFontName: Bool {return _storage._fontName != nil}
+  public var hasFontName: Bool {_storage._fontName != nil}
   /// Clears the value of `fontName`. Subsequent reads from it will return its default value.
   public mutating func clearFontName() {_uniqueStorage()._fontName = nil}
 
   public var fontColorNull: Bool {
-    get {return _storage._fontColorNull ?? false}
+    get {_storage._fontColorNull ?? false}
     set {_uniqueStorage()._fontColorNull = newValue}
   }
   /// Returns true if `fontColorNull` has been explicitly set.
-  public var hasFontColorNull: Bool {return _storage._fontColorNull != nil}
+  public var hasFontColorNull: Bool {_storage._fontColorNull != nil}
   /// Clears the value of `fontColorNull`. Subsequent reads from it will return its default value.
   public mutating func clearFontColorNull() {_uniqueStorage()._fontColorNull = nil}
 
   public var fontColor: TSP_Color {
-    get {return _storage._fontColor ?? TSP_Color()}
+    get {_storage._fontColor ?? TSP_Color()}
     set {_uniqueStorage()._fontColor = newValue}
   }
   /// Returns true if `fontColor` has been explicitly set.
-  public var hasFontColor: Bool {return _storage._fontColor != nil}
+  public var hasFontColor: Bool {_storage._fontColor != nil}
   /// Clears the value of `fontColor`. Subsequent reads from it will return its default value.
   public mutating func clearFontColor() {_uniqueStorage()._fontColor = nil}
 
   public var languageNull: Bool {
-    get {return _storage._languageNull ?? false}
+    get {_storage._languageNull ?? false}
     set {_uniqueStorage()._languageNull = newValue}
   }
   /// Returns true if `languageNull` has been explicitly set.
-  public var hasLanguageNull: Bool {return _storage._languageNull != nil}
+  public var hasLanguageNull: Bool {_storage._languageNull != nil}
   /// Clears the value of `languageNull`. Subsequent reads from it will return its default value.
   public mutating func clearLanguageNull() {_uniqueStorage()._languageNull = nil}
 
   public var language: String {
-    get {return _storage._language ?? String()}
+    get {_storage._language ?? String()}
     set {_uniqueStorage()._language = newValue}
   }
   /// Returns true if `language` has been explicitly set.
-  public var hasLanguage: Bool {return _storage._language != nil}
+  public var hasLanguage: Bool {_storage._language != nil}
   /// Clears the value of `language`. Subsequent reads from it will return its default value.
   public mutating func clearLanguage() {_uniqueStorage()._language = nil}
 
   public var superscript: TSWP_CharacterStylePropertiesArchive.SuperscriptType {
-    get {return _storage._superscript ?? .kNoScript}
+    get {_storage._superscript ?? .kNoScript}
     set {_uniqueStorage()._superscript = newValue}
   }
   /// Returns true if `superscript` has been explicitly set.
-  public var hasSuperscript: Bool {return _storage._superscript != nil}
+  public var hasSuperscript: Bool {_storage._superscript != nil}
   /// Clears the value of `superscript`. Subsequent reads from it will return its default value.
   public mutating func clearSuperscript() {_uniqueStorage()._superscript = nil}
 
   public var underline: TSWP_CharacterStylePropertiesArchive.UnderlineType {
-    get {return _storage._underline ?? .kNoUnderline}
+    get {_storage._underline ?? .kNoUnderline}
     set {_uniqueStorage()._underline = newValue}
   }
   /// Returns true if `underline` has been explicitly set.
-  public var hasUnderline: Bool {return _storage._underline != nil}
+  public var hasUnderline: Bool {_storage._underline != nil}
   /// Clears the value of `underline`. Subsequent reads from it will return its default value.
   public mutating func clearUnderline() {_uniqueStorage()._underline = nil}
 
   public var strikethru: TSWP_CharacterStylePropertiesArchive.StrikethruType {
-    get {return _storage._strikethru ?? .kNoStrikethru}
+    get {_storage._strikethru ?? .kNoStrikethru}
     set {_uniqueStorage()._strikethru = newValue}
   }
   /// Returns true if `strikethru` has been explicitly set.
-  public var hasStrikethru: Bool {return _storage._strikethru != nil}
+  public var hasStrikethru: Bool {_storage._strikethru != nil}
   /// Clears the value of `strikethru`. Subsequent reads from it will return its default value.
   public mutating func clearStrikethru() {_uniqueStorage()._strikethru = nil}
 
   public var capitalization: TSWP_CharacterStylePropertiesArchive.CapitalizationType {
-    get {return _storage._capitalization ?? .kNoCaps}
+    get {_storage._capitalization ?? .kNoCaps}
     set {_uniqueStorage()._capitalization = newValue}
   }
   /// Returns true if `capitalization` has been explicitly set.
-  public var hasCapitalization: Bool {return _storage._capitalization != nil}
+  public var hasCapitalization: Bool {_storage._capitalization != nil}
   /// Clears the value of `capitalization`. Subsequent reads from it will return its default value.
   public mutating func clearCapitalization() {_uniqueStorage()._capitalization = nil}
 
   public var baselineShift: Float {
-    get {return _storage._baselineShift ?? 0}
+    get {_storage._baselineShift ?? 0}
     set {_uniqueStorage()._baselineShift = newValue}
   }
   /// Returns true if `baselineShift` has been explicitly set.
-  public var hasBaselineShift: Bool {return _storage._baselineShift != nil}
+  public var hasBaselineShift: Bool {_storage._baselineShift != nil}
   /// Clears the value of `baselineShift`. Subsequent reads from it will return its default value.
   public mutating func clearBaselineShift() {_uniqueStorage()._baselineShift = nil}
 
   public var kerning: Float {
-    get {return _storage._kerning ?? 0}
+    get {_storage._kerning ?? 0}
     set {_uniqueStorage()._kerning = newValue}
   }
   /// Returns true if `kerning` has been explicitly set.
-  public var hasKerning: Bool {return _storage._kerning != nil}
+  public var hasKerning: Bool {_storage._kerning != nil}
   /// Clears the value of `kerning`. Subsequent reads from it will return its default value.
   public mutating func clearKerning() {_uniqueStorage()._kerning = nil}
 
   public var ligatures: TSWP_CharacterStylePropertiesArchive.LigaturesType {
-    get {return _storage._ligatures ?? .kRequiredLigatures}
+    get {_storage._ligatures ?? .kRequiredLigatures}
     set {_uniqueStorage()._ligatures = newValue}
   }
   /// Returns true if `ligatures` has been explicitly set.
-  public var hasLigatures: Bool {return _storage._ligatures != nil}
+  public var hasLigatures: Bool {_storage._ligatures != nil}
   /// Clears the value of `ligatures`. Subsequent reads from it will return its default value.
   public mutating func clearLigatures() {_uniqueStorage()._ligatures = nil}
 
   public var outlineColorNull: Bool {
-    get {return _storage._outlineColorNull ?? false}
+    get {_storage._outlineColorNull ?? false}
     set {_uniqueStorage()._outlineColorNull = newValue}
   }
   /// Returns true if `outlineColorNull` has been explicitly set.
-  public var hasOutlineColorNull: Bool {return _storage._outlineColorNull != nil}
+  public var hasOutlineColorNull: Bool {_storage._outlineColorNull != nil}
   /// Clears the value of `outlineColorNull`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineColorNull() {_uniqueStorage()._outlineColorNull = nil}
 
   public var outlineColor: TSP_Color {
-    get {return _storage._outlineColor ?? TSP_Color()}
+    get {_storage._outlineColor ?? TSP_Color()}
     set {_uniqueStorage()._outlineColor = newValue}
   }
   /// Returns true if `outlineColor` has been explicitly set.
-  public var hasOutlineColor: Bool {return _storage._outlineColor != nil}
+  public var hasOutlineColor: Bool {_storage._outlineColor != nil}
   /// Clears the value of `outlineColor`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineColor() {_uniqueStorage()._outlineColor = nil}
 
   public var outline: Float {
-    get {return _storage._outline ?? 0}
+    get {_storage._outline ?? 0}
     set {_uniqueStorage()._outline = newValue}
   }
   /// Returns true if `outline` has been explicitly set.
-  public var hasOutline: Bool {return _storage._outline != nil}
+  public var hasOutline: Bool {_storage._outline != nil}
   /// Clears the value of `outline`. Subsequent reads from it will return its default value.
   public mutating func clearOutline() {_uniqueStorage()._outline = nil}
 
   public var shadowNull: Bool {
-    get {return _storage._shadowNull ?? false}
+    get {_storage._shadowNull ?? false}
     set {_uniqueStorage()._shadowNull = newValue}
   }
   /// Returns true if `shadowNull` has been explicitly set.
-  public var hasShadowNull: Bool {return _storage._shadowNull != nil}
+  public var hasShadowNull: Bool {_storage._shadowNull != nil}
   /// Clears the value of `shadowNull`. Subsequent reads from it will return its default value.
   public mutating func clearShadowNull() {_uniqueStorage()._shadowNull = nil}
 
   public var shadow: TSD_ShadowArchive {
-    get {return _storage._shadow ?? TSD_ShadowArchive()}
+    get {_storage._shadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._shadow = newValue}
   }
   /// Returns true if `shadow` has been explicitly set.
-  public var hasShadow: Bool {return _storage._shadow != nil}
+  public var hasShadow: Bool {_storage._shadow != nil}
   /// Clears the value of `shadow`. Subsequent reads from it will return its default value.
   public mutating func clearShadow() {_uniqueStorage()._shadow = nil}
 
   public var strikethruColorNull: Bool {
-    get {return _storage._strikethruColorNull ?? false}
+    get {_storage._strikethruColorNull ?? false}
     set {_uniqueStorage()._strikethruColorNull = newValue}
   }
   /// Returns true if `strikethruColorNull` has been explicitly set.
-  public var hasStrikethruColorNull: Bool {return _storage._strikethruColorNull != nil}
+  public var hasStrikethruColorNull: Bool {_storage._strikethruColorNull != nil}
   /// Clears the value of `strikethruColorNull`. Subsequent reads from it will return its default value.
   public mutating func clearStrikethruColorNull() {_uniqueStorage()._strikethruColorNull = nil}
 
   public var strikethruColor: TSP_Color {
-    get {return _storage._strikethruColor ?? TSP_Color()}
+    get {_storage._strikethruColor ?? TSP_Color()}
     set {_uniqueStorage()._strikethruColor = newValue}
   }
   /// Returns true if `strikethruColor` has been explicitly set.
-  public var hasStrikethruColor: Bool {return _storage._strikethruColor != nil}
+  public var hasStrikethruColor: Bool {_storage._strikethruColor != nil}
   /// Clears the value of `strikethruColor`. Subsequent reads from it will return its default value.
   public mutating func clearStrikethruColor() {_uniqueStorage()._strikethruColor = nil}
 
   public var strikethruWidth: Float {
-    get {return _storage._strikethruWidth ?? 0}
+    get {_storage._strikethruWidth ?? 0}
     set {_uniqueStorage()._strikethruWidth = newValue}
   }
   /// Returns true if `strikethruWidth` has been explicitly set.
-  public var hasStrikethruWidth: Bool {return _storage._strikethruWidth != nil}
+  public var hasStrikethruWidth: Bool {_storage._strikethruWidth != nil}
   /// Clears the value of `strikethruWidth`. Subsequent reads from it will return its default value.
   public mutating func clearStrikethruWidth() {_uniqueStorage()._strikethruWidth = nil}
 
   public var backgroundColorNull: Bool {
-    get {return _storage._backgroundColorNull ?? false}
+    get {_storage._backgroundColorNull ?? false}
     set {_uniqueStorage()._backgroundColorNull = newValue}
   }
   /// Returns true if `backgroundColorNull` has been explicitly set.
-  public var hasBackgroundColorNull: Bool {return _storage._backgroundColorNull != nil}
+  public var hasBackgroundColorNull: Bool {_storage._backgroundColorNull != nil}
   /// Clears the value of `backgroundColorNull`. Subsequent reads from it will return its default value.
   public mutating func clearBackgroundColorNull() {_uniqueStorage()._backgroundColorNull = nil}
 
   public var backgroundColor: TSP_Color {
-    get {return _storage._backgroundColor ?? TSP_Color()}
+    get {_storage._backgroundColor ?? TSP_Color()}
     set {_uniqueStorage()._backgroundColor = newValue}
   }
   /// Returns true if `backgroundColor` has been explicitly set.
-  public var hasBackgroundColor: Bool {return _storage._backgroundColor != nil}
+  public var hasBackgroundColor: Bool {_storage._backgroundColor != nil}
   /// Clears the value of `backgroundColor`. Subsequent reads from it will return its default value.
   public mutating func clearBackgroundColor() {_uniqueStorage()._backgroundColor = nil}
 
   public var tracking: Float {
-    get {return _storage._tracking ?? 0}
+    get {_storage._tracking ?? 0}
     set {_uniqueStorage()._tracking = newValue}
   }
   /// Returns true if `tracking` has been explicitly set.
-  public var hasTracking: Bool {return _storage._tracking != nil}
+  public var hasTracking: Bool {_storage._tracking != nil}
   /// Clears the value of `tracking`. Subsequent reads from it will return its default value.
   public mutating func clearTracking() {_uniqueStorage()._tracking = nil}
 
   public var underlineColorNull: Bool {
-    get {return _storage._underlineColorNull ?? false}
+    get {_storage._underlineColorNull ?? false}
     set {_uniqueStorage()._underlineColorNull = newValue}
   }
   /// Returns true if `underlineColorNull` has been explicitly set.
-  public var hasUnderlineColorNull: Bool {return _storage._underlineColorNull != nil}
+  public var hasUnderlineColorNull: Bool {_storage._underlineColorNull != nil}
   /// Clears the value of `underlineColorNull`. Subsequent reads from it will return its default value.
   public mutating func clearUnderlineColorNull() {_uniqueStorage()._underlineColorNull = nil}
 
   public var underlineColor: TSP_Color {
-    get {return _storage._underlineColor ?? TSP_Color()}
+    get {_storage._underlineColor ?? TSP_Color()}
     set {_uniqueStorage()._underlineColor = newValue}
   }
   /// Returns true if `underlineColor` has been explicitly set.
-  public var hasUnderlineColor: Bool {return _storage._underlineColor != nil}
+  public var hasUnderlineColor: Bool {_storage._underlineColor != nil}
   /// Clears the value of `underlineColor`. Subsequent reads from it will return its default value.
   public mutating func clearUnderlineColor() {_uniqueStorage()._underlineColor = nil}
 
   public var underlineWidth: Float {
-    get {return _storage._underlineWidth ?? 0}
+    get {_storage._underlineWidth ?? 0}
     set {_uniqueStorage()._underlineWidth = newValue}
   }
   /// Returns true if `underlineWidth` has been explicitly set.
-  public var hasUnderlineWidth: Bool {return _storage._underlineWidth != nil}
+  public var hasUnderlineWidth: Bool {_storage._underlineWidth != nil}
   /// Clears the value of `underlineWidth`. Subsequent reads from it will return its default value.
   public mutating func clearUnderlineWidth() {_uniqueStorage()._underlineWidth = nil}
 
   public var wordStrikethru: Bool {
-    get {return _storage._wordStrikethru ?? false}
+    get {_storage._wordStrikethru ?? false}
     set {_uniqueStorage()._wordStrikethru = newValue}
   }
   /// Returns true if `wordStrikethru` has been explicitly set.
-  public var hasWordStrikethru: Bool {return _storage._wordStrikethru != nil}
+  public var hasWordStrikethru: Bool {_storage._wordStrikethru != nil}
   /// Clears the value of `wordStrikethru`. Subsequent reads from it will return its default value.
   public mutating func clearWordStrikethru() {_uniqueStorage()._wordStrikethru = nil}
 
   public var wordUnderline: Bool {
-    get {return _storage._wordUnderline ?? false}
+    get {_storage._wordUnderline ?? false}
     set {_uniqueStorage()._wordUnderline = newValue}
   }
   /// Returns true if `wordUnderline` has been explicitly set.
-  public var hasWordUnderline: Bool {return _storage._wordUnderline != nil}
+  public var hasWordUnderline: Bool {_storage._wordUnderline != nil}
   /// Clears the value of `wordUnderline`. Subsequent reads from it will return its default value.
   public mutating func clearWordUnderline() {_uniqueStorage()._wordUnderline = nil}
 
   public var fontFeaturesNull: Bool {
-    get {return _storage._fontFeaturesNull ?? false}
+    get {_storage._fontFeaturesNull ?? false}
     set {_uniqueStorage()._fontFeaturesNull = newValue}
   }
   /// Returns true if `fontFeaturesNull` has been explicitly set.
-  public var hasFontFeaturesNull: Bool {return _storage._fontFeaturesNull != nil}
+  public var hasFontFeaturesNull: Bool {_storage._fontFeaturesNull != nil}
   /// Clears the value of `fontFeaturesNull`. Subsequent reads from it will return its default value.
   public mutating func clearFontFeaturesNull() {_uniqueStorage()._fontFeaturesNull = nil}
 
   public var fontFeatures: [TSWP_FontFeatureArchive] {
-    get {return _storage._fontFeatures}
+    get {_storage._fontFeatures}
     set {_uniqueStorage()._fontFeatures = newValue}
   }
 
   public var writingDirection: TSWP_WritingDirectionType {
-    get {return _storage._writingDirection ?? .kWritingDirectionNatural}
+    get {_storage._writingDirection ?? .kWritingDirectionNatural}
     set {_uniqueStorage()._writingDirection = newValue}
   }
   /// Returns true if `writingDirection` has been explicitly set.
-  public var hasWritingDirection: Bool {return _storage._writingDirection != nil}
+  public var hasWritingDirection: Bool {_storage._writingDirection != nil}
   /// Clears the value of `writingDirection`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirection() {_uniqueStorage()._writingDirection = nil}
 
   public var emphasisMarksNull: Bool {
-    get {return _storage._emphasisMarksNull ?? false}
+    get {_storage._emphasisMarksNull ?? false}
     set {_uniqueStorage()._emphasisMarksNull = newValue}
   }
   /// Returns true if `emphasisMarksNull` has been explicitly set.
-  public var hasEmphasisMarksNull: Bool {return _storage._emphasisMarksNull != nil}
+  public var hasEmphasisMarksNull: Bool {_storage._emphasisMarksNull != nil}
   /// Clears the value of `emphasisMarksNull`. Subsequent reads from it will return its default value.
   public mutating func clearEmphasisMarksNull() {_uniqueStorage()._emphasisMarksNull = nil}
 
   public var emphasisMarks: String {
-    get {return _storage._emphasisMarks ?? String()}
+    get {_storage._emphasisMarks ?? String()}
     set {_uniqueStorage()._emphasisMarks = newValue}
   }
   /// Returns true if `emphasisMarks` has been explicitly set.
-  public var hasEmphasisMarks: Bool {return _storage._emphasisMarks != nil}
+  public var hasEmphasisMarks: Bool {_storage._emphasisMarks != nil}
   /// Clears the value of `emphasisMarks`. Subsequent reads from it will return its default value.
   public mutating func clearEmphasisMarks() {_uniqueStorage()._emphasisMarks = nil}
 
   public var compatibilityFontNameNull: Bool {
-    get {return _storage._compatibilityFontNameNull ?? false}
+    get {_storage._compatibilityFontNameNull ?? false}
     set {_uniqueStorage()._compatibilityFontNameNull = newValue}
   }
   /// Returns true if `compatibilityFontNameNull` has been explicitly set.
-  public var hasCompatibilityFontNameNull: Bool {return _storage._compatibilityFontNameNull != nil}
+  public var hasCompatibilityFontNameNull: Bool {_storage._compatibilityFontNameNull != nil}
   /// Clears the value of `compatibilityFontNameNull`. Subsequent reads from it will return its default value.
   public mutating func clearCompatibilityFontNameNull() {_uniqueStorage()._compatibilityFontNameNull = nil}
 
   public var compatibilityFontName: String {
-    get {return _storage._compatibilityFontName ?? String()}
+    get {_storage._compatibilityFontName ?? String()}
     set {_uniqueStorage()._compatibilityFontName = newValue}
   }
   /// Returns true if `compatibilityFontName` has been explicitly set.
-  public var hasCompatibilityFontName: Bool {return _storage._compatibilityFontName != nil}
+  public var hasCompatibilityFontName: Bool {_storage._compatibilityFontName != nil}
   /// Clears the value of `compatibilityFontName`. Subsequent reads from it will return its default value.
   public mutating func clearCompatibilityFontName() {_uniqueStorage()._compatibilityFontName = nil}
 
   public var isNamedPointSize: Bool {
-    get {return _storage._isNamedPointSize ?? false}
+    get {_storage._isNamedPointSize ?? false}
     set {_uniqueStorage()._isNamedPointSize = newValue}
   }
   /// Returns true if `isNamedPointSize` has been explicitly set.
-  public var hasIsNamedPointSize: Bool {return _storage._isNamedPointSize != nil}
+  public var hasIsNamedPointSize: Bool {_storage._isNamedPointSize != nil}
   /// Clears the value of `isNamedPointSize`. Subsequent reads from it will return its default value.
   public mutating func clearIsNamedPointSize() {_uniqueStorage()._isNamedPointSize = nil}
 
   public var capitalizationUsesLinguistics: Bool {
-    get {return _storage._capitalizationUsesLinguistics ?? false}
+    get {_storage._capitalizationUsesLinguistics ?? false}
     set {_uniqueStorage()._capitalizationUsesLinguistics = newValue}
   }
   /// Returns true if `capitalizationUsesLinguistics` has been explicitly set.
-  public var hasCapitalizationUsesLinguistics: Bool {return _storage._capitalizationUsesLinguistics != nil}
+  public var hasCapitalizationUsesLinguistics: Bool {_storage._capitalizationUsesLinguistics != nil}
   /// Clears the value of `capitalizationUsesLinguistics`. Subsequent reads from it will return its default value.
   public mutating func clearCapitalizationUsesLinguistics() {_uniqueStorage()._capitalizationUsesLinguistics = nil}
 
   public var tateChuYoko: Bool {
-    get {return _storage._tateChuYoko ?? false}
+    get {_storage._tateChuYoko ?? false}
     set {_uniqueStorage()._tateChuYoko = newValue}
   }
   /// Returns true if `tateChuYoko` has been explicitly set.
-  public var hasTateChuYoko: Bool {return _storage._tateChuYoko != nil}
+  public var hasTateChuYoko: Bool {_storage._tateChuYoko != nil}
   /// Clears the value of `tateChuYoko`. Subsequent reads from it will return its default value.
   public mutating func clearTateChuYoko() {_uniqueStorage()._tateChuYoko = nil}
 
   public var tsdStrokeNull: Bool {
-    get {return _storage._tsdStrokeNull ?? false}
+    get {_storage._tsdStrokeNull ?? false}
     set {_uniqueStorage()._tsdStrokeNull = newValue}
   }
   /// Returns true if `tsdStrokeNull` has been explicitly set.
-  public var hasTsdStrokeNull: Bool {return _storage._tsdStrokeNull != nil}
+  public var hasTsdStrokeNull: Bool {_storage._tsdStrokeNull != nil}
   /// Clears the value of `tsdStrokeNull`. Subsequent reads from it will return its default value.
   public mutating func clearTsdStrokeNull() {_uniqueStorage()._tsdStrokeNull = nil}
 
   public var tsdStroke: TSD_StrokeArchive {
-    get {return _storage._tsdStroke ?? TSD_StrokeArchive()}
+    get {_storage._tsdStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._tsdStroke = newValue}
   }
   /// Returns true if `tsdStroke` has been explicitly set.
-  public var hasTsdStroke: Bool {return _storage._tsdStroke != nil}
+  public var hasTsdStroke: Bool {_storage._tsdStroke != nil}
   /// Clears the value of `tsdStroke`. Subsequent reads from it will return its default value.
   public mutating func clearTsdStroke() {_uniqueStorage()._tsdStroke = nil}
 
   public var tsdFillNull: Bool {
-    get {return _storage._tsdFillNull ?? false}
+    get {_storage._tsdFillNull ?? false}
     set {_uniqueStorage()._tsdFillNull = newValue}
   }
   /// Returns true if `tsdFillNull` has been explicitly set.
-  public var hasTsdFillNull: Bool {return _storage._tsdFillNull != nil}
+  public var hasTsdFillNull: Bool {_storage._tsdFillNull != nil}
   /// Clears the value of `tsdFillNull`. Subsequent reads from it will return its default value.
   public mutating func clearTsdFillNull() {_uniqueStorage()._tsdFillNull = nil}
 
   public var tsdFill: TSD_FillArchive {
-    get {return _storage._tsdFill ?? TSD_FillArchive()}
+    get {_storage._tsdFill ?? TSD_FillArchive()}
     set {_uniqueStorage()._tsdFill = newValue}
   }
   /// Returns true if `tsdFill` has been explicitly set.
-  public var hasTsdFill: Bool {return _storage._tsdFill != nil}
+  public var hasTsdFill: Bool {_storage._tsdFill != nil}
   /// Clears the value of `tsdFill`. Subsequent reads from it will return its default value.
   public mutating func clearTsdFill() {_uniqueStorage()._tsdFill = nil}
 
   public var tsdFillShouldFillTextContainer: Bool {
-    get {return _storage._tsdFillShouldFillTextContainer ?? false}
+    get {_storage._tsdFillShouldFillTextContainer ?? false}
     set {_uniqueStorage()._tsdFillShouldFillTextContainer = newValue}
   }
   /// Returns true if `tsdFillShouldFillTextContainer` has been explicitly set.
-  public var hasTsdFillShouldFillTextContainer: Bool {return _storage._tsdFillShouldFillTextContainer != nil}
+  public var hasTsdFillShouldFillTextContainer: Bool {_storage._tsdFillShouldFillTextContainer != nil}
   /// Clears the value of `tsdFillShouldFillTextContainer`. Subsequent reads from it will return its default value.
   public mutating func clearTsdFillShouldFillTextContainer() {_uniqueStorage()._tsdFillShouldFillTextContainer = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum CapitalizationType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kNoCaps // = 0
-    case kAllCaps // = 1
-    case kSmallCaps // = 2
-    case kTitled // = 3
+  public nonisolated enum CapitalizationType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kNoCaps = 0
+    case kAllCaps = 1
+    case kSmallCaps = 2
+    case kTitled = 3
 
     public init() {
       self = .kNoCaps
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kNoCaps
-      case 1: self = .kAllCaps
-      case 2: self = .kSmallCaps
-      case 3: self = .kTitled
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kNoCaps: return 0
-      case .kAllCaps: return 1
-      case .kSmallCaps: return 2
-      case .kTitled: return 3
-      }
-    }
-
   }
 
-  public enum UnderlineType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kNoUnderline // = 0
-    case kSingleUnderline // = 1
-    case kDoubleUnderline // = 2
-    case kWavyUnderline // = 3
+  public nonisolated enum UnderlineType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kNoUnderline = 0
+    case kSingleUnderline = 1
+    case kDoubleUnderline = 2
+    case kWavyUnderline = 3
 
     public init() {
       self = .kNoUnderline
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kNoUnderline
-      case 1: self = .kSingleUnderline
-      case 2: self = .kDoubleUnderline
-      case 3: self = .kWavyUnderline
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kNoUnderline: return 0
-      case .kSingleUnderline: return 1
-      case .kDoubleUnderline: return 2
-      case .kWavyUnderline: return 3
-      }
-    }
-
   }
 
-  public enum LigaturesType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kRequiredLigatures // = 0
-    case kStandardLigatures // = 1
-    case kAllLigatures // = 2
+  public nonisolated enum LigaturesType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kRequiredLigatures = 0
+    case kStandardLigatures = 1
+    case kAllLigatures = 2
 
     public init() {
       self = .kRequiredLigatures
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kRequiredLigatures
-      case 1: self = .kStandardLigatures
-      case 2: self = .kAllLigatures
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kRequiredLigatures: return 0
-      case .kStandardLigatures: return 1
-      case .kAllLigatures: return 2
-      }
-    }
-
   }
 
-  public enum StrikethruType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kNoStrikethru // = 0
-    case kSingleStrikethru // = 1
-    case kDoubleStrikethru // = 2
-    case kTripleStrikethru // = 3
+  public nonisolated enum StrikethruType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kNoStrikethru = 0
+    case kSingleStrikethru = 1
+    case kDoubleStrikethru = 2
+    case kTripleStrikethru = 3
 
     public init() {
       self = .kNoStrikethru
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kNoStrikethru
-      case 1: self = .kSingleStrikethru
-      case 2: self = .kDoubleStrikethru
-      case 3: self = .kTripleStrikethru
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kNoStrikethru: return 0
-      case .kSingleStrikethru: return 1
-      case .kDoubleStrikethru: return 2
-      case .kTripleStrikethru: return 3
-      }
-    }
-
   }
 
-  public enum SuperscriptType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kNoScript // = 0
-    case kSuperscript // = 1
-    case kSubscript // = 2
+  public nonisolated enum SuperscriptType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kNoScript = 0
+    case kSuperscript = 1
+    case kSubscript = 2
 
     public init() {
       self = .kNoScript
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kNoScript
-      case 1: self = .kSuperscript
-      case 2: self = .kSubscript
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kNoScript: return 0
-      case .kSuperscript: return 1
-      case .kSubscript: return 2
-      }
     }
 
   }
@@ -1404,35 +1196,35 @@ public struct TSWP_CharacterStylePropertiesArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWP_CharacterStyleArchive: Sendable {
+public nonisolated struct TSWP_CharacterStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var overrideCount: UInt32 {
-    get {return _overrideCount ?? 0}
+    get {_overrideCount ?? 0}
     set {_overrideCount = newValue}
   }
   /// Returns true if `overrideCount` has been explicitly set.
-  public var hasOverrideCount: Bool {return self._overrideCount != nil}
+  public var hasOverrideCount: Bool {self._overrideCount != nil}
   /// Clears the value of `overrideCount`. Subsequent reads from it will return its default value.
   public mutating func clearOverrideCount() {self._overrideCount = nil}
 
   public var charProperties: TSWP_CharacterStylePropertiesArchive {
-    get {return _charProperties ?? TSWP_CharacterStylePropertiesArchive()}
+    get {_charProperties ?? TSWP_CharacterStylePropertiesArchive()}
     set {_charProperties = newValue}
   }
   /// Returns true if `charProperties` has been explicitly set.
-  public var hasCharProperties: Bool {return self._charProperties != nil}
+  public var hasCharProperties: Bool {self._charProperties != nil}
   /// Clears the value of `charProperties`. Subsequent reads from it will return its default value.
   public mutating func clearCharProperties() {self._charProperties = nil}
 
@@ -1445,68 +1237,48 @@ public struct TSWP_CharacterStyleArchive: Sendable {
   fileprivate var _charProperties: TSWP_CharacterStylePropertiesArchive? = nil
 }
 
-public struct TSWP_TabArchive: Sendable {
+public nonisolated struct TSWP_TabArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var position: Float {
-    get {return _position ?? 0}
+    get {_position ?? 0}
     set {_position = newValue}
   }
   /// Returns true if `position` has been explicitly set.
-  public var hasPosition: Bool {return self._position != nil}
+  public var hasPosition: Bool {self._position != nil}
   /// Clears the value of `position`. Subsequent reads from it will return its default value.
   public mutating func clearPosition() {self._position = nil}
 
   public var alignment: TSWP_TabArchive.TabAlignmentType {
-    get {return _alignment ?? .kTabAlignmentLeft}
+    get {_alignment ?? .kTabAlignmentLeft}
     set {_alignment = newValue}
   }
   /// Returns true if `alignment` has been explicitly set.
-  public var hasAlignment: Bool {return self._alignment != nil}
+  public var hasAlignment: Bool {self._alignment != nil}
   /// Clears the value of `alignment`. Subsequent reads from it will return its default value.
   public mutating func clearAlignment() {self._alignment = nil}
 
   public var leader: String {
-    get {return _leader ?? String()}
+    get {_leader ?? String()}
     set {_leader = newValue}
   }
   /// Returns true if `leader` has been explicitly set.
-  public var hasLeader: Bool {return self._leader != nil}
+  public var hasLeader: Bool {self._leader != nil}
   /// Clears the value of `leader`. Subsequent reads from it will return its default value.
   public mutating func clearLeader() {self._leader = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum TabAlignmentType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kTabAlignmentLeft // = 0
-    case kTabAlignmentCenter // = 1
-    case kTabAlignmentRight // = 2
-    case kTabAlignmentDecimal // = 3
+  public nonisolated enum TabAlignmentType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kTabAlignmentLeft = 0
+    case kTabAlignmentCenter = 1
+    case kTabAlignmentRight = 2
+    case kTabAlignmentDecimal = 3
 
     public init() {
       self = .kTabAlignmentLeft
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kTabAlignmentLeft
-      case 1: self = .kTabAlignmentCenter
-      case 2: self = .kTabAlignmentRight
-      case 3: self = .kTabAlignmentDecimal
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kTabAlignmentLeft: return 0
-      case .kTabAlignmentCenter: return 1
-      case .kTabAlignmentRight: return 2
-      case .kTabAlignmentDecimal: return 3
-      }
     }
 
   }
@@ -1518,7 +1290,7 @@ public struct TSWP_TabArchive: Sendable {
   fileprivate var _leader: String? = nil
 }
 
-public struct TSWP_TabsArchive: Sendable {
+public nonisolated struct TSWP_TabsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1530,71 +1302,49 @@ public struct TSWP_TabsArchive: Sendable {
   public init() {}
 }
 
-public struct TSWP_LineSpacingArchive: Sendable {
+public nonisolated struct TSWP_LineSpacingArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var mode: TSWP_LineSpacingArchive.LineSpacingModeType {
-    get {return _mode ?? .kRelativeLineSpacing}
+    get {_mode ?? .kRelativeLineSpacing}
     set {_mode = newValue}
   }
   /// Returns true if `mode` has been explicitly set.
-  public var hasMode: Bool {return self._mode != nil}
+  public var hasMode: Bool {self._mode != nil}
   /// Clears the value of `mode`. Subsequent reads from it will return its default value.
   public mutating func clearMode() {self._mode = nil}
 
   public var amount: Float {
-    get {return _amount ?? 0}
+    get {_amount ?? 0}
     set {_amount = newValue}
   }
   /// Returns true if `amount` has been explicitly set.
-  public var hasAmount: Bool {return self._amount != nil}
+  public var hasAmount: Bool {self._amount != nil}
   /// Clears the value of `amount`. Subsequent reads from it will return its default value.
   public mutating func clearAmount() {self._amount = nil}
 
   public var baselineRule: Float {
-    get {return _baselineRule ?? 0}
+    get {_baselineRule ?? 0}
     set {_baselineRule = newValue}
   }
   /// Returns true if `baselineRule` has been explicitly set.
-  public var hasBaselineRule: Bool {return self._baselineRule != nil}
+  public var hasBaselineRule: Bool {self._baselineRule != nil}
   /// Clears the value of `baselineRule`. Subsequent reads from it will return its default value.
   public mutating func clearBaselineRule() {self._baselineRule = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum LineSpacingModeType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kRelativeLineSpacing // = 0
-    case kMinimumLineSpacing // = 1
-    case kExactLineSpacing // = 2
-    case kMaximumLineSpacing // = 3
-    case kSpaceBetweenLineSpacing // = 4
+  public nonisolated enum LineSpacingModeType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kRelativeLineSpacing = 0
+    case kMinimumLineSpacing = 1
+    case kExactLineSpacing = 2
+    case kMaximumLineSpacing = 3
+    case kSpaceBetweenLineSpacing = 4
 
     public init() {
       self = .kRelativeLineSpacing
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kRelativeLineSpacing
-      case 1: self = .kMinimumLineSpacing
-      case 2: self = .kExactLineSpacing
-      case 3: self = .kMaximumLineSpacing
-      case 4: self = .kSpaceBetweenLineSpacing
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kRelativeLineSpacing: return 0
-      case .kMinimumLineSpacing: return 1
-      case .kExactLineSpacing: return 2
-      case .kMaximumLineSpacing: return 3
-      case .kSpaceBetweenLineSpacing: return 4
-      }
     }
 
   }
@@ -1606,519 +1356,435 @@ public struct TSWP_LineSpacingArchive: Sendable {
   fileprivate var _baselineRule: Float? = nil
 }
 
-public struct TSWP_ParagraphStylePropertiesArchive: @unchecked Sendable {
+public nonisolated struct TSWP_ParagraphStylePropertiesArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var alignment: TSWP_ParagraphStylePropertiesArchive.TextAlignmentType {
-    get {return _storage._alignment ?? .tatvalue0}
+    get {_storage._alignment ?? .tatvalue0}
     set {_uniqueStorage()._alignment = newValue}
   }
   /// Returns true if `alignment` has been explicitly set.
-  public var hasAlignment: Bool {return _storage._alignment != nil}
+  public var hasAlignment: Bool {_storage._alignment != nil}
   /// Clears the value of `alignment`. Subsequent reads from it will return its default value.
   public mutating func clearAlignment() {_uniqueStorage()._alignment = nil}
 
   public var decimalTabNull: Bool {
-    get {return _storage._decimalTabNull ?? false}
+    get {_storage._decimalTabNull ?? false}
     set {_uniqueStorage()._decimalTabNull = newValue}
   }
   /// Returns true if `decimalTabNull` has been explicitly set.
-  public var hasDecimalTabNull: Bool {return _storage._decimalTabNull != nil}
+  public var hasDecimalTabNull: Bool {_storage._decimalTabNull != nil}
   /// Clears the value of `decimalTabNull`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalTabNull() {_uniqueStorage()._decimalTabNull = nil}
 
   public var decimalTab: String {
-    get {return _storage._decimalTab ?? String()}
+    get {_storage._decimalTab ?? String()}
     set {_uniqueStorage()._decimalTab = newValue}
   }
   /// Returns true if `decimalTab` has been explicitly set.
-  public var hasDecimalTab: Bool {return _storage._decimalTab != nil}
+  public var hasDecimalTab: Bool {_storage._decimalTab != nil}
   /// Clears the value of `decimalTab`. Subsequent reads from it will return its default value.
   public mutating func clearDecimalTab() {_uniqueStorage()._decimalTab = nil}
 
   public var defaultTabStops: Float {
-    get {return _storage._defaultTabStops ?? 0}
+    get {_storage._defaultTabStops ?? 0}
     set {_uniqueStorage()._defaultTabStops = newValue}
   }
   /// Returns true if `defaultTabStops` has been explicitly set.
-  public var hasDefaultTabStops: Bool {return _storage._defaultTabStops != nil}
+  public var hasDefaultTabStops: Bool {_storage._defaultTabStops != nil}
   /// Clears the value of `defaultTabStops`. Subsequent reads from it will return its default value.
   public mutating func clearDefaultTabStops() {_uniqueStorage()._defaultTabStops = nil}
 
   public var fillNull: Bool {
-    get {return _storage._fillNull ?? false}
+    get {_storage._fillNull ?? false}
     set {_uniqueStorage()._fillNull = newValue}
   }
   /// Returns true if `fillNull` has been explicitly set.
-  public var hasFillNull: Bool {return _storage._fillNull != nil}
+  public var hasFillNull: Bool {_storage._fillNull != nil}
   /// Clears the value of `fillNull`. Subsequent reads from it will return its default value.
   public mutating func clearFillNull() {_uniqueStorage()._fillNull = nil}
 
   public var fill: TSP_Color {
-    get {return _storage._fill ?? TSP_Color()}
+    get {_storage._fill ?? TSP_Color()}
     set {_uniqueStorage()._fill = newValue}
   }
   /// Returns true if `fill` has been explicitly set.
-  public var hasFill: Bool {return _storage._fill != nil}
+  public var hasFill: Bool {_storage._fill != nil}
   /// Clears the value of `fill`. Subsequent reads from it will return its default value.
   public mutating func clearFill() {_uniqueStorage()._fill = nil}
 
   public var firstLineIndent: Float {
-    get {return _storage._firstLineIndent ?? 0}
+    get {_storage._firstLineIndent ?? 0}
     set {_uniqueStorage()._firstLineIndent = newValue}
   }
   /// Returns true if `firstLineIndent` has been explicitly set.
-  public var hasFirstLineIndent: Bool {return _storage._firstLineIndent != nil}
+  public var hasFirstLineIndent: Bool {_storage._firstLineIndent != nil}
   /// Clears the value of `firstLineIndent`. Subsequent reads from it will return its default value.
   public mutating func clearFirstLineIndent() {_uniqueStorage()._firstLineIndent = nil}
 
   public var hyphenate: Bool {
-    get {return _storage._hyphenate ?? false}
+    get {_storage._hyphenate ?? false}
     set {_uniqueStorage()._hyphenate = newValue}
   }
   /// Returns true if `hyphenate` has been explicitly set.
-  public var hasHyphenate: Bool {return _storage._hyphenate != nil}
+  public var hasHyphenate: Bool {_storage._hyphenate != nil}
   /// Clears the value of `hyphenate`. Subsequent reads from it will return its default value.
   public mutating func clearHyphenate() {_uniqueStorage()._hyphenate = nil}
 
   public var keepLinesTogether: Bool {
-    get {return _storage._keepLinesTogether ?? false}
+    get {_storage._keepLinesTogether ?? false}
     set {_uniqueStorage()._keepLinesTogether = newValue}
   }
   /// Returns true if `keepLinesTogether` has been explicitly set.
-  public var hasKeepLinesTogether: Bool {return _storage._keepLinesTogether != nil}
+  public var hasKeepLinesTogether: Bool {_storage._keepLinesTogether != nil}
   /// Clears the value of `keepLinesTogether`. Subsequent reads from it will return its default value.
   public mutating func clearKeepLinesTogether() {_uniqueStorage()._keepLinesTogether = nil}
 
   public var keepWithNext: Bool {
-    get {return _storage._keepWithNext ?? false}
+    get {_storage._keepWithNext ?? false}
     set {_uniqueStorage()._keepWithNext = newValue}
   }
   /// Returns true if `keepWithNext` has been explicitly set.
-  public var hasKeepWithNext: Bool {return _storage._keepWithNext != nil}
+  public var hasKeepWithNext: Bool {_storage._keepWithNext != nil}
   /// Clears the value of `keepWithNext`. Subsequent reads from it will return its default value.
   public mutating func clearKeepWithNext() {_uniqueStorage()._keepWithNext = nil}
 
   public var leftIndent: Float {
-    get {return _storage._leftIndent ?? 0}
+    get {_storage._leftIndent ?? 0}
     set {_uniqueStorage()._leftIndent = newValue}
   }
   /// Returns true if `leftIndent` has been explicitly set.
-  public var hasLeftIndent: Bool {return _storage._leftIndent != nil}
+  public var hasLeftIndent: Bool {_storage._leftIndent != nil}
   /// Clears the value of `leftIndent`. Subsequent reads from it will return its default value.
   public mutating func clearLeftIndent() {_uniqueStorage()._leftIndent = nil}
 
   public var lineSpacingNull: Bool {
-    get {return _storage._lineSpacingNull ?? false}
+    get {_storage._lineSpacingNull ?? false}
     set {_uniqueStorage()._lineSpacingNull = newValue}
   }
   /// Returns true if `lineSpacingNull` has been explicitly set.
-  public var hasLineSpacingNull: Bool {return _storage._lineSpacingNull != nil}
+  public var hasLineSpacingNull: Bool {_storage._lineSpacingNull != nil}
   /// Clears the value of `lineSpacingNull`. Subsequent reads from it will return its default value.
   public mutating func clearLineSpacingNull() {_uniqueStorage()._lineSpacingNull = nil}
 
   public var lineSpacing: TSWP_LineSpacingArchive {
-    get {return _storage._lineSpacing ?? TSWP_LineSpacingArchive()}
+    get {_storage._lineSpacing ?? TSWP_LineSpacingArchive()}
     set {_uniqueStorage()._lineSpacing = newValue}
   }
   /// Returns true if `lineSpacing` has been explicitly set.
-  public var hasLineSpacing: Bool {return _storage._lineSpacing != nil}
+  public var hasLineSpacing: Bool {_storage._lineSpacing != nil}
   /// Clears the value of `lineSpacing`. Subsequent reads from it will return its default value.
   public mutating func clearLineSpacing() {_uniqueStorage()._lineSpacing = nil}
 
   public var pageBreakBefore: Bool {
-    get {return _storage._pageBreakBefore ?? false}
+    get {_storage._pageBreakBefore ?? false}
     set {_uniqueStorage()._pageBreakBefore = newValue}
   }
   /// Returns true if `pageBreakBefore` has been explicitly set.
-  public var hasPageBreakBefore: Bool {return _storage._pageBreakBefore != nil}
+  public var hasPageBreakBefore: Bool {_storage._pageBreakBefore != nil}
   /// Clears the value of `pageBreakBefore`. Subsequent reads from it will return its default value.
   public mutating func clearPageBreakBefore() {_uniqueStorage()._pageBreakBefore = nil}
 
   public var deprecatedBorders: TSWP_ParagraphStylePropertiesArchive.DeprecatedParagraphBorderType {
-    get {return _storage._deprecatedBorders ?? .pbtvalue0}
+    get {_storage._deprecatedBorders ?? .pbtvalue0}
     set {_uniqueStorage()._deprecatedBorders = newValue}
   }
   /// Returns true if `deprecatedBorders` has been explicitly set.
-  public var hasDeprecatedBorders: Bool {return _storage._deprecatedBorders != nil}
+  public var hasDeprecatedBorders: Bool {_storage._deprecatedBorders != nil}
   /// Clears the value of `deprecatedBorders`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedBorders() {_uniqueStorage()._deprecatedBorders = nil}
 
   public var historicalRuleOffsetNull: Bool {
-    get {return _storage._historicalRuleOffsetNull ?? false}
+    get {_storage._historicalRuleOffsetNull ?? false}
     set {_uniqueStorage()._historicalRuleOffsetNull = newValue}
   }
   /// Returns true if `historicalRuleOffsetNull` has been explicitly set.
-  public var hasHistoricalRuleOffsetNull: Bool {return _storage._historicalRuleOffsetNull != nil}
+  public var hasHistoricalRuleOffsetNull: Bool {_storage._historicalRuleOffsetNull != nil}
   /// Clears the value of `historicalRuleOffsetNull`. Subsequent reads from it will return its default value.
   public mutating func clearHistoricalRuleOffsetNull() {_uniqueStorage()._historicalRuleOffsetNull = nil}
 
   public var historicalRuleOffset: TSP_Point {
-    get {return _storage._historicalRuleOffset ?? TSP_Point()}
+    get {_storage._historicalRuleOffset ?? TSP_Point()}
     set {_uniqueStorage()._historicalRuleOffset = newValue}
   }
   /// Returns true if `historicalRuleOffset` has been explicitly set.
-  public var hasHistoricalRuleOffset: Bool {return _storage._historicalRuleOffset != nil}
+  public var hasHistoricalRuleOffset: Bool {_storage._historicalRuleOffset != nil}
   /// Clears the value of `historicalRuleOffset`. Subsequent reads from it will return its default value.
   public mutating func clearHistoricalRuleOffset() {_uniqueStorage()._historicalRuleOffset = nil}
 
   public var ruleWidth: Float {
-    get {return _storage._ruleWidth ?? 0}
+    get {_storage._ruleWidth ?? 0}
     set {_uniqueStorage()._ruleWidth = newValue}
   }
   /// Returns true if `ruleWidth` has been explicitly set.
-  public var hasRuleWidth: Bool {return _storage._ruleWidth != nil}
+  public var hasRuleWidth: Bool {_storage._ruleWidth != nil}
   /// Clears the value of `ruleWidth`. Subsequent reads from it will return its default value.
   public mutating func clearRuleWidth() {_uniqueStorage()._ruleWidth = nil}
 
   public var rightIndent: Float {
-    get {return _storage._rightIndent ?? 0}
+    get {_storage._rightIndent ?? 0}
     set {_uniqueStorage()._rightIndent = newValue}
   }
   /// Returns true if `rightIndent` has been explicitly set.
-  public var hasRightIndent: Bool {return _storage._rightIndent != nil}
+  public var hasRightIndent: Bool {_storage._rightIndent != nil}
   /// Clears the value of `rightIndent`. Subsequent reads from it will return its default value.
   public mutating func clearRightIndent() {_uniqueStorage()._rightIndent = nil}
 
   public var spaceAfter: Float {
-    get {return _storage._spaceAfter ?? 0}
+    get {_storage._spaceAfter ?? 0}
     set {_uniqueStorage()._spaceAfter = newValue}
   }
   /// Returns true if `spaceAfter` has been explicitly set.
-  public var hasSpaceAfter: Bool {return _storage._spaceAfter != nil}
+  public var hasSpaceAfter: Bool {_storage._spaceAfter != nil}
   /// Clears the value of `spaceAfter`. Subsequent reads from it will return its default value.
   public mutating func clearSpaceAfter() {_uniqueStorage()._spaceAfter = nil}
 
   public var spaceBefore: Float {
-    get {return _storage._spaceBefore ?? 0}
+    get {_storage._spaceBefore ?? 0}
     set {_uniqueStorage()._spaceBefore = newValue}
   }
   /// Returns true if `spaceBefore` has been explicitly set.
-  public var hasSpaceBefore: Bool {return _storage._spaceBefore != nil}
+  public var hasSpaceBefore: Bool {_storage._spaceBefore != nil}
   /// Clears the value of `spaceBefore`. Subsequent reads from it will return its default value.
   public mutating func clearSpaceBefore() {_uniqueStorage()._spaceBefore = nil}
 
   public var tabsNull: Bool {
-    get {return _storage._tabsNull ?? false}
+    get {_storage._tabsNull ?? false}
     set {_uniqueStorage()._tabsNull = newValue}
   }
   /// Returns true if `tabsNull` has been explicitly set.
-  public var hasTabsNull: Bool {return _storage._tabsNull != nil}
+  public var hasTabsNull: Bool {_storage._tabsNull != nil}
   /// Clears the value of `tabsNull`. Subsequent reads from it will return its default value.
   public mutating func clearTabsNull() {_uniqueStorage()._tabsNull = nil}
 
   public var tabs: TSWP_TabsArchive {
-    get {return _storage._tabs ?? TSWP_TabsArchive()}
+    get {_storage._tabs ?? TSWP_TabsArchive()}
     set {_uniqueStorage()._tabs = newValue}
   }
   /// Returns true if `tabs` has been explicitly set.
-  public var hasTabs: Bool {return _storage._tabs != nil}
+  public var hasTabs: Bool {_storage._tabs != nil}
   /// Clears the value of `tabs`. Subsequent reads from it will return its default value.
   public mutating func clearTabs() {_uniqueStorage()._tabs = nil}
 
   public var widowControl: Bool {
-    get {return _storage._widowControl ?? false}
+    get {_storage._widowControl ?? false}
     set {_uniqueStorage()._widowControl = newValue}
   }
   /// Returns true if `widowControl` has been explicitly set.
-  public var hasWidowControl: Bool {return _storage._widowControl != nil}
+  public var hasWidowControl: Bool {_storage._widowControl != nil}
   /// Clears the value of `widowControl`. Subsequent reads from it will return its default value.
   public mutating func clearWidowControl() {_uniqueStorage()._widowControl = nil}
 
   public var outlineLevel: UInt32 {
-    get {return _storage._outlineLevel ?? 0}
+    get {_storage._outlineLevel ?? 0}
     set {_uniqueStorage()._outlineLevel = newValue}
   }
   /// Returns true if `outlineLevel` has been explicitly set.
-  public var hasOutlineLevel: Bool {return _storage._outlineLevel != nil}
+  public var hasOutlineLevel: Bool {_storage._outlineLevel != nil}
   /// Clears the value of `outlineLevel`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineLevel() {_uniqueStorage()._outlineLevel = nil}
 
   public var outlineStyle: TSWP_ParagraphStylePropertiesArchive.OutlineStyleType {
-    get {return _storage._outlineStyle ?? .ostvalue0}
+    get {_storage._outlineStyle ?? .ostvalue0}
     set {_uniqueStorage()._outlineStyle = newValue}
   }
   /// Returns true if `outlineStyle` has been explicitly set.
-  public var hasOutlineStyle: Bool {return _storage._outlineStyle != nil}
+  public var hasOutlineStyle: Bool {_storage._outlineStyle != nil}
   /// Clears the value of `outlineStyle`. Subsequent reads from it will return its default value.
   public mutating func clearOutlineStyle() {_uniqueStorage()._outlineStyle = nil}
 
   public var followingStyleIDNull: Bool {
-    get {return _storage._followingStyleIDNull ?? false}
+    get {_storage._followingStyleIDNull ?? false}
     set {_uniqueStorage()._followingStyleIDNull = newValue}
   }
   /// Returns true if `followingStyleIDNull` has been explicitly set.
-  public var hasFollowingStyleIDNull: Bool {return _storage._followingStyleIDNull != nil}
+  public var hasFollowingStyleIDNull: Bool {_storage._followingStyleIDNull != nil}
   /// Clears the value of `followingStyleIDNull`. Subsequent reads from it will return its default value.
   public mutating func clearFollowingStyleIDNull() {_uniqueStorage()._followingStyleIDNull = nil}
 
   public var followingStyleID: String {
-    get {return _storage._followingStyleID ?? String()}
+    get {_storage._followingStyleID ?? String()}
     set {_uniqueStorage()._followingStyleID = newValue}
   }
   /// Returns true if `followingStyleID` has been explicitly set.
-  public var hasFollowingStyleID: Bool {return _storage._followingStyleID != nil}
+  public var hasFollowingStyleID: Bool {_storage._followingStyleID != nil}
   /// Clears the value of `followingStyleID`. Subsequent reads from it will return its default value.
   public mutating func clearFollowingStyleID() {_uniqueStorage()._followingStyleID = nil}
 
   public var strokeNull: Bool {
-    get {return _storage._strokeNull ?? false}
+    get {_storage._strokeNull ?? false}
     set {_uniqueStorage()._strokeNull = newValue}
   }
   /// Returns true if `strokeNull` has been explicitly set.
-  public var hasStrokeNull: Bool {return _storage._strokeNull != nil}
+  public var hasStrokeNull: Bool {_storage._strokeNull != nil}
   /// Clears the value of `strokeNull`. Subsequent reads from it will return its default value.
   public mutating func clearStrokeNull() {_uniqueStorage()._strokeNull = nil}
 
   public var stroke: TSD_StrokeArchive {
-    get {return _storage._stroke ?? TSD_StrokeArchive()}
+    get {_storage._stroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._stroke = newValue}
   }
   /// Returns true if `stroke` has been explicitly set.
-  public var hasStroke: Bool {return _storage._stroke != nil}
+  public var hasStroke: Bool {_storage._stroke != nil}
   /// Clears the value of `stroke`. Subsequent reads from it will return its default value.
   public mutating func clearStroke() {_uniqueStorage()._stroke = nil}
 
   public var showInToc: Bool {
-    get {return _storage._showInToc ?? false}
+    get {_storage._showInToc ?? false}
     set {_uniqueStorage()._showInToc = newValue}
   }
   /// Returns true if `showInToc` has been explicitly set.
-  public var hasShowInToc: Bool {return _storage._showInToc != nil}
+  public var hasShowInToc: Bool {_storage._showInToc != nil}
   /// Clears the value of `showInToc`. Subsequent reads from it will return its default value.
   public mutating func clearShowInToc() {_uniqueStorage()._showInToc = nil}
 
   public var tocStyleIDNull: Bool {
-    get {return _storage._tocStyleIDNull ?? false}
+    get {_storage._tocStyleIDNull ?? false}
     set {_uniqueStorage()._tocStyleIDNull = newValue}
   }
   /// Returns true if `tocStyleIDNull` has been explicitly set.
-  public var hasTocStyleIDNull: Bool {return _storage._tocStyleIDNull != nil}
+  public var hasTocStyleIDNull: Bool {_storage._tocStyleIDNull != nil}
   /// Clears the value of `tocStyleIDNull`. Subsequent reads from it will return its default value.
   public mutating func clearTocStyleIDNull() {_uniqueStorage()._tocStyleIDNull = nil}
 
   public var tocStyleID: String {
-    get {return _storage._tocStyleID ?? String()}
+    get {_storage._tocStyleID ?? String()}
     set {_uniqueStorage()._tocStyleID = newValue}
   }
   /// Returns true if `tocStyleID` has been explicitly set.
-  public var hasTocStyleID: Bool {return _storage._tocStyleID != nil}
+  public var hasTocStyleID: Bool {_storage._tocStyleID != nil}
   /// Clears the value of `tocStyleID`. Subsequent reads from it will return its default value.
   public mutating func clearTocStyleID() {_uniqueStorage()._tocStyleID = nil}
 
   public var writingDirection: TSWP_WritingDirectionType {
-    get {return _storage._writingDirection ?? .kWritingDirectionNatural}
+    get {_storage._writingDirection ?? .kWritingDirectionNatural}
     set {_uniqueStorage()._writingDirection = newValue}
   }
   /// Returns true if `writingDirection` has been explicitly set.
-  public var hasWritingDirection: Bool {return _storage._writingDirection != nil}
+  public var hasWritingDirection: Bool {_storage._writingDirection != nil}
   /// Clears the value of `writingDirection`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirection() {_uniqueStorage()._writingDirection = nil}
 
   public var listStyleNull: Bool {
-    get {return _storage._listStyleNull ?? false}
+    get {_storage._listStyleNull ?? false}
     set {_uniqueStorage()._listStyleNull = newValue}
   }
   /// Returns true if `listStyleNull` has been explicitly set.
-  public var hasListStyleNull: Bool {return _storage._listStyleNull != nil}
+  public var hasListStyleNull: Bool {_storage._listStyleNull != nil}
   /// Clears the value of `listStyleNull`. Subsequent reads from it will return its default value.
   public mutating func clearListStyleNull() {_uniqueStorage()._listStyleNull = nil}
 
   public var listStyle: TSP_Reference {
-    get {return _storage._listStyle ?? TSP_Reference()}
+    get {_storage._listStyle ?? TSP_Reference()}
     set {_uniqueStorage()._listStyle = newValue}
   }
   /// Returns true if `listStyle` has been explicitly set.
-  public var hasListStyle: Bool {return _storage._listStyle != nil}
+  public var hasListStyle: Bool {_storage._listStyle != nil}
   /// Clears the value of `listStyle`. Subsequent reads from it will return its default value.
   public mutating func clearListStyle() {_uniqueStorage()._listStyle = nil}
 
   public var followingStyleNull: Bool {
-    get {return _storage._followingStyleNull ?? false}
+    get {_storage._followingStyleNull ?? false}
     set {_uniqueStorage()._followingStyleNull = newValue}
   }
   /// Returns true if `followingStyleNull` has been explicitly set.
-  public var hasFollowingStyleNull: Bool {return _storage._followingStyleNull != nil}
+  public var hasFollowingStyleNull: Bool {_storage._followingStyleNull != nil}
   /// Clears the value of `followingStyleNull`. Subsequent reads from it will return its default value.
   public mutating func clearFollowingStyleNull() {_uniqueStorage()._followingStyleNull = nil}
 
   public var followingStyle: TSP_Reference {
-    get {return _storage._followingStyle ?? TSP_Reference()}
+    get {_storage._followingStyle ?? TSP_Reference()}
     set {_uniqueStorage()._followingStyle = newValue}
   }
   /// Returns true if `followingStyle` has been explicitly set.
-  public var hasFollowingStyle: Bool {return _storage._followingStyle != nil}
+  public var hasFollowingStyle: Bool {_storage._followingStyle != nil}
   /// Clears the value of `followingStyle`. Subsequent reads from it will return its default value.
   public mutating func clearFollowingStyle() {_uniqueStorage()._followingStyle = nil}
 
   public var showInBookmarksList: Bool {
-    get {return _storage._showInBookmarksList ?? false}
+    get {_storage._showInBookmarksList ?? false}
     set {_uniqueStorage()._showInBookmarksList = newValue}
   }
   /// Returns true if `showInBookmarksList` has been explicitly set.
-  public var hasShowInBookmarksList: Bool {return _storage._showInBookmarksList != nil}
+  public var hasShowInBookmarksList: Bool {_storage._showInBookmarksList != nil}
   /// Clears the value of `showInBookmarksList`. Subsequent reads from it will return its default value.
   public mutating func clearShowInBookmarksList() {_uniqueStorage()._showInBookmarksList = nil}
 
   public var showInTocNavigator: Bool {
-    get {return _storage._showInTocNavigator ?? false}
+    get {_storage._showInTocNavigator ?? false}
     set {_uniqueStorage()._showInTocNavigator = newValue}
   }
   /// Returns true if `showInTocNavigator` has been explicitly set.
-  public var hasShowInTocNavigator: Bool {return _storage._showInTocNavigator != nil}
+  public var hasShowInTocNavigator: Bool {_storage._showInTocNavigator != nil}
   /// Clears the value of `showInTocNavigator`. Subsequent reads from it will return its default value.
   public mutating func clearShowInTocNavigator() {_uniqueStorage()._showInTocNavigator = nil}
 
   public var borderPositions: Int32 {
-    get {return _storage._borderPositions ?? 0}
+    get {_storage._borderPositions ?? 0}
     set {_uniqueStorage()._borderPositions = newValue}
   }
   /// Returns true if `borderPositions` has been explicitly set.
-  public var hasBorderPositions: Bool {return _storage._borderPositions != nil}
+  public var hasBorderPositions: Bool {_storage._borderPositions != nil}
   /// Clears the value of `borderPositions`. Subsequent reads from it will return its default value.
   public mutating func clearBorderPositions() {_uniqueStorage()._borderPositions = nil}
 
   public var roundedCorners: Bool {
-    get {return _storage._roundedCorners ?? false}
+    get {_storage._roundedCorners ?? false}
     set {_uniqueStorage()._roundedCorners = newValue}
   }
   /// Returns true if `roundedCorners` has been explicitly set.
-  public var hasRoundedCorners: Bool {return _storage._roundedCorners != nil}
+  public var hasRoundedCorners: Bool {_storage._roundedCorners != nil}
   /// Clears the value of `roundedCorners`. Subsequent reads from it will return its default value.
   public mutating func clearRoundedCorners() {_uniqueStorage()._roundedCorners = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum TextAlignmentType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case tatvalue0 // = 0
-    case tatvalue1 // = 1
-    case tatvalue2 // = 2
-    case tatvalue3 // = 3
-    case tatvalue4 // = 4
+  public nonisolated enum TextAlignmentType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case tatvalue0 = 0
+    case tatvalue1 = 1
+    case tatvalue2 = 2
+    case tatvalue3 = 3
+    case tatvalue4 = 4
 
     public init() {
       self = .tatvalue0
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .tatvalue0
-      case 1: self = .tatvalue1
-      case 2: self = .tatvalue2
-      case 3: self = .tatvalue3
-      case 4: self = .tatvalue4
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .tatvalue0: return 0
-      case .tatvalue1: return 1
-      case .tatvalue2: return 2
-      case .tatvalue3: return 3
-      case .tatvalue4: return 4
-      }
-    }
-
   }
 
-  public enum DeprecatedParagraphBorderType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case pbtvalue0 // = 0
-    case pbtvalue1 // = 1
-    case pbtvalue2 // = 2
-    case pbtvalue3 // = 3
-    case pbtvalue4 // = 4
-    case pbtvalue5 // = 8
-    case pbtvalue6 // = 9
-    case pbtvalue7 // = 10
-    case pbtvalue8 // = 11
-    case pbtvalue9 // = 16
-    case pbtvalue10 // = 17
-    case pbtvalue11 // = 18
-    case pbtvalue12 // = 19
-    case pbtvalue13 // = 24
-    case pbtvalue14 // = 25
-    case pbtvalue15 // = 26
+  public nonisolated enum DeprecatedParagraphBorderType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case pbtvalue0 = 0
+    case pbtvalue1 = 1
+    case pbtvalue2 = 2
+    case pbtvalue3 = 3
+    case pbtvalue4 = 4
+    case pbtvalue5 = 8
+    case pbtvalue6 = 9
+    case pbtvalue7 = 10
+    case pbtvalue8 = 11
+    case pbtvalue9 = 16
+    case pbtvalue10 = 17
+    case pbtvalue11 = 18
+    case pbtvalue12 = 19
+    case pbtvalue13 = 24
+    case pbtvalue14 = 25
+    case pbtvalue15 = 26
 
     public init() {
       self = .pbtvalue0
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .pbtvalue0
-      case 1: self = .pbtvalue1
-      case 2: self = .pbtvalue2
-      case 3: self = .pbtvalue3
-      case 4: self = .pbtvalue4
-      case 8: self = .pbtvalue5
-      case 9: self = .pbtvalue6
-      case 10: self = .pbtvalue7
-      case 11: self = .pbtvalue8
-      case 16: self = .pbtvalue9
-      case 17: self = .pbtvalue10
-      case 18: self = .pbtvalue11
-      case 19: self = .pbtvalue12
-      case 24: self = .pbtvalue13
-      case 25: self = .pbtvalue14
-      case 26: self = .pbtvalue15
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .pbtvalue0: return 0
-      case .pbtvalue1: return 1
-      case .pbtvalue2: return 2
-      case .pbtvalue3: return 3
-      case .pbtvalue4: return 4
-      case .pbtvalue5: return 8
-      case .pbtvalue6: return 9
-      case .pbtvalue7: return 10
-      case .pbtvalue8: return 11
-      case .pbtvalue9: return 16
-      case .pbtvalue10: return 17
-      case .pbtvalue11: return 18
-      case .pbtvalue12: return 19
-      case .pbtvalue13: return 24
-      case .pbtvalue14: return 25
-      case .pbtvalue15: return 26
-      }
-    }
-
   }
 
-  public enum OutlineStyleType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case ostvalue0 // = 0
-    case ostvalue1 // = 1
-    case ostvalue2 // = 2
+  public nonisolated enum OutlineStyleType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case ostvalue0 = 0
+    case ostvalue1 = 1
+    case ostvalue2 = 2
 
     public init() {
       self = .ostvalue0
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .ostvalue0
-      case 1: self = .ostvalue1
-      case 2: self = .ostvalue2
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .ostvalue0: return 0
-      case .ostvalue1: return 1
-      case .ostvalue2: return 2
-      }
     }
 
   }
@@ -2128,44 +1794,44 @@ public struct TSWP_ParagraphStylePropertiesArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWP_ParagraphStyleArchive: Sendable {
+public nonisolated struct TSWP_ParagraphStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var overrideCount: UInt32 {
-    get {return _overrideCount ?? 0}
+    get {_overrideCount ?? 0}
     set {_overrideCount = newValue}
   }
   /// Returns true if `overrideCount` has been explicitly set.
-  public var hasOverrideCount: Bool {return self._overrideCount != nil}
+  public var hasOverrideCount: Bool {self._overrideCount != nil}
   /// Clears the value of `overrideCount`. Subsequent reads from it will return its default value.
   public mutating func clearOverrideCount() {self._overrideCount = nil}
 
   public var charProperties: TSWP_CharacterStylePropertiesArchive {
-    get {return _charProperties ?? TSWP_CharacterStylePropertiesArchive()}
+    get {_charProperties ?? TSWP_CharacterStylePropertiesArchive()}
     set {_charProperties = newValue}
   }
   /// Returns true if `charProperties` has been explicitly set.
-  public var hasCharProperties: Bool {return self._charProperties != nil}
+  public var hasCharProperties: Bool {self._charProperties != nil}
   /// Clears the value of `charProperties`. Subsequent reads from it will return its default value.
   public mutating func clearCharProperties() {self._charProperties = nil}
 
   public var paraProperties: TSWP_ParagraphStylePropertiesArchive {
-    get {return _paraProperties ?? TSWP_ParagraphStylePropertiesArchive()}
+    get {_paraProperties ?? TSWP_ParagraphStylePropertiesArchive()}
     set {_paraProperties = newValue}
   }
   /// Returns true if `paraProperties` has been explicitly set.
-  public var hasParaProperties: Bool {return self._paraProperties != nil}
+  public var hasParaProperties: Bool {self._paraProperties != nil}
   /// Clears the value of `paraProperties`. Subsequent reads from it will return its default value.
   public mutating func clearParaProperties() {self._paraProperties = nil}
 
@@ -2179,410 +1845,248 @@ public struct TSWP_ParagraphStyleArchive: Sendable {
   fileprivate var _paraProperties: TSWP_ParagraphStylePropertiesArchive? = nil
 }
 
-public struct TSWP_ListStyleArchive: @unchecked Sendable {
+public nonisolated struct TSWP_ListStyleArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _storage._super ?? TSS_StyleArchive()}
+    get {_storage._super ?? TSS_StyleArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var overrideCount: UInt32 {
-    get {return _storage._overrideCount ?? 0}
+    get {_storage._overrideCount ?? 0}
     set {_uniqueStorage()._overrideCount = newValue}
   }
   /// Returns true if `overrideCount` has been explicitly set.
-  public var hasOverrideCount: Bool {return _storage._overrideCount != nil}
+  public var hasOverrideCount: Bool {_storage._overrideCount != nil}
   /// Clears the value of `overrideCount`. Subsequent reads from it will return its default value.
   public mutating func clearOverrideCount() {_uniqueStorage()._overrideCount = nil}
 
   public var labelTypes: [TSWP_ListStyleArchive.LabelType] {
-    get {return _storage._labelTypes}
+    get {_storage._labelTypes}
     set {_uniqueStorage()._labelTypes = newValue}
   }
 
   public var textIndents: [Float] {
-    get {return _storage._textIndents}
+    get {_storage._textIndents}
     set {_uniqueStorage()._textIndents = newValue}
   }
 
   public var indents: [Float] {
-    get {return _storage._indents}
+    get {_storage._indents}
     set {_uniqueStorage()._indents = newValue}
   }
 
   public var geometries: [TSWP_ListStyleArchive.LabelGeometry] {
-    get {return _storage._geometries}
+    get {_storage._geometries}
     set {_uniqueStorage()._geometries = newValue}
   }
 
   public var numberTypes: [TSWP_ListStyleArchive.NumberType] {
-    get {return _storage._numberTypes}
+    get {_storage._numberTypes}
     set {_uniqueStorage()._numberTypes = newValue}
   }
 
   public var strings: [String] {
-    get {return _storage._strings}
+    get {_storage._strings}
     set {_uniqueStorage()._strings = newValue}
   }
 
   public var images: [TSWP_ListStyleArchive.LabelImage] {
-    get {return _storage._images}
+    get {_storage._images}
     set {_uniqueStorage()._images = newValue}
   }
 
   public var shadowNull: Bool {
-    get {return _storage._shadowNull ?? false}
+    get {_storage._shadowNull ?? false}
     set {_uniqueStorage()._shadowNull = newValue}
   }
   /// Returns true if `shadowNull` has been explicitly set.
-  public var hasShadowNull: Bool {return _storage._shadowNull != nil}
+  public var hasShadowNull: Bool {_storage._shadowNull != nil}
   /// Clears the value of `shadowNull`. Subsequent reads from it will return its default value.
   public mutating func clearShadowNull() {_uniqueStorage()._shadowNull = nil}
 
   public var shadow: TSD_ShadowArchive {
-    get {return _storage._shadow ?? TSD_ShadowArchive()}
+    get {_storage._shadow ?? TSD_ShadowArchive()}
     set {_uniqueStorage()._shadow = newValue}
   }
   /// Returns true if `shadow` has been explicitly set.
-  public var hasShadow: Bool {return _storage._shadow != nil}
+  public var hasShadow: Bool {_storage._shadow != nil}
   /// Clears the value of `shadow`. Subsequent reads from it will return its default value.
   public mutating func clearShadow() {_uniqueStorage()._shadow = nil}
 
   public var fontColorNull: Bool {
-    get {return _storage._fontColorNull ?? false}
+    get {_storage._fontColorNull ?? false}
     set {_uniqueStorage()._fontColorNull = newValue}
   }
   /// Returns true if `fontColorNull` has been explicitly set.
-  public var hasFontColorNull: Bool {return _storage._fontColorNull != nil}
+  public var hasFontColorNull: Bool {_storage._fontColorNull != nil}
   /// Clears the value of `fontColorNull`. Subsequent reads from it will return its default value.
   public mutating func clearFontColorNull() {_uniqueStorage()._fontColorNull = nil}
 
   public var fontColor: TSP_Color {
-    get {return _storage._fontColor ?? TSP_Color()}
+    get {_storage._fontColor ?? TSP_Color()}
     set {_uniqueStorage()._fontColor = newValue}
   }
   /// Returns true if `fontColor` has been explicitly set.
-  public var hasFontColor: Bool {return _storage._fontColor != nil}
+  public var hasFontColor: Bool {_storage._fontColor != nil}
   /// Clears the value of `fontColor`. Subsequent reads from it will return its default value.
   public mutating func clearFontColor() {_uniqueStorage()._fontColor = nil}
 
   public var fontNameNull: Bool {
-    get {return _storage._fontNameNull ?? false}
+    get {_storage._fontNameNull ?? false}
     set {_uniqueStorage()._fontNameNull = newValue}
   }
   /// Returns true if `fontNameNull` has been explicitly set.
-  public var hasFontNameNull: Bool {return _storage._fontNameNull != nil}
+  public var hasFontNameNull: Bool {_storage._fontNameNull != nil}
   /// Clears the value of `fontNameNull`. Subsequent reads from it will return its default value.
   public mutating func clearFontNameNull() {_uniqueStorage()._fontNameNull = nil}
 
   public var fontName: String {
-    get {return _storage._fontName ?? String()}
+    get {_storage._fontName ?? String()}
     set {_uniqueStorage()._fontName = newValue}
   }
   /// Returns true if `fontName` has been explicitly set.
-  public var hasFontName: Bool {return _storage._fontName != nil}
+  public var hasFontName: Bool {_storage._fontName != nil}
   /// Clears the value of `fontName`. Subsequent reads from it will return its default value.
   public mutating func clearFontName() {_uniqueStorage()._fontName = nil}
 
   public var writingDirection: TSWP_WritingDirectionType {
-    get {return _storage._writingDirection ?? .kWritingDirectionNatural}
+    get {_storage._writingDirection ?? .kWritingDirectionNatural}
     set {_uniqueStorage()._writingDirection = newValue}
   }
   /// Returns true if `writingDirection` has been explicitly set.
-  public var hasWritingDirection: Bool {return _storage._writingDirection != nil}
+  public var hasWritingDirection: Bool {_storage._writingDirection != nil}
   /// Clears the value of `writingDirection`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirection() {_uniqueStorage()._writingDirection = nil}
 
   public var tieredNumbers: [Bool] {
-    get {return _storage._tieredNumbers}
+    get {_storage._tieredNumbers}
     set {_uniqueStorage()._tieredNumbers = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum LabelType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kNone // = 0
-    case kImage // = 1
-    case kString // = 2
-    case kNumber // = 3
+  public nonisolated enum LabelType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kNone = 0
+    case kImage = 1
+    case kString = 2
+    case kNumber = 3
 
     public init() {
       self = .kNone
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kNone
-      case 1: self = .kImage
-      case 2: self = .kString
-      case 3: self = .kNumber
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kNone: return 0
-      case .kImage: return 1
-      case .kString: return 2
-      case .kNumber: return 3
-      }
-    }
-
   }
 
-  public enum NumberType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kNumericDecimal // = 0
-    case kNumericDoubleParen // = 1
-    case kNumericRightParen // = 2
-    case kRomanUpperDecimal // = 3
-    case kRomanUpperDoubleParen // = 4
-    case kRomanUpperRightParen // = 5
-    case kRomanLowerDecimal // = 6
-    case kRomanLowerDoubleParen // = 7
-    case kRomanLowerRightParen // = 8
-    case kAlphaUpperDecimal // = 9
-    case kAlphaUpperDoubleParen // = 10
-    case kAlphaUpperRightParen // = 11
-    case kAlphaLowerDecimal // = 12
-    case kAlphaLowerDoubleParen // = 13
-    case kAlphaLowerRightParen // = 14
-    case kIdeographicJapaneseDecimalKind // = 15
-    case kIdeographicJapaneseDoubleParenKind // = 16
-    case kIdeographicJapaneseRightParenKind // = 17
-    case kHiraganaDecimalKind // = 18
-    case kHiraganaDoubleParenKind // = 19
-    case kHiraganaRightParenKind // = 20
-    case kKatakanaDecimalKind // = 21
-    case kKatakanaDoubleParenKind // = 22
-    case kKatakanaRightParenKind // = 23
-    case kHiraganaIrohaDecimalKind // = 24
-    case kHiraganaIrohaDoubleParenKind // = 25
-    case kHiraganaIrohaRightParenKind // = 26
-    case kKatakanaIrohaDecimalKind // = 27
-    case kKatakanaIrohaDoubleParenKind // = 28
-    case kKatakanaIrohaRightParenKind // = 29
-    case kIdeographicSimplifiedChineseDecimalKind // = 30
-    case kIdeographicSimplifiedChineseDoubleParenKind // = 31
-    case kIdeographicSimplifiedChineseRightParenKind // = 32
-    case kIdeographicTraditionalChineseDecimalKind // = 33
-    case kIdeographicTraditionalChineseDoubleParenKind // = 34
-    case kIdeographicTraditionalChineseRightParenKind // = 35
-    case kIdeographicFormalJapaneseDecimalKind // = 36
-    case kIdeographicFormalJapaneseDoubleParenKind // = 37
-    case kIdeographicFormalJapaneseRightParenKind // = 38
-    case kIdeographicFormalSimplifiedChineseDecimalKind // = 39
-    case kIdeographicFormalSimplifiedChineseDoubleParenKind // = 40
-    case kIdeographicFormalSimplifiedChineseRightParenKind // = 41
-    case kIdeographicFormalTraditionalChineseDecimalKind // = 42
-    case kIdeographicFormalTraditionalChineseDoubleParenKind // = 43
-    case kIdeographicFormalTraditionalChineseRightParenKind // = 44
-    case kKoreanAlphabetDecimalKind // = 45
-    case kKoreanAlphabetDoubleParenKind // = 46
-    case kKoreanAlphabetRightParenKind // = 47
-    case kCircledNumberKind // = 48
-    case kArabianNumericDecimalKind // = 49
-    case kArabianNumericDoubleParenKind // = 50
-    case kArabianNumericRightParenKind // = 51
-    case kArabianAlphaDecimalKind // = 52
-    case kArabianAlphaDoubleParenKind // = 53
-    case kArabianAlphaRightParenKind // = 54
-    case kArabianAbjadDecimalKind // = 55
-    case kArabianAbjadDoubleParenKind // = 56
-    case kArabianAbjadRightParenKind // = 57
-    case kHebrewAlphaDecimalKind // = 58
-    case kHebrewAlphaDoubleParenKind // = 59
-    case kHebrewAlphaRightParenKind // = 60
-    case kHebrewBiblicalStandardKind // = 61
-    case kHebrewBiblicalDecimalKind // = 62
-    case kHebrewBiblicalDoubleParenKind // = 63
-    case kHebrewBiblicalRightParenKind // = 64
+  public nonisolated enum NumberType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kNumericDecimal = 0
+    case kNumericDoubleParen = 1
+    case kNumericRightParen = 2
+    case kRomanUpperDecimal = 3
+    case kRomanUpperDoubleParen = 4
+    case kRomanUpperRightParen = 5
+    case kRomanLowerDecimal = 6
+    case kRomanLowerDoubleParen = 7
+    case kRomanLowerRightParen = 8
+    case kAlphaUpperDecimal = 9
+    case kAlphaUpperDoubleParen = 10
+    case kAlphaUpperRightParen = 11
+    case kAlphaLowerDecimal = 12
+    case kAlphaLowerDoubleParen = 13
+    case kAlphaLowerRightParen = 14
+    case kIdeographicJapaneseDecimalKind = 15
+    case kIdeographicJapaneseDoubleParenKind = 16
+    case kIdeographicJapaneseRightParenKind = 17
+    case kHiraganaDecimalKind = 18
+    case kHiraganaDoubleParenKind = 19
+    case kHiraganaRightParenKind = 20
+    case kKatakanaDecimalKind = 21
+    case kKatakanaDoubleParenKind = 22
+    case kKatakanaRightParenKind = 23
+    case kHiraganaIrohaDecimalKind = 24
+    case kHiraganaIrohaDoubleParenKind = 25
+    case kHiraganaIrohaRightParenKind = 26
+    case kKatakanaIrohaDecimalKind = 27
+    case kKatakanaIrohaDoubleParenKind = 28
+    case kKatakanaIrohaRightParenKind = 29
+    case kIdeographicSimplifiedChineseDecimalKind = 30
+    case kIdeographicSimplifiedChineseDoubleParenKind = 31
+    case kIdeographicSimplifiedChineseRightParenKind = 32
+    case kIdeographicTraditionalChineseDecimalKind = 33
+    case kIdeographicTraditionalChineseDoubleParenKind = 34
+    case kIdeographicTraditionalChineseRightParenKind = 35
+    case kIdeographicFormalJapaneseDecimalKind = 36
+    case kIdeographicFormalJapaneseDoubleParenKind = 37
+    case kIdeographicFormalJapaneseRightParenKind = 38
+    case kIdeographicFormalSimplifiedChineseDecimalKind = 39
+    case kIdeographicFormalSimplifiedChineseDoubleParenKind = 40
+    case kIdeographicFormalSimplifiedChineseRightParenKind = 41
+    case kIdeographicFormalTraditionalChineseDecimalKind = 42
+    case kIdeographicFormalTraditionalChineseDoubleParenKind = 43
+    case kIdeographicFormalTraditionalChineseRightParenKind = 44
+    case kKoreanAlphabetDecimalKind = 45
+    case kKoreanAlphabetDoubleParenKind = 46
+    case kKoreanAlphabetRightParenKind = 47
+    case kCircledNumberKind = 48
+    case kArabianNumericDecimalKind = 49
+    case kArabianNumericDoubleParenKind = 50
+    case kArabianNumericRightParenKind = 51
+    case kArabianAlphaDecimalKind = 52
+    case kArabianAlphaDoubleParenKind = 53
+    case kArabianAlphaRightParenKind = 54
+    case kArabianAbjadDecimalKind = 55
+    case kArabianAbjadDoubleParenKind = 56
+    case kArabianAbjadRightParenKind = 57
+    case kHebrewAlphaDecimalKind = 58
+    case kHebrewAlphaDoubleParenKind = 59
+    case kHebrewAlphaRightParenKind = 60
+    case kHebrewBiblicalStandardKind = 61
+    case kHebrewBiblicalDecimalKind = 62
+    case kHebrewBiblicalDoubleParenKind = 63
+    case kHebrewBiblicalRightParenKind = 64
 
     public init() {
       self = .kNumericDecimal
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kNumericDecimal
-      case 1: self = .kNumericDoubleParen
-      case 2: self = .kNumericRightParen
-      case 3: self = .kRomanUpperDecimal
-      case 4: self = .kRomanUpperDoubleParen
-      case 5: self = .kRomanUpperRightParen
-      case 6: self = .kRomanLowerDecimal
-      case 7: self = .kRomanLowerDoubleParen
-      case 8: self = .kRomanLowerRightParen
-      case 9: self = .kAlphaUpperDecimal
-      case 10: self = .kAlphaUpperDoubleParen
-      case 11: self = .kAlphaUpperRightParen
-      case 12: self = .kAlphaLowerDecimal
-      case 13: self = .kAlphaLowerDoubleParen
-      case 14: self = .kAlphaLowerRightParen
-      case 15: self = .kIdeographicJapaneseDecimalKind
-      case 16: self = .kIdeographicJapaneseDoubleParenKind
-      case 17: self = .kIdeographicJapaneseRightParenKind
-      case 18: self = .kHiraganaDecimalKind
-      case 19: self = .kHiraganaDoubleParenKind
-      case 20: self = .kHiraganaRightParenKind
-      case 21: self = .kKatakanaDecimalKind
-      case 22: self = .kKatakanaDoubleParenKind
-      case 23: self = .kKatakanaRightParenKind
-      case 24: self = .kHiraganaIrohaDecimalKind
-      case 25: self = .kHiraganaIrohaDoubleParenKind
-      case 26: self = .kHiraganaIrohaRightParenKind
-      case 27: self = .kKatakanaIrohaDecimalKind
-      case 28: self = .kKatakanaIrohaDoubleParenKind
-      case 29: self = .kKatakanaIrohaRightParenKind
-      case 30: self = .kIdeographicSimplifiedChineseDecimalKind
-      case 31: self = .kIdeographicSimplifiedChineseDoubleParenKind
-      case 32: self = .kIdeographicSimplifiedChineseRightParenKind
-      case 33: self = .kIdeographicTraditionalChineseDecimalKind
-      case 34: self = .kIdeographicTraditionalChineseDoubleParenKind
-      case 35: self = .kIdeographicTraditionalChineseRightParenKind
-      case 36: self = .kIdeographicFormalJapaneseDecimalKind
-      case 37: self = .kIdeographicFormalJapaneseDoubleParenKind
-      case 38: self = .kIdeographicFormalJapaneseRightParenKind
-      case 39: self = .kIdeographicFormalSimplifiedChineseDecimalKind
-      case 40: self = .kIdeographicFormalSimplifiedChineseDoubleParenKind
-      case 41: self = .kIdeographicFormalSimplifiedChineseRightParenKind
-      case 42: self = .kIdeographicFormalTraditionalChineseDecimalKind
-      case 43: self = .kIdeographicFormalTraditionalChineseDoubleParenKind
-      case 44: self = .kIdeographicFormalTraditionalChineseRightParenKind
-      case 45: self = .kKoreanAlphabetDecimalKind
-      case 46: self = .kKoreanAlphabetDoubleParenKind
-      case 47: self = .kKoreanAlphabetRightParenKind
-      case 48: self = .kCircledNumberKind
-      case 49: self = .kArabianNumericDecimalKind
-      case 50: self = .kArabianNumericDoubleParenKind
-      case 51: self = .kArabianNumericRightParenKind
-      case 52: self = .kArabianAlphaDecimalKind
-      case 53: self = .kArabianAlphaDoubleParenKind
-      case 54: self = .kArabianAlphaRightParenKind
-      case 55: self = .kArabianAbjadDecimalKind
-      case 56: self = .kArabianAbjadDoubleParenKind
-      case 57: self = .kArabianAbjadRightParenKind
-      case 58: self = .kHebrewAlphaDecimalKind
-      case 59: self = .kHebrewAlphaDoubleParenKind
-      case 60: self = .kHebrewAlphaRightParenKind
-      case 61: self = .kHebrewBiblicalStandardKind
-      case 62: self = .kHebrewBiblicalDecimalKind
-      case 63: self = .kHebrewBiblicalDoubleParenKind
-      case 64: self = .kHebrewBiblicalRightParenKind
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kNumericDecimal: return 0
-      case .kNumericDoubleParen: return 1
-      case .kNumericRightParen: return 2
-      case .kRomanUpperDecimal: return 3
-      case .kRomanUpperDoubleParen: return 4
-      case .kRomanUpperRightParen: return 5
-      case .kRomanLowerDecimal: return 6
-      case .kRomanLowerDoubleParen: return 7
-      case .kRomanLowerRightParen: return 8
-      case .kAlphaUpperDecimal: return 9
-      case .kAlphaUpperDoubleParen: return 10
-      case .kAlphaUpperRightParen: return 11
-      case .kAlphaLowerDecimal: return 12
-      case .kAlphaLowerDoubleParen: return 13
-      case .kAlphaLowerRightParen: return 14
-      case .kIdeographicJapaneseDecimalKind: return 15
-      case .kIdeographicJapaneseDoubleParenKind: return 16
-      case .kIdeographicJapaneseRightParenKind: return 17
-      case .kHiraganaDecimalKind: return 18
-      case .kHiraganaDoubleParenKind: return 19
-      case .kHiraganaRightParenKind: return 20
-      case .kKatakanaDecimalKind: return 21
-      case .kKatakanaDoubleParenKind: return 22
-      case .kKatakanaRightParenKind: return 23
-      case .kHiraganaIrohaDecimalKind: return 24
-      case .kHiraganaIrohaDoubleParenKind: return 25
-      case .kHiraganaIrohaRightParenKind: return 26
-      case .kKatakanaIrohaDecimalKind: return 27
-      case .kKatakanaIrohaDoubleParenKind: return 28
-      case .kKatakanaIrohaRightParenKind: return 29
-      case .kIdeographicSimplifiedChineseDecimalKind: return 30
-      case .kIdeographicSimplifiedChineseDoubleParenKind: return 31
-      case .kIdeographicSimplifiedChineseRightParenKind: return 32
-      case .kIdeographicTraditionalChineseDecimalKind: return 33
-      case .kIdeographicTraditionalChineseDoubleParenKind: return 34
-      case .kIdeographicTraditionalChineseRightParenKind: return 35
-      case .kIdeographicFormalJapaneseDecimalKind: return 36
-      case .kIdeographicFormalJapaneseDoubleParenKind: return 37
-      case .kIdeographicFormalJapaneseRightParenKind: return 38
-      case .kIdeographicFormalSimplifiedChineseDecimalKind: return 39
-      case .kIdeographicFormalSimplifiedChineseDoubleParenKind: return 40
-      case .kIdeographicFormalSimplifiedChineseRightParenKind: return 41
-      case .kIdeographicFormalTraditionalChineseDecimalKind: return 42
-      case .kIdeographicFormalTraditionalChineseDoubleParenKind: return 43
-      case .kIdeographicFormalTraditionalChineseRightParenKind: return 44
-      case .kKoreanAlphabetDecimalKind: return 45
-      case .kKoreanAlphabetDoubleParenKind: return 46
-      case .kKoreanAlphabetRightParenKind: return 47
-      case .kCircledNumberKind: return 48
-      case .kArabianNumericDecimalKind: return 49
-      case .kArabianNumericDoubleParenKind: return 50
-      case .kArabianNumericRightParenKind: return 51
-      case .kArabianAlphaDecimalKind: return 52
-      case .kArabianAlphaDoubleParenKind: return 53
-      case .kArabianAlphaRightParenKind: return 54
-      case .kArabianAbjadDecimalKind: return 55
-      case .kArabianAbjadDoubleParenKind: return 56
-      case .kArabianAbjadRightParenKind: return 57
-      case .kHebrewAlphaDecimalKind: return 58
-      case .kHebrewAlphaDoubleParenKind: return 59
-      case .kHebrewAlphaRightParenKind: return 60
-      case .kHebrewBiblicalStandardKind: return 61
-      case .kHebrewBiblicalDecimalKind: return 62
-      case .kHebrewBiblicalDoubleParenKind: return 63
-      case .kHebrewBiblicalRightParenKind: return 64
-      }
-    }
-
   }
 
-  public struct LabelGeometry: Sendable {
+  public nonisolated struct LabelGeometry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var scale: Float {
-      get {return _scale ?? 1}
+      get {_scale ?? 1}
       set {_scale = newValue}
     }
     /// Returns true if `scale` has been explicitly set.
-    public var hasScale: Bool {return self._scale != nil}
+    public var hasScale: Bool {self._scale != nil}
     /// Clears the value of `scale`. Subsequent reads from it will return its default value.
     public mutating func clearScale() {self._scale = nil}
 
     public var baselineOffset: Float {
-      get {return _baselineOffset ?? 0}
+      get {_baselineOffset ?? 0}
       set {_baselineOffset = newValue}
     }
     /// Returns true if `baselineOffset` has been explicitly set.
-    public var hasBaselineOffset: Bool {return self._baselineOffset != nil}
+    public var hasBaselineOffset: Bool {self._baselineOffset != nil}
     /// Clears the value of `baselineOffset`. Subsequent reads from it will return its default value.
     public mutating func clearBaselineOffset() {self._baselineOffset = nil}
 
     public var scaleWithText: Bool {
-      get {return _scaleWithText ?? true}
+      get {_scaleWithText ?? true}
       set {_scaleWithText = newValue}
     }
     /// Returns true if `scaleWithText` has been explicitly set.
-    public var hasScaleWithText: Bool {return self._scaleWithText != nil}
+    public var hasScaleWithText: Bool {self._scaleWithText != nil}
     /// Clears the value of `scaleWithText`. Subsequent reads from it will return its default value.
     public mutating func clearScaleWithText() {self._scaleWithText = nil}
 
@@ -2595,35 +2099,35 @@ public struct TSWP_ListStyleArchive: @unchecked Sendable {
     fileprivate var _scaleWithText: Bool? = nil
   }
 
-  public struct LabelImage: Sendable {
+  public nonisolated struct LabelImage: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var image: TSP_DataReference {
-      get {return _image ?? TSP_DataReference()}
+      get {_image ?? TSP_DataReference()}
       set {_image = newValue}
     }
     /// Returns true if `image` has been explicitly set.
-    public var hasImage: Bool {return self._image != nil}
+    public var hasImage: Bool {self._image != nil}
     /// Clears the value of `image`. Subsequent reads from it will return its default value.
     public mutating func clearImage() {self._image = nil}
 
     public var imageNull: Bool {
-      get {return _imageNull ?? false}
+      get {_imageNull ?? false}
       set {_imageNull = newValue}
     }
     /// Returns true if `imageNull` has been explicitly set.
-    public var hasImageNull: Bool {return self._imageNull != nil}
+    public var hasImageNull: Bool {self._imageNull != nil}
     /// Clears the value of `imageNull`. Subsequent reads from it will return its default value.
     public mutating func clearImageNull() {self._imageNull = nil}
 
     public var databaseImage: TSP_Reference {
-      get {return _databaseImage ?? TSP_Reference()}
+      get {_databaseImage ?? TSP_Reference()}
       set {_databaseImage = newValue}
     }
     /// Returns true if `databaseImage` has been explicitly set.
-    public var hasDatabaseImage: Bool {return self._databaseImage != nil}
+    public var hasDatabaseImage: Bool {self._databaseImage != nil}
     /// Clears the value of `databaseImage`. Subsequent reads from it will return its default value.
     public mutating func clearDatabaseImage() {self._databaseImage = nil}
 
@@ -2641,35 +2145,35 @@ public struct TSWP_ListStyleArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWP_TextStylePresetArchive: Sendable {
+public nonisolated struct TSWP_TextStylePresetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var presetIdentifier: String {
-    get {return _presetIdentifier ?? String()}
+    get {_presetIdentifier ?? String()}
     set {_presetIdentifier = newValue}
   }
   /// Returns true if `presetIdentifier` has been explicitly set.
-  public var hasPresetIdentifier: Bool {return self._presetIdentifier != nil}
+  public var hasPresetIdentifier: Bool {self._presetIdentifier != nil}
   /// Clears the value of `presetIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearPresetIdentifier() {self._presetIdentifier = nil}
 
   public var paragraphStyle: TSP_Reference {
-    get {return _paragraphStyle ?? TSP_Reference()}
+    get {_paragraphStyle ?? TSP_Reference()}
     set {_paragraphStyle = newValue}
   }
   /// Returns true if `paragraphStyle` has been explicitly set.
-  public var hasParagraphStyle: Bool {return self._paragraphStyle != nil}
+  public var hasParagraphStyle: Bool {self._paragraphStyle != nil}
   /// Clears the value of `paragraphStyle`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphStyle() {self._paragraphStyle = nil}
 
   public var listStyle: TSP_Reference {
-    get {return _listStyle ?? TSP_Reference()}
+    get {_listStyle ?? TSP_Reference()}
     set {_listStyle = newValue}
   }
   /// Returns true if `listStyle` has been explicitly set.
-  public var hasListStyle: Bool {return self._listStyle != nil}
+  public var hasListStyle: Bool {self._listStyle != nil}
   /// Clears the value of `listStyle`. Subsequent reads from it will return its default value.
   public mutating func clearListStyle() {self._listStyle = nil}
 
@@ -2682,51 +2186,51 @@ public struct TSWP_TextStylePresetArchive: Sendable {
   fileprivate var _listStyle: TSP_Reference? = nil
 }
 
-public struct TSWP_ColumnsArchive: Sendable {
+public nonisolated struct TSWP_ColumnsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var equalColumns: TSWP_ColumnsArchive.EqualColumnsArchive {
-    get {return _equalColumns ?? TSWP_ColumnsArchive.EqualColumnsArchive()}
+    get {_equalColumns ?? TSWP_ColumnsArchive.EqualColumnsArchive()}
     set {_equalColumns = newValue}
   }
   /// Returns true if `equalColumns` has been explicitly set.
-  public var hasEqualColumns: Bool {return self._equalColumns != nil}
+  public var hasEqualColumns: Bool {self._equalColumns != nil}
   /// Clears the value of `equalColumns`. Subsequent reads from it will return its default value.
   public mutating func clearEqualColumns() {self._equalColumns = nil}
 
   public var nonEqualColumns: TSWP_ColumnsArchive.NonEqualColumnsArchive {
-    get {return _nonEqualColumns ?? TSWP_ColumnsArchive.NonEqualColumnsArchive()}
+    get {_nonEqualColumns ?? TSWP_ColumnsArchive.NonEqualColumnsArchive()}
     set {_nonEqualColumns = newValue}
   }
   /// Returns true if `nonEqualColumns` has been explicitly set.
-  public var hasNonEqualColumns: Bool {return self._nonEqualColumns != nil}
+  public var hasNonEqualColumns: Bool {self._nonEqualColumns != nil}
   /// Clears the value of `nonEqualColumns`. Subsequent reads from it will return its default value.
   public mutating func clearNonEqualColumns() {self._nonEqualColumns = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct EqualColumnsArchive: Sendable {
+  public nonisolated struct EqualColumnsArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var count: UInt32 {
-      get {return _count ?? 0}
+      get {_count ?? 0}
       set {_count = newValue}
     }
     /// Returns true if `count` has been explicitly set.
-    public var hasCount: Bool {return self._count != nil}
+    public var hasCount: Bool {self._count != nil}
     /// Clears the value of `count`. Subsequent reads from it will return its default value.
     public mutating func clearCount() {self._count = nil}
 
     public var gap: Float {
-      get {return _gap ?? 0}
+      get {_gap ?? 0}
       set {_gap = newValue}
     }
     /// Returns true if `gap` has been explicitly set.
-    public var hasGap: Bool {return self._gap != nil}
+    public var hasGap: Bool {self._gap != nil}
     /// Clears the value of `gap`. Subsequent reads from it will return its default value.
     public mutating func clearGap() {self._gap = nil}
 
@@ -2738,17 +2242,17 @@ public struct TSWP_ColumnsArchive: Sendable {
     fileprivate var _gap: Float? = nil
   }
 
-  public struct NonEqualColumnsArchive: Sendable {
+  public nonisolated struct NonEqualColumnsArchive: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var first: Float {
-      get {return _first ?? 0}
+      get {_first ?? 0}
       set {_first = newValue}
     }
     /// Returns true if `first` has been explicitly set.
-    public var hasFirst: Bool {return self._first != nil}
+    public var hasFirst: Bool {self._first != nil}
     /// Clears the value of `first`. Subsequent reads from it will return its default value.
     public mutating func clearFirst() {self._first = nil}
 
@@ -2756,26 +2260,26 @@ public struct TSWP_ColumnsArchive: Sendable {
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    public struct GapWidthArchive: Sendable {
+    public nonisolated struct GapWidthArchive: Sendable {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
       public var gap: Float {
-        get {return _gap ?? 0}
+        get {_gap ?? 0}
         set {_gap = newValue}
       }
       /// Returns true if `gap` has been explicitly set.
-      public var hasGap: Bool {return self._gap != nil}
+      public var hasGap: Bool {self._gap != nil}
       /// Clears the value of `gap`. Subsequent reads from it will return its default value.
       public mutating func clearGap() {self._gap = nil}
 
       public var width: Float {
-        get {return _width ?? 0}
+        get {_width ?? 0}
         set {_width = newValue}
       }
       /// Returns true if `width` has been explicitly set.
-      public var hasWidth: Bool {return self._width != nil}
+      public var hasWidth: Bool {self._width != nil}
       /// Clears the value of `width`. Subsequent reads from it will return its default value.
       public mutating func clearWidth() {self._width = nil}
 
@@ -2798,44 +2302,44 @@ public struct TSWP_ColumnsArchive: Sendable {
   fileprivate var _nonEqualColumns: TSWP_ColumnsArchive.NonEqualColumnsArchive? = nil
 }
 
-public struct TSWP_PaddingArchive: Sendable {
+public nonisolated struct TSWP_PaddingArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var left: Float {
-    get {return _left ?? 0}
+    get {_left ?? 0}
     set {_left = newValue}
   }
   /// Returns true if `left` has been explicitly set.
-  public var hasLeft: Bool {return self._left != nil}
+  public var hasLeft: Bool {self._left != nil}
   /// Clears the value of `left`. Subsequent reads from it will return its default value.
   public mutating func clearLeft() {self._left = nil}
 
   public var top: Float {
-    get {return _top ?? 0}
+    get {_top ?? 0}
     set {_top = newValue}
   }
   /// Returns true if `top` has been explicitly set.
-  public var hasTop: Bool {return self._top != nil}
+  public var hasTop: Bool {self._top != nil}
   /// Clears the value of `top`. Subsequent reads from it will return its default value.
   public mutating func clearTop() {self._top = nil}
 
   public var right: Float {
-    get {return _right ?? 0}
+    get {_right ?? 0}
     set {_right = newValue}
   }
   /// Returns true if `right` has been explicitly set.
-  public var hasRight: Bool {return self._right != nil}
+  public var hasRight: Bool {self._right != nil}
   /// Clears the value of `right`. Subsequent reads from it will return its default value.
   public mutating func clearRight() {self._right = nil}
 
   public var bottom: Float {
-    get {return _bottom ?? 0}
+    get {_bottom ?? 0}
     set {_bottom = newValue}
   }
   /// Returns true if `bottom` has been explicitly set.
-  public var hasBottom: Bool {return self._bottom != nil}
+  public var hasBottom: Bool {self._bottom != nil}
   /// Clears the value of `bottom`. Subsequent reads from it will return its default value.
   public mutating func clearBottom() {self._bottom = nil}
 
@@ -2849,149 +2353,129 @@ public struct TSWP_PaddingArchive: Sendable {
   fileprivate var _bottom: Float? = nil
 }
 
-public struct TSWP_ColumnStylePropertiesArchive: @unchecked Sendable {
+public nonisolated struct TSWP_ColumnStylePropertiesArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var continuous: Bool {
-    get {return _storage._continuous ?? false}
+    get {_storage._continuous ?? false}
     set {_uniqueStorage()._continuous = newValue}
   }
   /// Returns true if `continuous` has been explicitly set.
-  public var hasContinuous: Bool {return _storage._continuous != nil}
+  public var hasContinuous: Bool {_storage._continuous != nil}
   /// Clears the value of `continuous`. Subsequent reads from it will return its default value.
   public mutating func clearContinuous() {_uniqueStorage()._continuous = nil}
 
   public var shrinkToFit: Bool {
-    get {return _storage._shrinkToFit ?? false}
+    get {_storage._shrinkToFit ?? false}
     set {_uniqueStorage()._shrinkToFit = newValue}
   }
   /// Returns true if `shrinkToFit` has been explicitly set.
-  public var hasShrinkToFit: Bool {return _storage._shrinkToFit != nil}
+  public var hasShrinkToFit: Bool {_storage._shrinkToFit != nil}
   /// Clears the value of `shrinkToFit`. Subsequent reads from it will return its default value.
   public mutating func clearShrinkToFit() {_uniqueStorage()._shrinkToFit = nil}
 
   public var verticalText: Bool {
-    get {return _storage._verticalText ?? false}
+    get {_storage._verticalText ?? false}
     set {_uniqueStorage()._verticalText = newValue}
   }
   /// Returns true if `verticalText` has been explicitly set.
-  public var hasVerticalText: Bool {return _storage._verticalText != nil}
+  public var hasVerticalText: Bool {_storage._verticalText != nil}
   /// Clears the value of `verticalText`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalText() {_uniqueStorage()._verticalText = nil}
 
   public var minHorizontalInset: Float {
-    get {return _storage._minHorizontalInset ?? 0}
+    get {_storage._minHorizontalInset ?? 0}
     set {_uniqueStorage()._minHorizontalInset = newValue}
   }
   /// Returns true if `minHorizontalInset` has been explicitly set.
-  public var hasMinHorizontalInset: Bool {return _storage._minHorizontalInset != nil}
+  public var hasMinHorizontalInset: Bool {_storage._minHorizontalInset != nil}
   /// Clears the value of `minHorizontalInset`. Subsequent reads from it will return its default value.
   public mutating func clearMinHorizontalInset() {_uniqueStorage()._minHorizontalInset = nil}
 
   public var verticalAlignment: TSWP_ColumnStylePropertiesArchive.VerticalAlignmentType {
-    get {return _storage._verticalAlignment ?? .kFrameAlignTop}
+    get {_storage._verticalAlignment ?? .kFrameAlignTop}
     set {_uniqueStorage()._verticalAlignment = newValue}
   }
   /// Returns true if `verticalAlignment` has been explicitly set.
-  public var hasVerticalAlignment: Bool {return _storage._verticalAlignment != nil}
+  public var hasVerticalAlignment: Bool {_storage._verticalAlignment != nil}
   /// Clears the value of `verticalAlignment`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalAlignment() {_uniqueStorage()._verticalAlignment = nil}
 
   public var columnsNull: Bool {
-    get {return _storage._columnsNull ?? false}
+    get {_storage._columnsNull ?? false}
     set {_uniqueStorage()._columnsNull = newValue}
   }
   /// Returns true if `columnsNull` has been explicitly set.
-  public var hasColumnsNull: Bool {return _storage._columnsNull != nil}
+  public var hasColumnsNull: Bool {_storage._columnsNull != nil}
   /// Clears the value of `columnsNull`. Subsequent reads from it will return its default value.
   public mutating func clearColumnsNull() {_uniqueStorage()._columnsNull = nil}
 
   public var columns: TSWP_ColumnsArchive {
-    get {return _storage._columns ?? TSWP_ColumnsArchive()}
+    get {_storage._columns ?? TSWP_ColumnsArchive()}
     set {_uniqueStorage()._columns = newValue}
   }
   /// Returns true if `columns` has been explicitly set.
-  public var hasColumns: Bool {return _storage._columns != nil}
+  public var hasColumns: Bool {_storage._columns != nil}
   /// Clears the value of `columns`. Subsequent reads from it will return its default value.
   public mutating func clearColumns() {_uniqueStorage()._columns = nil}
 
   public var marginsNull: Bool {
-    get {return _storage._marginsNull ?? false}
+    get {_storage._marginsNull ?? false}
     set {_uniqueStorage()._marginsNull = newValue}
   }
   /// Returns true if `marginsNull` has been explicitly set.
-  public var hasMarginsNull: Bool {return _storage._marginsNull != nil}
+  public var hasMarginsNull: Bool {_storage._marginsNull != nil}
   /// Clears the value of `marginsNull`. Subsequent reads from it will return its default value.
   public mutating func clearMarginsNull() {_uniqueStorage()._marginsNull = nil}
 
   public var margins: TSWP_PaddingArchive {
-    get {return _storage._margins ?? TSWP_PaddingArchive()}
+    get {_storage._margins ?? TSWP_PaddingArchive()}
     set {_uniqueStorage()._margins = newValue}
   }
   /// Returns true if `margins` has been explicitly set.
-  public var hasMargins: Bool {return _storage._margins != nil}
+  public var hasMargins: Bool {_storage._margins != nil}
   /// Clears the value of `margins`. Subsequent reads from it will return its default value.
   public mutating func clearMargins() {_uniqueStorage()._margins = nil}
 
   public var paddingNull: Bool {
-    get {return _storage._paddingNull ?? false}
+    get {_storage._paddingNull ?? false}
     set {_uniqueStorage()._paddingNull = newValue}
   }
   /// Returns true if `paddingNull` has been explicitly set.
-  public var hasPaddingNull: Bool {return _storage._paddingNull != nil}
+  public var hasPaddingNull: Bool {_storage._paddingNull != nil}
   /// Clears the value of `paddingNull`. Subsequent reads from it will return its default value.
   public mutating func clearPaddingNull() {_uniqueStorage()._paddingNull = nil}
 
   public var padding: TSWP_PaddingArchive {
-    get {return _storage._padding ?? TSWP_PaddingArchive()}
+    get {_storage._padding ?? TSWP_PaddingArchive()}
     set {_uniqueStorage()._padding = newValue}
   }
   /// Returns true if `padding` has been explicitly set.
-  public var hasPadding: Bool {return _storage._padding != nil}
+  public var hasPadding: Bool {_storage._padding != nil}
   /// Clears the value of `padding`. Subsequent reads from it will return its default value.
   public mutating func clearPadding() {_uniqueStorage()._padding = nil}
 
   public var writingDirection: TSWP_WritingDirectionType {
-    get {return _storage._writingDirection ?? .kWritingDirectionNatural}
+    get {_storage._writingDirection ?? .kWritingDirectionNatural}
     set {_uniqueStorage()._writingDirection = newValue}
   }
   /// Returns true if `writingDirection` has been explicitly set.
-  public var hasWritingDirection: Bool {return _storage._writingDirection != nil}
+  public var hasWritingDirection: Bool {_storage._writingDirection != nil}
   /// Clears the value of `writingDirection`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirection() {_uniqueStorage()._writingDirection = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum VerticalAlignmentType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kFrameAlignTop // = 0
-    case kFrameAlignMiddle // = 1
-    case kFrameAlignBottom // = 2
-    case kFrameAlignJustify // = 3
+  public nonisolated enum VerticalAlignmentType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kFrameAlignTop = 0
+    case kFrameAlignMiddle = 1
+    case kFrameAlignBottom = 2
+    case kFrameAlignJustify = 3
 
     public init() {
       self = .kFrameAlignTop
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kFrameAlignTop
-      case 1: self = .kFrameAlignMiddle
-      case 2: self = .kFrameAlignBottom
-      case 3: self = .kFrameAlignJustify
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kFrameAlignTop: return 0
-      case .kFrameAlignMiddle: return 1
-      case .kFrameAlignBottom: return 2
-      case .kFrameAlignJustify: return 3
-      }
     }
 
   }
@@ -3001,35 +2485,35 @@ public struct TSWP_ColumnStylePropertiesArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWP_ColumnStyleArchive: Sendable {
+public nonisolated struct TSWP_ColumnStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var overrideCount: UInt32 {
-    get {return _overrideCount ?? 0}
+    get {_overrideCount ?? 0}
     set {_overrideCount = newValue}
   }
   /// Returns true if `overrideCount` has been explicitly set.
-  public var hasOverrideCount: Bool {return self._overrideCount != nil}
+  public var hasOverrideCount: Bool {self._overrideCount != nil}
   /// Clears the value of `overrideCount`. Subsequent reads from it will return its default value.
   public mutating func clearOverrideCount() {self._overrideCount = nil}
 
   public var columnProperties: TSWP_ColumnStylePropertiesArchive {
-    get {return _columnProperties ?? TSWP_ColumnStylePropertiesArchive()}
+    get {_columnProperties ?? TSWP_ColumnStylePropertiesArchive()}
     set {_columnProperties = newValue}
   }
   /// Returns true if `columnProperties` has been explicitly set.
-  public var hasColumnProperties: Bool {return self._columnProperties != nil}
+  public var hasColumnProperties: Bool {self._columnProperties != nil}
   /// Clears the value of `columnProperties`. Subsequent reads from it will return its default value.
   public mutating func clearColumnProperties() {self._columnProperties = nil}
 
@@ -3042,140 +2526,120 @@ public struct TSWP_ColumnStyleArchive: Sendable {
   fileprivate var _columnProperties: TSWP_ColumnStylePropertiesArchive? = nil
 }
 
-public struct TSWP_ShapeStylePropertiesArchive: @unchecked Sendable {
+public nonisolated struct TSWP_ShapeStylePropertiesArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var shrinkToFit: Bool {
-    get {return _storage._shrinkToFit ?? false}
+    get {_storage._shrinkToFit ?? false}
     set {_uniqueStorage()._shrinkToFit = newValue}
   }
   /// Returns true if `shrinkToFit` has been explicitly set.
-  public var hasShrinkToFit: Bool {return _storage._shrinkToFit != nil}
+  public var hasShrinkToFit: Bool {_storage._shrinkToFit != nil}
   /// Clears the value of `shrinkToFit`. Subsequent reads from it will return its default value.
   public mutating func clearShrinkToFit() {_uniqueStorage()._shrinkToFit = nil}
 
   public var verticalAlignment: TSWP_ShapeStylePropertiesArchive.VerticalAlignmentType {
-    get {return _storage._verticalAlignment ?? .kFrameAlignTop}
+    get {_storage._verticalAlignment ?? .kFrameAlignTop}
     set {_uniqueStorage()._verticalAlignment = newValue}
   }
   /// Returns true if `verticalAlignment` has been explicitly set.
-  public var hasVerticalAlignment: Bool {return _storage._verticalAlignment != nil}
+  public var hasVerticalAlignment: Bool {_storage._verticalAlignment != nil}
   /// Clears the value of `verticalAlignment`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalAlignment() {_uniqueStorage()._verticalAlignment = nil}
 
   public var columnsNull: Bool {
-    get {return _storage._columnsNull ?? false}
+    get {_storage._columnsNull ?? false}
     set {_uniqueStorage()._columnsNull = newValue}
   }
   /// Returns true if `columnsNull` has been explicitly set.
-  public var hasColumnsNull: Bool {return _storage._columnsNull != nil}
+  public var hasColumnsNull: Bool {_storage._columnsNull != nil}
   /// Clears the value of `columnsNull`. Subsequent reads from it will return its default value.
   public mutating func clearColumnsNull() {_uniqueStorage()._columnsNull = nil}
 
   public var columns: TSWP_ColumnsArchive {
-    get {return _storage._columns ?? TSWP_ColumnsArchive()}
+    get {_storage._columns ?? TSWP_ColumnsArchive()}
     set {_uniqueStorage()._columns = newValue}
   }
   /// Returns true if `columns` has been explicitly set.
-  public var hasColumns: Bool {return _storage._columns != nil}
+  public var hasColumns: Bool {_storage._columns != nil}
   /// Clears the value of `columns`. Subsequent reads from it will return its default value.
   public mutating func clearColumns() {_uniqueStorage()._columns = nil}
 
   public var paddingNull: Bool {
-    get {return _storage._paddingNull ?? false}
+    get {_storage._paddingNull ?? false}
     set {_uniqueStorage()._paddingNull = newValue}
   }
   /// Returns true if `paddingNull` has been explicitly set.
-  public var hasPaddingNull: Bool {return _storage._paddingNull != nil}
+  public var hasPaddingNull: Bool {_storage._paddingNull != nil}
   /// Clears the value of `paddingNull`. Subsequent reads from it will return its default value.
   public mutating func clearPaddingNull() {_uniqueStorage()._paddingNull = nil}
 
   public var padding: TSWP_PaddingArchive {
-    get {return _storage._padding ?? TSWP_PaddingArchive()}
+    get {_storage._padding ?? TSWP_PaddingArchive()}
     set {_uniqueStorage()._padding = newValue}
   }
   /// Returns true if `padding` has been explicitly set.
-  public var hasPadding: Bool {return _storage._padding != nil}
+  public var hasPadding: Bool {_storage._padding != nil}
   /// Clears the value of `padding`. Subsequent reads from it will return its default value.
   public mutating func clearPadding() {_uniqueStorage()._padding = nil}
 
   public var defaultTextPresetIndex: UInt32 {
-    get {return _storage._defaultTextPresetIndex ?? 0}
+    get {_storage._defaultTextPresetIndex ?? 0}
     set {_uniqueStorage()._defaultTextPresetIndex = newValue}
   }
   /// Returns true if `defaultTextPresetIndex` has been explicitly set.
-  public var hasDefaultTextPresetIndex: Bool {return _storage._defaultTextPresetIndex != nil}
+  public var hasDefaultTextPresetIndex: Bool {_storage._defaultTextPresetIndex != nil}
   /// Clears the value of `defaultTextPresetIndex`. Subsequent reads from it will return its default value.
   public mutating func clearDefaultTextPresetIndex() {_uniqueStorage()._defaultTextPresetIndex = nil}
 
   public var verticalText: Bool {
-    get {return _storage._verticalText ?? false}
+    get {_storage._verticalText ?? false}
     set {_uniqueStorage()._verticalText = newValue}
   }
   /// Returns true if `verticalText` has been explicitly set.
-  public var hasVerticalText: Bool {return _storage._verticalText != nil}
+  public var hasVerticalText: Bool {_storage._verticalText != nil}
   /// Clears the value of `verticalText`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalText() {_uniqueStorage()._verticalText = nil}
 
   public var paragraphStyleNull: Bool {
-    get {return _storage._paragraphStyleNull ?? false}
+    get {_storage._paragraphStyleNull ?? false}
     set {_uniqueStorage()._paragraphStyleNull = newValue}
   }
   /// Returns true if `paragraphStyleNull` has been explicitly set.
-  public var hasParagraphStyleNull: Bool {return _storage._paragraphStyleNull != nil}
+  public var hasParagraphStyleNull: Bool {_storage._paragraphStyleNull != nil}
   /// Clears the value of `paragraphStyleNull`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphStyleNull() {_uniqueStorage()._paragraphStyleNull = nil}
 
   public var paragraphStyle: TSP_Reference {
-    get {return _storage._paragraphStyle ?? TSP_Reference()}
+    get {_storage._paragraphStyle ?? TSP_Reference()}
     set {_uniqueStorage()._paragraphStyle = newValue}
   }
   /// Returns true if `paragraphStyle` has been explicitly set.
-  public var hasParagraphStyle: Bool {return _storage._paragraphStyle != nil}
+  public var hasParagraphStyle: Bool {_storage._paragraphStyle != nil}
   /// Clears the value of `paragraphStyle`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphStyle() {_uniqueStorage()._paragraphStyle = nil}
 
   public var verticalText40: Bool {
-    get {return _storage._verticalText40 ?? false}
+    get {_storage._verticalText40 ?? false}
     set {_uniqueStorage()._verticalText40 = newValue}
   }
   /// Returns true if `verticalText40` has been explicitly set.
-  public var hasVerticalText40: Bool {return _storage._verticalText40 != nil}
+  public var hasVerticalText40: Bool {_storage._verticalText40 != nil}
   /// Clears the value of `verticalText40`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalText40() {_uniqueStorage()._verticalText40 = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum VerticalAlignmentType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kFrameAlignTop // = 0
-    case kFrameAlignMiddle // = 1
-    case kFrameAlignBottom // = 2
-    case kFrameAlignJustify // = 3
+  public nonisolated enum VerticalAlignmentType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kFrameAlignTop = 0
+    case kFrameAlignMiddle = 1
+    case kFrameAlignBottom = 2
+    case kFrameAlignJustify = 3
 
     public init() {
       self = .kFrameAlignTop
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kFrameAlignTop
-      case 1: self = .kFrameAlignMiddle
-      case 2: self = .kFrameAlignBottom
-      case 3: self = .kFrameAlignJustify
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kFrameAlignTop: return 0
-      case .kFrameAlignMiddle: return 1
-      case .kFrameAlignBottom: return 2
-      case .kFrameAlignJustify: return 3
-      }
     }
 
   }
@@ -3185,35 +2649,35 @@ public struct TSWP_ShapeStylePropertiesArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWP_ShapeStyleArchive: Sendable {
+public nonisolated struct TSWP_ShapeStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_ShapeStyleArchive {
-    get {return _super ?? TSD_ShapeStyleArchive()}
+    get {_super ?? TSD_ShapeStyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var overrideCount: UInt32 {
-    get {return _overrideCount ?? 0}
+    get {_overrideCount ?? 0}
     set {_overrideCount = newValue}
   }
   /// Returns true if `overrideCount` has been explicitly set.
-  public var hasOverrideCount: Bool {return self._overrideCount != nil}
+  public var hasOverrideCount: Bool {self._overrideCount != nil}
   /// Clears the value of `overrideCount`. Subsequent reads from it will return its default value.
   public mutating func clearOverrideCount() {self._overrideCount = nil}
 
   public var shapeProperties: TSWP_ShapeStylePropertiesArchive {
-    get {return _shapeProperties ?? TSWP_ShapeStylePropertiesArchive()}
+    get {_shapeProperties ?? TSWP_ShapeStylePropertiesArchive()}
     set {_shapeProperties = newValue}
   }
   /// Returns true if `shapeProperties` has been explicitly set.
-  public var hasShapeProperties: Bool {return self._shapeProperties != nil}
+  public var hasShapeProperties: Bool {self._shapeProperties != nil}
   /// Clears the value of `shapeProperties`. Subsequent reads from it will return its default value.
   public mutating func clearShapeProperties() {self._shapeProperties = nil}
 
@@ -3226,7 +2690,7 @@ public struct TSWP_ShapeStyleArchive: Sendable {
   fileprivate var _shapeProperties: TSWP_ShapeStylePropertiesArchive? = nil
 }
 
-public struct TSWP_ThemePresetsArchive: Sendable {
+public nonisolated struct TSWP_ThemePresetsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -3252,26 +2716,26 @@ public struct TSWP_ThemePresetsArchive: Sendable {
   public init() {}
 }
 
-public struct TSWP_TextPresetDisplayItemArchive: Sendable {
+public nonisolated struct TSWP_TextPresetDisplayItemArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var preset: TSP_Reference {
-    get {return _preset ?? TSP_Reference()}
+    get {_preset ?? TSP_Reference()}
     set {_preset = newValue}
   }
   /// Returns true if `preset` has been explicitly set.
-  public var hasPreset: Bool {return self._preset != nil}
+  public var hasPreset: Bool {self._preset != nil}
   /// Clears the value of `preset`. Subsequent reads from it will return its default value.
   public mutating func clearPreset() {self._preset = nil}
 
   public var displayName: String {
-    get {return _displayName ?? String()}
+    get {_displayName ?? String()}
     set {_displayName = newValue}
   }
   /// Returns true if `displayName` has been explicitly set.
-  public var hasDisplayName: Bool {return self._displayName != nil}
+  public var hasDisplayName: Bool {self._displayName != nil}
   /// Clears the value of `displayName`. Subsequent reads from it will return its default value.
   public mutating func clearDisplayName() {self._displayName = nil}
 
@@ -3283,35 +2747,35 @@ public struct TSWP_TextPresetDisplayItemArchive: Sendable {
   fileprivate var _displayName: String? = nil
 }
 
-public struct TSWP_TOCEntryStylePropertiesArchive: Sendable {
+public nonisolated struct TSWP_TOCEntryStylePropertiesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var pageNumberStyleNull: Bool {
-    get {return _pageNumberStyleNull ?? false}
+    get {_pageNumberStyleNull ?? false}
     set {_pageNumberStyleNull = newValue}
   }
   /// Returns true if `pageNumberStyleNull` has been explicitly set.
-  public var hasPageNumberStyleNull: Bool {return self._pageNumberStyleNull != nil}
+  public var hasPageNumberStyleNull: Bool {self._pageNumberStyleNull != nil}
   /// Clears the value of `pageNumberStyleNull`. Subsequent reads from it will return its default value.
   public mutating func clearPageNumberStyleNull() {self._pageNumberStyleNull = nil}
 
   public var pageNumberStyle: TSP_Reference {
-    get {return _pageNumberStyle ?? TSP_Reference()}
+    get {_pageNumberStyle ?? TSP_Reference()}
     set {_pageNumberStyle = newValue}
   }
   /// Returns true if `pageNumberStyle` has been explicitly set.
-  public var hasPageNumberStyle: Bool {return self._pageNumberStyle != nil}
+  public var hasPageNumberStyle: Bool {self._pageNumberStyle != nil}
   /// Clears the value of `pageNumberStyle`. Subsequent reads from it will return its default value.
   public mutating func clearPageNumberStyle() {self._pageNumberStyle = nil}
 
   public var showPageNumber: Bool {
-    get {return _showPageNumber ?? false}
+    get {_showPageNumber ?? false}
     set {_showPageNumber = newValue}
   }
   /// Returns true if `showPageNumber` has been explicitly set.
-  public var hasShowPageNumber: Bool {return self._showPageNumber != nil}
+  public var hasShowPageNumber: Bool {self._showPageNumber != nil}
   /// Clears the value of `showPageNumber`. Subsequent reads from it will return its default value.
   public mutating func clearShowPageNumber() {self._showPageNumber = nil}
 
@@ -3324,26 +2788,26 @@ public struct TSWP_TOCEntryStylePropertiesArchive: Sendable {
   fileprivate var _showPageNumber: Bool? = nil
 }
 
-public struct TSWP_TOCEntryStyleArchive: @unchecked Sendable {
+public nonisolated struct TSWP_TOCEntryStyleArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_ParagraphStyleArchive {
-    get {return _storage._super ?? TSWP_ParagraphStyleArchive()}
+    get {_storage._super ?? TSWP_ParagraphStyleArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var tocProperties: TSWP_TOCEntryStylePropertiesArchive {
-    get {return _storage._tocProperties ?? TSWP_TOCEntryStylePropertiesArchive()}
+    get {_storage._tocProperties ?? TSWP_TOCEntryStylePropertiesArchive()}
     set {_uniqueStorage()._tocProperties = newValue}
   }
   /// Returns true if `tocProperties` has been explicitly set.
-  public var hasTocProperties: Bool {return _storage._tocProperties != nil}
+  public var hasTocProperties: Bool {_storage._tocProperties != nil}
   /// Clears the value of `tocProperties`. Subsequent reads from it will return its default value.
   public mutating func clearTocProperties() {_uniqueStorage()._tocProperties = nil}
 
@@ -3354,26 +2818,26 @@ public struct TSWP_TOCEntryStyleArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWP_TOCSettingsArchive: Sendable {
+public nonisolated struct TSWP_TOCSettingsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tocName: String {
-    get {return _tocName ?? String()}
+    get {_tocName ?? String()}
     set {_tocName = newValue}
   }
   /// Returns true if `tocName` has been explicitly set.
-  public var hasTocName: Bool {return self._tocName != nil}
+  public var hasTocName: Bool {self._tocName != nil}
   /// Clears the value of `tocName`. Subsequent reads from it will return its default value.
   public mutating func clearTocName() {self._tocName = nil}
 
   public var tocScope: UInt32 {
-    get {return _tocScope ?? 0}
+    get {_tocScope ?? 0}
     set {_tocScope = newValue}
   }
   /// Returns true if `tocScope` has been explicitly set.
-  public var hasTocScope: Bool {return self._tocScope != nil}
+  public var hasTocScope: Bool {self._tocScope != nil}
   /// Clears the value of `tocScope`. Subsequent reads from it will return its default value.
   public mutating func clearTocScope() {self._tocScope = nil}
 
@@ -3381,35 +2845,35 @@ public struct TSWP_TOCSettingsArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct TOCEntryData: Sendable {
+  public nonisolated struct TOCEntryData: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var paragraphStyle: TSP_Reference {
-      get {return _paragraphStyle ?? TSP_Reference()}
+      get {_paragraphStyle ?? TSP_Reference()}
       set {_paragraphStyle = newValue}
     }
     /// Returns true if `paragraphStyle` has been explicitly set.
-    public var hasParagraphStyle: Bool {return self._paragraphStyle != nil}
+    public var hasParagraphStyle: Bool {self._paragraphStyle != nil}
     /// Clears the value of `paragraphStyle`. Subsequent reads from it will return its default value.
     public mutating func clearParagraphStyle() {self._paragraphStyle = nil}
 
     public var tocEntryStyle: TSP_Reference {
-      get {return _tocEntryStyle ?? TSP_Reference()}
+      get {_tocEntryStyle ?? TSP_Reference()}
       set {_tocEntryStyle = newValue}
     }
     /// Returns true if `tocEntryStyle` has been explicitly set.
-    public var hasTocEntryStyle: Bool {return self._tocEntryStyle != nil}
+    public var hasTocEntryStyle: Bool {self._tocEntryStyle != nil}
     /// Clears the value of `tocEntryStyle`. Subsequent reads from it will return its default value.
     public mutating func clearTocEntryStyle() {self._tocEntryStyle = nil}
 
     public var showInToc: Bool {
-      get {return _showInToc ?? false}
+      get {_showInToc ?? false}
       set {_showInToc = newValue}
     }
     /// Returns true if `showInToc` has been explicitly set.
-    public var hasShowInToc: Bool {return self._showInToc != nil}
+    public var hasShowInToc: Bool {self._showInToc != nil}
     /// Clears the value of `showInToc`. Subsequent reads from it will return its default value.
     public mutating func clearShowInToc() {self._showInToc = nil}
 
@@ -3428,89 +2892,89 @@ public struct TSWP_TOCSettingsArchive: Sendable {
   fileprivate var _tocScope: UInt32? = nil
 }
 
-public struct TSWP_TOCEntryInstanceArchive: Sendable {
+public nonisolated struct TSWP_TOCEntryInstanceArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var paragraphIndex: UInt32 {
-    get {return _paragraphIndex ?? 0}
+    get {_paragraphIndex ?? 0}
     set {_paragraphIndex = newValue}
   }
   /// Returns true if `paragraphIndex` has been explicitly set.
-  public var hasParagraphIndex: Bool {return self._paragraphIndex != nil}
+  public var hasParagraphIndex: Bool {self._paragraphIndex != nil}
   /// Clears the value of `paragraphIndex`. Subsequent reads from it will return its default value.
   public mutating func clearParagraphIndex() {self._paragraphIndex = nil}
 
   public var pageNumber: UInt32 {
-    get {return _pageNumber ?? 0}
+    get {_pageNumber ?? 0}
     set {_pageNumber = newValue}
   }
   /// Returns true if `pageNumber` has been explicitly set.
-  public var hasPageNumber: Bool {return self._pageNumber != nil}
+  public var hasPageNumber: Bool {self._pageNumber != nil}
   /// Clears the value of `pageNumber`. Subsequent reads from it will return its default value.
   public mutating func clearPageNumber() {self._pageNumber = nil}
 
   public var numberFormat: UInt32 {
-    get {return _numberFormat ?? 0}
+    get {_numberFormat ?? 0}
     set {_numberFormat = newValue}
   }
   /// Returns true if `numberFormat` has been explicitly set.
-  public var hasNumberFormat: Bool {return self._numberFormat != nil}
+  public var hasNumberFormat: Bool {self._numberFormat != nil}
   /// Clears the value of `numberFormat`. Subsequent reads from it will return its default value.
   public mutating func clearNumberFormat() {self._numberFormat = nil}
 
   public var heading: String {
-    get {return _heading ?? String()}
+    get {_heading ?? String()}
     set {_heading = newValue}
   }
   /// Returns true if `heading` has been explicitly set.
-  public var hasHeading: Bool {return self._heading != nil}
+  public var hasHeading: Bool {self._heading != nil}
   /// Clears the value of `heading`. Subsequent reads from it will return its default value.
   public mutating func clearHeading() {self._heading = nil}
 
   public var indexedStyle: TSP_Reference {
-    get {return _indexedStyle ?? TSP_Reference()}
+    get {_indexedStyle ?? TSP_Reference()}
     set {_indexedStyle = newValue}
   }
   /// Returns true if `indexedStyle` has been explicitly set.
-  public var hasIndexedStyle: Bool {return self._indexedStyle != nil}
+  public var hasIndexedStyle: Bool {self._indexedStyle != nil}
   /// Clears the value of `indexedStyle`. Subsequent reads from it will return its default value.
   public mutating func clearIndexedStyle() {self._indexedStyle = nil}
 
   public var indexedListStyle: TSP_Reference {
-    get {return _indexedListStyle ?? TSP_Reference()}
+    get {_indexedListStyle ?? TSP_Reference()}
     set {_indexedListStyle = newValue}
   }
   /// Returns true if `indexedListStyle` has been explicitly set.
-  public var hasIndexedListStyle: Bool {return self._indexedListStyle != nil}
+  public var hasIndexedListStyle: Bool {self._indexedListStyle != nil}
   /// Clears the value of `indexedListStyle`. Subsequent reads from it will return its default value.
   public mutating func clearIndexedListStyle() {self._indexedListStyle = nil}
 
   public var indexedListStart: UInt32 {
-    get {return _indexedListStart ?? 0}
+    get {_indexedListStart ?? 0}
     set {_indexedListStart = newValue}
   }
   /// Returns true if `indexedListStart` has been explicitly set.
-  public var hasIndexedListStart: Bool {return self._indexedListStart != nil}
+  public var hasIndexedListStart: Bool {self._indexedListStart != nil}
   /// Clears the value of `indexedListStart`. Subsequent reads from it will return its default value.
   public mutating func clearIndexedListStart() {self._indexedListStart = nil}
 
   public var indexedParagraphLevel: UInt32 {
-    get {return _indexedParagraphLevel ?? 0}
+    get {_indexedParagraphLevel ?? 0}
     set {_indexedParagraphLevel = newValue}
   }
   /// Returns true if `indexedParagraphLevel` has been explicitly set.
-  public var hasIndexedParagraphLevel: Bool {return self._indexedParagraphLevel != nil}
+  public var hasIndexedParagraphLevel: Bool {self._indexedParagraphLevel != nil}
   /// Clears the value of `indexedParagraphLevel`. Subsequent reads from it will return its default value.
   public mutating func clearIndexedParagraphLevel() {self._indexedParagraphLevel = nil}
 
   public var numberFormatName: String {
-    get {return _numberFormatName ?? String()}
+    get {_numberFormatName ?? String()}
     set {_numberFormatName = newValue}
   }
   /// Returns true if `numberFormatName` has been explicitly set.
-  public var hasNumberFormatName: Bool {return self._numberFormatName != nil}
+  public var hasNumberFormatName: Bool {self._numberFormatName != nil}
   /// Clears the value of `numberFormatName`. Subsequent reads from it will return its default value.
   public mutating func clearNumberFormatName() {self._numberFormatName = nil}
 
@@ -3529,7 +2993,7 @@ public struct TSWP_TOCEntryInstanceArchive: Sendable {
   fileprivate var _numberFormatName: String? = nil
 }
 
-public struct TSWP_UndoTransaction: Sendable {
+public nonisolated struct TSWP_UndoTransaction: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -3539,162 +3003,94 @@ public struct TSWP_UndoTransaction: Sendable {
   public var groupEntries: [TSWP_UndoTransaction.StorageActionGroup] = []
 
   public var flags: UInt32 {
-    get {return _flags ?? 0}
+    get {_flags ?? 0}
     set {_flags = newValue}
   }
   /// Returns true if `flags` has been explicitly set.
-  public var hasFlags: Bool {return self._flags != nil}
+  public var hasFlags: Bool {self._flags != nil}
   /// Clears the value of `flags`. Subsequent reads from it will return its default value.
   public mutating func clearFlags() {self._flags = nil}
 
   public var version: UInt32 {
-    get {return _version ?? 0}
+    get {_version ?? 0}
     set {_version = newValue}
   }
   /// Returns true if `version` has been explicitly set.
-  public var hasVersion: Bool {return self._version != nil}
+  public var hasVersion: Bool {self._version != nil}
   /// Clears the value of `version`. Subsequent reads from it will return its default value.
   public mutating func clearVersion() {self._version = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum UndoKind: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case replaceText // = 1
-    case insertAttribute // = 2
-    case deleteAttribute // = 3
-    case adjustCharIndexes // = 4
-    case comprAdjustCharIndexes // = 5
-    case replaceCharIndex // = 6
-    case replaceObject // = 7
-    case replaceParagraphData // = 8
-    case objectDolc // = 9
-    case ctDate // = 10
+  public nonisolated enum UndoKind: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case replaceText = 1
+    case insertAttribute = 2
+    case deleteAttribute = 3
+    case adjustCharIndexes = 4
+    case comprAdjustCharIndexes = 5
+    case replaceCharIndex = 6
+    case replaceObject = 7
+    case replaceParagraphData = 8
+    case objectDolc = 9
+    case ctDate = 10
 
     public init() {
       self = .replaceText
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 1: self = .replaceText
-      case 2: self = .insertAttribute
-      case 3: self = .deleteAttribute
-      case 4: self = .adjustCharIndexes
-      case 5: self = .comprAdjustCharIndexes
-      case 6: self = .replaceCharIndex
-      case 7: self = .replaceObject
-      case 8: self = .replaceParagraphData
-      case 9: self = .objectDolc
-      case 10: self = .ctDate
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .replaceText: return 1
-      case .insertAttribute: return 2
-      case .deleteAttribute: return 3
-      case .adjustCharIndexes: return 4
-      case .comprAdjustCharIndexes: return 5
-      case .replaceCharIndex: return 6
-      case .replaceObject: return 7
-      case .replaceParagraphData: return 8
-      case .objectDolc: return 9
-      case .ctDate: return 10
-      }
-    }
-
   }
 
-  public enum ActionKind: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case actionUndefined // = 0
-    case actionText // = 1
-    case actionAttribute // = 2
+  public nonisolated enum ActionKind: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case actionUndefined = 0
+    case actionText = 1
+    case actionAttribute = 2
 
     public init() {
       self = .actionUndefined
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .actionUndefined
-      case 1: self = .actionText
-      case 2: self = .actionAttribute
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .actionUndefined: return 0
-      case .actionText: return 1
-      case .actionAttribute: return 2
-      }
-    }
-
   }
 
-  public enum ActionGroupKind: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case actionGroupUndefined // = 0
-    case actionGroupText // = 1
-    case actionGroupAttribute // = 2
+  public nonisolated enum ActionGroupKind: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case actionGroupUndefined = 0
+    case actionGroupText = 1
+    case actionGroupAttribute = 2
 
     public init() {
       self = .actionGroupUndefined
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .actionGroupUndefined
-      case 1: self = .actionGroupText
-      case 2: self = .actionGroupAttribute
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .actionGroupUndefined: return 0
-      case .actionGroupText: return 1
-      case .actionGroupAttribute: return 2
-      }
-    }
-
   }
 
-  public struct GenericTransaction: Sendable {
+  public nonisolated struct GenericTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var value1: UInt32 {
-      get {return _value1 ?? 0}
+      get {_value1 ?? 0}
       set {_value1 = newValue}
     }
     /// Returns true if `value1` has been explicitly set.
-    public var hasValue1: Bool {return self._value1 != nil}
+    public var hasValue1: Bool {self._value1 != nil}
     /// Clears the value of `value1`. Subsequent reads from it will return its default value.
     public mutating func clearValue1() {self._value1 = nil}
 
     public var value2: UInt32 {
-      get {return _value2 ?? 0}
+      get {_value2 ?? 0}
       set {_value2 = newValue}
     }
     /// Returns true if `value2` has been explicitly set.
-    public var hasValue2: Bool {return self._value2 != nil}
+    public var hasValue2: Bool {self._value2 != nil}
     /// Clears the value of `value2`. Subsequent reads from it will return its default value.
     public mutating func clearValue2() {self._value2 = nil}
 
     public var value3: UInt32 {
-      get {return _value3 ?? 0}
+      get {_value3 ?? 0}
       set {_value3 = newValue}
     }
     /// Returns true if `value3` has been explicitly set.
-    public var hasValue3: Bool {return self._value3 != nil}
+    public var hasValue3: Bool {self._value3 != nil}
     /// Clears the value of `value3`. Subsequent reads from it will return its default value.
     public mutating func clearValue3() {self._value3 = nil}
 
@@ -3707,35 +3103,35 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _value3: UInt32? = nil
   }
 
-  public struct TextTransaction: Sendable {
+  public nonisolated struct TextTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var insertLocation: UInt32 {
-      get {return _insertLocation ?? 0}
+      get {_insertLocation ?? 0}
       set {_insertLocation = newValue}
     }
     /// Returns true if `insertLocation` has been explicitly set.
-    public var hasInsertLocation: Bool {return self._insertLocation != nil}
+    public var hasInsertLocation: Bool {self._insertLocation != nil}
     /// Clears the value of `insertLocation`. Subsequent reads from it will return its default value.
     public mutating func clearInsertLocation() {self._insertLocation = nil}
 
     public var insertLength: UInt32 {
-      get {return _insertLength ?? 0}
+      get {_insertLength ?? 0}
       set {_insertLength = newValue}
     }
     /// Returns true if `insertLength` has been explicitly set.
-    public var hasInsertLength: Bool {return self._insertLength != nil}
+    public var hasInsertLength: Bool {self._insertLength != nil}
     /// Clears the value of `insertLength`. Subsequent reads from it will return its default value.
     public mutating func clearInsertLength() {self._insertLength = nil}
 
     public var stringToDelete: String {
-      get {return _stringToDelete ?? String()}
+      get {_stringToDelete ?? String()}
       set {_stringToDelete = newValue}
     }
     /// Returns true if `stringToDelete` has been explicitly set.
-    public var hasStringToDelete: Bool {return self._stringToDelete != nil}
+    public var hasStringToDelete: Bool {self._stringToDelete != nil}
     /// Clears the value of `stringToDelete`. Subsequent reads from it will return its default value.
     public mutating func clearStringToDelete() {self._stringToDelete = nil}
 
@@ -3748,35 +3144,35 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _stringToDelete: String? = nil
   }
 
-  public struct CharIndexTransaction: Sendable {
+  public nonisolated struct CharIndexTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var charIndex: UInt32 {
-      get {return _charIndex ?? 0}
+      get {_charIndex ?? 0}
       set {_charIndex = newValue}
     }
     /// Returns true if `charIndex` has been explicitly set.
-    public var hasCharIndex: Bool {return self._charIndex != nil}
+    public var hasCharIndex: Bool {self._charIndex != nil}
     /// Clears the value of `charIndex`. Subsequent reads from it will return its default value.
     public mutating func clearCharIndex() {self._charIndex = nil}
 
     public var count: UInt32 {
-      get {return _count ?? 0}
+      get {_count ?? 0}
       set {_count = newValue}
     }
     /// Returns true if `count` has been explicitly set.
-    public var hasCount: Bool {return self._count != nil}
+    public var hasCount: Bool {self._count != nil}
     /// Clears the value of `count`. Subsequent reads from it will return its default value.
     public mutating func clearCount() {self._count = nil}
 
     public var object: TSP_Reference {
-      get {return _object ?? TSP_Reference()}
+      get {_object ?? TSP_Reference()}
       set {_object = newValue}
     }
     /// Returns true if `object` has been explicitly set.
-    public var hasObject: Bool {return self._object != nil}
+    public var hasObject: Bool {self._object != nil}
     /// Clears the value of `object`. Subsequent reads from it will return its default value.
     public mutating func clearObject() {self._object = nil}
 
@@ -3789,26 +3185,26 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _object: TSP_Reference? = nil
   }
 
-  public struct ReplaceCharIndexTransaction: Sendable {
+  public nonisolated struct ReplaceCharIndexTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var attributeIndex: UInt32 {
-      get {return _attributeIndex ?? 0}
+      get {_attributeIndex ?? 0}
       set {_attributeIndex = newValue}
     }
     /// Returns true if `attributeIndex` has been explicitly set.
-    public var hasAttributeIndex: Bool {return self._attributeIndex != nil}
+    public var hasAttributeIndex: Bool {self._attributeIndex != nil}
     /// Clears the value of `attributeIndex`. Subsequent reads from it will return its default value.
     public mutating func clearAttributeIndex() {self._attributeIndex = nil}
 
     public var charIndex: UInt32 {
-      get {return _charIndex ?? 0}
+      get {_charIndex ?? 0}
       set {_charIndex = newValue}
     }
     /// Returns true if `charIndex` has been explicitly set.
-    public var hasCharIndex: Bool {return self._charIndex != nil}
+    public var hasCharIndex: Bool {self._charIndex != nil}
     /// Clears the value of `charIndex`. Subsequent reads from it will return its default value.
     public mutating func clearCharIndex() {self._charIndex = nil}
 
@@ -3820,44 +3216,44 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _charIndex: UInt32? = nil
   }
 
-  public struct AttributeIndexTransaction: Sendable {
+  public nonisolated struct AttributeIndexTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var attributeIndex: UInt32 {
-      get {return _attributeIndex ?? 0}
+      get {_attributeIndex ?? 0}
       set {_attributeIndex = newValue}
     }
     /// Returns true if `attributeIndex` has been explicitly set.
-    public var hasAttributeIndex: Bool {return self._attributeIndex != nil}
+    public var hasAttributeIndex: Bool {self._attributeIndex != nil}
     /// Clears the value of `attributeIndex`. Subsequent reads from it will return its default value.
     public mutating func clearAttributeIndex() {self._attributeIndex = nil}
 
     public var charIndex: UInt32 {
-      get {return _charIndex ?? 0}
+      get {_charIndex ?? 0}
       set {_charIndex = newValue}
     }
     /// Returns true if `charIndex` has been explicitly set.
-    public var hasCharIndex: Bool {return self._charIndex != nil}
+    public var hasCharIndex: Bool {self._charIndex != nil}
     /// Clears the value of `charIndex`. Subsequent reads from it will return its default value.
     public mutating func clearCharIndex() {self._charIndex = nil}
 
     public var object: TSP_Reference {
-      get {return _object ?? TSP_Reference()}
+      get {_object ?? TSP_Reference()}
       set {_object = newValue}
     }
     /// Returns true if `object` has been explicitly set.
-    public var hasObject: Bool {return self._object != nil}
+    public var hasObject: Bool {self._object != nil}
     /// Clears the value of `object`. Subsequent reads from it will return its default value.
     public mutating func clearObject() {self._object = nil}
 
     public var string: String {
-      get {return _string ?? String()}
+      get {_string ?? String()}
       set {_string = newValue}
     }
     /// Returns true if `string` has been explicitly set.
-    public var hasString: Bool {return self._string != nil}
+    public var hasString: Bool {self._string != nil}
     /// Clears the value of `string`. Subsequent reads from it will return its default value.
     public mutating func clearString() {self._string = nil}
 
@@ -3871,44 +3267,44 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _string: String? = nil
   }
 
-  public struct InsertAttributeTransaction: Sendable {
+  public nonisolated struct InsertAttributeTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var attributeIndex: UInt32 {
-      get {return _attributeIndex ?? 0}
+      get {_attributeIndex ?? 0}
       set {_attributeIndex = newValue}
     }
     /// Returns true if `attributeIndex` has been explicitly set.
-    public var hasAttributeIndex: Bool {return self._attributeIndex != nil}
+    public var hasAttributeIndex: Bool {self._attributeIndex != nil}
     /// Clears the value of `attributeIndex`. Subsequent reads from it will return its default value.
     public mutating func clearAttributeIndex() {self._attributeIndex = nil}
 
     public var attributeCount: UInt32 {
-      get {return _attributeCount ?? 0}
+      get {_attributeCount ?? 0}
       set {_attributeCount = newValue}
     }
     /// Returns true if `attributeCount` has been explicitly set.
-    public var hasAttributeCount: Bool {return self._attributeCount != nil}
+    public var hasAttributeCount: Bool {self._attributeCount != nil}
     /// Clears the value of `attributeCount`. Subsequent reads from it will return its default value.
     public mutating func clearAttributeCount() {self._attributeCount = nil}
 
     public var object: TSP_Reference {
-      get {return _object ?? TSP_Reference()}
+      get {_object ?? TSP_Reference()}
       set {_object = newValue}
     }
     /// Returns true if `object` has been explicitly set.
-    public var hasObject: Bool {return self._object != nil}
+    public var hasObject: Bool {self._object != nil}
     /// Clears the value of `object`. Subsequent reads from it will return its default value.
     public mutating func clearObject() {self._object = nil}
 
     public var string: String {
-      get {return _string ?? String()}
+      get {_string ?? String()}
       set {_string = newValue}
     }
     /// Returns true if `string` has been explicitly set.
-    public var hasString: Bool {return self._string != nil}
+    public var hasString: Bool {self._string != nil}
     /// Clears the value of `string`. Subsequent reads from it will return its default value.
     public mutating func clearString() {self._string = nil}
 
@@ -3922,26 +3318,26 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _string: String? = nil
   }
 
-  public struct InsertNilTransaction: Sendable {
+  public nonisolated struct InsertNilTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var attributeIndex: UInt32 {
-      get {return _attributeIndex ?? 0}
+      get {_attributeIndex ?? 0}
       set {_attributeIndex = newValue}
     }
     /// Returns true if `attributeIndex` has been explicitly set.
-    public var hasAttributeIndex: Bool {return self._attributeIndex != nil}
+    public var hasAttributeIndex: Bool {self._attributeIndex != nil}
     /// Clears the value of `attributeIndex`. Subsequent reads from it will return its default value.
     public mutating func clearAttributeIndex() {self._attributeIndex = nil}
 
     public var attributeCount: UInt32 {
-      get {return _attributeCount ?? 0}
+      get {_attributeCount ?? 0}
       set {_attributeCount = newValue}
     }
     /// Returns true if `attributeCount` has been explicitly set.
-    public var hasAttributeCount: Bool {return self._attributeCount != nil}
+    public var hasAttributeCount: Bool {self._attributeCount != nil}
     /// Clears the value of `attributeCount`. Subsequent reads from it will return its default value.
     public mutating func clearAttributeCount() {self._attributeCount = nil}
 
@@ -3953,35 +3349,35 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _attributeCount: UInt32? = nil
   }
 
-  public struct CharDeltaTransaction: Sendable {
+  public nonisolated struct CharDeltaTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var charIndex: UInt32 {
-      get {return _charIndex ?? 0}
+      get {_charIndex ?? 0}
       set {_charIndex = newValue}
     }
     /// Returns true if `charIndex` has been explicitly set.
-    public var hasCharIndex: Bool {return self._charIndex != nil}
+    public var hasCharIndex: Bool {self._charIndex != nil}
     /// Clears the value of `charIndex`. Subsequent reads from it will return its default value.
     public mutating func clearCharIndex() {self._charIndex = nil}
 
     public var attributeIndex: UInt32 {
-      get {return _attributeIndex ?? 0}
+      get {_attributeIndex ?? 0}
       set {_attributeIndex = newValue}
     }
     /// Returns true if `attributeIndex` has been explicitly set.
-    public var hasAttributeIndex: Bool {return self._attributeIndex != nil}
+    public var hasAttributeIndex: Bool {self._attributeIndex != nil}
     /// Clears the value of `attributeIndex`. Subsequent reads from it will return its default value.
     public mutating func clearAttributeIndex() {self._attributeIndex = nil}
 
     public var charDelta: Int32 {
-      get {return _charDelta ?? 0}
+      get {_charDelta ?? 0}
       set {_charDelta = newValue}
     }
     /// Returns true if `charDelta` has been explicitly set.
-    public var hasCharDelta: Bool {return self._charDelta != nil}
+    public var hasCharDelta: Bool {self._charDelta != nil}
     /// Clears the value of `charDelta`. Subsequent reads from it will return its default value.
     public mutating func clearCharDelta() {self._charDelta = nil}
 
@@ -3994,44 +3390,44 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _charDelta: Int32? = nil
   }
 
-  public struct ParagraphDataTransaction: Sendable {
+  public nonisolated struct ParagraphDataTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var attributeIndex: UInt32 {
-      get {return _attributeIndex ?? 0}
+      get {_attributeIndex ?? 0}
       set {_attributeIndex = newValue}
     }
     /// Returns true if `attributeIndex` has been explicitly set.
-    public var hasAttributeIndex: Bool {return self._attributeIndex != nil}
+    public var hasAttributeIndex: Bool {self._attributeIndex != nil}
     /// Clears the value of `attributeIndex`. Subsequent reads from it will return its default value.
     public mutating func clearAttributeIndex() {self._attributeIndex = nil}
 
     public var first: UInt32 {
-      get {return _first ?? 0}
+      get {_first ?? 0}
       set {_first = newValue}
     }
     /// Returns true if `first` has been explicitly set.
-    public var hasFirst: Bool {return self._first != nil}
+    public var hasFirst: Bool {self._first != nil}
     /// Clears the value of `first`. Subsequent reads from it will return its default value.
     public mutating func clearFirst() {self._first = nil}
 
     public var second: UInt32 {
-      get {return _second ?? 0}
+      get {_second ?? 0}
       set {_second = newValue}
     }
     /// Returns true if `second` has been explicitly set.
-    public var hasSecond: Bool {return self._second != nil}
+    public var hasSecond: Bool {self._second != nil}
     /// Clears the value of `second`. Subsequent reads from it will return its default value.
     public mutating func clearSecond() {self._second = nil}
 
     public var charIndex: UInt32 {
-      get {return _charIndex ?? 0}
+      get {_charIndex ?? 0}
       set {_charIndex = newValue}
     }
     /// Returns true if `charIndex` has been explicitly set.
-    public var hasCharIndex: Bool {return self._charIndex != nil}
+    public var hasCharIndex: Bool {self._charIndex != nil}
     /// Clears the value of `charIndex`. Subsequent reads from it will return its default value.
     public mutating func clearCharIndex() {self._charIndex = nil}
 
@@ -4045,26 +3441,26 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _charIndex: UInt32? = nil
   }
 
-  public struct ObjectDOLCTransaction: Sendable {
+  public nonisolated struct ObjectDOLCTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var flags: UInt32 {
-      get {return _flags ?? 0}
+      get {_flags ?? 0}
       set {_flags = newValue}
     }
     /// Returns true if `flags` has been explicitly set.
-    public var hasFlags: Bool {return self._flags != nil}
+    public var hasFlags: Bool {self._flags != nil}
     /// Clears the value of `flags`. Subsequent reads from it will return its default value.
     public mutating func clearFlags() {self._flags = nil}
 
     public var object: TSP_Reference {
-      get {return _object ?? TSP_Reference()}
+      get {_object ?? TSP_Reference()}
       set {_object = newValue}
     }
     /// Returns true if `object` has been explicitly set.
-    public var hasObject: Bool {return self._object != nil}
+    public var hasObject: Bool {self._object != nil}
     /// Clears the value of `object`. Subsequent reads from it will return its default value.
     public mutating func clearObject() {self._object = nil}
 
@@ -4076,26 +3472,26 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _object: TSP_Reference? = nil
   }
 
-  public struct CTDateTransaction: Sendable {
+  public nonisolated struct CTDateTransaction: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var attributeIndex: UInt32 {
-      get {return _attributeIndex ?? 0}
+      get {_attributeIndex ?? 0}
       set {_attributeIndex = newValue}
     }
     /// Returns true if `attributeIndex` has been explicitly set.
-    public var hasAttributeIndex: Bool {return self._attributeIndex != nil}
+    public var hasAttributeIndex: Bool {self._attributeIndex != nil}
     /// Clears the value of `attributeIndex`. Subsequent reads from it will return its default value.
     public mutating func clearAttributeIndex() {self._attributeIndex = nil}
 
     public var date: TSP_Date {
-      get {return _date ?? TSP_Date()}
+      get {_date ?? TSP_Date()}
       set {_date = newValue}
     }
     /// Returns true if `date` has been explicitly set.
-    public var hasDate: Bool {return self._date != nil}
+    public var hasDate: Bool {self._date != nil}
     /// Clears the value of `date`. Subsequent reads from it will return its default value.
     public mutating func clearDate() {self._date = nil}
 
@@ -4107,125 +3503,125 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _date: TSP_Date? = nil
   }
 
-  public struct UnionTransaction: @unchecked Sendable {
+  public nonisolated struct UnionTransaction: @unchecked Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var kind: TSWP_UndoTransaction.UndoKind {
-      get {return _storage._kind ?? .replaceText}
+      get {_storage._kind ?? .replaceText}
       set {_uniqueStorage()._kind = newValue}
     }
     /// Returns true if `kind` has been explicitly set.
-    public var hasKind: Bool {return _storage._kind != nil}
+    public var hasKind: Bool {_storage._kind != nil}
     /// Clears the value of `kind`. Subsequent reads from it will return its default value.
     public mutating func clearKind() {_uniqueStorage()._kind = nil}
 
     public var table: UInt32 {
-      get {return _storage._table ?? 0}
+      get {_storage._table ?? 0}
       set {_uniqueStorage()._table = newValue}
     }
     /// Returns true if `table` has been explicitly set.
-    public var hasTable: Bool {return _storage._table != nil}
+    public var hasTable: Bool {_storage._table != nil}
     /// Clears the value of `table`. Subsequent reads from it will return its default value.
     public mutating func clearTable() {_uniqueStorage()._table = nil}
 
     public var generic: TSWP_UndoTransaction.GenericTransaction {
-      get {return _storage._generic ?? TSWP_UndoTransaction.GenericTransaction()}
+      get {_storage._generic ?? TSWP_UndoTransaction.GenericTransaction()}
       set {_uniqueStorage()._generic = newValue}
     }
     /// Returns true if `generic` has been explicitly set.
-    public var hasGeneric: Bool {return _storage._generic != nil}
+    public var hasGeneric: Bool {_storage._generic != nil}
     /// Clears the value of `generic`. Subsequent reads from it will return its default value.
     public mutating func clearGeneric() {_uniqueStorage()._generic = nil}
 
     public var text: TSWP_UndoTransaction.TextTransaction {
-      get {return _storage._text ?? TSWP_UndoTransaction.TextTransaction()}
+      get {_storage._text ?? TSWP_UndoTransaction.TextTransaction()}
       set {_uniqueStorage()._text = newValue}
     }
     /// Returns true if `text` has been explicitly set.
-    public var hasText: Bool {return _storage._text != nil}
+    public var hasText: Bool {_storage._text != nil}
     /// Clears the value of `text`. Subsequent reads from it will return its default value.
     public mutating func clearText() {_uniqueStorage()._text = nil}
 
     public var charIndex: TSWP_UndoTransaction.CharIndexTransaction {
-      get {return _storage._charIndex ?? TSWP_UndoTransaction.CharIndexTransaction()}
+      get {_storage._charIndex ?? TSWP_UndoTransaction.CharIndexTransaction()}
       set {_uniqueStorage()._charIndex = newValue}
     }
     /// Returns true if `charIndex` has been explicitly set.
-    public var hasCharIndex: Bool {return _storage._charIndex != nil}
+    public var hasCharIndex: Bool {_storage._charIndex != nil}
     /// Clears the value of `charIndex`. Subsequent reads from it will return its default value.
     public mutating func clearCharIndex() {_uniqueStorage()._charIndex = nil}
 
     public var replaceCharIndex: TSWP_UndoTransaction.ReplaceCharIndexTransaction {
-      get {return _storage._replaceCharIndex ?? TSWP_UndoTransaction.ReplaceCharIndexTransaction()}
+      get {_storage._replaceCharIndex ?? TSWP_UndoTransaction.ReplaceCharIndexTransaction()}
       set {_uniqueStorage()._replaceCharIndex = newValue}
     }
     /// Returns true if `replaceCharIndex` has been explicitly set.
-    public var hasReplaceCharIndex: Bool {return _storage._replaceCharIndex != nil}
+    public var hasReplaceCharIndex: Bool {_storage._replaceCharIndex != nil}
     /// Clears the value of `replaceCharIndex`. Subsequent reads from it will return its default value.
     public mutating func clearReplaceCharIndex() {_uniqueStorage()._replaceCharIndex = nil}
 
     public var attributeIndex: TSWP_UndoTransaction.AttributeIndexTransaction {
-      get {return _storage._attributeIndex ?? TSWP_UndoTransaction.AttributeIndexTransaction()}
+      get {_storage._attributeIndex ?? TSWP_UndoTransaction.AttributeIndexTransaction()}
       set {_uniqueStorage()._attributeIndex = newValue}
     }
     /// Returns true if `attributeIndex` has been explicitly set.
-    public var hasAttributeIndex: Bool {return _storage._attributeIndex != nil}
+    public var hasAttributeIndex: Bool {_storage._attributeIndex != nil}
     /// Clears the value of `attributeIndex`. Subsequent reads from it will return its default value.
     public mutating func clearAttributeIndex() {_uniqueStorage()._attributeIndex = nil}
 
     public var insertNil: TSWP_UndoTransaction.InsertNilTransaction {
-      get {return _storage._insertNil ?? TSWP_UndoTransaction.InsertNilTransaction()}
+      get {_storage._insertNil ?? TSWP_UndoTransaction.InsertNilTransaction()}
       set {_uniqueStorage()._insertNil = newValue}
     }
     /// Returns true if `insertNil` has been explicitly set.
-    public var hasInsertNil: Bool {return _storage._insertNil != nil}
+    public var hasInsertNil: Bool {_storage._insertNil != nil}
     /// Clears the value of `insertNil`. Subsequent reads from it will return its default value.
     public mutating func clearInsertNil() {_uniqueStorage()._insertNil = nil}
 
     public var insertAttribute: TSWP_UndoTransaction.InsertAttributeTransaction {
-      get {return _storage._insertAttribute ?? TSWP_UndoTransaction.InsertAttributeTransaction()}
+      get {_storage._insertAttribute ?? TSWP_UndoTransaction.InsertAttributeTransaction()}
       set {_uniqueStorage()._insertAttribute = newValue}
     }
     /// Returns true if `insertAttribute` has been explicitly set.
-    public var hasInsertAttribute: Bool {return _storage._insertAttribute != nil}
+    public var hasInsertAttribute: Bool {_storage._insertAttribute != nil}
     /// Clears the value of `insertAttribute`. Subsequent reads from it will return its default value.
     public mutating func clearInsertAttribute() {_uniqueStorage()._insertAttribute = nil}
 
     public var charDelta: TSWP_UndoTransaction.CharDeltaTransaction {
-      get {return _storage._charDelta ?? TSWP_UndoTransaction.CharDeltaTransaction()}
+      get {_storage._charDelta ?? TSWP_UndoTransaction.CharDeltaTransaction()}
       set {_uniqueStorage()._charDelta = newValue}
     }
     /// Returns true if `charDelta` has been explicitly set.
-    public var hasCharDelta: Bool {return _storage._charDelta != nil}
+    public var hasCharDelta: Bool {_storage._charDelta != nil}
     /// Clears the value of `charDelta`. Subsequent reads from it will return its default value.
     public mutating func clearCharDelta() {_uniqueStorage()._charDelta = nil}
 
     public var paragraphData: TSWP_UndoTransaction.ParagraphDataTransaction {
-      get {return _storage._paragraphData ?? TSWP_UndoTransaction.ParagraphDataTransaction()}
+      get {_storage._paragraphData ?? TSWP_UndoTransaction.ParagraphDataTransaction()}
       set {_uniqueStorage()._paragraphData = newValue}
     }
     /// Returns true if `paragraphData` has been explicitly set.
-    public var hasParagraphData: Bool {return _storage._paragraphData != nil}
+    public var hasParagraphData: Bool {_storage._paragraphData != nil}
     /// Clears the value of `paragraphData`. Subsequent reads from it will return its default value.
     public mutating func clearParagraphData() {_uniqueStorage()._paragraphData = nil}
 
     public var objectDolc: TSWP_UndoTransaction.ObjectDOLCTransaction {
-      get {return _storage._objectDolc ?? TSWP_UndoTransaction.ObjectDOLCTransaction()}
+      get {_storage._objectDolc ?? TSWP_UndoTransaction.ObjectDOLCTransaction()}
       set {_uniqueStorage()._objectDolc = newValue}
     }
     /// Returns true if `objectDolc` has been explicitly set.
-    public var hasObjectDolc: Bool {return _storage._objectDolc != nil}
+    public var hasObjectDolc: Bool {_storage._objectDolc != nil}
     /// Clears the value of `objectDolc`. Subsequent reads from it will return its default value.
     public mutating func clearObjectDolc() {_uniqueStorage()._objectDolc = nil}
 
     public var ctDate: TSWP_UndoTransaction.CTDateTransaction {
-      get {return _storage._ctDate ?? TSWP_UndoTransaction.CTDateTransaction()}
+      get {_storage._ctDate ?? TSWP_UndoTransaction.CTDateTransaction()}
       set {_uniqueStorage()._ctDate = newValue}
     }
     /// Returns true if `ctDate` has been explicitly set.
-    public var hasCtDate: Bool {return _storage._ctDate != nil}
+    public var hasCtDate: Bool {_storage._ctDate != nil}
     /// Clears the value of `ctDate`. Subsequent reads from it will return its default value.
     public mutating func clearCtDate() {_uniqueStorage()._ctDate = nil}
 
@@ -4236,125 +3632,125 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _storage = _StorageClass.defaultInstance
   }
 
-  public struct StorageAction: @unchecked Sendable {
+  public nonisolated struct StorageAction: @unchecked Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var kind: TSWP_UndoTransaction.ActionKind {
-      get {return _storage._kind ?? .actionUndefined}
+      get {_storage._kind ?? .actionUndefined}
       set {_uniqueStorage()._kind = newValue}
     }
     /// Returns true if `kind` has been explicitly set.
-    public var hasKind: Bool {return _storage._kind != nil}
+    public var hasKind: Bool {_storage._kind != nil}
     /// Clears the value of `kind`. Subsequent reads from it will return its default value.
     public mutating func clearKind() {_uniqueStorage()._kind = nil}
 
     public var flags: UInt32 {
-      get {return _storage._flags ?? 0}
+      get {_storage._flags ?? 0}
       set {_uniqueStorage()._flags = newValue}
     }
     /// Returns true if `flags` has been explicitly set.
-    public var hasFlags: Bool {return _storage._flags != nil}
+    public var hasFlags: Bool {_storage._flags != nil}
     /// Clears the value of `flags`. Subsequent reads from it will return its default value.
     public mutating func clearFlags() {_uniqueStorage()._flags = nil}
 
     public var table: UInt32 {
-      get {return _storage._table ?? 0}
+      get {_storage._table ?? 0}
       set {_uniqueStorage()._table = newValue}
     }
     /// Returns true if `table` has been explicitly set.
-    public var hasTable: Bool {return _storage._table != nil}
+    public var hasTable: Bool {_storage._table != nil}
     /// Clears the value of `table`. Subsequent reads from it will return its default value.
     public mutating func clearTable() {_uniqueStorage()._table = nil}
 
     public var range: TSP_Range {
-      get {return _storage._range ?? TSP_Range()}
+      get {_storage._range ?? TSP_Range()}
       set {_uniqueStorage()._range = newValue}
     }
     /// Returns true if `range` has been explicitly set.
-    public var hasRange: Bool {return _storage._range != nil}
+    public var hasRange: Bool {_storage._range != nil}
     /// Clears the value of `range`. Subsequent reads from it will return its default value.
     public mutating func clearRange() {_uniqueStorage()._range = nil}
 
     public var string: String {
-      get {return _storage._string ?? String()}
+      get {_storage._string ?? String()}
       set {_uniqueStorage()._string = newValue}
     }
     /// Returns true if `string` has been explicitly set.
-    public var hasString: Bool {return _storage._string != nil}
+    public var hasString: Bool {_storage._string != nil}
     /// Clears the value of `string`. Subsequent reads from it will return its default value.
     public mutating func clearString() {_uniqueStorage()._string = nil}
 
     public var object: TSP_Reference {
-      get {return _storage._object ?? TSP_Reference()}
+      get {_storage._object ?? TSP_Reference()}
       set {_uniqueStorage()._object = newValue}
     }
     /// Returns true if `object` has been explicitly set.
-    public var hasObject: Bool {return _storage._object != nil}
+    public var hasObject: Bool {_storage._object != nil}
     /// Clears the value of `object`. Subsequent reads from it will return its default value.
     public mutating func clearObject() {_uniqueStorage()._object = nil}
 
     public var date: TSP_Date {
-      get {return _storage._date ?? TSP_Date()}
+      get {_storage._date ?? TSP_Date()}
       set {_uniqueStorage()._date = newValue}
     }
     /// Returns true if `date` has been explicitly set.
-    public var hasDate: Bool {return _storage._date != nil}
+    public var hasDate: Bool {_storage._date != nil}
     /// Clears the value of `date`. Subsequent reads from it will return its default value.
     public mutating func clearDate() {_uniqueStorage()._date = nil}
 
     public var paragraphLevel: UInt32 {
-      get {return _storage._paragraphLevel ?? 0}
+      get {_storage._paragraphLevel ?? 0}
       set {_uniqueStorage()._paragraphLevel = newValue}
     }
     /// Returns true if `paragraphLevel` has been explicitly set.
-    public var hasParagraphLevel: Bool {return _storage._paragraphLevel != nil}
+    public var hasParagraphLevel: Bool {_storage._paragraphLevel != nil}
     /// Clears the value of `paragraphLevel`. Subsequent reads from it will return its default value.
     public mutating func clearParagraphLevel() {_uniqueStorage()._paragraphLevel = nil}
 
     public var paragraphFlags: UInt32 {
-      get {return _storage._paragraphFlags ?? 0}
+      get {_storage._paragraphFlags ?? 0}
       set {_uniqueStorage()._paragraphFlags = newValue}
     }
     /// Returns true if `paragraphFlags` has been explicitly set.
-    public var hasParagraphFlags: Bool {return _storage._paragraphFlags != nil}
+    public var hasParagraphFlags: Bool {_storage._paragraphFlags != nil}
     /// Clears the value of `paragraphFlags`. Subsequent reads from it will return its default value.
     public mutating func clearParagraphFlags() {_uniqueStorage()._paragraphFlags = nil}
 
     public var paragraphValue: UInt32 {
-      get {return _storage._paragraphValue ?? 0}
+      get {_storage._paragraphValue ?? 0}
       set {_uniqueStorage()._paragraphValue = newValue}
     }
     /// Returns true if `paragraphValue` has been explicitly set.
-    public var hasParagraphValue: Bool {return _storage._paragraphValue != nil}
+    public var hasParagraphValue: Bool {_storage._paragraphValue != nil}
     /// Clears the value of `paragraphValue`. Subsequent reads from it will return its default value.
     public mutating func clearParagraphValue() {_uniqueStorage()._paragraphValue = nil}
 
     public var placementIndex: Int32 {
-      get {return _storage._placementIndex ?? 0}
+      get {_storage._placementIndex ?? 0}
       set {_uniqueStorage()._placementIndex = newValue}
     }
     /// Returns true if `placementIndex` has been explicitly set.
-    public var hasPlacementIndex: Bool {return _storage._placementIndex != nil}
+    public var hasPlacementIndex: Bool {_storage._placementIndex != nil}
     /// Clears the value of `placementIndex`. Subsequent reads from it will return its default value.
     public mutating func clearPlacementIndex() {_uniqueStorage()._placementIndex = nil}
 
     public var placementUuidPath: String {
-      get {return _storage._placementUuidPath ?? String()}
+      get {_storage._placementUuidPath ?? String()}
       set {_uniqueStorage()._placementUuidPath = newValue}
     }
     /// Returns true if `placementUuidPath` has been explicitly set.
-    public var hasPlacementUuidPath: Bool {return _storage._placementUuidPath != nil}
+    public var hasPlacementUuidPath: Bool {_storage._placementUuidPath != nil}
     /// Clears the value of `placementUuidPath`. Subsequent reads from it will return its default value.
     public mutating func clearPlacementUuidPath() {_uniqueStorage()._placementUuidPath = nil}
 
     public var undoObject: TSP_Reference {
-      get {return _storage._undoObject ?? TSP_Reference()}
+      get {_storage._undoObject ?? TSP_Reference()}
       set {_uniqueStorage()._undoObject = newValue}
     }
     /// Returns true if `undoObject` has been explicitly set.
-    public var hasUndoObject: Bool {return _storage._undoObject != nil}
+    public var hasUndoObject: Bool {_storage._undoObject != nil}
     /// Clears the value of `undoObject`. Subsequent reads from it will return its default value.
     public mutating func clearUndoObject() {_uniqueStorage()._undoObject = nil}
 
@@ -4365,17 +3761,17 @@ public struct TSWP_UndoTransaction: Sendable {
     fileprivate var _storage = _StorageClass.defaultInstance
   }
 
-  public struct StorageActionGroup: Sendable {
+  public nonisolated struct StorageActionGroup: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var kind: TSWP_UndoTransaction.ActionGroupKind {
-      get {return _kind ?? .actionGroupUndefined}
+      get {_kind ?? .actionGroupUndefined}
       set {_kind = newValue}
     }
     /// Returns true if `kind` has been explicitly set.
-    public var hasKind: Bool {return self._kind != nil}
+    public var hasKind: Bool {self._kind != nil}
     /// Clears the value of `kind`. Subsequent reads from it will return its default value.
     public mutating func clearKind() {self._kind = nil}
 
@@ -4398,17 +3794,17 @@ public struct TSWP_UndoTransaction: Sendable {
   fileprivate var _version: UInt32? = nil
 }
 
-public struct TSWP_UndoTransactionWrapperArchive: Sendable {
+public nonisolated struct TSWP_UndoTransactionWrapperArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var undoTransaction: TSWP_UndoTransaction {
-    get {return _undoTransaction ?? TSWP_UndoTransaction()}
+    get {_undoTransaction ?? TSWP_UndoTransaction()}
     set {_undoTransaction = newValue}
   }
   /// Returns true if `undoTransaction` has been explicitly set.
-  public var hasUndoTransaction: Bool {return self._undoTransaction != nil}
+  public var hasUndoTransaction: Bool {self._undoTransaction != nil}
   /// Clears the value of `undoTransaction`. Subsequent reads from it will return its default value.
   public mutating func clearUndoTransaction() {self._undoTransaction = nil}
 
@@ -4419,54 +3815,54 @@ public struct TSWP_UndoTransactionWrapperArchive: Sendable {
   fileprivate var _undoTransaction: TSWP_UndoTransaction? = nil
 }
 
-public struct TSWP_ShapeInfoArchive: Sendable {
+public nonisolated struct TSWP_ShapeInfoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_ShapeArchive {
-    get {return _super ?? TSD_ShapeArchive()}
+    get {_super ?? TSD_ShapeArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   /// NOTE: This field was marked as deprecated in the .proto file.
   public var deprecatedStorage: TSP_Reference {
-    get {return _deprecatedStorage ?? TSP_Reference()}
+    get {_deprecatedStorage ?? TSP_Reference()}
     set {_deprecatedStorage = newValue}
   }
   /// Returns true if `deprecatedStorage` has been explicitly set.
-  public var hasDeprecatedStorage: Bool {return self._deprecatedStorage != nil}
+  public var hasDeprecatedStorage: Bool {self._deprecatedStorage != nil}
   /// Clears the value of `deprecatedStorage`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedStorage() {self._deprecatedStorage = nil}
 
   public var textFlow: TSP_Reference {
-    get {return _textFlow ?? TSP_Reference()}
+    get {_textFlow ?? TSP_Reference()}
     set {_textFlow = newValue}
   }
   /// Returns true if `textFlow` has been explicitly set.
-  public var hasTextFlow: Bool {return self._textFlow != nil}
+  public var hasTextFlow: Bool {self._textFlow != nil}
   /// Clears the value of `textFlow`. Subsequent reads from it will return its default value.
   public mutating func clearTextFlow() {self._textFlow = nil}
 
   public var ownedStorage: TSP_Reference {
-    get {return _ownedStorage ?? TSP_Reference()}
+    get {_ownedStorage ?? TSP_Reference()}
     set {_ownedStorage = newValue}
   }
   /// Returns true if `ownedStorage` has been explicitly set.
-  public var hasOwnedStorage: Bool {return self._ownedStorage != nil}
+  public var hasOwnedStorage: Bool {self._ownedStorage != nil}
   /// Clears the value of `ownedStorage`. Subsequent reads from it will return its default value.
   public mutating func clearOwnedStorage() {self._ownedStorage = nil}
 
   public var isTextBox: Bool {
-    get {return _isTextBox ?? false}
+    get {_isTextBox ?? false}
     set {_isTextBox = newValue}
   }
   /// Returns true if `isTextBox` has been explicitly set.
-  public var hasIsTextBox: Bool {return self._isTextBox != nil}
+  public var hasIsTextBox: Bool {self._isTextBox != nil}
   /// Clears the value of `isTextBox`. Subsequent reads from it will return its default value.
   public mutating func clearIsTextBox() {self._isTextBox = nil}
 
@@ -4481,26 +3877,26 @@ public struct TSWP_ShapeInfoArchive: Sendable {
   fileprivate var _isTextBox: Bool? = nil
 }
 
-public struct TSWP_CommentInfoArchive: Sendable {
+public nonisolated struct TSWP_CommentInfoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_ShapeInfoArchive {
-    get {return _super ?? TSWP_ShapeInfoArchive()}
+    get {_super ?? TSWP_ShapeInfoArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var commentStorage: TSP_Reference {
-    get {return _commentStorage ?? TSP_Reference()}
+    get {_commentStorage ?? TSP_Reference()}
     set {_commentStorage = newValue}
   }
   /// Returns true if `commentStorage` has been explicitly set.
-  public var hasCommentStorage: Bool {return self._commentStorage != nil}
+  public var hasCommentStorage: Bool {self._commentStorage != nil}
   /// Clears the value of `commentStorage`. Subsequent reads from it will return its default value.
   public mutating func clearCommentStorage() {self._commentStorage = nil}
 
@@ -4512,45 +3908,45 @@ public struct TSWP_CommentInfoArchive: Sendable {
   fileprivate var _commentStorage: TSP_Reference? = nil
 }
 
-public struct TSWP_TOCInfoArchive: @unchecked Sendable {
+public nonisolated struct TSWP_TOCInfoArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_ShapeInfoArchive {
-    get {return _storage._super ?? TSWP_ShapeInfoArchive()}
+    get {_storage._super ?? TSWP_ShapeInfoArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var tocSettings: TSP_Reference {
-    get {return _storage._tocSettings ?? TSP_Reference()}
+    get {_storage._tocSettings ?? TSP_Reference()}
     set {_uniqueStorage()._tocSettings = newValue}
   }
   /// Returns true if `tocSettings` has been explicitly set.
-  public var hasTocSettings: Bool {return _storage._tocSettings != nil}
+  public var hasTocSettings: Bool {_storage._tocSettings != nil}
   /// Clears the value of `tocSettings`. Subsequent reads from it will return its default value.
   public mutating func clearTocSettings() {_uniqueStorage()._tocSettings = nil}
 
   public var tocEntryData: [TSP_Reference] {
-    get {return _storage._tocEntryData}
+    get {_storage._tocEntryData}
     set {_uniqueStorage()._tocEntryData = newValue}
   }
 
   public var pageNumberRanges: [TSP_Range] {
-    get {return _storage._pageNumberRanges}
+    get {_storage._pageNumberRanges}
     set {_uniqueStorage()._pageNumberRanges = newValue}
   }
 
   public var syncTocSettingsWithTocNavigator: Bool {
-    get {return _storage._syncTocSettingsWithTocNavigator ?? false}
+    get {_storage._syncTocSettingsWithTocNavigator ?? false}
     set {_uniqueStorage()._syncTocSettingsWithTocNavigator = newValue}
   }
   /// Returns true if `syncTocSettingsWithTocNavigator` has been explicitly set.
-  public var hasSyncTocSettingsWithTocNavigator: Bool {return _storage._syncTocSettingsWithTocNavigator != nil}
+  public var hasSyncTocSettingsWithTocNavigator: Bool {_storage._syncTocSettingsWithTocNavigator != nil}
   /// Clears the value of `syncTocSettingsWithTocNavigator`. Subsequent reads from it will return its default value.
   public mutating func clearSyncTocSettingsWithTocNavigator() {_uniqueStorage()._syncTocSettingsWithTocNavigator = nil}
 
@@ -4561,17 +3957,17 @@ public struct TSWP_TOCInfoArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWP_TOCLayoutHintArchive: Sendable {
+public nonisolated struct TSWP_TOCLayoutHintArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var charRange: TSP_Range {
-    get {return _charRange ?? TSP_Range()}
+    get {_charRange ?? TSP_Range()}
     set {_charRange = newValue}
   }
   /// Returns true if `charRange` has been explicitly set.
-  public var hasCharRange: Bool {return self._charRange != nil}
+  public var hasCharRange: Bool {self._charRange != nil}
   /// Clears the value of `charRange`. Subsequent reads from it will return its default value.
   public mutating func clearCharRange() {self._charRange = nil}
 
@@ -4582,7 +3978,7 @@ public struct TSWP_TOCLayoutHintArchive: Sendable {
   fileprivate var _charRange: TSP_Range? = nil
 }
 
-public struct TSWP_EquationInfoArchive: Sendable {
+public nonisolated struct TSWP_EquationInfoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -4592,56 +3988,38 @@ public struct TSWP_EquationInfoArchive: Sendable {
   public init() {}
 }
 
-public struct TSWP_TextualAttachmentArchive: Sendable {
+public nonisolated struct TSWP_TextualAttachmentArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var stringEquivalent: String {
-    get {return _stringEquivalent ?? String()}
+    get {_stringEquivalent ?? String()}
     set {_stringEquivalent = newValue}
   }
   /// Returns true if `stringEquivalent` has been explicitly set.
-  public var hasStringEquivalent: Bool {return self._stringEquivalent != nil}
+  public var hasStringEquivalent: Bool {self._stringEquivalent != nil}
   /// Clears the value of `stringEquivalent`. Subsequent reads from it will return its default value.
   public mutating func clearStringEquivalent() {self._stringEquivalent = nil}
 
   public var kind: TSWP_TextualAttachmentArchive.Kind {
-    get {return _kind ?? .kKindPageNumber}
+    get {_kind ?? .kKindPageNumber}
     set {_kind = newValue}
   }
   /// Returns true if `kind` has been explicitly set.
-  public var hasKind: Bool {return self._kind != nil}
+  public var hasKind: Bool {self._kind != nil}
   /// Clears the value of `kind`. Subsequent reads from it will return its default value.
   public mutating func clearKind() {self._kind = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum Kind: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kKindPageNumber // = 0
-    case kKindPageCount // = 1
-    case kKindFootnoteMark // = 2
+  public nonisolated enum Kind: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kKindPageNumber = 0
+    case kKindPageCount = 1
+    case kKindFootnoteMark = 2
 
     public init() {
       self = .kKindPageNumber
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kKindPageNumber
-      case 1: self = .kKindPageCount
-      case 2: self = .kKindFootnoteMark
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kKindPageNumber: return 0
-      case .kKindPageCount: return 1
-      case .kKindFootnoteMark: return 2
-      }
     }
 
   }
@@ -4652,35 +4030,35 @@ public struct TSWP_TextualAttachmentArchive: Sendable {
   fileprivate var _kind: TSWP_TextualAttachmentArchive.Kind? = nil
 }
 
-public struct TSWP_TSWPTOCPageNumberAttachmentArchive: Sendable {
+public nonisolated struct TSWP_TSWPTOCPageNumberAttachmentArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_TextualAttachmentArchive {
-    get {return _super ?? TSWP_TextualAttachmentArchive()}
+    get {_super ?? TSWP_TextualAttachmentArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var pageNumber: String {
-    get {return _pageNumber ?? String()}
+    get {_pageNumber ?? String()}
     set {_pageNumber = newValue}
   }
   /// Returns true if `pageNumber` has been explicitly set.
-  public var hasPageNumber: Bool {return self._pageNumber != nil}
+  public var hasPageNumber: Bool {self._pageNumber != nil}
   /// Clears the value of `pageNumber`. Subsequent reads from it will return its default value.
   public mutating func clearPageNumber() {self._pageNumber = nil}
 
   public var bookmarkName: String {
-    get {return _bookmarkName ?? String()}
+    get {_bookmarkName ?? String()}
     set {_bookmarkName = newValue}
   }
   /// Returns true if `bookmarkName` has been explicitly set.
-  public var hasBookmarkName: Bool {return self._bookmarkName != nil}
+  public var hasBookmarkName: Bool {self._bookmarkName != nil}
   /// Clears the value of `bookmarkName`. Subsequent reads from it will return its default value.
   public mutating func clearBookmarkName() {self._bookmarkName = nil}
 
@@ -4693,7 +4071,7 @@ public struct TSWP_TSWPTOCPageNumberAttachmentArchive: Sendable {
   fileprivate var _bookmarkName: String? = nil
 }
 
-public struct TSWP_UIGraphicalAttachment: Sendable {
+public nonisolated struct TSWP_UIGraphicalAttachment: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -4703,53 +4081,53 @@ public struct TSWP_UIGraphicalAttachment: Sendable {
   public init() {}
 }
 
-public struct TSWP_DrawableAttachmentArchive: Sendable {
+public nonisolated struct TSWP_DrawableAttachmentArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var drawable: TSP_Reference {
-    get {return _drawable ?? TSP_Reference()}
+    get {_drawable ?? TSP_Reference()}
     set {_drawable = newValue}
   }
   /// Returns true if `drawable` has been explicitly set.
-  public var hasDrawable: Bool {return self._drawable != nil}
+  public var hasDrawable: Bool {self._drawable != nil}
   /// Clears the value of `drawable`. Subsequent reads from it will return its default value.
   public mutating func clearDrawable() {self._drawable = nil}
 
   public var hOffsetType: UInt32 {
-    get {return _hOffsetType ?? 0}
+    get {_hOffsetType ?? 0}
     set {_hOffsetType = newValue}
   }
   /// Returns true if `hOffsetType` has been explicitly set.
-  public var hasHOffsetType: Bool {return self._hOffsetType != nil}
+  public var hasHOffsetType: Bool {self._hOffsetType != nil}
   /// Clears the value of `hOffsetType`. Subsequent reads from it will return its default value.
   public mutating func clearHOffsetType() {self._hOffsetType = nil}
 
   public var hOffset: Float {
-    get {return _hOffset ?? 0}
+    get {_hOffset ?? 0}
     set {_hOffset = newValue}
   }
   /// Returns true if `hOffset` has been explicitly set.
-  public var hasHOffset: Bool {return self._hOffset != nil}
+  public var hasHOffset: Bool {self._hOffset != nil}
   /// Clears the value of `hOffset`. Subsequent reads from it will return its default value.
   public mutating func clearHOffset() {self._hOffset = nil}
 
   public var vOffsetType: UInt32 {
-    get {return _vOffsetType ?? 0}
+    get {_vOffsetType ?? 0}
     set {_vOffsetType = newValue}
   }
   /// Returns true if `vOffsetType` has been explicitly set.
-  public var hasVOffsetType: Bool {return self._vOffsetType != nil}
+  public var hasVOffsetType: Bool {self._vOffsetType != nil}
   /// Clears the value of `vOffsetType`. Subsequent reads from it will return its default value.
   public mutating func clearVOffsetType() {self._vOffsetType = nil}
 
   public var vOffset: Float {
-    get {return _vOffset ?? 0}
+    get {_vOffset ?? 0}
     set {_vOffset = newValue}
   }
   /// Returns true if `vOffset` has been explicitly set.
-  public var hasVOffset: Bool {return self._vOffset != nil}
+  public var hasVOffset: Bool {self._vOffset != nil}
   /// Clears the value of `vOffset`. Subsequent reads from it will return its default value.
   public mutating func clearVOffset() {self._vOffset = nil}
 
@@ -4764,17 +4142,17 @@ public struct TSWP_DrawableAttachmentArchive: Sendable {
   fileprivate var _vOffset: Float? = nil
 }
 
-public struct TSWP_TOCAttachmentArchive: Sendable {
+public nonisolated struct TSWP_TOCAttachmentArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_DrawableAttachmentArchive {
-    get {return _super ?? TSWP_DrawableAttachmentArchive()}
+    get {_super ?? TSWP_DrawableAttachmentArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -4785,35 +4163,35 @@ public struct TSWP_TOCAttachmentArchive: Sendable {
   fileprivate var _super: TSWP_DrawableAttachmentArchive? = nil
 }
 
-public struct TSWP_FootnoteReferenceAttachmentArchive: Sendable {
+public nonisolated struct TSWP_FootnoteReferenceAttachmentArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_TextualAttachmentArchive {
-    get {return _super ?? TSWP_TextualAttachmentArchive()}
+    get {_super ?? TSWP_TextualAttachmentArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var containedStorage: TSP_Reference {
-    get {return _containedStorage ?? TSP_Reference()}
+    get {_containedStorage ?? TSP_Reference()}
     set {_containedStorage = newValue}
   }
   /// Returns true if `containedStorage` has been explicitly set.
-  public var hasContainedStorage: Bool {return self._containedStorage != nil}
+  public var hasContainedStorage: Bool {self._containedStorage != nil}
   /// Clears the value of `containedStorage`. Subsequent reads from it will return its default value.
   public mutating func clearContainedStorage() {self._containedStorage = nil}
 
   public var customMarkString: String {
-    get {return _customMarkString ?? String()}
+    get {_customMarkString ?? String()}
     set {_customMarkString = newValue}
   }
   /// Returns true if `customMarkString` has been explicitly set.
-  public var hasCustomMarkString: Bool {return self._customMarkString != nil}
+  public var hasCustomMarkString: Bool {self._customMarkString != nil}
   /// Clears the value of `customMarkString`. Subsequent reads from it will return its default value.
   public mutating func clearCustomMarkString() {self._customMarkString = nil}
 
@@ -4826,44 +4204,44 @@ public struct TSWP_FootnoteReferenceAttachmentArchive: Sendable {
   fileprivate var _customMarkString: String? = nil
 }
 
-public struct TSWP_NumberAttachmentArchive: Sendable {
+public nonisolated struct TSWP_NumberAttachmentArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_TextualAttachmentArchive {
-    get {return _super ?? TSWP_TextualAttachmentArchive()}
+    get {_super ?? TSWP_TextualAttachmentArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var numberFormat: UInt32 {
-    get {return _numberFormat ?? 0}
+    get {_numberFormat ?? 0}
     set {_numberFormat = newValue}
   }
   /// Returns true if `numberFormat` has been explicitly set.
-  public var hasNumberFormat: Bool {return self._numberFormat != nil}
+  public var hasNumberFormat: Bool {self._numberFormat != nil}
   /// Clears the value of `numberFormat`. Subsequent reads from it will return its default value.
   public mutating func clearNumberFormat() {self._numberFormat = nil}
 
   public var stringValue: String {
-    get {return _stringValue ?? String()}
+    get {_stringValue ?? String()}
     set {_stringValue = newValue}
   }
   /// Returns true if `stringValue` has been explicitly set.
-  public var hasStringValue: Bool {return self._stringValue != nil}
+  public var hasStringValue: Bool {self._stringValue != nil}
   /// Clears the value of `stringValue`. Subsequent reads from it will return its default value.
   public mutating func clearStringValue() {self._stringValue = nil}
 
   public var numberFormatName: String {
-    get {return _numberFormatName ?? String()}
+    get {_numberFormatName ?? String()}
     set {_numberFormatName = newValue}
   }
   /// Returns true if `numberFormatName` has been explicitly set.
-  public var hasNumberFormatName: Bool {return self._numberFormatName != nil}
+  public var hasNumberFormatName: Bool {self._numberFormatName != nil}
   /// Clears the value of `numberFormatName`. Subsequent reads from it will return its default value.
   public mutating func clearNumberFormatName() {self._numberFormatName = nil}
 
@@ -4877,17 +4255,17 @@ public struct TSWP_NumberAttachmentArchive: Sendable {
   fileprivate var _numberFormatName: String? = nil
 }
 
-public struct TSWP_SmartFieldArchive: Sendable {
+public nonisolated struct TSWP_SmartFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var textAttributeUuidString: String {
-    get {return _textAttributeUuidString ?? String()}
+    get {_textAttributeUuidString ?? String()}
     set {_textAttributeUuidString = newValue}
   }
   /// Returns true if `textAttributeUuidString` has been explicitly set.
-  public var hasTextAttributeUuidString: Bool {return self._textAttributeUuidString != nil}
+  public var hasTextAttributeUuidString: Bool {self._textAttributeUuidString != nil}
   /// Clears the value of `textAttributeUuidString`. Subsequent reads from it will return its default value.
   public mutating func clearTextAttributeUuidString() {self._textAttributeUuidString = nil}
 
@@ -4898,26 +4276,26 @@ public struct TSWP_SmartFieldArchive: Sendable {
   fileprivate var _textAttributeUuidString: String? = nil
 }
 
-public struct TSWP_HyperlinkFieldArchive: Sendable {
+public nonisolated struct TSWP_HyperlinkFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_SmartFieldArchive {
-    get {return _super ?? TSWP_SmartFieldArchive()}
+    get {_super ?? TSWP_SmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var urlRef: String {
-    get {return _urlRef ?? String()}
+    get {_urlRef ?? String()}
     set {_urlRef = newValue}
   }
   /// Returns true if `urlRef` has been explicitly set.
-  public var hasURLRef: Bool {return self._urlRef != nil}
+  public var hasURLRef: Bool {self._urlRef != nil}
   /// Clears the value of `urlRef`. Subsequent reads from it will return its default value.
   public mutating func clearURLRef() {self._urlRef = nil}
 
@@ -4929,35 +4307,35 @@ public struct TSWP_HyperlinkFieldArchive: Sendable {
   fileprivate var _urlRef: String? = nil
 }
 
-public struct TSWP_PlaceholderSmartFieldArchive: Sendable {
+public nonisolated struct TSWP_PlaceholderSmartFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_SmartFieldArchive {
-    get {return _super ?? TSWP_SmartFieldArchive()}
+    get {_super ?? TSWP_SmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var localizable: Bool {
-    get {return _localizable ?? false}
+    get {_localizable ?? false}
     set {_localizable = newValue}
   }
   /// Returns true if `localizable` has been explicitly set.
-  public var hasLocalizable: Bool {return self._localizable != nil}
+  public var hasLocalizable: Bool {self._localizable != nil}
   /// Clears the value of `localizable`. Subsequent reads from it will return its default value.
   public mutating func clearLocalizable() {self._localizable = nil}
 
   public var scriptTag: String {
-    get {return _scriptTag ?? String()}
+    get {_scriptTag ?? String()}
     set {_scriptTag = newValue}
   }
   /// Returns true if `scriptTag` has been explicitly set.
-  public var hasScriptTag: Bool {return self._scriptTag != nil}
+  public var hasScriptTag: Bool {self._scriptTag != nil}
   /// Clears the value of `scriptTag`. Subsequent reads from it will return its default value.
   public mutating func clearScriptTag() {self._scriptTag = nil}
 
@@ -4970,35 +4348,35 @@ public struct TSWP_PlaceholderSmartFieldArchive: Sendable {
   fileprivate var _scriptTag: String? = nil
 }
 
-public struct TSWP_UnsupportedHyperlinkFieldArchive: Sendable {
+public nonisolated struct TSWP_UnsupportedHyperlinkFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_PlaceholderSmartFieldArchive {
-    get {return _super ?? TSWP_PlaceholderSmartFieldArchive()}
+    get {_super ?? TSWP_PlaceholderSmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var urlRef: String {
-    get {return _urlRef ?? String()}
+    get {_urlRef ?? String()}
     set {_urlRef = newValue}
   }
   /// Returns true if `urlRef` has been explicitly set.
-  public var hasURLRef: Bool {return self._urlRef != nil}
+  public var hasURLRef: Bool {self._urlRef != nil}
   /// Clears the value of `urlRef`. Subsequent reads from it will return its default value.
   public mutating func clearURLRef() {self._urlRef = nil}
 
   public var urlOriginalRef: String {
-    get {return _urlOriginalRef ?? String()}
+    get {_urlOriginalRef ?? String()}
     set {_urlOriginalRef = newValue}
   }
   /// Returns true if `urlOriginalRef` has been explicitly set.
-  public var hasURLOriginalRef: Bool {return self._urlOriginalRef != nil}
+  public var hasURLOriginalRef: Bool {self._urlOriginalRef != nil}
   /// Clears the value of `urlOriginalRef`. Subsequent reads from it will return its default value.
   public mutating func clearURLOriginalRef() {self._urlOriginalRef = nil}
 
@@ -5011,37 +4389,37 @@ public struct TSWP_UnsupportedHyperlinkFieldArchive: Sendable {
   fileprivate var _urlOriginalRef: String? = nil
 }
 
-public struct TSWP_BibliographySmartFieldArchive: Sendable {
+public nonisolated struct TSWP_BibliographySmartFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_SmartFieldArchive {
-    get {return _super ?? TSWP_SmartFieldArchive()}
+    get {_super ?? TSWP_SmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var citationRecords: [TSP_Reference] = []
 
   public var localizable: Bool {
-    get {return _localizable ?? false}
+    get {_localizable ?? false}
     set {_localizable = newValue}
   }
   /// Returns true if `localizable` has been explicitly set.
-  public var hasLocalizable: Bool {return self._localizable != nil}
+  public var hasLocalizable: Bool {self._localizable != nil}
   /// Clears the value of `localizable`. Subsequent reads from it will return its default value.
   public mutating func clearLocalizable() {self._localizable = nil}
 
   public var oldSuper: TSWP_PlaceholderSmartFieldArchive {
-    get {return _oldSuper ?? TSWP_PlaceholderSmartFieldArchive()}
+    get {_oldSuper ?? TSWP_PlaceholderSmartFieldArchive()}
     set {_oldSuper = newValue}
   }
   /// Returns true if `oldSuper` has been explicitly set.
-  public var hasOldSuper: Bool {return self._oldSuper != nil}
+  public var hasOldSuper: Bool {self._oldSuper != nil}
   /// Clears the value of `oldSuper`. Subsequent reads from it will return its default value.
   public mutating func clearOldSuper() {self._oldSuper = nil}
 
@@ -5054,98 +4432,98 @@ public struct TSWP_BibliographySmartFieldArchive: Sendable {
   fileprivate var _oldSuper: TSWP_PlaceholderSmartFieldArchive? = nil
 }
 
-public struct TSWP_CitationRecordArchive: Sendable {
+public nonisolated struct TSWP_CitationRecordArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var endnoteXml: String {
-    get {return _endnoteXml ?? String()}
+    get {_endnoteXml ?? String()}
     set {_endnoteXml = newValue}
   }
   /// Returns true if `endnoteXml` has been explicitly set.
-  public var hasEndnoteXml: Bool {return self._endnoteXml != nil}
+  public var hasEndnoteXml: Bool {self._endnoteXml != nil}
   /// Clears the value of `endnoteXml`. Subsequent reads from it will return its default value.
   public mutating func clearEndnoteXml() {self._endnoteXml = nil}
 
   public var hideAuthorNames: Bool {
-    get {return _hideAuthorNames ?? false}
+    get {_hideAuthorNames ?? false}
     set {_hideAuthorNames = newValue}
   }
   /// Returns true if `hideAuthorNames` has been explicitly set.
-  public var hasHideAuthorNames: Bool {return self._hideAuthorNames != nil}
+  public var hasHideAuthorNames: Bool {self._hideAuthorNames != nil}
   /// Clears the value of `hideAuthorNames`. Subsequent reads from it will return its default value.
   public mutating func clearHideAuthorNames() {self._hideAuthorNames = nil}
 
   public var hideYear: Bool {
-    get {return _hideYear ?? false}
+    get {_hideYear ?? false}
     set {_hideYear = newValue}
   }
   /// Returns true if `hideYear` has been explicitly set.
-  public var hasHideYear: Bool {return self._hideYear != nil}
+  public var hasHideYear: Bool {self._hideYear != nil}
   /// Clears the value of `hideYear`. Subsequent reads from it will return its default value.
   public mutating func clearHideYear() {self._hideYear = nil}
 
   public var pageRange: String {
-    get {return _pageRange ?? String()}
+    get {_pageRange ?? String()}
     set {_pageRange = newValue}
   }
   /// Returns true if `pageRange` has been explicitly set.
-  public var hasPageRange: Bool {return self._pageRange != nil}
+  public var hasPageRange: Bool {self._pageRange != nil}
   /// Clears the value of `pageRange`. Subsequent reads from it will return its default value.
   public mutating func clearPageRange() {self._pageRange = nil}
 
   public var prefix: String {
-    get {return _prefix ?? String()}
+    get {_prefix ?? String()}
     set {_prefix = newValue}
   }
   /// Returns true if `prefix` has been explicitly set.
-  public var hasPrefix: Bool {return self._prefix != nil}
+  public var hasPrefix: Bool {self._prefix != nil}
   /// Clears the value of `prefix`. Subsequent reads from it will return its default value.
   public mutating func clearPrefix() {self._prefix = nil}
 
   public var suffix: String {
-    get {return _suffix ?? String()}
+    get {_suffix ?? String()}
     set {_suffix = newValue}
   }
   /// Returns true if `suffix` has been explicitly set.
-  public var hasSuffix: Bool {return self._suffix != nil}
+  public var hasSuffix: Bool {self._suffix != nil}
   /// Clears the value of `suffix`. Subsequent reads from it will return its default value.
   public mutating func clearSuffix() {self._suffix = nil}
 
   public var authorsString: String {
-    get {return _authorsString ?? String()}
+    get {_authorsString ?? String()}
     set {_authorsString = newValue}
   }
   /// Returns true if `authorsString` has been explicitly set.
-  public var hasAuthorsString: Bool {return self._authorsString != nil}
+  public var hasAuthorsString: Bool {self._authorsString != nil}
   /// Clears the value of `authorsString`. Subsequent reads from it will return its default value.
   public mutating func clearAuthorsString() {self._authorsString = nil}
 
   public var title: String {
-    get {return _title ?? String()}
+    get {_title ?? String()}
     set {_title = newValue}
   }
   /// Returns true if `title` has been explicitly set.
-  public var hasTitle: Bool {return self._title != nil}
+  public var hasTitle: Bool {self._title != nil}
   /// Clears the value of `title`. Subsequent reads from it will return its default value.
   public mutating func clearTitle() {self._title = nil}
 
   public var year: String {
-    get {return _year ?? String()}
+    get {_year ?? String()}
     set {_year = newValue}
   }
   /// Returns true if `year` has been explicitly set.
-  public var hasYear: Bool {return self._year != nil}
+  public var hasYear: Bool {self._year != nil}
   /// Clears the value of `year`. Subsequent reads from it will return its default value.
   public mutating func clearYear() {self._year = nil}
 
   public var type: String {
-    get {return _type ?? String()}
+    get {_type ?? String()}
     set {_type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return self._type != nil}
+  public var hasType: Bool {self._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {self._type = nil}
 
@@ -5165,37 +4543,37 @@ public struct TSWP_CitationRecordArchive: Sendable {
   fileprivate var _type: String? = nil
 }
 
-public struct TSWP_CitationSmartFieldArchive: Sendable {
+public nonisolated struct TSWP_CitationSmartFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_SmartFieldArchive {
-    get {return _super ?? TSWP_SmartFieldArchive()}
+    get {_super ?? TSWP_SmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var citationRecords: [TSP_Reference] = []
 
   public var localizable: Bool {
-    get {return _localizable ?? false}
+    get {_localizable ?? false}
     set {_localizable = newValue}
   }
   /// Returns true if `localizable` has been explicitly set.
-  public var hasLocalizable: Bool {return self._localizable != nil}
+  public var hasLocalizable: Bool {self._localizable != nil}
   /// Clears the value of `localizable`. Subsequent reads from it will return its default value.
   public mutating func clearLocalizable() {self._localizable = nil}
 
   public var oldSuper: TSWP_PlaceholderSmartFieldArchive {
-    get {return _oldSuper ?? TSWP_PlaceholderSmartFieldArchive()}
+    get {_oldSuper ?? TSWP_PlaceholderSmartFieldArchive()}
     set {_oldSuper = newValue}
   }
   /// Returns true if `oldSuper` has been explicitly set.
-  public var hasOldSuper: Bool {return self._oldSuper != nil}
+  public var hasOldSuper: Bool {self._oldSuper != nil}
   /// Clears the value of `oldSuper`. Subsequent reads from it will return its default value.
   public mutating func clearOldSuper() {self._oldSuper = nil}
 
@@ -5208,145 +4586,105 @@ public struct TSWP_CitationSmartFieldArchive: Sendable {
   fileprivate var _oldSuper: TSWP_PlaceholderSmartFieldArchive? = nil
 }
 
-public struct TSWP_DateTimeSmartFieldArchive: Sendable {
+public nonisolated struct TSWP_DateTimeSmartFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_SmartFieldArchive {
-    get {return _super ?? TSWP_SmartFieldArchive()}
+    get {_super ?? TSWP_SmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var format: String {
-    get {return _format ?? String()}
+    get {_format ?? String()}
     set {_format = newValue}
   }
   /// Returns true if `format` has been explicitly set.
-  public var hasFormat: Bool {return self._format != nil}
+  public var hasFormat: Bool {self._format != nil}
   /// Clears the value of `format`. Subsequent reads from it will return its default value.
   public mutating func clearFormat() {self._format = nil}
 
   public var localeIdentifier: String {
-    get {return _localeIdentifier ?? String()}
+    get {_localeIdentifier ?? String()}
     set {_localeIdentifier = newValue}
   }
   /// Returns true if `localeIdentifier` has been explicitly set.
-  public var hasLocaleIdentifier: Bool {return self._localeIdentifier != nil}
+  public var hasLocaleIdentifier: Bool {self._localeIdentifier != nil}
   /// Clears the value of `localeIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearLocaleIdentifier() {self._localeIdentifier = nil}
 
   public var dateStyle: TSWP_DateTimeSmartFieldArchive.DateTimeFormatterStyle {
-    get {return _dateStyle ?? .kDateTimeFormatterStyleNone}
+    get {_dateStyle ?? .kDateTimeFormatterStyleNone}
     set {_dateStyle = newValue}
   }
   /// Returns true if `dateStyle` has been explicitly set.
-  public var hasDateStyle: Bool {return self._dateStyle != nil}
+  public var hasDateStyle: Bool {self._dateStyle != nil}
   /// Clears the value of `dateStyle`. Subsequent reads from it will return its default value.
   public mutating func clearDateStyle() {self._dateStyle = nil}
 
   public var timeStyle: TSWP_DateTimeSmartFieldArchive.DateTimeFormatterStyle {
-    get {return _timeStyle ?? .kDateTimeFormatterStyleNone}
+    get {_timeStyle ?? .kDateTimeFormatterStyleNone}
     set {_timeStyle = newValue}
   }
   /// Returns true if `timeStyle` has been explicitly set.
-  public var hasTimeStyle: Bool {return self._timeStyle != nil}
+  public var hasTimeStyle: Bool {self._timeStyle != nil}
   /// Clears the value of `timeStyle`. Subsequent reads from it will return its default value.
   public mutating func clearTimeStyle() {self._timeStyle = nil}
 
   public var updatePlan: TSWP_DateTimeSmartFieldArchive.DateTimeUpdatePlan {
-    get {return _updatePlan ?? .kDateTimeUpdatePlanNever}
+    get {_updatePlan ?? .kDateTimeUpdatePlanNever}
     set {_updatePlan = newValue}
   }
   /// Returns true if `updatePlan` has been explicitly set.
-  public var hasUpdatePlan: Bool {return self._updatePlan != nil}
+  public var hasUpdatePlan: Bool {self._updatePlan != nil}
   /// Clears the value of `updatePlan`. Subsequent reads from it will return its default value.
   public mutating func clearUpdatePlan() {self._updatePlan = nil}
 
   public var needsUpdate: Bool {
-    get {return _needsUpdate ?? false}
+    get {_needsUpdate ?? false}
     set {_needsUpdate = newValue}
   }
   /// Returns true if `needsUpdate` has been explicitly set.
-  public var hasNeedsUpdate: Bool {return self._needsUpdate != nil}
+  public var hasNeedsUpdate: Bool {self._needsUpdate != nil}
   /// Clears the value of `needsUpdate`. Subsequent reads from it will return its default value.
   public mutating func clearNeedsUpdate() {self._needsUpdate = nil}
 
   public var date: TSP_Date {
-    get {return _date ?? TSP_Date()}
+    get {_date ?? TSP_Date()}
     set {_date = newValue}
   }
   /// Returns true if `date` has been explicitly set.
-  public var hasDate: Bool {return self._date != nil}
+  public var hasDate: Bool {self._date != nil}
   /// Clears the value of `date`. Subsequent reads from it will return its default value.
   public mutating func clearDate() {self._date = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum DateTimeUpdatePlan: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kDateTimeUpdatePlanNever // = 0
-    case kDateTimeUpdatePlanAuto // = 1
-    case kDateTimeUpdatePlanOnce // = 2
+  public nonisolated enum DateTimeUpdatePlan: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kDateTimeUpdatePlanNever = 0
+    case kDateTimeUpdatePlanAuto = 1
+    case kDateTimeUpdatePlanOnce = 2
 
     public init() {
       self = .kDateTimeUpdatePlanNever
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kDateTimeUpdatePlanNever
-      case 1: self = .kDateTimeUpdatePlanAuto
-      case 2: self = .kDateTimeUpdatePlanOnce
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kDateTimeUpdatePlanNever: return 0
-      case .kDateTimeUpdatePlanAuto: return 1
-      case .kDateTimeUpdatePlanOnce: return 2
-      }
-    }
-
   }
 
-  public enum DateTimeFormatterStyle: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kDateTimeFormatterStyleNone // = 0
-    case kDateTimeFormatterStyleShort // = 1
-    case kDateTimeFormatterStyleMedium // = 2
-    case kDateTimeFormatterStyleLong // = 3
-    case kDateTimeFormatterStyleFull // = 4
+  public nonisolated enum DateTimeFormatterStyle: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kDateTimeFormatterStyleNone = 0
+    case kDateTimeFormatterStyleShort = 1
+    case kDateTimeFormatterStyleMedium = 2
+    case kDateTimeFormatterStyleLong = 3
+    case kDateTimeFormatterStyleFull = 4
 
     public init() {
       self = .kDateTimeFormatterStyleNone
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kDateTimeFormatterStyleNone
-      case 1: self = .kDateTimeFormatterStyleShort
-      case 2: self = .kDateTimeFormatterStyleMedium
-      case 3: self = .kDateTimeFormatterStyleLong
-      case 4: self = .kDateTimeFormatterStyleFull
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kDateTimeFormatterStyleNone: return 0
-      case .kDateTimeFormatterStyleShort: return 1
-      case .kDateTimeFormatterStyleMedium: return 2
-      case .kDateTimeFormatterStyleLong: return 3
-      case .kDateTimeFormatterStyleFull: return 4
-      }
     }
 
   }
@@ -5363,44 +4701,44 @@ public struct TSWP_DateTimeSmartFieldArchive: Sendable {
   fileprivate var _date: TSP_Date? = nil
 }
 
-public struct TSWP_BookmarkFieldArchive: Sendable {
+public nonisolated struct TSWP_BookmarkFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_SmartFieldArchive {
-    get {return _super ?? TSWP_SmartFieldArchive()}
+    get {_super ?? TSWP_SmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var name: String {
-    get {return _name ?? String()}
+    get {_name ?? String()}
     set {_name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return self._name != nil}
+  public var hasName: Bool {self._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {self._name = nil}
 
   public var ranged: UInt32 {
-    get {return _ranged ?? 0}
+    get {_ranged ?? 0}
     set {_ranged = newValue}
   }
   /// Returns true if `ranged` has been explicitly set.
-  public var hasRanged: Bool {return self._ranged != nil}
+  public var hasRanged: Bool {self._ranged != nil}
   /// Clears the value of `ranged`. Subsequent reads from it will return its default value.
   public mutating func clearRanged() {self._ranged = nil}
 
   public var hidden: UInt32 {
-    get {return _hidden ?? 0}
+    get {_hidden ?? 0}
     set {_hidden = newValue}
   }
   /// Returns true if `hidden` has been explicitly set.
-  public var hasHidden: Bool {return self._hidden != nil}
+  public var hasHidden: Bool {self._hidden != nil}
   /// Clears the value of `hidden`. Subsequent reads from it will return its default value.
   public mutating func clearHidden() {self._hidden = nil}
 
@@ -5414,26 +4752,26 @@ public struct TSWP_BookmarkFieldArchive: Sendable {
   fileprivate var _hidden: UInt32? = nil
 }
 
-public struct TSWP_FilenameSmartFieldArchive: Sendable {
+public nonisolated struct TSWP_FilenameSmartFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_PlaceholderSmartFieldArchive {
-    get {return _super ?? TSWP_PlaceholderSmartFieldArchive()}
+    get {_super ?? TSWP_PlaceholderSmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var displayFlags: UInt32 {
-    get {return _displayFlags ?? 0}
+    get {_displayFlags ?? 0}
     set {_displayFlags = newValue}
   }
   /// Returns true if `displayFlags` has been explicitly set.
-  public var hasDisplayFlags: Bool {return self._displayFlags != nil}
+  public var hasDisplayFlags: Bool {self._displayFlags != nil}
   /// Clears the value of `displayFlags`. Subsequent reads from it will return its default value.
   public mutating func clearDisplayFlags() {self._displayFlags = nil}
 
@@ -5445,44 +4783,44 @@ public struct TSWP_FilenameSmartFieldArchive: Sendable {
   fileprivate var _displayFlags: UInt32? = nil
 }
 
-public struct TSWP_MergeFieldTypeArchive: Sendable {
+public nonisolated struct TSWP_MergeFieldTypeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var contactsProperty: String {
-    get {return _contactsProperty ?? String()}
+    get {_contactsProperty ?? String()}
     set {_contactsProperty = newValue}
   }
   /// Returns true if `contactsProperty` has been explicitly set.
-  public var hasContactsProperty: Bool {return self._contactsProperty != nil}
+  public var hasContactsProperty: Bool {self._contactsProperty != nil}
   /// Clears the value of `contactsProperty`. Subsequent reads from it will return its default value.
   public mutating func clearContactsProperty() {self._contactsProperty = nil}
 
   public var contactsKey: String {
-    get {return _contactsKey ?? String()}
+    get {_contactsKey ?? String()}
     set {_contactsKey = newValue}
   }
   /// Returns true if `contactsKey` has been explicitly set.
-  public var hasContactsKey: Bool {return self._contactsKey != nil}
+  public var hasContactsKey: Bool {self._contactsKey != nil}
   /// Clears the value of `contactsKey`. Subsequent reads from it will return its default value.
   public mutating func clearContactsKey() {self._contactsKey = nil}
 
   public var contactsLabel: String {
-    get {return _contactsLabel ?? String()}
+    get {_contactsLabel ?? String()}
     set {_contactsLabel = newValue}
   }
   /// Returns true if `contactsLabel` has been explicitly set.
-  public var hasContactsLabel: Bool {return self._contactsLabel != nil}
+  public var hasContactsLabel: Bool {self._contactsLabel != nil}
   /// Clears the value of `contactsLabel`. Subsequent reads from it will return its default value.
   public mutating func clearContactsLabel() {self._contactsLabel = nil}
 
   public var tableKey: String {
-    get {return _tableKey ?? String()}
+    get {_tableKey ?? String()}
     set {_tableKey = newValue}
   }
   /// Returns true if `tableKey` has been explicitly set.
-  public var hasTableKey: Bool {return self._tableKey != nil}
+  public var hasTableKey: Bool {self._tableKey != nil}
   /// Clears the value of `tableKey`. Subsequent reads from it will return its default value.
   public mutating func clearTableKey() {self._tableKey = nil}
 
@@ -5496,134 +4834,118 @@ public struct TSWP_MergeFieldTypeArchive: Sendable {
   fileprivate var _tableKey: String? = nil
 }
 
-public struct TSWP_MergeSmartFieldArchive: Sendable {
+public nonisolated struct TSWP_MergeSmartFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_PlaceholderSmartFieldArchive {
-    get {return _super ?? TSWP_PlaceholderSmartFieldArchive()}
+    get {_super ?? TSWP_PlaceholderSmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var contactsProperty: String {
-    get {return _contactsProperty ?? String()}
+    get {_contactsProperty ?? String()}
     set {_contactsProperty = newValue}
   }
   /// Returns true if `contactsProperty` has been explicitly set.
-  public var hasContactsProperty: Bool {return self._contactsProperty != nil}
+  public var hasContactsProperty: Bool {self._contactsProperty != nil}
   /// Clears the value of `contactsProperty`. Subsequent reads from it will return its default value.
   public mutating func clearContactsProperty() {self._contactsProperty = nil}
 
   public var contactsKey: String {
-    get {return _contactsKey ?? String()}
+    get {_contactsKey ?? String()}
     set {_contactsKey = newValue}
   }
   /// Returns true if `contactsKey` has been explicitly set.
-  public var hasContactsKey: Bool {return self._contactsKey != nil}
+  public var hasContactsKey: Bool {self._contactsKey != nil}
   /// Clears the value of `contactsKey`. Subsequent reads from it will return its default value.
   public mutating func clearContactsKey() {self._contactsKey = nil}
 
   public var contactsLabel: String {
-    get {return _contactsLabel ?? String()}
+    get {_contactsLabel ?? String()}
     set {_contactsLabel = newValue}
   }
   /// Returns true if `contactsLabel` has been explicitly set.
-  public var hasContactsLabel: Bool {return self._contactsLabel != nil}
+  public var hasContactsLabel: Bool {self._contactsLabel != nil}
   /// Clears the value of `contactsLabel`. Subsequent reads from it will return its default value.
   public mutating func clearContactsLabel() {self._contactsLabel = nil}
 
   public var category: TSWP_MergeSmartFieldArchive.MergeCategory {
-    get {return _category ?? .kMergeCategoryTo}
+    get {_category ?? .kMergeCategoryTo}
     set {_category = newValue}
   }
   /// Returns true if `category` has been explicitly set.
-  public var hasCategory: Bool {return self._category != nil}
+  public var hasCategory: Bool {self._category != nil}
   /// Clears the value of `category`. Subsequent reads from it will return its default value.
   public mutating func clearCategory() {self._category = nil}
 
   public var requiresFollowingWhitespace: Bool {
-    get {return _requiresFollowingWhitespace ?? false}
+    get {_requiresFollowingWhitespace ?? false}
     set {_requiresFollowingWhitespace = newValue}
   }
   /// Returns true if `requiresFollowingWhitespace` has been explicitly set.
-  public var hasRequiresFollowingWhitespace: Bool {return self._requiresFollowingWhitespace != nil}
+  public var hasRequiresFollowingWhitespace: Bool {self._requiresFollowingWhitespace != nil}
   /// Clears the value of `requiresFollowingWhitespace`. Subsequent reads from it will return its default value.
   public mutating func clearRequiresFollowingWhitespace() {self._requiresFollowingWhitespace = nil}
 
   public var whitespace: String {
-    get {return _whitespace ?? String()}
+    get {_whitespace ?? String()}
     set {_whitespace = newValue}
   }
   /// Returns true if `whitespace` has been explicitly set.
-  public var hasWhitespace: Bool {return self._whitespace != nil}
+  public var hasWhitespace: Bool {self._whitespace != nil}
   /// Clears the value of `whitespace`. Subsequent reads from it will return its default value.
   public mutating func clearWhitespace() {self._whitespace = nil}
 
   public var guid: String {
-    get {return _guid ?? String()}
+    get {_guid ?? String()}
     set {_guid = newValue}
   }
   /// Returns true if `guid` has been explicitly set.
-  public var hasGuid: Bool {return self._guid != nil}
+  public var hasGuid: Bool {self._guid != nil}
   /// Clears the value of `guid`. Subsequent reads from it will return its default value.
   public mutating func clearGuid() {self._guid = nil}
 
   public var tableKey: String {
-    get {return _tableKey ?? String()}
+    get {_tableKey ?? String()}
     set {_tableKey = newValue}
   }
   /// Returns true if `tableKey` has been explicitly set.
-  public var hasTableKey: Bool {return self._tableKey != nil}
+  public var hasTableKey: Bool {self._tableKey != nil}
   /// Clears the value of `tableKey`. Subsequent reads from it will return its default value.
   public mutating func clearTableKey() {self._tableKey = nil}
 
   public var fieldType: TSWP_MergeFieldTypeArchive {
-    get {return _fieldType ?? TSWP_MergeFieldTypeArchive()}
+    get {_fieldType ?? TSWP_MergeFieldTypeArchive()}
     set {_fieldType = newValue}
   }
   /// Returns true if `fieldType` has been explicitly set.
-  public var hasFieldType: Bool {return self._fieldType != nil}
+  public var hasFieldType: Bool {self._fieldType != nil}
   /// Clears the value of `fieldType`. Subsequent reads from it will return its default value.
   public mutating func clearFieldType() {self._fieldType = nil}
 
   public var hasCustomText_p: Bool {
-    get {return _hasCustomText_p ?? false}
+    get {_hasCustomText_p ?? false}
     set {_hasCustomText_p = newValue}
   }
   /// Returns true if `hasCustomText_p` has been explicitly set.
-  public var hasHasCustomText_p: Bool {return self._hasCustomText_p != nil}
+  public var hasHasCustomText_p: Bool {self._hasCustomText_p != nil}
   /// Clears the value of `hasCustomText_p`. Subsequent reads from it will return its default value.
   public mutating func clearHasCustomText_p() {self._hasCustomText_p = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum MergeCategory: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kMergeCategoryTo // = 0
-    case kMergeCategoryFrom // = 1
+  public nonisolated enum MergeCategory: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kMergeCategoryTo = 0
+    case kMergeCategoryFrom = 1
 
     public init() {
       self = .kMergeCategoryTo
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .kMergeCategoryTo
-      case 1: self = .kMergeCategoryFrom
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kMergeCategoryTo: return 0
-      case .kMergeCategoryFrom: return 1
-      }
     }
 
   }
@@ -5643,17 +4965,17 @@ public struct TSWP_MergeSmartFieldArchive: Sendable {
   fileprivate var _hasCustomText_p: Bool? = nil
 }
 
-public struct TSWP_TOCSmartFieldArchive: Sendable {
+public nonisolated struct TSWP_TOCSmartFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_PlaceholderSmartFieldArchive {
-    get {return _super ?? TSWP_PlaceholderSmartFieldArchive()}
+    get {_super ?? TSWP_PlaceholderSmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -5661,35 +4983,35 @@ public struct TSWP_TOCSmartFieldArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct TOCEntry: Sendable {
+  public nonisolated struct TOCEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var bookmarkName: String {
-      get {return _bookmarkName ?? String()}
+      get {_bookmarkName ?? String()}
       set {_bookmarkName = newValue}
     }
     /// Returns true if `bookmarkName` has been explicitly set.
-    public var hasBookmarkName: Bool {return self._bookmarkName != nil}
+    public var hasBookmarkName: Bool {self._bookmarkName != nil}
     /// Clears the value of `bookmarkName`. Subsequent reads from it will return its default value.
     public mutating func clearBookmarkName() {self._bookmarkName = nil}
 
     public var targetStyle: TSP_Reference {
-      get {return _targetStyle ?? TSP_Reference()}
+      get {_targetStyle ?? TSP_Reference()}
       set {_targetStyle = newValue}
     }
     /// Returns true if `targetStyle` has been explicitly set.
-    public var hasTargetStyle: Bool {return self._targetStyle != nil}
+    public var hasTargetStyle: Bool {self._targetStyle != nil}
     /// Clears the value of `targetStyle`. Subsequent reads from it will return its default value.
     public mutating func clearTargetStyle() {self._targetStyle = nil}
 
     public var range: TSP_Range {
-      get {return _range ?? TSP_Range()}
+      get {_range ?? TSP_Range()}
       set {_range = newValue}
     }
     /// Returns true if `range` has been explicitly set.
-    public var hasRange: Bool {return self._range != nil}
+    public var hasRange: Bool {self._range != nil}
     /// Clears the value of `range`. Subsequent reads from it will return its default value.
     public mutating func clearRange() {self._range = nil}
 
@@ -5707,26 +5029,26 @@ public struct TSWP_TOCSmartFieldArchive: Sendable {
   fileprivate var _super: TSWP_PlaceholderSmartFieldArchive? = nil
 }
 
-public struct TSWP_RubyFieldArchive: Sendable {
+public nonisolated struct TSWP_RubyFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_SmartFieldArchive {
-    get {return _super ?? TSWP_SmartFieldArchive()}
+    get {_super ?? TSWP_SmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var rubyText: String {
-    get {return _rubyText ?? String()}
+    get {_rubyText ?? String()}
     set {_rubyText = newValue}
   }
   /// Returns true if `rubyText` has been explicitly set.
-  public var hasRubyText: Bool {return self._rubyText != nil}
+  public var hasRubyText: Bool {self._rubyText != nil}
   /// Clears the value of `rubyText`. Subsequent reads from it will return its default value.
   public mutating func clearRubyText() {self._rubyText = nil}
 
@@ -5738,17 +5060,17 @@ public struct TSWP_RubyFieldArchive: Sendable {
   fileprivate var _rubyText: String? = nil
 }
 
-public struct TSWP_TateChuYokoFieldArchive: Sendable {
+public nonisolated struct TSWP_TateChuYokoFieldArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSWP_SmartFieldArchive {
-    get {return _super ?? TSWP_SmartFieldArchive()}
+    get {_super ?? TSWP_SmartFieldArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -5759,71 +5081,55 @@ public struct TSWP_TateChuYokoFieldArchive: Sendable {
   fileprivate var _super: TSWP_SmartFieldArchive? = nil
 }
 
-public struct TSWP_ChangeArchive: Sendable {
+public nonisolated struct TSWP_ChangeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var kind: TSWP_ChangeArchive.ChangeKind {
-    get {return _kind ?? .kChangeKindInsertion}
+    get {_kind ?? .kChangeKindInsertion}
     set {_kind = newValue}
   }
   /// Returns true if `kind` has been explicitly set.
-  public var hasKind: Bool {return self._kind != nil}
+  public var hasKind: Bool {self._kind != nil}
   /// Clears the value of `kind`. Subsequent reads from it will return its default value.
   public mutating func clearKind() {self._kind = nil}
 
   public var session: TSP_Reference {
-    get {return _session ?? TSP_Reference()}
+    get {_session ?? TSP_Reference()}
     set {_session = newValue}
   }
   /// Returns true if `session` has been explicitly set.
-  public var hasSession: Bool {return self._session != nil}
+  public var hasSession: Bool {self._session != nil}
   /// Clears the value of `session`. Subsequent reads from it will return its default value.
   public mutating func clearSession() {self._session = nil}
 
   public var date: TSP_Date {
-    get {return _date ?? TSP_Date()}
+    get {_date ?? TSP_Date()}
     set {_date = newValue}
   }
   /// Returns true if `date` has been explicitly set.
-  public var hasDate: Bool {return self._date != nil}
+  public var hasDate: Bool {self._date != nil}
   /// Clears the value of `date`. Subsequent reads from it will return its default value.
   public mutating func clearDate() {self._date = nil}
 
   public var textAttributeUuidString: String {
-    get {return _textAttributeUuidString ?? String()}
+    get {_textAttributeUuidString ?? String()}
     set {_textAttributeUuidString = newValue}
   }
   /// Returns true if `textAttributeUuidString` has been explicitly set.
-  public var hasTextAttributeUuidString: Bool {return self._textAttributeUuidString != nil}
+  public var hasTextAttributeUuidString: Bool {self._textAttributeUuidString != nil}
   /// Clears the value of `textAttributeUuidString`. Subsequent reads from it will return its default value.
   public mutating func clearTextAttributeUuidString() {self._textAttributeUuidString = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum ChangeKind: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case kChangeKindInsertion // = 1
-    case kChangeKindDeletion // = 2
+  public nonisolated enum ChangeKind: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case kChangeKindInsertion = 1
+    case kChangeKindDeletion = 2
 
     public init() {
       self = .kChangeKindInsertion
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 1: self = .kChangeKindInsertion
-      case 2: self = .kChangeKindDeletion
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .kChangeKindInsertion: return 1
-      case .kChangeKindDeletion: return 2
-      }
     }
 
   }
@@ -5836,35 +5142,35 @@ public struct TSWP_ChangeArchive: Sendable {
   fileprivate var _textAttributeUuidString: String? = nil
 }
 
-public struct TSWP_ChangeSessionArchive: Sendable {
+public nonisolated struct TSWP_ChangeSessionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var sessionUid: UInt32 {
-    get {return _sessionUid ?? 0}
+    get {_sessionUid ?? 0}
     set {_sessionUid = newValue}
   }
   /// Returns true if `sessionUid` has been explicitly set.
-  public var hasSessionUid: Bool {return self._sessionUid != nil}
+  public var hasSessionUid: Bool {self._sessionUid != nil}
   /// Clears the value of `sessionUid`. Subsequent reads from it will return its default value.
   public mutating func clearSessionUid() {self._sessionUid = nil}
 
   public var author: TSP_Reference {
-    get {return _author ?? TSP_Reference()}
+    get {_author ?? TSP_Reference()}
     set {_author = newValue}
   }
   /// Returns true if `author` has been explicitly set.
-  public var hasAuthor: Bool {return self._author != nil}
+  public var hasAuthor: Bool {self._author != nil}
   /// Clears the value of `author`. Subsequent reads from it will return its default value.
   public mutating func clearAuthor() {self._author = nil}
 
   public var date: TSP_Date {
-    get {return _date ?? TSP_Date()}
+    get {_date ?? TSP_Date()}
     set {_date = newValue}
   }
   /// Returns true if `date` has been explicitly set.
-  public var hasDate: Bool {return self._date != nil}
+  public var hasDate: Bool {self._date != nil}
   /// Clears the value of `date`. Subsequent reads from it will return its default value.
   public mutating func clearDate() {self._date = nil}
 
@@ -5877,17 +5183,17 @@ public struct TSWP_ChangeSessionArchive: Sendable {
   fileprivate var _date: TSP_Date? = nil
 }
 
-public struct TSWP_SectionPlaceholderArchive: Sendable {
+public nonisolated struct TSWP_SectionPlaceholderArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var parentStorage: TSP_Reference {
-    get {return _parentStorage ?? TSP_Reference()}
+    get {_parentStorage ?? TSP_Reference()}
     set {_parentStorage = newValue}
   }
   /// Returns true if `parentStorage` has been explicitly set.
-  public var hasParentStorage: Bool {return self._parentStorage != nil}
+  public var hasParentStorage: Bool {self._parentStorage != nil}
   /// Clears the value of `parentStorage`. Subsequent reads from it will return its default value.
   public mutating func clearParentStorage() {self._parentStorage = nil}
 
@@ -5898,7 +5204,7 @@ public struct TSWP_SectionPlaceholderArchive: Sendable {
   fileprivate var _parentStorage: TSP_Reference? = nil
 }
 
-public struct TSWP_HyperlinkSelectionArchive: Sendable {
+public nonisolated struct TSWP_HyperlinkSelectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -5908,7 +5214,7 @@ public struct TSWP_HyperlinkSelectionArchive: Sendable {
   public init() {}
 }
 
-public struct TSWP_DateTimeSelectionArchive: Sendable {
+public nonisolated struct TSWP_DateTimeSelectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -5918,28 +5224,28 @@ public struct TSWP_DateTimeSelectionArchive: Sendable {
   public init() {}
 }
 
-public struct TSWP_FlowInfoArchive: Sendable {
+public nonisolated struct TSWP_FlowInfoArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var textStorage: TSP_Reference {
-    get {return _textStorage ?? TSP_Reference()}
+    get {_textStorage ?? TSP_Reference()}
     set {_textStorage = newValue}
   }
   /// Returns true if `textStorage` has been explicitly set.
-  public var hasTextStorage: Bool {return self._textStorage != nil}
+  public var hasTextStorage: Bool {self._textStorage != nil}
   /// Clears the value of `textStorage`. Subsequent reads from it will return its default value.
   public mutating func clearTextStorage() {self._textStorage = nil}
 
   public var textboxes: [TSP_Reference] = []
 
   public var userInterfaceIdentifier: UInt32 {
-    get {return _userInterfaceIdentifier ?? 0}
+    get {_userInterfaceIdentifier ?? 0}
     set {_userInterfaceIdentifier = newValue}
   }
   /// Returns true if `userInterfaceIdentifier` has been explicitly set.
-  public var hasUserInterfaceIdentifier: Bool {return self._userInterfaceIdentifier != nil}
+  public var hasUserInterfaceIdentifier: Bool {self._userInterfaceIdentifier != nil}
   /// Clears the value of `userInterfaceIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearUserInterfaceIdentifier() {self._userInterfaceIdentifier = nil}
 
@@ -5951,7 +5257,7 @@ public struct TSWP_FlowInfoArchive: Sendable {
   fileprivate var _userInterfaceIdentifier: UInt32? = nil
 }
 
-public struct TSWP_FlowInfoContainerArchive: Sendable {
+public nonisolated struct TSWP_FlowInfoContainerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -5959,11 +5265,11 @@ public struct TSWP_FlowInfoContainerArchive: Sendable {
   public var flowInfos: [TSP_Reference] = []
 
   public var nextUserInterfaceIdentifier: UInt32 {
-    get {return _nextUserInterfaceIdentifier ?? 0}
+    get {_nextUserInterfaceIdentifier ?? 0}
     set {_nextUserInterfaceIdentifier = newValue}
   }
   /// Returns true if `nextUserInterfaceIdentifier` has been explicitly set.
-  public var hasNextUserInterfaceIdentifier: Bool {return self._nextUserInterfaceIdentifier != nil}
+  public var hasNextUserInterfaceIdentifier: Bool {self._nextUserInterfaceIdentifier != nil}
   /// Clears the value of `nextUserInterfaceIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearNextUserInterfaceIdentifier() {self._nextUserInterfaceIdentifier = nil}
 
@@ -5974,193 +5280,157 @@ public struct TSWP_FlowInfoContainerArchive: Sendable {
   fileprivate var _nextUserInterfaceIdentifier: UInt32? = nil
 }
 
-public struct TSWP_DropCapArchive: Sendable {
+public nonisolated struct TSWP_DropCapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var type: TSWP_DropCapArchive.DropCapType {
-    get {return _type ?? .tswpdropCapTypeText}
+    get {_type ?? .tswpdropCapTypeText}
     set {_type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return self._type != nil}
+  public var hasType: Bool {self._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {self._type = nil}
 
   public var numberOfLines: UInt32 {
-    get {return _numberOfLines ?? 3}
+    get {_numberOfLines ?? 3}
     set {_numberOfLines = newValue}
   }
   /// Returns true if `numberOfLines` has been explicitly set.
-  public var hasNumberOfLines: Bool {return self._numberOfLines != nil}
+  public var hasNumberOfLines: Bool {self._numberOfLines != nil}
   /// Clears the value of `numberOfLines`. Subsequent reads from it will return its default value.
   public mutating func clearNumberOfLines() {self._numberOfLines = nil}
 
   public var numberOfRaisedLines: UInt32 {
-    get {return _numberOfRaisedLines ?? 0}
+    get {_numberOfRaisedLines ?? 0}
     set {_numberOfRaisedLines = newValue}
   }
   /// Returns true if `numberOfRaisedLines` has been explicitly set.
-  public var hasNumberOfRaisedLines: Bool {return self._numberOfRaisedLines != nil}
+  public var hasNumberOfRaisedLines: Bool {self._numberOfRaisedLines != nil}
   /// Clears the value of `numberOfRaisedLines`. Subsequent reads from it will return its default value.
   public mutating func clearNumberOfRaisedLines() {self._numberOfRaisedLines = nil}
 
   public var deprecatedOutdent: Float {
-    get {return _deprecatedOutdent ?? 0}
+    get {_deprecatedOutdent ?? 0}
     set {_deprecatedOutdent = newValue}
   }
   /// Returns true if `deprecatedOutdent` has been explicitly set.
-  public var hasDeprecatedOutdent: Bool {return self._deprecatedOutdent != nil}
+  public var hasDeprecatedOutdent: Bool {self._deprecatedOutdent != nil}
   /// Clears the value of `deprecatedOutdent`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedOutdent() {self._deprecatedOutdent = nil}
 
   public var outdent: Double {
-    get {return _outdent ?? 0}
+    get {_outdent ?? 0}
     set {_outdent = newValue}
   }
   /// Returns true if `outdent` has been explicitly set.
-  public var hasOutdent: Bool {return self._outdent != nil}
+  public var hasOutdent: Bool {self._outdent != nil}
   /// Clears the value of `outdent`. Subsequent reads from it will return its default value.
   public mutating func clearOutdent() {self._outdent = nil}
 
   public var deprecatedPadding: Float {
-    get {return _deprecatedPadding ?? 0}
+    get {_deprecatedPadding ?? 0}
     set {_deprecatedPadding = newValue}
   }
   /// Returns true if `deprecatedPadding` has been explicitly set.
-  public var hasDeprecatedPadding: Bool {return self._deprecatedPadding != nil}
+  public var hasDeprecatedPadding: Bool {self._deprecatedPadding != nil}
   /// Clears the value of `deprecatedPadding`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedPadding() {self._deprecatedPadding = nil}
 
   public var padding: Double {
-    get {return _padding ?? 0}
+    get {_padding ?? 0}
     set {_padding = newValue}
   }
   /// Returns true if `padding` has been explicitly set.
-  public var hasPadding: Bool {return self._padding != nil}
+  public var hasPadding: Bool {self._padding != nil}
   /// Clears the value of `padding`. Subsequent reads from it will return its default value.
   public mutating func clearPadding() {self._padding = nil}
 
   public var wrapType: TSWP_DropCapArchive.DropCapWrapType {
-    get {return _wrapType ?? .tswpdropCapWrapTypeRectangular}
+    get {_wrapType ?? .tswpdropCapWrapTypeRectangular}
     set {_wrapType = newValue}
   }
   /// Returns true if `wrapType` has been explicitly set.
-  public var hasWrapType: Bool {return self._wrapType != nil}
+  public var hasWrapType: Bool {self._wrapType != nil}
   /// Clears the value of `wrapType`. Subsequent reads from it will return its default value.
   public mutating func clearWrapType() {self._wrapType = nil}
 
   public var shapeEnabled: Bool {
-    get {return _shapeEnabled ?? false}
+    get {_shapeEnabled ?? false}
     set {_shapeEnabled = newValue}
   }
   /// Returns true if `shapeEnabled` has been explicitly set.
-  public var hasShapeEnabled: Bool {return self._shapeEnabled != nil}
+  public var hasShapeEnabled: Bool {self._shapeEnabled != nil}
   /// Clears the value of `shapeEnabled`. Subsequent reads from it will return its default value.
   public mutating func clearShapeEnabled() {self._shapeEnabled = nil}
 
   public var deprecatedCornerRadius: Float {
-    get {return _deprecatedCornerRadius ?? 0}
+    get {_deprecatedCornerRadius ?? 0}
     set {_deprecatedCornerRadius = newValue}
   }
   /// Returns true if `deprecatedCornerRadius` has been explicitly set.
-  public var hasDeprecatedCornerRadius: Bool {return self._deprecatedCornerRadius != nil}
+  public var hasDeprecatedCornerRadius: Bool {self._deprecatedCornerRadius != nil}
   /// Clears the value of `deprecatedCornerRadius`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedCornerRadius() {self._deprecatedCornerRadius = nil}
 
   public var cornerRadius: Double {
-    get {return _cornerRadius ?? 0}
+    get {_cornerRadius ?? 0}
     set {_cornerRadius = newValue}
   }
   /// Returns true if `cornerRadius` has been explicitly set.
-  public var hasCornerRadius: Bool {return self._cornerRadius != nil}
+  public var hasCornerRadius: Bool {self._cornerRadius != nil}
   /// Clears the value of `cornerRadius`. Subsequent reads from it will return its default value.
   public mutating func clearCornerRadius() {self._cornerRadius = nil}
 
   public var deprecatedCharacterScale: Float {
-    get {return _deprecatedCharacterScale ?? 0}
+    get {_deprecatedCharacterScale ?? 0}
     set {_deprecatedCharacterScale = newValue}
   }
   /// Returns true if `deprecatedCharacterScale` has been explicitly set.
-  public var hasDeprecatedCharacterScale: Bool {return self._deprecatedCharacterScale != nil}
+  public var hasDeprecatedCharacterScale: Bool {self._deprecatedCharacterScale != nil}
   /// Clears the value of `deprecatedCharacterScale`. Subsequent reads from it will return its default value.
   public mutating func clearDeprecatedCharacterScale() {self._deprecatedCharacterScale = nil}
 
   public var characterScale: Double {
-    get {return _characterScale ?? 1}
+    get {_characterScale ?? 1}
     set {_characterScale = newValue}
   }
   /// Returns true if `characterScale` has been explicitly set.
-  public var hasCharacterScale: Bool {return self._characterScale != nil}
+  public var hasCharacterScale: Bool {self._characterScale != nil}
   /// Clears the value of `characterScale`. Subsequent reads from it will return its default value.
   public mutating func clearCharacterScale() {self._characterScale = nil}
 
   public var numberOfCharacters: UInt32 {
-    get {return _numberOfCharacters ?? 1}
+    get {_numberOfCharacters ?? 1}
     set {_numberOfCharacters = newValue}
   }
   /// Returns true if `numberOfCharacters` has been explicitly set.
-  public var hasNumberOfCharacters: Bool {return self._numberOfCharacters != nil}
+  public var hasNumberOfCharacters: Bool {self._numberOfCharacters != nil}
   /// Clears the value of `numberOfCharacters`. Subsequent reads from it will return its default value.
   public mutating func clearNumberOfCharacters() {self._numberOfCharacters = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum DropCapType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case tswpdropCapTypeText // = 0
-    case tswpdropCapTypeShape // = 1
-    case tswpdropCapTypeImage // = 2
+  public nonisolated enum DropCapType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case tswpdropCapTypeText = 0
+    case tswpdropCapTypeShape = 1
+    case tswpdropCapTypeImage = 2
 
     public init() {
       self = .tswpdropCapTypeText
     }
 
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .tswpdropCapTypeText
-      case 1: self = .tswpdropCapTypeShape
-      case 2: self = .tswpdropCapTypeImage
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .tswpdropCapTypeText: return 0
-      case .tswpdropCapTypeShape: return 1
-      case .tswpdropCapTypeImage: return 2
-      }
-    }
-
   }
 
-  public enum DropCapWrapType: SwiftProtobuf.Enum, Swift.CaseIterable {
-    public typealias RawValue = Int
-    case tswpdropCapWrapTypeRectangular // = 0
-    case tswpdropCapWrapTypeContour // = 1
-    case tswpdropCapWrapTypeNone // = 2
+  public nonisolated enum DropCapWrapType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+    case tswpdropCapWrapTypeRectangular = 0
+    case tswpdropCapWrapTypeContour = 1
+    case tswpdropCapWrapTypeNone = 2
 
     public init() {
       self = .tswpdropCapWrapTypeRectangular
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .tswpdropCapWrapTypeRectangular
-      case 1: self = .tswpdropCapWrapTypeContour
-      case 2: self = .tswpdropCapWrapTypeNone
-      default: return nil
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .tswpdropCapWrapTypeRectangular: return 0
-      case .tswpdropCapWrapTypeContour: return 1
-      case .tswpdropCapWrapTypeNone: return 2
-      }
     }
 
   }
@@ -6183,44 +5453,44 @@ public struct TSWP_DropCapArchive: Sendable {
   fileprivate var _numberOfCharacters: UInt32? = nil
 }
 
-public struct TSWP_DropCapStylePropertiesArchive: @unchecked Sendable {
+public nonisolated struct TSWP_DropCapStylePropertiesArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var dropCap: TSWP_DropCapArchive {
-    get {return _storage._dropCap ?? TSWP_DropCapArchive()}
+    get {_storage._dropCap ?? TSWP_DropCapArchive()}
     set {_uniqueStorage()._dropCap = newValue}
   }
   /// Returns true if `dropCap` has been explicitly set.
-  public var hasDropCap: Bool {return _storage._dropCap != nil}
+  public var hasDropCap: Bool {_storage._dropCap != nil}
   /// Clears the value of `dropCap`. Subsequent reads from it will return its default value.
   public mutating func clearDropCap() {_uniqueStorage()._dropCap = nil}
 
   public var dropCapShapeStroke: TSD_StrokeArchive {
-    get {return _storage._dropCapShapeStroke ?? TSD_StrokeArchive()}
+    get {_storage._dropCapShapeStroke ?? TSD_StrokeArchive()}
     set {_uniqueStorage()._dropCapShapeStroke = newValue}
   }
   /// Returns true if `dropCapShapeStroke` has been explicitly set.
-  public var hasDropCapShapeStroke: Bool {return _storage._dropCapShapeStroke != nil}
+  public var hasDropCapShapeStroke: Bool {_storage._dropCapShapeStroke != nil}
   /// Clears the value of `dropCapShapeStroke`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeStroke() {_uniqueStorage()._dropCapShapeStroke = nil}
 
   public var dropCapShapeFillNull: Bool {
-    get {return _storage._dropCapShapeFillNull ?? false}
+    get {_storage._dropCapShapeFillNull ?? false}
     set {_uniqueStorage()._dropCapShapeFillNull = newValue}
   }
   /// Returns true if `dropCapShapeFillNull` has been explicitly set.
-  public var hasDropCapShapeFillNull: Bool {return _storage._dropCapShapeFillNull != nil}
+  public var hasDropCapShapeFillNull: Bool {_storage._dropCapShapeFillNull != nil}
   /// Clears the value of `dropCapShapeFillNull`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeFillNull() {_uniqueStorage()._dropCapShapeFillNull = nil}
 
   public var dropCapShapeFill: TSD_FillArchive {
-    get {return _storage._dropCapShapeFill ?? TSD_FillArchive()}
+    get {_storage._dropCapShapeFill ?? TSD_FillArchive()}
     set {_uniqueStorage()._dropCapShapeFill = newValue}
   }
   /// Returns true if `dropCapShapeFill` has been explicitly set.
-  public var hasDropCapShapeFill: Bool {return _storage._dropCapShapeFill != nil}
+  public var hasDropCapShapeFill: Bool {_storage._dropCapShapeFill != nil}
   /// Clears the value of `dropCapShapeFill`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapShapeFill() {_uniqueStorage()._dropCapShapeFill = nil}
 
@@ -6231,44 +5501,44 @@ public struct TSWP_DropCapStylePropertiesArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSWP_DropCapStyleArchive: Sendable {
+public nonisolated struct TSWP_DropCapStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var overrideCount: UInt32 {
-    get {return _overrideCount ?? 0}
+    get {_overrideCount ?? 0}
     set {_overrideCount = newValue}
   }
   /// Returns true if `overrideCount` has been explicitly set.
-  public var hasOverrideCount: Bool {return self._overrideCount != nil}
+  public var hasOverrideCount: Bool {self._overrideCount != nil}
   /// Clears the value of `overrideCount`. Subsequent reads from it will return its default value.
   public mutating func clearOverrideCount() {self._overrideCount = nil}
 
   public var charProperties: TSWP_CharacterStylePropertiesArchive {
-    get {return _charProperties ?? TSWP_CharacterStylePropertiesArchive()}
+    get {_charProperties ?? TSWP_CharacterStylePropertiesArchive()}
     set {_charProperties = newValue}
   }
   /// Returns true if `charProperties` has been explicitly set.
-  public var hasCharProperties: Bool {return self._charProperties != nil}
+  public var hasCharProperties: Bool {self._charProperties != nil}
   /// Clears the value of `charProperties`. Subsequent reads from it will return its default value.
   public mutating func clearCharProperties() {self._charProperties = nil}
 
   public var dropCapProperties: TSWP_DropCapStylePropertiesArchive {
-    get {return _dropCapProperties ?? TSWP_DropCapStylePropertiesArchive()}
+    get {_dropCapProperties ?? TSWP_DropCapStylePropertiesArchive()}
     set {_dropCapProperties = newValue}
   }
   /// Returns true if `dropCapProperties` has been explicitly set.
-  public var hasDropCapProperties: Bool {return self._dropCapProperties != nil}
+  public var hasDropCapProperties: Bool {self._dropCapProperties != nil}
   /// Clears the value of `dropCapProperties`. Subsequent reads from it will return its default value.
   public mutating func clearDropCapProperties() {self._dropCapProperties = nil}
 
@@ -6282,17 +5552,17 @@ public struct TSWP_DropCapStyleArchive: Sendable {
   fileprivate var _dropCapProperties: TSWP_DropCapStylePropertiesArchive? = nil
 }
 
-public struct TSWP_CollaboratorTextCursorSubselectionArchive: Sendable {
+public nonisolated struct TSWP_CollaboratorTextCursorSubselectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var textSelection: TSWP_SelectionArchive {
-    get {return _textSelection ?? TSWP_SelectionArchive()}
+    get {_textSelection ?? TSWP_SelectionArchive()}
     set {_textSelection = newValue}
   }
   /// Returns true if `textSelection` has been explicitly set.
-  public var hasTextSelection: Bool {return self._textSelection != nil}
+  public var hasTextSelection: Bool {self._textSelection != nil}
   /// Clears the value of `textSelection`. Subsequent reads from it will return its default value.
   public mutating func clearTextSelection() {self._textSelection = nil}
 
@@ -6312,7 +5582,7 @@ public struct TSWP_CollaboratorTextCursorSubselectionArchive: Sendable {
 // declaration. To avoid naming collisions, the names are prefixed with the name of
 // the scope where the extend directive occurs.
 
-extension TSCK_CollaboratorCursorArchive {
+nonisolated extension TSCK_CollaboratorCursorArchive {
 
   public var TSWP_CollaboratorTextCursorSubselectionArchive_textCursorSubselection: TSWP_CollaboratorTextCursorSubselectionArchive {
     get {return getExtensionValue(ext: TSWP_CollaboratorTextCursorSubselectionArchive.Extensions.text_cursor_subselection) ?? TSWP_CollaboratorTextCursorSubselectionArchive()}
@@ -6330,7 +5600,7 @@ extension TSCK_CollaboratorCursorArchive {
   }
 }
 
-extension TSD_ImageArchive {
+nonisolated extension TSD_ImageArchive {
 
   public var TSWP_EquationInfoArchive_equationSourceOld: String {
     get {return getExtensionValue(ext: TSWP_EquationInfoArchive.Extensions.equation_source_old) ?? String()}
@@ -6393,7 +5663,7 @@ extension TSD_ImageArchive {
   }
 }
 
-extension TSS_CommandPropertyEntryArchive {
+nonisolated extension TSS_CommandPropertyEntryArchive {
 
   public var TSWP_padding: TSWP_PaddingArchive {
     get {return getExtensionValue(ext: TSWP_Extensions_padding) ?? TSWP_PaddingArchive()}
@@ -6411,7 +5681,7 @@ extension TSS_CommandPropertyEntryArchive {
   }
 }
 
-extension TSS_ThemeArchive {
+nonisolated extension TSS_ThemeArchive {
 
   public var TSWP_ThemePresetsArchive_extension: TSWP_ThemePresetsArchive {
     get {return getExtensionValue(ext: TSWP_ThemePresetsArchive.Extensions.extension) ?? TSWP_ThemePresetsArchive()}
@@ -6436,7 +5706,7 @@ extension TSS_ThemeArchive {
 /// this .proto file. It can be used any place an `SwiftProtobuf.ExtensionMap` is needed
 /// in parsing, or it can be combined with other `SwiftProtobuf.SimpleExtensionMap`s to create
 /// a larger `SwiftProtobuf.SimpleExtensionMap`.
-public let TSWP_Tswparchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
+public nonisolated let TSWP_Tswparchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
   TSWP_Extensions_padding,
   TSWP_ThemePresetsArchive.Extensions.extension,
   TSWP_EquationInfoArchive.Extensions.equation_source_old,
@@ -6450,12 +5720,12 @@ public let TSWP_Tswparchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
 // constructing a `SimpleExtensionMap`, otherwise, use the above _Extension Properties_
 // accessors for the extension fields on the messages directly.
 
-public let TSWP_Extensions_padding = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSWP_PaddingArchive>, TSS_CommandPropertyEntryArchive>(
+public nonisolated let TSWP_Extensions_padding = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSWP_PaddingArchive>, TSS_CommandPropertyEntryArchive>(
   _protobuf_fieldNumber: 100,
   fieldName: "TSWP.padding"
 )
 
-extension TSWP_ThemePresetsArchive {
+nonisolated extension TSWP_ThemePresetsArchive {
   public enum Extensions {
     public static let `extension` = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSWP_ThemePresetsArchive>, TSS_ThemeArchive>(
       _protobuf_fieldNumber: 110,
@@ -6464,7 +5734,7 @@ extension TSWP_ThemePresetsArchive {
   }
 }
 
-extension TSWP_EquationInfoArchive {
+nonisolated extension TSWP_EquationInfoArchive {
   public enum Extensions {
     public static let equation_source_old = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalExtensionField<SwiftProtobuf.ProtobufString>, TSD_ImageArchive>(
       _protobuf_fieldNumber: 100,
@@ -6488,7 +5758,7 @@ extension TSWP_EquationInfoArchive {
   }
 }
 
-extension TSWP_CollaboratorTextCursorSubselectionArchive {
+nonisolated extension TSWP_CollaboratorTextCursorSubselectionArchive {
   public enum Extensions {
     public static let text_cursor_subselection = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSWP_CollaboratorTextCursorSubselectionArchive>, TSCK_CollaboratorCursorArchive>(
       _protobuf_fieldNumber: 100,
@@ -6499,58 +5769,27 @@ extension TSWP_CollaboratorTextCursorSubselectionArchive {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSWP"
+fileprivate nonisolated let _protobuf_package = "TSWP"
 
-extension TSWP_SelectionType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "SelectionType_Normal_DEPRECATED"),
-    1: .same(proto: "SelectionType_ListLabel"),
-    2: .same(proto: "SelectionType_ListTopic"),
-    3: .same(proto: "SelectionType_Replace"),
-    4: .same(proto: "SelectionType_CopyPasteStyle"),
-    5: .same(proto: "SelectionType_Replace2"),
-    6: .same(proto: "SelectionType_SmartField"),
-    7: .same(proto: "SelectionType_Visual"),
-    8: .same(proto: "SelectionType_Logical"),
-  ]
+nonisolated extension TSWP_SelectionType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0SelectionType_Normal_DEPRECATED\0\u{1}SelectionType_ListLabel\0\u{1}SelectionType_ListTopic\0\u{1}SelectionType_Replace\0\u{1}SelectionType_CopyPasteStyle\0\u{1}SelectionType_Replace2\0\u{1}SelectionType_SmartField\0\u{1}SelectionType_Visual\0\u{1}SelectionType_Logical\0")
 }
 
-extension TSWP_StyleInsertionBehavior: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "StyleInsertionBehavior_NoGrow"),
-    1: .same(proto: "StyleInsertionBehavior_GrowLeft"),
-    2: .same(proto: "StyleInsertionBehavior_GrowRight"),
-  ]
+nonisolated extension TSWP_StyleInsertionBehavior: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0StyleInsertionBehavior_NoGrow\0\u{1}StyleInsertionBehavior_GrowLeft\0\u{1}StyleInsertionBehavior_GrowRight\0")
 }
 
-extension TSWP_CaretAffinity: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "CaretAffinity_Start"),
-    1: .same(proto: "CaretAffinity_End"),
-  ]
+nonisolated extension TSWP_CaretAffinity: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0CaretAffinity_Start\0\u{1}CaretAffinity_End\0")
 }
 
-extension TSWP_WritingDirectionType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    -1: .same(proto: "kWritingDirectionNatural"),
-    0: .same(proto: "kWritingDirectionLeftToRight"),
-    1: .same(proto: "kWritingDirectionRightToLeft"),
-  ]
+nonisolated extension TSWP_WritingDirectionType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\u{7f}\u{7f}\u{7f}\u{7f}\u{7f}\u{3}kWritingDirectionNatural\0\u{1}kWritingDirectionLeftToRight\0\u{1}kWritingDirectionRightToLeft\0")
 }
 
-extension TSWP_SelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_SelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SelectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "deprecated_type"),
-    2: .standard(proto: "visual_definition_range"),
-    3: .same(proto: "styleInsertionBehavior"),
-    4: .same(proto: "caretAffinity"),
-    5: .standard(proto: "smart_field_range"),
-    6: .standard(proto: "leading_edge"),
-    7: .standard(proto: "leading_char_index"),
-    8: .same(proto: "type"),
-    9: .same(proto: "ranges"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}deprecated_type\0\u{3}visual_definition_range\0\u{1}styleInsertionBehavior\0\u{1}caretAffinity\0\u{3}smart_field_range\0\u{3}leading_edge\0\u{3}leading_char_index\0\u{1}type\0\u{1}ranges\0")
 
   public var isInitialized: Bool {
     if self._deprecatedType == nil {return false}
@@ -6634,11 +5873,9 @@ extension TSWP_SelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSWP_ObjectAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ObjectAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ObjectAttributeTable"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.entries) {return false}
@@ -6671,12 +5908,9 @@ extension TSWP_ObjectAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSWP_ObjectAttributeTable.ObjectAttribute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ObjectAttributeTable.ObjectAttribute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_ObjectAttributeTable.protoMessageName + ".ObjectAttribute"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "character_index"),
-    2: .same(proto: "object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}character_index\0\u{1}object\0")
 
   public var isInitialized: Bool {
     if self._characterIndex == nil {return false}
@@ -6719,11 +5953,9 @@ extension TSWP_ObjectAttributeTable.ObjectAttribute: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSWP_StringAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_StringAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StringAttributeTable"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.entries) {return false}
@@ -6756,12 +5988,9 @@ extension TSWP_StringAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSWP_StringAttributeTable.StringAttribute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_StringAttributeTable.StringAttribute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_StringAttributeTable.protoMessageName + ".StringAttribute"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "character_index"),
-    2: .same(proto: "object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}character_index\0\u{1}object\0")
 
   public var isInitialized: Bool {
     if self._characterIndex == nil {return false}
@@ -6803,11 +6032,9 @@ extension TSWP_StringAttributeTable.StringAttribute: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSWP_ParaDataAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ParaDataAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ParaDataAttributeTable"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.entries) {return false}
@@ -6840,13 +6067,9 @@ extension TSWP_ParaDataAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSWP_ParaDataAttributeTable.ParaDataAttribute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ParaDataAttributeTable.ParaDataAttribute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_ParaDataAttributeTable.protoMessageName + ".ParaDataAttribute"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "character_index"),
-    2: .same(proto: "first"),
-    3: .same(proto: "second"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}character_index\0\u{1}first\0\u{1}second\0")
 
   public var isInitialized: Bool {
     if self._characterIndex == nil {return false}
@@ -6895,11 +6118,9 @@ extension TSWP_ParaDataAttributeTable.ParaDataAttribute: SwiftProtobuf.Message, 
   }
 }
 
-extension TSWP_OverlappingFieldAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_OverlappingFieldAttributeTable: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".OverlappingFieldAttributeTable"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.entries) {return false}
@@ -6932,12 +6153,9 @@ extension TSWP_OverlappingFieldAttributeTable: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSWP_OverlappingFieldAttributeTable.OverlappingFieldAttribute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_OverlappingFieldAttributeTable.OverlappingFieldAttribute: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_OverlappingFieldAttributeTable.protoMessageName + ".OverlappingFieldAttribute"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "range"),
-    2: .same(proto: "field"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}range\0\u{1}field\0")
 
   public var isInitialized: Bool {
     if self._range == nil {return false}
@@ -6982,37 +6200,9 @@ extension TSWP_OverlappingFieldAttributeTable.OverlappingFieldAttribute: SwiftPr
   }
 }
 
-extension TSWP_StorageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_StorageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StorageArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "kind"),
-    2: .standard(proto: "style_sheet"),
-    3: .same(proto: "text"),
-    4: .standard(proto: "has_itext"),
-    10: .standard(proto: "in_document"),
-    5: .standard(proto: "table_para_style"),
-    6: .standard(proto: "table_para_data"),
-    7: .standard(proto: "table_list_style"),
-    8: .standard(proto: "table_char_style"),
-    9: .standard(proto: "table_attachment"),
-    11: .standard(proto: "table_smartfield"),
-    12: .standard(proto: "table_layout_style"),
-    14: .standard(proto: "table_para_starts"),
-    15: .standard(proto: "table_bookmark"),
-    16: .standard(proto: "table_footnote"),
-    17: .standard(proto: "table_section"),
-    18: .standard(proto: "table_rubyfield"),
-    19: .standard(proto: "table_language"),
-    20: .standard(proto: "table_dictation"),
-    21: .standard(proto: "table_insertion"),
-    22: .standard(proto: "table_deletion"),
-    23: .standard(proto: "table_highlight"),
-    24: .standard(proto: "table_para_bidi"),
-    25: .standard(proto: "table_overlapping_highlight"),
-    26: .standard(proto: "table_pencil_annotation"),
-    27: .standard(proto: "table_tatechuyoko"),
-    28: .standard(proto: "table_drop_cap_style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}kind\0\u{3}style_sheet\0\u{1}text\0\u{3}has_itext\0\u{3}table_para_style\0\u{3}table_para_data\0\u{3}table_list_style\0\u{3}table_char_style\0\u{3}table_attachment\0\u{3}in_document\0\u{3}table_smartfield\0\u{3}table_layout_style\0\u{4}\u{2}table_para_starts\0\u{3}table_bookmark\0\u{3}table_footnote\0\u{3}table_section\0\u{3}table_rubyfield\0\u{3}table_language\0\u{3}table_dictation\0\u{3}table_insertion\0\u{3}table_deletion\0\u{3}table_highlight\0\u{3}table_para_bidi\0\u{3}table_overlapping_highlight\0\u{3}table_pencil_annotation\0\u{3}table_tatechuyoko\0\u{3}table_drop_cap_style\0")
 
   fileprivate class _StorageClass {
     var _kind: TSWP_StorageArchive.KindType? = nil
@@ -7043,15 +6233,11 @@ extension TSWP_StorageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     var _tableTatechuyoko: TSWP_ObjectAttributeTable? = nil
     var _tableDropCapStyle: TSWP_ObjectAttributeTable? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -7295,26 +6481,13 @@ extension TSWP_StorageArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSWP_StorageArchive.KindType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "BODY"),
-    1: .same(proto: "HEADER"),
-    2: .same(proto: "FOOTNOTE"),
-    3: .same(proto: "TEXTBOX"),
-    4: .same(proto: "NOTE"),
-    5: .same(proto: "CELL"),
-    6: .same(proto: "UNCLASSIFIED"),
-    7: .same(proto: "TABLEOFCONTENTS"),
-    8: .same(proto: "UNDEFINED"),
-  ]
+nonisolated extension TSWP_StorageArchive.KindType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0BODY\0\u{1}HEADER\0\u{1}FOOTNOTE\0\u{1}TEXTBOX\0\u{1}NOTE\0\u{1}CELL\0\u{1}UNCLASSIFIED\0\u{1}TABLEOFCONTENTS\0\u{1}UNDEFINED\0")
 }
 
-extension TSWP_HighlightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_HighlightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".HighlightArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "commentStorage"),
-    2: .standard(proto: "text_attribute_uuid_string"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}commentStorage\0\u{3}text_attribute_uuid_string\0")
 
   public var isInitialized: Bool {
     if let v = self._commentStorage, !v.isInitialized {return false}
@@ -7356,12 +6529,9 @@ extension TSWP_HighlightArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSWP_PencilAnnotationArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_PencilAnnotationArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PencilAnnotationArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "pencil_annotation_storage"),
-    2: .standard(proto: "text_attribute_uuid_string"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}pencil_annotation_storage\0\u{3}text_attribute_uuid_string\0")
 
   public var isInitialized: Bool {
     if let v = self._pencilAnnotationStorage, !v.isInitialized {return false}
@@ -7403,12 +6573,9 @@ extension TSWP_PencilAnnotationArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSWP_FontFeatureArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_FontFeatureArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FontFeatureArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "feature_type"),
-    2: .standard(proto: "feature_selector"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}feature_type\0\u{3}feature_selector\0")
 
   public var isInitialized: Bool {
     if self._featureType == nil {return false}
@@ -7451,57 +6618,9 @@ extension TSWP_FontFeatureArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSWP_CharacterStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_CharacterStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CharacterStylePropertiesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "bold"),
-    2: .same(proto: "italic"),
-    3: .standard(proto: "font_size"),
-    4: .standard(proto: "font_name_null"),
-    5: .standard(proto: "font_name"),
-    6: .standard(proto: "font_color_null"),
-    7: .standard(proto: "font_color"),
-    8: .standard(proto: "language_null"),
-    9: .same(proto: "language"),
-    10: .same(proto: "superscript"),
-    11: .same(proto: "underline"),
-    12: .same(proto: "strikethru"),
-    13: .same(proto: "capitalization"),
-    14: .standard(proto: "baseline_shift"),
-    15: .same(proto: "kerning"),
-    16: .same(proto: "ligatures"),
-    17: .standard(proto: "outline_color_null"),
-    18: .standard(proto: "outline_color"),
-    19: .same(proto: "outline"),
-    20: .standard(proto: "shadow_null"),
-    21: .same(proto: "shadow"),
-    22: .standard(proto: "strikethru_color_null"),
-    23: .standard(proto: "strikethru_color"),
-    24: .standard(proto: "strikethru_width"),
-    25: .standard(proto: "background_color_null"),
-    26: .standard(proto: "background_color"),
-    27: .same(proto: "tracking"),
-    28: .standard(proto: "underline_color_null"),
-    29: .standard(proto: "underline_color"),
-    30: .standard(proto: "underline_width"),
-    31: .standard(proto: "word_strikethru"),
-    32: .standard(proto: "word_underline"),
-    33: .standard(proto: "font_features_null"),
-    34: .standard(proto: "font_features"),
-    35: .standard(proto: "writing_direction"),
-    36: .standard(proto: "emphasis_marks_null"),
-    37: .standard(proto: "emphasis_marks"),
-    38: .standard(proto: "compatibility_font_name_null"),
-    39: .standard(proto: "compatibility_font_name"),
-    40: .standard(proto: "is_named_point_size"),
-    41: .standard(proto: "capitalization_uses_linguistics"),
-    42: .standard(proto: "tate_chu_yoko"),
-    43: .standard(proto: "tsd_stroke_null"),
-    44: .standard(proto: "tsd_stroke"),
-    45: .standard(proto: "tsd_fill_null"),
-    46: .standard(proto: "tsd_fill"),
-    47: .standard(proto: "tsd_fill_should_fill_text_container"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}bold\0\u{1}italic\0\u{3}font_size\0\u{3}font_name_null\0\u{3}font_name\0\u{3}font_color_null\0\u{3}font_color\0\u{3}language_null\0\u{1}language\0\u{1}superscript\0\u{1}underline\0\u{1}strikethru\0\u{1}capitalization\0\u{3}baseline_shift\0\u{1}kerning\0\u{1}ligatures\0\u{3}outline_color_null\0\u{3}outline_color\0\u{1}outline\0\u{3}shadow_null\0\u{1}shadow\0\u{3}strikethru_color_null\0\u{3}strikethru_color\0\u{3}strikethru_width\0\u{3}background_color_null\0\u{3}background_color\0\u{1}tracking\0\u{3}underline_color_null\0\u{3}underline_color\0\u{3}underline_width\0\u{3}word_strikethru\0\u{3}word_underline\0\u{3}font_features_null\0\u{3}font_features\0\u{3}writing_direction\0\u{3}emphasis_marks_null\0\u{3}emphasis_marks\0\u{3}compatibility_font_name_null\0\u{3}compatibility_font_name\0\u{3}is_named_point_size\0\u{3}capitalization_uses_linguistics\0\u{3}tate_chu_yoko\0\u{3}tsd_stroke_null\0\u{3}tsd_stroke\0\u{3}tsd_fill_null\0\u{3}tsd_fill\0\u{3}tsd_fill_should_fill_text_container\0")
 
   fileprivate class _StorageClass {
     var _bold: Bool? = nil
@@ -7552,15 +6671,11 @@ extension TSWP_CharacterStylePropertiesArchive: SwiftProtobuf.Message, SwiftProt
     var _tsdFill: TSD_FillArchive? = nil
     var _tsdFillShouldFillTextContainer: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -7910,56 +7025,29 @@ extension TSWP_CharacterStylePropertiesArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSWP_CharacterStylePropertiesArchive.CapitalizationType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kNoCaps"),
-    1: .same(proto: "kAllCaps"),
-    2: .same(proto: "kSmallCaps"),
-    3: .same(proto: "kTitled"),
-  ]
+nonisolated extension TSWP_CharacterStylePropertiesArchive.CapitalizationType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kNoCaps\0\u{1}kAllCaps\0\u{1}kSmallCaps\0\u{1}kTitled\0")
 }
 
-extension TSWP_CharacterStylePropertiesArchive.UnderlineType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kNoUnderline"),
-    1: .same(proto: "kSingleUnderline"),
-    2: .same(proto: "kDoubleUnderline"),
-    3: .same(proto: "kWavyUnderline"),
-  ]
+nonisolated extension TSWP_CharacterStylePropertiesArchive.UnderlineType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kNoUnderline\0\u{1}kSingleUnderline\0\u{1}kDoubleUnderline\0\u{1}kWavyUnderline\0")
 }
 
-extension TSWP_CharacterStylePropertiesArchive.LigaturesType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kRequiredLigatures"),
-    1: .same(proto: "kStandardLigatures"),
-    2: .same(proto: "kAllLigatures"),
-  ]
+nonisolated extension TSWP_CharacterStylePropertiesArchive.LigaturesType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kRequiredLigatures\0\u{1}kStandardLigatures\0\u{1}kAllLigatures\0")
 }
 
-extension TSWP_CharacterStylePropertiesArchive.StrikethruType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kNoStrikethru"),
-    1: .same(proto: "kSingleStrikethru"),
-    2: .same(proto: "kDoubleStrikethru"),
-    3: .same(proto: "kTripleStrikethru"),
-  ]
+nonisolated extension TSWP_CharacterStylePropertiesArchive.StrikethruType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kNoStrikethru\0\u{1}kSingleStrikethru\0\u{1}kDoubleStrikethru\0\u{1}kTripleStrikethru\0")
 }
 
-extension TSWP_CharacterStylePropertiesArchive.SuperscriptType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kNoScript"),
-    1: .same(proto: "kSuperscript"),
-    2: .same(proto: "kSubscript"),
-  ]
+nonisolated extension TSWP_CharacterStylePropertiesArchive.SuperscriptType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kNoScript\0\u{1}kSuperscript\0\u{1}kSubscript\0")
 }
 
-extension TSWP_CharacterStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_CharacterStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CharacterStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    10: .standard(proto: "override_count"),
-    11: .standard(proto: "char_properties"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{9}override_count\0\u{3}char_properties\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -8008,13 +7096,9 @@ extension TSWP_CharacterStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSWP_TabArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TabArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TabArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "position"),
-    2: .same(proto: "alignment"),
-    3: .same(proto: "leader"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}position\0\u{1}alignment\0\u{1}leader\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -8056,20 +7140,13 @@ extension TSWP_TabArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
   }
 }
 
-extension TSWP_TabArchive.TabAlignmentType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kTabAlignmentLeft"),
-    1: .same(proto: "kTabAlignmentCenter"),
-    2: .same(proto: "kTabAlignmentRight"),
-    3: .same(proto: "kTabAlignmentDecimal"),
-  ]
+nonisolated extension TSWP_TabArchive.TabAlignmentType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kTabAlignmentLeft\0\u{1}kTabAlignmentCenter\0\u{1}kTabAlignmentRight\0\u{1}kTabAlignmentDecimal\0")
 }
 
-extension TSWP_TabsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TabsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TabsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "tabs"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}tabs\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -8097,13 +7174,9 @@ extension TSWP_TabsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension TSWP_LineSpacingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_LineSpacingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LineSpacingArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "mode"),
-    2: .same(proto: "amount"),
-    3: .same(proto: "baselineRule"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}mode\0\u{1}amount\0\u{1}baselineRule\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -8145,62 +7218,13 @@ extension TSWP_LineSpacingArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSWP_LineSpacingArchive.LineSpacingModeType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kRelativeLineSpacing"),
-    1: .same(proto: "kMinimumLineSpacing"),
-    2: .same(proto: "kExactLineSpacing"),
-    3: .same(proto: "kMaximumLineSpacing"),
-    4: .same(proto: "kSpaceBetweenLineSpacing"),
-  ]
+nonisolated extension TSWP_LineSpacingArchive.LineSpacingModeType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kRelativeLineSpacing\0\u{1}kMinimumLineSpacing\0\u{1}kExactLineSpacing\0\u{1}kMaximumLineSpacing\0\u{1}kSpaceBetweenLineSpacing\0")
 }
 
-extension TSWP_ParagraphStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ParagraphStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ParagraphStylePropertiesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "alignment"),
-    2: .standard(proto: "decimal_tab_null"),
-    3: .standard(proto: "decimal_tab"),
-    4: .standard(proto: "default_tab_stops"),
-    5: .standard(proto: "fill_null"),
-    6: .same(proto: "fill"),
-    7: .standard(proto: "first_line_indent"),
-    8: .same(proto: "hyphenate"),
-    9: .standard(proto: "keep_lines_together"),
-    10: .standard(proto: "keep_with_next"),
-    11: .standard(proto: "left_indent"),
-    12: .standard(proto: "line_spacing_null"),
-    13: .standard(proto: "line_spacing"),
-    14: .standard(proto: "page_break_before"),
-    15: .standard(proto: "deprecated_borders"),
-    16: .standard(proto: "historical_rule_offset_null"),
-    17: .standard(proto: "historical_rule_offset"),
-    18: .standard(proto: "rule_width"),
-    19: .standard(proto: "right_indent"),
-    20: .standard(proto: "space_after"),
-    21: .standard(proto: "space_before"),
-    24: .standard(proto: "tabs_null"),
-    25: .same(proto: "tabs"),
-    26: .standard(proto: "widow_control"),
-    27: .standard(proto: "outline_level"),
-    28: .standard(proto: "outline_style"),
-    29: .standard(proto: "following_style_id_null"),
-    30: .standard(proto: "following_style_id"),
-    31: .standard(proto: "stroke_null"),
-    32: .same(proto: "stroke"),
-    33: .standard(proto: "show_in_toc"),
-    34: .standard(proto: "toc_style_id_null"),
-    35: .standard(proto: "toc_style_id"),
-    38: .standard(proto: "writing_direction"),
-    39: .standard(proto: "list_style_null"),
-    40: .standard(proto: "list_style"),
-    41: .standard(proto: "following_style_null"),
-    42: .standard(proto: "following_style"),
-    43: .standard(proto: "show_in_bookmarks_list"),
-    44: .standard(proto: "show_in_toc_navigator"),
-    45: .standard(proto: "border_positions"),
-    46: .standard(proto: "rounded_corners"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}alignment\0\u{3}decimal_tab_null\0\u{3}decimal_tab\0\u{3}default_tab_stops\0\u{3}fill_null\0\u{1}fill\0\u{3}first_line_indent\0\u{1}hyphenate\0\u{3}keep_lines_together\0\u{3}keep_with_next\0\u{3}left_indent\0\u{3}line_spacing_null\0\u{3}line_spacing\0\u{3}page_break_before\0\u{3}deprecated_borders\0\u{3}historical_rule_offset_null\0\u{3}historical_rule_offset\0\u{3}rule_width\0\u{3}right_indent\0\u{3}space_after\0\u{3}space_before\0\u{4}\u{3}tabs_null\0\u{1}tabs\0\u{3}widow_control\0\u{3}outline_level\0\u{3}outline_style\0\u{3}following_style_id_null\0\u{3}following_style_id\0\u{3}stroke_null\0\u{1}stroke\0\u{3}show_in_toc\0\u{3}toc_style_id_null\0\u{3}toc_style_id\0\u{4}\u{3}writing_direction\0\u{3}list_style_null\0\u{3}list_style\0\u{3}following_style_null\0\u{3}following_style\0\u{3}show_in_bookmarks_list\0\u{3}show_in_toc_navigator\0\u{3}border_positions\0\u{3}rounded_corners\0")
 
   fileprivate class _StorageClass {
     var _alignment: TSWP_ParagraphStylePropertiesArchive.TextAlignmentType? = nil
@@ -8246,15 +7270,11 @@ extension TSWP_ParagraphStylePropertiesArchive: SwiftProtobuf.Message, SwiftProt
     var _borderPositions: Int32? = nil
     var _roundedCorners: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -8570,53 +7590,21 @@ extension TSWP_ParagraphStylePropertiesArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSWP_ParagraphStylePropertiesArchive.TextAlignmentType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "TATvalue0"),
-    1: .same(proto: "TATvalue1"),
-    2: .same(proto: "TATvalue2"),
-    3: .same(proto: "TATvalue3"),
-    4: .same(proto: "TATvalue4"),
-  ]
+nonisolated extension TSWP_ParagraphStylePropertiesArchive.TextAlignmentType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0TATvalue0\0\u{1}TATvalue1\0\u{1}TATvalue2\0\u{1}TATvalue3\0\u{1}TATvalue4\0")
 }
 
-extension TSWP_ParagraphStylePropertiesArchive.DeprecatedParagraphBorderType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "PBTvalue0"),
-    1: .same(proto: "PBTvalue1"),
-    2: .same(proto: "PBTvalue2"),
-    3: .same(proto: "PBTvalue3"),
-    4: .same(proto: "PBTvalue4"),
-    8: .same(proto: "PBTvalue5"),
-    9: .same(proto: "PBTvalue6"),
-    10: .same(proto: "PBTvalue7"),
-    11: .same(proto: "PBTvalue8"),
-    16: .same(proto: "PBTvalue9"),
-    17: .same(proto: "PBTvalue10"),
-    18: .same(proto: "PBTvalue11"),
-    19: .same(proto: "PBTvalue12"),
-    24: .same(proto: "PBTvalue13"),
-    25: .same(proto: "PBTvalue14"),
-    26: .same(proto: "PBTvalue15"),
-  ]
+nonisolated extension TSWP_ParagraphStylePropertiesArchive.DeprecatedParagraphBorderType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0PBTvalue0\0\u{1}PBTvalue1\0\u{1}PBTvalue2\0\u{1}PBTvalue3\0\u{1}PBTvalue4\0\u{2}\u{4}PBTvalue5\0\u{1}PBTvalue6\0\u{1}PBTvalue7\0\u{1}PBTvalue8\0\u{2}\u{5}PBTvalue9\0\u{1}PBTvalue10\0\u{1}PBTvalue11\0\u{1}PBTvalue12\0\u{2}\u{5}PBTvalue13\0\u{1}PBTvalue14\0\u{1}PBTvalue15\0")
 }
 
-extension TSWP_ParagraphStylePropertiesArchive.OutlineStyleType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "OSTvalue0"),
-    1: .same(proto: "OSTvalue1"),
-    2: .same(proto: "OSTvalue2"),
-  ]
+nonisolated extension TSWP_ParagraphStylePropertiesArchive.OutlineStyleType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0OSTvalue0\0\u{1}OSTvalue1\0\u{1}OSTvalue2\0")
 }
 
-extension TSWP_ParagraphStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ParagraphStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ParagraphStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    10: .standard(proto: "override_count"),
-    11: .standard(proto: "char_properties"),
-    12: .standard(proto: "para_properties"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{9}override_count\0\u{3}char_properties\0\u{3}para_properties\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -8671,27 +7659,9 @@ extension TSWP_ParagraphStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSWP_ListStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ListStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ListStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    10: .standard(proto: "override_count"),
-    11: .standard(proto: "label_types"),
-    12: .standard(proto: "text_indents"),
-    13: .same(proto: "indents"),
-    14: .same(proto: "geometries"),
-    15: .standard(proto: "number_types"),
-    16: .same(proto: "strings"),
-    17: .same(proto: "images"),
-    18: .standard(proto: "shadow_null"),
-    19: .same(proto: "shadow"),
-    20: .standard(proto: "font_color_null"),
-    21: .standard(proto: "font_color"),
-    22: .standard(proto: "font_name_null"),
-    23: .standard(proto: "font_name"),
-    24: .standard(proto: "writing_direction"),
-    25: .standard(proto: "tiered_numbers"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{9}override_count\0\u{3}label_types\0\u{3}text_indents\0\u{1}indents\0\u{1}geometries\0\u{3}number_types\0\u{1}strings\0\u{1}images\0\u{3}shadow_null\0\u{1}shadow\0\u{3}font_color_null\0\u{3}font_color\0\u{3}font_name_null\0\u{3}font_name\0\u{3}writing_direction\0\u{3}tiered_numbers\0")
 
   fileprivate class _StorageClass {
     var _super: TSS_StyleArchive? = nil
@@ -8712,15 +7682,11 @@ extension TSWP_ListStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     var _writingDirection: TSWP_WritingDirectionType? = nil
     var _tieredNumbers: [Bool] = []
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -8886,92 +7852,17 @@ extension TSWP_ListStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSWP_ListStyleArchive.LabelType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kNone"),
-    1: .same(proto: "kImage"),
-    2: .same(proto: "kString"),
-    3: .same(proto: "kNumber"),
-  ]
+nonisolated extension TSWP_ListStyleArchive.LabelType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kNone\0\u{1}kImage\0\u{1}kString\0\u{1}kNumber\0")
 }
 
-extension TSWP_ListStyleArchive.NumberType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kNumericDecimal"),
-    1: .same(proto: "kNumericDoubleParen"),
-    2: .same(proto: "kNumericRightParen"),
-    3: .same(proto: "kRomanUpperDecimal"),
-    4: .same(proto: "kRomanUpperDoubleParen"),
-    5: .same(proto: "kRomanUpperRightParen"),
-    6: .same(proto: "kRomanLowerDecimal"),
-    7: .same(proto: "kRomanLowerDoubleParen"),
-    8: .same(proto: "kRomanLowerRightParen"),
-    9: .same(proto: "kAlphaUpperDecimal"),
-    10: .same(proto: "kAlphaUpperDoubleParen"),
-    11: .same(proto: "kAlphaUpperRightParen"),
-    12: .same(proto: "kAlphaLowerDecimal"),
-    13: .same(proto: "kAlphaLowerDoubleParen"),
-    14: .same(proto: "kAlphaLowerRightParen"),
-    15: .same(proto: "kIdeographicJapaneseDecimalKind"),
-    16: .same(proto: "kIdeographicJapaneseDoubleParenKind"),
-    17: .same(proto: "kIdeographicJapaneseRightParenKind"),
-    18: .same(proto: "kHiraganaDecimalKind"),
-    19: .same(proto: "kHiraganaDoubleParenKind"),
-    20: .same(proto: "kHiraganaRightParenKind"),
-    21: .same(proto: "kKatakanaDecimalKind"),
-    22: .same(proto: "kKatakanaDoubleParenKind"),
-    23: .same(proto: "kKatakanaRightParenKind"),
-    24: .same(proto: "kHiraganaIrohaDecimalKind"),
-    25: .same(proto: "kHiraganaIrohaDoubleParenKind"),
-    26: .same(proto: "kHiraganaIrohaRightParenKind"),
-    27: .same(proto: "kKatakanaIrohaDecimalKind"),
-    28: .same(proto: "kKatakanaIrohaDoubleParenKind"),
-    29: .same(proto: "kKatakanaIrohaRightParenKind"),
-    30: .same(proto: "kIdeographicSimplifiedChineseDecimalKind"),
-    31: .same(proto: "kIdeographicSimplifiedChineseDoubleParenKind"),
-    32: .same(proto: "kIdeographicSimplifiedChineseRightParenKind"),
-    33: .same(proto: "kIdeographicTraditionalChineseDecimalKind"),
-    34: .same(proto: "kIdeographicTraditionalChineseDoubleParenKind"),
-    35: .same(proto: "kIdeographicTraditionalChineseRightParenKind"),
-    36: .same(proto: "kIdeographicFormalJapaneseDecimalKind"),
-    37: .same(proto: "kIdeographicFormalJapaneseDoubleParenKind"),
-    38: .same(proto: "kIdeographicFormalJapaneseRightParenKind"),
-    39: .same(proto: "kIdeographicFormalSimplifiedChineseDecimalKind"),
-    40: .same(proto: "kIdeographicFormalSimplifiedChineseDoubleParenKind"),
-    41: .same(proto: "kIdeographicFormalSimplifiedChineseRightParenKind"),
-    42: .same(proto: "kIdeographicFormalTraditionalChineseDecimalKind"),
-    43: .same(proto: "kIdeographicFormalTraditionalChineseDoubleParenKind"),
-    44: .same(proto: "kIdeographicFormalTraditionalChineseRightParenKind"),
-    45: .same(proto: "kKoreanAlphabetDecimalKind"),
-    46: .same(proto: "kKoreanAlphabetDoubleParenKind"),
-    47: .same(proto: "kKoreanAlphabetRightParenKind"),
-    48: .same(proto: "kCircledNumberKind"),
-    49: .same(proto: "kArabianNumericDecimalKind"),
-    50: .same(proto: "kArabianNumericDoubleParenKind"),
-    51: .same(proto: "kArabianNumericRightParenKind"),
-    52: .same(proto: "kArabianAlphaDecimalKind"),
-    53: .same(proto: "kArabianAlphaDoubleParenKind"),
-    54: .same(proto: "kArabianAlphaRightParenKind"),
-    55: .same(proto: "kArabianAbjadDecimalKind"),
-    56: .same(proto: "kArabianAbjadDoubleParenKind"),
-    57: .same(proto: "kArabianAbjadRightParenKind"),
-    58: .same(proto: "kHebrewAlphaDecimalKind"),
-    59: .same(proto: "kHebrewAlphaDoubleParenKind"),
-    60: .same(proto: "kHebrewAlphaRightParenKind"),
-    61: .same(proto: "kHebrewBiblicalStandardKind"),
-    62: .same(proto: "kHebrewBiblicalDecimalKind"),
-    63: .same(proto: "kHebrewBiblicalDoubleParenKind"),
-    64: .same(proto: "kHebrewBiblicalRightParenKind"),
-  ]
+nonisolated extension TSWP_ListStyleArchive.NumberType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kNumericDecimal\0\u{1}kNumericDoubleParen\0\u{1}kNumericRightParen\0\u{1}kRomanUpperDecimal\0\u{1}kRomanUpperDoubleParen\0\u{1}kRomanUpperRightParen\0\u{1}kRomanLowerDecimal\0\u{1}kRomanLowerDoubleParen\0\u{1}kRomanLowerRightParen\0\u{1}kAlphaUpperDecimal\0\u{1}kAlphaUpperDoubleParen\0\u{1}kAlphaUpperRightParen\0\u{1}kAlphaLowerDecimal\0\u{1}kAlphaLowerDoubleParen\0\u{1}kAlphaLowerRightParen\0\u{1}kIdeographicJapaneseDecimalKind\0\u{1}kIdeographicJapaneseDoubleParenKind\0\u{1}kIdeographicJapaneseRightParenKind\0\u{1}kHiraganaDecimalKind\0\u{1}kHiraganaDoubleParenKind\0\u{1}kHiraganaRightParenKind\0\u{1}kKatakanaDecimalKind\0\u{1}kKatakanaDoubleParenKind\0\u{1}kKatakanaRightParenKind\0\u{1}kHiraganaIrohaDecimalKind\0\u{1}kHiraganaIrohaDoubleParenKind\0\u{1}kHiraganaIrohaRightParenKind\0\u{1}kKatakanaIrohaDecimalKind\0\u{1}kKatakanaIrohaDoubleParenKind\0\u{1}kKatakanaIrohaRightParenKind\0\u{1}kIdeographicSimplifiedChineseDecimalKind\0\u{1}kIdeographicSimplifiedChineseDoubleParenKind\0\u{1}kIdeographicSimplifiedChineseRightParenKind\0\u{1}kIdeographicTraditionalChineseDecimalKind\0\u{1}kIdeographicTraditionalChineseDoubleParenKind\0\u{1}kIdeographicTraditionalChineseRightParenKind\0\u{1}kIdeographicFormalJapaneseDecimalKind\0\u{1}kIdeographicFormalJapaneseDoubleParenKind\0\u{1}kIdeographicFormalJapaneseRightParenKind\0\u{1}kIdeographicFormalSimplifiedChineseDecimalKind\0\u{1}kIdeographicFormalSimplifiedChineseDoubleParenKind\0\u{1}kIdeographicFormalSimplifiedChineseRightParenKind\0\u{1}kIdeographicFormalTraditionalChineseDecimalKind\0\u{1}kIdeographicFormalTraditionalChineseDoubleParenKind\0\u{1}kIdeographicFormalTraditionalChineseRightParenKind\0\u{1}kKoreanAlphabetDecimalKind\0\u{1}kKoreanAlphabetDoubleParenKind\0\u{1}kKoreanAlphabetRightParenKind\0\u{1}kCircledNumberKind\0\u{1}kArabianNumericDecimalKind\0\u{1}kArabianNumericDoubleParenKind\0\u{1}kArabianNumericRightParenKind\0\u{1}kArabianAlphaDecimalKind\0\u{1}kArabianAlphaDoubleParenKind\0\u{1}kArabianAlphaRightParenKind\0\u{1}kArabianAbjadDecimalKind\0\u{1}kArabianAbjadDoubleParenKind\0\u{1}kArabianAbjadRightParenKind\0\u{1}kHebrewAlphaDecimalKind\0\u{1}kHebrewAlphaDoubleParenKind\0\u{1}kHebrewAlphaRightParenKind\0\u{1}kHebrewBiblicalStandardKind\0\u{1}kHebrewBiblicalDecimalKind\0\u{1}kHebrewBiblicalDoubleParenKind\0\u{1}kHebrewBiblicalRightParenKind\0")
 }
 
-extension TSWP_ListStyleArchive.LabelGeometry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ListStyleArchive.LabelGeometry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_ListStyleArchive.protoMessageName + ".LabelGeometry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "scale"),
-    2: .standard(proto: "baseline_offset"),
-    3: .standard(proto: "scale_with_text"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}scale\0\u{3}baseline_offset\0\u{3}scale_with_text\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -9013,13 +7904,9 @@ extension TSWP_ListStyleArchive.LabelGeometry: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSWP_ListStyleArchive.LabelImage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ListStyleArchive.LabelImage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_ListStyleArchive.protoMessageName + ".LabelImage"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    3: .same(proto: "image"),
-    2: .standard(proto: "image_null"),
-    1: .standard(proto: "database_image"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}database_image\0\u{3}image_null\0\u{1}image\0")
 
   public var isInitialized: Bool {
     if let v = self._image, !v.isInitialized {return false}
@@ -9067,13 +7954,9 @@ extension TSWP_ListStyleArchive.LabelImage: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSWP_TextStylePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TextStylePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TextStylePresetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "preset_identifier"),
-    2: .standard(proto: "paragraph_style"),
-    3: .standard(proto: "list_style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}preset_identifier\0\u{3}paragraph_style\0\u{3}list_style\0")
 
   public var isInitialized: Bool {
     if let v = self._paragraphStyle, !v.isInitialized {return false}
@@ -9121,12 +8004,9 @@ extension TSWP_TextStylePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSWP_ColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ColumnsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "equal_columns"),
-    2: .standard(proto: "non_equal_columns"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}equal_columns\0\u{3}non_equal_columns\0")
 
   public var isInitialized: Bool {
     if let v = self._nonEqualColumns, !v.isInitialized {return false}
@@ -9168,12 +8048,9 @@ extension TSWP_ColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSWP_ColumnsArchive.EqualColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ColumnsArchive.EqualColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_ColumnsArchive.protoMessageName + ".EqualColumnsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "count"),
-    2: .same(proto: "gap"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}count\0\u{1}gap\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -9210,12 +8087,9 @@ extension TSWP_ColumnsArchive.EqualColumnsArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSWP_ColumnsArchive.NonEqualColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ColumnsArchive.NonEqualColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_ColumnsArchive.protoMessageName + ".NonEqualColumnsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "first"),
-    2: .same(proto: "following"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}first\0\u{1}following\0")
 
   public var isInitialized: Bool {
     if self._first == nil {return false}
@@ -9258,12 +8132,9 @@ extension TSWP_ColumnsArchive.NonEqualColumnsArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSWP_ColumnsArchive.NonEqualColumnsArchive.GapWidthArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ColumnsArchive.NonEqualColumnsArchive.GapWidthArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_ColumnsArchive.NonEqualColumnsArchive.protoMessageName + ".GapWidthArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "gap"),
-    2: .same(proto: "width"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}gap\0\u{1}width\0")
 
   public var isInitialized: Bool {
     if self._gap == nil {return false}
@@ -9306,14 +8177,9 @@ extension TSWP_ColumnsArchive.NonEqualColumnsArchive.GapWidthArchive: SwiftProto
   }
 }
 
-extension TSWP_PaddingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_PaddingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PaddingArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "left"),
-    2: .same(proto: "top"),
-    3: .same(proto: "right"),
-    4: .same(proto: "bottom"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}left\0\u{1}top\0\u{1}right\0\u{1}bottom\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -9360,22 +8226,9 @@ extension TSWP_PaddingArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSWP_ColumnStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ColumnStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ColumnStylePropertiesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "continuous"),
-    2: .standard(proto: "shrink_to_fit"),
-    3: .standard(proto: "vertical_text"),
-    4: .standard(proto: "min_horizontal_inset"),
-    5: .standard(proto: "vertical_alignment"),
-    6: .standard(proto: "columns_null"),
-    7: .same(proto: "columns"),
-    8: .standard(proto: "margins_null"),
-    9: .same(proto: "margins"),
-    10: .standard(proto: "padding_null"),
-    11: .same(proto: "padding"),
-    12: .standard(proto: "writing_direction"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}continuous\0\u{3}shrink_to_fit\0\u{3}vertical_text\0\u{3}min_horizontal_inset\0\u{3}vertical_alignment\0\u{3}columns_null\0\u{1}columns\0\u{3}margins_null\0\u{1}margins\0\u{3}padding_null\0\u{1}padding\0\u{3}writing_direction\0")
 
   fileprivate class _StorageClass {
     var _continuous: Bool? = nil
@@ -9391,15 +8244,11 @@ extension TSWP_ColumnStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobu
     var _padding: TSWP_PaddingArchive? = nil
     var _writingDirection: TSWP_WritingDirectionType? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -9531,22 +8380,13 @@ extension TSWP_ColumnStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSWP_ColumnStylePropertiesArchive.VerticalAlignmentType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kFrameAlignTop"),
-    1: .same(proto: "kFrameAlignMiddle"),
-    2: .same(proto: "kFrameAlignBottom"),
-    3: .same(proto: "kFrameAlignJustify"),
-  ]
+nonisolated extension TSWP_ColumnStylePropertiesArchive.VerticalAlignmentType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kFrameAlignTop\0\u{1}kFrameAlignMiddle\0\u{1}kFrameAlignBottom\0\u{1}kFrameAlignJustify\0")
 }
 
-extension TSWP_ColumnStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ColumnStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ColumnStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    10: .standard(proto: "override_count"),
-    11: .standard(proto: "column_properties"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{9}override_count\0\u{3}column_properties\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -9595,21 +8435,9 @@ extension TSWP_ColumnStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSWP_ShapeStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ShapeStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ShapeStylePropertiesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "shrink_to_fit"),
-    2: .standard(proto: "vertical_alignment"),
-    3: .standard(proto: "columns_null"),
-    4: .same(proto: "columns"),
-    5: .standard(proto: "padding_null"),
-    6: .same(proto: "padding"),
-    7: .standard(proto: "default_text_preset_index"),
-    8: .standard(proto: "vertical_text"),
-    9: .standard(proto: "paragraph_style_null"),
-    10: .standard(proto: "paragraph_style"),
-    11: .standard(proto: "vertical_text_40"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}shrink_to_fit\0\u{3}vertical_alignment\0\u{3}columns_null\0\u{1}columns\0\u{3}padding_null\0\u{1}padding\0\u{3}default_text_preset_index\0\u{3}vertical_text\0\u{3}paragraph_style_null\0\u{3}paragraph_style\0\u{3}vertical_text_40\0")
 
   fileprivate class _StorageClass {
     var _shrinkToFit: Bool? = nil
@@ -9624,15 +8452,11 @@ extension TSWP_ShapeStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf
     var _paragraphStyle: TSP_Reference? = nil
     var _verticalText40: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -9759,22 +8583,13 @@ extension TSWP_ShapeStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSWP_ShapeStylePropertiesArchive.VerticalAlignmentType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kFrameAlignTop"),
-    1: .same(proto: "kFrameAlignMiddle"),
-    2: .same(proto: "kFrameAlignBottom"),
-    3: .same(proto: "kFrameAlignJustify"),
-  ]
+nonisolated extension TSWP_ShapeStylePropertiesArchive.VerticalAlignmentType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kFrameAlignTop\0\u{1}kFrameAlignMiddle\0\u{1}kFrameAlignBottom\0\u{1}kFrameAlignJustify\0")
 }
 
-extension TSWP_ShapeStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ShapeStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ShapeStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    10: .standard(proto: "override_count"),
-    11: .standard(proto: "shape_properties"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{9}override_count\0\u{3}shape_properties\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -9823,18 +8638,9 @@ extension TSWP_ShapeStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSWP_ThemePresetsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ThemePresetsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ThemePresetsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "list_style_presets"),
-    2: .standard(proto: "text_style_presets"),
-    3: .standard(proto: "imported_text_style_presets"),
-    4: .standard(proto: "toc_entry_style_presets"),
-    5: .standard(proto: "toc_settings_presets"),
-    6: .standard(proto: "character_style_presets"),
-    7: .standard(proto: "paragraph_style_presets"),
-    8: .standard(proto: "dropcap_style_presets"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}list_style_presets\0\u{3}text_style_presets\0\u{3}imported_text_style_presets\0\u{3}toc_entry_style_presets\0\u{3}toc_settings_presets\0\u{3}character_style_presets\0\u{3}paragraph_style_presets\0\u{3}dropcap_style_presets\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.listStylePresets) {return false}
@@ -9909,12 +8715,9 @@ extension TSWP_ThemePresetsArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSWP_TextPresetDisplayItemArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TextPresetDisplayItemArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TextPresetDisplayItemArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "preset"),
-    2: .standard(proto: "display_name"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}preset\0\u{3}display_name\0")
 
   public var isInitialized: Bool {
     if self._preset == nil {return false}
@@ -9958,13 +8761,9 @@ extension TSWP_TextPresetDisplayItemArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSWP_TOCEntryStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TOCEntryStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TOCEntryStylePropertiesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "page_number_style_null"),
-    2: .standard(proto: "page_number_style"),
-    3: .standard(proto: "show_page_number"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}page_number_style_null\0\u{3}page_number_style\0\u{3}show_page_number\0")
 
   public var isInitialized: Bool {
     if let v = self._pageNumberStyle, !v.isInitialized {return false}
@@ -10011,26 +8810,19 @@ extension TSWP_TOCEntryStylePropertiesArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSWP_TOCEntryStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TOCEntryStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TOCEntryStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "toc_properties"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}toc_properties\0")
 
   fileprivate class _StorageClass {
     var _super: TSWP_ParagraphStyleArchive? = nil
     var _tocProperties: TSWP_TOCEntryStylePropertiesArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -10104,13 +8896,9 @@ extension TSWP_TOCEntryStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSWP_TOCSettingsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TOCSettingsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TOCSettingsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "toc_name"),
-    2: .standard(proto: "toc_scope"),
-    3: .same(proto: "entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}toc_name\0\u{3}toc_scope\0\u{1}entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.entries) {return false}
@@ -10157,13 +8945,9 @@ extension TSWP_TOCSettingsArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSWP_TOCSettingsArchive.TOCEntryData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TOCSettingsArchive.TOCEntryData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_TOCSettingsArchive.protoMessageName + ".TOCEntryData"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "paragraph_style"),
-    2: .standard(proto: "toc_entry_style"),
-    3: .standard(proto: "show_in_toc"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}paragraph_style\0\u{3}toc_entry_style\0\u{3}show_in_toc\0")
 
   public var isInitialized: Bool {
     if let v = self._paragraphStyle, !v.isInitialized {return false}
@@ -10211,19 +8995,9 @@ extension TSWP_TOCSettingsArchive.TOCEntryData: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSWP_TOCEntryInstanceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TOCEntryInstanceArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TOCEntryInstanceArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "paragraph_index"),
-    2: .standard(proto: "page_number"),
-    3: .standard(proto: "number_format"),
-    4: .same(proto: "heading"),
-    5: .standard(proto: "indexed_style"),
-    6: .standard(proto: "indexed_list_style"),
-    7: .standard(proto: "indexed_list_start"),
-    8: .standard(proto: "indexed_paragraph_level"),
-    9: .standard(proto: "number_format_name"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}paragraph_index\0\u{3}page_number\0\u{3}number_format\0\u{1}heading\0\u{3}indexed_style\0\u{3}indexed_list_style\0\u{3}indexed_list_start\0\u{3}indexed_paragraph_level\0\u{3}number_format_name\0")
 
   public var isInitialized: Bool {
     if self._paragraphIndex == nil {return false}
@@ -10306,14 +9080,9 @@ extension TSWP_TOCEntryInstanceArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSWP_UndoTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UndoTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "entries"),
-    2: .standard(proto: "group_entries"),
-    3: .same(proto: "flags"),
-    4: .same(proto: "version"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}entries\0\u{3}group_entries\0\u{1}flags\0\u{1}version\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.entries) {return false}
@@ -10366,44 +9135,21 @@ extension TSWP_UndoTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSWP_UndoTransaction.UndoKind: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "REPLACE_TEXT"),
-    2: .same(proto: "INSERT_ATTRIBUTE"),
-    3: .same(proto: "DELETE_ATTRIBUTE"),
-    4: .same(proto: "ADJUST_CHAR_INDEXES"),
-    5: .same(proto: "COMPR_ADJUST_CHAR_INDEXES"),
-    6: .same(proto: "REPLACE_CHAR_INDEX"),
-    7: .same(proto: "REPLACE_OBJECT"),
-    8: .same(proto: "REPLACE_PARAGRAPH_DATA"),
-    9: .same(proto: "OBJECT_DOLC"),
-    10: .same(proto: "CT_DATE"),
-  ]
+nonisolated extension TSWP_UndoTransaction.UndoKind: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}REPLACE_TEXT\0\u{1}INSERT_ATTRIBUTE\0\u{1}DELETE_ATTRIBUTE\0\u{1}ADJUST_CHAR_INDEXES\0\u{1}COMPR_ADJUST_CHAR_INDEXES\0\u{1}REPLACE_CHAR_INDEX\0\u{1}REPLACE_OBJECT\0\u{1}REPLACE_PARAGRAPH_DATA\0\u{1}OBJECT_DOLC\0\u{1}CT_DATE\0")
 }
 
-extension TSWP_UndoTransaction.ActionKind: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "ACTION_UNDEFINED"),
-    1: .same(proto: "ACTION_TEXT"),
-    2: .same(proto: "ACTION_ATTRIBUTE"),
-  ]
+nonisolated extension TSWP_UndoTransaction.ActionKind: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0ACTION_UNDEFINED\0\u{1}ACTION_TEXT\0\u{1}ACTION_ATTRIBUTE\0")
 }
 
-extension TSWP_UndoTransaction.ActionGroupKind: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "ACTION_GROUP_UNDEFINED"),
-    1: .same(proto: "ACTION_GROUP_TEXT"),
-    2: .same(proto: "ACTION_GROUP_ATTRIBUTE"),
-  ]
+nonisolated extension TSWP_UndoTransaction.ActionGroupKind: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0ACTION_GROUP_UNDEFINED\0\u{1}ACTION_GROUP_TEXT\0\u{1}ACTION_GROUP_ATTRIBUTE\0")
 }
 
-extension TSWP_UndoTransaction.GenericTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.GenericTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".GenericTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "value1"),
-    2: .same(proto: "value2"),
-    3: .same(proto: "value3"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}value1\0\u{1}value2\0\u{1}value3\0")
 
   public var isInitialized: Bool {
     if self._value1 == nil {return false}
@@ -10452,13 +9198,9 @@ extension TSWP_UndoTransaction.GenericTransaction: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSWP_UndoTransaction.TextTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.TextTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".TextTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "insert_location"),
-    2: .standard(proto: "insert_length"),
-    3: .standard(proto: "string_to_delete"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}insert_location\0\u{3}insert_length\0\u{3}string_to_delete\0")
 
   public var isInitialized: Bool {
     if self._insertLocation == nil {return false}
@@ -10506,13 +9248,9 @@ extension TSWP_UndoTransaction.TextTransaction: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSWP_UndoTransaction.CharIndexTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.CharIndexTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".CharIndexTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "char_index"),
-    2: .same(proto: "count"),
-    3: .same(proto: "object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}char_index\0\u{1}count\0\u{1}object\0")
 
   public var isInitialized: Bool {
     if self._charIndex == nil {return false}
@@ -10561,12 +9299,9 @@ extension TSWP_UndoTransaction.CharIndexTransaction: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSWP_UndoTransaction.ReplaceCharIndexTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.ReplaceCharIndexTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".ReplaceCharIndexTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "attribute_index"),
-    2: .standard(proto: "char_index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}attribute_index\0\u{3}char_index\0")
 
   public var isInitialized: Bool {
     if self._attributeIndex == nil {return false}
@@ -10609,14 +9344,9 @@ extension TSWP_UndoTransaction.ReplaceCharIndexTransaction: SwiftProtobuf.Messag
   }
 }
 
-extension TSWP_UndoTransaction.AttributeIndexTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.AttributeIndexTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".AttributeIndexTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "attribute_index"),
-    2: .standard(proto: "char_index"),
-    3: .same(proto: "object"),
-    4: .same(proto: "string"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}attribute_index\0\u{3}char_index\0\u{1}object\0\u{1}string\0")
 
   public var isInitialized: Bool {
     if self._attributeIndex == nil {return false}
@@ -10670,14 +9400,9 @@ extension TSWP_UndoTransaction.AttributeIndexTransaction: SwiftProtobuf.Message,
   }
 }
 
-extension TSWP_UndoTransaction.InsertAttributeTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.InsertAttributeTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".InsertAttributeTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "attribute_index"),
-    2: .standard(proto: "attribute_count"),
-    3: .same(proto: "object"),
-    4: .same(proto: "string"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}attribute_index\0\u{3}attribute_count\0\u{1}object\0\u{1}string\0")
 
   public var isInitialized: Bool {
     if self._attributeIndex == nil {return false}
@@ -10731,12 +9456,9 @@ extension TSWP_UndoTransaction.InsertAttributeTransaction: SwiftProtobuf.Message
   }
 }
 
-extension TSWP_UndoTransaction.InsertNilTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.InsertNilTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".InsertNilTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "attribute_index"),
-    2: .standard(proto: "attribute_count"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}attribute_index\0\u{3}attribute_count\0")
 
   public var isInitialized: Bool {
     if self._attributeIndex == nil {return false}
@@ -10779,13 +9501,9 @@ extension TSWP_UndoTransaction.InsertNilTransaction: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSWP_UndoTransaction.CharDeltaTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.CharDeltaTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".CharDeltaTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "char_index"),
-    2: .standard(proto: "attribute_index"),
-    3: .standard(proto: "char_delta"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}char_index\0\u{3}attribute_index\0\u{3}char_delta\0")
 
   public var isInitialized: Bool {
     if self._charIndex == nil {return false}
@@ -10834,14 +9552,9 @@ extension TSWP_UndoTransaction.CharDeltaTransaction: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSWP_UndoTransaction.ParagraphDataTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.ParagraphDataTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".ParagraphDataTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "attribute_index"),
-    2: .same(proto: "first"),
-    3: .same(proto: "second"),
-    4: .standard(proto: "char_index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}attribute_index\0\u{1}first\0\u{1}second\0\u{3}char_index\0")
 
   public var isInitialized: Bool {
     if self._attributeIndex == nil {return false}
@@ -10896,12 +9609,9 @@ extension TSWP_UndoTransaction.ParagraphDataTransaction: SwiftProtobuf.Message, 
   }
 }
 
-extension TSWP_UndoTransaction.ObjectDOLCTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.ObjectDOLCTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".ObjectDOLCTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "flags"),
-    2: .same(proto: "object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}flags\0\u{1}object\0")
 
   public var isInitialized: Bool {
     if self._flags == nil {return false}
@@ -10944,12 +9654,9 @@ extension TSWP_UndoTransaction.ObjectDOLCTransaction: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSWP_UndoTransaction.CTDateTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.CTDateTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".CTDateTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "attribute_index"),
-    2: .same(proto: "date"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}attribute_index\0\u{1}date\0")
 
   public var isInitialized: Bool {
     if self._attributeIndex == nil {return false}
@@ -10992,23 +9699,9 @@ extension TSWP_UndoTransaction.CTDateTransaction: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSWP_UndoTransaction.UnionTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.UnionTransaction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".UnionTransaction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "kind"),
-    2: .same(proto: "table"),
-    5: .same(proto: "generic"),
-    6: .same(proto: "text"),
-    7: .standard(proto: "char_index"),
-    8: .standard(proto: "replace_char_index"),
-    9: .standard(proto: "attribute_index"),
-    10: .standard(proto: "insert_nil"),
-    11: .standard(proto: "insert_attribute"),
-    12: .standard(proto: "char_delta"),
-    13: .standard(proto: "paragraph_data"),
-    14: .standard(proto: "object_dolc"),
-    15: .standard(proto: "ct_date"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}kind\0\u{1}table\0\u{2}\u{3}generic\0\u{1}text\0\u{3}char_index\0\u{3}replace_char_index\0\u{3}attribute_index\0\u{3}insert_nil\0\u{3}insert_attribute\0\u{3}char_delta\0\u{3}paragraph_data\0\u{3}object_dolc\0\u{3}ct_date\0")
 
   fileprivate class _StorageClass {
     var _kind: TSWP_UndoTransaction.UndoKind? = nil
@@ -11025,15 +9718,11 @@ extension TSWP_UndoTransaction.UnionTransaction: SwiftProtobuf.Message, SwiftPro
     var _objectDolc: TSWP_UndoTransaction.ObjectDOLCTransaction? = nil
     var _ctDate: TSWP_UndoTransaction.CTDateTransaction? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -11182,23 +9871,9 @@ extension TSWP_UndoTransaction.UnionTransaction: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSWP_UndoTransaction.StorageAction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.StorageAction: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".StorageAction"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "kind"),
-    2: .same(proto: "flags"),
-    3: .same(proto: "table"),
-    4: .same(proto: "range"),
-    5: .same(proto: "string"),
-    6: .same(proto: "object"),
-    7: .same(proto: "date"),
-    8: .standard(proto: "paragraph_level"),
-    9: .standard(proto: "paragraph_flags"),
-    10: .standard(proto: "paragraph_value"),
-    11: .standard(proto: "placement_index"),
-    12: .standard(proto: "placement_uuid_path"),
-    13: .standard(proto: "undo_object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}kind\0\u{1}flags\0\u{1}table\0\u{1}range\0\u{1}string\0\u{1}object\0\u{1}date\0\u{3}paragraph_level\0\u{3}paragraph_flags\0\u{3}paragraph_value\0\u{3}placement_index\0\u{3}placement_uuid_path\0\u{3}undo_object\0")
 
   fileprivate class _StorageClass {
     var _kind: TSWP_UndoTransaction.ActionKind? = nil
@@ -11215,15 +9890,11 @@ extension TSWP_UndoTransaction.StorageAction: SwiftProtobuf.Message, SwiftProtob
     var _placementUuidPath: String? = nil
     var _undoObject: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -11365,14 +10036,9 @@ extension TSWP_UndoTransaction.StorageAction: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSWP_UndoTransaction.StorageActionGroup: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransaction.StorageActionGroup: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_UndoTransaction.protoMessageName + ".StorageActionGroup"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "kind"),
-    3: .standard(proto: "forward_actions"),
-    4: .standard(proto: "inverse_forward_actions"),
-    6: .standard(proto: "inverse_detail_actions"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}kind\0\u{4}\u{2}forward_actions\0\u{3}inverse_forward_actions\0\u{4}\u{2}inverse_detail_actions\0")
 
   public var isInitialized: Bool {
     if self._kind == nil {return false}
@@ -11427,11 +10093,9 @@ extension TSWP_UndoTransaction.StorageActionGroup: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSWP_UndoTransactionWrapperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UndoTransactionWrapperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UndoTransactionWrapperArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "undo_transaction"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}undo_transaction\0")
 
   public var isInitialized: Bool {
     if self._undoTransaction == nil {return false}
@@ -11469,15 +10133,9 @@ extension TSWP_UndoTransactionWrapperArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSWP_ShapeInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ShapeInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ShapeInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "deprecated_storage"),
-    3: .standard(proto: "text_flow"),
-    4: .standard(proto: "owned_storage"),
-    6: .standard(proto: "is_text_box"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}deprecated_storage\0\u{3}text_flow\0\u{3}owned_storage\0\u{4}\u{2}is_text_box\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -11538,12 +10196,9 @@ extension TSWP_ShapeInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSWP_CommentInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_CommentInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommentInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "comment_storage"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}comment_storage\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -11587,15 +10242,9 @@ extension TSWP_CommentInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSWP_TOCInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TOCInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TOCInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "toc_settings"),
-    3: .standard(proto: "toc_entry_data"),
-    4: .standard(proto: "page_number_ranges"),
-    5: .standard(proto: "sync_toc_settings_with_toc_navigator"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}toc_settings\0\u{3}toc_entry_data\0\u{3}page_number_ranges\0\u{3}sync_toc_settings_with_toc_navigator\0")
 
   fileprivate class _StorageClass {
     var _super: TSWP_ShapeInfoArchive? = nil
@@ -11604,15 +10253,11 @@ extension TSWP_TOCInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
     var _pageNumberRanges: [TSP_Range] = []
     var _syncTocSettingsWithTocNavigator: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -11706,11 +10351,9 @@ extension TSWP_TOCInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSWP_TOCLayoutHintArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TOCLayoutHintArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TOCLayoutHintArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "charRange"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}charRange\0")
 
   public var isInitialized: Bool {
     if self._charRange == nil {return false}
@@ -11748,7 +10391,7 @@ extension TSWP_TOCLayoutHintArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSWP_EquationInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_EquationInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".EquationInfoArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -11767,12 +10410,9 @@ extension TSWP_EquationInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSWP_TextualAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TextualAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TextualAttachmentArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "string_equivalent"),
-    2: .same(proto: "kind"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}string_equivalent\0\u{1}kind\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -11809,21 +10449,13 @@ extension TSWP_TextualAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSWP_TextualAttachmentArchive.Kind: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kKindPageNumber"),
-    1: .same(proto: "kKindPageCount"),
-    2: .same(proto: "kKindFootnoteMark"),
-  ]
+nonisolated extension TSWP_TextualAttachmentArchive.Kind: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kKindPageNumber\0\u{1}kKindPageCount\0\u{1}kKindFootnoteMark\0")
 }
 
-extension TSWP_TSWPTOCPageNumberAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TSWPTOCPageNumberAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TSWPTOCPageNumberAttachmentArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "page_number"),
-    3: .standard(proto: "bookmark_name"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}page_number\0\u{3}bookmark_name\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -11865,7 +10497,7 @@ extension TSWP_TSWPTOCPageNumberAttachmentArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSWP_UIGraphicalAttachment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UIGraphicalAttachment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UIGraphicalAttachment"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -11884,15 +10516,9 @@ extension TSWP_UIGraphicalAttachment: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSWP_DrawableAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_DrawableAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DrawableAttachmentArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "drawable"),
-    2: .standard(proto: "h_offset_type"),
-    3: .standard(proto: "h_offset"),
-    4: .standard(proto: "v_offset_type"),
-    5: .standard(proto: "v_offset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}drawable\0\u{3}h_offset_type\0\u{3}h_offset\0\u{3}v_offset_type\0\u{3}v_offset\0")
 
   public var isInitialized: Bool {
     if let v = self._drawable, !v.isInitialized {return false}
@@ -11949,11 +10575,9 @@ extension TSWP_DrawableAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSWP_TOCAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TOCAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TOCAttachmentArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -11991,13 +10615,9 @@ extension TSWP_TOCAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSWP_FootnoteReferenceAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_FootnoteReferenceAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FootnoteReferenceAttachmentArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "contained_storage"),
-    3: .standard(proto: "custom_mark_string"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}contained_storage\0\u{3}custom_mark_string\0")
 
   public var isInitialized: Bool {
     if let v = self._containedStorage, !v.isInitialized {return false}
@@ -12044,14 +10664,9 @@ extension TSWP_FootnoteReferenceAttachmentArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSWP_NumberAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_NumberAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".NumberAttachmentArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "number_format"),
-    3: .standard(proto: "string_value"),
-    4: .standard(proto: "number_format_name"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}number_format\0\u{3}string_value\0\u{3}number_format_name\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12098,11 +10713,9 @@ extension TSWP_NumberAttachmentArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSWP_SmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_SmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SmartFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "text_attribute_uuid_string"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}text_attribute_uuid_string\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12134,12 +10747,9 @@ extension TSWP_SmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSWP_HyperlinkFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_HyperlinkFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".HyperlinkFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "url_ref"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}url_ref\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12176,13 +10786,9 @@ extension TSWP_HyperlinkFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSWP_PlaceholderSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_PlaceholderSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PlaceholderSmartFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "localizable"),
-    3: .standard(proto: "script_tag"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}localizable\0\u{3}script_tag\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12224,13 +10830,9 @@ extension TSWP_PlaceholderSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSWP_UnsupportedHyperlinkFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_UnsupportedHyperlinkFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".UnsupportedHyperlinkFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "url_ref"),
-    3: .standard(proto: "url_original_ref"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}url_ref\0\u{3}url_original_ref\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12272,14 +10874,9 @@ extension TSWP_UnsupportedHyperlinkFieldArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSWP_BibliographySmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_BibliographySmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".BibliographySmartFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    3: .same(proto: "super"),
-    2: .standard(proto: "citation_records"),
-    4: .same(proto: "localizable"),
-    1: .standard(proto: "old_super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}old_super\0\u{3}citation_records\0\u{1}super\0\u{1}localizable\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.citationRecords) {return false}
@@ -12331,20 +10928,9 @@ extension TSWP_BibliographySmartFieldArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSWP_CitationRecordArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_CitationRecordArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CitationRecordArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "endnote_xml"),
-    2: .standard(proto: "hide_author_names"),
-    3: .standard(proto: "hide_year"),
-    4: .standard(proto: "page_range"),
-    5: .same(proto: "prefix"),
-    6: .same(proto: "suffix"),
-    7: .standard(proto: "authors_string"),
-    8: .same(proto: "title"),
-    9: .same(proto: "year"),
-    10: .same(proto: "type"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}endnote_xml\0\u{3}hide_author_names\0\u{3}hide_year\0\u{3}page_range\0\u{1}prefix\0\u{1}suffix\0\u{3}authors_string\0\u{1}title\0\u{1}year\0\u{1}type\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12421,14 +11007,9 @@ extension TSWP_CitationRecordArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSWP_CitationSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_CitationSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CitationSmartFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    3: .same(proto: "super"),
-    2: .standard(proto: "citation_records"),
-    4: .same(proto: "localizable"),
-    1: .standard(proto: "old_super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}old_super\0\u{3}citation_records\0\u{1}super\0\u{1}localizable\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.citationRecords) {return false}
@@ -12480,18 +11061,9 @@ extension TSWP_CitationSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSWP_DateTimeSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_DateTimeSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DateTimeSmartFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "format"),
-    3: .standard(proto: "locale_identifier"),
-    4: .standard(proto: "date_style"),
-    5: .standard(proto: "time_style"),
-    6: .standard(proto: "update_plan"),
-    7: .standard(proto: "needs_update"),
-    8: .same(proto: "date"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}format\0\u{3}locale_identifier\0\u{3}date_style\0\u{3}time_style\0\u{3}update_plan\0\u{3}needs_update\0\u{1}date\0")
 
   public var isInitialized: Bool {
     if let v = self._date, !v.isInitialized {return false}
@@ -12563,32 +11135,17 @@ extension TSWP_DateTimeSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSWP_DateTimeSmartFieldArchive.DateTimeUpdatePlan: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kDateTimeUpdatePlanNever"),
-    1: .same(proto: "kDateTimeUpdatePlanAuto"),
-    2: .same(proto: "kDateTimeUpdatePlanOnce"),
-  ]
+nonisolated extension TSWP_DateTimeSmartFieldArchive.DateTimeUpdatePlan: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kDateTimeUpdatePlanNever\0\u{1}kDateTimeUpdatePlanAuto\0\u{1}kDateTimeUpdatePlanOnce\0")
 }
 
-extension TSWP_DateTimeSmartFieldArchive.DateTimeFormatterStyle: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kDateTimeFormatterStyleNone"),
-    1: .same(proto: "kDateTimeFormatterStyleShort"),
-    2: .same(proto: "kDateTimeFormatterStyleMedium"),
-    3: .same(proto: "kDateTimeFormatterStyleLong"),
-    4: .same(proto: "kDateTimeFormatterStyleFull"),
-  ]
+nonisolated extension TSWP_DateTimeSmartFieldArchive.DateTimeFormatterStyle: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kDateTimeFormatterStyleNone\0\u{1}kDateTimeFormatterStyleShort\0\u{1}kDateTimeFormatterStyleMedium\0\u{1}kDateTimeFormatterStyleLong\0\u{1}kDateTimeFormatterStyleFull\0")
 }
 
-extension TSWP_BookmarkFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_BookmarkFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".BookmarkFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "name"),
-    3: .same(proto: "ranged"),
-    4: .same(proto: "hidden"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}name\0\u{1}ranged\0\u{1}hidden\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12635,12 +11192,9 @@ extension TSWP_BookmarkFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSWP_FilenameSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_FilenameSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FilenameSmartFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "display_flags"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}display_flags\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12677,14 +11231,9 @@ extension TSWP_FilenameSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSWP_MergeFieldTypeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_MergeFieldTypeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MergeFieldTypeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    2: .standard(proto: "contacts_property"),
-    3: .standard(proto: "contacts_key"),
-    4: .standard(proto: "contacts_label"),
-    5: .standard(proto: "table_key"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{4}\u{2}contacts_property\0\u{3}contacts_key\0\u{3}contacts_label\0\u{3}table_key\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12731,21 +11280,9 @@ extension TSWP_MergeFieldTypeArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSWP_MergeSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_MergeSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MergeSmartFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "contacts_property"),
-    3: .standard(proto: "contacts_key"),
-    4: .standard(proto: "contacts_label"),
-    5: .same(proto: "category"),
-    6: .standard(proto: "requires_following_whitespace"),
-    7: .same(proto: "whitespace"),
-    8: .same(proto: "guid"),
-    9: .standard(proto: "table_key"),
-    10: .standard(proto: "field_type"),
-    11: .standard(proto: "has_custom_text"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}contacts_property\0\u{3}contacts_key\0\u{3}contacts_label\0\u{1}category\0\u{3}requires_following_whitespace\0\u{1}whitespace\0\u{1}guid\0\u{3}table_key\0\u{3}field_type\0\u{3}has_custom_text\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12827,19 +11364,13 @@ extension TSWP_MergeSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSWP_MergeSmartFieldArchive.MergeCategory: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "kMergeCategoryTo"),
-    1: .same(proto: "kMergeCategoryFrom"),
-  ]
+nonisolated extension TSWP_MergeSmartFieldArchive.MergeCategory: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0kMergeCategoryTo\0\u{1}kMergeCategoryFrom\0")
 }
 
-extension TSWP_TOCSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TOCSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TOCSmartFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "toc_entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}toc_entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.tocEntries) {return false}
@@ -12881,13 +11412,9 @@ extension TSWP_TOCSmartFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSWP_TOCSmartFieldArchive.TOCEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TOCSmartFieldArchive.TOCEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSWP_TOCSmartFieldArchive.protoMessageName + ".TOCEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "bookmark_name"),
-    2: .standard(proto: "target_style"),
-    3: .same(proto: "range"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}bookmark_name\0\u{3}target_style\0\u{1}range\0")
 
   public var isInitialized: Bool {
     if let v = self._targetStyle, !v.isInitialized {return false}
@@ -12935,12 +11462,9 @@ extension TSWP_TOCSmartFieldArchive.TOCEntry: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSWP_RubyFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_RubyFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RubyFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "ruby_text"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}ruby_text\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -12977,11 +11501,9 @@ extension TSWP_RubyFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSWP_TateChuYokoFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_TateChuYokoFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TateChuYokoFieldArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -13013,14 +11535,9 @@ extension TSWP_TateChuYokoFieldArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSWP_ChangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ChangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChangeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "kind"),
-    2: .same(proto: "session"),
-    3: .same(proto: "date"),
-    4: .standard(proto: "text_attribute_uuid_string"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}kind\0\u{1}session\0\u{1}date\0\u{3}text_attribute_uuid_string\0")
 
   public var isInitialized: Bool {
     if let v = self._session, !v.isInitialized {return false}
@@ -13073,20 +11590,13 @@ extension TSWP_ChangeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
   }
 }
 
-extension TSWP_ChangeArchive.ChangeKind: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "kChangeKindInsertion"),
-    2: .same(proto: "kChangeKindDeletion"),
-  ]
+nonisolated extension TSWP_ChangeArchive.ChangeKind: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}kChangeKindInsertion\0\u{1}kChangeKindDeletion\0")
 }
 
-extension TSWP_ChangeSessionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_ChangeSessionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChangeSessionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "session_uid"),
-    2: .same(proto: "author"),
-    3: .same(proto: "date"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}session_uid\0\u{1}author\0\u{1}date\0")
 
   public var isInitialized: Bool {
     if let v = self._author, !v.isInitialized {return false}
@@ -13134,11 +11644,9 @@ extension TSWP_ChangeSessionArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSWP_SectionPlaceholderArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_SectionPlaceholderArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SectionPlaceholderArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "parent_storage"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}parent_storage\0")
 
   public var isInitialized: Bool {
     if let v = self._parentStorage, !v.isInitialized {return false}
@@ -13175,7 +11683,7 @@ extension TSWP_SectionPlaceholderArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSWP_HyperlinkSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_HyperlinkSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".HyperlinkSelectionArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -13194,7 +11702,7 @@ extension TSWP_HyperlinkSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSWP_DateTimeSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_DateTimeSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DateTimeSelectionArchive"
   public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
@@ -13213,13 +11721,9 @@ extension TSWP_DateTimeSelectionArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSWP_FlowInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_FlowInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FlowInfoArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "text_storage"),
-    2: .same(proto: "textboxes"),
-    3: .standard(proto: "user_interface_identifier"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}text_storage\0\u{1}textboxes\0\u{3}user_interface_identifier\0")
 
   public var isInitialized: Bool {
     if let v = self._textStorage, !v.isInitialized {return false}
@@ -13267,12 +11771,9 @@ extension TSWP_FlowInfoArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImp
   }
 }
 
-extension TSWP_FlowInfoContainerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_FlowInfoContainerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".FlowInfoContainerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "flow_infos"),
-    2: .standard(proto: "next_user_interface_identifier"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}flow_infos\0\u{3}next_user_interface_identifier\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.flowInfos) {return false}
@@ -13314,24 +11815,9 @@ extension TSWP_FlowInfoContainerArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSWP_DropCapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_DropCapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DropCapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .standard(proto: "number_of_lines"),
-    3: .standard(proto: "number_of_raised_lines"),
-    4: .standard(proto: "deprecated_outdent"),
-    11: .same(proto: "outdent"),
-    5: .standard(proto: "deprecated_padding"),
-    12: .same(proto: "padding"),
-    6: .standard(proto: "wrap_type"),
-    7: .standard(proto: "shape_enabled"),
-    8: .standard(proto: "deprecated_corner_radius"),
-    13: .standard(proto: "corner_radius"),
-    9: .standard(proto: "deprecated_character_scale"),
-    14: .standard(proto: "character_scale"),
-    10: .standard(proto: "number_of_characters"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}type\0\u{3}number_of_lines\0\u{3}number_of_raised_lines\0\u{3}deprecated_outdent\0\u{3}deprecated_padding\0\u{3}wrap_type\0\u{3}shape_enabled\0\u{3}deprecated_corner_radius\0\u{3}deprecated_character_scale\0\u{3}number_of_characters\0\u{1}outdent\0\u{1}padding\0\u{3}corner_radius\0\u{3}character_scale\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -13428,30 +11914,17 @@ extension TSWP_DropCapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSWP_DropCapArchive.DropCapType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "TSWPDropCapTypeText"),
-    1: .same(proto: "TSWPDropCapTypeShape"),
-    2: .same(proto: "TSWPDropCapTypeImage"),
-  ]
+nonisolated extension TSWP_DropCapArchive.DropCapType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0TSWPDropCapTypeText\0\u{1}TSWPDropCapTypeShape\0\u{1}TSWPDropCapTypeImage\0")
 }
 
-extension TSWP_DropCapArchive.DropCapWrapType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "TSWPDropCapWrapTypeRectangular"),
-    1: .same(proto: "TSWPDropCapWrapTypeContour"),
-    2: .same(proto: "TSWPDropCapWrapTypeNone"),
-  ]
+nonisolated extension TSWP_DropCapArchive.DropCapWrapType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0TSWPDropCapWrapTypeRectangular\0\u{1}TSWPDropCapWrapTypeContour\0\u{1}TSWPDropCapWrapTypeNone\0")
 }
 
-extension TSWP_DropCapStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_DropCapStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DropCapStylePropertiesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "drop_cap"),
-    3: .standard(proto: "drop_cap_shape_stroke"),
-    4: .standard(proto: "drop_cap_shape_fill_null"),
-    5: .standard(proto: "drop_cap_shape_fill"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}drop_cap\0\u{4}\u{2}drop_cap_shape_stroke\0\u{3}drop_cap_shape_fill_null\0\u{3}drop_cap_shape_fill\0")
 
   fileprivate class _StorageClass {
     var _dropCap: TSWP_DropCapArchive? = nil
@@ -13459,15 +11932,11 @@ extension TSWP_DropCapStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtob
     var _dropCapShapeFillNull: Bool? = nil
     var _dropCapShapeFill: TSD_FillArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -13552,14 +12021,9 @@ extension TSWP_DropCapStylePropertiesArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSWP_DropCapStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_DropCapStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DropCapStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    10: .standard(proto: "override_count"),
-    11: .standard(proto: "char_properties"),
-    12: .standard(proto: "drop_cap_properties"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{9}override_count\0\u{3}char_properties\0\u{3}drop_cap_properties\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -13614,11 +12078,9 @@ extension TSWP_DropCapStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSWP_CollaboratorTextCursorSubselectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSWP_CollaboratorTextCursorSubselectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CollaboratorTextCursorSubselectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "text_selection"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}text_selection\0")
 
   public var isInitialized: Bool {
     if let v = self._textSelection, !v.isInitialized {return false}

@@ -15,31 +15,31 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSTSOS_SpecSetTableStrokePresetListArchive: Sendable {
+public nonisolated struct TSTSOS_SpecSetTableStrokePresetListArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var tableStrokePresetList: TST_StrokePresetListArchive {
-    get {return _tableStrokePresetList ?? TST_StrokePresetListArchive()}
+    get {_tableStrokePresetList ?? TST_StrokePresetListArchive()}
     set {_tableStrokePresetList = newValue}
   }
   /// Returns true if `tableStrokePresetList` has been explicitly set.
-  public var hasTableStrokePresetList: Bool {return self._tableStrokePresetList != nil}
+  public var hasTableStrokePresetList: Bool {self._tableStrokePresetList != nil}
   /// Clears the value of `tableStrokePresetList`. Subsequent reads from it will return its default value.
   public mutating func clearTableStrokePresetList() {self._tableStrokePresetList = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -51,17 +51,17 @@ public struct TSTSOS_SpecSetTableStrokePresetListArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSTSOS_SpecTableStrokePresetListArchive: Sendable {
+public nonisolated struct TSTSOS_SpecTableStrokePresetListArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetTableStrokePresetList: TSTSOS_SpecSetTableStrokePresetListArchive {
-    get {return _specSetTableStrokePresetList ?? TSTSOS_SpecSetTableStrokePresetListArchive()}
+    get {_specSetTableStrokePresetList ?? TSTSOS_SpecSetTableStrokePresetListArchive()}
     set {_specSetTableStrokePresetList = newValue}
   }
   /// Returns true if `specSetTableStrokePresetList` has been explicitly set.
-  public var hasSpecSetTableStrokePresetList: Bool {return self._specSetTableStrokePresetList != nil}
+  public var hasSpecSetTableStrokePresetList: Bool {self._specSetTableStrokePresetList != nil}
   /// Clears the value of `specSetTableStrokePresetList`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetTableStrokePresetList() {self._specSetTableStrokePresetList = nil}
 
@@ -72,98 +72,98 @@ public struct TSTSOS_SpecTableStrokePresetListArchive: Sendable {
   fileprivate var _specSetTableStrokePresetList: TSTSOS_SpecSetTableStrokePresetListArchive? = nil
 }
 
-public struct TSTSOS_TableCellStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSTSOS_TableCellStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var textWrap: TSSSOS_SpecBoolArchive {
-    get {return _storage._textWrap ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._textWrap ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._textWrap = newValue}
   }
   /// Returns true if `textWrap` has been explicitly set.
-  public var hasTextWrap: Bool {return _storage._textWrap != nil}
+  public var hasTextWrap: Bool {_storage._textWrap != nil}
   /// Clears the value of `textWrap`. Subsequent reads from it will return its default value.
   public mutating func clearTextWrap() {_uniqueStorage()._textWrap = nil}
 
   public var textWrapUndefined: Bool {
-    get {return _storage._textWrapUndefined ?? false}
+    get {_storage._textWrapUndefined ?? false}
     set {_uniqueStorage()._textWrapUndefined = newValue}
   }
   /// Returns true if `textWrapUndefined` has been explicitly set.
-  public var hasTextWrapUndefined: Bool {return _storage._textWrapUndefined != nil}
+  public var hasTextWrapUndefined: Bool {_storage._textWrapUndefined != nil}
   /// Clears the value of `textWrapUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTextWrapUndefined() {_uniqueStorage()._textWrapUndefined = nil}
 
   public var type: TSSSOS_SpecIntegerArchive {
-    get {return _storage._type ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._type ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return _storage._type != nil}
+  public var hasType: Bool {_storage._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {_uniqueStorage()._type = nil}
 
   public var typeUndefined: Bool {
-    get {return _storage._typeUndefined ?? false}
+    get {_storage._typeUndefined ?? false}
     set {_uniqueStorage()._typeUndefined = newValue}
   }
   /// Returns true if `typeUndefined` has been explicitly set.
-  public var hasTypeUndefined: Bool {return _storage._typeUndefined != nil}
+  public var hasTypeUndefined: Bool {_storage._typeUndefined != nil}
   /// Clears the value of `typeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTypeUndefined() {_uniqueStorage()._typeUndefined = nil}
 
   public var fill: TSDSOS_SpecFillArchive {
-    get {return _storage._fill ?? TSDSOS_SpecFillArchive()}
+    get {_storage._fill ?? TSDSOS_SpecFillArchive()}
     set {_uniqueStorage()._fill = newValue}
   }
   /// Returns true if `fill` has been explicitly set.
-  public var hasFill: Bool {return _storage._fill != nil}
+  public var hasFill: Bool {_storage._fill != nil}
   /// Clears the value of `fill`. Subsequent reads from it will return its default value.
   public mutating func clearFill() {_uniqueStorage()._fill = nil}
 
   public var fillUndefined: Bool {
-    get {return _storage._fillUndefined ?? false}
+    get {_storage._fillUndefined ?? false}
     set {_uniqueStorage()._fillUndefined = newValue}
   }
   /// Returns true if `fillUndefined` has been explicitly set.
-  public var hasFillUndefined: Bool {return _storage._fillUndefined != nil}
+  public var hasFillUndefined: Bool {_storage._fillUndefined != nil}
   /// Clears the value of `fillUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFillUndefined() {_uniqueStorage()._fillUndefined = nil}
 
   public var verticalAlignment: TSSSOS_SpecIntegerArchive {
-    get {return _storage._verticalAlignment ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._verticalAlignment ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._verticalAlignment = newValue}
   }
   /// Returns true if `verticalAlignment` has been explicitly set.
-  public var hasVerticalAlignment: Bool {return _storage._verticalAlignment != nil}
+  public var hasVerticalAlignment: Bool {_storage._verticalAlignment != nil}
   /// Clears the value of `verticalAlignment`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalAlignment() {_uniqueStorage()._verticalAlignment = nil}
 
   public var verticalAlignmentUndefined: Bool {
-    get {return _storage._verticalAlignmentUndefined ?? false}
+    get {_storage._verticalAlignmentUndefined ?? false}
     set {_uniqueStorage()._verticalAlignmentUndefined = newValue}
   }
   /// Returns true if `verticalAlignmentUndefined` has been explicitly set.
-  public var hasVerticalAlignmentUndefined: Bool {return _storage._verticalAlignmentUndefined != nil}
+  public var hasVerticalAlignmentUndefined: Bool {_storage._verticalAlignmentUndefined != nil}
   /// Clears the value of `verticalAlignmentUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalAlignmentUndefined() {_uniqueStorage()._verticalAlignmentUndefined = nil}
 
   public var padding: TSWPSOS_SpecPaddingArchive {
-    get {return _storage._padding ?? TSWPSOS_SpecPaddingArchive()}
+    get {_storage._padding ?? TSWPSOS_SpecPaddingArchive()}
     set {_uniqueStorage()._padding = newValue}
   }
   /// Returns true if `padding` has been explicitly set.
-  public var hasPadding: Bool {return _storage._padding != nil}
+  public var hasPadding: Bool {_storage._padding != nil}
   /// Clears the value of `padding`. Subsequent reads from it will return its default value.
   public mutating func clearPadding() {_uniqueStorage()._padding = nil}
 
   public var paddingUndefined: Bool {
-    get {return _storage._paddingUndefined ?? false}
+    get {_storage._paddingUndefined ?? false}
     set {_uniqueStorage()._paddingUndefined = newValue}
   }
   /// Returns true if `paddingUndefined` has been explicitly set.
-  public var hasPaddingUndefined: Bool {return _storage._paddingUndefined != nil}
+  public var hasPaddingUndefined: Bool {_storage._paddingUndefined != nil}
   /// Clears the value of `paddingUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearPaddingUndefined() {_uniqueStorage()._paddingUndefined = nil}
 
@@ -174,1142 +174,1142 @@ public struct TSTSOS_TableCellStylePropertyChangeSetArchive: @unchecked Sendable
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSTSOS_TableStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSTSOS_TableStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var autoResize: TSSSOS_SpecBoolArchive {
-    get {return _storage._autoResize ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._autoResize ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._autoResize = newValue}
   }
   /// Returns true if `autoResize` has been explicitly set.
-  public var hasAutoResize: Bool {return _storage._autoResize != nil}
+  public var hasAutoResize: Bool {_storage._autoResize != nil}
   /// Clears the value of `autoResize`. Subsequent reads from it will return its default value.
   public mutating func clearAutoResize() {_uniqueStorage()._autoResize = nil}
 
   public var autoResizeUndefined: Bool {
-    get {return _storage._autoResizeUndefined ?? false}
+    get {_storage._autoResizeUndefined ?? false}
     set {_uniqueStorage()._autoResizeUndefined = newValue}
   }
   /// Returns true if `autoResizeUndefined` has been explicitly set.
-  public var hasAutoResizeUndefined: Bool {return _storage._autoResizeUndefined != nil}
+  public var hasAutoResizeUndefined: Bool {_storage._autoResizeUndefined != nil}
   /// Clears the value of `autoResizeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearAutoResizeUndefined() {_uniqueStorage()._autoResizeUndefined = nil}
 
   public var bandedRows: TSSSOS_SpecBoolArchive {
-    get {return _storage._bandedRows ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._bandedRows ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._bandedRows = newValue}
   }
   /// Returns true if `bandedRows` has been explicitly set.
-  public var hasBandedRows: Bool {return _storage._bandedRows != nil}
+  public var hasBandedRows: Bool {_storage._bandedRows != nil}
   /// Clears the value of `bandedRows`. Subsequent reads from it will return its default value.
   public mutating func clearBandedRows() {_uniqueStorage()._bandedRows = nil}
 
   public var bandedRowsUndefined: Bool {
-    get {return _storage._bandedRowsUndefined ?? false}
+    get {_storage._bandedRowsUndefined ?? false}
     set {_uniqueStorage()._bandedRowsUndefined = newValue}
   }
   /// Returns true if `bandedRowsUndefined` has been explicitly set.
-  public var hasBandedRowsUndefined: Bool {return _storage._bandedRowsUndefined != nil}
+  public var hasBandedRowsUndefined: Bool {_storage._bandedRowsUndefined != nil}
   /// Clears the value of `bandedRowsUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBandedRowsUndefined() {_uniqueStorage()._bandedRowsUndefined = nil}
 
   public var bandedCellFill: TSDSOS_SpecFillArchive {
-    get {return _storage._bandedCellFill ?? TSDSOS_SpecFillArchive()}
+    get {_storage._bandedCellFill ?? TSDSOS_SpecFillArchive()}
     set {_uniqueStorage()._bandedCellFill = newValue}
   }
   /// Returns true if `bandedCellFill` has been explicitly set.
-  public var hasBandedCellFill: Bool {return _storage._bandedCellFill != nil}
+  public var hasBandedCellFill: Bool {_storage._bandedCellFill != nil}
   /// Clears the value of `bandedCellFill`. Subsequent reads from it will return its default value.
   public mutating func clearBandedCellFill() {_uniqueStorage()._bandedCellFill = nil}
 
   public var bandedCellFillUndefined: Bool {
-    get {return _storage._bandedCellFillUndefined ?? false}
+    get {_storage._bandedCellFillUndefined ?? false}
     set {_uniqueStorage()._bandedCellFillUndefined = newValue}
   }
   /// Returns true if `bandedCellFillUndefined` has been explicitly set.
-  public var hasBandedCellFillUndefined: Bool {return _storage._bandedCellFillUndefined != nil}
+  public var hasBandedCellFillUndefined: Bool {_storage._bandedCellFillUndefined != nil}
   /// Clears the value of `bandedCellFillUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBandedCellFillUndefined() {_uniqueStorage()._bandedCellFillUndefined = nil}
 
   public var behavesLikeSpreadsheet: TSSSOS_SpecBoolArchive {
-    get {return _storage._behavesLikeSpreadsheet ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._behavesLikeSpreadsheet ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._behavesLikeSpreadsheet = newValue}
   }
   /// Returns true if `behavesLikeSpreadsheet` has been explicitly set.
-  public var hasBehavesLikeSpreadsheet: Bool {return _storage._behavesLikeSpreadsheet != nil}
+  public var hasBehavesLikeSpreadsheet: Bool {_storage._behavesLikeSpreadsheet != nil}
   /// Clears the value of `behavesLikeSpreadsheet`. Subsequent reads from it will return its default value.
   public mutating func clearBehavesLikeSpreadsheet() {_uniqueStorage()._behavesLikeSpreadsheet = nil}
 
   public var behavesLikeSpreadsheetUndefined: Bool {
-    get {return _storage._behavesLikeSpreadsheetUndefined ?? false}
+    get {_storage._behavesLikeSpreadsheetUndefined ?? false}
     set {_uniqueStorage()._behavesLikeSpreadsheetUndefined = newValue}
   }
   /// Returns true if `behavesLikeSpreadsheetUndefined` has been explicitly set.
-  public var hasBehavesLikeSpreadsheetUndefined: Bool {return _storage._behavesLikeSpreadsheetUndefined != nil}
+  public var hasBehavesLikeSpreadsheetUndefined: Bool {_storage._behavesLikeSpreadsheetUndefined != nil}
   /// Clears the value of `behavesLikeSpreadsheetUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBehavesLikeSpreadsheetUndefined() {_uniqueStorage()._behavesLikeSpreadsheetUndefined = nil}
 
   public var bodyHorizontalBorderStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._bodyHorizontalBorderStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._bodyHorizontalBorderStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._bodyHorizontalBorderStroke = newValue}
   }
   /// Returns true if `bodyHorizontalBorderStroke` has been explicitly set.
-  public var hasBodyHorizontalBorderStroke: Bool {return _storage._bodyHorizontalBorderStroke != nil}
+  public var hasBodyHorizontalBorderStroke: Bool {_storage._bodyHorizontalBorderStroke != nil}
   /// Clears the value of `bodyHorizontalBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearBodyHorizontalBorderStroke() {_uniqueStorage()._bodyHorizontalBorderStroke = nil}
 
   public var bodyHorizontalBorderStrokeUndefined: Bool {
-    get {return _storage._bodyHorizontalBorderStrokeUndefined ?? false}
+    get {_storage._bodyHorizontalBorderStrokeUndefined ?? false}
     set {_uniqueStorage()._bodyHorizontalBorderStrokeUndefined = newValue}
   }
   /// Returns true if `bodyHorizontalBorderStrokeUndefined` has been explicitly set.
-  public var hasBodyHorizontalBorderStrokeUndefined: Bool {return _storage._bodyHorizontalBorderStrokeUndefined != nil}
+  public var hasBodyHorizontalBorderStrokeUndefined: Bool {_storage._bodyHorizontalBorderStrokeUndefined != nil}
   /// Clears the value of `bodyHorizontalBorderStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBodyHorizontalBorderStrokeUndefined() {_uniqueStorage()._bodyHorizontalBorderStrokeUndefined = nil}
 
   public var bodyVerticalBorderStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._bodyVerticalBorderStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._bodyVerticalBorderStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._bodyVerticalBorderStroke = newValue}
   }
   /// Returns true if `bodyVerticalBorderStroke` has been explicitly set.
-  public var hasBodyVerticalBorderStroke: Bool {return _storage._bodyVerticalBorderStroke != nil}
+  public var hasBodyVerticalBorderStroke: Bool {_storage._bodyVerticalBorderStroke != nil}
   /// Clears the value of `bodyVerticalBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearBodyVerticalBorderStroke() {_uniqueStorage()._bodyVerticalBorderStroke = nil}
 
   public var bodyVerticalBorderStrokeUndefined: Bool {
-    get {return _storage._bodyVerticalBorderStrokeUndefined ?? false}
+    get {_storage._bodyVerticalBorderStrokeUndefined ?? false}
     set {_uniqueStorage()._bodyVerticalBorderStrokeUndefined = newValue}
   }
   /// Returns true if `bodyVerticalBorderStrokeUndefined` has been explicitly set.
-  public var hasBodyVerticalBorderStrokeUndefined: Bool {return _storage._bodyVerticalBorderStrokeUndefined != nil}
+  public var hasBodyVerticalBorderStrokeUndefined: Bool {_storage._bodyVerticalBorderStrokeUndefined != nil}
   /// Clears the value of `bodyVerticalBorderStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBodyVerticalBorderStrokeUndefined() {_uniqueStorage()._bodyVerticalBorderStrokeUndefined = nil}
 
   public var bodyHorizontalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._bodyHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._bodyHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._bodyHorizontalStroke = newValue}
   }
   /// Returns true if `bodyHorizontalStroke` has been explicitly set.
-  public var hasBodyHorizontalStroke: Bool {return _storage._bodyHorizontalStroke != nil}
+  public var hasBodyHorizontalStroke: Bool {_storage._bodyHorizontalStroke != nil}
   /// Clears the value of `bodyHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearBodyHorizontalStroke() {_uniqueStorage()._bodyHorizontalStroke = nil}
 
   public var bodyHorizontalStrokeUndefined: Bool {
-    get {return _storage._bodyHorizontalStrokeUndefined ?? false}
+    get {_storage._bodyHorizontalStrokeUndefined ?? false}
     set {_uniqueStorage()._bodyHorizontalStrokeUndefined = newValue}
   }
   /// Returns true if `bodyHorizontalStrokeUndefined` has been explicitly set.
-  public var hasBodyHorizontalStrokeUndefined: Bool {return _storage._bodyHorizontalStrokeUndefined != nil}
+  public var hasBodyHorizontalStrokeUndefined: Bool {_storage._bodyHorizontalStrokeUndefined != nil}
   /// Clears the value of `bodyHorizontalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBodyHorizontalStrokeUndefined() {_uniqueStorage()._bodyHorizontalStrokeUndefined = nil}
 
   public var bodyVerticalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._bodyVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._bodyVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._bodyVerticalStroke = newValue}
   }
   /// Returns true if `bodyVerticalStroke` has been explicitly set.
-  public var hasBodyVerticalStroke: Bool {return _storage._bodyVerticalStroke != nil}
+  public var hasBodyVerticalStroke: Bool {_storage._bodyVerticalStroke != nil}
   /// Clears the value of `bodyVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearBodyVerticalStroke() {_uniqueStorage()._bodyVerticalStroke = nil}
 
   public var bodyVerticalStrokeUndefined: Bool {
-    get {return _storage._bodyVerticalStrokeUndefined ?? false}
+    get {_storage._bodyVerticalStrokeUndefined ?? false}
     set {_uniqueStorage()._bodyVerticalStrokeUndefined = newValue}
   }
   /// Returns true if `bodyVerticalStrokeUndefined` has been explicitly set.
-  public var hasBodyVerticalStrokeUndefined: Bool {return _storage._bodyVerticalStrokeUndefined != nil}
+  public var hasBodyVerticalStrokeUndefined: Bool {_storage._bodyVerticalStrokeUndefined != nil}
   /// Clears the value of `bodyVerticalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBodyVerticalStrokeUndefined() {_uniqueStorage()._bodyVerticalStrokeUndefined = nil}
 
   public var headerColumnBorderStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerColumnBorderStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerColumnBorderStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerColumnBorderStroke = newValue}
   }
   /// Returns true if `headerColumnBorderStroke` has been explicitly set.
-  public var hasHeaderColumnBorderStroke: Bool {return _storage._headerColumnBorderStroke != nil}
+  public var hasHeaderColumnBorderStroke: Bool {_storage._headerColumnBorderStroke != nil}
   /// Clears the value of `headerColumnBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnBorderStroke() {_uniqueStorage()._headerColumnBorderStroke = nil}
 
   public var headerColumnBorderStrokeUndefined: Bool {
-    get {return _storage._headerColumnBorderStrokeUndefined ?? false}
+    get {_storage._headerColumnBorderStrokeUndefined ?? false}
     set {_uniqueStorage()._headerColumnBorderStrokeUndefined = newValue}
   }
   /// Returns true if `headerColumnBorderStrokeUndefined` has been explicitly set.
-  public var hasHeaderColumnBorderStrokeUndefined: Bool {return _storage._headerColumnBorderStrokeUndefined != nil}
+  public var hasHeaderColumnBorderStrokeUndefined: Bool {_storage._headerColumnBorderStrokeUndefined != nil}
   /// Clears the value of `headerColumnBorderStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnBorderStrokeUndefined() {_uniqueStorage()._headerColumnBorderStrokeUndefined = nil}
 
   public var headerColumnVerticalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerColumnVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerColumnVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerColumnVerticalStroke = newValue}
   }
   /// Returns true if `headerColumnVerticalStroke` has been explicitly set.
-  public var hasHeaderColumnVerticalStroke: Bool {return _storage._headerColumnVerticalStroke != nil}
+  public var hasHeaderColumnVerticalStroke: Bool {_storage._headerColumnVerticalStroke != nil}
   /// Clears the value of `headerColumnVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnVerticalStroke() {_uniqueStorage()._headerColumnVerticalStroke = nil}
 
   public var headerColumnVerticalStrokeUndefined: Bool {
-    get {return _storage._headerColumnVerticalStrokeUndefined ?? false}
+    get {_storage._headerColumnVerticalStrokeUndefined ?? false}
     set {_uniqueStorage()._headerColumnVerticalStrokeUndefined = newValue}
   }
   /// Returns true if `headerColumnVerticalStrokeUndefined` has been explicitly set.
-  public var hasHeaderColumnVerticalStrokeUndefined: Bool {return _storage._headerColumnVerticalStrokeUndefined != nil}
+  public var hasHeaderColumnVerticalStrokeUndefined: Bool {_storage._headerColumnVerticalStrokeUndefined != nil}
   /// Clears the value of `headerColumnVerticalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnVerticalStrokeUndefined() {_uniqueStorage()._headerColumnVerticalStrokeUndefined = nil}
 
   public var headerColumnHorizontalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerColumnHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerColumnHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerColumnHorizontalStroke = newValue}
   }
   /// Returns true if `headerColumnHorizontalStroke` has been explicitly set.
-  public var hasHeaderColumnHorizontalStroke: Bool {return _storage._headerColumnHorizontalStroke != nil}
+  public var hasHeaderColumnHorizontalStroke: Bool {_storage._headerColumnHorizontalStroke != nil}
   /// Clears the value of `headerColumnHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnHorizontalStroke() {_uniqueStorage()._headerColumnHorizontalStroke = nil}
 
   public var headerColumnHorizontalStrokeUndefined: Bool {
-    get {return _storage._headerColumnHorizontalStrokeUndefined ?? false}
+    get {_storage._headerColumnHorizontalStrokeUndefined ?? false}
     set {_uniqueStorage()._headerColumnHorizontalStrokeUndefined = newValue}
   }
   /// Returns true if `headerColumnHorizontalStrokeUndefined` has been explicitly set.
-  public var hasHeaderColumnHorizontalStrokeUndefined: Bool {return _storage._headerColumnHorizontalStrokeUndefined != nil}
+  public var hasHeaderColumnHorizontalStrokeUndefined: Bool {_storage._headerColumnHorizontalStrokeUndefined != nil}
   /// Clears the value of `headerColumnHorizontalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnHorizontalStrokeUndefined() {_uniqueStorage()._headerColumnHorizontalStrokeUndefined = nil}
 
   public var headerColumnSeparatorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerColumnSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerColumnSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerColumnSeparatorStroke = newValue}
   }
   /// Returns true if `headerColumnSeparatorStroke` has been explicitly set.
-  public var hasHeaderColumnSeparatorStroke: Bool {return _storage._headerColumnSeparatorStroke != nil}
+  public var hasHeaderColumnSeparatorStroke: Bool {_storage._headerColumnSeparatorStroke != nil}
   /// Clears the value of `headerColumnSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnSeparatorStroke() {_uniqueStorage()._headerColumnSeparatorStroke = nil}
 
   public var headerColumnSeparatorStrokeUndefined: Bool {
-    get {return _storage._headerColumnSeparatorStrokeUndefined ?? false}
+    get {_storage._headerColumnSeparatorStrokeUndefined ?? false}
     set {_uniqueStorage()._headerColumnSeparatorStrokeUndefined = newValue}
   }
   /// Returns true if `headerColumnSeparatorStrokeUndefined` has been explicitly set.
-  public var hasHeaderColumnSeparatorStrokeUndefined: Bool {return _storage._headerColumnSeparatorStrokeUndefined != nil}
+  public var hasHeaderColumnSeparatorStrokeUndefined: Bool {_storage._headerColumnSeparatorStrokeUndefined != nil}
   /// Clears the value of `headerColumnSeparatorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnSeparatorStrokeUndefined() {_uniqueStorage()._headerColumnSeparatorStrokeUndefined = nil}
 
   public var headerRowBorderStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerRowBorderStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerRowBorderStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerRowBorderStroke = newValue}
   }
   /// Returns true if `headerRowBorderStroke` has been explicitly set.
-  public var hasHeaderRowBorderStroke: Bool {return _storage._headerRowBorderStroke != nil}
+  public var hasHeaderRowBorderStroke: Bool {_storage._headerRowBorderStroke != nil}
   /// Clears the value of `headerRowBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowBorderStroke() {_uniqueStorage()._headerRowBorderStroke = nil}
 
   public var headerRowBorderStrokeUndefined: Bool {
-    get {return _storage._headerRowBorderStrokeUndefined ?? false}
+    get {_storage._headerRowBorderStrokeUndefined ?? false}
     set {_uniqueStorage()._headerRowBorderStrokeUndefined = newValue}
   }
   /// Returns true if `headerRowBorderStrokeUndefined` has been explicitly set.
-  public var hasHeaderRowBorderStrokeUndefined: Bool {return _storage._headerRowBorderStrokeUndefined != nil}
+  public var hasHeaderRowBorderStrokeUndefined: Bool {_storage._headerRowBorderStrokeUndefined != nil}
   /// Clears the value of `headerRowBorderStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowBorderStrokeUndefined() {_uniqueStorage()._headerRowBorderStrokeUndefined = nil}
 
   public var headerRowHorizontalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerRowHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerRowHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerRowHorizontalStroke = newValue}
   }
   /// Returns true if `headerRowHorizontalStroke` has been explicitly set.
-  public var hasHeaderRowHorizontalStroke: Bool {return _storage._headerRowHorizontalStroke != nil}
+  public var hasHeaderRowHorizontalStroke: Bool {_storage._headerRowHorizontalStroke != nil}
   /// Clears the value of `headerRowHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowHorizontalStroke() {_uniqueStorage()._headerRowHorizontalStroke = nil}
 
   public var headerRowHorizontalStrokeUndefined: Bool {
-    get {return _storage._headerRowHorizontalStrokeUndefined ?? false}
+    get {_storage._headerRowHorizontalStrokeUndefined ?? false}
     set {_uniqueStorage()._headerRowHorizontalStrokeUndefined = newValue}
   }
   /// Returns true if `headerRowHorizontalStrokeUndefined` has been explicitly set.
-  public var hasHeaderRowHorizontalStrokeUndefined: Bool {return _storage._headerRowHorizontalStrokeUndefined != nil}
+  public var hasHeaderRowHorizontalStrokeUndefined: Bool {_storage._headerRowHorizontalStrokeUndefined != nil}
   /// Clears the value of `headerRowHorizontalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowHorizontalStrokeUndefined() {_uniqueStorage()._headerRowHorizontalStrokeUndefined = nil}
 
   public var headerRowVerticalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerRowVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerRowVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerRowVerticalStroke = newValue}
   }
   /// Returns true if `headerRowVerticalStroke` has been explicitly set.
-  public var hasHeaderRowVerticalStroke: Bool {return _storage._headerRowVerticalStroke != nil}
+  public var hasHeaderRowVerticalStroke: Bool {_storage._headerRowVerticalStroke != nil}
   /// Clears the value of `headerRowVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowVerticalStroke() {_uniqueStorage()._headerRowVerticalStroke = nil}
 
   public var headerRowVerticalStrokeUndefined: Bool {
-    get {return _storage._headerRowVerticalStrokeUndefined ?? false}
+    get {_storage._headerRowVerticalStrokeUndefined ?? false}
     set {_uniqueStorage()._headerRowVerticalStrokeUndefined = newValue}
   }
   /// Returns true if `headerRowVerticalStrokeUndefined` has been explicitly set.
-  public var hasHeaderRowVerticalStrokeUndefined: Bool {return _storage._headerRowVerticalStrokeUndefined != nil}
+  public var hasHeaderRowVerticalStrokeUndefined: Bool {_storage._headerRowVerticalStrokeUndefined != nil}
   /// Clears the value of `headerRowVerticalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowVerticalStrokeUndefined() {_uniqueStorage()._headerRowVerticalStrokeUndefined = nil}
 
   public var headerRowSeparatorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerRowSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerRowSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerRowSeparatorStroke = newValue}
   }
   /// Returns true if `headerRowSeparatorStroke` has been explicitly set.
-  public var hasHeaderRowSeparatorStroke: Bool {return _storage._headerRowSeparatorStroke != nil}
+  public var hasHeaderRowSeparatorStroke: Bool {_storage._headerRowSeparatorStroke != nil}
   /// Clears the value of `headerRowSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowSeparatorStroke() {_uniqueStorage()._headerRowSeparatorStroke = nil}
 
   public var headerRowSeparatorStrokeUndefined: Bool {
-    get {return _storage._headerRowSeparatorStrokeUndefined ?? false}
+    get {_storage._headerRowSeparatorStrokeUndefined ?? false}
     set {_uniqueStorage()._headerRowSeparatorStrokeUndefined = newValue}
   }
   /// Returns true if `headerRowSeparatorStrokeUndefined` has been explicitly set.
-  public var hasHeaderRowSeparatorStrokeUndefined: Bool {return _storage._headerRowSeparatorStrokeUndefined != nil}
+  public var hasHeaderRowSeparatorStrokeUndefined: Bool {_storage._headerRowSeparatorStrokeUndefined != nil}
   /// Clears the value of `headerRowSeparatorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowSeparatorStrokeUndefined() {_uniqueStorage()._headerRowSeparatorStrokeUndefined = nil}
 
   public var footerRowBorderStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._footerRowBorderStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._footerRowBorderStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._footerRowBorderStroke = newValue}
   }
   /// Returns true if `footerRowBorderStroke` has been explicitly set.
-  public var hasFooterRowBorderStroke: Bool {return _storage._footerRowBorderStroke != nil}
+  public var hasFooterRowBorderStroke: Bool {_storage._footerRowBorderStroke != nil}
   /// Clears the value of `footerRowBorderStroke`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowBorderStroke() {_uniqueStorage()._footerRowBorderStroke = nil}
 
   public var footerRowBorderStrokeUndefined: Bool {
-    get {return _storage._footerRowBorderStrokeUndefined ?? false}
+    get {_storage._footerRowBorderStrokeUndefined ?? false}
     set {_uniqueStorage()._footerRowBorderStrokeUndefined = newValue}
   }
   /// Returns true if `footerRowBorderStrokeUndefined` has been explicitly set.
-  public var hasFooterRowBorderStrokeUndefined: Bool {return _storage._footerRowBorderStrokeUndefined != nil}
+  public var hasFooterRowBorderStrokeUndefined: Bool {_storage._footerRowBorderStrokeUndefined != nil}
   /// Clears the value of `footerRowBorderStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowBorderStrokeUndefined() {_uniqueStorage()._footerRowBorderStrokeUndefined = nil}
 
   public var footerRowHorizontalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._footerRowHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._footerRowHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._footerRowHorizontalStroke = newValue}
   }
   /// Returns true if `footerRowHorizontalStroke` has been explicitly set.
-  public var hasFooterRowHorizontalStroke: Bool {return _storage._footerRowHorizontalStroke != nil}
+  public var hasFooterRowHorizontalStroke: Bool {_storage._footerRowHorizontalStroke != nil}
   /// Clears the value of `footerRowHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowHorizontalStroke() {_uniqueStorage()._footerRowHorizontalStroke = nil}
 
   public var footerRowHorizontalStrokeUndefined: Bool {
-    get {return _storage._footerRowHorizontalStrokeUndefined ?? false}
+    get {_storage._footerRowHorizontalStrokeUndefined ?? false}
     set {_uniqueStorage()._footerRowHorizontalStrokeUndefined = newValue}
   }
   /// Returns true if `footerRowHorizontalStrokeUndefined` has been explicitly set.
-  public var hasFooterRowHorizontalStrokeUndefined: Bool {return _storage._footerRowHorizontalStrokeUndefined != nil}
+  public var hasFooterRowHorizontalStrokeUndefined: Bool {_storage._footerRowHorizontalStrokeUndefined != nil}
   /// Clears the value of `footerRowHorizontalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowHorizontalStrokeUndefined() {_uniqueStorage()._footerRowHorizontalStrokeUndefined = nil}
 
   public var footerRowVerticalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._footerRowVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._footerRowVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._footerRowVerticalStroke = newValue}
   }
   /// Returns true if `footerRowVerticalStroke` has been explicitly set.
-  public var hasFooterRowVerticalStroke: Bool {return _storage._footerRowVerticalStroke != nil}
+  public var hasFooterRowVerticalStroke: Bool {_storage._footerRowVerticalStroke != nil}
   /// Clears the value of `footerRowVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowVerticalStroke() {_uniqueStorage()._footerRowVerticalStroke = nil}
 
   public var footerRowVerticalStrokeUndefined: Bool {
-    get {return _storage._footerRowVerticalStrokeUndefined ?? false}
+    get {_storage._footerRowVerticalStrokeUndefined ?? false}
     set {_uniqueStorage()._footerRowVerticalStrokeUndefined = newValue}
   }
   /// Returns true if `footerRowVerticalStrokeUndefined` has been explicitly set.
-  public var hasFooterRowVerticalStrokeUndefined: Bool {return _storage._footerRowVerticalStrokeUndefined != nil}
+  public var hasFooterRowVerticalStrokeUndefined: Bool {_storage._footerRowVerticalStrokeUndefined != nil}
   /// Clears the value of `footerRowVerticalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowVerticalStrokeUndefined() {_uniqueStorage()._footerRowVerticalStrokeUndefined = nil}
 
   public var footerRowSeparatorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._footerRowSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._footerRowSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._footerRowSeparatorStroke = newValue}
   }
   /// Returns true if `footerRowSeparatorStroke` has been explicitly set.
-  public var hasFooterRowSeparatorStroke: Bool {return _storage._footerRowSeparatorStroke != nil}
+  public var hasFooterRowSeparatorStroke: Bool {_storage._footerRowSeparatorStroke != nil}
   /// Clears the value of `footerRowSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowSeparatorStroke() {_uniqueStorage()._footerRowSeparatorStroke = nil}
 
   public var footerRowSeparatorStrokeUndefined: Bool {
-    get {return _storage._footerRowSeparatorStrokeUndefined ?? false}
+    get {_storage._footerRowSeparatorStrokeUndefined ?? false}
     set {_uniqueStorage()._footerRowSeparatorStrokeUndefined = newValue}
   }
   /// Returns true if `footerRowSeparatorStrokeUndefined` has been explicitly set.
-  public var hasFooterRowSeparatorStrokeUndefined: Bool {return _storage._footerRowSeparatorStrokeUndefined != nil}
+  public var hasFooterRowSeparatorStrokeUndefined: Bool {_storage._footerRowSeparatorStrokeUndefined != nil}
   /// Clears the value of `footerRowSeparatorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowSeparatorStrokeUndefined() {_uniqueStorage()._footerRowSeparatorStrokeUndefined = nil}
 
   public var strokePresetListObject: TSTSOS_SpecTableStrokePresetListArchive {
-    get {return _storage._strokePresetListObject ?? TSTSOS_SpecTableStrokePresetListArchive()}
+    get {_storage._strokePresetListObject ?? TSTSOS_SpecTableStrokePresetListArchive()}
     set {_uniqueStorage()._strokePresetListObject = newValue}
   }
   /// Returns true if `strokePresetListObject` has been explicitly set.
-  public var hasStrokePresetListObject: Bool {return _storage._strokePresetListObject != nil}
+  public var hasStrokePresetListObject: Bool {_storage._strokePresetListObject != nil}
   /// Clears the value of `strokePresetListObject`. Subsequent reads from it will return its default value.
   public mutating func clearStrokePresetListObject() {_uniqueStorage()._strokePresetListObject = nil}
 
   public var strokePresetListObjectUndefined: Bool {
-    get {return _storage._strokePresetListObjectUndefined ?? false}
+    get {_storage._strokePresetListObjectUndefined ?? false}
     set {_uniqueStorage()._strokePresetListObjectUndefined = newValue}
   }
   /// Returns true if `strokePresetListObjectUndefined` has been explicitly set.
-  public var hasStrokePresetListObjectUndefined: Bool {return _storage._strokePresetListObjectUndefined != nil}
+  public var hasStrokePresetListObjectUndefined: Bool {_storage._strokePresetListObjectUndefined != nil}
   /// Clears the value of `strokePresetListObjectUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearStrokePresetListObjectUndefined() {_uniqueStorage()._strokePresetListObjectUndefined = nil}
 
   public var verticalStrokesVisible: TSSSOS_SpecBoolArchive {
-    get {return _storage._verticalStrokesVisible ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._verticalStrokesVisible ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._verticalStrokesVisible = newValue}
   }
   /// Returns true if `verticalStrokesVisible` has been explicitly set.
-  public var hasVerticalStrokesVisible: Bool {return _storage._verticalStrokesVisible != nil}
+  public var hasVerticalStrokesVisible: Bool {_storage._verticalStrokesVisible != nil}
   /// Clears the value of `verticalStrokesVisible`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalStrokesVisible() {_uniqueStorage()._verticalStrokesVisible = nil}
 
   public var verticalStrokesVisibleUndefined: Bool {
-    get {return _storage._verticalStrokesVisibleUndefined ?? false}
+    get {_storage._verticalStrokesVisibleUndefined ?? false}
     set {_uniqueStorage()._verticalStrokesVisibleUndefined = newValue}
   }
   /// Returns true if `verticalStrokesVisibleUndefined` has been explicitly set.
-  public var hasVerticalStrokesVisibleUndefined: Bool {return _storage._verticalStrokesVisibleUndefined != nil}
+  public var hasVerticalStrokesVisibleUndefined: Bool {_storage._verticalStrokesVisibleUndefined != nil}
   /// Clears the value of `verticalStrokesVisibleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearVerticalStrokesVisibleUndefined() {_uniqueStorage()._verticalStrokesVisibleUndefined = nil}
 
   public var horizontalStrokesVisible: TSSSOS_SpecBoolArchive {
-    get {return _storage._horizontalStrokesVisible ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._horizontalStrokesVisible ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._horizontalStrokesVisible = newValue}
   }
   /// Returns true if `horizontalStrokesVisible` has been explicitly set.
-  public var hasHorizontalStrokesVisible: Bool {return _storage._horizontalStrokesVisible != nil}
+  public var hasHorizontalStrokesVisible: Bool {_storage._horizontalStrokesVisible != nil}
   /// Clears the value of `horizontalStrokesVisible`. Subsequent reads from it will return its default value.
   public mutating func clearHorizontalStrokesVisible() {_uniqueStorage()._horizontalStrokesVisible = nil}
 
   public var horizontalStrokesVisibleUndefined: Bool {
-    get {return _storage._horizontalStrokesVisibleUndefined ?? false}
+    get {_storage._horizontalStrokesVisibleUndefined ?? false}
     set {_uniqueStorage()._horizontalStrokesVisibleUndefined = newValue}
   }
   /// Returns true if `horizontalStrokesVisibleUndefined` has been explicitly set.
-  public var hasHorizontalStrokesVisibleUndefined: Bool {return _storage._horizontalStrokesVisibleUndefined != nil}
+  public var hasHorizontalStrokesVisibleUndefined: Bool {_storage._horizontalStrokesVisibleUndefined != nil}
   /// Clears the value of `horizontalStrokesVisibleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHorizontalStrokesVisibleUndefined() {_uniqueStorage()._horizontalStrokesVisibleUndefined = nil}
 
   public var headerRowSepVisible: TSSSOS_SpecBoolArchive {
-    get {return _storage._headerRowSepVisible ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._headerRowSepVisible ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._headerRowSepVisible = newValue}
   }
   /// Returns true if `headerRowSepVisible` has been explicitly set.
-  public var hasHeaderRowSepVisible: Bool {return _storage._headerRowSepVisible != nil}
+  public var hasHeaderRowSepVisible: Bool {_storage._headerRowSepVisible != nil}
   /// Clears the value of `headerRowSepVisible`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowSepVisible() {_uniqueStorage()._headerRowSepVisible = nil}
 
   public var headerRowSepVisibleUndefined: Bool {
-    get {return _storage._headerRowSepVisibleUndefined ?? false}
+    get {_storage._headerRowSepVisibleUndefined ?? false}
     set {_uniqueStorage()._headerRowSepVisibleUndefined = newValue}
   }
   /// Returns true if `headerRowSepVisibleUndefined` has been explicitly set.
-  public var hasHeaderRowSepVisibleUndefined: Bool {return _storage._headerRowSepVisibleUndefined != nil}
+  public var hasHeaderRowSepVisibleUndefined: Bool {_storage._headerRowSepVisibleUndefined != nil}
   /// Clears the value of `headerRowSepVisibleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowSepVisibleUndefined() {_uniqueStorage()._headerRowSepVisibleUndefined = nil}
 
   public var headerRowVerticalsVisible: TSSSOS_SpecBoolArchive {
-    get {return _storage._headerRowVerticalsVisible ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._headerRowVerticalsVisible ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._headerRowVerticalsVisible = newValue}
   }
   /// Returns true if `headerRowVerticalsVisible` has been explicitly set.
-  public var hasHeaderRowVerticalsVisible: Bool {return _storage._headerRowVerticalsVisible != nil}
+  public var hasHeaderRowVerticalsVisible: Bool {_storage._headerRowVerticalsVisible != nil}
   /// Clears the value of `headerRowVerticalsVisible`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowVerticalsVisible() {_uniqueStorage()._headerRowVerticalsVisible = nil}
 
   public var headerRowVerticalsVisibleUndefined: Bool {
-    get {return _storage._headerRowVerticalsVisibleUndefined ?? false}
+    get {_storage._headerRowVerticalsVisibleUndefined ?? false}
     set {_uniqueStorage()._headerRowVerticalsVisibleUndefined = newValue}
   }
   /// Returns true if `headerRowVerticalsVisibleUndefined` has been explicitly set.
-  public var hasHeaderRowVerticalsVisibleUndefined: Bool {return _storage._headerRowVerticalsVisibleUndefined != nil}
+  public var hasHeaderRowVerticalsVisibleUndefined: Bool {_storage._headerRowVerticalsVisibleUndefined != nil}
   /// Clears the value of `headerRowVerticalsVisibleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowVerticalsVisibleUndefined() {_uniqueStorage()._headerRowVerticalsVisibleUndefined = nil}
 
   public var headerColSepVisible: TSSSOS_SpecBoolArchive {
-    get {return _storage._headerColSepVisible ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._headerColSepVisible ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._headerColSepVisible = newValue}
   }
   /// Returns true if `headerColSepVisible` has been explicitly set.
-  public var hasHeaderColSepVisible: Bool {return _storage._headerColSepVisible != nil}
+  public var hasHeaderColSepVisible: Bool {_storage._headerColSepVisible != nil}
   /// Clears the value of `headerColSepVisible`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColSepVisible() {_uniqueStorage()._headerColSepVisible = nil}
 
   public var headerColSepVisibleUndefined: Bool {
-    get {return _storage._headerColSepVisibleUndefined ?? false}
+    get {_storage._headerColSepVisibleUndefined ?? false}
     set {_uniqueStorage()._headerColSepVisibleUndefined = newValue}
   }
   /// Returns true if `headerColSepVisibleUndefined` has been explicitly set.
-  public var hasHeaderColSepVisibleUndefined: Bool {return _storage._headerColSepVisibleUndefined != nil}
+  public var hasHeaderColSepVisibleUndefined: Bool {_storage._headerColSepVisibleUndefined != nil}
   /// Clears the value of `headerColSepVisibleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColSepVisibleUndefined() {_uniqueStorage()._headerColSepVisibleUndefined = nil}
 
   public var headerColHorizontalsVisible: TSSSOS_SpecBoolArchive {
-    get {return _storage._headerColHorizontalsVisible ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._headerColHorizontalsVisible ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._headerColHorizontalsVisible = newValue}
   }
   /// Returns true if `headerColHorizontalsVisible` has been explicitly set.
-  public var hasHeaderColHorizontalsVisible: Bool {return _storage._headerColHorizontalsVisible != nil}
+  public var hasHeaderColHorizontalsVisible: Bool {_storage._headerColHorizontalsVisible != nil}
   /// Clears the value of `headerColHorizontalsVisible`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColHorizontalsVisible() {_uniqueStorage()._headerColHorizontalsVisible = nil}
 
   public var headerColHorizontalsVisibleUndefined: Bool {
-    get {return _storage._headerColHorizontalsVisibleUndefined ?? false}
+    get {_storage._headerColHorizontalsVisibleUndefined ?? false}
     set {_uniqueStorage()._headerColHorizontalsVisibleUndefined = newValue}
   }
   /// Returns true if `headerColHorizontalsVisibleUndefined` has been explicitly set.
-  public var hasHeaderColHorizontalsVisibleUndefined: Bool {return _storage._headerColHorizontalsVisibleUndefined != nil}
+  public var hasHeaderColHorizontalsVisibleUndefined: Bool {_storage._headerColHorizontalsVisibleUndefined != nil}
   /// Clears the value of `headerColHorizontalsVisibleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColHorizontalsVisibleUndefined() {_uniqueStorage()._headerColHorizontalsVisibleUndefined = nil}
 
   public var footerSepVisible: TSSSOS_SpecBoolArchive {
-    get {return _storage._footerSepVisible ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._footerSepVisible ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._footerSepVisible = newValue}
   }
   /// Returns true if `footerSepVisible` has been explicitly set.
-  public var hasFooterSepVisible: Bool {return _storage._footerSepVisible != nil}
+  public var hasFooterSepVisible: Bool {_storage._footerSepVisible != nil}
   /// Clears the value of `footerSepVisible`. Subsequent reads from it will return its default value.
   public mutating func clearFooterSepVisible() {_uniqueStorage()._footerSepVisible = nil}
 
   public var footerSepVisibleUndefined: Bool {
-    get {return _storage._footerSepVisibleUndefined ?? false}
+    get {_storage._footerSepVisibleUndefined ?? false}
     set {_uniqueStorage()._footerSepVisibleUndefined = newValue}
   }
   /// Returns true if `footerSepVisibleUndefined` has been explicitly set.
-  public var hasFooterSepVisibleUndefined: Bool {return _storage._footerSepVisibleUndefined != nil}
+  public var hasFooterSepVisibleUndefined: Bool {_storage._footerSepVisibleUndefined != nil}
   /// Clears the value of `footerSepVisibleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFooterSepVisibleUndefined() {_uniqueStorage()._footerSepVisibleUndefined = nil}
 
   public var footerVerticalsVisible: TSSSOS_SpecBoolArchive {
-    get {return _storage._footerVerticalsVisible ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._footerVerticalsVisible ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._footerVerticalsVisible = newValue}
   }
   /// Returns true if `footerVerticalsVisible` has been explicitly set.
-  public var hasFooterVerticalsVisible: Bool {return _storage._footerVerticalsVisible != nil}
+  public var hasFooterVerticalsVisible: Bool {_storage._footerVerticalsVisible != nil}
   /// Clears the value of `footerVerticalsVisible`. Subsequent reads from it will return its default value.
   public mutating func clearFooterVerticalsVisible() {_uniqueStorage()._footerVerticalsVisible = nil}
 
   public var footerVerticalsVisibleUndefined: Bool {
-    get {return _storage._footerVerticalsVisibleUndefined ?? false}
+    get {_storage._footerVerticalsVisibleUndefined ?? false}
     set {_uniqueStorage()._footerVerticalsVisibleUndefined = newValue}
   }
   /// Returns true if `footerVerticalsVisibleUndefined` has been explicitly set.
-  public var hasFooterVerticalsVisibleUndefined: Bool {return _storage._footerVerticalsVisibleUndefined != nil}
+  public var hasFooterVerticalsVisibleUndefined: Bool {_storage._footerVerticalsVisibleUndefined != nil}
   /// Clears the value of `footerVerticalsVisibleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFooterVerticalsVisibleUndefined() {_uniqueStorage()._footerVerticalsVisibleUndefined = nil}
 
   public var borderStrokesVisible: TSSSOS_SpecBoolArchive {
-    get {return _storage._borderStrokesVisible ?? TSSSOS_SpecBoolArchive()}
+    get {_storage._borderStrokesVisible ?? TSSSOS_SpecBoolArchive()}
     set {_uniqueStorage()._borderStrokesVisible = newValue}
   }
   /// Returns true if `borderStrokesVisible` has been explicitly set.
-  public var hasBorderStrokesVisible: Bool {return _storage._borderStrokesVisible != nil}
+  public var hasBorderStrokesVisible: Bool {_storage._borderStrokesVisible != nil}
   /// Clears the value of `borderStrokesVisible`. Subsequent reads from it will return its default value.
   public mutating func clearBorderStrokesVisible() {_uniqueStorage()._borderStrokesVisible = nil}
 
   public var borderStrokesVisibleUndefined: Bool {
-    get {return _storage._borderStrokesVisibleUndefined ?? false}
+    get {_storage._borderStrokesVisibleUndefined ?? false}
     set {_uniqueStorage()._borderStrokesVisibleUndefined = newValue}
   }
   /// Returns true if `borderStrokesVisibleUndefined` has been explicitly set.
-  public var hasBorderStrokesVisibleUndefined: Bool {return _storage._borderStrokesVisibleUndefined != nil}
+  public var hasBorderStrokesVisibleUndefined: Bool {_storage._borderStrokesVisibleUndefined != nil}
   /// Clears the value of `borderStrokesVisibleUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBorderStrokesVisibleUndefined() {_uniqueStorage()._borderStrokesVisibleUndefined = nil}
 
   public var masterFontFamily: TSSSOS_SpecStringArchive {
-    get {return _storage._masterFontFamily ?? TSSSOS_SpecStringArchive()}
+    get {_storage._masterFontFamily ?? TSSSOS_SpecStringArchive()}
     set {_uniqueStorage()._masterFontFamily = newValue}
   }
   /// Returns true if `masterFontFamily` has been explicitly set.
-  public var hasMasterFontFamily: Bool {return _storage._masterFontFamily != nil}
+  public var hasMasterFontFamily: Bool {_storage._masterFontFamily != nil}
   /// Clears the value of `masterFontFamily`. Subsequent reads from it will return its default value.
   public mutating func clearMasterFontFamily() {_uniqueStorage()._masterFontFamily = nil}
 
   public var masterFontFamilyUndefined: Bool {
-    get {return _storage._masterFontFamilyUndefined ?? false}
+    get {_storage._masterFontFamilyUndefined ?? false}
     set {_uniqueStorage()._masterFontFamilyUndefined = newValue}
   }
   /// Returns true if `masterFontFamilyUndefined` has been explicitly set.
-  public var hasMasterFontFamilyUndefined: Bool {return _storage._masterFontFamilyUndefined != nil}
+  public var hasMasterFontFamilyUndefined: Bool {_storage._masterFontFamilyUndefined != nil}
   /// Clears the value of `masterFontFamilyUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearMasterFontFamilyUndefined() {_uniqueStorage()._masterFontFamilyUndefined = nil}
 
   public var writingDirection: TSSSOS_SpecIntegerArchive {
-    get {return _storage._writingDirection ?? TSSSOS_SpecIntegerArchive()}
+    get {_storage._writingDirection ?? TSSSOS_SpecIntegerArchive()}
     set {_uniqueStorage()._writingDirection = newValue}
   }
   /// Returns true if `writingDirection` has been explicitly set.
-  public var hasWritingDirection: Bool {return _storage._writingDirection != nil}
+  public var hasWritingDirection: Bool {_storage._writingDirection != nil}
   /// Clears the value of `writingDirection`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirection() {_uniqueStorage()._writingDirection = nil}
 
   public var writingDirectionUndefined: Bool {
-    get {return _storage._writingDirectionUndefined ?? false}
+    get {_storage._writingDirectionUndefined ?? false}
     set {_uniqueStorage()._writingDirectionUndefined = newValue}
   }
   /// Returns true if `writingDirectionUndefined` has been explicitly set.
-  public var hasWritingDirectionUndefined: Bool {return _storage._writingDirectionUndefined != nil}
+  public var hasWritingDirectionUndefined: Bool {_storage._writingDirectionUndefined != nil}
   /// Clears the value of `writingDirectionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearWritingDirectionUndefined() {_uniqueStorage()._writingDirectionUndefined = nil}
 
   public var categoryLevel1TopStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel1TopStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel1TopStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel1TopStroke = newValue}
   }
   /// Returns true if `categoryLevel1TopStroke` has been explicitly set.
-  public var hasCategoryLevel1TopStroke: Bool {return _storage._categoryLevel1TopStroke != nil}
+  public var hasCategoryLevel1TopStroke: Bool {_storage._categoryLevel1TopStroke != nil}
   /// Clears the value of `categoryLevel1TopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1TopStroke() {_uniqueStorage()._categoryLevel1TopStroke = nil}
 
   public var categoryLevel1TopStrokeUndefined: Bool {
-    get {return _storage._categoryLevel1TopStrokeUndefined ?? false}
+    get {_storage._categoryLevel1TopStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel1TopStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel1TopStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel1TopStrokeUndefined: Bool {return _storage._categoryLevel1TopStrokeUndefined != nil}
+  public var hasCategoryLevel1TopStrokeUndefined: Bool {_storage._categoryLevel1TopStrokeUndefined != nil}
   /// Clears the value of `categoryLevel1TopStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1TopStrokeUndefined() {_uniqueStorage()._categoryLevel1TopStrokeUndefined = nil}
 
   public var categoryLevel2TopStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel2TopStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel2TopStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel2TopStroke = newValue}
   }
   /// Returns true if `categoryLevel2TopStroke` has been explicitly set.
-  public var hasCategoryLevel2TopStroke: Bool {return _storage._categoryLevel2TopStroke != nil}
+  public var hasCategoryLevel2TopStroke: Bool {_storage._categoryLevel2TopStroke != nil}
   /// Clears the value of `categoryLevel2TopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2TopStroke() {_uniqueStorage()._categoryLevel2TopStroke = nil}
 
   public var categoryLevel2TopStrokeUndefined: Bool {
-    get {return _storage._categoryLevel2TopStrokeUndefined ?? false}
+    get {_storage._categoryLevel2TopStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel2TopStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel2TopStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel2TopStrokeUndefined: Bool {return _storage._categoryLevel2TopStrokeUndefined != nil}
+  public var hasCategoryLevel2TopStrokeUndefined: Bool {_storage._categoryLevel2TopStrokeUndefined != nil}
   /// Clears the value of `categoryLevel2TopStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2TopStrokeUndefined() {_uniqueStorage()._categoryLevel2TopStrokeUndefined = nil}
 
   public var categoryLevel3TopStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel3TopStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel3TopStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel3TopStroke = newValue}
   }
   /// Returns true if `categoryLevel3TopStroke` has been explicitly set.
-  public var hasCategoryLevel3TopStroke: Bool {return _storage._categoryLevel3TopStroke != nil}
+  public var hasCategoryLevel3TopStroke: Bool {_storage._categoryLevel3TopStroke != nil}
   /// Clears the value of `categoryLevel3TopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3TopStroke() {_uniqueStorage()._categoryLevel3TopStroke = nil}
 
   public var categoryLevel3TopStrokeUndefined: Bool {
-    get {return _storage._categoryLevel3TopStrokeUndefined ?? false}
+    get {_storage._categoryLevel3TopStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel3TopStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel3TopStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel3TopStrokeUndefined: Bool {return _storage._categoryLevel3TopStrokeUndefined != nil}
+  public var hasCategoryLevel3TopStrokeUndefined: Bool {_storage._categoryLevel3TopStrokeUndefined != nil}
   /// Clears the value of `categoryLevel3TopStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3TopStrokeUndefined() {_uniqueStorage()._categoryLevel3TopStrokeUndefined = nil}
 
   public var categoryLevel4TopStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel4TopStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel4TopStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel4TopStroke = newValue}
   }
   /// Returns true if `categoryLevel4TopStroke` has been explicitly set.
-  public var hasCategoryLevel4TopStroke: Bool {return _storage._categoryLevel4TopStroke != nil}
+  public var hasCategoryLevel4TopStroke: Bool {_storage._categoryLevel4TopStroke != nil}
   /// Clears the value of `categoryLevel4TopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4TopStroke() {_uniqueStorage()._categoryLevel4TopStroke = nil}
 
   public var categoryLevel4TopStrokeUndefined: Bool {
-    get {return _storage._categoryLevel4TopStrokeUndefined ?? false}
+    get {_storage._categoryLevel4TopStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel4TopStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel4TopStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel4TopStrokeUndefined: Bool {return _storage._categoryLevel4TopStrokeUndefined != nil}
+  public var hasCategoryLevel4TopStrokeUndefined: Bool {_storage._categoryLevel4TopStrokeUndefined != nil}
   /// Clears the value of `categoryLevel4TopStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4TopStrokeUndefined() {_uniqueStorage()._categoryLevel4TopStrokeUndefined = nil}
 
   public var categoryLevel5TopStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel5TopStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel5TopStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel5TopStroke = newValue}
   }
   /// Returns true if `categoryLevel5TopStroke` has been explicitly set.
-  public var hasCategoryLevel5TopStroke: Bool {return _storage._categoryLevel5TopStroke != nil}
+  public var hasCategoryLevel5TopStroke: Bool {_storage._categoryLevel5TopStroke != nil}
   /// Clears the value of `categoryLevel5TopStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5TopStroke() {_uniqueStorage()._categoryLevel5TopStroke = nil}
 
   public var categoryLevel5TopStrokeUndefined: Bool {
-    get {return _storage._categoryLevel5TopStrokeUndefined ?? false}
+    get {_storage._categoryLevel5TopStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel5TopStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel5TopStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel5TopStrokeUndefined: Bool {return _storage._categoryLevel5TopStrokeUndefined != nil}
+  public var hasCategoryLevel5TopStrokeUndefined: Bool {_storage._categoryLevel5TopStrokeUndefined != nil}
   /// Clears the value of `categoryLevel5TopStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5TopStrokeUndefined() {_uniqueStorage()._categoryLevel5TopStrokeUndefined = nil}
 
   public var categoryLevel1LabelSeparatorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel1LabelSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel1LabelSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel1LabelSeparatorStroke = newValue}
   }
   /// Returns true if `categoryLevel1LabelSeparatorStroke` has been explicitly set.
-  public var hasCategoryLevel1LabelSeparatorStroke: Bool {return _storage._categoryLevel1LabelSeparatorStroke != nil}
+  public var hasCategoryLevel1LabelSeparatorStroke: Bool {_storage._categoryLevel1LabelSeparatorStroke != nil}
   /// Clears the value of `categoryLevel1LabelSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1LabelSeparatorStroke() {_uniqueStorage()._categoryLevel1LabelSeparatorStroke = nil}
 
   public var categoryLevel1LabelSeparatorStrokeUndefined: Bool {
-    get {return _storage._categoryLevel1LabelSeparatorStrokeUndefined ?? false}
+    get {_storage._categoryLevel1LabelSeparatorStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel1LabelSeparatorStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel1LabelSeparatorStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel1LabelSeparatorStrokeUndefined: Bool {return _storage._categoryLevel1LabelSeparatorStrokeUndefined != nil}
+  public var hasCategoryLevel1LabelSeparatorStrokeUndefined: Bool {_storage._categoryLevel1LabelSeparatorStrokeUndefined != nil}
   /// Clears the value of `categoryLevel1LabelSeparatorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1LabelSeparatorStrokeUndefined() {_uniqueStorage()._categoryLevel1LabelSeparatorStrokeUndefined = nil}
 
   public var categoryLevel2LabelSeparatorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel2LabelSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel2LabelSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel2LabelSeparatorStroke = newValue}
   }
   /// Returns true if `categoryLevel2LabelSeparatorStroke` has been explicitly set.
-  public var hasCategoryLevel2LabelSeparatorStroke: Bool {return _storage._categoryLevel2LabelSeparatorStroke != nil}
+  public var hasCategoryLevel2LabelSeparatorStroke: Bool {_storage._categoryLevel2LabelSeparatorStroke != nil}
   /// Clears the value of `categoryLevel2LabelSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2LabelSeparatorStroke() {_uniqueStorage()._categoryLevel2LabelSeparatorStroke = nil}
 
   public var categoryLevel2LabelSeparatorStrokeUndefined: Bool {
-    get {return _storage._categoryLevel2LabelSeparatorStrokeUndefined ?? false}
+    get {_storage._categoryLevel2LabelSeparatorStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel2LabelSeparatorStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel2LabelSeparatorStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel2LabelSeparatorStrokeUndefined: Bool {return _storage._categoryLevel2LabelSeparatorStrokeUndefined != nil}
+  public var hasCategoryLevel2LabelSeparatorStrokeUndefined: Bool {_storage._categoryLevel2LabelSeparatorStrokeUndefined != nil}
   /// Clears the value of `categoryLevel2LabelSeparatorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2LabelSeparatorStrokeUndefined() {_uniqueStorage()._categoryLevel2LabelSeparatorStrokeUndefined = nil}
 
   public var categoryLevel3LabelSeparatorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel3LabelSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel3LabelSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel3LabelSeparatorStroke = newValue}
   }
   /// Returns true if `categoryLevel3LabelSeparatorStroke` has been explicitly set.
-  public var hasCategoryLevel3LabelSeparatorStroke: Bool {return _storage._categoryLevel3LabelSeparatorStroke != nil}
+  public var hasCategoryLevel3LabelSeparatorStroke: Bool {_storage._categoryLevel3LabelSeparatorStroke != nil}
   /// Clears the value of `categoryLevel3LabelSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3LabelSeparatorStroke() {_uniqueStorage()._categoryLevel3LabelSeparatorStroke = nil}
 
   public var categoryLevel3LabelSeparatorStrokeUndefined: Bool {
-    get {return _storage._categoryLevel3LabelSeparatorStrokeUndefined ?? false}
+    get {_storage._categoryLevel3LabelSeparatorStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel3LabelSeparatorStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel3LabelSeparatorStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel3LabelSeparatorStrokeUndefined: Bool {return _storage._categoryLevel3LabelSeparatorStrokeUndefined != nil}
+  public var hasCategoryLevel3LabelSeparatorStrokeUndefined: Bool {_storage._categoryLevel3LabelSeparatorStrokeUndefined != nil}
   /// Clears the value of `categoryLevel3LabelSeparatorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3LabelSeparatorStrokeUndefined() {_uniqueStorage()._categoryLevel3LabelSeparatorStrokeUndefined = nil}
 
   public var categoryLevel4LabelSeparatorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel4LabelSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel4LabelSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel4LabelSeparatorStroke = newValue}
   }
   /// Returns true if `categoryLevel4LabelSeparatorStroke` has been explicitly set.
-  public var hasCategoryLevel4LabelSeparatorStroke: Bool {return _storage._categoryLevel4LabelSeparatorStroke != nil}
+  public var hasCategoryLevel4LabelSeparatorStroke: Bool {_storage._categoryLevel4LabelSeparatorStroke != nil}
   /// Clears the value of `categoryLevel4LabelSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4LabelSeparatorStroke() {_uniqueStorage()._categoryLevel4LabelSeparatorStroke = nil}
 
   public var categoryLevel4LabelSeparatorStrokeUndefined: Bool {
-    get {return _storage._categoryLevel4LabelSeparatorStrokeUndefined ?? false}
+    get {_storage._categoryLevel4LabelSeparatorStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel4LabelSeparatorStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel4LabelSeparatorStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel4LabelSeparatorStrokeUndefined: Bool {return _storage._categoryLevel4LabelSeparatorStrokeUndefined != nil}
+  public var hasCategoryLevel4LabelSeparatorStrokeUndefined: Bool {_storage._categoryLevel4LabelSeparatorStrokeUndefined != nil}
   /// Clears the value of `categoryLevel4LabelSeparatorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4LabelSeparatorStrokeUndefined() {_uniqueStorage()._categoryLevel4LabelSeparatorStrokeUndefined = nil}
 
   public var categoryLevel5LabelSeparatorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel5LabelSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel5LabelSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel5LabelSeparatorStroke = newValue}
   }
   /// Returns true if `categoryLevel5LabelSeparatorStroke` has been explicitly set.
-  public var hasCategoryLevel5LabelSeparatorStroke: Bool {return _storage._categoryLevel5LabelSeparatorStroke != nil}
+  public var hasCategoryLevel5LabelSeparatorStroke: Bool {_storage._categoryLevel5LabelSeparatorStroke != nil}
   /// Clears the value of `categoryLevel5LabelSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5LabelSeparatorStroke() {_uniqueStorage()._categoryLevel5LabelSeparatorStroke = nil}
 
   public var categoryLevel5LabelSeparatorStrokeUndefined: Bool {
-    get {return _storage._categoryLevel5LabelSeparatorStrokeUndefined ?? false}
+    get {_storage._categoryLevel5LabelSeparatorStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel5LabelSeparatorStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel5LabelSeparatorStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel5LabelSeparatorStrokeUndefined: Bool {return _storage._categoryLevel5LabelSeparatorStrokeUndefined != nil}
+  public var hasCategoryLevel5LabelSeparatorStrokeUndefined: Bool {_storage._categoryLevel5LabelSeparatorStrokeUndefined != nil}
   /// Clears the value of `categoryLevel5LabelSeparatorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5LabelSeparatorStrokeUndefined() {_uniqueStorage()._categoryLevel5LabelSeparatorStrokeUndefined = nil}
 
   public var categoryLevel1BottomStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel1BottomStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel1BottomStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel1BottomStroke = newValue}
   }
   /// Returns true if `categoryLevel1BottomStroke` has been explicitly set.
-  public var hasCategoryLevel1BottomStroke: Bool {return _storage._categoryLevel1BottomStroke != nil}
+  public var hasCategoryLevel1BottomStroke: Bool {_storage._categoryLevel1BottomStroke != nil}
   /// Clears the value of `categoryLevel1BottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1BottomStroke() {_uniqueStorage()._categoryLevel1BottomStroke = nil}
 
   public var categoryLevel1BottomStrokeUndefined: Bool {
-    get {return _storage._categoryLevel1BottomStrokeUndefined ?? false}
+    get {_storage._categoryLevel1BottomStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel1BottomStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel1BottomStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel1BottomStrokeUndefined: Bool {return _storage._categoryLevel1BottomStrokeUndefined != nil}
+  public var hasCategoryLevel1BottomStrokeUndefined: Bool {_storage._categoryLevel1BottomStrokeUndefined != nil}
   /// Clears the value of `categoryLevel1BottomStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1BottomStrokeUndefined() {_uniqueStorage()._categoryLevel1BottomStrokeUndefined = nil}
 
   public var categoryLevel2BottomStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel2BottomStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel2BottomStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel2BottomStroke = newValue}
   }
   /// Returns true if `categoryLevel2BottomStroke` has been explicitly set.
-  public var hasCategoryLevel2BottomStroke: Bool {return _storage._categoryLevel2BottomStroke != nil}
+  public var hasCategoryLevel2BottomStroke: Bool {_storage._categoryLevel2BottomStroke != nil}
   /// Clears the value of `categoryLevel2BottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2BottomStroke() {_uniqueStorage()._categoryLevel2BottomStroke = nil}
 
   public var categoryLevel2BottomStrokeUndefined: Bool {
-    get {return _storage._categoryLevel2BottomStrokeUndefined ?? false}
+    get {_storage._categoryLevel2BottomStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel2BottomStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel2BottomStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel2BottomStrokeUndefined: Bool {return _storage._categoryLevel2BottomStrokeUndefined != nil}
+  public var hasCategoryLevel2BottomStrokeUndefined: Bool {_storage._categoryLevel2BottomStrokeUndefined != nil}
   /// Clears the value of `categoryLevel2BottomStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2BottomStrokeUndefined() {_uniqueStorage()._categoryLevel2BottomStrokeUndefined = nil}
 
   public var categoryLevel3BottomStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel3BottomStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel3BottomStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel3BottomStroke = newValue}
   }
   /// Returns true if `categoryLevel3BottomStroke` has been explicitly set.
-  public var hasCategoryLevel3BottomStroke: Bool {return _storage._categoryLevel3BottomStroke != nil}
+  public var hasCategoryLevel3BottomStroke: Bool {_storage._categoryLevel3BottomStroke != nil}
   /// Clears the value of `categoryLevel3BottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3BottomStroke() {_uniqueStorage()._categoryLevel3BottomStroke = nil}
 
   public var categoryLevel3BottomStrokeUndefined: Bool {
-    get {return _storage._categoryLevel3BottomStrokeUndefined ?? false}
+    get {_storage._categoryLevel3BottomStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel3BottomStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel3BottomStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel3BottomStrokeUndefined: Bool {return _storage._categoryLevel3BottomStrokeUndefined != nil}
+  public var hasCategoryLevel3BottomStrokeUndefined: Bool {_storage._categoryLevel3BottomStrokeUndefined != nil}
   /// Clears the value of `categoryLevel3BottomStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3BottomStrokeUndefined() {_uniqueStorage()._categoryLevel3BottomStrokeUndefined = nil}
 
   public var categoryLevel4BottomStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel4BottomStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel4BottomStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel4BottomStroke = newValue}
   }
   /// Returns true if `categoryLevel4BottomStroke` has been explicitly set.
-  public var hasCategoryLevel4BottomStroke: Bool {return _storage._categoryLevel4BottomStroke != nil}
+  public var hasCategoryLevel4BottomStroke: Bool {_storage._categoryLevel4BottomStroke != nil}
   /// Clears the value of `categoryLevel4BottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4BottomStroke() {_uniqueStorage()._categoryLevel4BottomStroke = nil}
 
   public var categoryLevel4BottomStrokeUndefined: Bool {
-    get {return _storage._categoryLevel4BottomStrokeUndefined ?? false}
+    get {_storage._categoryLevel4BottomStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel4BottomStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel4BottomStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel4BottomStrokeUndefined: Bool {return _storage._categoryLevel4BottomStrokeUndefined != nil}
+  public var hasCategoryLevel4BottomStrokeUndefined: Bool {_storage._categoryLevel4BottomStrokeUndefined != nil}
   /// Clears the value of `categoryLevel4BottomStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4BottomStrokeUndefined() {_uniqueStorage()._categoryLevel4BottomStrokeUndefined = nil}
 
   public var categoryLevel5BottomStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel5BottomStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel5BottomStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel5BottomStroke = newValue}
   }
   /// Returns true if `categoryLevel5BottomStroke` has been explicitly set.
-  public var hasCategoryLevel5BottomStroke: Bool {return _storage._categoryLevel5BottomStroke != nil}
+  public var hasCategoryLevel5BottomStroke: Bool {_storage._categoryLevel5BottomStroke != nil}
   /// Clears the value of `categoryLevel5BottomStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5BottomStroke() {_uniqueStorage()._categoryLevel5BottomStroke = nil}
 
   public var categoryLevel5BottomStrokeUndefined: Bool {
-    get {return _storage._categoryLevel5BottomStrokeUndefined ?? false}
+    get {_storage._categoryLevel5BottomStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel5BottomStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel5BottomStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel5BottomStrokeUndefined: Bool {return _storage._categoryLevel5BottomStrokeUndefined != nil}
+  public var hasCategoryLevel5BottomStrokeUndefined: Bool {_storage._categoryLevel5BottomStrokeUndefined != nil}
   /// Clears the value of `categoryLevel5BottomStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5BottomStrokeUndefined() {_uniqueStorage()._categoryLevel5BottomStrokeUndefined = nil}
 
   public var categoryLevel1InteriorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel1InteriorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel1InteriorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel1InteriorStroke = newValue}
   }
   /// Returns true if `categoryLevel1InteriorStroke` has been explicitly set.
-  public var hasCategoryLevel1InteriorStroke: Bool {return _storage._categoryLevel1InteriorStroke != nil}
+  public var hasCategoryLevel1InteriorStroke: Bool {_storage._categoryLevel1InteriorStroke != nil}
   /// Clears the value of `categoryLevel1InteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1InteriorStroke() {_uniqueStorage()._categoryLevel1InteriorStroke = nil}
 
   public var categoryLevel1InteriorStrokeUndefined: Bool {
-    get {return _storage._categoryLevel1InteriorStrokeUndefined ?? false}
+    get {_storage._categoryLevel1InteriorStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel1InteriorStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel1InteriorStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel1InteriorStrokeUndefined: Bool {return _storage._categoryLevel1InteriorStrokeUndefined != nil}
+  public var hasCategoryLevel1InteriorStrokeUndefined: Bool {_storage._categoryLevel1InteriorStrokeUndefined != nil}
   /// Clears the value of `categoryLevel1InteriorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel1InteriorStrokeUndefined() {_uniqueStorage()._categoryLevel1InteriorStrokeUndefined = nil}
 
   public var categoryLevel2InteriorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel2InteriorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel2InteriorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel2InteriorStroke = newValue}
   }
   /// Returns true if `categoryLevel2InteriorStroke` has been explicitly set.
-  public var hasCategoryLevel2InteriorStroke: Bool {return _storage._categoryLevel2InteriorStroke != nil}
+  public var hasCategoryLevel2InteriorStroke: Bool {_storage._categoryLevel2InteriorStroke != nil}
   /// Clears the value of `categoryLevel2InteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2InteriorStroke() {_uniqueStorage()._categoryLevel2InteriorStroke = nil}
 
   public var categoryLevel2InteriorStrokeUndefined: Bool {
-    get {return _storage._categoryLevel2InteriorStrokeUndefined ?? false}
+    get {_storage._categoryLevel2InteriorStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel2InteriorStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel2InteriorStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel2InteriorStrokeUndefined: Bool {return _storage._categoryLevel2InteriorStrokeUndefined != nil}
+  public var hasCategoryLevel2InteriorStrokeUndefined: Bool {_storage._categoryLevel2InteriorStrokeUndefined != nil}
   /// Clears the value of `categoryLevel2InteriorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel2InteriorStrokeUndefined() {_uniqueStorage()._categoryLevel2InteriorStrokeUndefined = nil}
 
   public var categoryLevel3InteriorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel3InteriorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel3InteriorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel3InteriorStroke = newValue}
   }
   /// Returns true if `categoryLevel3InteriorStroke` has been explicitly set.
-  public var hasCategoryLevel3InteriorStroke: Bool {return _storage._categoryLevel3InteriorStroke != nil}
+  public var hasCategoryLevel3InteriorStroke: Bool {_storage._categoryLevel3InteriorStroke != nil}
   /// Clears the value of `categoryLevel3InteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3InteriorStroke() {_uniqueStorage()._categoryLevel3InteriorStroke = nil}
 
   public var categoryLevel3InteriorStrokeUndefined: Bool {
-    get {return _storage._categoryLevel3InteriorStrokeUndefined ?? false}
+    get {_storage._categoryLevel3InteriorStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel3InteriorStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel3InteriorStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel3InteriorStrokeUndefined: Bool {return _storage._categoryLevel3InteriorStrokeUndefined != nil}
+  public var hasCategoryLevel3InteriorStrokeUndefined: Bool {_storage._categoryLevel3InteriorStrokeUndefined != nil}
   /// Clears the value of `categoryLevel3InteriorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel3InteriorStrokeUndefined() {_uniqueStorage()._categoryLevel3InteriorStrokeUndefined = nil}
 
   public var categoryLevel4InteriorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel4InteriorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel4InteriorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel4InteriorStroke = newValue}
   }
   /// Returns true if `categoryLevel4InteriorStroke` has been explicitly set.
-  public var hasCategoryLevel4InteriorStroke: Bool {return _storage._categoryLevel4InteriorStroke != nil}
+  public var hasCategoryLevel4InteriorStroke: Bool {_storage._categoryLevel4InteriorStroke != nil}
   /// Clears the value of `categoryLevel4InteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4InteriorStroke() {_uniqueStorage()._categoryLevel4InteriorStroke = nil}
 
   public var categoryLevel4InteriorStrokeUndefined: Bool {
-    get {return _storage._categoryLevel4InteriorStrokeUndefined ?? false}
+    get {_storage._categoryLevel4InteriorStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel4InteriorStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel4InteriorStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel4InteriorStrokeUndefined: Bool {return _storage._categoryLevel4InteriorStrokeUndefined != nil}
+  public var hasCategoryLevel4InteriorStrokeUndefined: Bool {_storage._categoryLevel4InteriorStrokeUndefined != nil}
   /// Clears the value of `categoryLevel4InteriorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel4InteriorStrokeUndefined() {_uniqueStorage()._categoryLevel4InteriorStrokeUndefined = nil}
 
   public var categoryLevel5InteriorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._categoryLevel5InteriorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._categoryLevel5InteriorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._categoryLevel5InteriorStroke = newValue}
   }
   /// Returns true if `categoryLevel5InteriorStroke` has been explicitly set.
-  public var hasCategoryLevel5InteriorStroke: Bool {return _storage._categoryLevel5InteriorStroke != nil}
+  public var hasCategoryLevel5InteriorStroke: Bool {_storage._categoryLevel5InteriorStroke != nil}
   /// Clears the value of `categoryLevel5InteriorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5InteriorStroke() {_uniqueStorage()._categoryLevel5InteriorStroke = nil}
 
   public var categoryLevel5InteriorStrokeUndefined: Bool {
-    get {return _storage._categoryLevel5InteriorStrokeUndefined ?? false}
+    get {_storage._categoryLevel5InteriorStrokeUndefined ?? false}
     set {_uniqueStorage()._categoryLevel5InteriorStrokeUndefined = newValue}
   }
   /// Returns true if `categoryLevel5InteriorStrokeUndefined` has been explicitly set.
-  public var hasCategoryLevel5InteriorStrokeUndefined: Bool {return _storage._categoryLevel5InteriorStrokeUndefined != nil}
+  public var hasCategoryLevel5InteriorStrokeUndefined: Bool {_storage._categoryLevel5InteriorStrokeUndefined != nil}
   /// Clears the value of `categoryLevel5InteriorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryLevel5InteriorStrokeUndefined() {_uniqueStorage()._categoryLevel5InteriorStrokeUndefined = nil}
 
   public var bodyPivotGroupHorizontalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._bodyPivotGroupHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._bodyPivotGroupHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._bodyPivotGroupHorizontalStroke = newValue}
   }
   /// Returns true if `bodyPivotGroupHorizontalStroke` has been explicitly set.
-  public var hasBodyPivotGroupHorizontalStroke: Bool {return _storage._bodyPivotGroupHorizontalStroke != nil}
+  public var hasBodyPivotGroupHorizontalStroke: Bool {_storage._bodyPivotGroupHorizontalStroke != nil}
   /// Clears the value of `bodyPivotGroupHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearBodyPivotGroupHorizontalStroke() {_uniqueStorage()._bodyPivotGroupHorizontalStroke = nil}
 
   public var bodyPivotGroupHorizontalStrokeUndefined: Bool {
-    get {return _storage._bodyPivotGroupHorizontalStrokeUndefined ?? false}
+    get {_storage._bodyPivotGroupHorizontalStrokeUndefined ?? false}
     set {_uniqueStorage()._bodyPivotGroupHorizontalStrokeUndefined = newValue}
   }
   /// Returns true if `bodyPivotGroupHorizontalStrokeUndefined` has been explicitly set.
-  public var hasBodyPivotGroupHorizontalStrokeUndefined: Bool {return _storage._bodyPivotGroupHorizontalStrokeUndefined != nil}
+  public var hasBodyPivotGroupHorizontalStrokeUndefined: Bool {_storage._bodyPivotGroupHorizontalStrokeUndefined != nil}
   /// Clears the value of `bodyPivotGroupHorizontalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBodyPivotGroupHorizontalStrokeUndefined() {_uniqueStorage()._bodyPivotGroupHorizontalStrokeUndefined = nil}
 
   public var bodyPivotGroupVerticalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._bodyPivotGroupVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._bodyPivotGroupVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._bodyPivotGroupVerticalStroke = newValue}
   }
   /// Returns true if `bodyPivotGroupVerticalStroke` has been explicitly set.
-  public var hasBodyPivotGroupVerticalStroke: Bool {return _storage._bodyPivotGroupVerticalStroke != nil}
+  public var hasBodyPivotGroupVerticalStroke: Bool {_storage._bodyPivotGroupVerticalStroke != nil}
   /// Clears the value of `bodyPivotGroupVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearBodyPivotGroupVerticalStroke() {_uniqueStorage()._bodyPivotGroupVerticalStroke = nil}
 
   public var bodyPivotGroupVerticalStrokeUndefined: Bool {
-    get {return _storage._bodyPivotGroupVerticalStrokeUndefined ?? false}
+    get {_storage._bodyPivotGroupVerticalStrokeUndefined ?? false}
     set {_uniqueStorage()._bodyPivotGroupVerticalStrokeUndefined = newValue}
   }
   /// Returns true if `bodyPivotGroupVerticalStrokeUndefined` has been explicitly set.
-  public var hasBodyPivotGroupVerticalStrokeUndefined: Bool {return _storage._bodyPivotGroupVerticalStrokeUndefined != nil}
+  public var hasBodyPivotGroupVerticalStrokeUndefined: Bool {_storage._bodyPivotGroupVerticalStrokeUndefined != nil}
   /// Clears the value of `bodyPivotGroupVerticalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBodyPivotGroupVerticalStrokeUndefined() {_uniqueStorage()._bodyPivotGroupVerticalStrokeUndefined = nil}
 
   public var bodyPivotDeEmphasisHorizontalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._bodyPivotDeEmphasisHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._bodyPivotDeEmphasisHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._bodyPivotDeEmphasisHorizontalStroke = newValue}
   }
   /// Returns true if `bodyPivotDeEmphasisHorizontalStroke` has been explicitly set.
-  public var hasBodyPivotDeEmphasisHorizontalStroke: Bool {return _storage._bodyPivotDeEmphasisHorizontalStroke != nil}
+  public var hasBodyPivotDeEmphasisHorizontalStroke: Bool {_storage._bodyPivotDeEmphasisHorizontalStroke != nil}
   /// Clears the value of `bodyPivotDeEmphasisHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearBodyPivotDeEmphasisHorizontalStroke() {_uniqueStorage()._bodyPivotDeEmphasisHorizontalStroke = nil}
 
   public var bodyPivotDeEmphasisHorizontalStrokeUndefined: Bool {
-    get {return _storage._bodyPivotDeEmphasisHorizontalStrokeUndefined ?? false}
+    get {_storage._bodyPivotDeEmphasisHorizontalStrokeUndefined ?? false}
     set {_uniqueStorage()._bodyPivotDeEmphasisHorizontalStrokeUndefined = newValue}
   }
   /// Returns true if `bodyPivotDeEmphasisHorizontalStrokeUndefined` has been explicitly set.
-  public var hasBodyPivotDeEmphasisHorizontalStrokeUndefined: Bool {return _storage._bodyPivotDeEmphasisHorizontalStrokeUndefined != nil}
+  public var hasBodyPivotDeEmphasisHorizontalStrokeUndefined: Bool {_storage._bodyPivotDeEmphasisHorizontalStrokeUndefined != nil}
   /// Clears the value of `bodyPivotDeEmphasisHorizontalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBodyPivotDeEmphasisHorizontalStrokeUndefined() {_uniqueStorage()._bodyPivotDeEmphasisHorizontalStrokeUndefined = nil}
 
   public var bodyPivotEmphasisVerticalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._bodyPivotEmphasisVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._bodyPivotEmphasisVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._bodyPivotEmphasisVerticalStroke = newValue}
   }
   /// Returns true if `bodyPivotEmphasisVerticalStroke` has been explicitly set.
-  public var hasBodyPivotEmphasisVerticalStroke: Bool {return _storage._bodyPivotEmphasisVerticalStroke != nil}
+  public var hasBodyPivotEmphasisVerticalStroke: Bool {_storage._bodyPivotEmphasisVerticalStroke != nil}
   /// Clears the value of `bodyPivotEmphasisVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearBodyPivotEmphasisVerticalStroke() {_uniqueStorage()._bodyPivotEmphasisVerticalStroke = nil}
 
   public var bodyPivotEmphasisVerticalStrokeUndefined: Bool {
-    get {return _storage._bodyPivotEmphasisVerticalStrokeUndefined ?? false}
+    get {_storage._bodyPivotEmphasisVerticalStrokeUndefined ?? false}
     set {_uniqueStorage()._bodyPivotEmphasisVerticalStrokeUndefined = newValue}
   }
   /// Returns true if `bodyPivotEmphasisVerticalStrokeUndefined` has been explicitly set.
-  public var hasBodyPivotEmphasisVerticalStrokeUndefined: Bool {return _storage._bodyPivotEmphasisVerticalStrokeUndefined != nil}
+  public var hasBodyPivotEmphasisVerticalStrokeUndefined: Bool {_storage._bodyPivotEmphasisVerticalStrokeUndefined != nil}
   /// Clears the value of `bodyPivotEmphasisVerticalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearBodyPivotEmphasisVerticalStrokeUndefined() {_uniqueStorage()._bodyPivotEmphasisVerticalStrokeUndefined = nil}
 
   public var headerColumnPivotGroupHorizontalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerColumnPivotGroupHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerColumnPivotGroupHorizontalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerColumnPivotGroupHorizontalStroke = newValue}
   }
   /// Returns true if `headerColumnPivotGroupHorizontalStroke` has been explicitly set.
-  public var hasHeaderColumnPivotGroupHorizontalStroke: Bool {return _storage._headerColumnPivotGroupHorizontalStroke != nil}
+  public var hasHeaderColumnPivotGroupHorizontalStroke: Bool {_storage._headerColumnPivotGroupHorizontalStroke != nil}
   /// Clears the value of `headerColumnPivotGroupHorizontalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnPivotGroupHorizontalStroke() {_uniqueStorage()._headerColumnPivotGroupHorizontalStroke = nil}
 
   public var headerColumnPivotGroupHorizontalStrokeUndefined: Bool {
-    get {return _storage._headerColumnPivotGroupHorizontalStrokeUndefined ?? false}
+    get {_storage._headerColumnPivotGroupHorizontalStrokeUndefined ?? false}
     set {_uniqueStorage()._headerColumnPivotGroupHorizontalStrokeUndefined = newValue}
   }
   /// Returns true if `headerColumnPivotGroupHorizontalStrokeUndefined` has been explicitly set.
-  public var hasHeaderColumnPivotGroupHorizontalStrokeUndefined: Bool {return _storage._headerColumnPivotGroupHorizontalStrokeUndefined != nil}
+  public var hasHeaderColumnPivotGroupHorizontalStrokeUndefined: Bool {_storage._headerColumnPivotGroupHorizontalStrokeUndefined != nil}
   /// Clears the value of `headerColumnPivotGroupHorizontalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnPivotGroupHorizontalStrokeUndefined() {_uniqueStorage()._headerColumnPivotGroupHorizontalStrokeUndefined = nil}
 
   public var headerColumnPivotGroupDeEmphasisStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerColumnPivotGroupDeEmphasisStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerColumnPivotGroupDeEmphasisStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerColumnPivotGroupDeEmphasisStroke = newValue}
   }
   /// Returns true if `headerColumnPivotGroupDeEmphasisStroke` has been explicitly set.
-  public var hasHeaderColumnPivotGroupDeEmphasisStroke: Bool {return _storage._headerColumnPivotGroupDeEmphasisStroke != nil}
+  public var hasHeaderColumnPivotGroupDeEmphasisStroke: Bool {_storage._headerColumnPivotGroupDeEmphasisStroke != nil}
   /// Clears the value of `headerColumnPivotGroupDeEmphasisStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnPivotGroupDeEmphasisStroke() {_uniqueStorage()._headerColumnPivotGroupDeEmphasisStroke = nil}
 
   public var headerColumnPivotGroupDeEmphasisStrokeUndefined: Bool {
-    get {return _storage._headerColumnPivotGroupDeEmphasisStrokeUndefined ?? false}
+    get {_storage._headerColumnPivotGroupDeEmphasisStrokeUndefined ?? false}
     set {_uniqueStorage()._headerColumnPivotGroupDeEmphasisStrokeUndefined = newValue}
   }
   /// Returns true if `headerColumnPivotGroupDeEmphasisStrokeUndefined` has been explicitly set.
-  public var hasHeaderColumnPivotGroupDeEmphasisStrokeUndefined: Bool {return _storage._headerColumnPivotGroupDeEmphasisStrokeUndefined != nil}
+  public var hasHeaderColumnPivotGroupDeEmphasisStrokeUndefined: Bool {_storage._headerColumnPivotGroupDeEmphasisStrokeUndefined != nil}
   /// Clears the value of `headerColumnPivotGroupDeEmphasisStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnPivotGroupDeEmphasisStrokeUndefined() {_uniqueStorage()._headerColumnPivotGroupDeEmphasisStrokeUndefined = nil}
 
   public var headerColumnPivotSeparatorStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerColumnPivotSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerColumnPivotSeparatorStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerColumnPivotSeparatorStroke = newValue}
   }
   /// Returns true if `headerColumnPivotSeparatorStroke` has been explicitly set.
-  public var hasHeaderColumnPivotSeparatorStroke: Bool {return _storage._headerColumnPivotSeparatorStroke != nil}
+  public var hasHeaderColumnPivotSeparatorStroke: Bool {_storage._headerColumnPivotSeparatorStroke != nil}
   /// Clears the value of `headerColumnPivotSeparatorStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnPivotSeparatorStroke() {_uniqueStorage()._headerColumnPivotSeparatorStroke = nil}
 
   public var headerColumnPivotSeparatorStrokeUndefined: Bool {
-    get {return _storage._headerColumnPivotSeparatorStrokeUndefined ?? false}
+    get {_storage._headerColumnPivotSeparatorStrokeUndefined ?? false}
     set {_uniqueStorage()._headerColumnPivotSeparatorStrokeUndefined = newValue}
   }
   /// Returns true if `headerColumnPivotSeparatorStrokeUndefined` has been explicitly set.
-  public var hasHeaderColumnPivotSeparatorStrokeUndefined: Bool {return _storage._headerColumnPivotSeparatorStrokeUndefined != nil}
+  public var hasHeaderColumnPivotSeparatorStrokeUndefined: Bool {_storage._headerColumnPivotSeparatorStrokeUndefined != nil}
   /// Clears the value of `headerColumnPivotSeparatorStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderColumnPivotSeparatorStrokeUndefined() {_uniqueStorage()._headerColumnPivotSeparatorStrokeUndefined = nil}
 
   public var headerRowPivotGroupVerticalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerRowPivotGroupVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerRowPivotGroupVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerRowPivotGroupVerticalStroke = newValue}
   }
   /// Returns true if `headerRowPivotGroupVerticalStroke` has been explicitly set.
-  public var hasHeaderRowPivotGroupVerticalStroke: Bool {return _storage._headerRowPivotGroupVerticalStroke != nil}
+  public var hasHeaderRowPivotGroupVerticalStroke: Bool {_storage._headerRowPivotGroupVerticalStroke != nil}
   /// Clears the value of `headerRowPivotGroupVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowPivotGroupVerticalStroke() {_uniqueStorage()._headerRowPivotGroupVerticalStroke = nil}
 
   public var headerRowPivotGroupVerticalStrokeUndefined: Bool {
-    get {return _storage._headerRowPivotGroupVerticalStrokeUndefined ?? false}
+    get {_storage._headerRowPivotGroupVerticalStrokeUndefined ?? false}
     set {_uniqueStorage()._headerRowPivotGroupVerticalStrokeUndefined = newValue}
   }
   /// Returns true if `headerRowPivotGroupVerticalStrokeUndefined` has been explicitly set.
-  public var hasHeaderRowPivotGroupVerticalStrokeUndefined: Bool {return _storage._headerRowPivotGroupVerticalStrokeUndefined != nil}
+  public var hasHeaderRowPivotGroupVerticalStrokeUndefined: Bool {_storage._headerRowPivotGroupVerticalStrokeUndefined != nil}
   /// Clears the value of `headerRowPivotGroupVerticalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowPivotGroupVerticalStrokeUndefined() {_uniqueStorage()._headerRowPivotGroupVerticalStrokeUndefined = nil}
 
   public var headerRowPivotGroupDeEmphasisStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerRowPivotGroupDeEmphasisStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerRowPivotGroupDeEmphasisStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerRowPivotGroupDeEmphasisStroke = newValue}
   }
   /// Returns true if `headerRowPivotGroupDeEmphasisStroke` has been explicitly set.
-  public var hasHeaderRowPivotGroupDeEmphasisStroke: Bool {return _storage._headerRowPivotGroupDeEmphasisStroke != nil}
+  public var hasHeaderRowPivotGroupDeEmphasisStroke: Bool {_storage._headerRowPivotGroupDeEmphasisStroke != nil}
   /// Clears the value of `headerRowPivotGroupDeEmphasisStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowPivotGroupDeEmphasisStroke() {_uniqueStorage()._headerRowPivotGroupDeEmphasisStroke = nil}
 
   public var headerRowPivotGroupDeEmphasisStrokeUndefined: Bool {
-    get {return _storage._headerRowPivotGroupDeEmphasisStrokeUndefined ?? false}
+    get {_storage._headerRowPivotGroupDeEmphasisStrokeUndefined ?? false}
     set {_uniqueStorage()._headerRowPivotGroupDeEmphasisStrokeUndefined = newValue}
   }
   /// Returns true if `headerRowPivotGroupDeEmphasisStrokeUndefined` has been explicitly set.
-  public var hasHeaderRowPivotGroupDeEmphasisStrokeUndefined: Bool {return _storage._headerRowPivotGroupDeEmphasisStrokeUndefined != nil}
+  public var hasHeaderRowPivotGroupDeEmphasisStrokeUndefined: Bool {_storage._headerRowPivotGroupDeEmphasisStrokeUndefined != nil}
   /// Clears the value of `headerRowPivotGroupDeEmphasisStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowPivotGroupDeEmphasisStrokeUndefined() {_uniqueStorage()._headerRowPivotGroupDeEmphasisStrokeUndefined = nil}
 
   public var headerRowPivotTitleStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._headerRowPivotTitleStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._headerRowPivotTitleStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._headerRowPivotTitleStroke = newValue}
   }
   /// Returns true if `headerRowPivotTitleStroke` has been explicitly set.
-  public var hasHeaderRowPivotTitleStroke: Bool {return _storage._headerRowPivotTitleStroke != nil}
+  public var hasHeaderRowPivotTitleStroke: Bool {_storage._headerRowPivotTitleStroke != nil}
   /// Clears the value of `headerRowPivotTitleStroke`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowPivotTitleStroke() {_uniqueStorage()._headerRowPivotTitleStroke = nil}
 
   public var headerRowPivotTitleStrokeUndefined: Bool {
-    get {return _storage._headerRowPivotTitleStrokeUndefined ?? false}
+    get {_storage._headerRowPivotTitleStrokeUndefined ?? false}
     set {_uniqueStorage()._headerRowPivotTitleStrokeUndefined = newValue}
   }
   /// Returns true if `headerRowPivotTitleStrokeUndefined` has been explicitly set.
-  public var hasHeaderRowPivotTitleStrokeUndefined: Bool {return _storage._headerRowPivotTitleStrokeUndefined != nil}
+  public var hasHeaderRowPivotTitleStrokeUndefined: Bool {_storage._headerRowPivotTitleStrokeUndefined != nil}
   /// Clears the value of `headerRowPivotTitleStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeaderRowPivotTitleStrokeUndefined() {_uniqueStorage()._headerRowPivotTitleStrokeUndefined = nil}
 
   public var footerRowPivotGroupVerticalStroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._footerRowPivotGroupVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._footerRowPivotGroupVerticalStroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._footerRowPivotGroupVerticalStroke = newValue}
   }
   /// Returns true if `footerRowPivotGroupVerticalStroke` has been explicitly set.
-  public var hasFooterRowPivotGroupVerticalStroke: Bool {return _storage._footerRowPivotGroupVerticalStroke != nil}
+  public var hasFooterRowPivotGroupVerticalStroke: Bool {_storage._footerRowPivotGroupVerticalStroke != nil}
   /// Clears the value of `footerRowPivotGroupVerticalStroke`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowPivotGroupVerticalStroke() {_uniqueStorage()._footerRowPivotGroupVerticalStroke = nil}
 
   public var footerRowPivotGroupVerticalStrokeUndefined: Bool {
-    get {return _storage._footerRowPivotGroupVerticalStrokeUndefined ?? false}
+    get {_storage._footerRowPivotGroupVerticalStrokeUndefined ?? false}
     set {_uniqueStorage()._footerRowPivotGroupVerticalStrokeUndefined = newValue}
   }
   /// Returns true if `footerRowPivotGroupVerticalStrokeUndefined` has been explicitly set.
-  public var hasFooterRowPivotGroupVerticalStrokeUndefined: Bool {return _storage._footerRowPivotGroupVerticalStrokeUndefined != nil}
+  public var hasFooterRowPivotGroupVerticalStrokeUndefined: Bool {_storage._footerRowPivotGroupVerticalStrokeUndefined != nil}
   /// Clears the value of `footerRowPivotGroupVerticalStrokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFooterRowPivotGroupVerticalStrokeUndefined() {_uniqueStorage()._footerRowPivotGroupVerticalStrokeUndefined = nil}
 
@@ -1322,14 +1322,11 @@ public struct TSTSOS_TableStylePropertyChangeSetArchive: @unchecked Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSTSOS"
+fileprivate nonisolated let _protobuf_package = "TSTSOS"
 
-extension TSTSOS_SpecSetTableStrokePresetListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSTSOS_SpecSetTableStrokePresetListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetTableStrokePresetListArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "table_stroke_preset_list"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}table_stroke_preset_list\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -1372,11 +1369,9 @@ extension TSTSOS_SpecSetTableStrokePresetListArchive: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSTSOS_SpecTableStrokePresetListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSTSOS_SpecTableStrokePresetListArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecTableStrokePresetListArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_table_stroke_preset_list"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_table_stroke_preset_list\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetTableStrokePresetList, !v.isInitialized {return false}
@@ -1413,20 +1408,9 @@ extension TSTSOS_SpecTableStrokePresetListArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSTSOS_TableCellStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSTSOS_TableCellStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TableCellStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "text_wrap"),
-    2: .standard(proto: "text_wrap_undefined"),
-    3: .same(proto: "type"),
-    4: .standard(proto: "type_undefined"),
-    5: .same(proto: "fill"),
-    6: .standard(proto: "fill_undefined"),
-    7: .standard(proto: "vertical_alignment"),
-    8: .standard(proto: "vertical_alignment_undefined"),
-    9: .same(proto: "padding"),
-    10: .standard(proto: "padding_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}text_wrap\0\u{3}text_wrap_undefined\0\u{1}type\0\u{3}type_undefined\0\u{1}fill\0\u{3}fill_undefined\0\u{3}vertical_alignment\0\u{3}vertical_alignment_undefined\0\u{1}padding\0\u{3}padding_undefined\0")
 
   fileprivate class _StorageClass {
     var _textWrap: TSSSOS_SpecBoolArchive? = nil
@@ -1440,15 +1424,11 @@ extension TSTSOS_TableCellStylePropertyChangeSetArchive: SwiftProtobuf.Message, 
     var _padding: TSWPSOS_SpecPaddingArchive? = nil
     var _paddingUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -1572,136 +1552,9 @@ extension TSTSOS_TableCellStylePropertyChangeSetArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSTSOS_TableStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSTSOS_TableStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TableStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "auto_resize"),
-    2: .standard(proto: "auto_resize_undefined"),
-    3: .standard(proto: "banded_rows"),
-    4: .standard(proto: "banded_rows_undefined"),
-    5: .standard(proto: "banded_cell_fill"),
-    6: .standard(proto: "banded_cell_fill_undefined"),
-    7: .standard(proto: "behaves_like_spreadsheet"),
-    8: .standard(proto: "behaves_like_spreadsheet_undefined"),
-    9: .standard(proto: "body_horizontal_border_stroke"),
-    10: .standard(proto: "body_horizontal_border_stroke_undefined"),
-    11: .standard(proto: "body_vertical_border_stroke"),
-    12: .standard(proto: "body_vertical_border_stroke_undefined"),
-    13: .standard(proto: "body_horizontal_stroke"),
-    14: .standard(proto: "body_horizontal_stroke_undefined"),
-    15: .standard(proto: "body_vertical_stroke"),
-    16: .standard(proto: "body_vertical_stroke_undefined"),
-    17: .standard(proto: "header_column_border_stroke"),
-    18: .standard(proto: "header_column_border_stroke_undefined"),
-    19: .standard(proto: "header_column_vertical_stroke"),
-    20: .standard(proto: "header_column_vertical_stroke_undefined"),
-    21: .standard(proto: "header_column_horizontal_stroke"),
-    22: .standard(proto: "header_column_horizontal_stroke_undefined"),
-    23: .standard(proto: "header_column_separator_stroke"),
-    24: .standard(proto: "header_column_separator_stroke_undefined"),
-    25: .standard(proto: "header_row_border_stroke"),
-    26: .standard(proto: "header_row_border_stroke_undefined"),
-    27: .standard(proto: "header_row_horizontal_stroke"),
-    28: .standard(proto: "header_row_horizontal_stroke_undefined"),
-    29: .standard(proto: "header_row_vertical_stroke"),
-    30: .standard(proto: "header_row_vertical_stroke_undefined"),
-    31: .standard(proto: "header_row_separator_stroke"),
-    32: .standard(proto: "header_row_separator_stroke_undefined"),
-    33: .standard(proto: "footer_row_border_stroke"),
-    34: .standard(proto: "footer_row_border_stroke_undefined"),
-    35: .standard(proto: "footer_row_horizontal_stroke"),
-    36: .standard(proto: "footer_row_horizontal_stroke_undefined"),
-    37: .standard(proto: "footer_row_vertical_stroke"),
-    38: .standard(proto: "footer_row_vertical_stroke_undefined"),
-    39: .standard(proto: "footer_row_separator_stroke"),
-    40: .standard(proto: "footer_row_separator_stroke_undefined"),
-    41: .standard(proto: "stroke_preset_list_object"),
-    42: .standard(proto: "stroke_preset_list_object_undefined"),
-    43: .standard(proto: "vertical_strokes_visible"),
-    44: .standard(proto: "vertical_strokes_visible_undefined"),
-    45: .standard(proto: "horizontal_strokes_visible"),
-    46: .standard(proto: "horizontal_strokes_visible_undefined"),
-    47: .standard(proto: "header_row_sep_visible"),
-    48: .standard(proto: "header_row_sep_visible_undefined"),
-    49: .standard(proto: "header_row_verticals_visible"),
-    50: .standard(proto: "header_row_verticals_visible_undefined"),
-    51: .standard(proto: "header_col_sep_visible"),
-    52: .standard(proto: "header_col_sep_visible_undefined"),
-    53: .standard(proto: "header_col_horizontals_visible"),
-    54: .standard(proto: "header_col_horizontals_visible_undefined"),
-    55: .standard(proto: "footer_sep_visible"),
-    56: .standard(proto: "footer_sep_visible_undefined"),
-    57: .standard(proto: "footer_verticals_visible"),
-    58: .standard(proto: "footer_verticals_visible_undefined"),
-    59: .standard(proto: "border_strokes_visible"),
-    60: .standard(proto: "border_strokes_visible_undefined"),
-    61: .standard(proto: "master_font_family"),
-    62: .standard(proto: "master_font_family_undefined"),
-    63: .standard(proto: "writing_direction"),
-    64: .standard(proto: "writing_direction_undefined"),
-    65: .standard(proto: "category_level1_top_stroke"),
-    66: .standard(proto: "category_level1_top_stroke_undefined"),
-    67: .standard(proto: "category_level2_top_stroke"),
-    68: .standard(proto: "category_level2_top_stroke_undefined"),
-    69: .standard(proto: "category_level3_top_stroke"),
-    70: .standard(proto: "category_level3_top_stroke_undefined"),
-    71: .standard(proto: "category_level4_top_stroke"),
-    72: .standard(proto: "category_level4_top_stroke_undefined"),
-    73: .standard(proto: "category_level5_top_stroke"),
-    74: .standard(proto: "category_level5_top_stroke_undefined"),
-    75: .standard(proto: "category_level1_label_separator_stroke"),
-    76: .standard(proto: "category_level1_label_separator_stroke_undefined"),
-    77: .standard(proto: "category_level2_label_separator_stroke"),
-    78: .standard(proto: "category_level2_label_separator_stroke_undefined"),
-    79: .standard(proto: "category_level3_label_separator_stroke"),
-    80: .standard(proto: "category_level3_label_separator_stroke_undefined"),
-    81: .standard(proto: "category_level4_label_separator_stroke"),
-    82: .standard(proto: "category_level4_label_separator_stroke_undefined"),
-    83: .standard(proto: "category_level5_label_separator_stroke"),
-    84: .standard(proto: "category_level5_label_separator_stroke_undefined"),
-    85: .standard(proto: "category_level1_bottom_stroke"),
-    86: .standard(proto: "category_level1_bottom_stroke_undefined"),
-    87: .standard(proto: "category_level2_bottom_stroke"),
-    88: .standard(proto: "category_level2_bottom_stroke_undefined"),
-    89: .standard(proto: "category_level3_bottom_stroke"),
-    90: .standard(proto: "category_level3_bottom_stroke_undefined"),
-    91: .standard(proto: "category_level4_bottom_stroke"),
-    92: .standard(proto: "category_level4_bottom_stroke_undefined"),
-    93: .standard(proto: "category_level5_bottom_stroke"),
-    94: .standard(proto: "category_level5_bottom_stroke_undefined"),
-    95: .standard(proto: "category_level1_interior_stroke"),
-    96: .standard(proto: "category_level1_interior_stroke_undefined"),
-    97: .standard(proto: "category_level2_interior_stroke"),
-    98: .standard(proto: "category_level2_interior_stroke_undefined"),
-    99: .standard(proto: "category_level3_interior_stroke"),
-    100: .standard(proto: "category_level3_interior_stroke_undefined"),
-    101: .standard(proto: "category_level4_interior_stroke"),
-    102: .standard(proto: "category_level4_interior_stroke_undefined"),
-    103: .standard(proto: "category_level5_interior_stroke"),
-    104: .standard(proto: "category_level5_interior_stroke_undefined"),
-    105: .standard(proto: "body_pivot_group_horizontal_stroke"),
-    106: .standard(proto: "body_pivot_group_horizontal_stroke_undefined"),
-    107: .standard(proto: "body_pivot_group_vertical_stroke"),
-    108: .standard(proto: "body_pivot_group_vertical_stroke_undefined"),
-    109: .standard(proto: "body_pivot_de_emphasis_horizontal_stroke"),
-    110: .standard(proto: "body_pivot_de_emphasis_horizontal_stroke_undefined"),
-    111: .standard(proto: "body_pivot_emphasis_vertical_stroke"),
-    112: .standard(proto: "body_pivot_emphasis_vertical_stroke_undefined"),
-    113: .standard(proto: "header_column_pivot_group_horizontal_stroke"),
-    114: .standard(proto: "header_column_pivot_group_horizontal_stroke_undefined"),
-    115: .standard(proto: "header_column_pivot_group_de_emphasis_stroke"),
-    116: .standard(proto: "header_column_pivot_group_de_emphasis_stroke_undefined"),
-    117: .standard(proto: "header_column_pivot_separator_stroke"),
-    118: .standard(proto: "header_column_pivot_separator_stroke_undefined"),
-    119: .standard(proto: "header_row_pivot_group_vertical_stroke"),
-    120: .standard(proto: "header_row_pivot_group_vertical_stroke_undefined"),
-    121: .standard(proto: "header_row_pivot_group_de_emphasis_stroke"),
-    122: .standard(proto: "header_row_pivot_group_de_emphasis_stroke_undefined"),
-    123: .standard(proto: "header_row_pivot_title_stroke"),
-    124: .standard(proto: "header_row_pivot_title_stroke_undefined"),
-    125: .standard(proto: "footer_row_pivot_group_vertical_stroke"),
-    126: .standard(proto: "footer_row_pivot_group_vertical_stroke_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}auto_resize\0\u{3}auto_resize_undefined\0\u{3}banded_rows\0\u{3}banded_rows_undefined\0\u{3}banded_cell_fill\0\u{3}banded_cell_fill_undefined\0\u{3}behaves_like_spreadsheet\0\u{3}behaves_like_spreadsheet_undefined\0\u{3}body_horizontal_border_stroke\0\u{3}body_horizontal_border_stroke_undefined\0\u{3}body_vertical_border_stroke\0\u{3}body_vertical_border_stroke_undefined\0\u{3}body_horizontal_stroke\0\u{3}body_horizontal_stroke_undefined\0\u{3}body_vertical_stroke\0\u{3}body_vertical_stroke_undefined\0\u{3}header_column_border_stroke\0\u{3}header_column_border_stroke_undefined\0\u{3}header_column_vertical_stroke\0\u{3}header_column_vertical_stroke_undefined\0\u{3}header_column_horizontal_stroke\0\u{3}header_column_horizontal_stroke_undefined\0\u{3}header_column_separator_stroke\0\u{3}header_column_separator_stroke_undefined\0\u{3}header_row_border_stroke\0\u{3}header_row_border_stroke_undefined\0\u{3}header_row_horizontal_stroke\0\u{3}header_row_horizontal_stroke_undefined\0\u{3}header_row_vertical_stroke\0\u{3}header_row_vertical_stroke_undefined\0\u{3}header_row_separator_stroke\0\u{3}header_row_separator_stroke_undefined\0\u{3}footer_row_border_stroke\0\u{3}footer_row_border_stroke_undefined\0\u{3}footer_row_horizontal_stroke\0\u{3}footer_row_horizontal_stroke_undefined\0\u{3}footer_row_vertical_stroke\0\u{3}footer_row_vertical_stroke_undefined\0\u{3}footer_row_separator_stroke\0\u{3}footer_row_separator_stroke_undefined\0\u{3}stroke_preset_list_object\0\u{3}stroke_preset_list_object_undefined\0\u{3}vertical_strokes_visible\0\u{3}vertical_strokes_visible_undefined\0\u{3}horizontal_strokes_visible\0\u{3}horizontal_strokes_visible_undefined\0\u{3}header_row_sep_visible\0\u{3}header_row_sep_visible_undefined\0\u{3}header_row_verticals_visible\0\u{3}header_row_verticals_visible_undefined\0\u{3}header_col_sep_visible\0\u{3}header_col_sep_visible_undefined\0\u{3}header_col_horizontals_visible\0\u{3}header_col_horizontals_visible_undefined\0\u{3}footer_sep_visible\0\u{3}footer_sep_visible_undefined\0\u{3}footer_verticals_visible\0\u{3}footer_verticals_visible_undefined\0\u{3}border_strokes_visible\0\u{3}border_strokes_visible_undefined\0\u{3}master_font_family\0\u{3}master_font_family_undefined\0\u{3}writing_direction\0\u{3}writing_direction_undefined\0\u{3}category_level1_top_stroke\0\u{3}category_level1_top_stroke_undefined\0\u{3}category_level2_top_stroke\0\u{3}category_level2_top_stroke_undefined\0\u{3}category_level3_top_stroke\0\u{3}category_level3_top_stroke_undefined\0\u{3}category_level4_top_stroke\0\u{3}category_level4_top_stroke_undefined\0\u{3}category_level5_top_stroke\0\u{3}category_level5_top_stroke_undefined\0\u{3}category_level1_label_separator_stroke\0\u{3}category_level1_label_separator_stroke_undefined\0\u{3}category_level2_label_separator_stroke\0\u{3}category_level2_label_separator_stroke_undefined\0\u{3}category_level3_label_separator_stroke\0\u{3}category_level3_label_separator_stroke_undefined\0\u{3}category_level4_label_separator_stroke\0\u{3}category_level4_label_separator_stroke_undefined\0\u{3}category_level5_label_separator_stroke\0\u{3}category_level5_label_separator_stroke_undefined\0\u{3}category_level1_bottom_stroke\0\u{3}category_level1_bottom_stroke_undefined\0\u{3}category_level2_bottom_stroke\0\u{3}category_level2_bottom_stroke_undefined\0\u{3}category_level3_bottom_stroke\0\u{3}category_level3_bottom_stroke_undefined\0\u{3}category_level4_bottom_stroke\0\u{3}category_level4_bottom_stroke_undefined\0\u{3}category_level5_bottom_stroke\0\u{3}category_level5_bottom_stroke_undefined\0\u{3}category_level1_interior_stroke\0\u{3}category_level1_interior_stroke_undefined\0\u{3}category_level2_interior_stroke\0\u{3}category_level2_interior_stroke_undefined\0\u{3}category_level3_interior_stroke\0\u{3}category_level3_interior_stroke_undefined\0\u{3}category_level4_interior_stroke\0\u{3}category_level4_interior_stroke_undefined\0\u{3}category_level5_interior_stroke\0\u{3}category_level5_interior_stroke_undefined\0\u{3}body_pivot_group_horizontal_stroke\0\u{3}body_pivot_group_horizontal_stroke_undefined\0\u{3}body_pivot_group_vertical_stroke\0\u{3}body_pivot_group_vertical_stroke_undefined\0\u{3}body_pivot_de_emphasis_horizontal_stroke\0\u{3}body_pivot_de_emphasis_horizontal_stroke_undefined\0\u{3}body_pivot_emphasis_vertical_stroke\0\u{3}body_pivot_emphasis_vertical_stroke_undefined\0\u{3}header_column_pivot_group_horizontal_stroke\0\u{3}header_column_pivot_group_horizontal_stroke_undefined\0\u{3}header_column_pivot_group_de_emphasis_stroke\0\u{3}header_column_pivot_group_de_emphasis_stroke_undefined\0\u{3}header_column_pivot_separator_stroke\0\u{3}header_column_pivot_separator_stroke_undefined\0\u{3}header_row_pivot_group_vertical_stroke\0\u{3}header_row_pivot_group_vertical_stroke_undefined\0\u{3}header_row_pivot_group_de_emphasis_stroke\0\u{3}header_row_pivot_group_de_emphasis_stroke_undefined\0\u{3}header_row_pivot_title_stroke\0\u{3}header_row_pivot_title_stroke_undefined\0\u{3}footer_row_pivot_group_vertical_stroke\0\u{3}footer_row_pivot_group_vertical_stroke_undefined\0")
 
   fileprivate class _StorageClass {
     var _autoResize: TSSSOS_SpecBoolArchive? = nil
@@ -1831,15 +1684,11 @@ extension TSTSOS_TableStylePropertyChangeSetArchive: SwiftProtobuf.Message, Swif
     var _footerRowPivotGroupVerticalStroke: TSDSOS_SpecStrokeArchive? = nil
     var _footerRowPivotGroupVerticalStrokeUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 

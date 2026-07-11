@@ -15,131 +15,85 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public enum TSS_ValueType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case objectType // = 0
-  case intType // = 1
-  case floatType // = 2
-  case doubleType // = 3
+public nonisolated enum TSS_ValueType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case objectType = 0
+  case intType = 1
+  case floatType = 2
+  case doubleType = 3
 
   public init() {
     self = .objectType
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .objectType
-    case 1: self = .intType
-    case 2: self = .floatType
-    case 3: self = .doubleType
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .objectType: return 0
-    case .intType: return 1
-    case .floatType: return 2
-    case .doubleType: return 3
-    }
-  }
-
 }
 
-public enum TSS_PropertyType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case invalidPropertyType // = 1
-  case nullPropertyType // = 2
-  case integerPropertyType // = 3
-  case floatPropertyType // = 4
-  case doublePropertyType // = 5
-  case nsstringPropertyType // = 6
-  case tspobjectPropertyType // = 7
+public nonisolated enum TSS_PropertyType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case invalidPropertyType = 1
+  case nullPropertyType = 2
+  case integerPropertyType = 3
+  case floatPropertyType = 4
+  case doublePropertyType = 5
+  case nsstringPropertyType = 6
+  case tspobjectPropertyType = 7
 
   public init() {
     self = .invalidPropertyType
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 1: self = .invalidPropertyType
-    case 2: self = .nullPropertyType
-    case 3: self = .integerPropertyType
-    case 4: self = .floatPropertyType
-    case 5: self = .doublePropertyType
-    case 6: self = .nsstringPropertyType
-    case 7: self = .tspobjectPropertyType
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .invalidPropertyType: return 1
-    case .nullPropertyType: return 2
-    case .integerPropertyType: return 3
-    case .floatPropertyType: return 4
-    case .doublePropertyType: return 5
-    case .nsstringPropertyType: return 6
-    case .tspobjectPropertyType: return 7
-    }
-  }
-
 }
 
-public struct TSS_StyleArchive: Sendable {
+public nonisolated struct TSS_StyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var name: String {
-    get {return _name ?? String()}
+    get {_name ?? String()}
     set {_name = newValue}
   }
   /// Returns true if `name` has been explicitly set.
-  public var hasName: Bool {return self._name != nil}
+  public var hasName: Bool {self._name != nil}
   /// Clears the value of `name`. Subsequent reads from it will return its default value.
   public mutating func clearName() {self._name = nil}
 
   public var styleIdentifier: String {
-    get {return _styleIdentifier ?? String()}
+    get {_styleIdentifier ?? String()}
     set {_styleIdentifier = newValue}
   }
   /// Returns true if `styleIdentifier` has been explicitly set.
-  public var hasStyleIdentifier: Bool {return self._styleIdentifier != nil}
+  public var hasStyleIdentifier: Bool {self._styleIdentifier != nil}
   /// Clears the value of `styleIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearStyleIdentifier() {self._styleIdentifier = nil}
 
   public var parent: TSP_Reference {
-    get {return _parent ?? TSP_Reference()}
+    get {_parent ?? TSP_Reference()}
     set {_parent = newValue}
   }
   /// Returns true if `parent` has been explicitly set.
-  public var hasParent: Bool {return self._parent != nil}
+  public var hasParent: Bool {self._parent != nil}
   /// Clears the value of `parent`. Subsequent reads from it will return its default value.
   public mutating func clearParent() {self._parent = nil}
 
   public var isVariation: Bool {
-    get {return _isVariation ?? false}
+    get {_isVariation ?? false}
     set {_isVariation = newValue}
   }
   /// Returns true if `isVariation` has been explicitly set.
-  public var hasIsVariation: Bool {return self._isVariation != nil}
+  public var hasIsVariation: Bool {self._isVariation != nil}
   /// Clears the value of `isVariation`. Subsequent reads from it will return its default value.
   public mutating func clearIsVariation() {self._isVariation = nil}
 
   public var stylesheet: TSP_Reference {
-    get {return _stylesheet ?? TSP_Reference()}
+    get {_stylesheet ?? TSP_Reference()}
     set {_stylesheet = newValue}
   }
   /// Returns true if `stylesheet` has been explicitly set.
-  public var hasStylesheet: Bool {return self._stylesheet != nil}
+  public var hasStylesheet: Bool {self._stylesheet != nil}
   /// Clears the value of `stylesheet`. Subsequent reads from it will return its default value.
   public mutating func clearStylesheet() {self._stylesheet = nil}
 
@@ -154,219 +108,219 @@ public struct TSS_StyleArchive: Sendable {
   fileprivate var _stylesheet: TSP_Reference? = nil
 }
 
-public struct TSS_StylesheetArchive: @unchecked Sendable {
+public nonisolated struct TSS_StylesheetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var styles: [TSP_Reference] {
-    get {return _storage._styles}
+    get {_storage._styles}
     set {_uniqueStorage()._styles = newValue}
   }
 
   public var identifierToStyleMap: [TSS_StylesheetArchive.IdentifiedStyleEntry] {
-    get {return _storage._identifierToStyleMap}
+    get {_storage._identifierToStyleMap}
     set {_uniqueStorage()._identifierToStyleMap = newValue}
   }
 
   public var parent: TSP_Reference {
-    get {return _storage._parent ?? TSP_Reference()}
+    get {_storage._parent ?? TSP_Reference()}
     set {_uniqueStorage()._parent = newValue}
   }
   /// Returns true if `parent` has been explicitly set.
-  public var hasParent: Bool {return _storage._parent != nil}
+  public var hasParent: Bool {_storage._parent != nil}
   /// Clears the value of `parent`. Subsequent reads from it will return its default value.
   public mutating func clearParent() {_uniqueStorage()._parent = nil}
 
   public var isLocked: Bool {
-    get {return _storage._isLocked ?? true}
+    get {_storage._isLocked ?? true}
     set {_uniqueStorage()._isLocked = newValue}
   }
   /// Returns true if `isLocked` has been explicitly set.
-  public var hasIsLocked: Bool {return _storage._isLocked != nil}
+  public var hasIsLocked: Bool {_storage._isLocked != nil}
   /// Clears the value of `isLocked`. Subsequent reads from it will return its default value.
   public mutating func clearIsLocked() {_uniqueStorage()._isLocked = nil}
 
   public var parentToChildrenStyleMap: [TSS_StylesheetArchive.StyleChildrenEntry] {
-    get {return _storage._parentToChildrenStyleMap}
+    get {_storage._parentToChildrenStyleMap}
     set {_uniqueStorage()._parentToChildrenStyleMap = newValue}
   }
 
   public var canCullStyles: Bool {
-    get {return _storage._canCullStyles ?? false}
+    get {_storage._canCullStyles ?? false}
     set {_uniqueStorage()._canCullStyles = newValue}
   }
   /// Returns true if `canCullStyles` has been explicitly set.
-  public var hasCanCullStyles: Bool {return _storage._canCullStyles != nil}
+  public var hasCanCullStyles: Bool {_storage._canCullStyles != nil}
   /// Clears the value of `canCullStyles`. Subsequent reads from it will return its default value.
   public mutating func clearCanCullStyles() {_uniqueStorage()._canCullStyles = nil}
 
   public var stylesFor100: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor100 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor100 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor100 = newValue}
   }
   /// Returns true if `stylesFor100` has been explicitly set.
-  public var hasStylesFor100: Bool {return _storage._stylesFor100 != nil}
+  public var hasStylesFor100: Bool {_storage._stylesFor100 != nil}
   /// Clears the value of `stylesFor100`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor100() {_uniqueStorage()._stylesFor100 = nil}
 
   public var stylesFor101: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor101 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor101 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor101 = newValue}
   }
   /// Returns true if `stylesFor101` has been explicitly set.
-  public var hasStylesFor101: Bool {return _storage._stylesFor101 != nil}
+  public var hasStylesFor101: Bool {_storage._stylesFor101 != nil}
   /// Clears the value of `stylesFor101`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor101() {_uniqueStorage()._stylesFor101 = nil}
 
   public var stylesFor102: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor102 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor102 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor102 = newValue}
   }
   /// Returns true if `stylesFor102` has been explicitly set.
-  public var hasStylesFor102: Bool {return _storage._stylesFor102 != nil}
+  public var hasStylesFor102: Bool {_storage._stylesFor102 != nil}
   /// Clears the value of `stylesFor102`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor102() {_uniqueStorage()._stylesFor102 = nil}
 
   public var stylesFor110: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor110 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor110 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor110 = newValue}
   }
   /// Returns true if `stylesFor110` has been explicitly set.
-  public var hasStylesFor110: Bool {return _storage._stylesFor110 != nil}
+  public var hasStylesFor110: Bool {_storage._stylesFor110 != nil}
   /// Clears the value of `stylesFor110`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor110() {_uniqueStorage()._stylesFor110 = nil}
 
   public var stylesFor111: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor111 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor111 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor111 = newValue}
   }
   /// Returns true if `stylesFor111` has been explicitly set.
-  public var hasStylesFor111: Bool {return _storage._stylesFor111 != nil}
+  public var hasStylesFor111: Bool {_storage._stylesFor111 != nil}
   /// Clears the value of `stylesFor111`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor111() {_uniqueStorage()._stylesFor111 = nil}
 
   public var stylesFor112: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor112 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor112 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor112 = newValue}
   }
   /// Returns true if `stylesFor112` has been explicitly set.
-  public var hasStylesFor112: Bool {return _storage._stylesFor112 != nil}
+  public var hasStylesFor112: Bool {_storage._stylesFor112 != nil}
   /// Clears the value of `stylesFor112`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor112() {_uniqueStorage()._stylesFor112 = nil}
 
   public var stylesFor120: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor120 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor120 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor120 = newValue}
   }
   /// Returns true if `stylesFor120` has been explicitly set.
-  public var hasStylesFor120: Bool {return _storage._stylesFor120 != nil}
+  public var hasStylesFor120: Bool {_storage._stylesFor120 != nil}
   /// Clears the value of `stylesFor120`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor120() {_uniqueStorage()._stylesFor120 = nil}
 
   public var stylesFor121: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor121 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor121 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor121 = newValue}
   }
   /// Returns true if `stylesFor121` has been explicitly set.
-  public var hasStylesFor121: Bool {return _storage._stylesFor121 != nil}
+  public var hasStylesFor121: Bool {_storage._stylesFor121 != nil}
   /// Clears the value of `stylesFor121`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor121() {_uniqueStorage()._stylesFor121 = nil}
 
   public var stylesFor122: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor122 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor122 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor122 = newValue}
   }
   /// Returns true if `stylesFor122` has been explicitly set.
-  public var hasStylesFor122: Bool {return _storage._stylesFor122 != nil}
+  public var hasStylesFor122: Bool {_storage._stylesFor122 != nil}
   /// Clears the value of `stylesFor122`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor122() {_uniqueStorage()._stylesFor122 = nil}
 
   public var stylesFor130: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor130 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor130 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor130 = newValue}
   }
   /// Returns true if `stylesFor130` has been explicitly set.
-  public var hasStylesFor130: Bool {return _storage._stylesFor130 != nil}
+  public var hasStylesFor130: Bool {_storage._stylesFor130 != nil}
   /// Clears the value of `stylesFor130`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor130() {_uniqueStorage()._stylesFor130 = nil}
 
   public var stylesFor131: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor131 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor131 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor131 = newValue}
   }
   /// Returns true if `stylesFor131` has been explicitly set.
-  public var hasStylesFor131: Bool {return _storage._stylesFor131 != nil}
+  public var hasStylesFor131: Bool {_storage._stylesFor131 != nil}
   /// Clears the value of `stylesFor131`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor131() {_uniqueStorage()._stylesFor131 = nil}
 
   public var stylesFor132: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor132 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor132 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor132 = newValue}
   }
   /// Returns true if `stylesFor132` has been explicitly set.
-  public var hasStylesFor132: Bool {return _storage._stylesFor132 != nil}
+  public var hasStylesFor132: Bool {_storage._stylesFor132 != nil}
   /// Clears the value of `stylesFor132`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor132() {_uniqueStorage()._stylesFor132 = nil}
 
   public var stylesFor140: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor140 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor140 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor140 = newValue}
   }
   /// Returns true if `stylesFor140` has been explicitly set.
-  public var hasStylesFor140: Bool {return _storage._stylesFor140 != nil}
+  public var hasStylesFor140: Bool {_storage._stylesFor140 != nil}
   /// Clears the value of `stylesFor140`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor140() {_uniqueStorage()._stylesFor140 = nil}
 
   public var stylesFor141: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor141 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor141 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor141 = newValue}
   }
   /// Returns true if `stylesFor141` has been explicitly set.
-  public var hasStylesFor141: Bool {return _storage._stylesFor141 != nil}
+  public var hasStylesFor141: Bool {_storage._stylesFor141 != nil}
   /// Clears the value of `stylesFor141`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor141() {_uniqueStorage()._stylesFor141 = nil}
 
   public var stylesFor142: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor142 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor142 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor142 = newValue}
   }
   /// Returns true if `stylesFor142` has been explicitly set.
-  public var hasStylesFor142: Bool {return _storage._stylesFor142 != nil}
+  public var hasStylesFor142: Bool {_storage._stylesFor142 != nil}
   /// Clears the value of `stylesFor142`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor142() {_uniqueStorage()._stylesFor142 = nil}
 
   public var stylesFor144: TSS_StylesheetArchive.VersionedStyles {
-    get {return _storage._stylesFor144 ?? TSS_StylesheetArchive.VersionedStyles()}
+    get {_storage._stylesFor144 ?? TSS_StylesheetArchive.VersionedStyles()}
     set {_uniqueStorage()._stylesFor144 = newValue}
   }
   /// Returns true if `stylesFor144` has been explicitly set.
-  public var hasStylesFor144: Bool {return _storage._stylesFor144 != nil}
+  public var hasStylesFor144: Bool {_storage._stylesFor144 != nil}
   /// Clears the value of `stylesFor144`. Subsequent reads from it will return its default value.
   public mutating func clearStylesFor144() {_uniqueStorage()._stylesFor144 = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct IdentifiedStyleEntry: Sendable {
+  public nonisolated struct IdentifiedStyleEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var identifier: String {
-      get {return _identifier ?? String()}
+      get {_identifier ?? String()}
       set {_identifier = newValue}
     }
     /// Returns true if `identifier` has been explicitly set.
-    public var hasIdentifier: Bool {return self._identifier != nil}
+    public var hasIdentifier: Bool {self._identifier != nil}
     /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
     public mutating func clearIdentifier() {self._identifier = nil}
 
     public var style: TSP_Reference {
-      get {return _style ?? TSP_Reference()}
+      get {_style ?? TSP_Reference()}
       set {_style = newValue}
     }
     /// Returns true if `style` has been explicitly set.
-    public var hasStyle: Bool {return self._style != nil}
+    public var hasStyle: Bool {self._style != nil}
     /// Clears the value of `style`. Subsequent reads from it will return its default value.
     public mutating func clearStyle() {self._style = nil}
 
@@ -378,17 +332,17 @@ public struct TSS_StylesheetArchive: @unchecked Sendable {
     fileprivate var _style: TSP_Reference? = nil
   }
 
-  public struct StyleChildrenEntry: Sendable {
+  public nonisolated struct StyleChildrenEntry: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var parent: TSP_Reference {
-      get {return _parent ?? TSP_Reference()}
+      get {_parent ?? TSP_Reference()}
       set {_parent = newValue}
     }
     /// Returns true if `parent` has been explicitly set.
-    public var hasParent: Bool {return self._parent != nil}
+    public var hasParent: Bool {self._parent != nil}
     /// Clears the value of `parent`. Subsequent reads from it will return its default value.
     public mutating func clearParent() {self._parent = nil}
 
@@ -401,7 +355,7 @@ public struct TSS_StylesheetArchive: @unchecked Sendable {
     fileprivate var _parent: TSP_Reference? = nil
   }
 
-  public struct VersionedStyles: Sendable {
+  public nonisolated struct VersionedStyles: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -422,35 +376,35 @@ public struct TSS_StylesheetArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSS_ThemeArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSS_ThemeArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var legacyStylesheet: TSP_Reference {
-    get {return _legacyStylesheet ?? TSP_Reference()}
+    get {_legacyStylesheet ?? TSP_Reference()}
     set {_legacyStylesheet = newValue}
   }
   /// Returns true if `legacyStylesheet` has been explicitly set.
-  public var hasLegacyStylesheet: Bool {return self._legacyStylesheet != nil}
+  public var hasLegacyStylesheet: Bool {self._legacyStylesheet != nil}
   /// Clears the value of `legacyStylesheet`. Subsequent reads from it will return its default value.
   public mutating func clearLegacyStylesheet() {self._legacyStylesheet = nil}
 
   public var themeIdentifier: String {
-    get {return _themeIdentifier ?? String()}
+    get {_themeIdentifier ?? String()}
     set {_themeIdentifier = newValue}
   }
   /// Returns true if `themeIdentifier` has been explicitly set.
-  public var hasThemeIdentifier: Bool {return self._themeIdentifier != nil}
+  public var hasThemeIdentifier: Bool {self._themeIdentifier != nil}
   /// Clears the value of `themeIdentifier`. Subsequent reads from it will return its default value.
   public mutating func clearThemeIdentifier() {self._themeIdentifier = nil}
 
   public var documentStylesheet: TSP_Reference {
-    get {return _documentStylesheet ?? TSP_Reference()}
+    get {_documentStylesheet ?? TSP_Reference()}
     set {_documentStylesheet = newValue}
   }
   /// Returns true if `documentStylesheet` has been explicitly set.
-  public var hasDocumentStylesheet: Bool {return self._documentStylesheet != nil}
+  public var hasDocumentStylesheet: Bool {self._documentStylesheet != nil}
   /// Clears the value of `documentStylesheet`. Subsequent reads from it will return its default value.
   public mutating func clearDocumentStylesheet() {self._documentStylesheet = nil}
 
@@ -470,40 +424,40 @@ public struct TSS_ThemeArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   fileprivate var _documentStylesheet: TSP_Reference? = nil
 }
 
-public struct TSS_ApplyThemeCommandArchive: @unchecked Sendable {
+public nonisolated struct TSS_ApplyThemeCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var commands: [TSP_Reference] {
-    get {return _storage._commands}
+    get {_storage._commands}
     set {_uniqueStorage()._commands = newValue}
   }
 
   public var oldTheme: TSP_Reference {
-    get {return _storage._oldTheme ?? TSP_Reference()}
+    get {_storage._oldTheme ?? TSP_Reference()}
     set {_uniqueStorage()._oldTheme = newValue}
   }
   /// Returns true if `oldTheme` has been explicitly set.
-  public var hasOldTheme: Bool {return _storage._oldTheme != nil}
+  public var hasOldTheme: Bool {_storage._oldTheme != nil}
   /// Clears the value of `oldTheme`. Subsequent reads from it will return its default value.
   public mutating func clearOldTheme() {_uniqueStorage()._oldTheme = nil}
 
   public var newTheme: TSP_Reference {
-    get {return _storage._newTheme ?? TSP_Reference()}
+    get {_storage._newTheme ?? TSP_Reference()}
     set {_uniqueStorage()._newTheme = newValue}
   }
   /// Returns true if `newTheme` has been explicitly set.
-  public var hasNewTheme: Bool {return _storage._newTheme != nil}
+  public var hasNewTheme: Bool {_storage._newTheme != nil}
   /// Clears the value of `newTheme`. Subsequent reads from it will return its default value.
   public mutating func clearNewTheme() {_uniqueStorage()._newTheme = nil}
 
@@ -514,26 +468,26 @@ public struct TSS_ApplyThemeCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSS_ApplyThemeChildCommandArchive: Sendable {
+public nonisolated struct TSS_ApplyThemeChildCommandArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var parent: TSP_Reference {
-    get {return _parent ?? TSP_Reference()}
+    get {_parent ?? TSP_Reference()}
     set {_parent = newValue}
   }
   /// Returns true if `parent` has been explicitly set.
-  public var hasParent: Bool {return self._parent != nil}
+  public var hasParent: Bool {self._parent != nil}
   /// Clears the value of `parent`. Subsequent reads from it will return its default value.
   public mutating func clearParent() {self._parent = nil}
 
@@ -545,62 +499,62 @@ public struct TSS_ApplyThemeChildCommandArchive: Sendable {
   fileprivate var _parent: TSP_Reference? = nil
 }
 
-public struct TSS_StyleUpdatePropertyMapCommandArchive: @unchecked Sendable {
+public nonisolated struct TSS_StyleUpdatePropertyMapCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var currentStyle: TSP_Reference {
-    get {return _storage._currentStyle ?? TSP_Reference()}
+    get {_storage._currentStyle ?? TSP_Reference()}
     set {_uniqueStorage()._currentStyle = newValue}
   }
   /// Returns true if `currentStyle` has been explicitly set.
-  public var hasCurrentStyle: Bool {return _storage._currentStyle != nil}
+  public var hasCurrentStyle: Bool {_storage._currentStyle != nil}
   /// Clears the value of `currentStyle`. Subsequent reads from it will return its default value.
   public mutating func clearCurrentStyle() {_uniqueStorage()._currentStyle = nil}
 
   public var styleWithOldPropertyMap: TSP_Reference {
-    get {return _storage._styleWithOldPropertyMap ?? TSP_Reference()}
+    get {_storage._styleWithOldPropertyMap ?? TSP_Reference()}
     set {_uniqueStorage()._styleWithOldPropertyMap = newValue}
   }
   /// Returns true if `styleWithOldPropertyMap` has been explicitly set.
-  public var hasStyleWithOldPropertyMap: Bool {return _storage._styleWithOldPropertyMap != nil}
+  public var hasStyleWithOldPropertyMap: Bool {_storage._styleWithOldPropertyMap != nil}
   /// Clears the value of `styleWithOldPropertyMap`. Subsequent reads from it will return its default value.
   public mutating func clearStyleWithOldPropertyMap() {_uniqueStorage()._styleWithOldPropertyMap = nil}
 
   public var styleWithNewPropertyMap: TSP_Reference {
-    get {return _storage._styleWithNewPropertyMap ?? TSP_Reference()}
+    get {_storage._styleWithNewPropertyMap ?? TSP_Reference()}
     set {_uniqueStorage()._styleWithNewPropertyMap = newValue}
   }
   /// Returns true if `styleWithNewPropertyMap` has been explicitly set.
-  public var hasStyleWithNewPropertyMap: Bool {return _storage._styleWithNewPropertyMap != nil}
+  public var hasStyleWithNewPropertyMap: Bool {_storage._styleWithNewPropertyMap != nil}
   /// Clears the value of `styleWithNewPropertyMap`. Subsequent reads from it will return its default value.
   public mutating func clearStyleWithNewPropertyMap() {_uniqueStorage()._styleWithNewPropertyMap = nil}
 
   public var styleDiff: TSP_Reference {
-    get {return _storage._styleDiff ?? TSP_Reference()}
+    get {_storage._styleDiff ?? TSP_Reference()}
     set {_uniqueStorage()._styleDiff = newValue}
   }
   /// Returns true if `styleDiff` has been explicitly set.
-  public var hasStyleDiff: Bool {return _storage._styleDiff != nil}
+  public var hasStyleDiff: Bool {_storage._styleDiff != nil}
   /// Clears the value of `styleDiff`. Subsequent reads from it will return its default value.
   public mutating func clearStyleDiff() {_uniqueStorage()._styleDiff = nil}
 
   public var notifyForStyleClients: Bool {
-    get {return _storage._notifyForStyleClients ?? true}
+    get {_storage._notifyForStyleClients ?? true}
     set {_uniqueStorage()._notifyForStyleClients = newValue}
   }
   /// Returns true if `notifyForStyleClients` has been explicitly set.
-  public var hasNotifyForStyleClients: Bool {return _storage._notifyForStyleClients != nil}
+  public var hasNotifyForStyleClients: Bool {_storage._notifyForStyleClients != nil}
   /// Clears the value of `notifyForStyleClients`. Subsequent reads from it will return its default value.
   public mutating func clearNotifyForStyleClients() {_uniqueStorage()._notifyForStyleClients = nil}
 
@@ -611,44 +565,44 @@ public struct TSS_StyleUpdatePropertyMapCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSS_ThemeReplacePresetCommandArchive: @unchecked Sendable {
+public nonisolated struct TSS_ThemeReplacePresetCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var preset: TSP_Reference {
-    get {return _storage._preset ?? TSP_Reference()}
+    get {_storage._preset ?? TSP_Reference()}
     set {_uniqueStorage()._preset = newValue}
   }
   /// Returns true if `preset` has been explicitly set.
-  public var hasPreset: Bool {return _storage._preset != nil}
+  public var hasPreset: Bool {_storage._preset != nil}
   /// Clears the value of `preset`. Subsequent reads from it will return its default value.
   public mutating func clearPreset() {_uniqueStorage()._preset = nil}
 
   public var oldPreset: TSP_Reference {
-    get {return _storage._oldPreset ?? TSP_Reference()}
+    get {_storage._oldPreset ?? TSP_Reference()}
     set {_uniqueStorage()._oldPreset = newValue}
   }
   /// Returns true if `oldPreset` has been explicitly set.
-  public var hasOldPreset: Bool {return _storage._oldPreset != nil}
+  public var hasOldPreset: Bool {_storage._oldPreset != nil}
   /// Clears the value of `oldPreset`. Subsequent reads from it will return its default value.
   public mutating func clearOldPreset() {_uniqueStorage()._oldPreset = nil}
 
   public var index: UInt32 {
-    get {return _storage._index ?? 0}
+    get {_storage._index ?? 0}
     set {_uniqueStorage()._index = newValue}
   }
   /// Returns true if `index` has been explicitly set.
-  public var hasIndex: Bool {return _storage._index != nil}
+  public var hasIndex: Bool {_storage._index != nil}
   /// Clears the value of `index`. Subsequent reads from it will return its default value.
   public mutating func clearIndex() {_uniqueStorage()._index = nil}
 
@@ -659,53 +613,53 @@ public struct TSS_ThemeReplacePresetCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSS_ThemeReplaceColorPresetCommandArchive: @unchecked Sendable {
+public nonisolated struct TSS_ThemeReplaceColorPresetCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var theme: TSP_Reference {
-    get {return _storage._theme ?? TSP_Reference()}
+    get {_storage._theme ?? TSP_Reference()}
     set {_uniqueStorage()._theme = newValue}
   }
   /// Returns true if `theme` has been explicitly set.
-  public var hasTheme: Bool {return _storage._theme != nil}
+  public var hasTheme: Bool {_storage._theme != nil}
   /// Clears the value of `theme`. Subsequent reads from it will return its default value.
   public mutating func clearTheme() {_uniqueStorage()._theme = nil}
 
   public var color: TSP_Color {
-    get {return _storage._color ?? TSP_Color()}
+    get {_storage._color ?? TSP_Color()}
     set {_uniqueStorage()._color = newValue}
   }
   /// Returns true if `color` has been explicitly set.
-  public var hasColor: Bool {return _storage._color != nil}
+  public var hasColor: Bool {_storage._color != nil}
   /// Clears the value of `color`. Subsequent reads from it will return its default value.
   public mutating func clearColor() {_uniqueStorage()._color = nil}
 
   public var oldColor: TSP_Color {
-    get {return _storage._oldColor ?? TSP_Color()}
+    get {_storage._oldColor ?? TSP_Color()}
     set {_uniqueStorage()._oldColor = newValue}
   }
   /// Returns true if `oldColor` has been explicitly set.
-  public var hasOldColor: Bool {return _storage._oldColor != nil}
+  public var hasOldColor: Bool {_storage._oldColor != nil}
   /// Clears the value of `oldColor`. Subsequent reads from it will return its default value.
   public mutating func clearOldColor() {_uniqueStorage()._oldColor = nil}
 
   public var index: UInt32 {
-    get {return _storage._index ?? 0}
+    get {_storage._index ?? 0}
     set {_uniqueStorage()._index = newValue}
   }
   /// Returns true if `index` has been explicitly set.
-  public var hasIndex: Bool {return _storage._index != nil}
+  public var hasIndex: Bool {_storage._index != nil}
   /// Clears the value of `index`. Subsequent reads from it will return its default value.
   public mutating func clearIndex() {_uniqueStorage()._index = nil}
 
@@ -716,62 +670,62 @@ public struct TSS_ThemeReplaceColorPresetCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSS_ThemeAddStylePresetCommandArchive: @unchecked Sendable {
+public nonisolated struct TSS_ThemeAddStylePresetCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var theme: TSP_Reference {
-    get {return _storage._theme ?? TSP_Reference()}
+    get {_storage._theme ?? TSP_Reference()}
     set {_uniqueStorage()._theme = newValue}
   }
   /// Returns true if `theme` has been explicitly set.
-  public var hasTheme: Bool {return _storage._theme != nil}
+  public var hasTheme: Bool {_storage._theme != nil}
   /// Clears the value of `theme`. Subsequent reads from it will return its default value.
   public mutating func clearTheme() {_uniqueStorage()._theme = nil}
 
   public var preset: TSP_Reference {
-    get {return _storage._preset ?? TSP_Reference()}
+    get {_storage._preset ?? TSP_Reference()}
     set {_uniqueStorage()._preset = newValue}
   }
   /// Returns true if `preset` has been explicitly set.
-  public var hasPreset: Bool {return _storage._preset != nil}
+  public var hasPreset: Bool {_storage._preset != nil}
   /// Clears the value of `preset`. Subsequent reads from it will return its default value.
   public mutating func clearPreset() {_uniqueStorage()._preset = nil}
 
   public var presetKind: String {
-    get {return _storage._presetKind ?? String()}
+    get {_storage._presetKind ?? String()}
     set {_uniqueStorage()._presetKind = newValue}
   }
   /// Returns true if `presetKind` has been explicitly set.
-  public var hasPresetKind: Bool {return _storage._presetKind != nil}
+  public var hasPresetKind: Bool {_storage._presetKind != nil}
   /// Clears the value of `presetKind`. Subsequent reads from it will return its default value.
   public mutating func clearPresetKind() {_uniqueStorage()._presetKind = nil}
 
   public var identifier: String {
-    get {return _storage._identifier ?? String()}
+    get {_storage._identifier ?? String()}
     set {_uniqueStorage()._identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return _storage._identifier != nil}
+  public var hasIdentifier: Bool {_storage._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {_uniqueStorage()._identifier = nil}
 
   public var addPresetToStylesheet: Bool {
-    get {return _storage._addPresetToStylesheet ?? false}
+    get {_storage._addPresetToStylesheet ?? false}
     set {_uniqueStorage()._addPresetToStylesheet = newValue}
   }
   /// Returns true if `addPresetToStylesheet` has been explicitly set.
-  public var hasAddPresetToStylesheet: Bool {return _storage._addPresetToStylesheet != nil}
+  public var hasAddPresetToStylesheet: Bool {_storage._addPresetToStylesheet != nil}
   /// Clears the value of `addPresetToStylesheet`. Subsequent reads from it will return its default value.
   public mutating func clearAddPresetToStylesheet() {_uniqueStorage()._addPresetToStylesheet = nil}
 
@@ -782,71 +736,71 @@ public struct TSS_ThemeAddStylePresetCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSS_ThemeRemoveStylePresetCommandArchive: @unchecked Sendable {
+public nonisolated struct TSS_ThemeRemoveStylePresetCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var theme: TSP_Reference {
-    get {return _storage._theme ?? TSP_Reference()}
+    get {_storage._theme ?? TSP_Reference()}
     set {_uniqueStorage()._theme = newValue}
   }
   /// Returns true if `theme` has been explicitly set.
-  public var hasTheme: Bool {return _storage._theme != nil}
+  public var hasTheme: Bool {_storage._theme != nil}
   /// Clears the value of `theme`. Subsequent reads from it will return its default value.
   public mutating func clearTheme() {_uniqueStorage()._theme = nil}
 
   public var preset: TSP_Reference {
-    get {return _storage._preset ?? TSP_Reference()}
+    get {_storage._preset ?? TSP_Reference()}
     set {_uniqueStorage()._preset = newValue}
   }
   /// Returns true if `preset` has been explicitly set.
-  public var hasPreset: Bool {return _storage._preset != nil}
+  public var hasPreset: Bool {_storage._preset != nil}
   /// Clears the value of `preset`. Subsequent reads from it will return its default value.
   public mutating func clearPreset() {_uniqueStorage()._preset = nil}
 
   public var presetIndex: UInt32 {
-    get {return _storage._presetIndex ?? 0}
+    get {_storage._presetIndex ?? 0}
     set {_uniqueStorage()._presetIndex = newValue}
   }
   /// Returns true if `presetIndex` has been explicitly set.
-  public var hasPresetIndex: Bool {return _storage._presetIndex != nil}
+  public var hasPresetIndex: Bool {_storage._presetIndex != nil}
   /// Clears the value of `presetIndex`. Subsequent reads from it will return its default value.
   public mutating func clearPresetIndex() {_uniqueStorage()._presetIndex = nil}
 
   public var presetKind: String {
-    get {return _storage._presetKind ?? String()}
+    get {_storage._presetKind ?? String()}
     set {_uniqueStorage()._presetKind = newValue}
   }
   /// Returns true if `presetKind` has been explicitly set.
-  public var hasPresetKind: Bool {return _storage._presetKind != nil}
+  public var hasPresetKind: Bool {_storage._presetKind != nil}
   /// Clears the value of `presetKind`. Subsequent reads from it will return its default value.
   public mutating func clearPresetKind() {_uniqueStorage()._presetKind = nil}
 
   public var identifier: String {
-    get {return _storage._identifier ?? String()}
+    get {_storage._identifier ?? String()}
     set {_uniqueStorage()._identifier = newValue}
   }
   /// Returns true if `identifier` has been explicitly set.
-  public var hasIdentifier: Bool {return _storage._identifier != nil}
+  public var hasIdentifier: Bool {_storage._identifier != nil}
   /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
   public mutating func clearIdentifier() {_uniqueStorage()._identifier = nil}
 
   public var replacementPreset: TSP_Reference {
-    get {return _storage._replacementPreset ?? TSP_Reference()}
+    get {_storage._replacementPreset ?? TSP_Reference()}
     set {_uniqueStorage()._replacementPreset = newValue}
   }
   /// Returns true if `replacementPreset` has been explicitly set.
-  public var hasReplacementPreset: Bool {return _storage._replacementPreset != nil}
+  public var hasReplacementPreset: Bool {_storage._replacementPreset != nil}
   /// Clears the value of `replacementPreset`. Subsequent reads from it will return its default value.
   public mutating func clearReplacementPreset() {_uniqueStorage()._replacementPreset = nil}
 
@@ -857,53 +811,53 @@ public struct TSS_ThemeRemoveStylePresetCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSS_ThemeMovePresetCommandArchive: @unchecked Sendable {
+public nonisolated struct TSS_ThemeMovePresetCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var theme: TSP_Reference {
-    get {return _storage._theme ?? TSP_Reference()}
+    get {_storage._theme ?? TSP_Reference()}
     set {_uniqueStorage()._theme = newValue}
   }
   /// Returns true if `theme` has been explicitly set.
-  public var hasTheme: Bool {return _storage._theme != nil}
+  public var hasTheme: Bool {_storage._theme != nil}
   /// Clears the value of `theme`. Subsequent reads from it will return its default value.
   public mutating func clearTheme() {_uniqueStorage()._theme = nil}
 
   public var presetID: TSP_UUID {
-    get {return _storage._presetID ?? TSP_UUID()}
+    get {_storage._presetID ?? TSP_UUID()}
     set {_uniqueStorage()._presetID = newValue}
   }
   /// Returns true if `presetID` has been explicitly set.
-  public var hasPresetID: Bool {return _storage._presetID != nil}
+  public var hasPresetID: Bool {_storage._presetID != nil}
   /// Clears the value of `presetID`. Subsequent reads from it will return its default value.
   public mutating func clearPresetID() {_uniqueStorage()._presetID = nil}
 
   public var newIndex: UInt32 {
-    get {return _storage._newIndex ?? 0}
+    get {_storage._newIndex ?? 0}
     set {_uniqueStorage()._newIndex = newValue}
   }
   /// Returns true if `newIndex` has been explicitly set.
-  public var hasNewIndex: Bool {return _storage._newIndex != nil}
+  public var hasNewIndex: Bool {_storage._newIndex != nil}
   /// Clears the value of `newIndex`. Subsequent reads from it will return its default value.
   public mutating func clearNewIndex() {_uniqueStorage()._newIndex = nil}
 
   public var oldIndex: UInt32 {
-    get {return _storage._oldIndex ?? 0}
+    get {_storage._oldIndex ?? 0}
     set {_uniqueStorage()._oldIndex = newValue}
   }
   /// Returns true if `oldIndex` has been explicitly set.
-  public var hasOldIndex: Bool {return _storage._oldIndex != nil}
+  public var hasOldIndex: Bool {_storage._oldIndex != nil}
   /// Clears the value of `oldIndex`. Subsequent reads from it will return its default value.
   public mutating func clearOldIndex() {_uniqueStorage()._oldIndex = nil}
 
@@ -914,35 +868,35 @@ public struct TSS_ThemeMovePresetCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSS_ThemeReplaceStylePresetAndDisconnectStylesCommandArchive: @unchecked Sendable {
+public nonisolated struct TSS_ThemeReplaceStylePresetAndDisconnectStylesCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var preset: TSP_Reference {
-    get {return _storage._preset ?? TSP_Reference()}
+    get {_storage._preset ?? TSP_Reference()}
     set {_uniqueStorage()._preset = newValue}
   }
   /// Returns true if `preset` has been explicitly set.
-  public var hasPreset: Bool {return _storage._preset != nil}
+  public var hasPreset: Bool {_storage._preset != nil}
   /// Clears the value of `preset`. Subsequent reads from it will return its default value.
   public mutating func clearPreset() {_uniqueStorage()._preset = nil}
 
   public var replacementPreset: TSP_Reference {
-    get {return _storage._replacementPreset ?? TSP_Reference()}
+    get {_storage._replacementPreset ?? TSP_Reference()}
     set {_uniqueStorage()._replacementPreset = newValue}
   }
   /// Returns true if `replacementPreset` has been explicitly set.
-  public var hasReplacementPreset: Bool {return _storage._replacementPreset != nil}
+  public var hasReplacementPreset: Bool {_storage._replacementPreset != nil}
   /// Clears the value of `replacementPreset`. Subsequent reads from it will return its default value.
   public mutating func clearReplacementPreset() {_uniqueStorage()._replacementPreset = nil}
 
@@ -953,71 +907,71 @@ public struct TSS_ThemeReplaceStylePresetAndDisconnectStylesCommandArchive: @unc
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSS_CommandPropertyEntryArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSS_CommandPropertyEntryArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var property: UInt32 {
-    get {return _property ?? 0}
+    get {_property ?? 0}
     set {_property = newValue}
   }
   /// Returns true if `property` has been explicitly set.
-  public var hasProperty: Bool {return self._property != nil}
+  public var hasProperty: Bool {self._property != nil}
   /// Clears the value of `property`. Subsequent reads from it will return its default value.
   public mutating func clearProperty() {self._property = nil}
 
   public var type: Int32 {
-    get {return _type ?? 0}
+    get {_type ?? 0}
     set {_type = newValue}
   }
   /// Returns true if `type` has been explicitly set.
-  public var hasType: Bool {return self._type != nil}
+  public var hasType: Bool {self._type != nil}
   /// Clears the value of `type`. Subsequent reads from it will return its default value.
   public mutating func clearType() {self._type = nil}
 
   public var integerValue: Int32 {
-    get {return _integerValue ?? 0}
+    get {_integerValue ?? 0}
     set {_integerValue = newValue}
   }
   /// Returns true if `integerValue` has been explicitly set.
-  public var hasIntegerValue: Bool {return self._integerValue != nil}
+  public var hasIntegerValue: Bool {self._integerValue != nil}
   /// Clears the value of `integerValue`. Subsequent reads from it will return its default value.
   public mutating func clearIntegerValue() {self._integerValue = nil}
 
   public var floatValue: Float {
-    get {return _floatValue ?? 0}
+    get {_floatValue ?? 0}
     set {_floatValue = newValue}
   }
   /// Returns true if `floatValue` has been explicitly set.
-  public var hasFloatValue: Bool {return self._floatValue != nil}
+  public var hasFloatValue: Bool {self._floatValue != nil}
   /// Clears the value of `floatValue`. Subsequent reads from it will return its default value.
   public mutating func clearFloatValue() {self._floatValue = nil}
 
   public var doubleValue: Double {
-    get {return _doubleValue ?? 0}
+    get {_doubleValue ?? 0}
     set {_doubleValue = newValue}
   }
   /// Returns true if `doubleValue` has been explicitly set.
-  public var hasDoubleValue: Bool {return self._doubleValue != nil}
+  public var hasDoubleValue: Bool {self._doubleValue != nil}
   /// Clears the value of `doubleValue`. Subsequent reads from it will return its default value.
   public mutating func clearDoubleValue() {self._doubleValue = nil}
 
   public var stringValue: String {
-    get {return _stringValue ?? String()}
+    get {_stringValue ?? String()}
     set {_stringValue = newValue}
   }
   /// Returns true if `stringValue` has been explicitly set.
-  public var hasStringValue: Bool {return self._stringValue != nil}
+  public var hasStringValue: Bool {self._stringValue != nil}
   /// Clears the value of `stringValue`. Subsequent reads from it will return its default value.
   public mutating func clearStringValue() {self._stringValue = nil}
 
   public var tspReference: TSP_Reference {
-    get {return _tspReference ?? TSP_Reference()}
+    get {_tspReference ?? TSP_Reference()}
     set {_tspReference = newValue}
   }
   /// Returns true if `tspReference` has been explicitly set.
-  public var hasTspReference: Bool {return self._tspReference != nil}
+  public var hasTspReference: Bool {self._tspReference != nil}
   /// Clears the value of `tspReference`. Subsequent reads from it will return its default value.
   public mutating func clearTspReference() {self._tspReference = nil}
 
@@ -1035,7 +989,7 @@ public struct TSS_CommandPropertyEntryArchive: SwiftProtobuf.ExtensibleMessage, 
   fileprivate var _tspReference: TSP_Reference? = nil
 }
 
-public struct TSS_CommandPropertyMapArchive: Sendable {
+public nonisolated struct TSS_CommandPropertyMapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -1056,7 +1010,7 @@ public struct TSS_CommandPropertyMapArchive: Sendable {
 // declaration. To avoid naming collisions, the names are prefixed with the name of
 // the scope where the extend directive occurs.
 
-extension TSS_CommandPropertyEntryArchive {
+nonisolated extension TSS_CommandPropertyEntryArchive {
 
   public var TSS_color: TSP_Color {
     get {return getExtensionValue(ext: TSS_Extensions_color) ?? TSP_Color()}
@@ -1081,7 +1035,7 @@ extension TSS_CommandPropertyEntryArchive {
 /// this .proto file. It can be used any place an `SwiftProtobuf.ExtensionMap` is needed
 /// in parsing, or it can be combined with other `SwiftProtobuf.SimpleExtensionMap`s to create
 /// a larger `SwiftProtobuf.SimpleExtensionMap`.
-public let TSS_Tssarchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
+public nonisolated let TSS_Tssarchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
   TSS_Extensions_color
 ]
 
@@ -1089,45 +1043,26 @@ public let TSS_Tssarchives_Extensions: SwiftProtobuf.SimpleExtensionMap = [
 // constructing a `SimpleExtensionMap`, otherwise, use the above _Extension Properties_
 // accessors for the extension fields on the messages directly.
 
-public let TSS_Extensions_color = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSP_Color>, TSS_CommandPropertyEntryArchive>(
+public nonisolated let TSS_Extensions_color = SwiftProtobuf.MessageExtension<SwiftProtobuf.OptionalMessageExtensionField<TSP_Color>, TSS_CommandPropertyEntryArchive>(
   _protobuf_fieldNumber: 8,
   fieldName: "TSS.color"
 )
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSS"
+fileprivate nonisolated let _protobuf_package = "TSS"
 
-extension TSS_ValueType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "ObjectType"),
-    1: .same(proto: "IntType"),
-    2: .same(proto: "FloatType"),
-    3: .same(proto: "DoubleType"),
-  ]
+nonisolated extension TSS_ValueType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0ObjectType\0\u{1}IntType\0\u{1}FloatType\0\u{1}DoubleType\0")
 }
 
-extension TSS_PropertyType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "InvalidPropertyType"),
-    2: .same(proto: "NullPropertyType"),
-    3: .same(proto: "IntegerPropertyType"),
-    4: .same(proto: "FloatPropertyType"),
-    5: .same(proto: "DoublePropertyType"),
-    6: .same(proto: "NSStringPropertyType"),
-    7: .same(proto: "TSPObjectPropertyType"),
-  ]
+nonisolated extension TSS_PropertyType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}InvalidPropertyType\0\u{1}NullPropertyType\0\u{1}IntegerPropertyType\0\u{1}FloatPropertyType\0\u{1}DoublePropertyType\0\u{1}NSStringPropertyType\0\u{1}TSPObjectPropertyType\0")
 }
 
-extension TSS_StyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_StyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "name"),
-    2: .standard(proto: "style_identifier"),
-    3: .same(proto: "parent"),
-    4: .standard(proto: "is_variation"),
-    5: .same(proto: "stylesheet"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}name\0\u{3}style_identifier\0\u{1}parent\0\u{3}is_variation\0\u{1}stylesheet\0")
 
   public var isInitialized: Bool {
     if let v = self._parent, !v.isInitialized {return false}
@@ -1185,32 +1120,9 @@ extension TSS_StyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension TSS_StylesheetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_StylesheetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StylesheetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "styles"),
-    2: .standard(proto: "identifier_to_style_map"),
-    3: .same(proto: "parent"),
-    4: .standard(proto: "is_locked"),
-    5: .standard(proto: "parent_to_children_style_map"),
-    6: .standard(proto: "can_cull_styles"),
-    7: .standard(proto: "styles_for_10_0"),
-    8: .standard(proto: "styles_for_10_1"),
-    9: .standard(proto: "styles_for_10_2"),
-    10: .standard(proto: "styles_for_11_0"),
-    11: .standard(proto: "styles_for_11_1"),
-    12: .standard(proto: "styles_for_11_2"),
-    13: .standard(proto: "styles_for_12_0"),
-    14: .standard(proto: "styles_for_12_1"),
-    15: .standard(proto: "styles_for_12_2"),
-    16: .standard(proto: "styles_for_13_0"),
-    17: .standard(proto: "styles_for_13_1"),
-    18: .standard(proto: "styles_for_13_2"),
-    19: .standard(proto: "styles_for_14_0"),
-    20: .standard(proto: "styles_for_14_1"),
-    21: .standard(proto: "styles_for_14_2"),
-    22: .standard(proto: "styles_for_14_4"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}styles\0\u{3}identifier_to_style_map\0\u{1}parent\0\u{3}is_locked\0\u{3}parent_to_children_style_map\0\u{3}can_cull_styles\0\u{3}styles_for_10_0\0\u{3}styles_for_10_1\0\u{3}styles_for_10_2\0\u{3}styles_for_11_0\0\u{3}styles_for_11_1\0\u{3}styles_for_11_2\0\u{3}styles_for_12_0\0\u{3}styles_for_12_1\0\u{3}styles_for_12_2\0\u{3}styles_for_13_0\0\u{3}styles_for_13_1\0\u{3}styles_for_13_2\0\u{3}styles_for_14_0\0\u{3}styles_for_14_1\0\u{3}styles_for_14_2\0\u{3}styles_for_14_4\0")
 
   fileprivate class _StorageClass {
     var _styles: [TSP_Reference] = []
@@ -1236,15 +1148,11 @@ extension TSS_StylesheetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
     var _stylesFor142: TSS_StylesheetArchive.VersionedStyles? = nil
     var _stylesFor144: TSS_StylesheetArchive.VersionedStyles? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -1455,12 +1363,9 @@ extension TSS_StylesheetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageIm
   }
 }
 
-extension TSS_StylesheetArchive.IdentifiedStyleEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_StylesheetArchive.IdentifiedStyleEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSS_StylesheetArchive.protoMessageName + ".IdentifiedStyleEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "identifier"),
-    2: .same(proto: "style"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}identifier\0\u{1}style\0")
 
   public var isInitialized: Bool {
     if self._identifier == nil {return false}
@@ -1504,12 +1409,9 @@ extension TSS_StylesheetArchive.IdentifiedStyleEntry: SwiftProtobuf.Message, Swi
   }
 }
 
-extension TSS_StylesheetArchive.StyleChildrenEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_StylesheetArchive.StyleChildrenEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSS_StylesheetArchive.protoMessageName + ".StyleChildrenEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "parent"),
-    2: .same(proto: "children"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}parent\0\u{1}children\0")
 
   public var isInitialized: Bool {
     if self._parent == nil {return false}
@@ -1553,13 +1455,9 @@ extension TSS_StylesheetArchive.StyleChildrenEntry: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSS_StylesheetArchive.VersionedStyles: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_StylesheetArchive.VersionedStyles: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSS_StylesheetArchive.protoMessageName + ".VersionedStyles"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "styles"),
-    2: .standard(proto: "identifier_to_style_map"),
-    3: .standard(proto: "parent_to_children_style_map"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}styles\0\u{3}identifier_to_style_map\0\u{3}parent_to_children_style_map\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.styles) {return false}
@@ -1604,16 +1502,9 @@ extension TSS_StylesheetArchive.VersionedStyles: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSS_ThemeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_ThemeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ThemeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "legacy_stylesheet"),
-    3: .standard(proto: "theme_identifier"),
-    4: .standard(proto: "document_stylesheet"),
-    5: .standard(proto: "old_uuids_for_preset_replacements"),
-    6: .standard(proto: "new_uuids_for_preset_replacements"),
-    10: .standard(proto: "color_presets"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}legacy_stylesheet\0\u{4}\u{2}theme_identifier\0\u{3}document_stylesheet\0\u{3}old_uuids_for_preset_replacements\0\u{3}new_uuids_for_preset_replacements\0\u{4}\u{4}color_presets\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -1684,14 +1575,9 @@ extension TSS_ThemeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension TSS_ApplyThemeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_ApplyThemeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ApplyThemeCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "commands"),
-    3: .standard(proto: "old_theme"),
-    4: .standard(proto: "new_theme"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}commands\0\u{3}old_theme\0\u{3}new_theme\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -1699,15 +1585,11 @@ extension TSS_ApplyThemeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _oldTheme: TSP_Reference? = nil
     var _newTheme: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -1795,12 +1677,9 @@ extension TSS_ApplyThemeCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSS_ApplyThemeChildCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_ApplyThemeChildCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ApplyThemeChildCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "parent"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}parent\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -1844,16 +1723,9 @@ extension TSS_ApplyThemeChildCommandArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSS_StyleUpdatePropertyMapCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_StyleUpdatePropertyMapCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StyleUpdatePropertyMapCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "current_style"),
-    3: .standard(proto: "style_with_old_property_map"),
-    4: .standard(proto: "style_with_new_property_map"),
-    7: .standard(proto: "style_diff"),
-    6: .standard(proto: "notify_for_style_clients"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}current_style\0\u{3}style_with_old_property_map\0\u{3}style_with_new_property_map\0\u{4}\u{2}notify_for_style_clients\0\u{3}style_diff\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -1863,15 +1735,11 @@ extension TSS_StyleUpdatePropertyMapCommandArchive: SwiftProtobuf.Message, Swift
     var _styleDiff: TSP_Reference? = nil
     var _notifyForStyleClients: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -1973,14 +1841,9 @@ extension TSS_StyleUpdatePropertyMapCommandArchive: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSS_ThemeReplacePresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_ThemeReplacePresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ThemeReplacePresetCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    3: .same(proto: "preset"),
-    4: .same(proto: "oldPreset"),
-    5: .same(proto: "index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{2}\u{2}preset\0\u{1}oldPreset\0\u{1}index\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -1988,15 +1851,11 @@ extension TSS_ThemeReplacePresetCommandArchive: SwiftProtobuf.Message, SwiftProt
     var _oldPreset: TSP_Reference? = nil
     var _index: UInt32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -2085,15 +1944,9 @@ extension TSS_ThemeReplacePresetCommandArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSS_ThemeReplaceColorPresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_ThemeReplaceColorPresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ThemeReplaceColorPresetCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "theme"),
-    3: .same(proto: "color"),
-    4: .standard(proto: "old_color"),
-    5: .same(proto: "index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}theme\0\u{1}color\0\u{3}old_color\0\u{1}index\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -2102,15 +1955,11 @@ extension TSS_ThemeReplaceColorPresetCommandArchive: SwiftProtobuf.Message, Swif
     var _oldColor: TSP_Color? = nil
     var _index: UInt32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -2208,16 +2057,9 @@ extension TSS_ThemeReplaceColorPresetCommandArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSS_ThemeAddStylePresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_ThemeAddStylePresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ThemeAddStylePresetCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "theme"),
-    3: .same(proto: "preset"),
-    4: .standard(proto: "preset_kind"),
-    5: .same(proto: "identifier"),
-    6: .standard(proto: "add_preset_to_stylesheet"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}theme\0\u{1}preset\0\u{3}preset_kind\0\u{1}identifier\0\u{3}add_preset_to_stylesheet\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -2227,15 +2069,11 @@ extension TSS_ThemeAddStylePresetCommandArchive: SwiftProtobuf.Message, SwiftPro
     var _identifier: String? = nil
     var _addPresetToStylesheet: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -2337,17 +2175,9 @@ extension TSS_ThemeAddStylePresetCommandArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSS_ThemeRemoveStylePresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_ThemeRemoveStylePresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ThemeRemoveStylePresetCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "theme"),
-    3: .same(proto: "preset"),
-    4: .standard(proto: "preset_index"),
-    5: .standard(proto: "preset_kind"),
-    6: .same(proto: "identifier"),
-    7: .standard(proto: "replacement_preset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}theme\0\u{1}preset\0\u{3}preset_index\0\u{3}preset_kind\0\u{1}identifier\0\u{3}replacement_preset\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -2358,15 +2188,11 @@ extension TSS_ThemeRemoveStylePresetCommandArchive: SwiftProtobuf.Message, Swift
     var _identifier: String? = nil
     var _replacementPreset: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -2476,15 +2302,9 @@ extension TSS_ThemeRemoveStylePresetCommandArchive: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSS_ThemeMovePresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_ThemeMovePresetCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ThemeMovePresetCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "theme"),
-    3: .standard(proto: "preset_id"),
-    4: .standard(proto: "new_index"),
-    5: .standard(proto: "old_index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}theme\0\u{3}preset_id\0\u{3}new_index\0\u{3}old_index\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -2493,15 +2313,11 @@ extension TSS_ThemeMovePresetCommandArchive: SwiftProtobuf.Message, SwiftProtobu
     var _newIndex: UInt32? = nil
     var _oldIndex: UInt32? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -2598,28 +2414,20 @@ extension TSS_ThemeMovePresetCommandArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSS_ThemeReplaceStylePresetAndDisconnectStylesCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_ThemeReplaceStylePresetAndDisconnectStylesCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ThemeReplaceStylePresetAndDisconnectStylesCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "preset"),
-    3: .standard(proto: "replacement_preset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}preset\0\u{3}replacement_preset\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
     var _preset: TSP_Reference? = nil
     var _replacementPreset: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -2702,17 +2510,9 @@ extension TSS_ThemeReplaceStylePresetAndDisconnectStylesCommandArchive: SwiftPro
   }
 }
 
-extension TSS_CommandPropertyEntryArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_CommandPropertyEntryArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandPropertyEntryArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "property"),
-    2: .same(proto: "type"),
-    3: .standard(proto: "integer_value"),
-    4: .standard(proto: "float_value"),
-    5: .standard(proto: "double_value"),
-    6: .standard(proto: "string_value"),
-    7: .standard(proto: "tsp_reference"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}property\0\u{1}type\0\u{3}integer_value\0\u{3}float_value\0\u{3}double_value\0\u{3}string_value\0\u{3}tsp_reference\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -2786,11 +2586,9 @@ extension TSS_CommandPropertyEntryArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSS_CommandPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSS_CommandPropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandPropertyMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "property_entries"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}property_entries\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.propertyEntries) {return false}

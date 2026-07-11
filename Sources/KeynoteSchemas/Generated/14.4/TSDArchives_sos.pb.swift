@@ -15,31 +15,31 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public struct TSDSOS_SpecSetFillArchive: Sendable {
+public nonisolated struct TSDSOS_SpecSetFillArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var fill: TSD_FillArchive {
-    get {return _fill ?? TSD_FillArchive()}
+    get {_fill ?? TSD_FillArchive()}
     set {_fill = newValue}
   }
   /// Returns true if `fill` has been explicitly set.
-  public var hasFill: Bool {return self._fill != nil}
+  public var hasFill: Bool {self._fill != nil}
   /// Clears the value of `fill`. Subsequent reads from it will return its default value.
   public mutating func clearFill() {self._fill = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -51,26 +51,26 @@ public struct TSDSOS_SpecSetFillArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSDSOS_SpecSetLineEndArchive: Sendable {
+public nonisolated struct TSDSOS_SpecSetLineEndArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var lineEnd: TSD_LineEndArchive {
-    get {return _lineEnd ?? TSD_LineEndArchive()}
+    get {_lineEnd ?? TSD_LineEndArchive()}
     set {_lineEnd = newValue}
   }
   /// Returns true if `lineEnd` has been explicitly set.
-  public var hasLineEnd: Bool {return self._lineEnd != nil}
+  public var hasLineEnd: Bool {self._lineEnd != nil}
   /// Clears the value of `lineEnd`. Subsequent reads from it will return its default value.
   public mutating func clearLineEnd() {self._lineEnd = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -82,26 +82,26 @@ public struct TSDSOS_SpecSetLineEndArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSDSOS_SpecSetReflectionArchive: Sendable {
+public nonisolated struct TSDSOS_SpecSetReflectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var reflection: TSD_ReflectionArchive {
-    get {return _reflection ?? TSD_ReflectionArchive()}
+    get {_reflection ?? TSD_ReflectionArchive()}
     set {_reflection = newValue}
   }
   /// Returns true if `reflection` has been explicitly set.
-  public var hasReflection: Bool {return self._reflection != nil}
+  public var hasReflection: Bool {self._reflection != nil}
   /// Clears the value of `reflection`. Subsequent reads from it will return its default value.
   public mutating func clearReflection() {self._reflection = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -113,26 +113,26 @@ public struct TSDSOS_SpecSetReflectionArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSDSOS_SpecSetShadowArchive: Sendable {
+public nonisolated struct TSDSOS_SpecSetShadowArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var shadow: TSD_ShadowArchive {
-    get {return _shadow ?? TSD_ShadowArchive()}
+    get {_shadow ?? TSD_ShadowArchive()}
     set {_shadow = newValue}
   }
   /// Returns true if `shadow` has been explicitly set.
-  public var hasShadow: Bool {return self._shadow != nil}
+  public var hasShadow: Bool {self._shadow != nil}
   /// Clears the value of `shadow`. Subsequent reads from it will return its default value.
   public mutating func clearShadow() {self._shadow = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -144,26 +144,26 @@ public struct TSDSOS_SpecSetShadowArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSDSOS_SpecSetStrokeArchive: Sendable {
+public nonisolated struct TSDSOS_SpecSetStrokeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var stroke: TSD_StrokeArchive {
-    get {return _stroke ?? TSD_StrokeArchive()}
+    get {_stroke ?? TSD_StrokeArchive()}
     set {_stroke = newValue}
   }
   /// Returns true if `stroke` has been explicitly set.
-  public var hasStroke: Bool {return self._stroke != nil}
+  public var hasStroke: Bool {self._stroke != nil}
   /// Clears the value of `stroke`. Subsequent reads from it will return its default value.
   public mutating func clearStroke() {self._stroke = nil}
 
   public var unset: Bool {
-    get {return _unset ?? false}
+    get {_unset ?? false}
     set {_unset = newValue}
   }
   /// Returns true if `unset` has been explicitly set.
-  public var hasUnset: Bool {return self._unset != nil}
+  public var hasUnset: Bool {self._unset != nil}
   /// Clears the value of `unset`. Subsequent reads from it will return its default value.
   public mutating func clearUnset() {self._unset = nil}
 
@@ -175,44 +175,44 @@ public struct TSDSOS_SpecSetStrokeArchive: Sendable {
   fileprivate var _unset: Bool? = nil
 }
 
-public struct TSDSOS_SpecFillArchive: Sendable {
+public nonisolated struct TSDSOS_SpecFillArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specColorFillSetColor: TSD_SpecColorFillSetColorArchive {
-    get {return _specColorFillSetColor ?? TSD_SpecColorFillSetColorArchive()}
+    get {_specColorFillSetColor ?? TSD_SpecColorFillSetColorArchive()}
     set {_specColorFillSetColor = newValue}
   }
   /// Returns true if `specColorFillSetColor` has been explicitly set.
-  public var hasSpecColorFillSetColor: Bool {return self._specColorFillSetColor != nil}
+  public var hasSpecColorFillSetColor: Bool {self._specColorFillSetColor != nil}
   /// Clears the value of `specColorFillSetColor`. Subsequent reads from it will return its default value.
   public mutating func clearSpecColorFillSetColor() {self._specColorFillSetColor = nil}
 
   public var specGradientFillSetAngle: TSD_SpecGradientFillSetAngleArchive {
-    get {return _specGradientFillSetAngle ?? TSD_SpecGradientFillSetAngleArchive()}
+    get {_specGradientFillSetAngle ?? TSD_SpecGradientFillSetAngleArchive()}
     set {_specGradientFillSetAngle = newValue}
   }
   /// Returns true if `specGradientFillSetAngle` has been explicitly set.
-  public var hasSpecGradientFillSetAngle: Bool {return self._specGradientFillSetAngle != nil}
+  public var hasSpecGradientFillSetAngle: Bool {self._specGradientFillSetAngle != nil}
   /// Clears the value of `specGradientFillSetAngle`. Subsequent reads from it will return its default value.
   public mutating func clearSpecGradientFillSetAngle() {self._specGradientFillSetAngle = nil}
 
   public var specImageFillSetTechnique: TSD_SpecImageFillSetTechniqueArchive {
-    get {return _specImageFillSetTechnique ?? TSD_SpecImageFillSetTechniqueArchive()}
+    get {_specImageFillSetTechnique ?? TSD_SpecImageFillSetTechniqueArchive()}
     set {_specImageFillSetTechnique = newValue}
   }
   /// Returns true if `specImageFillSetTechnique` has been explicitly set.
-  public var hasSpecImageFillSetTechnique: Bool {return self._specImageFillSetTechnique != nil}
+  public var hasSpecImageFillSetTechnique: Bool {self._specImageFillSetTechnique != nil}
   /// Clears the value of `specImageFillSetTechnique`. Subsequent reads from it will return its default value.
   public mutating func clearSpecImageFillSetTechnique() {self._specImageFillSetTechnique = nil}
 
   public var specSetFill: TSDSOS_SpecSetFillArchive {
-    get {return _specSetFill ?? TSDSOS_SpecSetFillArchive()}
+    get {_specSetFill ?? TSDSOS_SpecSetFillArchive()}
     set {_specSetFill = newValue}
   }
   /// Returns true if `specSetFill` has been explicitly set.
-  public var hasSpecSetFill: Bool {return self._specSetFill != nil}
+  public var hasSpecSetFill: Bool {self._specSetFill != nil}
   /// Clears the value of `specSetFill`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetFill() {self._specSetFill = nil}
 
@@ -226,17 +226,17 @@ public struct TSDSOS_SpecFillArchive: Sendable {
   fileprivate var _specSetFill: TSDSOS_SpecSetFillArchive? = nil
 }
 
-public struct TSDSOS_SpecLineEndArchive: Sendable {
+public nonisolated struct TSDSOS_SpecLineEndArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetLineEnd: TSDSOS_SpecSetLineEndArchive {
-    get {return _specSetLineEnd ?? TSDSOS_SpecSetLineEndArchive()}
+    get {_specSetLineEnd ?? TSDSOS_SpecSetLineEndArchive()}
     set {_specSetLineEnd = newValue}
   }
   /// Returns true if `specSetLineEnd` has been explicitly set.
-  public var hasSpecSetLineEnd: Bool {return self._specSetLineEnd != nil}
+  public var hasSpecSetLineEnd: Bool {self._specSetLineEnd != nil}
   /// Clears the value of `specSetLineEnd`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetLineEnd() {self._specSetLineEnd = nil}
 
@@ -247,26 +247,26 @@ public struct TSDSOS_SpecLineEndArchive: Sendable {
   fileprivate var _specSetLineEnd: TSDSOS_SpecSetLineEndArchive? = nil
 }
 
-public struct TSDSOS_SpecReflectionArchive: Sendable {
+public nonisolated struct TSDSOS_SpecReflectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specReflectionSetOpacity: TSD_SpecReflectionSetOpacityArchive {
-    get {return _specReflectionSetOpacity ?? TSD_SpecReflectionSetOpacityArchive()}
+    get {_specReflectionSetOpacity ?? TSD_SpecReflectionSetOpacityArchive()}
     set {_specReflectionSetOpacity = newValue}
   }
   /// Returns true if `specReflectionSetOpacity` has been explicitly set.
-  public var hasSpecReflectionSetOpacity: Bool {return self._specReflectionSetOpacity != nil}
+  public var hasSpecReflectionSetOpacity: Bool {self._specReflectionSetOpacity != nil}
   /// Clears the value of `specReflectionSetOpacity`. Subsequent reads from it will return its default value.
   public mutating func clearSpecReflectionSetOpacity() {self._specReflectionSetOpacity = nil}
 
   public var specSetReflection: TSDSOS_SpecSetReflectionArchive {
-    get {return _specSetReflection ?? TSDSOS_SpecSetReflectionArchive()}
+    get {_specSetReflection ?? TSDSOS_SpecSetReflectionArchive()}
     set {_specSetReflection = newValue}
   }
   /// Returns true if `specSetReflection` has been explicitly set.
-  public var hasSpecSetReflection: Bool {return self._specSetReflection != nil}
+  public var hasSpecSetReflection: Bool {self._specSetReflection != nil}
   /// Clears the value of `specSetReflection`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetReflection() {self._specSetReflection = nil}
 
@@ -278,62 +278,62 @@ public struct TSDSOS_SpecReflectionArchive: Sendable {
   fileprivate var _specSetReflection: TSDSOS_SpecSetReflectionArchive? = nil
 }
 
-public struct TSDSOS_SpecShadowArchive: @unchecked Sendable {
+public nonisolated struct TSDSOS_SpecShadowArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specSetShadow: TSDSOS_SpecSetShadowArchive {
-    get {return _storage._specSetShadow ?? TSDSOS_SpecSetShadowArchive()}
+    get {_storage._specSetShadow ?? TSDSOS_SpecSetShadowArchive()}
     set {_uniqueStorage()._specSetShadow = newValue}
   }
   /// Returns true if `specSetShadow` has been explicitly set.
-  public var hasSpecSetShadow: Bool {return _storage._specSetShadow != nil}
+  public var hasSpecSetShadow: Bool {_storage._specSetShadow != nil}
   /// Clears the value of `specSetShadow`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetShadow() {_uniqueStorage()._specSetShadow = nil}
 
   public var specShadowSetAngle: TSD_SpecShadowSetAngleArchive {
-    get {return _storage._specShadowSetAngle ?? TSD_SpecShadowSetAngleArchive()}
+    get {_storage._specShadowSetAngle ?? TSD_SpecShadowSetAngleArchive()}
     set {_uniqueStorage()._specShadowSetAngle = newValue}
   }
   /// Returns true if `specShadowSetAngle` has been explicitly set.
-  public var hasSpecShadowSetAngle: Bool {return _storage._specShadowSetAngle != nil}
+  public var hasSpecShadowSetAngle: Bool {_storage._specShadowSetAngle != nil}
   /// Clears the value of `specShadowSetAngle`. Subsequent reads from it will return its default value.
   public mutating func clearSpecShadowSetAngle() {_uniqueStorage()._specShadowSetAngle = nil}
 
   public var specShadowSetColor: TSD_SpecShadowSetColorArchive {
-    get {return _storage._specShadowSetColor ?? TSD_SpecShadowSetColorArchive()}
+    get {_storage._specShadowSetColor ?? TSD_SpecShadowSetColorArchive()}
     set {_uniqueStorage()._specShadowSetColor = newValue}
   }
   /// Returns true if `specShadowSetColor` has been explicitly set.
-  public var hasSpecShadowSetColor: Bool {return _storage._specShadowSetColor != nil}
+  public var hasSpecShadowSetColor: Bool {_storage._specShadowSetColor != nil}
   /// Clears the value of `specShadowSetColor`. Subsequent reads from it will return its default value.
   public mutating func clearSpecShadowSetColor() {_uniqueStorage()._specShadowSetColor = nil}
 
   public var specShadowSetOffset: TSD_SpecShadowSetOffsetArchive {
-    get {return _storage._specShadowSetOffset ?? TSD_SpecShadowSetOffsetArchive()}
+    get {_storage._specShadowSetOffset ?? TSD_SpecShadowSetOffsetArchive()}
     set {_uniqueStorage()._specShadowSetOffset = newValue}
   }
   /// Returns true if `specShadowSetOffset` has been explicitly set.
-  public var hasSpecShadowSetOffset: Bool {return _storage._specShadowSetOffset != nil}
+  public var hasSpecShadowSetOffset: Bool {_storage._specShadowSetOffset != nil}
   /// Clears the value of `specShadowSetOffset`. Subsequent reads from it will return its default value.
   public mutating func clearSpecShadowSetOffset() {_uniqueStorage()._specShadowSetOffset = nil}
 
   public var specShadowSetOpacity: TSD_SpecShadowSetOpacityArchive {
-    get {return _storage._specShadowSetOpacity ?? TSD_SpecShadowSetOpacityArchive()}
+    get {_storage._specShadowSetOpacity ?? TSD_SpecShadowSetOpacityArchive()}
     set {_uniqueStorage()._specShadowSetOpacity = newValue}
   }
   /// Returns true if `specShadowSetOpacity` has been explicitly set.
-  public var hasSpecShadowSetOpacity: Bool {return _storage._specShadowSetOpacity != nil}
+  public var hasSpecShadowSetOpacity: Bool {_storage._specShadowSetOpacity != nil}
   /// Clears the value of `specShadowSetOpacity`. Subsequent reads from it will return its default value.
   public mutating func clearSpecShadowSetOpacity() {_uniqueStorage()._specShadowSetOpacity = nil}
 
   public var specShadowSetRadius: TSD_SpecShadowSetRadiusArchive {
-    get {return _storage._specShadowSetRadius ?? TSD_SpecShadowSetRadiusArchive()}
+    get {_storage._specShadowSetRadius ?? TSD_SpecShadowSetRadiusArchive()}
     set {_uniqueStorage()._specShadowSetRadius = newValue}
   }
   /// Returns true if `specShadowSetRadius` has been explicitly set.
-  public var hasSpecShadowSetRadius: Bool {return _storage._specShadowSetRadius != nil}
+  public var hasSpecShadowSetRadius: Bool {_storage._specShadowSetRadius != nil}
   /// Clears the value of `specShadowSetRadius`. Subsequent reads from it will return its default value.
   public mutating func clearSpecShadowSetRadius() {_uniqueStorage()._specShadowSetRadius = nil}
 
@@ -344,53 +344,53 @@ public struct TSDSOS_SpecShadowArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSDSOS_SpecStrokeArchive: Sendable {
+public nonisolated struct TSDSOS_SpecStrokeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var specFrameSetAssetScale: TSD_SpecFrameSetAssetScaleArchive {
-    get {return _specFrameSetAssetScale ?? TSD_SpecFrameSetAssetScaleArchive()}
+    get {_specFrameSetAssetScale ?? TSD_SpecFrameSetAssetScaleArchive()}
     set {_specFrameSetAssetScale = newValue}
   }
   /// Returns true if `specFrameSetAssetScale` has been explicitly set.
-  public var hasSpecFrameSetAssetScale: Bool {return self._specFrameSetAssetScale != nil}
+  public var hasSpecFrameSetAssetScale: Bool {self._specFrameSetAssetScale != nil}
   /// Clears the value of `specFrameSetAssetScale`. Subsequent reads from it will return its default value.
   public mutating func clearSpecFrameSetAssetScale() {self._specFrameSetAssetScale = nil}
 
   public var specSetStroke: TSDSOS_SpecSetStrokeArchive {
-    get {return _specSetStroke ?? TSDSOS_SpecSetStrokeArchive()}
+    get {_specSetStroke ?? TSDSOS_SpecSetStrokeArchive()}
     set {_specSetStroke = newValue}
   }
   /// Returns true if `specSetStroke` has been explicitly set.
-  public var hasSpecSetStroke: Bool {return self._specSetStroke != nil}
+  public var hasSpecSetStroke: Bool {self._specSetStroke != nil}
   /// Clears the value of `specSetStroke`. Subsequent reads from it will return its default value.
   public mutating func clearSpecSetStroke() {self._specSetStroke = nil}
 
   public var specStrokeSetColor: TSD_SpecStrokeSetColorArchive {
-    get {return _specStrokeSetColor ?? TSD_SpecStrokeSetColorArchive()}
+    get {_specStrokeSetColor ?? TSD_SpecStrokeSetColorArchive()}
     set {_specStrokeSetColor = newValue}
   }
   /// Returns true if `specStrokeSetColor` has been explicitly set.
-  public var hasSpecStrokeSetColor: Bool {return self._specStrokeSetColor != nil}
+  public var hasSpecStrokeSetColor: Bool {self._specStrokeSetColor != nil}
   /// Clears the value of `specStrokeSetColor`. Subsequent reads from it will return its default value.
   public mutating func clearSpecStrokeSetColor() {self._specStrokeSetColor = nil}
 
   public var specStrokeSetPattern: TSD_SpecStrokeSetPatternArchive {
-    get {return _specStrokeSetPattern ?? TSD_SpecStrokeSetPatternArchive()}
+    get {_specStrokeSetPattern ?? TSD_SpecStrokeSetPatternArchive()}
     set {_specStrokeSetPattern = newValue}
   }
   /// Returns true if `specStrokeSetPattern` has been explicitly set.
-  public var hasSpecStrokeSetPattern: Bool {return self._specStrokeSetPattern != nil}
+  public var hasSpecStrokeSetPattern: Bool {self._specStrokeSetPattern != nil}
   /// Clears the value of `specStrokeSetPattern`. Subsequent reads from it will return its default value.
   public mutating func clearSpecStrokeSetPattern() {self._specStrokeSetPattern = nil}
 
   public var specStrokeSetWidth: TSD_SpecStrokeSetWidthArchive {
-    get {return _specStrokeSetWidth ?? TSD_SpecStrokeSetWidthArchive()}
+    get {_specStrokeSetWidth ?? TSD_SpecStrokeSetWidthArchive()}
     set {_specStrokeSetWidth = newValue}
   }
   /// Returns true if `specStrokeSetWidth` has been explicitly set.
-  public var hasSpecStrokeSetWidth: Bool {return self._specStrokeSetWidth != nil}
+  public var hasSpecStrokeSetWidth: Bool {self._specStrokeSetWidth != nil}
   /// Clears the value of `specStrokeSetWidth`. Subsequent reads from it will return its default value.
   public mutating func clearSpecStrokeSetWidth() {self._specStrokeSetWidth = nil}
 
@@ -405,134 +405,134 @@ public struct TSDSOS_SpecStrokeArchive: Sendable {
   fileprivate var _specStrokeSetWidth: TSD_SpecStrokeSetWidthArchive? = nil
 }
 
-public struct TSDSOS_BaseShapeStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSDSOS_BaseShapeStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var fill: TSDSOS_SpecFillArchive {
-    get {return _storage._fill ?? TSDSOS_SpecFillArchive()}
+    get {_storage._fill ?? TSDSOS_SpecFillArchive()}
     set {_uniqueStorage()._fill = newValue}
   }
   /// Returns true if `fill` has been explicitly set.
-  public var hasFill: Bool {return _storage._fill != nil}
+  public var hasFill: Bool {_storage._fill != nil}
   /// Clears the value of `fill`. Subsequent reads from it will return its default value.
   public mutating func clearFill() {_uniqueStorage()._fill = nil}
 
   public var fillUndefined: Bool {
-    get {return _storage._fillUndefined ?? false}
+    get {_storage._fillUndefined ?? false}
     set {_uniqueStorage()._fillUndefined = newValue}
   }
   /// Returns true if `fillUndefined` has been explicitly set.
-  public var hasFillUndefined: Bool {return _storage._fillUndefined != nil}
+  public var hasFillUndefined: Bool {_storage._fillUndefined != nil}
   /// Clears the value of `fillUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearFillUndefined() {_uniqueStorage()._fillUndefined = nil}
 
   public var stroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._stroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._stroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._stroke = newValue}
   }
   /// Returns true if `stroke` has been explicitly set.
-  public var hasStroke: Bool {return _storage._stroke != nil}
+  public var hasStroke: Bool {_storage._stroke != nil}
   /// Clears the value of `stroke`. Subsequent reads from it will return its default value.
   public mutating func clearStroke() {_uniqueStorage()._stroke = nil}
 
   public var strokeUndefined: Bool {
-    get {return _storage._strokeUndefined ?? false}
+    get {_storage._strokeUndefined ?? false}
     set {_uniqueStorage()._strokeUndefined = newValue}
   }
   /// Returns true if `strokeUndefined` has been explicitly set.
-  public var hasStrokeUndefined: Bool {return _storage._strokeUndefined != nil}
+  public var hasStrokeUndefined: Bool {_storage._strokeUndefined != nil}
   /// Clears the value of `strokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearStrokeUndefined() {_uniqueStorage()._strokeUndefined = nil}
 
   public var opacity: TSSSOS_SpecDoubleArchive {
-    get {return _storage._opacity ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._opacity ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._opacity = newValue}
   }
   /// Returns true if `opacity` has been explicitly set.
-  public var hasOpacity: Bool {return _storage._opacity != nil}
+  public var hasOpacity: Bool {_storage._opacity != nil}
   /// Clears the value of `opacity`. Subsequent reads from it will return its default value.
   public mutating func clearOpacity() {_uniqueStorage()._opacity = nil}
 
   public var opacityUndefined: Bool {
-    get {return _storage._opacityUndefined ?? false}
+    get {_storage._opacityUndefined ?? false}
     set {_uniqueStorage()._opacityUndefined = newValue}
   }
   /// Returns true if `opacityUndefined` has been explicitly set.
-  public var hasOpacityUndefined: Bool {return _storage._opacityUndefined != nil}
+  public var hasOpacityUndefined: Bool {_storage._opacityUndefined != nil}
   /// Clears the value of `opacityUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearOpacityUndefined() {_uniqueStorage()._opacityUndefined = nil}
 
   public var shadow: TSDSOS_SpecShadowArchive {
-    get {return _storage._shadow ?? TSDSOS_SpecShadowArchive()}
+    get {_storage._shadow ?? TSDSOS_SpecShadowArchive()}
     set {_uniqueStorage()._shadow = newValue}
   }
   /// Returns true if `shadow` has been explicitly set.
-  public var hasShadow: Bool {return _storage._shadow != nil}
+  public var hasShadow: Bool {_storage._shadow != nil}
   /// Clears the value of `shadow`. Subsequent reads from it will return its default value.
   public mutating func clearShadow() {_uniqueStorage()._shadow = nil}
 
   public var shadowUndefined: Bool {
-    get {return _storage._shadowUndefined ?? false}
+    get {_storage._shadowUndefined ?? false}
     set {_uniqueStorage()._shadowUndefined = newValue}
   }
   /// Returns true if `shadowUndefined` has been explicitly set.
-  public var hasShadowUndefined: Bool {return _storage._shadowUndefined != nil}
+  public var hasShadowUndefined: Bool {_storage._shadowUndefined != nil}
   /// Clears the value of `shadowUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowUndefined() {_uniqueStorage()._shadowUndefined = nil}
 
   public var reflection: TSDSOS_SpecReflectionArchive {
-    get {return _storage._reflection ?? TSDSOS_SpecReflectionArchive()}
+    get {_storage._reflection ?? TSDSOS_SpecReflectionArchive()}
     set {_uniqueStorage()._reflection = newValue}
   }
   /// Returns true if `reflection` has been explicitly set.
-  public var hasReflection: Bool {return _storage._reflection != nil}
+  public var hasReflection: Bool {_storage._reflection != nil}
   /// Clears the value of `reflection`. Subsequent reads from it will return its default value.
   public mutating func clearReflection() {_uniqueStorage()._reflection = nil}
 
   public var reflectionUndefined: Bool {
-    get {return _storage._reflectionUndefined ?? false}
+    get {_storage._reflectionUndefined ?? false}
     set {_uniqueStorage()._reflectionUndefined = newValue}
   }
   /// Returns true if `reflectionUndefined` has been explicitly set.
-  public var hasReflectionUndefined: Bool {return _storage._reflectionUndefined != nil}
+  public var hasReflectionUndefined: Bool {_storage._reflectionUndefined != nil}
   /// Clears the value of `reflectionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearReflectionUndefined() {_uniqueStorage()._reflectionUndefined = nil}
 
   public var headLineEnd: TSDSOS_SpecLineEndArchive {
-    get {return _storage._headLineEnd ?? TSDSOS_SpecLineEndArchive()}
+    get {_storage._headLineEnd ?? TSDSOS_SpecLineEndArchive()}
     set {_uniqueStorage()._headLineEnd = newValue}
   }
   /// Returns true if `headLineEnd` has been explicitly set.
-  public var hasHeadLineEnd: Bool {return _storage._headLineEnd != nil}
+  public var hasHeadLineEnd: Bool {_storage._headLineEnd != nil}
   /// Clears the value of `headLineEnd`. Subsequent reads from it will return its default value.
   public mutating func clearHeadLineEnd() {_uniqueStorage()._headLineEnd = nil}
 
   public var headLineEndUndefined: Bool {
-    get {return _storage._headLineEndUndefined ?? false}
+    get {_storage._headLineEndUndefined ?? false}
     set {_uniqueStorage()._headLineEndUndefined = newValue}
   }
   /// Returns true if `headLineEndUndefined` has been explicitly set.
-  public var hasHeadLineEndUndefined: Bool {return _storage._headLineEndUndefined != nil}
+  public var hasHeadLineEndUndefined: Bool {_storage._headLineEndUndefined != nil}
   /// Clears the value of `headLineEndUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearHeadLineEndUndefined() {_uniqueStorage()._headLineEndUndefined = nil}
 
   public var tailLineEnd: TSDSOS_SpecLineEndArchive {
-    get {return _storage._tailLineEnd ?? TSDSOS_SpecLineEndArchive()}
+    get {_storage._tailLineEnd ?? TSDSOS_SpecLineEndArchive()}
     set {_uniqueStorage()._tailLineEnd = newValue}
   }
   /// Returns true if `tailLineEnd` has been explicitly set.
-  public var hasTailLineEnd: Bool {return _storage._tailLineEnd != nil}
+  public var hasTailLineEnd: Bool {_storage._tailLineEnd != nil}
   /// Clears the value of `tailLineEnd`. Subsequent reads from it will return its default value.
   public mutating func clearTailLineEnd() {_uniqueStorage()._tailLineEnd = nil}
 
   public var tailLineEndUndefined: Bool {
-    get {return _storage._tailLineEndUndefined ?? false}
+    get {_storage._tailLineEndUndefined ?? false}
     set {_uniqueStorage()._tailLineEndUndefined = newValue}
   }
   /// Returns true if `tailLineEndUndefined` has been explicitly set.
-  public var hasTailLineEndUndefined: Bool {return _storage._tailLineEndUndefined != nil}
+  public var hasTailLineEndUndefined: Bool {_storage._tailLineEndUndefined != nil}
   /// Clears the value of `tailLineEndUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearTailLineEndUndefined() {_uniqueStorage()._tailLineEndUndefined = nil}
 
@@ -543,80 +543,80 @@ public struct TSDSOS_BaseShapeStylePropertyChangeSetArchive: @unchecked Sendable
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSDSOS_MediaStylePropertyChangeSetArchive: @unchecked Sendable {
+public nonisolated struct TSDSOS_MediaStylePropertyChangeSetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var stroke: TSDSOS_SpecStrokeArchive {
-    get {return _storage._stroke ?? TSDSOS_SpecStrokeArchive()}
+    get {_storage._stroke ?? TSDSOS_SpecStrokeArchive()}
     set {_uniqueStorage()._stroke = newValue}
   }
   /// Returns true if `stroke` has been explicitly set.
-  public var hasStroke: Bool {return _storage._stroke != nil}
+  public var hasStroke: Bool {_storage._stroke != nil}
   /// Clears the value of `stroke`. Subsequent reads from it will return its default value.
   public mutating func clearStroke() {_uniqueStorage()._stroke = nil}
 
   public var strokeUndefined: Bool {
-    get {return _storage._strokeUndefined ?? false}
+    get {_storage._strokeUndefined ?? false}
     set {_uniqueStorage()._strokeUndefined = newValue}
   }
   /// Returns true if `strokeUndefined` has been explicitly set.
-  public var hasStrokeUndefined: Bool {return _storage._strokeUndefined != nil}
+  public var hasStrokeUndefined: Bool {_storage._strokeUndefined != nil}
   /// Clears the value of `strokeUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearStrokeUndefined() {_uniqueStorage()._strokeUndefined = nil}
 
   public var opacity: TSSSOS_SpecDoubleArchive {
-    get {return _storage._opacity ?? TSSSOS_SpecDoubleArchive()}
+    get {_storage._opacity ?? TSSSOS_SpecDoubleArchive()}
     set {_uniqueStorage()._opacity = newValue}
   }
   /// Returns true if `opacity` has been explicitly set.
-  public var hasOpacity: Bool {return _storage._opacity != nil}
+  public var hasOpacity: Bool {_storage._opacity != nil}
   /// Clears the value of `opacity`. Subsequent reads from it will return its default value.
   public mutating func clearOpacity() {_uniqueStorage()._opacity = nil}
 
   public var opacityUndefined: Bool {
-    get {return _storage._opacityUndefined ?? false}
+    get {_storage._opacityUndefined ?? false}
     set {_uniqueStorage()._opacityUndefined = newValue}
   }
   /// Returns true if `opacityUndefined` has been explicitly set.
-  public var hasOpacityUndefined: Bool {return _storage._opacityUndefined != nil}
+  public var hasOpacityUndefined: Bool {_storage._opacityUndefined != nil}
   /// Clears the value of `opacityUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearOpacityUndefined() {_uniqueStorage()._opacityUndefined = nil}
 
   public var shadow: TSDSOS_SpecShadowArchive {
-    get {return _storage._shadow ?? TSDSOS_SpecShadowArchive()}
+    get {_storage._shadow ?? TSDSOS_SpecShadowArchive()}
     set {_uniqueStorage()._shadow = newValue}
   }
   /// Returns true if `shadow` has been explicitly set.
-  public var hasShadow: Bool {return _storage._shadow != nil}
+  public var hasShadow: Bool {_storage._shadow != nil}
   /// Clears the value of `shadow`. Subsequent reads from it will return its default value.
   public mutating func clearShadow() {_uniqueStorage()._shadow = nil}
 
   public var shadowUndefined: Bool {
-    get {return _storage._shadowUndefined ?? false}
+    get {_storage._shadowUndefined ?? false}
     set {_uniqueStorage()._shadowUndefined = newValue}
   }
   /// Returns true if `shadowUndefined` has been explicitly set.
-  public var hasShadowUndefined: Bool {return _storage._shadowUndefined != nil}
+  public var hasShadowUndefined: Bool {_storage._shadowUndefined != nil}
   /// Clears the value of `shadowUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearShadowUndefined() {_uniqueStorage()._shadowUndefined = nil}
 
   public var reflection: TSDSOS_SpecReflectionArchive {
-    get {return _storage._reflection ?? TSDSOS_SpecReflectionArchive()}
+    get {_storage._reflection ?? TSDSOS_SpecReflectionArchive()}
     set {_uniqueStorage()._reflection = newValue}
   }
   /// Returns true if `reflection` has been explicitly set.
-  public var hasReflection: Bool {return _storage._reflection != nil}
+  public var hasReflection: Bool {_storage._reflection != nil}
   /// Clears the value of `reflection`. Subsequent reads from it will return its default value.
   public mutating func clearReflection() {_uniqueStorage()._reflection = nil}
 
   public var reflectionUndefined: Bool {
-    get {return _storage._reflectionUndefined ?? false}
+    get {_storage._reflectionUndefined ?? false}
     set {_uniqueStorage()._reflectionUndefined = newValue}
   }
   /// Returns true if `reflectionUndefined` has been explicitly set.
-  public var hasReflectionUndefined: Bool {return _storage._reflectionUndefined != nil}
+  public var hasReflectionUndefined: Bool {_storage._reflectionUndefined != nil}
   /// Clears the value of `reflectionUndefined`. Subsequent reads from it will return its default value.
   public mutating func clearReflectionUndefined() {_uniqueStorage()._reflectionUndefined = nil}
 
@@ -629,14 +629,11 @@ public struct TSDSOS_MediaStylePropertyChangeSetArchive: @unchecked Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSDSOS"
+fileprivate nonisolated let _protobuf_package = "TSDSOS"
 
-extension TSDSOS_SpecSetFillArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_SpecSetFillArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetFillArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "fill"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}fill\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -679,12 +676,9 @@ extension TSDSOS_SpecSetFillArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSDSOS_SpecSetLineEndArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_SpecSetLineEndArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetLineEndArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "line_end"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}line_end\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -727,12 +721,9 @@ extension TSDSOS_SpecSetLineEndArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSDSOS_SpecSetReflectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_SpecSetReflectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetReflectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "reflection"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}reflection\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -774,12 +765,9 @@ extension TSDSOS_SpecSetReflectionArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSDSOS_SpecSetShadowArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_SpecSetShadowArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetShadowArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "shadow"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}shadow\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -822,12 +810,9 @@ extension TSDSOS_SpecSetShadowArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSDSOS_SpecSetStrokeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_SpecSetStrokeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecSetStrokeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "stroke"),
-    2: .same(proto: "unset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}stroke\0\u{1}unset\0")
 
   public var isInitialized: Bool {
     if self._unset == nil {return false}
@@ -870,14 +855,9 @@ extension TSDSOS_SpecSetStrokeArchive: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSDSOS_SpecFillArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_SpecFillArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecFillArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_color_fill_set_color"),
-    2: .standard(proto: "spec_gradient_fill_set_angle"),
-    3: .standard(proto: "spec_image_fill_set_technique"),
-    4: .standard(proto: "spec_set_fill"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_color_fill_set_color\0\u{3}spec_gradient_fill_set_angle\0\u{3}spec_image_fill_set_technique\0\u{3}spec_set_fill\0")
 
   public var isInitialized: Bool {
     if let v = self._specColorFillSetColor, !v.isInitialized {return false}
@@ -932,11 +912,9 @@ extension TSDSOS_SpecFillArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSDSOS_SpecLineEndArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_SpecLineEndArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecLineEndArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_line_end"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_line_end\0")
 
   public var isInitialized: Bool {
     if let v = self._specSetLineEnd, !v.isInitialized {return false}
@@ -973,12 +951,9 @@ extension TSDSOS_SpecLineEndArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSDSOS_SpecReflectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_SpecReflectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecReflectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_reflection_set_opacity"),
-    2: .standard(proto: "spec_set_reflection"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_reflection_set_opacity\0\u{3}spec_set_reflection\0")
 
   public var isInitialized: Bool {
     if let v = self._specReflectionSetOpacity, !v.isInitialized {return false}
@@ -1021,16 +996,9 @@ extension TSDSOS_SpecReflectionArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSDSOS_SpecShadowArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_SpecShadowArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecShadowArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_set_shadow"),
-    2: .standard(proto: "spec_shadow_set_angle"),
-    3: .standard(proto: "spec_shadow_set_color"),
-    4: .standard(proto: "spec_shadow_set_offset"),
-    5: .standard(proto: "spec_shadow_set_opacity"),
-    6: .standard(proto: "spec_shadow_set_radius"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_set_shadow\0\u{3}spec_shadow_set_angle\0\u{3}spec_shadow_set_color\0\u{3}spec_shadow_set_offset\0\u{3}spec_shadow_set_opacity\0\u{3}spec_shadow_set_radius\0")
 
   fileprivate class _StorageClass {
     var _specSetShadow: TSDSOS_SpecSetShadowArchive? = nil
@@ -1040,15 +1008,11 @@ extension TSDSOS_SpecShadowArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
     var _specShadowSetOpacity: TSD_SpecShadowSetOpacityArchive? = nil
     var _specShadowSetRadius: TSD_SpecShadowSetRadiusArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -1149,15 +1113,9 @@ extension TSDSOS_SpecShadowArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSDSOS_SpecStrokeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_SpecStrokeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".SpecStrokeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "spec_frame_set_asset_scale"),
-    2: .standard(proto: "spec_set_stroke"),
-    3: .standard(proto: "spec_stroke_set_color"),
-    4: .standard(proto: "spec_stroke_set_pattern"),
-    5: .standard(proto: "spec_stroke_set_width"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}spec_frame_set_asset_scale\0\u{3}spec_set_stroke\0\u{3}spec_stroke_set_color\0\u{3}spec_stroke_set_pattern\0\u{3}spec_stroke_set_width\0")
 
   public var isInitialized: Bool {
     if let v = self._specFrameSetAssetScale, !v.isInitialized {return false}
@@ -1218,24 +1176,9 @@ extension TSDSOS_SpecStrokeArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSDSOS_BaseShapeStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_BaseShapeStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".BaseShapeStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "fill"),
-    2: .standard(proto: "fill_undefined"),
-    3: .same(proto: "stroke"),
-    4: .standard(proto: "stroke_undefined"),
-    5: .same(proto: "opacity"),
-    6: .standard(proto: "opacity_undefined"),
-    7: .same(proto: "shadow"),
-    8: .standard(proto: "shadow_undefined"),
-    9: .same(proto: "reflection"),
-    10: .standard(proto: "reflection_undefined"),
-    11: .standard(proto: "head_line_end"),
-    12: .standard(proto: "head_line_end_undefined"),
-    13: .standard(proto: "tail_line_end"),
-    14: .standard(proto: "tail_line_end_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}fill\0\u{3}fill_undefined\0\u{1}stroke\0\u{3}stroke_undefined\0\u{1}opacity\0\u{3}opacity_undefined\0\u{1}shadow\0\u{3}shadow_undefined\0\u{1}reflection\0\u{3}reflection_undefined\0\u{3}head_line_end\0\u{3}head_line_end_undefined\0\u{3}tail_line_end\0\u{3}tail_line_end_undefined\0")
 
   fileprivate class _StorageClass {
     var _fill: TSDSOS_SpecFillArchive? = nil
@@ -1253,15 +1196,11 @@ extension TSDSOS_BaseShapeStylePropertyChangeSetArchive: SwiftProtobuf.Message, 
     var _tailLineEnd: TSDSOS_SpecLineEndArchive? = nil
     var _tailLineEndUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -1411,18 +1350,9 @@ extension TSDSOS_BaseShapeStylePropertyChangeSetArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSDSOS_MediaStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSDSOS_MediaStylePropertyChangeSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".MediaStylePropertyChangeSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "stroke"),
-    2: .standard(proto: "stroke_undefined"),
-    3: .same(proto: "opacity"),
-    4: .standard(proto: "opacity_undefined"),
-    5: .same(proto: "shadow"),
-    6: .standard(proto: "shadow_undefined"),
-    7: .same(proto: "reflection"),
-    8: .standard(proto: "reflection_undefined"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}stroke\0\u{3}stroke_undefined\0\u{1}opacity\0\u{3}opacity_undefined\0\u{1}shadow\0\u{3}shadow_undefined\0\u{1}reflection\0\u{3}reflection_undefined\0")
 
   fileprivate class _StorageClass {
     var _stroke: TSDSOS_SpecStrokeArchive? = nil
@@ -1434,15 +1364,11 @@ extension TSDSOS_MediaStylePropertyChangeSetArchive: SwiftProtobuf.Message, Swif
     var _reflection: TSDSOS_SpecReflectionArchive? = nil
     var _reflectionUndefined: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 

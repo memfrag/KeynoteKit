@@ -15,141 +15,59 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public enum TSCH_StyleOwnerType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case chartInfo // = 1
-  case legendModel // = 2
-  case chartAxis // = 3
-  case chartSeries // = 4
-  case referenceLine // = 5
+public nonisolated enum TSCH_StyleOwnerType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case chartInfo = 1
+  case legendModel = 2
+  case chartAxis = 3
+  case chartSeries = 4
+  case referenceLine = 5
 
   public init() {
     self = .chartInfo
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 1: self = .chartInfo
-    case 2: self = .legendModel
-    case 3: self = .chartAxis
-    case 4: self = .chartSeries
-    case 5: self = .referenceLine
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .chartInfo: return 1
-    case .legendModel: return 2
-    case .chartAxis: return 3
-    case .chartSeries: return 4
-    case .referenceLine: return 5
-    }
-  }
-
 }
 
-public enum TSCH_StyleSwapType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case chartStyle // = 1
-  case chartNonStyle // = 2
-  case legendStyle // = 3
-  case legendNonStyle // = 4
-  case valueAxisStyle // = 5
-  case valueAxisNonStyle // = 6
-  case categoryAxisStyle // = 7
-  case categoryAxisNonStyle // = 8
-  case seriesThemeStyle // = 9
-  case seriesPrivateStyle // = 10
-  case seriesNonStyle // = 11
-  case paragraphStyle // = 12
-  case referenceLineStyle // = 13
-  case referenceLineNonStyle // = 14
-  case referenceLineThemeStyle // = 15
+public nonisolated enum TSCH_StyleSwapType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case chartStyle = 1
+  case chartNonStyle = 2
+  case legendStyle = 3
+  case legendNonStyle = 4
+  case valueAxisStyle = 5
+  case valueAxisNonStyle = 6
+  case categoryAxisStyle = 7
+  case categoryAxisNonStyle = 8
+  case seriesThemeStyle = 9
+  case seriesPrivateStyle = 10
+  case seriesNonStyle = 11
+  case paragraphStyle = 12
+  case referenceLineStyle = 13
+  case referenceLineNonStyle = 14
+  case referenceLineThemeStyle = 15
 
   public init() {
     self = .chartStyle
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 1: self = .chartStyle
-    case 2: self = .chartNonStyle
-    case 3: self = .legendStyle
-    case 4: self = .legendNonStyle
-    case 5: self = .valueAxisStyle
-    case 6: self = .valueAxisNonStyle
-    case 7: self = .categoryAxisStyle
-    case 8: self = .categoryAxisNonStyle
-    case 9: self = .seriesThemeStyle
-    case 10: self = .seriesPrivateStyle
-    case 11: self = .seriesNonStyle
-    case 12: self = .paragraphStyle
-    case 13: self = .referenceLineStyle
-    case 14: self = .referenceLineNonStyle
-    case 15: self = .referenceLineThemeStyle
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .chartStyle: return 1
-    case .chartNonStyle: return 2
-    case .legendStyle: return 3
-    case .legendNonStyle: return 4
-    case .valueAxisStyle: return 5
-    case .valueAxisNonStyle: return 6
-    case .categoryAxisStyle: return 7
-    case .categoryAxisNonStyle: return 8
-    case .seriesThemeStyle: return 9
-    case .seriesPrivateStyle: return 10
-    case .seriesNonStyle: return 11
-    case .paragraphStyle: return 12
-    case .referenceLineStyle: return 13
-    case .referenceLineNonStyle: return 14
-    case .referenceLineThemeStyle: return 15
-    }
-  }
-
 }
 
-public enum TSCH_ApplyPresetBehavior: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case removeOverrides // = 1
-  case preserveOverrides // = 2
-  case preserveAppearance // = 3
+public nonisolated enum TSCH_ApplyPresetBehavior: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case removeOverrides = 1
+  case preserveOverrides = 2
+  case preserveAppearance = 3
 
   public init() {
     self = .removeOverrides
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 1: self = .removeOverrides
-    case 2: self = .preserveOverrides
-    case 3: self = .preserveAppearance
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .removeOverrides: return 1
-    case .preserveOverrides: return 2
-    case .preserveAppearance: return 3
-    }
-  }
-
 }
 
-public struct TSCH_StyleOwnerPath: Sendable {
+public nonisolated struct TSCH_StyleOwnerPath: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -161,44 +79,44 @@ public struct TSCH_StyleOwnerPath: Sendable {
   public init() {}
 }
 
-public struct TSCH_CommandSetChartTypeArchive: Sendable {
+public nonisolated struct TSCH_CommandSetChartTypeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var newChartType: TSCH_ChartType {
-    get {return _newChartType ?? .undefinedChartType}
+    get {_newChartType ?? .undefinedChartType}
     set {_newChartType = newValue}
   }
   /// Returns true if `newChartType` has been explicitly set.
-  public var hasNewChartType: Bool {return self._newChartType != nil}
+  public var hasNewChartType: Bool {self._newChartType != nil}
   /// Clears the value of `newChartType`. Subsequent reads from it will return its default value.
   public mutating func clearNewChartType() {self._newChartType = nil}
 
   public var oldChartType: TSCH_ChartType {
-    get {return _oldChartType ?? .undefinedChartType}
+    get {_oldChartType ?? .undefinedChartType}
     set {_oldChartType = newValue}
   }
   /// Returns true if `oldChartType` has been explicitly set.
-  public var hasOldChartType: Bool {return self._oldChartType != nil}
+  public var hasOldChartType: Bool {self._oldChartType != nil}
   /// Clears the value of `oldChartType`. Subsequent reads from it will return its default value.
   public mutating func clearOldChartType() {self._oldChartType = nil}
 
   public var rollbackChartType: TSCH_ChartType {
-    get {return _rollbackChartType ?? .undefinedChartType}
+    get {_rollbackChartType ?? .undefinedChartType}
     set {_rollbackChartType = newValue}
   }
   /// Returns true if `rollbackChartType` has been explicitly set.
-  public var hasRollbackChartType: Bool {return self._rollbackChartType != nil}
+  public var hasRollbackChartType: Bool {self._rollbackChartType != nil}
   /// Clears the value of `rollbackChartType`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackChartType() {self._rollbackChartType = nil}
 
@@ -215,20 +133,20 @@ public struct TSCH_CommandSetChartTypeArchive: Sendable {
   public var rollbackColumnIds: [TSP_UUID] = []
 
   public var usesCapturedData: Bool {
-    get {return _usesCapturedData ?? false}
+    get {_usesCapturedData ?? false}
     set {_usesCapturedData = newValue}
   }
   /// Returns true if `usesCapturedData` has been explicitly set.
-  public var hasUsesCapturedData: Bool {return self._usesCapturedData != nil}
+  public var hasUsesCapturedData: Bool {self._usesCapturedData != nil}
   /// Clears the value of `usesCapturedData`. Subsequent reads from it will return its default value.
   public mutating func clearUsesCapturedData() {self._usesCapturedData = nil}
 
   public var useDefaultData: Bool {
-    get {return _useDefaultData ?? false}
+    get {_useDefaultData ?? false}
     set {_useDefaultData = newValue}
   }
   /// Returns true if `useDefaultData` has been explicitly set.
-  public var hasUseDefaultData: Bool {return self._useDefaultData != nil}
+  public var hasUseDefaultData: Bool {self._useDefaultData != nil}
   /// Clears the value of `useDefaultData`. Subsequent reads from it will return its default value.
   public mutating func clearUseDefaultData() {self._useDefaultData = nil}
 
@@ -244,62 +162,62 @@ public struct TSCH_CommandSetChartTypeArchive: Sendable {
   fileprivate var _useDefaultData: Bool? = nil
 }
 
-public struct TSCH_StyleSwapUndoTupleArchive: Sendable {
+public nonisolated struct TSCH_StyleSwapUndoTupleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var chartInfo: TSP_Reference {
-    get {return _chartInfo ?? TSP_Reference()}
+    get {_chartInfo ?? TSP_Reference()}
     set {_chartInfo = newValue}
   }
   /// Returns true if `chartInfo` has been explicitly set.
-  public var hasChartInfo: Bool {return self._chartInfo != nil}
+  public var hasChartInfo: Bool {self._chartInfo != nil}
   /// Clears the value of `chartInfo`. Subsequent reads from it will return its default value.
   public mutating func clearChartInfo() {self._chartInfo = nil}
 
   public var swapType: TSCH_StyleSwapType {
-    get {return _swapType ?? .chartStyle}
+    get {_swapType ?? .chartStyle}
     set {_swapType = newValue}
   }
   /// Returns true if `swapType` has been explicitly set.
-  public var hasSwapType: Bool {return self._swapType != nil}
+  public var hasSwapType: Bool {self._swapType != nil}
   /// Clears the value of `swapType`. Subsequent reads from it will return its default value.
   public mutating func clearSwapType() {self._swapType = nil}
 
   public var index: UInt32 {
-    get {return _index ?? 0}
+    get {_index ?? 0}
     set {_index = newValue}
   }
   /// Returns true if `index` has been explicitly set.
-  public var hasIndex: Bool {return self._index != nil}
+  public var hasIndex: Bool {self._index != nil}
   /// Clears the value of `index`. Subsequent reads from it will return its default value.
   public mutating func clearIndex() {self._index = nil}
 
   public var oldValue: TSP_Reference {
-    get {return _oldValue ?? TSP_Reference()}
+    get {_oldValue ?? TSP_Reference()}
     set {_oldValue = newValue}
   }
   /// Returns true if `oldValue` has been explicitly set.
-  public var hasOldValue: Bool {return self._oldValue != nil}
+  public var hasOldValue: Bool {self._oldValue != nil}
   /// Clears the value of `oldValue`. Subsequent reads from it will return its default value.
   public mutating func clearOldValue() {self._oldValue = nil}
 
   public var newValue: TSP_Reference {
-    get {return _newValue ?? TSP_Reference()}
+    get {_newValue ?? TSP_Reference()}
     set {_newValue = newValue}
   }
   /// Returns true if `newValue` has been explicitly set.
-  public var hasNewValue: Bool {return self._newValue != nil}
+  public var hasNewValue: Bool {self._newValue != nil}
   /// Clears the value of `newValue`. Subsequent reads from it will return its default value.
   public mutating func clearNewValue() {self._newValue = nil}
 
   public var refLineUuid: TSP_UUID {
-    get {return _refLineUuid ?? TSP_UUID()}
+    get {_refLineUuid ?? TSP_UUID()}
     set {_refLineUuid = newValue}
   }
   /// Returns true if `refLineUuid` has been explicitly set.
-  public var hasRefLineUuid: Bool {return self._refLineUuid != nil}
+  public var hasRefLineUuid: Bool {self._refLineUuid != nil}
   /// Clears the value of `refLineUuid`. Subsequent reads from it will return its default value.
   public mutating func clearRefLineUuid() {self._refLineUuid = nil}
 
@@ -315,7 +233,7 @@ public struct TSCH_StyleSwapUndoTupleArchive: Sendable {
   fileprivate var _refLineUuid: TSP_UUID? = nil
 }
 
-public struct TSCH_StyleSwapUndoTuplesArchive: Sendable {
+public nonisolated struct TSCH_StyleSwapUndoTuplesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -327,17 +245,17 @@ public struct TSCH_StyleSwapUndoTuplesArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_CommandStyleSwapArchive: Sendable {
+public nonisolated struct TSCH_CommandStyleSwapArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -350,26 +268,26 @@ public struct TSCH_CommandStyleSwapArchive: Sendable {
   fileprivate var _super: TSCH_ChartCommandArchive? = nil
 }
 
-public struct TSCH_CommandMutatePropertiesArchive: Sendable {
+public nonisolated struct TSCH_CommandMutatePropertiesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var rollbackCmd: TSP_Reference {
-    get {return _rollbackCmd ?? TSP_Reference()}
+    get {_rollbackCmd ?? TSP_Reference()}
     set {_rollbackCmd = newValue}
   }
   /// Returns true if `rollbackCmd` has been explicitly set.
-  public var hasRollbackCmd: Bool {return self._rollbackCmd != nil}
+  public var hasRollbackCmd: Bool {self._rollbackCmd != nil}
   /// Clears the value of `rollbackCmd`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackCmd() {self._rollbackCmd = nil}
 
@@ -378,97 +296,97 @@ public struct TSCH_CommandMutatePropertiesArchive: Sendable {
   public var paragraphStyleDeltaMaps: [TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap] = []
 
   public var initiatedOnWeb: Bool {
-    get {return _initiatedOnWeb ?? false}
+    get {_initiatedOnWeb ?? false}
     set {_initiatedOnWeb = newValue}
   }
   /// Returns true if `initiatedOnWeb` has been explicitly set.
-  public var hasInitiatedOnWeb: Bool {return self._initiatedOnWeb != nil}
+  public var hasInitiatedOnWeb: Bool {self._initiatedOnWeb != nil}
   /// Clears the value of `initiatedOnWeb`. Subsequent reads from it will return its default value.
   public mutating func clearInitiatedOnWeb() {self._initiatedOnWeb = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct GenericPropertyDeltaMap: Sendable {
+  public nonisolated struct GenericPropertyDeltaMap: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var styleOwnerPath: TSCH_StyleOwnerPath {
-      get {return _styleOwnerPath ?? TSCH_StyleOwnerPath()}
+      get {_styleOwnerPath ?? TSCH_StyleOwnerPath()}
       set {_styleOwnerPath = newValue}
     }
     /// Returns true if `styleOwnerPath` has been explicitly set.
-    public var hasStyleOwnerPath: Bool {return self._styleOwnerPath != nil}
+    public var hasStyleOwnerPath: Bool {self._styleOwnerPath != nil}
     /// Clears the value of `styleOwnerPath`. Subsequent reads from it will return its default value.
     public mutating func clearStyleOwnerPath() {self._styleOwnerPath = nil}
 
     public var forwardMap: TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMapUnion {
-      get {return _forwardMap ?? TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMapUnion()}
+      get {_forwardMap ?? TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMapUnion()}
       set {_forwardMap = newValue}
     }
     /// Returns true if `forwardMap` has been explicitly set.
-    public var hasForwardMap: Bool {return self._forwardMap != nil}
+    public var hasForwardMap: Bool {self._forwardMap != nil}
     /// Clears the value of `forwardMap`. Subsequent reads from it will return its default value.
     public mutating func clearForwardMap() {self._forwardMap = nil}
 
     public var reverseMap: TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMapUnion {
-      get {return _reverseMap ?? TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMapUnion()}
+      get {_reverseMap ?? TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMapUnion()}
       set {_reverseMap = newValue}
     }
     /// Returns true if `reverseMap` has been explicitly set.
-    public var hasReverseMap: Bool {return self._reverseMap != nil}
+    public var hasReverseMap: Bool {self._reverseMap != nil}
     /// Clears the value of `reverseMap`. Subsequent reads from it will return its default value.
     public mutating func clearReverseMap() {self._reverseMap = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    public struct GenericMapUnion: @unchecked Sendable {
+    public nonisolated struct GenericMapUnion: @unchecked Sendable {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
       public var chartMap: TSCH_Generated_ChartGenericPropertyMapArchive {
-        get {return _storage._chartMap ?? TSCH_Generated_ChartGenericPropertyMapArchive()}
+        get {_storage._chartMap ?? TSCH_Generated_ChartGenericPropertyMapArchive()}
         set {_uniqueStorage()._chartMap = newValue}
       }
       /// Returns true if `chartMap` has been explicitly set.
-      public var hasChartMap: Bool {return _storage._chartMap != nil}
+      public var hasChartMap: Bool {_storage._chartMap != nil}
       /// Clears the value of `chartMap`. Subsequent reads from it will return its default value.
       public mutating func clearChartMap() {_uniqueStorage()._chartMap = nil}
 
       public var legendMap: TSCH_Generated_LegendGenericPropertyMapArchive {
-        get {return _storage._legendMap ?? TSCH_Generated_LegendGenericPropertyMapArchive()}
+        get {_storage._legendMap ?? TSCH_Generated_LegendGenericPropertyMapArchive()}
         set {_uniqueStorage()._legendMap = newValue}
       }
       /// Returns true if `legendMap` has been explicitly set.
-      public var hasLegendMap: Bool {return _storage._legendMap != nil}
+      public var hasLegendMap: Bool {_storage._legendMap != nil}
       /// Clears the value of `legendMap`. Subsequent reads from it will return its default value.
       public mutating func clearLegendMap() {_uniqueStorage()._legendMap = nil}
 
       public var axisMap: TSCH_Generated_ChartAxisGenericPropertyMapArchive {
-        get {return _storage._axisMap ?? TSCH_Generated_ChartAxisGenericPropertyMapArchive()}
+        get {_storage._axisMap ?? TSCH_Generated_ChartAxisGenericPropertyMapArchive()}
         set {_uniqueStorage()._axisMap = newValue}
       }
       /// Returns true if `axisMap` has been explicitly set.
-      public var hasAxisMap: Bool {return _storage._axisMap != nil}
+      public var hasAxisMap: Bool {_storage._axisMap != nil}
       /// Clears the value of `axisMap`. Subsequent reads from it will return its default value.
       public mutating func clearAxisMap() {_uniqueStorage()._axisMap = nil}
 
       public var seriesMap: TSCH_Generated_ChartSeriesGenericPropertyMapArchive {
-        get {return _storage._seriesMap ?? TSCH_Generated_ChartSeriesGenericPropertyMapArchive()}
+        get {_storage._seriesMap ?? TSCH_Generated_ChartSeriesGenericPropertyMapArchive()}
         set {_uniqueStorage()._seriesMap = newValue}
       }
       /// Returns true if `seriesMap` has been explicitly set.
-      public var hasSeriesMap: Bool {return _storage._seriesMap != nil}
+      public var hasSeriesMap: Bool {_storage._seriesMap != nil}
       /// Clears the value of `seriesMap`. Subsequent reads from it will return its default value.
       public mutating func clearSeriesMap() {_uniqueStorage()._seriesMap = nil}
 
       public var referenceLineMap: TSCH_Generated_ReferenceLineGenericPropertyMapArchive {
-        get {return _storage._referenceLineMap ?? TSCH_Generated_ReferenceLineGenericPropertyMapArchive()}
+        get {_storage._referenceLineMap ?? TSCH_Generated_ReferenceLineGenericPropertyMapArchive()}
         set {_uniqueStorage()._referenceLineMap = newValue}
       }
       /// Returns true if `referenceLineMap` has been explicitly set.
-      public var hasReferenceLineMap: Bool {return _storage._referenceLineMap != nil}
+      public var hasReferenceLineMap: Bool {_storage._referenceLineMap != nil}
       /// Clears the value of `referenceLineMap`. Subsequent reads from it will return its default value.
       public mutating func clearReferenceLineMap() {_uniqueStorage()._referenceLineMap = nil}
 
@@ -486,69 +404,69 @@ public struct TSCH_CommandMutatePropertiesArchive: Sendable {
     fileprivate var _reverseMap: TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMapUnion? = nil
   }
 
-  public struct ParagraphStyleDeltaMap: Sendable {
+  public nonisolated struct ParagraphStyleDeltaMap: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var styleOwnerPath: TSCH_StyleOwnerPath {
-      get {return _styleOwnerPath ?? TSCH_StyleOwnerPath()}
+      get {_styleOwnerPath ?? TSCH_StyleOwnerPath()}
       set {_styleOwnerPath = newValue}
     }
     /// Returns true if `styleOwnerPath` has been explicitly set.
-    public var hasStyleOwnerPath: Bool {return self._styleOwnerPath != nil}
+    public var hasStyleOwnerPath: Bool {self._styleOwnerPath != nil}
     /// Clears the value of `styleOwnerPath`. Subsequent reads from it will return its default value.
     public mutating func clearStyleOwnerPath() {self._styleOwnerPath = nil}
 
     public var paragraphStyleIndexProperty: UInt32 {
-      get {return _paragraphStyleIndexProperty ?? 0}
+      get {_paragraphStyleIndexProperty ?? 0}
       set {_paragraphStyleIndexProperty = newValue}
     }
     /// Returns true if `paragraphStyleIndexProperty` has been explicitly set.
-    public var hasParagraphStyleIndexProperty: Bool {return self._paragraphStyleIndexProperty != nil}
+    public var hasParagraphStyleIndexProperty: Bool {self._paragraphStyleIndexProperty != nil}
     /// Clears the value of `paragraphStyleIndexProperty`. Subsequent reads from it will return its default value.
     public mutating func clearParagraphStyleIndexProperty() {self._paragraphStyleIndexProperty = nil}
 
     public var forwardMap: TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap.ParagraphStylePropertyMapArchive {
-      get {return _forwardMap ?? TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap.ParagraphStylePropertyMapArchive()}
+      get {_forwardMap ?? TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap.ParagraphStylePropertyMapArchive()}
       set {_forwardMap = newValue}
     }
     /// Returns true if `forwardMap` has been explicitly set.
-    public var hasForwardMap: Bool {return self._forwardMap != nil}
+    public var hasForwardMap: Bool {self._forwardMap != nil}
     /// Clears the value of `forwardMap`. Subsequent reads from it will return its default value.
     public mutating func clearForwardMap() {self._forwardMap = nil}
 
     public var reverseMap: TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap.ParagraphStylePropertyMapArchive {
-      get {return _reverseMap ?? TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap.ParagraphStylePropertyMapArchive()}
+      get {_reverseMap ?? TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap.ParagraphStylePropertyMapArchive()}
       set {_reverseMap = newValue}
     }
     /// Returns true if `reverseMap` has been explicitly set.
-    public var hasReverseMap: Bool {return self._reverseMap != nil}
+    public var hasReverseMap: Bool {self._reverseMap != nil}
     /// Clears the value of `reverseMap`. Subsequent reads from it will return its default value.
     public mutating func clearReverseMap() {self._reverseMap = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    public struct ParagraphStylePropertyMapArchive: Sendable {
+    public nonisolated struct ParagraphStylePropertyMapArchive: Sendable {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
       public var charProperties: TSWP_CharacterStylePropertiesArchive {
-        get {return _charProperties ?? TSWP_CharacterStylePropertiesArchive()}
+        get {_charProperties ?? TSWP_CharacterStylePropertiesArchive()}
         set {_charProperties = newValue}
       }
       /// Returns true if `charProperties` has been explicitly set.
-      public var hasCharProperties: Bool {return self._charProperties != nil}
+      public var hasCharProperties: Bool {self._charProperties != nil}
       /// Clears the value of `charProperties`. Subsequent reads from it will return its default value.
       public mutating func clearCharProperties() {self._charProperties = nil}
 
       public var paraProperties: TSWP_ParagraphStylePropertiesArchive {
-        get {return _paraProperties ?? TSWP_ParagraphStylePropertiesArchive()}
+        get {_paraProperties ?? TSWP_ParagraphStylePropertiesArchive()}
         set {_paraProperties = newValue}
       }
       /// Returns true if `paraProperties` has been explicitly set.
-      public var hasParaProperties: Bool {return self._paraProperties != nil}
+      public var hasParaProperties: Bool {self._paraProperties != nil}
       /// Clears the value of `paraProperties`. Subsequent reads from it will return its default value.
       public mutating func clearParaProperties() {self._paraProperties = nil}
 
@@ -575,35 +493,35 @@ public struct TSCH_CommandMutatePropertiesArchive: Sendable {
   fileprivate var _initiatedOnWeb: Bool? = nil
 }
 
-public struct TSCH_CommandScaleAllTextArchive: Sendable {
+public nonisolated struct TSCH_CommandScaleAllTextArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var rollbackCmd: TSP_Reference {
-    get {return _rollbackCmd ?? TSP_Reference()}
+    get {_rollbackCmd ?? TSP_Reference()}
     set {_rollbackCmd = newValue}
   }
   /// Returns true if `rollbackCmd` has been explicitly set.
-  public var hasRollbackCmd: Bool {return self._rollbackCmd != nil}
+  public var hasRollbackCmd: Bool {self._rollbackCmd != nil}
   /// Clears the value of `rollbackCmd`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackCmd() {self._rollbackCmd = nil}
 
   public var scaleFactor: Double {
-    get {return _scaleFactor ?? 0}
+    get {_scaleFactor ?? 0}
     set {_scaleFactor = newValue}
   }
   /// Returns true if `scaleFactor` has been explicitly set.
-  public var hasScaleFactor: Bool {return self._scaleFactor != nil}
+  public var hasScaleFactor: Bool {self._scaleFactor != nil}
   /// Clears the value of `scaleFactor`. Subsequent reads from it will return its default value.
   public mutating func clearScaleFactor() {self._scaleFactor = nil}
 
@@ -616,89 +534,89 @@ public struct TSCH_CommandScaleAllTextArchive: Sendable {
   fileprivate var _scaleFactor: Double? = nil
 }
 
-public struct TSCH_CommandSetFontFamilyArchive: Sendable {
+public nonisolated struct TSCH_CommandSetFontFamilyArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var rollbackCmd: TSP_Reference {
-    get {return _rollbackCmd ?? TSP_Reference()}
+    get {_rollbackCmd ?? TSP_Reference()}
     set {_rollbackCmd = newValue}
   }
   /// Returns true if `rollbackCmd` has been explicitly set.
-  public var hasRollbackCmd: Bool {return self._rollbackCmd != nil}
+  public var hasRollbackCmd: Bool {self._rollbackCmd != nil}
   /// Clears the value of `rollbackCmd`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackCmd() {self._rollbackCmd = nil}
 
   public var newFontFamily: String {
-    get {return _newFontFamily ?? String()}
+    get {_newFontFamily ?? String()}
     set {_newFontFamily = newValue}
   }
   /// Returns true if `newFontFamily` has been explicitly set.
-  public var hasNewFontFamily: Bool {return self._newFontFamily != nil}
+  public var hasNewFontFamily: Bool {self._newFontFamily != nil}
   /// Clears the value of `newFontFamily`. Subsequent reads from it will return its default value.
   public mutating func clearNewFontFamily() {self._newFontFamily = nil}
 
   public var oldFontFamily: String {
-    get {return _oldFontFamily ?? String()}
+    get {_oldFontFamily ?? String()}
     set {_oldFontFamily = newValue}
   }
   /// Returns true if `oldFontFamily` has been explicitly set.
-  public var hasOldFontFamily: Bool {return self._oldFontFamily != nil}
+  public var hasOldFontFamily: Bool {self._oldFontFamily != nil}
   /// Clears the value of `oldFontFamily`. Subsequent reads from it will return its default value.
   public mutating func clearOldFontFamily() {self._oldFontFamily = nil}
 
   public var paragraphStyleDeltaMaps: [TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap] = []
 
   public var isBold: Bool {
-    get {return _isBold ?? false}
+    get {_isBold ?? false}
     set {_isBold = newValue}
   }
   /// Returns true if `isBold` has been explicitly set.
-  public var hasIsBold: Bool {return self._isBold != nil}
+  public var hasIsBold: Bool {self._isBold != nil}
   /// Clears the value of `isBold`. Subsequent reads from it will return its default value.
   public mutating func clearIsBold() {self._isBold = nil}
 
   public var isItalic: Bool {
-    get {return _isItalic ?? false}
+    get {_isItalic ?? false}
     set {_isItalic = newValue}
   }
   /// Returns true if `isItalic` has been explicitly set.
-  public var hasIsItalic: Bool {return self._isItalic != nil}
+  public var hasIsItalic: Bool {self._isItalic != nil}
   /// Clears the value of `isItalic`. Subsequent reads from it will return its default value.
   public mutating func clearIsItalic() {self._isItalic = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct StyleSemanticTag: Sendable {
+  public nonisolated struct StyleSemanticTag: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var swapType: TSCH_StyleSwapType {
-      get {return _swapType ?? .chartStyle}
+      get {_swapType ?? .chartStyle}
       set {_swapType = newValue}
     }
     /// Returns true if `swapType` has been explicitly set.
-    public var hasSwapType: Bool {return self._swapType != nil}
+    public var hasSwapType: Bool {self._swapType != nil}
     /// Clears the value of `swapType`. Subsequent reads from it will return its default value.
     public mutating func clearSwapType() {self._swapType = nil}
 
     public var index: UInt32 {
-      get {return _index ?? 0}
+      get {_index ?? 0}
       set {_index = newValue}
     }
     /// Returns true if `index` has been explicitly set.
-    public var hasIndex: Bool {return self._index != nil}
+    public var hasIndex: Bool {self._index != nil}
     /// Clears the value of `index`. Subsequent reads from it will return its default value.
     public mutating func clearIndex() {self._index = nil}
 
@@ -710,69 +628,69 @@ public struct TSCH_CommandSetFontFamilyArchive: Sendable {
     fileprivate var _index: UInt32? = nil
   }
 
-  public struct SemanticParagraphStyleMutationMap: Sendable {
+  public nonisolated struct SemanticParagraphStyleMutationMap: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var styleSemanticTag: TSCH_CommandSetFontFamilyArchive.StyleSemanticTag {
-      get {return _styleSemanticTag ?? TSCH_CommandSetFontFamilyArchive.StyleSemanticTag()}
+      get {_styleSemanticTag ?? TSCH_CommandSetFontFamilyArchive.StyleSemanticTag()}
       set {_styleSemanticTag = newValue}
     }
     /// Returns true if `styleSemanticTag` has been explicitly set.
-    public var hasStyleSemanticTag: Bool {return self._styleSemanticTag != nil}
+    public var hasStyleSemanticTag: Bool {self._styleSemanticTag != nil}
     /// Clears the value of `styleSemanticTag`. Subsequent reads from it will return its default value.
     public mutating func clearStyleSemanticTag() {self._styleSemanticTag = nil}
 
     public var paragraphStyleIndexProperty: UInt32 {
-      get {return _paragraphStyleIndexProperty ?? 0}
+      get {_paragraphStyleIndexProperty ?? 0}
       set {_paragraphStyleIndexProperty = newValue}
     }
     /// Returns true if `paragraphStyleIndexProperty` has been explicitly set.
-    public var hasParagraphStyleIndexProperty: Bool {return self._paragraphStyleIndexProperty != nil}
+    public var hasParagraphStyleIndexProperty: Bool {self._paragraphStyleIndexProperty != nil}
     /// Clears the value of `paragraphStyleIndexProperty`. Subsequent reads from it will return its default value.
     public mutating func clearParagraphStyleIndexProperty() {self._paragraphStyleIndexProperty = nil}
 
     public var forwardMap: TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap.ParagraphStylePropertyMapArchive {
-      get {return _forwardMap ?? TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap.ParagraphStylePropertyMapArchive()}
+      get {_forwardMap ?? TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap.ParagraphStylePropertyMapArchive()}
       set {_forwardMap = newValue}
     }
     /// Returns true if `forwardMap` has been explicitly set.
-    public var hasForwardMap: Bool {return self._forwardMap != nil}
+    public var hasForwardMap: Bool {self._forwardMap != nil}
     /// Clears the value of `forwardMap`. Subsequent reads from it will return its default value.
     public mutating func clearForwardMap() {self._forwardMap = nil}
 
     public var reverseMap: TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap.ParagraphStylePropertyMapArchive {
-      get {return _reverseMap ?? TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap.ParagraphStylePropertyMapArchive()}
+      get {_reverseMap ?? TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap.ParagraphStylePropertyMapArchive()}
       set {_reverseMap = newValue}
     }
     /// Returns true if `reverseMap` has been explicitly set.
-    public var hasReverseMap: Bool {return self._reverseMap != nil}
+    public var hasReverseMap: Bool {self._reverseMap != nil}
     /// Clears the value of `reverseMap`. Subsequent reads from it will return its default value.
     public mutating func clearReverseMap() {self._reverseMap = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    public struct ParagraphStylePropertyMapArchive: Sendable {
+    public nonisolated struct ParagraphStylePropertyMapArchive: Sendable {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
       public var charProperties: TSWP_CharacterStylePropertiesArchive {
-        get {return _charProperties ?? TSWP_CharacterStylePropertiesArchive()}
+        get {_charProperties ?? TSWP_CharacterStylePropertiesArchive()}
         set {_charProperties = newValue}
       }
       /// Returns true if `charProperties` has been explicitly set.
-      public var hasCharProperties: Bool {return self._charProperties != nil}
+      public var hasCharProperties: Bool {self._charProperties != nil}
       /// Clears the value of `charProperties`. Subsequent reads from it will return its default value.
       public mutating func clearCharProperties() {self._charProperties = nil}
 
       public var paraProperties: TSWP_ParagraphStylePropertiesArchive {
-        get {return _paraProperties ?? TSWP_ParagraphStylePropertiesArchive()}
+        get {_paraProperties ?? TSWP_ParagraphStylePropertiesArchive()}
         set {_paraProperties = newValue}
       }
       /// Returns true if `paraProperties` has been explicitly set.
-      public var hasParaProperties: Bool {return self._paraProperties != nil}
+      public var hasParaProperties: Bool {self._paraProperties != nil}
       /// Clears the value of `paraProperties`. Subsequent reads from it will return its default value.
       public mutating func clearParaProperties() {self._paraProperties = nil}
 
@@ -802,62 +720,62 @@ public struct TSCH_CommandSetFontFamilyArchive: Sendable {
   fileprivate var _isItalic: Bool? = nil
 }
 
-public struct TSCH_CommandApplyFillSetArchive: Sendable {
+public nonisolated struct TSCH_CommandApplyFillSetArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var chartType: TSCH_ChartType {
-    get {return _chartType ?? .undefinedChartType}
+    get {_chartType ?? .undefinedChartType}
     set {_chartType = newValue}
   }
   /// Returns true if `chartType` has been explicitly set.
-  public var hasChartType: Bool {return self._chartType != nil}
+  public var hasChartType: Bool {self._chartType != nil}
   /// Clears the value of `chartType`. Subsequent reads from it will return its default value.
   public mutating func clearChartType() {self._chartType = nil}
 
   public var fillSet: TSCH_ChartFillSetArchive {
-    get {return _fillSet ?? TSCH_ChartFillSetArchive()}
+    get {_fillSet ?? TSCH_ChartFillSetArchive()}
     set {_fillSet = newValue}
   }
   /// Returns true if `fillSet` has been explicitly set.
-  public var hasFillSet: Bool {return self._fillSet != nil}
+  public var hasFillSet: Bool {self._fillSet != nil}
   /// Clears the value of `fillSet`. Subsequent reads from it will return its default value.
   public mutating func clearFillSet() {self._fillSet = nil}
 
   public var oldFillSet: TSCH_ChartFillSetArchive {
-    get {return _oldFillSet ?? TSCH_ChartFillSetArchive()}
+    get {_oldFillSet ?? TSCH_ChartFillSetArchive()}
     set {_oldFillSet = newValue}
   }
   /// Returns true if `oldFillSet` has been explicitly set.
-  public var hasOldFillSet: Bool {return self._oldFillSet != nil}
+  public var hasOldFillSet: Bool {self._oldFillSet != nil}
   /// Clears the value of `oldFillSet`. Subsequent reads from it will return its default value.
   public mutating func clearOldFillSet() {self._oldFillSet = nil}
 
   public var priorLastAppliedFillSetLookupString: String {
-    get {return _priorLastAppliedFillSetLookupString ?? String()}
+    get {_priorLastAppliedFillSetLookupString ?? String()}
     set {_priorLastAppliedFillSetLookupString = newValue}
   }
   /// Returns true if `priorLastAppliedFillSetLookupString` has been explicitly set.
-  public var hasPriorLastAppliedFillSetLookupString: Bool {return self._priorLastAppliedFillSetLookupString != nil}
+  public var hasPriorLastAppliedFillSetLookupString: Bool {self._priorLastAppliedFillSetLookupString != nil}
   /// Clears the value of `priorLastAppliedFillSetLookupString`. Subsequent reads from it will return its default value.
   public mutating func clearPriorLastAppliedFillSetLookupString() {self._priorLastAppliedFillSetLookupString = nil}
 
   public var rollbackCmd: TSP_Reference {
-    get {return _rollbackCmd ?? TSP_Reference()}
+    get {_rollbackCmd ?? TSP_Reference()}
     set {_rollbackCmd = newValue}
   }
   /// Returns true if `rollbackCmd` has been explicitly set.
-  public var hasRollbackCmd: Bool {return self._rollbackCmd != nil}
+  public var hasRollbackCmd: Bool {self._rollbackCmd != nil}
   /// Clears the value of `rollbackCmd`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackCmd() {self._rollbackCmd = nil}
 
@@ -873,44 +791,44 @@ public struct TSCH_CommandApplyFillSetArchive: Sendable {
   fileprivate var _rollbackCmd: TSP_Reference? = nil
 }
 
-public struct TSCH_CommandSetSeriesNameArchive: Sendable {
+public nonisolated struct TSCH_CommandSetSeriesNameArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var seriesIndex: UInt32 {
-    get {return _seriesIndex ?? 0}
+    get {_seriesIndex ?? 0}
     set {_seriesIndex = newValue}
   }
   /// Returns true if `seriesIndex` has been explicitly set.
-  public var hasSeriesIndex: Bool {return self._seriesIndex != nil}
+  public var hasSeriesIndex: Bool {self._seriesIndex != nil}
   /// Clears the value of `seriesIndex`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesIndex() {self._seriesIndex = nil}
 
   public var oldName: String {
-    get {return _oldName ?? String()}
+    get {_oldName ?? String()}
     set {_oldName = newValue}
   }
   /// Returns true if `oldName` has been explicitly set.
-  public var hasOldName: Bool {return self._oldName != nil}
+  public var hasOldName: Bool {self._oldName != nil}
   /// Clears the value of `oldName`. Subsequent reads from it will return its default value.
   public mutating func clearOldName() {self._oldName = nil}
 
   public var newName: String {
-    get {return _newName ?? String()}
+    get {_newName ?? String()}
     set {_newName = newValue}
   }
   /// Returns true if `newName` has been explicitly set.
-  public var hasNewName: Bool {return self._newName != nil}
+  public var hasNewName: Bool {self._newName != nil}
   /// Clears the value of `newName`. Subsequent reads from it will return its default value.
   public mutating func clearNewName() {self._newName = nil}
 
@@ -924,53 +842,53 @@ public struct TSCH_CommandSetSeriesNameArchive: Sendable {
   fileprivate var _newName: String? = nil
 }
 
-public struct TSCH_CommandSetCategoryNameArchive: Sendable {
+public nonisolated struct TSCH_CommandSetCategoryNameArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var categoryIndex: UInt32 {
-    get {return _categoryIndex ?? 0}
+    get {_categoryIndex ?? 0}
     set {_categoryIndex = newValue}
   }
   /// Returns true if `categoryIndex` has been explicitly set.
-  public var hasCategoryIndex: Bool {return self._categoryIndex != nil}
+  public var hasCategoryIndex: Bool {self._categoryIndex != nil}
   /// Clears the value of `categoryIndex`. Subsequent reads from it will return its default value.
   public mutating func clearCategoryIndex() {self._categoryIndex = nil}
 
   public var oldName: String {
-    get {return _oldName ?? String()}
+    get {_oldName ?? String()}
     set {_oldName = newValue}
   }
   /// Returns true if `oldName` has been explicitly set.
-  public var hasOldName: Bool {return self._oldName != nil}
+  public var hasOldName: Bool {self._oldName != nil}
   /// Clears the value of `oldName`. Subsequent reads from it will return its default value.
   public mutating func clearOldName() {self._oldName = nil}
 
   public var newName: String {
-    get {return _newName ?? String()}
+    get {_newName ?? String()}
     set {_newName = newValue}
   }
   /// Returns true if `newName` has been explicitly set.
-  public var hasNewName: Bool {return self._newName != nil}
+  public var hasNewName: Bool {self._newName != nil}
   /// Clears the value of `newName`. Subsequent reads from it will return its default value.
   public mutating func clearNewName() {self._newName = nil}
 
   public var isMultiDataIndex: Bool {
-    get {return _isMultiDataIndex ?? false}
+    get {_isMultiDataIndex ?? false}
     set {_isMultiDataIndex = newValue}
   }
   /// Returns true if `isMultiDataIndex` has been explicitly set.
-  public var hasIsMultiDataIndex: Bool {return self._isMultiDataIndex != nil}
+  public var hasIsMultiDataIndex: Bool {self._isMultiDataIndex != nil}
   /// Clears the value of `isMultiDataIndex`. Subsequent reads from it will return its default value.
   public mutating func clearIsMultiDataIndex() {self._isMultiDataIndex = nil}
 
@@ -985,26 +903,26 @@ public struct TSCH_CommandSetCategoryNameArchive: Sendable {
   fileprivate var _isMultiDataIndex: Bool? = nil
 }
 
-public struct TSCH_CommandAddGridRowsArchive: Sendable {
+public nonisolated struct TSCH_CommandAddGridRowsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var rowID: TSP_UUID {
-    get {return _rowID ?? TSP_UUID()}
+    get {_rowID ?? TSP_UUID()}
     set {_rowID = newValue}
   }
   /// Returns true if `rowID` has been explicitly set.
-  public var hasRowID: Bool {return self._rowID != nil}
+  public var hasRowID: Bool {self._rowID != nil}
   /// Clears the value of `rowID`. Subsequent reads from it will return its default value.
   public mutating func clearRowID() {self._rowID = nil}
 
@@ -1013,20 +931,20 @@ public struct TSCH_CommandAddGridRowsArchive: Sendable {
   public var rowNameList: [String] = []
 
   public var undoDeletionStartID: TSP_UUID {
-    get {return _undoDeletionStartID ?? TSP_UUID()}
+    get {_undoDeletionStartID ?? TSP_UUID()}
     set {_undoDeletionStartID = newValue}
   }
   /// Returns true if `undoDeletionStartID` has been explicitly set.
-  public var hasUndoDeletionStartID: Bool {return self._undoDeletionStartID != nil}
+  public var hasUndoDeletionStartID: Bool {self._undoDeletionStartID != nil}
   /// Clears the value of `undoDeletionStartID`. Subsequent reads from it will return its default value.
   public mutating func clearUndoDeletionStartID() {self._undoDeletionStartID = nil}
 
   public var undoDeletionEndID: TSP_UUID {
-    get {return _undoDeletionEndID ?? TSP_UUID()}
+    get {_undoDeletionEndID ?? TSP_UUID()}
     set {_undoDeletionEndID = newValue}
   }
   /// Returns true if `undoDeletionEndID` has been explicitly set.
-  public var hasUndoDeletionEndID: Bool {return self._undoDeletionEndID != nil}
+  public var hasUndoDeletionEndID: Bool {self._undoDeletionEndID != nil}
   /// Clears the value of `undoDeletionEndID`. Subsequent reads from it will return its default value.
   public mutating func clearUndoDeletionEndID() {self._undoDeletionEndID = nil}
 
@@ -1040,26 +958,26 @@ public struct TSCH_CommandAddGridRowsArchive: Sendable {
   fileprivate var _undoDeletionEndID: TSP_UUID? = nil
 }
 
-public struct TSCH_CommandAddGridColumnsArchive: Sendable {
+public nonisolated struct TSCH_CommandAddGridColumnsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var columnID: TSP_UUID {
-    get {return _columnID ?? TSP_UUID()}
+    get {_columnID ?? TSP_UUID()}
     set {_columnID = newValue}
   }
   /// Returns true if `columnID` has been explicitly set.
-  public var hasColumnID: Bool {return self._columnID != nil}
+  public var hasColumnID: Bool {self._columnID != nil}
   /// Clears the value of `columnID`. Subsequent reads from it will return its default value.
   public mutating func clearColumnID() {self._columnID = nil}
 
@@ -1068,20 +986,20 @@ public struct TSCH_CommandAddGridColumnsArchive: Sendable {
   public var columnNameList: [String] = []
 
   public var undoDeletionStartID: TSP_UUID {
-    get {return _undoDeletionStartID ?? TSP_UUID()}
+    get {_undoDeletionStartID ?? TSP_UUID()}
     set {_undoDeletionStartID = newValue}
   }
   /// Returns true if `undoDeletionStartID` has been explicitly set.
-  public var hasUndoDeletionStartID: Bool {return self._undoDeletionStartID != nil}
+  public var hasUndoDeletionStartID: Bool {self._undoDeletionStartID != nil}
   /// Clears the value of `undoDeletionStartID`. Subsequent reads from it will return its default value.
   public mutating func clearUndoDeletionStartID() {self._undoDeletionStartID = nil}
 
   public var undoDeletionEndID: TSP_UUID {
-    get {return _undoDeletionEndID ?? TSP_UUID()}
+    get {_undoDeletionEndID ?? TSP_UUID()}
     set {_undoDeletionEndID = newValue}
   }
   /// Returns true if `undoDeletionEndID` has been explicitly set.
-  public var hasUndoDeletionEndID: Bool {return self._undoDeletionEndID != nil}
+  public var hasUndoDeletionEndID: Bool {self._undoDeletionEndID != nil}
   /// Clears the value of `undoDeletionEndID`. Subsequent reads from it will return its default value.
   public mutating func clearUndoDeletionEndID() {self._undoDeletionEndID = nil}
 
@@ -1095,53 +1013,53 @@ public struct TSCH_CommandAddGridColumnsArchive: Sendable {
   fileprivate var _undoDeletionEndID: TSP_UUID? = nil
 }
 
-public struct TSCH_CommandMoveGridRowsArchive: Sendable {
+public nonisolated struct TSCH_CommandMoveGridRowsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var startRowID: TSP_UUID {
-    get {return _startRowID ?? TSP_UUID()}
+    get {_startRowID ?? TSP_UUID()}
     set {_startRowID = newValue}
   }
   /// Returns true if `startRowID` has been explicitly set.
-  public var hasStartRowID: Bool {return self._startRowID != nil}
+  public var hasStartRowID: Bool {self._startRowID != nil}
   /// Clears the value of `startRowID`. Subsequent reads from it will return its default value.
   public mutating func clearStartRowID() {self._startRowID = nil}
 
   public var endRowID: TSP_UUID {
-    get {return _endRowID ?? TSP_UUID()}
+    get {_endRowID ?? TSP_UUID()}
     set {_endRowID = newValue}
   }
   /// Returns true if `endRowID` has been explicitly set.
-  public var hasEndRowID: Bool {return self._endRowID != nil}
+  public var hasEndRowID: Bool {self._endRowID != nil}
   /// Clears the value of `endRowID`. Subsequent reads from it will return its default value.
   public mutating func clearEndRowID() {self._endRowID = nil}
 
   public var afterRowID: TSP_UUID {
-    get {return _afterRowID ?? TSP_UUID()}
+    get {_afterRowID ?? TSP_UUID()}
     set {_afterRowID = newValue}
   }
   /// Returns true if `afterRowID` has been explicitly set.
-  public var hasAfterRowID: Bool {return self._afterRowID != nil}
+  public var hasAfterRowID: Bool {self._afterRowID != nil}
   /// Clears the value of `afterRowID`. Subsequent reads from it will return its default value.
   public mutating func clearAfterRowID() {self._afterRowID = nil}
 
   public var undoAfterRowID: TSP_UUID {
-    get {return _undoAfterRowID ?? TSP_UUID()}
+    get {_undoAfterRowID ?? TSP_UUID()}
     set {_undoAfterRowID = newValue}
   }
   /// Returns true if `undoAfterRowID` has been explicitly set.
-  public var hasUndoAfterRowID: Bool {return self._undoAfterRowID != nil}
+  public var hasUndoAfterRowID: Bool {self._undoAfterRowID != nil}
   /// Clears the value of `undoAfterRowID`. Subsequent reads from it will return its default value.
   public mutating func clearUndoAfterRowID() {self._undoAfterRowID = nil}
 
@@ -1156,53 +1074,53 @@ public struct TSCH_CommandMoveGridRowsArchive: Sendable {
   fileprivate var _undoAfterRowID: TSP_UUID? = nil
 }
 
-public struct TSCH_CommandMoveGridColumnsArchive: Sendable {
+public nonisolated struct TSCH_CommandMoveGridColumnsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var startColumnID: TSP_UUID {
-    get {return _startColumnID ?? TSP_UUID()}
+    get {_startColumnID ?? TSP_UUID()}
     set {_startColumnID = newValue}
   }
   /// Returns true if `startColumnID` has been explicitly set.
-  public var hasStartColumnID: Bool {return self._startColumnID != nil}
+  public var hasStartColumnID: Bool {self._startColumnID != nil}
   /// Clears the value of `startColumnID`. Subsequent reads from it will return its default value.
   public mutating func clearStartColumnID() {self._startColumnID = nil}
 
   public var endColumnID: TSP_UUID {
-    get {return _endColumnID ?? TSP_UUID()}
+    get {_endColumnID ?? TSP_UUID()}
     set {_endColumnID = newValue}
   }
   /// Returns true if `endColumnID` has been explicitly set.
-  public var hasEndColumnID: Bool {return self._endColumnID != nil}
+  public var hasEndColumnID: Bool {self._endColumnID != nil}
   /// Clears the value of `endColumnID`. Subsequent reads from it will return its default value.
   public mutating func clearEndColumnID() {self._endColumnID = nil}
 
   public var afterColumnID: TSP_UUID {
-    get {return _afterColumnID ?? TSP_UUID()}
+    get {_afterColumnID ?? TSP_UUID()}
     set {_afterColumnID = newValue}
   }
   /// Returns true if `afterColumnID` has been explicitly set.
-  public var hasAfterColumnID: Bool {return self._afterColumnID != nil}
+  public var hasAfterColumnID: Bool {self._afterColumnID != nil}
   /// Clears the value of `afterColumnID`. Subsequent reads from it will return its default value.
   public mutating func clearAfterColumnID() {self._afterColumnID = nil}
 
   public var undoAfterColumnID: TSP_UUID {
-    get {return _undoAfterColumnID ?? TSP_UUID()}
+    get {_undoAfterColumnID ?? TSP_UUID()}
     set {_undoAfterColumnID = newValue}
   }
   /// Returns true if `undoAfterColumnID` has been explicitly set.
-  public var hasUndoAfterColumnID: Bool {return self._undoAfterColumnID != nil}
+  public var hasUndoAfterColumnID: Bool {self._undoAfterColumnID != nil}
   /// Clears the value of `undoAfterColumnID`. Subsequent reads from it will return its default value.
   public mutating func clearUndoAfterColumnID() {self._undoAfterColumnID = nil}
 
@@ -1217,35 +1135,35 @@ public struct TSCH_CommandMoveGridColumnsArchive: Sendable {
   fileprivate var _undoAfterColumnID: TSP_UUID? = nil
 }
 
-public struct TSCH_CommandDeleteGridRowsArchive: Sendable {
+public nonisolated struct TSCH_CommandDeleteGridRowsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var startRowID: TSP_UUID {
-    get {return _startRowID ?? TSP_UUID()}
+    get {_startRowID ?? TSP_UUID()}
     set {_startRowID = newValue}
   }
   /// Returns true if `startRowID` has been explicitly set.
-  public var hasStartRowID: Bool {return self._startRowID != nil}
+  public var hasStartRowID: Bool {self._startRowID != nil}
   /// Clears the value of `startRowID`. Subsequent reads from it will return its default value.
   public mutating func clearStartRowID() {self._startRowID = nil}
 
   public var endRowID: TSP_UUID {
-    get {return _endRowID ?? TSP_UUID()}
+    get {_endRowID ?? TSP_UUID()}
     set {_endRowID = newValue}
   }
   /// Returns true if `endRowID` has been explicitly set.
-  public var hasEndRowID: Bool {return self._endRowID != nil}
+  public var hasEndRowID: Bool {self._endRowID != nil}
   /// Clears the value of `endRowID`. Subsequent reads from it will return its default value.
   public mutating func clearEndRowID() {self._endRowID = nil}
 
@@ -1254,29 +1172,29 @@ public struct TSCH_CommandDeleteGridRowsArchive: Sendable {
   public var cutValues: [TSCH_GridRow] = []
 
   public var undoDiscardsValues: Bool {
-    get {return _undoDiscardsValues ?? false}
+    get {_undoDiscardsValues ?? false}
     set {_undoDiscardsValues = newValue}
   }
   /// Returns true if `undoDiscardsValues` has been explicitly set.
-  public var hasUndoDiscardsValues: Bool {return self._undoDiscardsValues != nil}
+  public var hasUndoDiscardsValues: Bool {self._undoDiscardsValues != nil}
   /// Clears the value of `undoDiscardsValues`. Subsequent reads from it will return its default value.
   public mutating func clearUndoDiscardsValues() {self._undoDiscardsValues = nil}
 
   public var undoColumnInsertionID: TSP_UUID {
-    get {return _undoColumnInsertionID ?? TSP_UUID()}
+    get {_undoColumnInsertionID ?? TSP_UUID()}
     set {_undoColumnInsertionID = newValue}
   }
   /// Returns true if `undoColumnInsertionID` has been explicitly set.
-  public var hasUndoColumnInsertionID: Bool {return self._undoColumnInsertionID != nil}
+  public var hasUndoColumnInsertionID: Bool {self._undoColumnInsertionID != nil}
   /// Clears the value of `undoColumnInsertionID`. Subsequent reads from it will return its default value.
   public mutating func clearUndoColumnInsertionID() {self._undoColumnInsertionID = nil}
 
   public var undoRowInsertionID: TSP_UUID {
-    get {return _undoRowInsertionID ?? TSP_UUID()}
+    get {_undoRowInsertionID ?? TSP_UUID()}
     set {_undoRowInsertionID = newValue}
   }
   /// Returns true if `undoRowInsertionID` has been explicitly set.
-  public var hasUndoRowInsertionID: Bool {return self._undoRowInsertionID != nil}
+  public var hasUndoRowInsertionID: Bool {self._undoRowInsertionID != nil}
   /// Clears the value of `undoRowInsertionID`. Subsequent reads from it will return its default value.
   public mutating func clearUndoRowInsertionID() {self._undoRowInsertionID = nil}
 
@@ -1298,35 +1216,35 @@ public struct TSCH_CommandDeleteGridRowsArchive: Sendable {
   fileprivate var _undoRowInsertionID: TSP_UUID? = nil
 }
 
-public struct TSCH_CommandDeleteGridColumnsArchive: Sendable {
+public nonisolated struct TSCH_CommandDeleteGridColumnsArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var startColumnID: TSP_UUID {
-    get {return _startColumnID ?? TSP_UUID()}
+    get {_startColumnID ?? TSP_UUID()}
     set {_startColumnID = newValue}
   }
   /// Returns true if `startColumnID` has been explicitly set.
-  public var hasStartColumnID: Bool {return self._startColumnID != nil}
+  public var hasStartColumnID: Bool {self._startColumnID != nil}
   /// Clears the value of `startColumnID`. Subsequent reads from it will return its default value.
   public mutating func clearStartColumnID() {self._startColumnID = nil}
 
   public var endColumnID: TSP_UUID {
-    get {return _endColumnID ?? TSP_UUID()}
+    get {_endColumnID ?? TSP_UUID()}
     set {_endColumnID = newValue}
   }
   /// Returns true if `endColumnID` has been explicitly set.
-  public var hasEndColumnID: Bool {return self._endColumnID != nil}
+  public var hasEndColumnID: Bool {self._endColumnID != nil}
   /// Clears the value of `endColumnID`. Subsequent reads from it will return its default value.
   public mutating func clearEndColumnID() {self._endColumnID = nil}
 
@@ -1335,29 +1253,29 @@ public struct TSCH_CommandDeleteGridColumnsArchive: Sendable {
   public var cutValues: [TSCH_GridRow] = []
 
   public var undoDiscardsValues: Bool {
-    get {return _undoDiscardsValues ?? false}
+    get {_undoDiscardsValues ?? false}
     set {_undoDiscardsValues = newValue}
   }
   /// Returns true if `undoDiscardsValues` has been explicitly set.
-  public var hasUndoDiscardsValues: Bool {return self._undoDiscardsValues != nil}
+  public var hasUndoDiscardsValues: Bool {self._undoDiscardsValues != nil}
   /// Clears the value of `undoDiscardsValues`. Subsequent reads from it will return its default value.
   public mutating func clearUndoDiscardsValues() {self._undoDiscardsValues = nil}
 
   public var undoColumnInsertionID: TSP_UUID {
-    get {return _undoColumnInsertionID ?? TSP_UUID()}
+    get {_undoColumnInsertionID ?? TSP_UUID()}
     set {_undoColumnInsertionID = newValue}
   }
   /// Returns true if `undoColumnInsertionID` has been explicitly set.
-  public var hasUndoColumnInsertionID: Bool {return self._undoColumnInsertionID != nil}
+  public var hasUndoColumnInsertionID: Bool {self._undoColumnInsertionID != nil}
   /// Clears the value of `undoColumnInsertionID`. Subsequent reads from it will return its default value.
   public mutating func clearUndoColumnInsertionID() {self._undoColumnInsertionID = nil}
 
   public var undoRowInsertionID: TSP_UUID {
-    get {return _undoRowInsertionID ?? TSP_UUID()}
+    get {_undoRowInsertionID ?? TSP_UUID()}
     set {_undoRowInsertionID = newValue}
   }
   /// Returns true if `undoRowInsertionID` has been explicitly set.
-  public var hasUndoRowInsertionID: Bool {return self._undoRowInsertionID != nil}
+  public var hasUndoRowInsertionID: Bool {self._undoRowInsertionID != nil}
   /// Clears the value of `undoRowInsertionID`. Subsequent reads from it will return its default value.
   public mutating func clearUndoRowInsertionID() {self._undoRowInsertionID = nil}
 
@@ -1379,53 +1297,53 @@ public struct TSCH_CommandDeleteGridColumnsArchive: Sendable {
   fileprivate var _undoRowInsertionID: TSP_UUID? = nil
 }
 
-public struct TSCH_CommandSetGridValueArchive: Sendable {
+public nonisolated struct TSCH_CommandSetGridValueArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var rowindex: UInt32 {
-    get {return _rowindex ?? 0}
+    get {_rowindex ?? 0}
     set {_rowindex = newValue}
   }
   /// Returns true if `rowindex` has been explicitly set.
-  public var hasRowindex: Bool {return self._rowindex != nil}
+  public var hasRowindex: Bool {self._rowindex != nil}
   /// Clears the value of `rowindex`. Subsequent reads from it will return its default value.
   public mutating func clearRowindex() {self._rowindex = nil}
 
   public var columnindex: UInt32 {
-    get {return _columnindex ?? 0}
+    get {_columnindex ?? 0}
     set {_columnindex = newValue}
   }
   /// Returns true if `columnindex` has been explicitly set.
-  public var hasColumnindex: Bool {return self._columnindex != nil}
+  public var hasColumnindex: Bool {self._columnindex != nil}
   /// Clears the value of `columnindex`. Subsequent reads from it will return its default value.
   public mutating func clearColumnindex() {self._columnindex = nil}
 
   public var oldvalue: Double {
-    get {return _oldvalue ?? 0}
+    get {_oldvalue ?? 0}
     set {_oldvalue = newValue}
   }
   /// Returns true if `oldvalue` has been explicitly set.
-  public var hasOldvalue: Bool {return self._oldvalue != nil}
+  public var hasOldvalue: Bool {self._oldvalue != nil}
   /// Clears the value of `oldvalue`. Subsequent reads from it will return its default value.
   public mutating func clearOldvalue() {self._oldvalue = nil}
 
   public var newvalue: Double {
-    get {return _newvalue ?? 0}
+    get {_newvalue ?? 0}
     set {_newvalue = newValue}
   }
   /// Returns true if `newvalue` has been explicitly set.
-  public var hasNewvalue: Bool {return self._newvalue != nil}
+  public var hasNewvalue: Bool {self._newvalue != nil}
   /// Clears the value of `newvalue`. Subsequent reads from it will return its default value.
   public mutating func clearNewvalue() {self._newvalue = nil}
 
@@ -1440,35 +1358,35 @@ public struct TSCH_CommandSetGridValueArchive: Sendable {
   fileprivate var _newvalue: Double? = nil
 }
 
-public struct TSCH_CommandSetGridDirectionArchive: Sendable {
+public nonisolated struct TSCH_CommandSetGridDirectionArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var oldDirection: UInt32 {
-    get {return _oldDirection ?? 0}
+    get {_oldDirection ?? 0}
     set {_oldDirection = newValue}
   }
   /// Returns true if `oldDirection` has been explicitly set.
-  public var hasOldDirection: Bool {return self._oldDirection != nil}
+  public var hasOldDirection: Bool {self._oldDirection != nil}
   /// Clears the value of `oldDirection`. Subsequent reads from it will return its default value.
   public mutating func clearOldDirection() {self._oldDirection = nil}
 
   public var newDirection: UInt32 {
-    get {return _newDirection ?? 0}
+    get {_newDirection ?? 0}
     set {_newDirection = newValue}
   }
   /// Returns true if `newDirection` has been explicitly set.
-  public var hasNewDirection: Bool {return self._newDirection != nil}
+  public var hasNewDirection: Bool {self._newDirection != nil}
   /// Clears the value of `newDirection`. Subsequent reads from it will return its default value.
   public mutating func clearNewDirection() {self._newDirection = nil}
 
@@ -1481,44 +1399,44 @@ public struct TSCH_CommandSetGridDirectionArchive: Sendable {
   fileprivate var _newDirection: UInt32? = nil
 }
 
-public struct TSCH_CommandSetSeriesTypeArchive: Sendable {
+public nonisolated struct TSCH_CommandSetSeriesTypeArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var seriesindex: UInt32 {
-    get {return _seriesindex ?? 0}
+    get {_seriesindex ?? 0}
     set {_seriesindex = newValue}
   }
   /// Returns true if `seriesindex` has been explicitly set.
-  public var hasSeriesindex: Bool {return self._seriesindex != nil}
+  public var hasSeriesindex: Bool {self._seriesindex != nil}
   /// Clears the value of `seriesindex`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesindex() {self._seriesindex = nil}
 
   public var oldtype: UInt32 {
-    get {return _oldtype ?? 0}
+    get {_oldtype ?? 0}
     set {_oldtype = newValue}
   }
   /// Returns true if `oldtype` has been explicitly set.
-  public var hasOldtype: Bool {return self._oldtype != nil}
+  public var hasOldtype: Bool {self._oldtype != nil}
   /// Clears the value of `oldtype`. Subsequent reads from it will return its default value.
   public mutating func clearOldtype() {self._oldtype = nil}
 
   public var newtype: UInt32 {
-    get {return _newtype ?? 0}
+    get {_newtype ?? 0}
     set {_newtype = newValue}
   }
   /// Returns true if `newtype` has been explicitly set.
-  public var hasNewtype: Bool {return self._newtype != nil}
+  public var hasNewtype: Bool {self._newtype != nil}
   /// Clears the value of `newtype`. Subsequent reads from it will return its default value.
   public mutating func clearNewtype() {self._newtype = nil}
 
@@ -1532,35 +1450,35 @@ public struct TSCH_CommandSetSeriesTypeArchive: Sendable {
   fileprivate var _newtype: UInt32? = nil
 }
 
-public struct TSCH_CommandSetScatterFormatArchive: Sendable {
+public nonisolated struct TSCH_CommandSetScatterFormatArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var oldformat: UInt32 {
-    get {return _oldformat ?? 0}
+    get {_oldformat ?? 0}
     set {_oldformat = newValue}
   }
   /// Returns true if `oldformat` has been explicitly set.
-  public var hasOldformat: Bool {return self._oldformat != nil}
+  public var hasOldformat: Bool {self._oldformat != nil}
   /// Clears the value of `oldformat`. Subsequent reads from it will return its default value.
   public mutating func clearOldformat() {self._oldformat = nil}
 
   public var newformat: UInt32 {
-    get {return _newformat ?? 0}
+    get {_newformat ?? 0}
     set {_newformat = newValue}
   }
   /// Returns true if `newformat` has been explicitly set.
-  public var hasNewformat: Bool {return self._newformat != nil}
+  public var hasNewformat: Bool {self._newformat != nil}
   /// Clears the value of `newformat`. Subsequent reads from it will return its default value.
   public mutating func clearNewformat() {self._newformat = nil}
 
@@ -1573,35 +1491,35 @@ public struct TSCH_CommandSetScatterFormatArchive: Sendable {
   fileprivate var _newformat: UInt32? = nil
 }
 
-public struct TSCH_CommandSetMultiDataSetIndexArchive: Sendable {
+public nonisolated struct TSCH_CommandSetMultiDataSetIndexArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var oldindex: UInt32 {
-    get {return _oldindex ?? 0}
+    get {_oldindex ?? 0}
     set {_oldindex = newValue}
   }
   /// Returns true if `oldindex` has been explicitly set.
-  public var hasOldindex: Bool {return self._oldindex != nil}
+  public var hasOldindex: Bool {self._oldindex != nil}
   /// Clears the value of `oldindex`. Subsequent reads from it will return its default value.
   public mutating func clearOldindex() {self._oldindex = nil}
 
   public var newindex: UInt32 {
-    get {return _newindex ?? 0}
+    get {_newindex ?? 0}
     set {_newindex = newValue}
   }
   /// Returns true if `newindex` has been explicitly set.
-  public var hasNewindex: Bool {return self._newindex != nil}
+  public var hasNewindex: Bool {self._newindex != nil}
   /// Clears the value of `newindex`. Subsequent reads from it will return its default value.
   public mutating func clearNewindex() {self._newindex = nil}
 
@@ -1614,35 +1532,35 @@ public struct TSCH_CommandSetMultiDataSetIndexArchive: Sendable {
   fileprivate var _newindex: UInt32? = nil
 }
 
-public struct TSCH_CommandSetLegendFrameArchive: Sendable {
+public nonisolated struct TSCH_CommandSetLegendFrameArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var oldLegendFrame: TSCH_RectArchive {
-    get {return _oldLegendFrame ?? TSCH_RectArchive()}
+    get {_oldLegendFrame ?? TSCH_RectArchive()}
     set {_oldLegendFrame = newValue}
   }
   /// Returns true if `oldLegendFrame` has been explicitly set.
-  public var hasOldLegendFrame: Bool {return self._oldLegendFrame != nil}
+  public var hasOldLegendFrame: Bool {self._oldLegendFrame != nil}
   /// Clears the value of `oldLegendFrame`. Subsequent reads from it will return its default value.
   public mutating func clearOldLegendFrame() {self._oldLegendFrame = nil}
 
   public var newLegendFrame: TSCH_RectArchive {
-    get {return _newLegendFrame ?? TSCH_RectArchive()}
+    get {_newLegendFrame ?? TSCH_RectArchive()}
     set {_newLegendFrame = newValue}
   }
   /// Returns true if `newLegendFrame` has been explicitly set.
-  public var hasNewLegendFrame: Bool {return self._newLegendFrame != nil}
+  public var hasNewLegendFrame: Bool {self._newLegendFrame != nil}
   /// Clears the value of `newLegendFrame`. Subsequent reads from it will return its default value.
   public mutating func clearNewLegendFrame() {self._newLegendFrame = nil}
 
@@ -1655,17 +1573,17 @@ public struct TSCH_CommandSetLegendFrameArchive: Sendable {
   fileprivate var _newLegendFrame: TSCH_RectArchive? = nil
 }
 
-public struct TSCH_CommandSetPieWedgeExplosion: Sendable {
+public nonisolated struct TSCH_CommandSetPieWedgeExplosion: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -1678,11 +1596,11 @@ public struct TSCH_CommandSetPieWedgeExplosion: Sendable {
   public var oldWedgeExplosions: [Double] = []
 
   public var rollbackCmd: TSP_Reference {
-    get {return _rollbackCmd ?? TSP_Reference()}
+    get {_rollbackCmd ?? TSP_Reference()}
     set {_rollbackCmd = newValue}
   }
   /// Returns true if `rollbackCmd` has been explicitly set.
-  public var hasRollbackCmd: Bool {return self._rollbackCmd != nil}
+  public var hasRollbackCmd: Bool {self._rollbackCmd != nil}
   /// Clears the value of `rollbackCmd`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackCmd() {self._rollbackCmd = nil}
 
@@ -1694,44 +1612,44 @@ public struct TSCH_CommandSetPieWedgeExplosion: Sendable {
   fileprivate var _rollbackCmd: TSP_Reference? = nil
 }
 
-public struct TSCH_CommandChartApplyTheme: @unchecked Sendable {
+public nonisolated struct TSCH_CommandChartApplyTheme: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_ApplyThemeChildCommandArchive {
-    get {return _storage._super ?? TSS_ApplyThemeChildCommandArchive()}
+    get {_storage._super ?? TSS_ApplyThemeChildCommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var info: TSP_Reference {
-    get {return _storage._info ?? TSP_Reference()}
+    get {_storage._info ?? TSP_Reference()}
     set {_uniqueStorage()._info = newValue}
   }
   /// Returns true if `info` has been explicitly set.
-  public var hasInfo: Bool {return _storage._info != nil}
+  public var hasInfo: Bool {_storage._info != nil}
   /// Clears the value of `info`. Subsequent reads from it will return its default value.
   public mutating func clearInfo() {_uniqueStorage()._info = nil}
 
   public var swapCommand: TSP_Reference {
-    get {return _storage._swapCommand ?? TSP_Reference()}
+    get {_storage._swapCommand ?? TSP_Reference()}
     set {_uniqueStorage()._swapCommand = newValue}
   }
   /// Returns true if `swapCommand` has been explicitly set.
-  public var hasSwapCommand: Bool {return _storage._swapCommand != nil}
+  public var hasSwapCommand: Bool {_storage._swapCommand != nil}
   /// Clears the value of `swapCommand`. Subsequent reads from it will return its default value.
   public mutating func clearSwapCommand() {_uniqueStorage()._swapCommand = nil}
 
   public var preset: TSP_Reference {
-    get {return _storage._preset ?? TSP_Reference()}
+    get {_storage._preset ?? TSP_Reference()}
     set {_uniqueStorage()._preset = newValue}
   }
   /// Returns true if `preset` has been explicitly set.
-  public var hasPreset: Bool {return _storage._preset != nil}
+  public var hasPreset: Bool {_storage._preset != nil}
   /// Clears the value of `preset`. Subsequent reads from it will return its default value.
   public mutating func clearPreset() {_uniqueStorage()._preset = nil}
 
@@ -1742,62 +1660,62 @@ public struct TSCH_CommandChartApplyTheme: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_CommandChartApplyPreset: Sendable {
+public nonisolated struct TSCH_CommandChartApplyPreset: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var behavior: TSCH_ApplyPresetBehavior {
-    get {return _behavior ?? .removeOverrides}
+    get {_behavior ?? .removeOverrides}
     set {_behavior = newValue}
   }
   /// Returns true if `behavior` has been explicitly set.
-  public var hasBehavior: Bool {return self._behavior != nil}
+  public var hasBehavior: Bool {self._behavior != nil}
   /// Clears the value of `behavior`. Subsequent reads from it will return its default value.
   public mutating func clearBehavior() {self._behavior = nil}
 
   public var preset: TSP_Reference {
-    get {return _preset ?? TSP_Reference()}
+    get {_preset ?? TSP_Reference()}
     set {_preset = newValue}
   }
   /// Returns true if `preset` has been explicitly set.
-  public var hasPreset: Bool {return self._preset != nil}
+  public var hasPreset: Bool {self._preset != nil}
   /// Clears the value of `preset`. Subsequent reads from it will return its default value.
   public mutating func clearPreset() {self._preset = nil}
 
   public var oldPreset: TSP_Reference {
-    get {return _oldPreset ?? TSP_Reference()}
+    get {_oldPreset ?? TSP_Reference()}
     set {_oldPreset = newValue}
   }
   /// Returns true if `oldPreset` has been explicitly set.
-  public var hasOldPreset: Bool {return self._oldPreset != nil}
+  public var hasOldPreset: Bool {self._oldPreset != nil}
   /// Clears the value of `oldPreset`. Subsequent reads from it will return its default value.
   public mutating func clearOldPreset() {self._oldPreset = nil}
 
   public var shouldApplySwapTuples: Bool {
-    get {return _shouldApplySwapTuples ?? false}
+    get {_shouldApplySwapTuples ?? false}
     set {_shouldApplySwapTuples = newValue}
   }
   /// Returns true if `shouldApplySwapTuples` has been explicitly set.
-  public var hasShouldApplySwapTuples: Bool {return self._shouldApplySwapTuples != nil}
+  public var hasShouldApplySwapTuples: Bool {self._shouldApplySwapTuples != nil}
   /// Clears the value of `shouldApplySwapTuples`. Subsequent reads from it will return its default value.
   public mutating func clearShouldApplySwapTuples() {self._shouldApplySwapTuples = nil}
 
   public var areSwapTuplesValid: Bool {
-    get {return _areSwapTuplesValid ?? false}
+    get {_areSwapTuplesValid ?? false}
     set {_areSwapTuplesValid = newValue}
   }
   /// Returns true if `areSwapTuplesValid` has been explicitly set.
-  public var hasAreSwapTuplesValid: Bool {return self._areSwapTuplesValid != nil}
+  public var hasAreSwapTuplesValid: Bool {self._areSwapTuplesValid != nil}
   /// Clears the value of `areSwapTuplesValid`. Subsequent reads from it will return its default value.
   public mutating func clearAreSwapTuplesValid() {self._areSwapTuplesValid = nil}
 
@@ -1806,11 +1724,11 @@ public struct TSCH_CommandChartApplyPreset: Sendable {
   public var inverseSwapTuples: [TSCH_StyleSwapUndoTupleArchive] = []
 
   public var rollbackPreset: TSP_Reference {
-    get {return _rollbackPreset ?? TSP_Reference()}
+    get {_rollbackPreset ?? TSP_Reference()}
     set {_rollbackPreset = newValue}
   }
   /// Returns true if `rollbackPreset` has been explicitly set.
-  public var hasRollbackPreset: Bool {return self._rollbackPreset != nil}
+  public var hasRollbackPreset: Bool {self._rollbackPreset != nil}
   /// Clears the value of `rollbackPreset`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackPreset() {self._rollbackPreset = nil}
 
@@ -1829,44 +1747,44 @@ public struct TSCH_CommandChartApplyPreset: Sendable {
   fileprivate var _rollbackPreset: TSP_Reference? = nil
 }
 
-public struct TSCH_CommandCleanupGeometryArchive: Sendable {
+public nonisolated struct TSCH_CommandCleanupGeometryArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var infoGeometryCommand: TSP_Reference {
-    get {return _infoGeometryCommand ?? TSP_Reference()}
+    get {_infoGeometryCommand ?? TSP_Reference()}
     set {_infoGeometryCommand = newValue}
   }
   /// Returns true if `infoGeometryCommand` has been explicitly set.
-  public var hasInfoGeometryCommand: Bool {return self._infoGeometryCommand != nil}
+  public var hasInfoGeometryCommand: Bool {self._infoGeometryCommand != nil}
   /// Clears the value of `infoGeometryCommand`. Subsequent reads from it will return its default value.
   public mutating func clearInfoGeometryCommand() {self._infoGeometryCommand = nil}
 
   public var anchorAttachmentCommand: TSP_Reference {
-    get {return _anchorAttachmentCommand ?? TSP_Reference()}
+    get {_anchorAttachmentCommand ?? TSP_Reference()}
     set {_anchorAttachmentCommand = newValue}
   }
   /// Returns true if `anchorAttachmentCommand` has been explicitly set.
-  public var hasAnchorAttachmentCommand: Bool {return self._anchorAttachmentCommand != nil}
+  public var hasAnchorAttachmentCommand: Bool {self._anchorAttachmentCommand != nil}
   /// Clears the value of `anchorAttachmentCommand`. Subsequent reads from it will return its default value.
   public mutating func clearAnchorAttachmentCommand() {self._anchorAttachmentCommand = nil}
 
   public var originalLegendRect: TSCH_RectArchive {
-    get {return _originalLegendRect ?? TSCH_RectArchive()}
+    get {_originalLegendRect ?? TSCH_RectArchive()}
     set {_originalLegendRect = newValue}
   }
   /// Returns true if `originalLegendRect` has been explicitly set.
-  public var hasOriginalLegendRect: Bool {return self._originalLegendRect != nil}
+  public var hasOriginalLegendRect: Bool {self._originalLegendRect != nil}
   /// Clears the value of `originalLegendRect`. Subsequent reads from it will return its default value.
   public mutating func clearOriginalLegendRect() {self._originalLegendRect = nil}
 
@@ -1880,53 +1798,53 @@ public struct TSCH_CommandCleanupGeometryArchive: Sendable {
   fileprivate var _originalLegendRect: TSCH_RectArchive? = nil
 }
 
-public struct TSCH_ChartCommandArchive: @unchecked Sendable {
+public nonisolated struct TSCH_ChartCommandArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var chartInfo: TSP_Reference {
-    get {return _storage._chartInfo ?? TSP_Reference()}
+    get {_storage._chartInfo ?? TSP_Reference()}
     set {_uniqueStorage()._chartInfo = newValue}
   }
   /// Returns true if `chartInfo` has been explicitly set.
-  public var hasChartInfo: Bool {return _storage._chartInfo != nil}
+  public var hasChartInfo: Bool {_storage._chartInfo != nil}
   /// Clears the value of `chartInfo`. Subsequent reads from it will return its default value.
   public mutating func clearChartInfo() {_uniqueStorage()._chartInfo = nil}
 
   public var originalDirtyState: Bool {
-    get {return _storage._originalDirtyState ?? false}
+    get {_storage._originalDirtyState ?? false}
     set {_uniqueStorage()._originalDirtyState = newValue}
   }
   /// Returns true if `originalDirtyState` has been explicitly set.
-  public var hasOriginalDirtyState: Bool {return _storage._originalDirtyState != nil}
+  public var hasOriginalDirtyState: Bool {_storage._originalDirtyState != nil}
   /// Clears the value of `originalDirtyState`. Subsequent reads from it will return its default value.
   public mutating func clearOriginalDirtyState() {_uniqueStorage()._originalDirtyState = nil}
 
   public var chartInfoIDPath: TSP_UUIDPath {
-    get {return _storage._chartInfoIDPath ?? TSP_UUIDPath()}
+    get {_storage._chartInfoIDPath ?? TSP_UUIDPath()}
     set {_uniqueStorage()._chartInfoIDPath = newValue}
   }
   /// Returns true if `chartInfoIDPath` has been explicitly set.
-  public var hasChartInfoIDPath: Bool {return _storage._chartInfoIDPath != nil}
+  public var hasChartInfoIDPath: Bool {_storage._chartInfoIDPath != nil}
   /// Clears the value of `chartInfoIDPath`. Subsequent reads from it will return its default value.
   public mutating func clearChartInfoIDPath() {_uniqueStorage()._chartInfoIDPath = nil}
 
   public var isForForwardUndoRedo: Bool {
-    get {return _storage._isForForwardUndoRedo ?? false}
+    get {_storage._isForForwardUndoRedo ?? false}
     set {_uniqueStorage()._isForForwardUndoRedo = newValue}
   }
   /// Returns true if `isForForwardUndoRedo` has been explicitly set.
-  public var hasIsForForwardUndoRedo: Bool {return _storage._isForForwardUndoRedo != nil}
+  public var hasIsForForwardUndoRedo: Bool {_storage._isForForwardUndoRedo != nil}
   /// Clears the value of `isForForwardUndoRedo`. Subsequent reads from it will return its default value.
   public mutating func clearIsForForwardUndoRedo() {_uniqueStorage()._isForForwardUndoRedo = nil}
 
@@ -1937,17 +1855,17 @@ public struct TSCH_ChartCommandArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_CommandReplaceGridValuesArchive: Sendable {
+public nonisolated struct TSCH_CommandReplaceGridValuesArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -1976,20 +1894,20 @@ public struct TSCH_CommandReplaceGridValuesArchive: Sendable {
   public var deleteColumnUuids: [TSP_UUID] = []
 
   public var setSeriesDirection: Bool {
-    get {return _setSeriesDirection ?? false}
+    get {_setSeriesDirection ?? false}
     set {_setSeriesDirection = newValue}
   }
   /// Returns true if `setSeriesDirection` has been explicitly set.
-  public var hasSetSeriesDirection: Bool {return self._setSeriesDirection != nil}
+  public var hasSetSeriesDirection: Bool {self._setSeriesDirection != nil}
   /// Clears the value of `setSeriesDirection`. Subsequent reads from it will return its default value.
   public mutating func clearSetSeriesDirection() {self._setSeriesDirection = nil}
 
   public var newSeriesDirection: UInt32 {
-    get {return _newSeriesDirection ?? 0}
+    get {_newSeriesDirection ?? 0}
     set {_newSeriesDirection = newValue}
   }
   /// Returns true if `newSeriesDirection` has been explicitly set.
-  public var hasNewSeriesDirection: Bool {return self._newSeriesDirection != nil}
+  public var hasNewSeriesDirection: Bool {self._newSeriesDirection != nil}
   /// Clears the value of `newSeriesDirection`. Subsequent reads from it will return its default value.
   public mutating func clearNewSeriesDirection() {self._newSeriesDirection = nil}
 
@@ -2002,83 +1920,83 @@ public struct TSCH_CommandReplaceGridValuesArchive: Sendable {
   fileprivate var _newSeriesDirection: UInt32? = nil
 }
 
-public struct TSCH_CommandReplaceThemePresetArchive: @unchecked Sendable {
+public nonisolated struct TSCH_CommandReplaceThemePresetArchive: @unchecked Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _storage._super ?? TSK_CommandArchive()}
+    get {_storage._super ?? TSK_CommandArchive()}
     set {_uniqueStorage()._super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return _storage._super != nil}
+  public var hasSuper: Bool {_storage._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {_uniqueStorage()._super = nil}
 
   public var theme: TSP_Reference {
-    get {return _storage._theme ?? TSP_Reference()}
+    get {_storage._theme ?? TSP_Reference()}
     set {_uniqueStorage()._theme = newValue}
   }
   /// Returns true if `theme` has been explicitly set.
-  public var hasTheme: Bool {return _storage._theme != nil}
+  public var hasTheme: Bool {_storage._theme != nil}
   /// Clears the value of `theme`. Subsequent reads from it will return its default value.
   public mutating func clearTheme() {_uniqueStorage()._theme = nil}
 
   public var oldPreset: TSP_Reference {
-    get {return _storage._oldPreset ?? TSP_Reference()}
+    get {_storage._oldPreset ?? TSP_Reference()}
     set {_uniqueStorage()._oldPreset = newValue}
   }
   /// Returns true if `oldPreset` has been explicitly set.
-  public var hasOldPreset: Bool {return _storage._oldPreset != nil}
+  public var hasOldPreset: Bool {_storage._oldPreset != nil}
   /// Clears the value of `oldPreset`. Subsequent reads from it will return its default value.
   public mutating func clearOldPreset() {_uniqueStorage()._oldPreset = nil}
 
   public var newPreset: TSP_Reference {
-    get {return _storage._newPreset ?? TSP_Reference()}
+    get {_storage._newPreset ?? TSP_Reference()}
     set {_uniqueStorage()._newPreset = newValue}
   }
   /// Returns true if `newPreset` has been explicitly set.
-  public var hasNewPreset: Bool {return _storage._newPreset != nil}
+  public var hasNewPreset: Bool {_storage._newPreset != nil}
   /// Clears the value of `newPreset`. Subsequent reads from it will return its default value.
   public mutating func clearNewPreset() {_uniqueStorage()._newPreset = nil}
 
   public var identifiers: [TSCH_CommandReplaceThemePresetArchive.StyleAndIdentifierPair] {
-    get {return _storage._identifiers}
+    get {_storage._identifiers}
     set {_uniqueStorage()._identifiers = newValue}
   }
 
   public var oldPresetIndex: UInt64 {
-    get {return _storage._oldPresetIndex ?? 0}
+    get {_storage._oldPresetIndex ?? 0}
     set {_uniqueStorage()._oldPresetIndex = newValue}
   }
   /// Returns true if `oldPresetIndex` has been explicitly set.
-  public var hasOldPresetIndex: Bool {return _storage._oldPresetIndex != nil}
+  public var hasOldPresetIndex: Bool {_storage._oldPresetIndex != nil}
   /// Clears the value of `oldPresetIndex`. Subsequent reads from it will return its default value.
   public mutating func clearOldPresetIndex() {_uniqueStorage()._oldPresetIndex = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct StyleAndIdentifierPair: Sendable {
+  public nonisolated struct StyleAndIdentifierPair: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var style: TSP_Reference {
-      get {return _style ?? TSP_Reference()}
+      get {_style ?? TSP_Reference()}
       set {_style = newValue}
     }
     /// Returns true if `style` has been explicitly set.
-    public var hasStyle: Bool {return self._style != nil}
+    public var hasStyle: Bool {self._style != nil}
     /// Clears the value of `style`. Subsequent reads from it will return its default value.
     public mutating func clearStyle() {self._style = nil}
 
     public var identifier: String {
-      get {return _identifier ?? String()}
+      get {_identifier ?? String()}
       set {_identifier = newValue}
     }
     /// Returns true if `identifier` has been explicitly set.
-    public var hasIdentifier: Bool {return self._identifier != nil}
+    public var hasIdentifier: Bool {self._identifier != nil}
     /// Clears the value of `identifier`. Subsequent reads from it will return its default value.
     public mutating func clearIdentifier() {self._identifier = nil}
 
@@ -2095,17 +2013,17 @@ public struct TSCH_CommandReplaceThemePresetArchive: @unchecked Sendable {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-public struct TSCH_CommandInvalidateWPCaches: Sendable {
+public nonisolated struct TSCH_CommandInvalidateWPCaches: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2116,44 +2034,44 @@ public struct TSCH_CommandInvalidateWPCaches: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSCH_CommandReplaceCustomFormatArchive: Sendable {
+public nonisolated struct TSCH_CommandReplaceCustomFormatArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var rollbackCmd: TSP_Reference {
-    get {return _rollbackCmd ?? TSP_Reference()}
+    get {_rollbackCmd ?? TSP_Reference()}
     set {_rollbackCmd = newValue}
   }
   /// Returns true if `rollbackCmd` has been explicitly set.
-  public var hasRollbackCmd: Bool {return self._rollbackCmd != nil}
+  public var hasRollbackCmd: Bool {self._rollbackCmd != nil}
   /// Clears the value of `rollbackCmd`. Subsequent reads from it will return its default value.
   public mutating func clearRollbackCmd() {self._rollbackCmd = nil}
 
   public var oldFormatObject: TSK_FormatStructArchive {
-    get {return _oldFormatObject ?? TSK_FormatStructArchive()}
+    get {_oldFormatObject ?? TSK_FormatStructArchive()}
     set {_oldFormatObject = newValue}
   }
   /// Returns true if `oldFormatObject` has been explicitly set.
-  public var hasOldFormatObject: Bool {return self._oldFormatObject != nil}
+  public var hasOldFormatObject: Bool {self._oldFormatObject != nil}
   /// Clears the value of `oldFormatObject`. Subsequent reads from it will return its default value.
   public mutating func clearOldFormatObject() {self._oldFormatObject = nil}
 
   public var newFormatObject: TSK_FormatStructArchive {
-    get {return _newFormatObject ?? TSK_FormatStructArchive()}
+    get {_newFormatObject ?? TSK_FormatStructArchive()}
     set {_newFormatObject = newValue}
   }
   /// Returns true if `newFormatObject` has been explicitly set.
-  public var hasNewFormatObject: Bool {return self._newFormatObject != nil}
+  public var hasNewFormatObject: Bool {self._newFormatObject != nil}
   /// Clears the value of `newFormatObject`. Subsequent reads from it will return its default value.
   public mutating func clearNewFormatObject() {self._newFormatObject = nil}
 
@@ -2163,44 +2081,44 @@ public struct TSCH_CommandReplaceCustomFormatArchive: Sendable {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct FormatObjectMutation: Sendable {
+  public nonisolated struct FormatObjectMutation: Sendable {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     public var styleOwnerType: TSCH_StyleOwnerType {
-      get {return _styleOwnerType ?? .chartInfo}
+      get {_styleOwnerType ?? .chartInfo}
       set {_styleOwnerType = newValue}
     }
     /// Returns true if `styleOwnerType` has been explicitly set.
-    public var hasStyleOwnerType: Bool {return self._styleOwnerType != nil}
+    public var hasStyleOwnerType: Bool {self._styleOwnerType != nil}
     /// Clears the value of `styleOwnerType`. Subsequent reads from it will return its default value.
     public mutating func clearStyleOwnerType() {self._styleOwnerType = nil}
 
     public var styleOwnerIndex: UInt32 {
-      get {return _styleOwnerIndex ?? 0}
+      get {_styleOwnerIndex ?? 0}
       set {_styleOwnerIndex = newValue}
     }
     /// Returns true if `styleOwnerIndex` has been explicitly set.
-    public var hasStyleOwnerIndex: Bool {return self._styleOwnerIndex != nil}
+    public var hasStyleOwnerIndex: Bool {self._styleOwnerIndex != nil}
     /// Clears the value of `styleOwnerIndex`. Subsequent reads from it will return its default value.
     public mutating func clearStyleOwnerIndex() {self._styleOwnerIndex = nil}
 
     public var formatObjectProperty: UInt32 {
-      get {return _formatObjectProperty ?? 0}
+      get {_formatObjectProperty ?? 0}
       set {_formatObjectProperty = newValue}
     }
     /// Returns true if `formatObjectProperty` has been explicitly set.
-    public var hasFormatObjectProperty: Bool {return self._formatObjectProperty != nil}
+    public var hasFormatObjectProperty: Bool {self._formatObjectProperty != nil}
     /// Clears the value of `formatObjectProperty`. Subsequent reads from it will return its default value.
     public mutating func clearFormatObjectProperty() {self._formatObjectProperty = nil}
 
     public var formatObject: TSK_FormatStructArchive {
-      get {return _formatObject ?? TSK_FormatStructArchive()}
+      get {_formatObject ?? TSK_FormatStructArchive()}
       set {_formatObject = newValue}
     }
     /// Returns true if `formatObject` has been explicitly set.
-    public var hasFormatObject: Bool {return self._formatObject != nil}
+    public var hasFormatObject: Bool {self._formatObject != nil}
     /// Clears the value of `formatObject`. Subsequent reads from it will return its default value.
     public mutating func clearFormatObject() {self._formatObject = nil}
 
@@ -2222,53 +2140,53 @@ public struct TSCH_CommandReplaceCustomFormatArchive: Sendable {
   fileprivate var _newFormatObject: TSK_FormatStructArchive? = nil
 }
 
-public struct TSCH_CommandAddReferenceLineArchive: Sendable {
+public nonisolated struct TSCH_CommandAddReferenceLineArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var axisID: TSCH_ChartAxisIDArchive {
-    get {return _axisID ?? TSCH_ChartAxisIDArchive()}
+    get {_axisID ?? TSCH_ChartAxisIDArchive()}
     set {_axisID = newValue}
   }
   /// Returns true if `axisID` has been explicitly set.
-  public var hasAxisID: Bool {return self._axisID != nil}
+  public var hasAxisID: Bool {self._axisID != nil}
   /// Clears the value of `axisID`. Subsequent reads from it will return its default value.
   public mutating func clearAxisID() {self._axisID = nil}
 
   public var uuid: TSP_UUID {
-    get {return _uuid ?? TSP_UUID()}
+    get {_uuid ?? TSP_UUID()}
     set {_uuid = newValue}
   }
   /// Returns true if `uuid` has been explicitly set.
-  public var hasUuid: Bool {return self._uuid != nil}
+  public var hasUuid: Bool {self._uuid != nil}
   /// Clears the value of `uuid`. Subsequent reads from it will return its default value.
   public mutating func clearUuid() {self._uuid = nil}
 
   public var nonStyle: TSP_Reference {
-    get {return _nonStyle ?? TSP_Reference()}
+    get {_nonStyle ?? TSP_Reference()}
     set {_nonStyle = newValue}
   }
   /// Returns true if `nonStyle` has been explicitly set.
-  public var hasNonStyle: Bool {return self._nonStyle != nil}
+  public var hasNonStyle: Bool {self._nonStyle != nil}
   /// Clears the value of `nonStyle`. Subsequent reads from it will return its default value.
   public mutating func clearNonStyle() {self._nonStyle = nil}
 
   public var style: TSP_Reference {
-    get {return _style ?? TSP_Reference()}
+    get {_style ?? TSP_Reference()}
     set {_style = newValue}
   }
   /// Returns true if `style` has been explicitly set.
-  public var hasStyle: Bool {return self._style != nil}
+  public var hasStyle: Bool {self._style != nil}
   /// Clears the value of `style`. Subsequent reads from it will return its default value.
   public mutating func clearStyle() {self._style = nil}
 
@@ -2287,64 +2205,64 @@ public struct TSCH_CommandAddReferenceLineArchive: Sendable {
   fileprivate var _style: TSP_Reference? = nil
 }
 
-public struct TSCH_CommandDeleteReferenceLineArchive: Sendable {
+public nonisolated struct TSCH_CommandDeleteReferenceLineArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var axisID: TSCH_ChartAxisIDArchive {
-    get {return _axisID ?? TSCH_ChartAxisIDArchive()}
+    get {_axisID ?? TSCH_ChartAxisIDArchive()}
     set {_axisID = newValue}
   }
   /// Returns true if `axisID` has been explicitly set.
-  public var hasAxisID: Bool {return self._axisID != nil}
+  public var hasAxisID: Bool {self._axisID != nil}
   /// Clears the value of `axisID`. Subsequent reads from it will return its default value.
   public mutating func clearAxisID() {self._axisID = nil}
 
   public var uuid: TSP_UUID {
-    get {return _uuid ?? TSP_UUID()}
+    get {_uuid ?? TSP_UUID()}
     set {_uuid = newValue}
   }
   /// Returns true if `uuid` has been explicitly set.
-  public var hasUuid: Bool {return self._uuid != nil}
+  public var hasUuid: Bool {self._uuid != nil}
   /// Clears the value of `uuid`. Subsequent reads from it will return its default value.
   public mutating func clearUuid() {self._uuid = nil}
 
   public var nonStyle: TSP_Reference {
-    get {return _nonStyle ?? TSP_Reference()}
+    get {_nonStyle ?? TSP_Reference()}
     set {_nonStyle = newValue}
   }
   /// Returns true if `nonStyle` has been explicitly set.
-  public var hasNonStyle: Bool {return self._nonStyle != nil}
+  public var hasNonStyle: Bool {self._nonStyle != nil}
   /// Clears the value of `nonStyle`. Subsequent reads from it will return its default value.
   public mutating func clearNonStyle() {self._nonStyle = nil}
 
   public var style: TSP_Reference {
-    get {return _style ?? TSP_Reference()}
+    get {_style ?? TSP_Reference()}
     set {_style = newValue}
   }
   /// Returns true if `style` has been explicitly set.
-  public var hasStyle: Bool {return self._style != nil}
+  public var hasStyle: Bool {self._style != nil}
   /// Clears the value of `style`. Subsequent reads from it will return its default value.
   public mutating func clearStyle() {self._style = nil}
 
   public var paragraphStyles: [TSP_Reference] = []
 
   public var styleSwapCommand: TSP_Reference {
-    get {return _styleSwapCommand ?? TSP_Reference()}
+    get {_styleSwapCommand ?? TSP_Reference()}
     set {_styleSwapCommand = newValue}
   }
   /// Returns true if `styleSwapCommand` has been explicitly set.
-  public var hasStyleSwapCommand: Bool {return self._styleSwapCommand != nil}
+  public var hasStyleSwapCommand: Bool {self._styleSwapCommand != nil}
   /// Clears the value of `styleSwapCommand`. Subsequent reads from it will return its default value.
   public mutating func clearStyleSwapCommand() {self._styleSwapCommand = nil}
 
@@ -2360,53 +2278,53 @@ public struct TSCH_CommandDeleteReferenceLineArchive: Sendable {
   fileprivate var _styleSwapCommand: TSP_Reference? = nil
 }
 
-public struct TSCH_CommandPasteStyleArchive: Sendable {
+public nonisolated struct TSCH_CommandPasteStyleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var styleSwapCommand: TSP_Reference {
-    get {return _styleSwapCommand ?? TSP_Reference()}
+    get {_styleSwapCommand ?? TSP_Reference()}
     set {_styleSwapCommand = newValue}
   }
   /// Returns true if `styleSwapCommand` has been explicitly set.
-  public var hasStyleSwapCommand: Bool {return self._styleSwapCommand != nil}
+  public var hasStyleSwapCommand: Bool {self._styleSwapCommand != nil}
   /// Clears the value of `styleSwapCommand`. Subsequent reads from it will return its default value.
   public mutating func clearStyleSwapCommand() {self._styleSwapCommand = nil}
 
   public var inverseChartStyleState: TSCH_PropertyValueStorageContainerArchive {
-    get {return _inverseChartStyleState ?? TSCH_PropertyValueStorageContainerArchive()}
+    get {_inverseChartStyleState ?? TSCH_PropertyValueStorageContainerArchive()}
     set {_inverseChartStyleState = newValue}
   }
   /// Returns true if `inverseChartStyleState` has been explicitly set.
-  public var hasInverseChartStyleState: Bool {return self._inverseChartStyleState != nil}
+  public var hasInverseChartStyleState: Bool {self._inverseChartStyleState != nil}
   /// Clears the value of `inverseChartStyleState`. Subsequent reads from it will return its default value.
   public mutating func clearInverseChartStyleState() {self._inverseChartStyleState = nil}
 
   public var chartStyleState: TSCH_PropertyValueStorageContainerArchive {
-    get {return _chartStyleState ?? TSCH_PropertyValueStorageContainerArchive()}
+    get {_chartStyleState ?? TSCH_PropertyValueStorageContainerArchive()}
     set {_chartStyleState = newValue}
   }
   /// Returns true if `chartStyleState` has been explicitly set.
-  public var hasChartStyleState: Bool {return self._chartStyleState != nil}
+  public var hasChartStyleState: Bool {self._chartStyleState != nil}
   /// Clears the value of `chartStyleState`. Subsequent reads from it will return its default value.
   public mutating func clearChartStyleState() {self._chartStyleState = nil}
 
   public var shapeStyle: TSP_Reference {
-    get {return _shapeStyle ?? TSP_Reference()}
+    get {_shapeStyle ?? TSP_Reference()}
     set {_shapeStyle = newValue}
   }
   /// Returns true if `shapeStyle` has been explicitly set.
-  public var hasShapeStyle: Bool {return self._shapeStyle != nil}
+  public var hasShapeStyle: Bool {self._shapeStyle != nil}
   /// Clears the value of `shapeStyle`. Subsequent reads from it will return its default value.
   public mutating func clearShapeStyle() {self._shapeStyle = nil}
 
@@ -2423,44 +2341,44 @@ public struct TSCH_CommandPasteStyleArchive: Sendable {
   fileprivate var _shapeStyle: TSP_Reference? = nil
 }
 
-public struct TSCH_CommandReplaceImageDataArchive: Sendable {
+public nonisolated struct TSCH_CommandReplaceImageDataArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartCommandArchive {
-    get {return _super ?? TSCH_ChartCommandArchive()}
+    get {_super ?? TSCH_ChartCommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
   public var styleSwapCommand: TSP_Reference {
-    get {return _styleSwapCommand ?? TSP_Reference()}
+    get {_styleSwapCommand ?? TSP_Reference()}
     set {_styleSwapCommand = newValue}
   }
   /// Returns true if `styleSwapCommand` has been explicitly set.
-  public var hasStyleSwapCommand: Bool {return self._styleSwapCommand != nil}
+  public var hasStyleSwapCommand: Bool {self._styleSwapCommand != nil}
   /// Clears the value of `styleSwapCommand`. Subsequent reads from it will return its default value.
   public mutating func clearStyleSwapCommand() {self._styleSwapCommand = nil}
 
   public var inverseChartStyleState: TSCH_PropertyValueStorageContainerArchive {
-    get {return _inverseChartStyleState ?? TSCH_PropertyValueStorageContainerArchive()}
+    get {_inverseChartStyleState ?? TSCH_PropertyValueStorageContainerArchive()}
     set {_inverseChartStyleState = newValue}
   }
   /// Returns true if `inverseChartStyleState` has been explicitly set.
-  public var hasInverseChartStyleState: Bool {return self._inverseChartStyleState != nil}
+  public var hasInverseChartStyleState: Bool {self._inverseChartStyleState != nil}
   /// Clears the value of `inverseChartStyleState`. Subsequent reads from it will return its default value.
   public mutating func clearInverseChartStyleState() {self._inverseChartStyleState = nil}
 
   public var chartStyleState: TSCH_PropertyValueStorageContainerArchive {
-    get {return _chartStyleState ?? TSCH_PropertyValueStorageContainerArchive()}
+    get {_chartStyleState ?? TSCH_PropertyValueStorageContainerArchive()}
     set {_chartStyleState = newValue}
   }
   /// Returns true if `chartStyleState` has been explicitly set.
-  public var hasChartStyleState: Bool {return self._chartStyleState != nil}
+  public var hasChartStyleState: Bool {self._chartStyleState != nil}
   /// Clears the value of `chartStyleState`. Subsequent reads from it will return its default value.
   public mutating func clearChartStyleState() {self._chartStyleState = nil}
 
@@ -2474,17 +2392,17 @@ public struct TSCH_CommandReplaceImageDataArchive: Sendable {
   fileprivate var _chartStyleState: TSCH_PropertyValueStorageContainerArchive? = nil
 }
 
-public struct TSCH_CommandInducedReplaceChartGrid: Sendable {
+public nonisolated struct TSCH_CommandInducedReplaceChartGrid: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2495,17 +2413,17 @@ public struct TSCH_CommandInducedReplaceChartGrid: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSCH_CommandInduced3DChartGeometry: Sendable {
+public nonisolated struct TSCH_CommandInduced3DChartGeometry: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSK_CommandArchive {
-    get {return _super ?? TSK_CommandArchive()}
+    get {_super ?? TSK_CommandArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2516,17 +2434,17 @@ public struct TSCH_CommandInduced3DChartGeometry: Sendable {
   fileprivate var _super: TSK_CommandArchive? = nil
 }
 
-public struct TSCH_ChartTextSelectionTransformerArchive: Sendable {
+public nonisolated struct TSCH_ChartTextSelectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var selection: TSP_Reference {
-    get {return _selection ?? TSP_Reference()}
+    get {_selection ?? TSP_Reference()}
     set {_selection = newValue}
   }
   /// Returns true if `selection` has been explicitly set.
-  public var hasSelection: Bool {return self._selection != nil}
+  public var hasSelection: Bool {self._selection != nil}
   /// Clears the value of `selection`. Subsequent reads from it will return its default value.
   public mutating func clearSelection() {self._selection = nil}
 
@@ -2537,17 +2455,17 @@ public struct TSCH_ChartTextSelectionTransformerArchive: Sendable {
   fileprivate var _selection: TSP_Reference? = nil
 }
 
-public struct TSCH_ChartDrawableSelectionTransformerArchive: Sendable {
+public nonisolated struct TSCH_ChartDrawableSelectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSD_DrawableSelectionTransformerArchive {
-    get {return _super ?? TSD_DrawableSelectionTransformerArchive()}
+    get {_super ?? TSD_DrawableSelectionTransformerArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2558,17 +2476,17 @@ public struct TSCH_ChartDrawableSelectionTransformerArchive: Sendable {
   fileprivate var _super: TSD_DrawableSelectionTransformerArchive? = nil
 }
 
-public struct TSCH_ChartSubselectionTransformerHelperArchive: Sendable {
+public nonisolated struct TSCH_ChartSubselectionTransformerHelperArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var selection: TSP_Reference {
-    get {return _selection ?? TSP_Reference()}
+    get {_selection ?? TSP_Reference()}
     set {_selection = newValue}
   }
   /// Returns true if `selection` has been explicitly set.
-  public var hasSelection: Bool {return self._selection != nil}
+  public var hasSelection: Bool {self._selection != nil}
   /// Clears the value of `selection`. Subsequent reads from it will return its default value.
   public mutating func clearSelection() {self._selection = nil}
 
@@ -2579,17 +2497,17 @@ public struct TSCH_ChartSubselectionTransformerHelperArchive: Sendable {
   fileprivate var _selection: TSP_Reference? = nil
 }
 
-public struct TSCH_ChartRefLineSubselectionTransformerHelperArchive: Sendable {
+public nonisolated struct TSCH_ChartRefLineSubselectionTransformerHelperArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartSubselectionTransformerHelperArchive {
-    get {return _super ?? TSCH_ChartSubselectionTransformerHelperArchive()}
+    get {_super ?? TSCH_ChartSubselectionTransformerHelperArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2602,17 +2520,17 @@ public struct TSCH_ChartRefLineSubselectionTransformerHelperArchive: Sendable {
   fileprivate var _super: TSCH_ChartSubselectionTransformerHelperArchive? = nil
 }
 
-public struct TSCH_ChartSubselectionIdentityTransformerHelperArchive: Sendable {
+public nonisolated struct TSCH_ChartSubselectionIdentityTransformerHelperArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSCH_ChartSubselectionTransformerHelperArchive {
-    get {return _super ?? TSCH_ChartSubselectionTransformerHelperArchive()}
+    get {_super ?? TSCH_ChartSubselectionTransformerHelperArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -2623,26 +2541,26 @@ public struct TSCH_ChartSubselectionIdentityTransformerHelperArchive: Sendable {
   fileprivate var _super: TSCH_ChartSubselectionTransformerHelperArchive? = nil
 }
 
-public struct TSCH_ChartSubselectionTransformerArchive: Sendable {
+public nonisolated struct TSCH_ChartSubselectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var selection: TSP_Reference {
-    get {return _selection ?? TSP_Reference()}
+    get {_selection ?? TSP_Reference()}
     set {_selection = newValue}
   }
   /// Returns true if `selection` has been explicitly set.
-  public var hasSelection: Bool {return self._selection != nil}
+  public var hasSelection: Bool {self._selection != nil}
   /// Clears the value of `selection`. Subsequent reads from it will return its default value.
   public mutating func clearSelection() {self._selection = nil}
 
   public var helper: TSP_Reference {
-    get {return _helper ?? TSP_Reference()}
+    get {_helper ?? TSP_Reference()}
     set {_helper = newValue}
   }
   /// Returns true if `helper` has been explicitly set.
-  public var hasHelper: Bool {return self._helper != nil}
+  public var hasHelper: Bool {self._helper != nil}
   /// Clears the value of `helper`. Subsequent reads from it will return its default value.
   public mutating func clearHelper() {self._helper = nil}
 
@@ -2654,17 +2572,17 @@ public struct TSCH_ChartSubselectionTransformerArchive: Sendable {
   fileprivate var _helper: TSP_Reference? = nil
 }
 
-public struct TSCH_CDESelectionTransformerArchive: Sendable {
+public nonisolated struct TSCH_CDESelectionTransformerArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var cdeSelection: TSP_Reference {
-    get {return _cdeSelection ?? TSP_Reference()}
+    get {_cdeSelection ?? TSP_Reference()}
     set {_cdeSelection = newValue}
   }
   /// Returns true if `cdeSelection` has been explicitly set.
-  public var hasCdeSelection: Bool {return self._cdeSelection != nil}
+  public var hasCdeSelection: Bool {self._cdeSelection != nil}
   /// Clears the value of `cdeSelection`. Subsequent reads from it will return its default value.
   public mutating func clearCdeSelection() {self._cdeSelection = nil}
 
@@ -2677,51 +2595,23 @@ public struct TSCH_CDESelectionTransformerArchive: Sendable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSCH"
+fileprivate nonisolated let _protobuf_package = "TSCH"
 
-extension TSCH_StyleOwnerType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "chart_info"),
-    2: .same(proto: "legend_model"),
-    3: .same(proto: "chart_axis"),
-    4: .same(proto: "chart_series"),
-    5: .same(proto: "reference_line"),
-  ]
+nonisolated extension TSCH_StyleOwnerType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}chart_info\0\u{1}legend_model\0\u{1}chart_axis\0\u{1}chart_series\0\u{1}reference_line\0")
 }
 
-extension TSCH_StyleSwapType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "chart_style"),
-    2: .same(proto: "chart_non_style"),
-    3: .same(proto: "legend_style"),
-    4: .same(proto: "legend_non_style"),
-    5: .same(proto: "value_axis_style"),
-    6: .same(proto: "value_axis_non_style"),
-    7: .same(proto: "category_axis_style"),
-    8: .same(proto: "category_axis_non_style"),
-    9: .same(proto: "series_theme_style"),
-    10: .same(proto: "series_private_style"),
-    11: .same(proto: "series_non_style"),
-    12: .same(proto: "paragraph_style"),
-    13: .same(proto: "reference_line_style"),
-    14: .same(proto: "reference_line_non_style"),
-    15: .same(proto: "reference_line_theme_style"),
-  ]
+nonisolated extension TSCH_StyleSwapType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}chart_style\0\u{1}chart_non_style\0\u{1}legend_style\0\u{1}legend_non_style\0\u{1}value_axis_style\0\u{1}value_axis_non_style\0\u{1}category_axis_style\0\u{1}category_axis_non_style\0\u{1}series_theme_style\0\u{1}series_private_style\0\u{1}series_non_style\0\u{1}paragraph_style\0\u{1}reference_line_style\0\u{1}reference_line_non_style\0\u{1}reference_line_theme_style\0")
 }
 
-extension TSCH_ApplyPresetBehavior: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "remove_overrides"),
-    2: .same(proto: "preserve_overrides"),
-    3: .same(proto: "preserve_appearance"),
-  ]
+nonisolated extension TSCH_ApplyPresetBehavior: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}remove_overrides\0\u{1}preserve_overrides\0\u{1}preserve_appearance\0")
 }
 
-extension TSCH_StyleOwnerPath: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_StyleOwnerPath: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StyleOwnerPath"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "uuids"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}uuids\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.uuids) {return false}
@@ -2754,22 +2644,9 @@ extension TSCH_StyleOwnerPath: SwiftProtobuf.Message, SwiftProtobuf._MessageImpl
   }
 }
 
-extension TSCH_CommandSetChartTypeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetChartTypeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetChartTypeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "new_chart_type"),
-    3: .standard(proto: "old_chart_type"),
-    4: .standard(proto: "rollback_chart_type"),
-    5: .standard(proto: "row_ids"),
-    6: .standard(proto: "column_ids"),
-    7: .standard(proto: "old_row_ids"),
-    8: .standard(proto: "old_column_ids"),
-    9: .standard(proto: "rollback_row_ids"),
-    10: .standard(proto: "rollback_column_ids"),
-    11: .standard(proto: "uses_captured_data"),
-    12: .standard(proto: "use_default_data"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}new_chart_type\0\u{3}old_chart_type\0\u{3}rollback_chart_type\0\u{3}row_ids\0\u{3}column_ids\0\u{3}old_row_ids\0\u{3}old_column_ids\0\u{3}rollback_row_ids\0\u{3}rollback_column_ids\0\u{3}uses_captured_data\0\u{3}use_default_data\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -2868,16 +2745,9 @@ extension TSCH_CommandSetChartTypeArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCH_StyleSwapUndoTupleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_StyleSwapUndoTupleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StyleSwapUndoTupleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "chart_info"),
-    2: .standard(proto: "swap_type"),
-    3: .same(proto: "index"),
-    4: .standard(proto: "old_value"),
-    5: .standard(proto: "new_value"),
-    6: .standard(proto: "ref_line_uuid"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}chart_info\0\u{3}swap_type\0\u{1}index\0\u{3}old_value\0\u{3}new_value\0\u{3}ref_line_uuid\0")
 
   public var isInitialized: Bool {
     if let v = self._chartInfo, !v.isInitialized {return false}
@@ -2942,11 +2812,9 @@ extension TSCH_StyleSwapUndoTupleArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSCH_StyleSwapUndoTuplesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_StyleSwapUndoTuplesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".StyleSwapUndoTuplesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "swap_tuples"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}swap_tuples\0")
 
   public var isInitialized: Bool {
     if !SwiftProtobuf.Internal.areAllInitialized(self.swapTuples) {return false}
@@ -2979,12 +2847,9 @@ extension TSCH_StyleSwapUndoTuplesArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCH_CommandStyleSwapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandStyleSwapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandStyleSwapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "undo_tuples"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}undo_tuples\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3028,15 +2893,9 @@ extension TSCH_CommandStyleSwapArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSCH_CommandMutatePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandMutatePropertiesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandMutatePropertiesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "rollback_cmd"),
-    3: .standard(proto: "generic_property_delta_maps"),
-    4: .standard(proto: "paragraph_style_delta_maps"),
-    5: .same(proto: "initiatedOnWeb"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}rollback_cmd\0\u{3}generic_property_delta_maps\0\u{3}paragraph_style_delta_maps\0\u{1}initiatedOnWeb\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3097,13 +2956,9 @@ extension TSCH_CommandMutatePropertiesArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_CommandMutatePropertiesArchive.protoMessageName + ".GenericPropertyDeltaMap"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "style_owner_path"),
-    2: .standard(proto: "forward_map"),
-    3: .standard(proto: "reverse_map"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}style_owner_path\0\u{3}forward_map\0\u{3}reverse_map\0")
 
   public var isInitialized: Bool {
     if let v = self._styleOwnerPath, !v.isInitialized {return false}
@@ -3152,15 +3007,9 @@ extension TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap: SwiftProt
   }
 }
 
-extension TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMapUnion: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMapUnion: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.protoMessageName + ".GenericMapUnion"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    2: .standard(proto: "chart_map"),
-    3: .standard(proto: "legend_map"),
-    4: .standard(proto: "axis_map"),
-    5: .standard(proto: "series_map"),
-    6: .standard(proto: "reference_line_map"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{4}\u{2}chart_map\0\u{3}legend_map\0\u{3}axis_map\0\u{3}series_map\0\u{3}reference_line_map\0")
 
   fileprivate class _StorageClass {
     var _chartMap: TSCH_Generated_ChartGenericPropertyMapArchive? = nil
@@ -3169,15 +3018,11 @@ extension TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMap
     var _seriesMap: TSCH_Generated_ChartSeriesGenericPropertyMapArchive? = nil
     var _referenceLineMap: TSCH_Generated_ReferenceLineGenericPropertyMapArchive? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -3271,14 +3116,9 @@ extension TSCH_CommandMutatePropertiesArchive.GenericPropertyDeltaMap.GenericMap
   }
 }
 
-extension TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_CommandMutatePropertiesArchive.protoMessageName + ".ParagraphStyleDeltaMap"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "style_owner_path"),
-    2: .standard(proto: "paragraph_style_index_property"),
-    3: .standard(proto: "forward_map"),
-    4: .standard(proto: "reverse_map"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}style_owner_path\0\u{3}paragraph_style_index_property\0\u{3}forward_map\0\u{3}reverse_map\0")
 
   public var isInitialized: Bool {
     if let v = self._styleOwnerPath, !v.isInitialized {return false}
@@ -3332,12 +3172,9 @@ extension TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap: SwiftProto
   }
 }
 
-extension TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap.ParagraphStylePropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap.ParagraphStylePropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap.protoMessageName + ".ParagraphStylePropertyMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "char_properties"),
-    2: .standard(proto: "para_properties"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}char_properties\0\u{3}para_properties\0")
 
   public var isInitialized: Bool {
     if let v = self._charProperties, !v.isInitialized {return false}
@@ -3380,13 +3217,9 @@ extension TSCH_CommandMutatePropertiesArchive.ParagraphStyleDeltaMap.ParagraphSt
   }
 }
 
-extension TSCH_CommandScaleAllTextArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandScaleAllTextArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandScaleAllTextArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "rollback_cmd"),
-    3: .standard(proto: "scale_factor"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}rollback_cmd\0\u{3}scale_factor\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3435,17 +3268,9 @@ extension TSCH_CommandScaleAllTextArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCH_CommandSetFontFamilyArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetFontFamilyArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetFontFamilyArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "rollback_cmd"),
-    3: .standard(proto: "new_font_family"),
-    4: .standard(proto: "old_font_family"),
-    5: .standard(proto: "paragraph_style_delta_maps"),
-    6: .standard(proto: "is_bold"),
-    7: .standard(proto: "is_italic"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}rollback_cmd\0\u{3}new_font_family\0\u{3}old_font_family\0\u{3}paragraph_style_delta_maps\0\u{3}is_bold\0\u{3}is_italic\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3517,12 +3342,9 @@ extension TSCH_CommandSetFontFamilyArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCH_CommandSetFontFamilyArchive.StyleSemanticTag: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetFontFamilyArchive.StyleSemanticTag: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_CommandSetFontFamilyArchive.protoMessageName + ".StyleSemanticTag"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "swap_type"),
-    2: .same(proto: "index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}swap_type\0\u{1}index\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -3559,14 +3381,9 @@ extension TSCH_CommandSetFontFamilyArchive.StyleSemanticTag: SwiftProtobuf.Messa
   }
 }
 
-extension TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_CommandSetFontFamilyArchive.protoMessageName + ".SemanticParagraphStyleMutationMap"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "style_semantic_tag"),
-    2: .standard(proto: "paragraph_style_index_property"),
-    3: .standard(proto: "forward_map"),
-    4: .standard(proto: "reverse_map"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}style_semantic_tag\0\u{3}paragraph_style_index_property\0\u{3}forward_map\0\u{3}reverse_map\0")
 
   public var isInitialized: Bool {
     if let v = self._forwardMap, !v.isInitialized {return false}
@@ -3619,12 +3436,9 @@ extension TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap: Sw
   }
 }
 
-extension TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap.ParagraphStylePropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap.ParagraphStylePropertyMapArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap.protoMessageName + ".ParagraphStylePropertyMapArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "char_properties"),
-    2: .standard(proto: "para_properties"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}char_properties\0\u{3}para_properties\0")
 
   public var isInitialized: Bool {
     if let v = self._charProperties, !v.isInitialized {return false}
@@ -3667,16 +3481,9 @@ extension TSCH_CommandSetFontFamilyArchive.SemanticParagraphStyleMutationMap.Par
   }
 }
 
-extension TSCH_CommandApplyFillSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandApplyFillSetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandApplyFillSetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "chart_type"),
-    3: .standard(proto: "fill_set"),
-    4: .standard(proto: "old_fill_set"),
-    5: .standard(proto: "prior_last_applied_fill_set_lookup_string"),
-    6: .standard(proto: "rollback_cmd"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}chart_type\0\u{3}fill_set\0\u{3}old_fill_set\0\u{3}prior_last_applied_fill_set_lookup_string\0\u{3}rollback_cmd\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3744,14 +3551,9 @@ extension TSCH_CommandApplyFillSetArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCH_CommandSetSeriesNameArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetSeriesNameArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetSeriesNameArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "seriesIndex"),
-    3: .same(proto: "oldName"),
-    4: .same(proto: "newName"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}seriesIndex\0\u{1}oldName\0\u{1}newName\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3806,15 +3608,9 @@ extension TSCH_CommandSetSeriesNameArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCH_CommandSetCategoryNameArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetCategoryNameArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetCategoryNameArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "categoryIndex"),
-    3: .same(proto: "oldName"),
-    4: .same(proto: "newName"),
-    5: .same(proto: "isMultiDataIndex"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}categoryIndex\0\u{1}oldName\0\u{1}newName\0\u{1}isMultiDataIndex\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3874,16 +3670,9 @@ extension TSCH_CommandSetCategoryNameArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCH_CommandAddGridRowsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandAddGridRowsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandAddGridRowsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "row_id"),
-    3: .standard(proto: "row_id_list"),
-    4: .standard(proto: "row_name_list"),
-    5: .standard(proto: "undo_deletion_start_id"),
-    6: .standard(proto: "undo_deletion_end_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}row_id\0\u{3}row_id_list\0\u{3}row_name_list\0\u{3}undo_deletion_start_id\0\u{3}undo_deletion_end_id\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -3950,16 +3739,9 @@ extension TSCH_CommandAddGridRowsArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSCH_CommandAddGridColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandAddGridColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandAddGridColumnsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "column_id"),
-    3: .standard(proto: "column_id_list"),
-    4: .standard(proto: "column_name_list"),
-    5: .standard(proto: "undo_deletion_start_id"),
-    6: .standard(proto: "undo_deletion_end_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}column_id\0\u{3}column_id_list\0\u{3}column_name_list\0\u{3}undo_deletion_start_id\0\u{3}undo_deletion_end_id\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4026,15 +3808,9 @@ extension TSCH_CommandAddGridColumnsArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCH_CommandMoveGridRowsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandMoveGridRowsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandMoveGridRowsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "start_row_id"),
-    3: .standard(proto: "end_row_id"),
-    4: .standard(proto: "after_row_id"),
-    5: .standard(proto: "undo_after_row_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}start_row_id\0\u{3}end_row_id\0\u{3}after_row_id\0\u{3}undo_after_row_id\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4098,15 +3874,9 @@ extension TSCH_CommandMoveGridRowsArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCH_CommandMoveGridColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandMoveGridColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandMoveGridColumnsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "start_column_id"),
-    3: .standard(proto: "end_column_id"),
-    4: .standard(proto: "after_column_id"),
-    5: .standard(proto: "undo_after_column_id"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}start_column_id\0\u{3}end_column_id\0\u{3}after_column_id\0\u{3}undo_after_column_id\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4170,21 +3940,9 @@ extension TSCH_CommandMoveGridColumnsArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCH_CommandDeleteGridRowsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandDeleteGridRowsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandDeleteGridRowsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "start_row_id"),
-    3: .standard(proto: "end_row_id"),
-    4: .standard(proto: "cut_row_names"),
-    5: .standard(proto: "cut_values"),
-    6: .standard(proto: "undo_discards_values"),
-    7: .standard(proto: "undo_column_insertion_id"),
-    8: .standard(proto: "undo_row_insertion_id"),
-    9: .standard(proto: "undo_row_id_list"),
-    11: .standard(proto: "cut_column_names"),
-    12: .standard(proto: "undo_column_id_list"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}start_row_id\0\u{3}end_row_id\0\u{3}cut_row_names\0\u{3}cut_values\0\u{3}undo_discards_values\0\u{3}undo_column_insertion_id\0\u{3}undo_row_insertion_id\0\u{3}undo_row_id_list\0\u{4}\u{2}cut_column_names\0\u{3}undo_column_id_list\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4280,21 +4038,9 @@ extension TSCH_CommandDeleteGridRowsArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCH_CommandDeleteGridColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandDeleteGridColumnsArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandDeleteGridColumnsArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "start_column_id"),
-    3: .standard(proto: "end_column_id"),
-    4: .standard(proto: "cut_names"),
-    5: .standard(proto: "cut_values"),
-    6: .standard(proto: "undo_discards_values"),
-    7: .standard(proto: "undo_column_insertion_id"),
-    8: .standard(proto: "undo_row_insertion_id"),
-    9: .standard(proto: "undo_column_id_list"),
-    11: .standard(proto: "cut_row_names"),
-    12: .standard(proto: "undo_row_id_list"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}start_column_id\0\u{3}end_column_id\0\u{3}cut_names\0\u{3}cut_values\0\u{3}undo_discards_values\0\u{3}undo_column_insertion_id\0\u{3}undo_row_insertion_id\0\u{3}undo_column_id_list\0\u{4}\u{2}cut_row_names\0\u{3}undo_row_id_list\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4390,15 +4136,9 @@ extension TSCH_CommandDeleteGridColumnsArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCH_CommandSetGridValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetGridValueArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetGridValueArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "rowindex"),
-    3: .same(proto: "columnindex"),
-    4: .same(proto: "oldvalue"),
-    5: .same(proto: "newvalue"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}rowindex\0\u{1}columnindex\0\u{1}oldvalue\0\u{1}newvalue\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4460,13 +4200,9 @@ extension TSCH_CommandSetGridValueArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCH_CommandSetGridDirectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetGridDirectionArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetGridDirectionArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "old_direction"),
-    3: .standard(proto: "new_direction"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}old_direction\0\u{3}new_direction\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4516,14 +4252,9 @@ extension TSCH_CommandSetGridDirectionArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_CommandSetSeriesTypeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetSeriesTypeArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetSeriesTypeArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "seriesindex"),
-    3: .same(proto: "oldtype"),
-    4: .same(proto: "newtype"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}seriesindex\0\u{1}oldtype\0\u{1}newtype\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4579,13 +4310,9 @@ extension TSCH_CommandSetSeriesTypeArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCH_CommandSetScatterFormatArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetScatterFormatArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetScatterFormatArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    3: .same(proto: "oldformat"),
-    4: .same(proto: "newformat"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{2}\u{2}oldformat\0\u{1}newformat\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4635,13 +4362,9 @@ extension TSCH_CommandSetScatterFormatArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_CommandSetMultiDataSetIndexArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetMultiDataSetIndexArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetMultiDataSetIndexArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "oldindex"),
-    3: .same(proto: "newindex"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}oldindex\0\u{1}newindex\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4691,13 +4414,9 @@ extension TSCH_CommandSetMultiDataSetIndexArchive: SwiftProtobuf.Message, SwiftP
   }
 }
 
-extension TSCH_CommandSetLegendFrameArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetLegendFrameArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetLegendFrameArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "old_legend_frame"),
-    3: .standard(proto: "new_legend_frame"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}old_legend_frame\0\u{3}new_legend_frame\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4749,16 +4468,9 @@ extension TSCH_CommandSetLegendFrameArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCH_CommandSetPieWedgeExplosion: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandSetPieWedgeExplosion: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandSetPieWedgeExplosion"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "series_indices"),
-    3: .standard(proto: "wedge_explosions"),
-    5: .standard(proto: "old_series_indices"),
-    6: .standard(proto: "old_wedge_explosions"),
-    7: .standard(proto: "rollback_cmd"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}series_indices\0\u{3}wedge_explosions\0\u{4}\u{2}old_series_indices\0\u{3}old_wedge_explosions\0\u{3}rollback_cmd\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -4822,14 +4534,9 @@ extension TSCH_CommandSetPieWedgeExplosion: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCH_CommandChartApplyTheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandChartApplyTheme: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandChartApplyTheme"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "info"),
-    3: .standard(proto: "swap_command"),
-    4: .same(proto: "preset"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}info\0\u{3}swap_command\0\u{1}preset\0")
 
   fileprivate class _StorageClass {
     var _super: TSS_ApplyThemeChildCommandArchive? = nil
@@ -4837,15 +4544,11 @@ extension TSCH_CommandChartApplyTheme: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _swapCommand: TSP_Reference? = nil
     var _preset: TSP_Reference? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -4934,20 +4637,9 @@ extension TSCH_CommandChartApplyTheme: SwiftProtobuf.Message, SwiftProtobuf._Mes
   }
 }
 
-extension TSCH_CommandChartApplyPreset: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandChartApplyPreset: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandChartApplyPreset"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "behavior"),
-    3: .same(proto: "preset"),
-    4: .standard(proto: "old_preset"),
-    5: .standard(proto: "should_apply_swap_tuples"),
-    6: .standard(proto: "are_swap_tuples_valid"),
-    7: .standard(proto: "swap_tuples"),
-    8: .standard(proto: "inverse_swap_tuples"),
-    9: .standard(proto: "rollback_preset"),
-    10: .standard(proto: "rollback_swap_tuples"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}behavior\0\u{1}preset\0\u{3}old_preset\0\u{3}should_apply_swap_tuples\0\u{3}are_swap_tuples_valid\0\u{3}swap_tuples\0\u{3}inverse_swap_tuples\0\u{3}rollback_preset\0\u{3}rollback_swap_tuples\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5036,14 +4728,9 @@ extension TSCH_CommandChartApplyPreset: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSCH_CommandCleanupGeometryArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandCleanupGeometryArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandCleanupGeometryArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "info_geometry_command"),
-    3: .standard(proto: "anchor_attachment_command"),
-    4: .standard(proto: "original_legend_rect"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}info_geometry_command\0\u{3}anchor_attachment_command\0\u{3}original_legend_rect\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5099,15 +4786,9 @@ extension TSCH_CommandCleanupGeometryArchive: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCH_ChartCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartCommandArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "chart_info"),
-    3: .standard(proto: "original_dirty_state"),
-    4: .standard(proto: "chart_info_id_path"),
-    5: .standard(proto: "is_for_forward_undo_redo"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}chart_info\0\u{3}original_dirty_state\0\u{3}chart_info_id_path\0\u{3}is_for_forward_undo_redo\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -5116,15 +4797,11 @@ extension TSCH_ChartCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
     var _chartInfoIDPath: TSP_UUIDPath? = nil
     var _isForForwardUndoRedo: Bool? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5217,25 +4894,9 @@ extension TSCH_ChartCommandArchive: SwiftProtobuf.Message, SwiftProtobuf._Messag
   }
 }
 
-extension TSCH_CommandReplaceGridValuesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandReplaceGridValuesArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandReplaceGridValuesArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    4: .standard(proto: "old_data_rows"),
-    5: .standard(proto: "new_data_rows"),
-    6: .standard(proto: "old_row_names"),
-    7: .standard(proto: "new_row_names"),
-    8: .standard(proto: "old_col_names"),
-    9: .standard(proto: "new_col_names"),
-    10: .standard(proto: "update_row_uuids"),
-    11: .standard(proto: "update_column_uuids"),
-    12: .standard(proto: "add_row_uuids"),
-    13: .standard(proto: "add_column_uuids"),
-    14: .standard(proto: "delete_row_uuids"),
-    15: .standard(proto: "delete_column_uuids"),
-    16: .standard(proto: "set_series_direction"),
-    17: .standard(proto: "new_series_direction"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{4}\u{3}old_data_rows\0\u{3}new_data_rows\0\u{3}old_row_names\0\u{3}new_row_names\0\u{3}old_col_names\0\u{3}new_col_names\0\u{3}update_row_uuids\0\u{3}update_column_uuids\0\u{3}add_row_uuids\0\u{3}add_column_uuids\0\u{3}delete_row_uuids\0\u{3}delete_column_uuids\0\u{3}set_series_direction\0\u{3}new_series_direction\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5349,16 +5010,9 @@ extension TSCH_CommandReplaceGridValuesArchive: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension TSCH_CommandReplaceThemePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandReplaceThemePresetArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandReplaceThemePresetArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .same(proto: "theme"),
-    3: .standard(proto: "old_preset"),
-    4: .standard(proto: "new_preset"),
-    5: .same(proto: "identifiers"),
-    6: .standard(proto: "old_preset_index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{1}theme\0\u{3}old_preset\0\u{3}new_preset\0\u{1}identifiers\0\u{3}old_preset_index\0")
 
   fileprivate class _StorageClass {
     var _super: TSK_CommandArchive? = nil
@@ -5368,15 +5022,11 @@ extension TSCH_CommandReplaceThemePresetArchive: SwiftProtobuf.Message, SwiftPro
     var _identifiers: [TSCH_CommandReplaceThemePresetArchive.StyleAndIdentifierPair] = []
     var _oldPresetIndex: UInt64? = nil
 
-    #if swift(>=5.10)
       // This property is used as the initial default value for new instances of the type.
       // The type itself is protecting the reference to its storage via CoW semantics.
       // This will force a copy to be made of this reference when the first mutation occurs;
       // hence, it is safe to mark this as `nonisolated(unsafe)`.
       static nonisolated(unsafe) let defaultInstance = _StorageClass()
-    #else
-      static let defaultInstance = _StorageClass()
-    #endif
 
     private init() {}
 
@@ -5478,12 +5128,9 @@ extension TSCH_CommandReplaceThemePresetArchive: SwiftProtobuf.Message, SwiftPro
   }
 }
 
-extension TSCH_CommandReplaceThemePresetArchive.StyleAndIdentifierPair: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandReplaceThemePresetArchive.StyleAndIdentifierPair: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_CommandReplaceThemePresetArchive.protoMessageName + ".StyleAndIdentifierPair"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "style"),
-    2: .same(proto: "identifier"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}style\0\u{1}identifier\0")
 
   public var isInitialized: Bool {
     if self._style == nil {return false}
@@ -5527,11 +5174,9 @@ extension TSCH_CommandReplaceThemePresetArchive.StyleAndIdentifierPair: SwiftPro
   }
 }
 
-extension TSCH_CommandInvalidateWPCaches: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandInvalidateWPCaches: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandInvalidateWPCaches"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5569,16 +5214,9 @@ extension TSCH_CommandInvalidateWPCaches: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSCH_CommandReplaceCustomFormatArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandReplaceCustomFormatArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandReplaceCustomFormatArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "rollback_cmd"),
-    3: .standard(proto: "old_format_object"),
-    4: .standard(proto: "new_format_object"),
-    5: .standard(proto: "forward_mutations"),
-    6: .standard(proto: "reverse_mutations"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}rollback_cmd\0\u{3}old_format_object\0\u{3}new_format_object\0\u{3}forward_mutations\0\u{3}reverse_mutations\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5646,14 +5284,9 @@ extension TSCH_CommandReplaceCustomFormatArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCH_CommandReplaceCustomFormatArchive.FormatObjectMutation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandReplaceCustomFormatArchive.FormatObjectMutation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = TSCH_CommandReplaceCustomFormatArchive.protoMessageName + ".FormatObjectMutation"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "style_owner_type"),
-    2: .standard(proto: "style_owner_index"),
-    3: .standard(proto: "format_object_property"),
-    4: .standard(proto: "format_object"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}style_owner_type\0\u{3}style_owner_index\0\u{3}format_object_property\0\u{3}format_object\0")
 
   public var isInitialized: Bool {
     if let v = self._formatObject, !v.isInitialized {return false}
@@ -5705,17 +5338,9 @@ extension TSCH_CommandReplaceCustomFormatArchive.FormatObjectMutation: SwiftProt
   }
 }
 
-extension TSCH_CommandAddReferenceLineArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandAddReferenceLineArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandAddReferenceLineArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "axis_id"),
-    3: .same(proto: "uuid"),
-    4: .standard(proto: "non_style"),
-    5: .same(proto: "style"),
-    6: .standard(proto: "paragraph_styles"),
-    7: .standard(proto: "rollback_commands"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}axis_id\0\u{1}uuid\0\u{3}non_style\0\u{1}style\0\u{3}paragraph_styles\0\u{3}rollback_commands\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5790,17 +5415,9 @@ extension TSCH_CommandAddReferenceLineArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_CommandDeleteReferenceLineArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandDeleteReferenceLineArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandDeleteReferenceLineArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "axis_id"),
-    3: .same(proto: "uuid"),
-    4: .standard(proto: "non_style"),
-    5: .same(proto: "style"),
-    6: .standard(proto: "paragraph_styles"),
-    7: .standard(proto: "style_swap_command"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}axis_id\0\u{1}uuid\0\u{3}non_style\0\u{1}style\0\u{3}paragraph_styles\0\u{3}style_swap_command\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5875,16 +5492,9 @@ extension TSCH_CommandDeleteReferenceLineArchive: SwiftProtobuf.Message, SwiftPr
   }
 }
 
-extension TSCH_CommandPasteStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandPasteStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandPasteStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "style_swap_command"),
-    3: .standard(proto: "inverse_chart_style_state"),
-    4: .standard(proto: "chart_style_state"),
-    5: .standard(proto: "shape_style"),
-    6: .same(proto: "subselection"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}style_swap_command\0\u{3}inverse_chart_style_state\0\u{3}chart_style_state\0\u{3}shape_style\0\u{1}subselection\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -5951,14 +5561,9 @@ extension TSCH_CommandPasteStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCH_CommandReplaceImageDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandReplaceImageDataArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandReplaceImageDataArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "style_swap_command"),
-    3: .standard(proto: "inverse_chart_style_state"),
-    4: .standard(proto: "chart_style_state"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}style_swap_command\0\u{3}inverse_chart_style_state\0\u{3}chart_style_state\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6014,11 +5619,9 @@ extension TSCH_CommandReplaceImageDataArchive: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_CommandInducedReplaceChartGrid: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandInducedReplaceChartGrid: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandInducedReplaceChartGrid"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6056,11 +5659,9 @@ extension TSCH_CommandInducedReplaceChartGrid: SwiftProtobuf.Message, SwiftProto
   }
 }
 
-extension TSCH_CommandInduced3DChartGeometry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CommandInduced3DChartGeometry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CommandInduced3DChartGeometry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6098,11 +5699,9 @@ extension TSCH_CommandInduced3DChartGeometry: SwiftProtobuf.Message, SwiftProtob
   }
 }
 
-extension TSCH_ChartTextSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartTextSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartTextSelectionTransformerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "selection"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}selection\0")
 
   public var isInitialized: Bool {
     if let v = self._selection, !v.isInitialized {return false}
@@ -6139,11 +5738,9 @@ extension TSCH_ChartTextSelectionTransformerArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSCH_ChartDrawableSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartDrawableSelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartDrawableSelectionTransformerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6181,11 +5778,9 @@ extension TSCH_ChartDrawableSelectionTransformerArchive: SwiftProtobuf.Message, 
   }
 }
 
-extension TSCH_ChartSubselectionTransformerHelperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSubselectionTransformerHelperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSubselectionTransformerHelperArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "selection"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}selection\0")
 
   public var isInitialized: Bool {
     if let v = self._selection, !v.isInitialized {return false}
@@ -6222,12 +5817,9 @@ extension TSCH_ChartSubselectionTransformerHelperArchive: SwiftProtobuf.Message,
   }
 }
 
-extension TSCH_ChartRefLineSubselectionTransformerHelperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartRefLineSubselectionTransformerHelperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartRefLineSubselectionTransformerHelperArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-    2: .standard(proto: "selected_reference_line_uuids"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0\u{3}selected_reference_line_uuids\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6271,11 +5863,9 @@ extension TSCH_ChartRefLineSubselectionTransformerHelperArchive: SwiftProtobuf.M
   }
 }
 
-extension TSCH_ChartSubselectionIdentityTransformerHelperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSubselectionIdentityTransformerHelperArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSubselectionIdentityTransformerHelperArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if self._super == nil {return false}
@@ -6313,12 +5903,9 @@ extension TSCH_ChartSubselectionIdentityTransformerHelperArchive: SwiftProtobuf.
   }
 }
 
-extension TSCH_ChartSubselectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSubselectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSubselectionTransformerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "selection"),
-    2: .same(proto: "helper"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}selection\0\u{1}helper\0")
 
   public var isInitialized: Bool {
     if let v = self._selection, !v.isInitialized {return false}
@@ -6361,11 +5948,9 @@ extension TSCH_ChartSubselectionTransformerArchive: SwiftProtobuf.Message, Swift
   }
 }
 
-extension TSCH_CDESelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_CDESelectionTransformerArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".CDESelectionTransformerArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "cde_selection"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}cde_selection\0")
 
   public var isInitialized: Bool {
     if let v = self._cdeSelection, !v.isInitialized {return false}

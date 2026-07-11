@@ -15,360 +15,150 @@ import SwiftProtobuf
 // incompatible with the version of SwiftProtobuf to which you are linking.
 // Please ensure that you are building against the same version of the API
 // that was used to generate this file.
-fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
+fileprivate nonisolated struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
   struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
   typealias Version = _2
 }
 
-public enum TSCH_ChartType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case undefinedChartType // = 0
-  case columnChartType2D // = 1
-  case barChartType2D // = 2
-  case lineChartType2D // = 3
-  case areaChartType2D // = 4
-  case pieChartType2D // = 5
-  case stackedColumnChartType2D // = 6
-  case stackedBarChartType2D // = 7
-  case stackedAreaChartType2D // = 8
-  case scatterChartType2D // = 9
-  case mixedChartType2D // = 10
-  case twoAxisChartType2D // = 11
-  case columnChartType3D // = 12
-  case barChartType3D // = 13
-  case lineChartType3D // = 14
-  case areaChartType3D // = 15
-  case pieChartType3D // = 16
-  case stackedColumnChartType3D // = 17
-  case stackedBarChartType3D // = 18
-  case stackedAreaChartType3D // = 19
-  case multiDataColumnChartType2D // = 20
-  case multiDataBarChartType2D // = 21
-  case bubbleChartType2D // = 22
-  case multiDataScatterChartType2D // = 23
-  case multiDataBubbleChartType2D // = 24
-  case donutChartType2D // = 25
-  case donutChartType3D // = 26
-  case radarChartType2D // = 27
+public nonisolated enum TSCH_ChartType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case undefinedChartType = 0
+  case columnChartType2D = 1
+  case barChartType2D = 2
+  case lineChartType2D = 3
+  case areaChartType2D = 4
+  case pieChartType2D = 5
+  case stackedColumnChartType2D = 6
+  case stackedBarChartType2D = 7
+  case stackedAreaChartType2D = 8
+  case scatterChartType2D = 9
+  case mixedChartType2D = 10
+  case twoAxisChartType2D = 11
+  case columnChartType3D = 12
+  case barChartType3D = 13
+  case lineChartType3D = 14
+  case areaChartType3D = 15
+  case pieChartType3D = 16
+  case stackedColumnChartType3D = 17
+  case stackedBarChartType3D = 18
+  case stackedAreaChartType3D = 19
+  case multiDataColumnChartType2D = 20
+  case multiDataBarChartType2D = 21
+  case bubbleChartType2D = 22
+  case multiDataScatterChartType2D = 23
+  case multiDataBubbleChartType2D = 24
+  case donutChartType2D = 25
+  case donutChartType3D = 26
+  case radarChartType2D = 27
 
   public init() {
     self = .undefinedChartType
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .undefinedChartType
-    case 1: self = .columnChartType2D
-    case 2: self = .barChartType2D
-    case 3: self = .lineChartType2D
-    case 4: self = .areaChartType2D
-    case 5: self = .pieChartType2D
-    case 6: self = .stackedColumnChartType2D
-    case 7: self = .stackedBarChartType2D
-    case 8: self = .stackedAreaChartType2D
-    case 9: self = .scatterChartType2D
-    case 10: self = .mixedChartType2D
-    case 11: self = .twoAxisChartType2D
-    case 12: self = .columnChartType3D
-    case 13: self = .barChartType3D
-    case 14: self = .lineChartType3D
-    case 15: self = .areaChartType3D
-    case 16: self = .pieChartType3D
-    case 17: self = .stackedColumnChartType3D
-    case 18: self = .stackedBarChartType3D
-    case 19: self = .stackedAreaChartType3D
-    case 20: self = .multiDataColumnChartType2D
-    case 21: self = .multiDataBarChartType2D
-    case 22: self = .bubbleChartType2D
-    case 23: self = .multiDataScatterChartType2D
-    case 24: self = .multiDataBubbleChartType2D
-    case 25: self = .donutChartType2D
-    case 26: self = .donutChartType3D
-    case 27: self = .radarChartType2D
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .undefinedChartType: return 0
-    case .columnChartType2D: return 1
-    case .barChartType2D: return 2
-    case .lineChartType2D: return 3
-    case .areaChartType2D: return 4
-    case .pieChartType2D: return 5
-    case .stackedColumnChartType2D: return 6
-    case .stackedBarChartType2D: return 7
-    case .stackedAreaChartType2D: return 8
-    case .scatterChartType2D: return 9
-    case .mixedChartType2D: return 10
-    case .twoAxisChartType2D: return 11
-    case .columnChartType3D: return 12
-    case .barChartType3D: return 13
-    case .lineChartType3D: return 14
-    case .areaChartType3D: return 15
-    case .pieChartType3D: return 16
-    case .stackedColumnChartType3D: return 17
-    case .stackedBarChartType3D: return 18
-    case .stackedAreaChartType3D: return 19
-    case .multiDataColumnChartType2D: return 20
-    case .multiDataBarChartType2D: return 21
-    case .bubbleChartType2D: return 22
-    case .multiDataScatterChartType2D: return 23
-    case .multiDataBubbleChartType2D: return 24
-    case .donutChartType2D: return 25
-    case .donutChartType3D: return 26
-    case .radarChartType2D: return 27
-    }
-  }
-
 }
 
-public enum TSCH_AxisType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case unknown // = 0
-  case x // = 1
-  case y // = 2
-  case pie // = 3
-  case size // = 4
-  case polarRadius // = 5
-  case polarAngle // = 6
+public nonisolated enum TSCH_AxisType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case unknown = 0
+  case x = 1
+  case y = 2
+  case pie = 3
+  case size = 4
+  case polarRadius = 5
+  case polarAngle = 6
 
   public init() {
     self = .unknown
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .unknown
-    case 1: self = .x
-    case 2: self = .y
-    case 3: self = .pie
-    case 4: self = .size
-    case 5: self = .polarRadius
-    case 6: self = .polarAngle
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .unknown: return 0
-    case .x: return 1
-    case .y: return 2
-    case .pie: return 3
-    case .size: return 4
-    case .polarRadius: return 5
-    case .polarAngle: return 6
-    }
-  }
-
 }
 
-public enum TSCH_ScatterFormat: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case unknown // = 0
-  case separateX // = 1
-  case sharedX // = 2
+public nonisolated enum TSCH_ScatterFormat: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case unknown = 0
+  case separateX = 1
+  case sharedX = 2
 
   public init() {
     self = .unknown
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .unknown
-    case 1: self = .separateX
-    case 2: self = .sharedX
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .unknown: return 0
-    case .separateX: return 1
-    case .sharedX: return 2
-    }
-  }
-
 }
 
-public enum TSCH_SeriesDirection: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case unknown // = 0
-  case byRow // = 1
-  case byColumn // = 2
+public nonisolated enum TSCH_SeriesDirection: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case unknown = 0
+  case byRow = 1
+  case byColumn = 2
 
   public init() {
     self = .unknown
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .unknown
-    case 1: self = .byRow
-    case 2: self = .byColumn
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .unknown: return 0
-    case .byRow: return 1
-    case .byColumn: return 2
-    }
-  }
-
 }
 
-public enum TSCH_NumberValueType: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case decimal // = 0
-  case currency // = 1
-  case percentage // = 2
-  case scientific // = 3
-  case fraction // = 4
-  case base // = 5
-  case unknown // = -999
+public nonisolated enum TSCH_NumberValueType: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case decimal = 0
+  case currency = 1
+  case percentage = 2
+  case scientific = 3
+  case fraction = 4
+  case base = 5
+  case unknown = -999
 
   public init() {
     self = .decimal
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case -999: self = .unknown
-    case 0: self = .decimal
-    case 1: self = .currency
-    case 2: self = .percentage
-    case 3: self = .scientific
-    case 4: self = .fraction
-    case 5: self = .base
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .unknown: return -999
-    case .decimal: return 0
-    case .currency: return 1
-    case .percentage: return 2
-    case .scientific: return 3
-    case .fraction: return 4
-    case .base: return 5
-    }
-  }
-
 }
 
-public enum TSCH_NegativeNumberStyle: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case minus // = 0
-  case red // = 1
-  case parentheses // = 2
-  case redAndParentheses // = 3
-  case none // = 4
+public nonisolated enum TSCH_NegativeNumberStyle: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case minus = 0
+  case red = 1
+  case parentheses = 2
+  case redAndParentheses = 3
+  case none = 4
 
   public init() {
     self = .minus
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .minus
-    case 1: self = .red
-    case 2: self = .parentheses
-    case 3: self = .redAndParentheses
-    case 4: self = .none
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .minus: return 0
-    case .red: return 1
-    case .parentheses: return 2
-    case .redAndParentheses: return 3
-    case .none: return 4
-    }
-  }
-
 }
 
-public enum TSCH_FractionAccuracy: SwiftProtobuf.Enum, Swift.CaseIterable {
-  public typealias RawValue = Int
-  case conflicting // = 0
-  case upToOneDigit // = -1
-  case upToTwoDigits // = -2
-  case upToThreeDigits // = -3
-  case halves // = 2
-  case quarters // = 4
-  case eighths // = 8
-  case sixteenths // = 16
-  case tenths // = 10
-  case hundredths // = 100
+public nonisolated enum TSCH_FractionAccuracy: Int, SwiftProtobuf.Enum, Swift.CaseIterable {
+  case conflicting = 0
+  case upToOneDigit = -1
+  case upToTwoDigits = -2
+  case upToThreeDigits = -3
+  case halves = 2
+  case quarters = 4
+  case eighths = 8
+  case sixteenths = 16
+  case tenths = 10
+  case hundredths = 100
 
   public init() {
     self = .conflicting
   }
 
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case -3: self = .upToThreeDigits
-    case -2: self = .upToTwoDigits
-    case -1: self = .upToOneDigit
-    case 0: self = .conflicting
-    case 2: self = .halves
-    case 4: self = .quarters
-    case 8: self = .eighths
-    case 10: self = .tenths
-    case 16: self = .sixteenths
-    case 100: self = .hundredths
-    default: return nil
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .upToThreeDigits: return -3
-    case .upToTwoDigits: return -2
-    case .upToOneDigit: return -1
-    case .conflicting: return 0
-    case .halves: return 2
-    case .quarters: return 4
-    case .eighths: return 8
-    case .tenths: return 10
-    case .sixteenths: return 16
-    case .hundredths: return 100
-    }
-  }
-
 }
 
-public struct TSCH_RectArchive: Sendable {
+public nonisolated struct TSCH_RectArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var origin: TSP_Point {
-    get {return _origin ?? TSP_Point()}
+    get {_origin ?? TSP_Point()}
     set {_origin = newValue}
   }
   /// Returns true if `origin` has been explicitly set.
-  public var hasOrigin: Bool {return self._origin != nil}
+  public var hasOrigin: Bool {self._origin != nil}
   /// Clears the value of `origin`. Subsequent reads from it will return its default value.
   public mutating func clearOrigin() {self._origin = nil}
 
   public var size: TSP_Size {
-    get {return _size ?? TSP_Size()}
+    get {_size ?? TSP_Size()}
     set {_size = newValue}
   }
   /// Returns true if `size` has been explicitly set.
-  public var hasSize: Bool {return self._size != nil}
+  public var hasSize: Bool {self._size != nil}
   /// Clears the value of `size`. Subsequent reads from it will return its default value.
   public mutating func clearSize() {self._size = nil}
 
@@ -380,17 +170,17 @@ public struct TSCH_RectArchive: Sendable {
   fileprivate var _size: TSP_Size? = nil
 }
 
-public struct TSCH_ChartsNSNumberDoubleArchive: Sendable {
+public nonisolated struct TSCH_ChartsNSNumberDoubleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var numberArchive: Double {
-    get {return _numberArchive ?? 0}
+    get {_numberArchive ?? 0}
     set {_numberArchive = newValue}
   }
   /// Returns true if `numberArchive` has been explicitly set.
-  public var hasNumberArchive: Bool {return self._numberArchive != nil}
+  public var hasNumberArchive: Bool {self._numberArchive != nil}
   /// Clears the value of `numberArchive`. Subsequent reads from it will return its default value.
   public mutating func clearNumberArchive() {self._numberArchive = nil}
 
@@ -401,7 +191,7 @@ public struct TSCH_ChartsNSNumberDoubleArchive: Sendable {
   fileprivate var _numberArchive: Double? = nil
 }
 
-public struct TSCH_ChartsNSArrayOfNSNumberDoubleArchive: Sendable {
+public nonisolated struct TSCH_ChartsNSArrayOfNSNumberDoubleArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -413,53 +203,53 @@ public struct TSCH_ChartsNSArrayOfNSNumberDoubleArchive: Sendable {
   public init() {}
 }
 
-public struct TSCH_DEPRECATEDChart3DFillArchive: Sendable {
+public nonisolated struct TSCH_DEPRECATEDChart3DFillArchive: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var fill: TSD_FillArchive {
-    get {return _fill ?? TSD_FillArchive()}
+    get {_fill ?? TSD_FillArchive()}
     set {_fill = newValue}
   }
   /// Returns true if `fill` has been explicitly set.
-  public var hasFill: Bool {return self._fill != nil}
+  public var hasFill: Bool {self._fill != nil}
   /// Clears the value of `fill`. Subsequent reads from it will return its default value.
   public mutating func clearFill() {self._fill = nil}
 
   public var lightingmodel: TSCH_Chart3DLightingModelArchive {
-    get {return _lightingmodel ?? TSCH_Chart3DLightingModelArchive()}
+    get {_lightingmodel ?? TSCH_Chart3DLightingModelArchive()}
     set {_lightingmodel = newValue}
   }
   /// Returns true if `lightingmodel` has been explicitly set.
-  public var hasLightingmodel: Bool {return self._lightingmodel != nil}
+  public var hasLightingmodel: Bool {self._lightingmodel != nil}
   /// Clears the value of `lightingmodel`. Subsequent reads from it will return its default value.
   public mutating func clearLightingmodel() {self._lightingmodel = nil}
 
   public var texturesetID: String {
-    get {return _texturesetID ?? String()}
+    get {_texturesetID ?? String()}
     set {_texturesetID = newValue}
   }
   /// Returns true if `texturesetID` has been explicitly set.
-  public var hasTexturesetID: Bool {return self._texturesetID != nil}
+  public var hasTexturesetID: Bool {self._texturesetID != nil}
   /// Clears the value of `texturesetID`. Subsequent reads from it will return its default value.
   public mutating func clearTexturesetID() {self._texturesetID = nil}
 
   public var fillType: TSCH_FillPropertyType {
-    get {return _fillType ?? .undefined}
+    get {_fillType ?? .undefined}
     set {_fillType = newValue}
   }
   /// Returns true if `fillType` has been explicitly set.
-  public var hasFillType: Bool {return self._fillType != nil}
+  public var hasFillType: Bool {self._fillType != nil}
   /// Clears the value of `fillType`. Subsequent reads from it will return its default value.
   public mutating func clearFillType() {self._fillType = nil}
 
   public var seriesIndex: UInt32 {
-    get {return _seriesIndex ?? 0}
+    get {_seriesIndex ?? 0}
     set {_seriesIndex = newValue}
   }
   /// Returns true if `seriesIndex` has been explicitly set.
-  public var hasSeriesIndex: Bool {return self._seriesIndex != nil}
+  public var hasSeriesIndex: Bool {self._seriesIndex != nil}
   /// Clears the value of `seriesIndex`. Subsequent reads from it will return its default value.
   public mutating func clearSeriesIndex() {self._seriesIndex = nil}
 
@@ -474,17 +264,17 @@ public struct TSCH_DEPRECATEDChart3DFillArchive: Sendable {
   fileprivate var _seriesIndex: UInt32? = nil
 }
 
-public struct TSCH_ChartStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_ChartStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -496,17 +286,17 @@ public struct TSCH_ChartStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable 
   fileprivate var _super: TSS_StyleArchive? = nil
 }
 
-public struct TSCH_ChartNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_ChartNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -518,17 +308,17 @@ public struct TSCH_ChartNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendab
   fileprivate var _super: TSS_StyleArchive? = nil
 }
 
-public struct TSCH_LegendStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_LegendStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -540,17 +330,17 @@ public struct TSCH_LegendStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable
   fileprivate var _super: TSS_StyleArchive? = nil
 }
 
-public struct TSCH_LegendNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_LegendNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -562,17 +352,17 @@ public struct TSCH_LegendNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Senda
   fileprivate var _super: TSS_StyleArchive? = nil
 }
 
-public struct TSCH_ChartAxisStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_ChartAxisStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -584,17 +374,17 @@ public struct TSCH_ChartAxisStyleArchive: SwiftProtobuf.ExtensibleMessage, Senda
   fileprivate var _super: TSS_StyleArchive? = nil
 }
 
-public struct TSCH_ChartAxisNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_ChartAxisNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -606,17 +396,17 @@ public struct TSCH_ChartAxisNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Se
   fileprivate var _super: TSS_StyleArchive? = nil
 }
 
-public struct TSCH_ChartSeriesStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_ChartSeriesStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -628,17 +418,17 @@ public struct TSCH_ChartSeriesStyleArchive: SwiftProtobuf.ExtensibleMessage, Sen
   fileprivate var _super: TSS_StyleArchive? = nil
 }
 
-public struct TSCH_ChartSeriesNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_ChartSeriesNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -650,44 +440,44 @@ public struct TSCH_ChartSeriesNonStyleArchive: SwiftProtobuf.ExtensibleMessage, 
   fileprivate var _super: TSS_StyleArchive? = nil
 }
 
-public struct TSCH_GridValue: Sendable {
+public nonisolated struct TSCH_GridValue: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var numericValue: Double {
-    get {return _numericValue ?? 0}
+    get {_numericValue ?? 0}
     set {_numericValue = newValue}
   }
   /// Returns true if `numericValue` has been explicitly set.
-  public var hasNumericValue: Bool {return self._numericValue != nil}
+  public var hasNumericValue: Bool {self._numericValue != nil}
   /// Clears the value of `numericValue`. Subsequent reads from it will return its default value.
   public mutating func clearNumericValue() {self._numericValue = nil}
 
   public var dateValue10: Double {
-    get {return _dateValue10 ?? 0}
+    get {_dateValue10 ?? 0}
     set {_dateValue10 = newValue}
   }
   /// Returns true if `dateValue10` has been explicitly set.
-  public var hasDateValue10: Bool {return self._dateValue10 != nil}
+  public var hasDateValue10: Bool {self._dateValue10 != nil}
   /// Clears the value of `dateValue10`. Subsequent reads from it will return its default value.
   public mutating func clearDateValue10() {self._dateValue10 = nil}
 
   public var durationValue: Double {
-    get {return _durationValue ?? 0}
+    get {_durationValue ?? 0}
     set {_durationValue = newValue}
   }
   /// Returns true if `durationValue` has been explicitly set.
-  public var hasDurationValue: Bool {return self._durationValue != nil}
+  public var hasDurationValue: Bool {self._durationValue != nil}
   /// Clears the value of `durationValue`. Subsequent reads from it will return its default value.
   public mutating func clearDurationValue() {self._durationValue = nil}
 
   public var dateValue: Double {
-    get {return _dateValue ?? 0}
+    get {_dateValue ?? 0}
     set {_dateValue = newValue}
   }
   /// Returns true if `dateValue` has been explicitly set.
-  public var hasDateValue: Bool {return self._dateValue != nil}
+  public var hasDateValue: Bool {self._dateValue != nil}
   /// Clears the value of `dateValue`. Subsequent reads from it will return its default value.
   public mutating func clearDateValue() {self._dateValue = nil}
 
@@ -701,7 +491,7 @@ public struct TSCH_GridValue: Sendable {
   fileprivate var _dateValue: Double? = nil
 }
 
-public struct TSCH_GridRow: Sendable {
+public nonisolated struct TSCH_GridRow: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -713,17 +503,17 @@ public struct TSCH_GridRow: Sendable {
   public init() {}
 }
 
-public struct TSCH_ReferenceLineStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_ReferenceLineStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -735,17 +525,17 @@ public struct TSCH_ReferenceLineStyleArchive: SwiftProtobuf.ExtensibleMessage, S
   fileprivate var _super: TSS_StyleArchive? = nil
 }
 
-public struct TSCH_ReferenceLineNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
+public nonisolated struct TSCH_ReferenceLineNonStyleArchive: SwiftProtobuf.ExtensibleMessage, Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   public var `super`: TSS_StyleArchive {
-    get {return _super ?? TSS_StyleArchive()}
+    get {_super ?? TSS_StyleArchive()}
     set {_super = newValue}
   }
   /// Returns true if ``super`` has been explicitly set.
-  public var hasSuper: Bool {return self._super != nil}
+  public var hasSuper: Bool {self._super != nil}
   /// Clears the value of ``super``. Subsequent reads from it will return its default value.
   public mutating func clearSuper() {self._super = nil}
 
@@ -759,112 +549,39 @@ public struct TSCH_ReferenceLineNonStyleArchive: SwiftProtobuf.ExtensibleMessage
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "TSCH"
+fileprivate nonisolated let _protobuf_package = "TSCH"
 
-extension TSCH_ChartType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "undefinedChartType"),
-    1: .same(proto: "columnChartType2D"),
-    2: .same(proto: "barChartType2D"),
-    3: .same(proto: "lineChartType2D"),
-    4: .same(proto: "areaChartType2D"),
-    5: .same(proto: "pieChartType2D"),
-    6: .same(proto: "stackedColumnChartType2D"),
-    7: .same(proto: "stackedBarChartType2D"),
-    8: .same(proto: "stackedAreaChartType2D"),
-    9: .same(proto: "scatterChartType2D"),
-    10: .same(proto: "mixedChartType2D"),
-    11: .same(proto: "twoAxisChartType2D"),
-    12: .same(proto: "columnChartType3D"),
-    13: .same(proto: "barChartType3D"),
-    14: .same(proto: "lineChartType3D"),
-    15: .same(proto: "areaChartType3D"),
-    16: .same(proto: "pieChartType3D"),
-    17: .same(proto: "stackedColumnChartType3D"),
-    18: .same(proto: "stackedBarChartType3D"),
-    19: .same(proto: "stackedAreaChartType3D"),
-    20: .same(proto: "multiDataColumnChartType2D"),
-    21: .same(proto: "multiDataBarChartType2D"),
-    22: .same(proto: "bubbleChartType2D"),
-    23: .same(proto: "multiDataScatterChartType2D"),
-    24: .same(proto: "multiDataBubbleChartType2D"),
-    25: .same(proto: "donutChartType2D"),
-    26: .same(proto: "donutChartType3D"),
-    27: .same(proto: "radarChartType2D"),
-  ]
+nonisolated extension TSCH_ChartType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0undefinedChartType\0\u{1}columnChartType2D\0\u{1}barChartType2D\0\u{1}lineChartType2D\0\u{1}areaChartType2D\0\u{1}pieChartType2D\0\u{1}stackedColumnChartType2D\0\u{1}stackedBarChartType2D\0\u{1}stackedAreaChartType2D\0\u{1}scatterChartType2D\0\u{1}mixedChartType2D\0\u{1}twoAxisChartType2D\0\u{1}columnChartType3D\0\u{1}barChartType3D\0\u{1}lineChartType3D\0\u{1}areaChartType3D\0\u{1}pieChartType3D\0\u{1}stackedColumnChartType3D\0\u{1}stackedBarChartType3D\0\u{1}stackedAreaChartType3D\0\u{1}multiDataColumnChartType2D\0\u{1}multiDataBarChartType2D\0\u{1}bubbleChartType2D\0\u{1}multiDataScatterChartType2D\0\u{1}multiDataBubbleChartType2D\0\u{1}donutChartType2D\0\u{1}donutChartType3D\0\u{1}radarChartType2D\0")
 }
 
-extension TSCH_AxisType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "axis_type_unknown"),
-    1: .same(proto: "axis_type_x"),
-    2: .same(proto: "axis_type_y"),
-    3: .same(proto: "axis_type_pie"),
-    4: .same(proto: "axis_type_size"),
-    5: .same(proto: "axis_type_polar_radius"),
-    6: .same(proto: "axis_type_polar_angle"),
-  ]
+nonisolated extension TSCH_AxisType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0axis_type_unknown\0\u{1}axis_type_x\0\u{1}axis_type_y\0\u{1}axis_type_pie\0\u{1}axis_type_size\0\u{1}axis_type_polar_radius\0\u{1}axis_type_polar_angle\0")
 }
 
-extension TSCH_ScatterFormat: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "scatter_format_unknown"),
-    1: .same(proto: "scatter_format_separate_x"),
-    2: .same(proto: "scatter_format_shared_x"),
-  ]
+nonisolated extension TSCH_ScatterFormat: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0scatter_format_unknown\0\u{1}scatter_format_separate_x\0\u{1}scatter_format_shared_x\0")
 }
 
-extension TSCH_SeriesDirection: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "series_direction_unknown"),
-    1: .same(proto: "series_direction_by_row"),
-    2: .same(proto: "series_direction_by_column"),
-  ]
+nonisolated extension TSCH_SeriesDirection: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0series_direction_unknown\0\u{1}series_direction_by_row\0\u{1}series_direction_by_column\0")
 }
 
-extension TSCH_NumberValueType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    -999: .same(proto: "numberValueTypeUnknown"),
-    0: .same(proto: "numberValueTypeDecimal"),
-    1: .same(proto: "numberValueTypeCurrency"),
-    2: .same(proto: "numberValueTypePercentage"),
-    3: .same(proto: "numberValueTypeScientific"),
-    4: .same(proto: "numberValueTypeFraction"),
-    5: .same(proto: "numberValueTypeBase"),
-  ]
+nonisolated extension TSCH_NumberValueType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}Yp\u{7f}\u{7f}\u{7f}\u{3}numberValueTypeUnknown\0\u{2}g\u{f}numberValueTypeDecimal\0\u{1}numberValueTypeCurrency\0\u{1}numberValueTypePercentage\0\u{1}numberValueTypeScientific\0\u{1}numberValueTypeFraction\0\u{1}numberValueTypeBase\0")
 }
 
-extension TSCH_NegativeNumberStyle: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "negativeNumberStyleMinus"),
-    1: .same(proto: "negativeNumberStyleRed"),
-    2: .same(proto: "negativeNumberStyleParentheses"),
-    3: .same(proto: "negativeNumberStyleRedAndParentheses"),
-    4: .same(proto: "negativeNumberStyleNone"),
-  ]
+nonisolated extension TSCH_NegativeNumberStyle: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}\0negativeNumberStyleMinus\0\u{1}negativeNumberStyleRed\0\u{1}negativeNumberStyleParentheses\0\u{1}negativeNumberStyleRedAndParentheses\0\u{1}negativeNumberStyleNone\0")
 }
 
-extension TSCH_FractionAccuracy: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    -3: .same(proto: "fractionAccuracyUpToThreeDigits"),
-    -2: .same(proto: "fractionAccuracyUpToTwoDigits"),
-    -1: .same(proto: "fractionAccuracyUpToOneDigit"),
-    0: .same(proto: "fractionAccuracyConflicting"),
-    2: .same(proto: "fractionAccuracyHalves"),
-    4: .same(proto: "fractionAccuracyQuarters"),
-    8: .same(proto: "fractionAccuracyEighths"),
-    10: .same(proto: "fractionAccuracyTenths"),
-    16: .same(proto: "fractionAccuracySixteenths"),
-    100: .same(proto: "fractionAccuracyHundredths"),
-  ]
+nonisolated extension TSCH_FractionAccuracy: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{2}}\u{7f}\u{7f}\u{7f}\u{7f}\u{3}fractionAccuracyUpToThreeDigits\0\u{1}fractionAccuracyUpToTwoDigits\0\u{1}fractionAccuracyUpToOneDigit\0\u{1}fractionAccuracyConflicting\0\u{2}\u{2}fractionAccuracyHalves\0\u{2}\u{2}fractionAccuracyQuarters\0\u{2}\u{4}fractionAccuracyEighths\0\u{2}\u{2}fractionAccuracyTenths\0\u{2}\u{6}fractionAccuracySixteenths\0\u{2}T\u{1}fractionAccuracyHundredths\0")
 }
 
-extension TSCH_RectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_RectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RectArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "origin"),
-    2: .same(proto: "size"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}origin\0\u{1}size\0")
 
   public var isInitialized: Bool {
     if self._origin == nil {return false}
@@ -909,11 +626,9 @@ extension TSCH_RectArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
   }
 }
 
-extension TSCH_ChartsNSNumberDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartsNSNumberDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartsNSNumberDoubleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "number_archive"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}number_archive\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -945,11 +660,9 @@ extension TSCH_ChartsNSNumberDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf
   }
 }
 
-extension TSCH_ChartsNSArrayOfNSNumberDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartsNSArrayOfNSNumberDoubleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartsNSArrayOfNSNumberDoubleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "numbers"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}numbers\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -977,15 +690,9 @@ extension TSCH_ChartsNSArrayOfNSNumberDoubleArchive: SwiftProtobuf.Message, Swif
   }
 }
 
-extension TSCH_DEPRECATEDChart3DFillArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_DEPRECATEDChart3DFillArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".DEPRECATEDChart3DFillArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "fill"),
-    2: .same(proto: "lightingmodel"),
-    3: .standard(proto: "textureset_id"),
-    4: .standard(proto: "fill_type"),
-    5: .standard(proto: "series_index"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}fill\0\u{1}lightingmodel\0\u{3}textureset_id\0\u{3}fill_type\0\u{3}series_index\0")
 
   public var isInitialized: Bool {
     if let v = self._fill, !v.isInitialized {return false}
@@ -1043,11 +750,9 @@ extension TSCH_DEPRECATEDChart3DFillArchive: SwiftProtobuf.Message, SwiftProtobu
   }
 }
 
-extension TSCH_ChartStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -1089,11 +794,9 @@ extension TSCH_ChartStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageI
   }
 }
 
-extension TSCH_ChartNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartNonStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -1135,11 +838,9 @@ extension TSCH_ChartNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Messa
   }
 }
 
-extension TSCH_LegendStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_LegendStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LegendStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -1181,11 +882,9 @@ extension TSCH_LegendStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Message
   }
 }
 
-extension TSCH_LegendNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_LegendNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".LegendNonStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -1227,11 +926,9 @@ extension TSCH_LegendNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCH_ChartAxisStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartAxisStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartAxisStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -1273,11 +970,9 @@ extension TSCH_ChartAxisStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Mess
   }
 }
 
-extension TSCH_ChartAxisNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartAxisNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartAxisNonStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -1319,11 +1014,9 @@ extension TSCH_ChartAxisNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._M
   }
 }
 
-extension TSCH_ChartSeriesStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSeriesStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSeriesStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -1365,11 +1058,9 @@ extension TSCH_ChartSeriesStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._Me
   }
 }
 
-extension TSCH_ChartSeriesNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ChartSeriesNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ChartSeriesNonStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -1411,14 +1102,9 @@ extension TSCH_ChartSeriesNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf.
   }
 }
 
-extension TSCH_GridValue: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_GridValue: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GridValue"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "numeric_value"),
-    2: .standard(proto: "date_value_1_0"),
-    3: .standard(proto: "duration_value"),
-    4: .standard(proto: "date_value"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}numeric_value\0\u{3}date_value_1_0\0\u{3}duration_value\0\u{3}date_value\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1465,11 +1151,9 @@ extension TSCH_GridValue: SwiftProtobuf.Message, SwiftProtobuf._MessageImplement
   }
 }
 
-extension TSCH_GridRow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_GridRow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GridRow"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "value"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}value\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1497,11 +1181,9 @@ extension TSCH_GridRow: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementat
   }
 }
 
-extension TSCH_ReferenceLineStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ReferenceLineStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ReferenceLineStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}
@@ -1543,11 +1225,9 @@ extension TSCH_ReferenceLineStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._
   }
 }
 
-extension TSCH_ReferenceLineNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+nonisolated extension TSCH_ReferenceLineNonStyleArchive: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".ReferenceLineNonStyleArchive"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "super"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}super\0")
 
   public var isInitialized: Bool {
     if !_protobuf_extensionFieldValues.isInitialized {return false}

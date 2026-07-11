@@ -13,13 +13,21 @@ theme, Apple's or your own.
 
 ## Authoring a template
 
-The fastest path is the bundled script, which turns any installed Keynote
-theme into a full template — one tagged slide per master the theme defines
-(Apple's basic themes carry 17):
+The fastest path is the bundled script, which turns a Keynote theme into a
+full template — one tagged slide per master the theme defines (Apple's basic
+themes carry 17). It accepts an installed theme by name, a custom theme file
+(`.kth`), or any existing document:
 
 ```bash
-scripts/make-template.sh "Basic Black" BasicBlack-template.key
+scripts/make-template.sh "Basic Black"   BasicBlack-template.key   # installed theme
+scripts/make-template.sh MyBrand.kth     Brand-template.key        # custom .kth
+scripts/make-template.sh Existing.key    template.key              # any document
 ```
+
+A `.kth` is the same container format as a `.key`, so ``KeynoteWriter`` can
+also use one *directly* as a template — but a theme file ships with a single
+example slide, so you get that one layout for every slide. Running it through
+the script above is what unlocks all of the theme's layouts.
 
 Each slide is tagged with its master's name, so `layout: Statement`,
 `layout: quote`, and `layout: Title & Bullets` all work immediately.

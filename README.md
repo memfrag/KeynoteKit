@@ -30,6 +30,9 @@ Early development. Working today:
     with fresh identifiers, rewriting internal references while preserving
     external style/theme references, and maintaining all package metadata),
     remove, and reorder
+  - **Image replacement**: swaps a `Data/` image in place, re-renders the
+    Keynote-generated preview at its original size, and updates the SHA-1
+    digests in both `PackageMetadata` and `DocumentMetadata`
   - Schema-guided wire-format walking (`ReferenceRewriter` +
     generated `MessageFieldMap`) to find/rewrite every `TSP.Reference` in any
     payload without full decoding
@@ -65,6 +68,10 @@ swift run iwatool replace In.key Out.key "old text" "new text"
 swift run iwatool duplicate-slide In.key Out.key 0
 swift run iwatool remove-slide In.key Out.key 2
 swift run iwatool move-slide In.key Out.key 0 3
+
+# Replace an image (by its original file name)
+swift run iwatool list-media In.key
+swift run iwatool replace-image In.key Out.key photo.jpg new-photo.jpg
 ```
 
 ## Regenerating the schemas

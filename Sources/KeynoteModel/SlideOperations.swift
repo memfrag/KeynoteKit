@@ -249,18 +249,8 @@ extension KeynoteDocument {
 
     // MARK: Helpers
 
-    struct RecordLocation {
-        let component: Int
-        let record: Int
-    }
-
     private func locate(type: UInt32, orThrow error: SlideOperationError) throws -> RecordLocation {
-        for (componentIndex, component) in components.enumerated() {
-            if let recordIndex = component.records.firstIndex(where: { $0.primaryType == type }) {
-                return RecordLocation(component: componentIndex, record: recordIndex)
-            }
-        }
-        throw error
+        try locateRecord(type: type, orThrow: error)
     }
 
     private func locateNode(_ nodeID: UInt64) throws -> RecordLocation {

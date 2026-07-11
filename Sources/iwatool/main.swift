@@ -13,6 +13,9 @@ usage:
   iwatool duplicate-slide <in.key> <out.key> <index>   duplicate slide (0-based)
   iwatool remove-slide <in.key> <out.key> <index>      remove slide (0-based)
   iwatool move-slide <in.key> <out.key> <from> <to>    reorder slides (0-based)
+  iwatool replace-image <in.key> <out.key> <name> <image-file>
+                                                 replace an image (by original file name)
+  iwatool list-media <file.key>                  list Data/ files
 """
 
 func fail(_ message: String) -> Never {
@@ -128,6 +131,21 @@ case "duplicate-slide", "remove-slide", "move-slide":
         print("moved slide \(index) → \(to)")
     }
     try document.write(to: outputURL)
+
+case "list-media":
+    let document = try KeynoteDocument(contentsOf: inputURL)
+    for name in document.mediaFileNames {
+        print(name)
+    }
+
+case "replace-image":
+    guard arguments.count >= 6 else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    let newData = try Data(contentsOf: URL(fileURLWithPath: arguments[5]))
+    let replaced = try document.replaceImage(named: arguments[4], with: newData)
+    try document.write(to: outputURL)
+    print("replaced \(replaced.joined(separator: ", "))")
 
 default:
     fail(usage)

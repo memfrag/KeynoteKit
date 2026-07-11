@@ -52,7 +52,36 @@ public struct KeynoteDocument {
         components.removeAll { $0.path == path }
     }
 
+    // MARK: Archive entries
+
+    public var entryPaths: [String] {
+        archive.entries.map(\.path)
+    }
+
+    public func dataForEntry(at path: String) -> Data? {
+        archive.entry(at: path)?.data
+    }
+
+    public mutating func replaceEntryData(at path: String, with data: Data) {
+        archive.replaceEntry(at: path, with: data)
+    }
+
     // MARK: Lookup
+
+    struct RecordLocation {
+        let component: Int
+        let record: Int
+    }
+
+    /// Locates the first record with the given primary message type.
+    func locateRecord(type: UInt32, orThrow error: any Error) throws -> RecordLocation {
+        for (componentIndex, component) in components.enumerated() {
+            if let recordIndex = component.records.firstIndex(where: { $0.primaryType == type }) {
+                return RecordLocation(component: componentIndex, record: recordIndex)
+            }
+        }
+        throw error
+    }
 
     /// Visits every record of a given message type across all components.
     /// The `body` closure returns a mutated record to store back, or nil to

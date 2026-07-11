@@ -53,6 +53,10 @@ Early development. Working today:
     encodes numbers in Keynote's base-10 decimal format. Edit `cells` in a
     scene tree (or `iwatool set-cell`) to change table content; structure
     (row/column count) is fixed — clone a template table sized to fit.
+  - **Slide transitions**: read/set/remove (`slideTransition(at:)`,
+    `setSlideTransition(at:to:)`) with effect (`"apple:dissolve"`,
+    `"apple:push"`, …), duration, delay, and auto-advance; editable as
+    `transition` on the scene tree.
   - **Node-addressed edit commands** (the AI-facing write interface):
     `setNodeText`, `setNodeFrame`, `setNodeMedia` (replaces image content —
     including unmaterialized theme stock photos, by creating fresh data
@@ -312,6 +316,7 @@ swift run iwatool set-media In.key Out.key 2652703 photo.jpg
 swift run iwatool delete-node In.key Out.key 2652817
 swift run iwatool clone-node In.key Out.key 2652817 4      # add: clone node onto slide 4
 swift run iwatool set-cell In.key Out.key 2652488 1 2 "31500"   # table cell (row 1, col 2)
+swift run iwatool set-transition In.key Out.key 0 apple:dissolve 1.5
 swift run iwatool apply-tree In.key Out.key edited-tree.json
 ```
 

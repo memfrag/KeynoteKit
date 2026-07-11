@@ -24,6 +24,9 @@ usage:
   iwatool clone-node <in.key> <out.key> <node-id> <slide-index>   clone a drawable onto a slide
   iwatool set-cell <in.key> <out.key> <node-id> <row> <col> <value>
                                                  set a table cell (numeric value -> number cell)
+  iwatool set-transition <in.key> <out.key> <slide-index> <effect> [duration]
+                                                 set a slide transition (e.g. apple:dissolve;
+                                                 "none" removes it)
   iwatool apply-tree <in.key> <out.key> <tree.json>         apply an edited scene tree
                                                  (node ids come from 'iwatool tree')
   iwatool build <outline.txt> <out.key>          build a deck from a simple outline
@@ -211,6 +214,23 @@ case "clone-node":
     let newID = try document.cloneDrawable(nodeID, toSlideAt: slideIndex)
     try document.write(to: outputURL)
     print("cloned node \(nodeID) onto slide \(slideIndex) as node \(newID)")
+
+case "set-transition":
+    guard arguments.count >= 6, let slideIndex = Int(arguments[4]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    let effect = arguments[5]
+    if effect == "none" {
+        try document.setSlideTransition(at: slideIndex, to: nil)
+    } else {
+        let duration = arguments.count >= 7 ? Double(arguments[6]) ?? 1.0 : 1.0
+        try document.setSlideTransition(
+            at: slideIndex,
+            to: SlideTransition(effect: effect, duration: duration)
+        )
+    }
+    try document.write(to: outputURL)
+    print("set transition of slide \(slideIndex) to \(effect)")
 
 case "set-cell":
     guard arguments.count >= 8, let nodeID = UInt64(arguments[4]),

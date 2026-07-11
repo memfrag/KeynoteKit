@@ -122,6 +122,11 @@ extension KeynoteDocument {
         if let editedNotes = edited.notes, editedNotes != currentNotes {
             try setSlideText(at: edited.slideIndex, .notes, to: editedNotes)
         }
+
+        // Transition.
+        if edited.transition != current.transition {
+            try setSlideTransition(at: edited.slideIndex, to: edited.transition)
+        }
     }
 
     private func mediaReplacement(for node: SceneNode, explicit: Data?) throws -> Data? {

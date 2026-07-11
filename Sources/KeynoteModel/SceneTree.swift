@@ -11,6 +11,8 @@ public struct SceneTree: Codable {
     public var slideIndex: Int
     public var master: String?
     public var notes: String?
+    /// The transition to the next slide (editable; nil = none).
+    public var transition: SlideTransition?
     /// Placeholders first (title, body, object, slideNumber), then free
     /// drawables in z-order, back to front.
     public var nodes: [SceneNode]
@@ -140,6 +142,7 @@ extension KeynoteDocument {
             slideIndex: index,
             master: masterName,
             notes: try slideNotes(at: index),
+            transition: try slideTransition(at: index),
             nodes: nodes
         )
     }

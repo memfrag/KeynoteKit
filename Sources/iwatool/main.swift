@@ -1,10 +1,14 @@
 import Foundation
 import IWAContainer
+import KeynoteModel
 
 let usage = """
 usage:
-  iwatool info <file.key>              list entries, records per .iwa component
-  iwatool roundtrip <in.key> <out.key> unpack, re-encode every .iwa, repack
+  iwatool info <file.key>                        list entries, records per .iwa component
+  iwatool roundtrip <in.key> <out.key>           unpack, re-encode every .iwa, repack
+  iwatool text <file.key>                        print all text storages
+  iwatool replace <in.key> <out.key> <find> <replacement>
+                                                 replace text across the document
 """
 
 func fail(_ message: String) -> Never {
@@ -61,6 +65,20 @@ case "roundtrip":
         }
     }
     print("roundtrip OK: \(outArchive.entries.count) entries, decompressed payloads identical")
+
+case "text":
+    let document = try KeynoteDocument(contentsOf: inputURL)
+    for text in TextReplacement.allText(in: document) {
+        print(text.replacingOccurrences(of: "\u{2029}", with: "\\n"))
+    }
+
+case "replace":
+    guard arguments.count >= 6 else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    let count = try TextReplacement.replace(arguments[4], with: arguments[5], in: &document)
+    try document.write(to: outputURL)
+    print("replaced in \(count) text storage(s)")
 
 default:
     fail(usage)

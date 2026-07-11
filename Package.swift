@@ -53,7 +53,8 @@ let package = Package(
         ),
         .testTarget(
             name: "KeynoteBuilderTests",
-            dependencies: ["KeynoteBuilder", "KeynoteModel"]
+            dependencies: ["KeynoteBuilder", "KeynoteModel"],
+            resources: [.copy("Resources/template.key")]
         ),
     ]
 )

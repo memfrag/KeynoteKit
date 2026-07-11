@@ -9,7 +9,7 @@ struct KeynoteWriterTests {
     private func buildAndReread(_ presentation: Presentation) throws -> KeynoteDocument {
         let writer = try KeynoteWriter()
         let url = FileManager.default.temporaryDirectory
-            .appendingPathComponent("build-\(presentation.slides.count).key")
+            .appendingPathComponent("build-\(UUID().uuidString).key")
         try writer.write(presentation, to: url)
         defer { try? FileManager.default.removeItem(at: url) }
         return try KeynoteDocument(contentsOf: url)

@@ -68,10 +68,17 @@ public enum MarkdownPresentation {
         var bodyParagraphs: [String] = []
         var noteLines: [String] = []
         var collectedImages: [String] = []
+        var layout: String?
         var inNotes = false
 
         for rawLine in block.components(separatedBy: "\n") {
             let line = rawLine.trimmingCharacters(in: .whitespaces)
+
+            // Layout directive: `<!-- layout: quote -->` or `layout: quote`.
+            if let name = layoutDirective(line) {
+                layout = name
+                continue
+            }
 
             // Notes section: `Notes:` or `<!-- notes: … -->`.
             if let noteBody = notesDirective(line) {
@@ -108,13 +115,14 @@ public enum MarkdownPresentation {
             ? nil
             : noteLines.joined(separator: "\n").trimmingCharacters(in: .whitespacesAndNewlines)
 
-        if title == nil, bodyParagraphs.isEmpty, notes == nil, collectedImages.isEmpty {
+        if title == nil, bodyParagraphs.isEmpty, notes == nil, collectedImages.isEmpty, layout == nil {
             return nil
         }
         return Slide(
             title: title,
             body: bodyParagraphs.isEmpty ? nil : bodyParagraphs.joined(separator: "\n"),
             notes: notes,
+            layout: layout,
             imagePaths: collectedImages
         )
     }
@@ -131,6 +139,25 @@ public enum MarkdownPresentation {
             let trimmed = inner.trimmingCharacters(in: .whitespaces)
             if trimmed.lowercased().hasPrefix(notesPrefix) {
                 return String(trimmed.dropFirst(notesPrefix.count)).trimmingCharacters(in: .whitespaces)
+            }
+        }
+        return nil
+    }
+
+    private static let layoutPrefix = "layout:"
+
+    private static func layoutDirective(_ line: String) -> String? {
+        let lower = line.lowercased()
+        if lower.hasPrefix(layoutPrefix) {
+            return String(line.dropFirst(layoutPrefix.count)).trimmingCharacters(in: .whitespaces)
+        }
+        if lower.hasPrefix("<!--"), lower.contains(layoutPrefix) {
+            var inner = line
+            inner.removeFirst(4)
+            if let range = inner.range(of: "-->") { inner.removeSubrange(range.lowerBound..<inner.endIndex) }
+            let trimmed = inner.trimmingCharacters(in: .whitespaces)
+            if trimmed.lowercased().hasPrefix(layoutPrefix) {
+                return String(trimmed.dropFirst(layoutPrefix.count)).trimmingCharacters(in: .whitespaces)
             }
         }
         return nil

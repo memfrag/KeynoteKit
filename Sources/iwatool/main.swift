@@ -18,7 +18,9 @@ usage:
                                                  replace an image (by original file name)
   iwatool list-media <file.key>                  list Data/ files
   iwatool build <outline.txt> <out.key>          build a deck from a simple outline
-  iwatool build-md <slides.md> <out.key>         build a deck from a markdown presentation
+  iwatool build-md <slides.md> <out.key> [template.key]
+                                                 build a deck from a markdown presentation,
+                                                 optionally using a multi-layout template
   iwatool set-title <in.key> <out.key> <index> <text>   set a slide's title
 """
 
@@ -136,6 +138,14 @@ case "duplicate-slide", "remove-slide", "move-slide":
     }
     try document.write(to: outputURL)
 
+case "masters":
+    let document = try KeynoteDocument(contentsOf: inputURL)
+    for i in 0..<document.slideCount {
+        let master = (try? document.slideMasterName(at: i)) ?? nil
+        let title = (try? document.slideTitle(at: i)) ?? nil
+        print("slide \(i): master=\(master ?? "?")  title=\(title ?? "-")")
+    }
+
 case "list-media":
     let document = try KeynoteDocument(contentsOf: inputURL)
     for name in document.mediaFileNames {
@@ -189,9 +199,10 @@ case "build":
 case "build-md":
     guard arguments.count >= 4 else { fail(usage) }
     let outputURL = URL(fileURLWithPath: arguments[3])
+    let templateURL = arguments.count >= 5 ? URL(fileURLWithPath: arguments[4]) : nil
     let presentation = try Presentation(markdownFileURL: inputURL)
     let imageCount = presentation.slides.reduce(0) { $0 + $1.imagePaths.count }
-    let writer = try KeynoteWriter()
+    let writer = try KeynoteWriter(templateURL: templateURL)
     try writer.write(presentation, to: outputURL)
     var message = "built \(presentation.slides.count)-slide deck from markdown"
     if imageCount > 0 {

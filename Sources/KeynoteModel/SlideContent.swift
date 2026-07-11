@@ -39,6 +39,31 @@ extension KeynoteDocument {
         try slideText(at: index, .notes)
     }
 
+    /// The name of the master (slide layout) a slide is based on, e.g.
+    /// "Title & Bullets" — resolved through `SlideArchive.template_slide`.
+    /// `nil` if the slide has no master reference or it can't be resolved.
+    public func slideMasterName(at index: Int) throws -> String? {
+        let nodeIDs = try slideNodeIdentifiers()
+        guard nodeIDs.indices.contains(index) else {
+            throw SlideContentError.slideIndexOutOfRange(index)
+        }
+        let node = try recordAnywhere(identifier: nodeIDs[index], type: 4).decode(KN_SlideNodeArchive.self)
+        let slideRootID = node.slide.identifier
+        guard let slideRecord = components
+            .flatMap(\.records)
+            .first(where: { $0.identifier == slideRootID })
+        else { return nil }
+        let slide = try slideRecord.decode(KN_SlideArchive.self)
+        guard slide.hasTemplateSlide else { return nil }
+        let masterID = slide.templateSlide.identifier
+        guard let masterRecord = components
+            .flatMap(\.records)
+            .first(where: { $0.identifier == masterID && $0.primaryType == 5 })
+        else { return nil }
+        let master = try masterRecord.decode(KN_SlideArchive.self)
+        return master.hasName ? master.name : nil
+    }
+
     public func slideText(at index: Int, _ placeholder: SlidePlaceholder) throws -> String? {
         let location = try storageLocation(slideIndex: index, placeholder: placeholder)
         guard let location else { return nil }

@@ -47,9 +47,16 @@ Early development. Working today:
     use a branded theme.
   - **Markdown presentations**: a Marp/Deckset-style format
     (`Presentation(markdown:)`) — `---` separates slides, the first heading is
-    the title, bullets/paragraphs become the body, and `Notes:` (or
-    `<!-- notes: … -->`) adds presenter notes. Image references are parsed and
-    carried but not yet placed (M4).
+    the title, bullets/paragraphs become the body, `Notes:` (or
+    `<!-- notes: … -->`) adds presenter notes, and `<!-- layout: quote -->`
+    picks a layout. Image references are parsed and carried but not yet
+    placed (M4).
+  - **Multi-layout templates**: point `KeynoteWriter` at a template `.key`
+    whose slides each demonstrate a layout, tagged in their presenter notes
+    (`@layout: quote`) or identified by their master (slide-layout) name. Each
+    content slide is cloned from the matching template slide, so it inherits
+    that layout's real masters and styling. Design the template in Keynote;
+    the builder rearranges and fills it.
 - **`iwatool`** — CLI for inspecting, round-tripping, and rewriting `.key` files
 
 Files generated or modified through KeynoteKit open cleanly in Keynote with
@@ -100,6 +107,48 @@ let deck = try Presentation(markdownFileURL: URL(filePath: "talk.md"))
 try KeynoteWriter().write(deck, to: URL(filePath: "talk.key"))
 ```
 
+### Using a template deck for multiple layouts
+
+Build a `.key` in Keynote with one slide per layout you want, and tag each in
+its presenter notes:
+
+```
+@layout: title       ← on a slide using the Title layout
+@layout: bullets     ← on a Title & Bullets slide
+@layout: statement   ← on a Statement slide
+```
+
+Then reference layouts from markdown and point the writer at the template:
+
+```markdown
+# The big idea
+<!-- layout: statement -->
+
+---
+
+# Details
+<!-- layout: bullets -->
+
+- First point
+- Second point
+```
+
+```swift
+let writer = try KeynoteWriter(templateURL: URL(filePath: "MyTemplate.key"))
+try writer.write(Presentation(markdownFileURL: URL(filePath: "talk.md")),
+                 to: URL(filePath: "talk.key"))
+```
+
+Title-primary layouts (Title, Section, Title & Bullets) take the heading as
+the slide title and bullets/paragraphs as the body. Body-primary layouts
+(Statement, Big Fact — configurable via `bodyPrimaryLayouts`) route the text
+into the body placeholder so it renders as the prominent text.
+
+> **Known limitation:** layouts whose main text lives in a dedicated *object*
+> placeholder rather than the title or body — Keynote's Quote (its large quote
+> text) and the Photo layouts — aren't filled correctly yet; object-placeholder
+> support lands with M4.
+
 ## Usage
 
 ```sh
@@ -130,8 +179,12 @@ swift run iwatool replace-image In.key Out.key photo.jpg new-photo.jpg
 # Build a deck from a text outline ("# " starts a slide; other lines are body)
 swift run iwatool build outline.txt Deck.key
 
-# Build a deck from a markdown presentation
+# Build a deck from a markdown presentation (optionally with a layout template)
 swift run iwatool build-md talk.md Deck.key
+swift run iwatool build-md talk.md Deck.key MyTemplate.key
+
+# Show the master (slide layout) each slide uses
+swift run iwatool masters Deck.key
 ```
 
 ## Regenerating the schemas

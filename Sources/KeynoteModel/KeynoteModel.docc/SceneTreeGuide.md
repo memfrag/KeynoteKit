@@ -74,9 +74,9 @@ try document.setNodeMedia(imageID, to: try Data(contentsOf: photoURL))
 try document.setNodeFrame(imageID, to: Frame(x: 950, y: 250, width: 500, height: 375))
 ```
 
-A cloned image initially shares the source's media data; ``setNodeMedia``
-detects this and gives the clone its own fresh data, so replacing one
-image's content never disturbs the other.
+A cloned image initially shares the source's media data;
+``KeynoteDocument/setNodeMedia(_:to:)`` detects this and gives the clone its
+own fresh data, so replacing one image's content never disturbs the other.
 
 Keep a "palette" slide of prototype elements — a text box, an image box, a
 shape — and clone from it to compose slides element by element.

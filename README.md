@@ -38,6 +38,10 @@ Early development. Working today:
     payload without full decoding
   - Per-slide title/body reading and editing (`slideTitle`/`setSlideText`),
     navigating `SlideArchive` → placeholder → `StorageArchive`
+  - Layout introspection (`layoutDescriptions()`): for each slide, its master
+    and every fillable placeholder with role, kind, prompt text, content type
+    (text/media), and geometry — enough for a tool or AI to decide how to fill
+    a template without hard-coding theme knowledge
 - **`KeynoteBuilder`** — the high-level API:
   - Describe a `Presentation` of `Slide`s (title, body, presenter notes)
     declaratively and write it to a `.key`. Uses a template strategy — an
@@ -144,10 +148,15 @@ the slide title and bullets/paragraphs as the body. Body-primary layouts
 (Statement, Big Fact — configurable via `bodyPrimaryLayouts`) route the text
 into the body placeholder so it renders as the prominent text.
 
-> **Known limitation:** layouts whose main text lives in a dedicated *object*
-> placeholder rather than the title or body — Keynote's Quote (its large quote
-> text) and the Photo layouts — aren't filled correctly yet; object-placeholder
-> support lands with M4.
+Which placeholder receives single-block content is inferred from the layout
+(the larger of the title/body placeholders wins), so Statement and Quote route
+their text to the prominent body placeholder automatically — no per-theme
+configuration. Use `iwatool describe-template` to see how a template's layouts
+are structured.
+
+> **Known limitation:** layouts whose content is a dedicated *media/object*
+> placeholder — the Photo layouts, and markdown `![](…)` images — aren't filled
+> yet; image placement is the next M4 increment.
 
 ## Usage
 
@@ -185,6 +194,9 @@ swift run iwatool build-md talk.md Deck.key MyTemplate.key
 
 # Show the master (slide layout) each slide uses
 swift run iwatool masters Deck.key
+
+# Describe a template's layouts as JSON (role/kind/prompt/frame per placeholder)
+swift run iwatool describe-template MyTemplate.key
 ```
 
 ## Regenerating the schemas

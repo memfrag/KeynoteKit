@@ -22,6 +22,8 @@ usage:
                                                  build a deck from a markdown presentation,
                                                  optionally using a multi-layout template
   iwatool set-title <in.key> <out.key> <index> <text>   set a slide's title
+  iwatool describe-template <file.key>           JSON: each slide's layout tag, master, and
+                                                 fillable placeholders (role/kind/prompt/frame)
 """
 
 func fail(_ message: String) -> Never {
@@ -137,6 +139,31 @@ case "duplicate-slide", "remove-slide", "move-slide":
         print("moved slide \(index) → \(to)")
     }
     try document.write(to: outputURL)
+
+case "describe-template":
+    let document = try KeynoteDocument(contentsOf: inputURL)
+    let library = try TemplateLibrary(document: document)
+    // Enrich each layout description with its @layout: tag and any layout key
+    // that resolves to it, so an AI knows both what the slide is for and how
+    // to request it.
+    struct DescribedLayout: Encodable {
+        let index: Int
+        let tag: String?
+        let master: String?
+        let fields: [KeynoteModel.PlaceholderField]
+    }
+    let descriptions = try document.layoutDescriptions()
+    let tagByIndex = Dictionary(
+        library.entries.compactMap { entry in entry.tag.map { (entry.slideIndex, $0) } },
+        uniquingKeysWith: { first, _ in first }
+    )
+    let output = descriptions.map {
+        DescribedLayout(index: $0.index, tag: tagByIndex[$0.index], master: $0.masterName, fields: $0.fields)
+    }
+    let encoder = JSONEncoder()
+    encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
+    FileHandle.standardOutput.write(try encoder.encode(output))
+    print()
 
 case "masters":
     let document = try KeynoteDocument(contentsOf: inputURL)

@@ -26,13 +26,12 @@ public struct KeynoteWriter {
     /// layout, the template's first slide is used.
     public var defaultLayout: String
 
-    /// Layouts whose prominent text is the body placeholder rather than the
-    /// title (e.g. Keynote's Statement, Quote, Big Fact — their masters put
-    /// the main text in the body and keep the title as a small secondary
-    /// label). For these, a slide's title and body are joined into the body
-    /// placeholder. Keys are matched case-insensitively against the layout
-    /// name/tag. Override to match a custom theme.
-    public var bodyPrimaryLayouts: Set<String> = ["statement", "quote", "big fact"]
+    /// Optional override for which layouts are body-primary (their prominent
+    /// text is the body placeholder, not the title). Normally left empty: the
+    /// writer infers it per slide by comparing the title and body placeholder
+    /// areas from the layout, so it adapts to any theme without configuration.
+    /// Keys are matched case-insensitively against the layout name/tag.
+    public var bodyPrimaryLayouts: Set<String> = []
 
     public init(templateURL: URL? = nil, defaultLayout: String = "bullets") throws {
         if let templateURL {
@@ -93,12 +92,9 @@ public struct KeynoteWriter {
             // and content accumulates at the tail in order.
             try document.duplicateSlide(at: templateIndex)
             try document.moveSlide(from: templateIndex + 1, to: document.slideCount - 1)
-            try fill(
-                slide,
-                at: templateCount + contentIndex,
-                bodyPrimary: bodyPrimaryLayouts.contains(TemplateLibrary.normalize(requested)),
-                in: &document
-            )
+            let index = templateCount + contentIndex
+            let forceBody = bodyPrimaryLayouts.contains(TemplateLibrary.normalize(requested))
+            try fill(slide, at: index, forceBodyPrimary: forceBody, in: &document)
         }
 
         // Remove the original example slides (now at the front).
@@ -118,30 +114,42 @@ public struct KeynoteWriter {
         while current > target { try document.removeSlide(at: current - 1); current -= 1 }
 
         for (index, slide) in presentation.slides.enumerated() {
-            try fill(slide, at: index, bodyPrimary: false, in: &document)
+            try fill(slide, at: index, forceBodyPrimary: false, in: &document)
         }
+    }
+
+    /// Whether a layout's prominent text placeholder is the body rather than
+    /// the title — inferred by comparing their areas, so it adapts to any
+    /// theme. (Statement, Quote, Big Fact are body-primary; Title, Section,
+    /// Title & Bullets are title-primary.) Used only to place single-text
+    /// content; when a slide has both a title and a body they map directly.
+    private func isBodyPrimary(at index: Int, in document: KeynoteDocument) -> Bool {
+        guard let fields = try? document.layoutDescription(at: index).fields else { return false }
+        func area(_ role: String) -> Double {
+            guard let frame = fields.first(where: { $0.role == role })?.frame else { return 0 }
+            return frame.width * frame.height
+        }
+        let bodyArea = area("body")
+        return bodyArea > 0 && bodyArea > area("title")
     }
 
     private func fill(
         _ slide: Slide,
         at index: Int,
-        bodyPrimary: Bool,
+        forceBodyPrimary: Bool,
         in document: inout KeynoteDocument
     ) throws {
-        if bodyPrimary {
-            // The layout's prominent placeholder is the body; fold the title
-            // and body into it (e.g. a quote followed by its attribution).
-            let text = [slide.title, slide.body].compactMap { $0 }.joined(separator: "\n")
-            if !text.isEmpty {
-                try document.setSlideText(at: index, .body, to: text)
-            }
-        } else {
-            if let title = slide.title {
-                try document.setSlideText(at: index, .title, to: title)
-            }
-            if let body = slide.body {
-                try document.setSlideText(at: index, .body, to: body)
-            }
+        switch (slide.title, slide.body) {
+        case let (title?, body?):
+            // Both given: map directly, regardless of layout.
+            try document.setSlideText(at: index, .title, to: title)
+            try document.setSlideText(at: index, .body, to: body)
+        case let (single?, nil), let (nil, single?):
+            // One text block: put it in the layout's prominent placeholder.
+            let bodyPrimary = forceBodyPrimary || isBodyPrimary(at: index, in: document)
+            try document.setSlideText(at: index, bodyPrimary ? .body : .title, to: single)
+        case (nil, nil):
+            break
         }
         // Presenter notes: overwrite whatever the template slide carried
         // (which includes its `@layout:` tag) with the content's notes, or

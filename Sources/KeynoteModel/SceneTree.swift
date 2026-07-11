@@ -36,6 +36,9 @@ public struct SceneNode: Codable {
     /// cell). Editable — the reconciler turns changed cells into
     /// `setTableCellText`/`setTableCellNumber`.
     public var cells: [[String?]]?
+    /// For `"chart"` nodes: the data grid. Editable — the reconciler
+    /// applies changes via `setChartData`.
+    public var chart: ChartData?
     public var children: [SceneNode]
     /// Write-side: to add a node, append a `SceneNode` whose `cloneOf` names
     /// an existing drawable anywhere in the document (e.g. a template
@@ -47,7 +50,8 @@ public struct SceneNode: Codable {
     public init(
         id: UInt64, type: String, role: String? = nil, prompt: String? = nil,
         text: String? = nil, frame: Frame? = nil, media: MediaReference? = nil,
-        cells: [[String?]]? = nil, children: [SceneNode] = [], cloneOf: UInt64? = nil
+        cells: [[String?]]? = nil, chart: ChartData? = nil,
+        children: [SceneNode] = [], cloneOf: UInt64? = nil
     ) {
         self.id = id
         self.type = type
@@ -57,6 +61,7 @@ public struct SceneNode: Codable {
         self.frame = frame
         self.media = media
         self.cells = cells
+        self.chart = chart
         self.children = children
         self.cloneOf = cloneOf
     }
@@ -242,6 +247,15 @@ extension KeynoteDocument {
                 type: "table",
                 frame: frame(of: info.super),
                 cells: try? tableCells(id)
+            )
+
+        case 5021: // TSCH.ChartDrawableArchive
+            let drawable = try record.decode(TSCH_ChartDrawableArchive.self)
+            return SceneNode(
+                id: id,
+                type: "chart",
+                frame: frame(of: drawable.super),
+                chart: try? chartData(id)
             )
 
         default:

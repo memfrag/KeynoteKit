@@ -83,6 +83,11 @@ extension KeynoteDocument {
                 try setNodeMedia(id, to: replacement)
             }
 
+            // Chart data: replaced wholesale when changed.
+            if let editedChart = editedNode.chart, editedChart != currentNode.chart {
+                try setChartData(id, to: editedChart)
+            }
+
             // Table cells: changed entries become text or number cells
             // (numeric-looking strings stay numbers when the cell was one).
             if let editedCells = editedNode.cells, let currentCells = currentNode.cells,

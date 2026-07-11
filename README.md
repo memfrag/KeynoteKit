@@ -57,6 +57,9 @@ Early development. Working today:
     `setSlideTransition(at:to:)`) with effect (`"apple:dissolve"`,
     `"apple:push"`, …), duration, delay, and auto-advance; editable as
     `transition` on the scene tree.
+  - **Chart data**: read and replace any chart's grid (`chartData`/
+    `setChartData`) — row names, series names, and values, including
+    changing the grid's dimensions; editable as `chart` on the scene tree.
   - **Node-addressed edit commands** (the AI-facing write interface):
     `setNodeText`, `setNodeFrame`, `setNodeMedia` (replaces image content —
     including unmaterialized theme stock photos, by creating fresh data

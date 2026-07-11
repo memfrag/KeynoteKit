@@ -31,11 +31,17 @@ public struct SceneNode: Codable {
     public var frame: Frame?
     public var media: MediaReference?
     public var children: [SceneNode]
+    /// Write-side: to add a node, append a `SceneNode` whose `cloneOf` names
+    /// an existing drawable anywhere in the document (e.g. a template
+    /// slide's). On `apply` the source is cloned onto this slide, then this
+    /// node's text/frame/media edits are applied to the clone. `id` is
+    /// ignored (use 0). Never set when reading.
+    public var cloneOf: UInt64?
 
     public init(
         id: UInt64, type: String, role: String? = nil, prompt: String? = nil,
         text: String? = nil, frame: Frame? = nil, media: MediaReference? = nil,
-        children: [SceneNode] = []
+        children: [SceneNode] = [], cloneOf: UInt64? = nil
     ) {
         self.id = id
         self.type = type
@@ -45,6 +51,7 @@ public struct SceneNode: Codable {
         self.frame = frame
         self.media = media
         self.children = children
+        self.cloneOf = cloneOf
     }
 }
 

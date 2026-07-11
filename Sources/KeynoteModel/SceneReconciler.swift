@@ -14,14 +14,40 @@ extension KeynoteDocument {
     /// path on the node), deleting free drawables (drop the node from the
     /// tree), and restacking free drawables (reorder them in `nodes`).
     public mutating func apply(_ edited: SceneTree, media: [UInt64: Data] = [:]) throws {
+        var edited = edited
+
+        // Additions: nodes with `cloneOf` are cloned onto the slide first,
+        // then treated as ordinary nodes carrying their text/frame/media
+        // edits (rewritten to the clone's fresh id).
+        for index in edited.nodes.indices {
+            guard let sourceID = edited.nodes[index].cloneOf else { continue }
+            let newID = try cloneDrawable(sourceID, toSlideAt: edited.slideIndex)
+            let source = try sceneTree(forSlideAt: edited.slideIndex)
+                .nodes.first { $0.id == newID }
+            edited.nodes[index].cloneOf = nil
+            edited.nodes[index].id = newID
+            // Unedited fields inherit the clone's current state so the diff
+            // below only sees the caller's actual changes.
+            if edited.nodes[index].text == nil { edited.nodes[index].text = source?.text }
+            if edited.nodes[index].frame == nil { edited.nodes[index].frame = source?.frame }
+            edited.nodes[index].type = source?.type ?? edited.nodes[index].type
+            edited.nodes[index].role = source?.role
+            if edited.nodes[index].media?.replaceWith == nil {
+                edited.nodes[index].media = source?.media
+            } else {
+                edited.nodes[index].media?.dataID = source?.media?.dataID ?? 0
+                edited.nodes[index].media?.file = source?.media?.file
+            }
+        }
+
         let current = try sceneTree(forSlideAt: edited.slideIndex)
         let currentByID = flatten(current.nodes)
         let editedByID = flatten(edited.nodes)
 
-        // New nodes can't be synthesized.
+        // Anything else unknown can't be synthesized.
         for id in editedByID.keys where currentByID[id] == nil {
             throw SceneEditError.unsupportedEdit(
-                "node \(id) does not exist on slide \(edited.slideIndex); adding nodes is not supported"
+                "node \(id) does not exist on slide \(edited.slideIndex); to add a node, set cloneOf to an existing drawable's id"
             )
         }
 

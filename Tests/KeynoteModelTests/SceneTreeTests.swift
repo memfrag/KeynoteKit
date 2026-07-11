@@ -148,6 +148,58 @@ struct SceneTreeTests {
         }
     }
 
+    // MARK: Cloning
+
+    @Test("cloneDrawable copies a node across slides with fresh identifiers")
+    func cloneAcrossSlides() throws {
+        var document = try KeynoteDocument(contentsOf: Self.twoSlideURL)
+        // The title slide has a text shape (author/date line) we can clone.
+        let source = try #require(
+            try document.sceneTree(forSlideAt: 0).nodes.first { $0.type == "shape" }
+        )
+        let newID = try document.cloneDrawable(source.id, toSlideAt: 1)
+        #expect(newID != source.id)
+
+        let reread = try writeAndReread(document)
+        let tree = try reread.sceneTree(forSlideAt: 1)
+        let clone = try #require(tree.nodes.first { $0.id == newID })
+        #expect(clone.type == "shape")
+        #expect(clone.text == source.text)
+        #expect(clone.frame == source.frame)
+
+        // Identifiers stay unique document-wide.
+        var seen: Set<UInt64> = []
+        for component in reread.components {
+            for record in component.records {
+                if let id = record.identifier {
+                    #expect(!seen.contains(id), "duplicate id \(id)")
+                    seen.insert(id)
+                }
+            }
+        }
+    }
+
+    @Test("apply() adds nodes via cloneOf with edits applied to the clone")
+    func reconcileCloneOf() throws {
+        var document = try KeynoteDocument(contentsOf: Self.twoSlideURL)
+        let source = try #require(
+            try document.sceneTree(forSlideAt: 0).nodes.first { $0.type == "shape" }
+        )
+        var tree = try document.sceneTree(forSlideAt: 1)
+        let frame = Frame(x: 50, y: 60, width: 700, height: 80)
+        tree.nodes.append(SceneNode(
+            id: 0, type: "shape", text: "Added by reconciler", frame: frame, cloneOf: source.id
+        ))
+        try document.apply(tree)
+
+        let reread = try writeAndReread(document)
+        let clone = try #require(
+            try reread.sceneTree(forSlideAt: 1).nodes.first { $0.text == "Added by reconciler" }
+        )
+        #expect(clone.frame == frame)
+        #expect(clone.id != source.id)
+    }
+
     @Test("apply() replaces media via the media dictionary")
     func reconcileMedia() throws {
         var document = try KeynoteDocument(contentsOf: Self.imageDeckURL)

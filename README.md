@@ -50,11 +50,14 @@ Early development. Working today:
     `setNodeText`, `setNodeFrame`, `setNodeMedia` (replaces image content —
     including unmaterialized theme stock photos, by creating fresh data
     entries with full digest bookkeeping), `deleteDrawable`,
-    `reorderDrawables`
+    `reorderDrawables`, and `cloneDrawable` — nodes are *added* by cloning an
+    existing drawable (from any slide, e.g. a template slide), never
+    synthesized from scratch, so styles and structure stay valid
   - **Reconciler** (`apply(_:media:)`): mutate a scene tree (or its JSON) and
-    apply it back; diffs are translated into the commands above, and edits
-    that can't be expressed safely (adding nodes, reparenting, type changes)
-    are rejected
+    apply it back; diffs are translated into the commands above. Add a node
+    by appending one with `cloneOf` set to an existing drawable's id; its
+    text/frame/media edits are applied to the clone. Reparenting and type
+    changes are rejected
 - **`KeynoteBuilder`** — the high-level API:
   - Describe a `Presentation` of `Slide`s (title, body, presenter notes)
     declaratively and write it to a `.key`. Uses a template strategy — an
@@ -300,6 +303,7 @@ swift run iwatool set-text In.key Out.key 2652722 "New title"
 swift run iwatool set-frame In.key Out.key 2652703 100 100 800 450
 swift run iwatool set-media In.key Out.key 2652703 photo.jpg
 swift run iwatool delete-node In.key Out.key 2652817
+swift run iwatool clone-node In.key Out.key 2652817 4      # add: clone node onto slide 4
 swift run iwatool apply-tree In.key Out.key edited-tree.json
 ```
 

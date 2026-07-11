@@ -271,7 +271,7 @@ extension KeynoteDocument {
 
     /// Deep-copies a record: fresh identifier, internal references rewritten
     /// through `idMap` (identifiers not in the map — external objects — stay).
-    private func cloned(_ record: ObjectRecord, using idMap: [UInt64: UInt64]) throws -> ObjectRecord {
+    func cloned(_ record: ObjectRecord, using idMap: [UInt64: UInt64]) throws -> ObjectRecord {
         var copy = record
         if let identifier = record.identifier {
             copy.setIdentifier(idMap[identifier] ?? identifier)

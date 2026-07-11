@@ -21,6 +21,7 @@ usage:
   iwatool set-frame <in.key> <out.key> <node-id> <x> <y> <w> <h>  move/resize a node
   iwatool set-media <in.key> <out.key> <node-id> <image-file>     replace a node's image
   iwatool delete-node <in.key> <out.key> <node-id>          delete a free drawable
+  iwatool clone-node <in.key> <out.key> <node-id> <slide-index>   clone a drawable onto a slide
   iwatool apply-tree <in.key> <out.key> <tree.json>         apply an edited scene tree
                                                  (node ids come from 'iwatool tree')
   iwatool build <outline.txt> <out.key>          build a deck from a simple outline
@@ -200,6 +201,14 @@ case "list-media":
     for name in document.mediaFileNames {
         print(name)
     }
+
+case "clone-node":
+    guard arguments.count >= 6, let nodeID = UInt64(arguments[4]), let slideIndex = Int(arguments[5]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    let newID = try document.cloneDrawable(nodeID, toSlideAt: slideIndex)
+    try document.write(to: outputURL)
+    print("cloned node \(nodeID) onto slide \(slideIndex) as node \(newID)")
 
 case "set-text", "set-frame", "set-media", "delete-node":
     guard arguments.count >= 5, let nodeID = UInt64(arguments[4]) else { fail(usage) }

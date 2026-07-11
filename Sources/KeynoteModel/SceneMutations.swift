@@ -227,6 +227,178 @@ extension KeynoteDocument {
         components[location.component].records[location.record] = record
     }
 
+    // MARK: Cloning (node addition)
+
+    /// Adds a drawable to a slide by cloning an existing one — from the same
+    /// slide, another slide, or a template slide. This is how nodes are
+    /// "created": the source supplies valid styles and structure, so nothing
+    /// has to be synthesized from scratch. The clone lands on top of the
+    /// stacking order. Returns the new node's id.
+    @discardableResult
+    public mutating func cloneDrawable(_ nodeID: UInt64, toSlideAt index: Int) throws -> UInt64 {
+        let sourceLocation = try locateSceneNode(nodeID)
+        let sourceRecord = components[sourceLocation.component].records[sourceLocation.record]
+        guard [2011, 3005, 3007, 3008].contains(sourceRecord.primaryType) else {
+            throw SceneEditError.unsupportedEdit(
+                "node \(nodeID) (type \(sourceRecord.primaryType)) can't be cloned; only shapes, images, movies, and groups"
+            )
+        }
+        let sourceComponent = components[sourceLocation.component]
+        let sourceRootID = sourceComponent.records.first?.identifier ?? 0
+
+        // Destination slide.
+        let nodeIDs = try slideNodeIdentifiers()
+        guard nodeIDs.indices.contains(index) else {
+            throw SlideContentError.slideIndexOutOfRange(index)
+        }
+        let slideNode = try recordAnywhere(identifier: nodeIDs[index], type: 4).decode(KN_SlideNodeArchive.self)
+        let destRootID = slideNode.slide.identifier
+        guard let destComponentIndex = components.firstIndex(where: {
+            $0.records.contains { $0.identifier == destRootID }
+        }) else {
+            throw SlideContentError.slideComponentNotFound(destRootID)
+        }
+
+        // The drawable's subtree: records in the source component reachable
+        // from it, stopping at the slide root (a drawable's parent pointer).
+        var subtreeIDs: [UInt64] = []
+        var queue: [UInt64] = [nodeID]
+        var visited: Set<UInt64> = []
+        let sourceByID = Dictionary(
+            sourceComponent.records.compactMap { record in record.identifier.map { ($0, record) } },
+            uniquingKeysWith: { first, _ in first }
+        )
+        while let id = queue.popLast() {
+            guard !visited.contains(id), let record = sourceByID[id] else { continue }
+            visited.insert(id)
+            if [5, 6, 15].contains(record.primaryType) { continue } // slide roots, notes
+            subtreeIDs.append(id)
+            for (payloadIndex, info) in record.info.messageInfos.enumerated() {
+                guard let typeName = TSPRegistry.protoNames[info.type] else { continue }
+                let references = try ReferenceRewriter.collectReferences(
+                    in: record.payloads[payloadIndex], typeName: typeName
+                )
+                queue.append(contentsOf: references)
+            }
+        }
+
+        // Fresh identifiers; the parent pointer maps to the destination root.
+        let metadataLocation = try locateRecord(type: 11006, orThrow: MediaOperationError.packageMetadataNotFound)
+        var metadataRecord = components[metadataLocation.component].records[metadataLocation.record]
+        var metadata = try metadataRecord.decode(TSP_PackageMetadata.self)
+        var nextIdentifier = metadata.lastObjectIdentifier
+        var idMap: [UInt64: UInt64] = [sourceRootID: destRootID]
+        for id in subtreeIDs {
+            nextIdentifier += 1
+            idMap[id] = nextIdentifier
+        }
+        guard let newNodeID = idMap[nodeID] else {
+            throw SceneEditError.unknownNode(nodeID)
+        }
+
+        // Clone the records into the destination component.
+        var clonedRecords: [ObjectRecord] = []
+        for id in subtreeIDs {
+            clonedRecords.append(try cloned(sourceByID[id]!, using: idMap))
+        }
+        components[destComponentIndex].records.append(contentsOf: clonedRecords)
+
+        // Attach to the destination slide (ownership, stacking, references).
+        guard let destSlideIndex = components[destComponentIndex].records.firstIndex(where: {
+            $0.identifier == destRootID
+        }) else {
+            throw SlideContentError.slideComponentNotFound(destRootID)
+        }
+        var destSlideRecord = components[destComponentIndex].records[destSlideIndex]
+        var destSlide = try destSlideRecord.decode(KN_SlideArchive.self)
+        destSlide.ownedDrawables.append(TSP_Reference.with { $0.identifier = newNodeID })
+        destSlide.drawablesZOrder.append(TSP_Reference.with { $0.identifier = newNodeID })
+        try destSlideRecord.setMessage(destSlide)
+        try destSlideRecord.setObjectReferences(
+            destSlideRecord.info.messageInfos[0].objectReferences + [newNodeID], at: 0
+        )
+        components[destComponentIndex].records[destSlideIndex] = destSlideRecord
+
+        // Metadata: allocator, plus external/data reference bookkeeping for
+        // the destination component.
+        metadata.lastObjectIdentifier = nextIdentifier
+        let destComponentRootID = components[destComponentIndex].records.first?.identifier ?? 0
+        try updateComponentReferences(
+            in: &metadata,
+            clonedRecords: clonedRecords,
+            sourceComponentRootID: sourceRootID,
+            destComponentRootID: destComponentRootID,
+            destSlideRootID: destRootID
+        )
+        try metadataRecord.setMessage(metadata)
+        components[metadataLocation.component].records[metadataLocation.record] = metadataRecord
+
+        return newNodeID
+    }
+
+    /// Ensures the destination component declares every external object and
+    /// data reference the cloned records carry.
+    private func updateComponentReferences(
+        in metadata: inout TSP_PackageMetadata,
+        clonedRecords: [ObjectRecord],
+        sourceComponentRootID: UInt64,
+        destComponentRootID: UInt64,
+        destSlideRootID: UInt64
+    ) throws {
+        guard let destInfoIndex = metadata.components.firstIndex(where: { $0.identifier == destComponentRootID })
+        else { return }
+        var destInfo = metadata.components[destInfoIndex]
+        let sourceInfo = metadata.components.first { $0.identifier == sourceComponentRootID }
+
+        let clonedIDs = Set(clonedRecords.compactMap(\.identifier))
+        var declaredExternals = Set(destInfo.externalReferences.map {
+            "\($0.componentIdentifier):\($0.hasObjectIdentifier ? String($0.objectIdentifier) : "")"
+        })
+
+        for record in clonedRecords {
+            for (payloadIndex, info) in record.info.messageInfos.enumerated() {
+                // External object references → mirror the source component's
+                // declarations for them.
+                guard let typeName = TSPRegistry.protoNames[info.type] else { continue }
+                let references = try ReferenceRewriter.collectReferences(
+                    in: record.payloads[payloadIndex], typeName: typeName
+                )
+                for reference in references
+                where !clonedIDs.contains(reference) && reference != destSlideRootID {
+                    let mirrored = sourceInfo?.externalReferences.first {
+                        ($0.hasObjectIdentifier && $0.objectIdentifier == reference)
+                            || (!$0.hasObjectIdentifier && $0.componentIdentifier == reference)
+                    }
+                    if let mirrored {
+                        let key = "\(mirrored.componentIdentifier):\(mirrored.hasObjectIdentifier ? String(mirrored.objectIdentifier) : "")"
+                        if !declaredExternals.contains(key) {
+                            destInfo.externalReferences.append(mirrored)
+                            declaredExternals.insert(key)
+                        }
+                    }
+                }
+
+                // Data usage: each data the clone references gains a usage
+                // entry for the new object.
+                for dataID in info.dataReferences {
+                    let usage = TSP_ComponentDataReference.ObjectReference.with {
+                        $0.objectIdentifier = record.identifier ?? 0
+                        $0.count = 1
+                    }
+                    if let existing = destInfo.dataReferences.firstIndex(where: { $0.dataIdentifier == dataID }) {
+                        destInfo.dataReferences[existing].objectReferenceList.append(usage)
+                    } else {
+                        destInfo.dataReferences.append(TSP_ComponentDataReference.with {
+                            $0.dataIdentifier = dataID
+                            $0.objectReferenceList = [usage]
+                        })
+                    }
+                }
+            }
+        }
+        metadata.components[destInfoIndex] = destInfo
+    }
+
     // MARK: Deletion & ordering
 
     /// Removes a free drawable (image, shape, group, movie) from its slide.

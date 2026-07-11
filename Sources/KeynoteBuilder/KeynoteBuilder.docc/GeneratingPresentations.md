@@ -39,6 +39,43 @@ let deck = Presentation {
 `nil` fields leave the template slide's existing content in place; empty
 strings clear it.
 
+## Layouts with more than a title and body
+
+`title` and `body` cover the common case, but a template slide can have any
+number of text regions — two bullet columns, a subtitle, a quote's
+attribution, a labeled callout. Fill those with `blocks`, a dictionary
+keyed by whatever identifies each region:
+
+```swift
+Slide(layout: "two-column", blocks: [
+    "header": "Build vs. Buy",
+    "left":   "Full control\nOwn the roadmap\nHigher upfront cost",
+    "right":  "Faster to ship\nVendor lock-in\nRecurring cost",
+])
+```
+
+A key matches a region by, in order: its **role** (`"title"`, `"body"`,
+`"object"`), the **label** the template author typed into it (type `"left"`
+into the left column when authoring the template), or the layout's **prompt**
+(`"Attribution"`). Values use `\n` for bullet/paragraph breaks, exactly like
+`body`.
+
+This makes nearly arbitrary layouts fillable: design a template slide in
+Keynote with as many text boxes as you like, label each with a short word,
+and address them by those words. Discover the available keys for any
+template slide with:
+
+```bash
+iwatool blocks-of MyTemplate.key 0
+# node 32224: "header"
+# node 32249: "left"
+# node 32274: "right"
+```
+
+`blocks` is applied after `title`/`body`, and — like everything in the
+builder — you can always drop to the scene tree (via ``KeynoteWriter/build(_:imageBaseURL:)``)
+to address any node by id for total control.
+
 ## Writing
 
 ``KeynoteWriter`` maps the presentation onto a template document:

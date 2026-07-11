@@ -179,6 +179,13 @@ public struct KeynoteWriter {
         case (nil, nil):
             break
         }
+        // Extra text blocks (two-column bullets, subtitles, attributions…),
+        // addressed by role / label / prompt. Applied after title/body so a
+        // block can also override them if the caller prefers.
+        for (key, value) in slide.blocks {
+            try document.setSlideText(at: index, block: key, to: value)
+        }
+
         // Presenter notes: overwrite whatever the template slide carried
         // (which includes its `@layout:` tag) with the content's notes, or
         // clear the tag if the content has none. Tolerate slides whose layout

@@ -69,6 +69,25 @@ struct TemplateLibraryTests {
         }
     }
 
+    @Test("fills arbitrary text blocks by label")
+    func textBlocks() throws {
+        let templateURL = try #require(Bundle.module.url(forResource: "twocol", withExtension: "key"))
+        let presentation = Presentation {
+            Slide(layout: "two-column", blocks: [
+                "header": "Build vs. Buy",
+                "left": "Full control\nOwn the roadmap",
+                "right": "Faster to ship\nVendor lock-in",
+            ])
+        }
+        let writer = try KeynoteWriter(templateURL: templateURL)
+        let document = try writer.build(presentation)
+
+        let blocks = try document.slideTextBlocks(at: 0)
+        #expect(blocks.contains { $0.text == "Build vs. Buy" })
+        #expect(blocks.contains { $0.text == "Full control\u{2029}Own the roadmap" })
+        #expect(blocks.contains { $0.text == "Faster to ship\u{2029}Vendor lock-in" })
+    }
+
     @Test("slides without a layout use the default")
     func defaultLayout() throws {
         var writer = try KeynoteWriter(templateURL: Self.templateURL)

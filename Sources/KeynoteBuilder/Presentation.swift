@@ -22,6 +22,17 @@ public struct Slide {
     public var body: String?
     /// Presenter notes.
     public var notes: String?
+    /// Additional text blocks for layouts with more than a title and body —
+    /// two-column bullets, a subtitle, a quote's attribution, and so on.
+    ///
+    /// Each key addresses a text region on the template slide, matched
+    /// against the region's role (`"title"`, `"body"`, `"object"`), the label
+    /// the template author typed into it (`"left"`, `"right"`), or the
+    /// layout's prompt (`"Attribution"`). List a template's blocks with
+    /// `iwatool blocks-of template.key <slide>` or
+    /// ``KeynoteModel/KeynoteDocument/slideTextBlocks(at:)``. Values use `\n`
+    /// for bullet/paragraph breaks. Applied after `title`/`body`.
+    public var blocks: [String: String]
     /// Names the template layout to use, matched against a template deck's
     /// `@layout:` tags or master-slide names (see `TemplateLibrary`). `nil`
     /// lets the writer pick a default. Ignored when building without a
@@ -37,12 +48,14 @@ public struct Slide {
         body: String? = nil,
         notes: String? = nil,
         layout: String? = nil,
+        blocks: [String: String] = [:],
         imagePaths: [String] = []
     ) {
         self.title = title
         self.body = body
         self.notes = notes
         self.layout = layout
+        self.blocks = blocks
         self.imagePaths = imagePaths
     }
 }

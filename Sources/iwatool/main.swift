@@ -44,6 +44,8 @@ usage:
   iwatool tree <file.key> [slide-index]          JSON scene tree: every node (placeholder,
                                                  image, shape, group...) with id/role/text/
                                                  frame/media, z-ordered
+  iwatool blocks-of <file.key> <slide-index>     list a slide's fillable text blocks
+                                                 (the keys the builder DSL's `blocks` accepts)
 """
 
 func fail(_ message: String) -> Never {
@@ -216,6 +218,23 @@ case "tree":
     encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
     FileHandle.standardOutput.write(try encoder.encode(trees))
     print()
+
+case "set-block":
+    guard arguments.count >= 7, let slideIndex = Int(arguments[4]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    try document.setSlideText(at: slideIndex, block: arguments[5], to: arguments[6])
+    try document.write(to: outputURL)
+    print("set block \"\(arguments[5])\" on slide \(slideIndex)")
+
+case "blocks-of":
+    guard arguments.count >= 4, let slideIndex = Int(arguments[3]) else { fail(usage) }
+    let document = try KeynoteDocument(contentsOf: inputURL)
+    for block in try document.slideTextBlocks(at: slideIndex) {
+        let keys = [block.role, block.text, block.prompt]
+            .compactMap { $0 }.filter { !$0.isEmpty }
+        print("node \(block.nodeID): \(keys.map { "\"\($0)\"" }.joined(separator: " | "))")
+    }
 
 case "masters":
     let document = try KeynoteDocument(contentsOf: inputURL)

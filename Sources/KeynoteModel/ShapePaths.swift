@@ -33,6 +33,12 @@ public enum ParametricShape: Sendable {
     /// A chevron (arrow-tail) with notch `depth` (0…1).
     case chevron(depth: Double)
     case plus
+    /// A single arrow pointing left.
+    case leftArrow
+    /// A single arrow pointing right.
+    case rightArrow
+    /// A double-headed arrow.
+    case doubleArrow
 }
 
 /// An arbitrary 2-D outline, built from move/line/curve segments. Coordinates
@@ -186,6 +192,14 @@ extension KeynoteDocument {
             return pointSource(.kTsdstar, Double(max(3, points)), min(max(innerRatio, 0.05), 0.95))
         case .plus:
             return pointSource(.kTsdplus, w / 3, h / 3)
+        case .leftArrow:
+            // point.x = arrowhead length (absolute); point.y = shaft thickness
+            // (fraction of height) — verified against a Keynote-authored arrow.
+            return pointSource(.kTsdleftSingleArrow, h * 0.4, 0.3)
+        case .rightArrow:
+            return pointSource(.kTsdrightSingleArrow, h * 0.4, 0.3)
+        case .doubleArrow:
+            return pointSource(.kTsddoubleArrow, h * 0.4, 0.3)
         }
     }
 

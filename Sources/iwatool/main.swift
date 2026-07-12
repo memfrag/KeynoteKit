@@ -77,6 +77,17 @@ if arguments.count >= 3, arguments[1] == "custom-path-demo" {
     print("custom path demo written"); exit(0)
 }
 
+if arguments.count >= 3, arguments[1] == "arrows-demo" {
+    let out = URL(fileURLWithPath: arguments[2])
+    let canvas = Canvas {
+        Shape(.native(.leftArrow)).frame(x: 100, y: 100, width: 380, height: 140).fill(.rgb(0.15, 0.7, 0.5))
+        Shape(.native(.rightArrow)).frame(x: 540, y: 100, width: 380, height: 140).fill(.rgb(0.6, 0.35, 0.85))
+        Shape(.native(.doubleArrow)).frame(x: 300, y: 380, width: 420, height: 140).fill(.rgb(0.95, 0.55, 0.15))
+    }
+    try CanvasWriter().write([canvas], to: out)
+    print("arrows demo written"); exit(0)
+}
+
 if arguments.count >= 3, arguments[1] == "shapes-demo" {
     let out = URL(fileURLWithPath: arguments[2])
     let kinds: [(ShapeKind, RGBAColor)] = [
@@ -84,9 +95,9 @@ if arguments.count >= 3, arguments[1] == "shapes-demo" {
         (.roundedRectangle(cornerRadius: 50), .rgb(0.15, 0.7, 0.5)),
         (.regularPolygon(sides: 5), .rgb(0.6, 0.35, 0.85)),
         (.star(points: 5, innerRatio: 0.42), .rgb(0.95, 0.8, 0.2)),
-        (.native(.roundedRectangle(cornerRadius: 50)), .rgb(0.15, 0.7, 0.5)),
-        (.native(.chevron(depth: 0.5)), .rgb(0.2, 0.5, 0.95)),
-        (.native(.plus), .rgb(0.95, 0.55, 0.15)),
+        (.native(.roundedRectangle(cornerRadius: 50)), .rgb(0.2, 0.5, 0.95)),
+        (.native(.chevron(depth: 0.5)), .rgb(0.95, 0.55, 0.15)),
+        (.native(.plus), .rgb(0.9, 0.3, 0.35)),
     ]
     var elements: [Element] = []
     for (i, item) in kinds.enumerated() {

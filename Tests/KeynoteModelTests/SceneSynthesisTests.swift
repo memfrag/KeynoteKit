@@ -60,6 +60,9 @@ struct SceneSynthesisTests {
             .star(points: 6, innerRatio: 0.5),
             .chevron(depth: 0.4),
             .plus,
+            .leftArrow,
+            .rightArrow,
+            .doubleArrow,
         ]
         for shape in shapes {
             var document = try KeynoteDocument(contentsOf: Self.deckURL)

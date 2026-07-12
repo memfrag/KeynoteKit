@@ -110,6 +110,8 @@ Three element kinds are built by free functions:
   Shape(.native(.star(points: 6, innerRatio: 0.5)))
   Shape(.native(.chevron(depth: 0.4)))
   Shape(.native(.plus))
+  Shape(.native(.rightArrow)).frame(x: 100, y: 100, width: 380, height: 140)
+  Shape(.native(.doubleArrow))   // give arrows width for the shaft
   ```
 
 Every element is **synthesized from scratch** — nothing is cloned. Each

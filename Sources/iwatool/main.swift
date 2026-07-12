@@ -138,9 +138,9 @@ if arguments.count >= 4, arguments[1] == "bullet-test" {
     let paletteIn = URL(fileURLWithPath: arguments[2])
     let out = URL(fileURLWithPath: arguments[3])
     var document = try KeynoteDocument(contentsOf: paletteIn)
-    let t = try document.addText(toSlideAt: 0, string: "First bullet point\nSecond bullet point that is a bit longer\nThird point", frame: Frame(x: 100, y: 160, width: 820, height: 340))
-    try document.setNodeCharacterStyle(t, fontSize: 36)
-    try document.setNodeBulleted(t)
+    let n = try document.addText(toSlideAt: 0, string: "Alpha item\nBeta item\nGamma item", frame: Frame(x: 100, y: 180, width: 820, height: 300))
+    try document.setNodeCharacterStyle(n, fontSize: 40)
+    try document.setNodeNumbered(n, .decimal)
     try document.write(to: out)
     print("bullet test written"); exit(0)
 }

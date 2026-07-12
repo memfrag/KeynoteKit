@@ -104,8 +104,8 @@ public struct CanvasWriter {
             if let inset = element.style.textInset {
                 try document.setNodeTextInset(newID, inset)
             }
-            if let marker = element.style.bulletMarker {
-                try document.setNodeBulleted(newID, bullet: marker)
+            if let marker = element.style.listMarker {
+                try document.setNodeList(newID, marker)
             }
             return newID
         case .shape(let kind):

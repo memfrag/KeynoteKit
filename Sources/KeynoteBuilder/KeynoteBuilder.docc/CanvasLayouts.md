@@ -205,6 +205,7 @@ Modifiers chain, SwiftUI-style, each returning a new ``Element``:
 | `.columns(_:gap:)` | text | flow text in equal columns |
 | `.textInset(_:)` | text | padding between text and box edge |
 | `.bulleted(_:)` | text | turn paragraphs into a bulleted list |
+| `.numbered(_:)` | text | turn paragraphs into a numbered list |
 
 Colors are ``RGBAColor`` values in 0…1: `.white`, `.black`, or
 `.rgb(_:_:_:)`. A shape's `.fill(_:)` also takes a full ``Fill`` — the same

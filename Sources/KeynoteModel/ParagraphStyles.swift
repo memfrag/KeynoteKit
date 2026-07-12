@@ -16,6 +16,35 @@ public enum TextAlignment: Sendable {
     }
 }
 
+/// The label on a list's paragraphs.
+public enum ListMarker: Sendable {
+    /// A string bullet (e.g. "•", "—", "▸").
+    case bullet(String)
+    /// An auto-incrementing number in the given format.
+    case numbered(NumberFormat)
+}
+
+/// A numbered-list format.
+public enum NumberFormat: Sendable {
+    case decimal        // 1. 2. 3.
+    case decimalParen   // 1) 2) 3)
+    case romanUpper     // I. II. III.
+    case romanLower     // i. ii. iii.
+    case alphaUpper     // A. B. C.
+    case alphaLower     // a. b. c.
+
+    var numberType: TSWP_ListStyleArchive.NumberType {
+        switch self {
+        case .decimal: return .kNumericDecimal
+        case .decimalParen: return .kNumericRightParen
+        case .romanUpper: return .kRomanUpperDecimal
+        case .romanLower: return .kRomanLowerDecimal
+        case .alphaUpper: return .kAlphaUpperDecimal
+        case .alphaLower: return .kAlphaLowerDecimal
+        }
+    }
+}
+
 /// A named paragraph style you can register into a document's stylesheet and
 /// then apply to text — appearing alongside the theme's own paragraph styles
 /// in Keynote's panel. Combines paragraph formatting (alignment, spacing,
@@ -136,24 +165,43 @@ extension KeynoteDocument {
         return newID
     }
 
-    /// Turns a text node's paragraphs into a bulleted list, using `bullet` as
-    /// the marker. Builds a list style from the theme's own list style (full
-    /// per-level arrays) so the text lays out correctly, then points every
-    /// paragraph at it.
+    /// Turns a text node's paragraphs into a bulleted list. Convenience for
+    /// ``setNodeList(_:_:indent:)`` with a string bullet.
     public mutating func setNodeBulleted(_ nodeID: UInt64, bullet: String = "\u{2022}", indent: Double = 35) throws {
+        try setNodeList(nodeID, .bullet(bullet), indent: indent)
+    }
+
+    /// Turns a text node's paragraphs into a numbered list. Convenience for
+    /// ``setNodeList(_:_:indent:)`` with a number format.
+    public mutating func setNodeNumbered(_ nodeID: UInt64, _ format: NumberFormat = .decimal, indent: Double = 35) throws {
+        try setNodeList(nodeID, .numbered(format), indent: indent)
+    }
+
+    /// Turns a text node's paragraphs into a list with the given marker. Builds
+    /// a list style from the theme's own (full per-level arrays) so the text
+    /// lays out correctly, then points every paragraph at it.
+    public mutating func setNodeList(_ nodeID: UInt64, _ marker: ListMarker, indent: Double = 35) throws {
         guard let styles = defaultTextStyles(), let baseListID = styles.list,
               let stylesheetComponent = components.firstIndex(where: {
                   $0.records.contains { $0.identifier == baseListID }
               }),
               let baseRecord = components[stylesheetComponent].records.first(where: { $0.identifier == baseListID }),
               var list = try? baseRecord.decode(TSWP_ListStyleArchive.self)
-        else { throw SceneEditError.unsupportedEdit("no theme list style to base a bullet on") }
+        else { throw SceneEditError.unsupportedEdit("no theme list style to base a list on") }
 
-        // Keynote's list styles carry one entry per indent level; a bullet
+        // Keynote's list styles carry one entry per indent level; a marker
         // needs a full set (a single-entry array corrupts text layout).
         let levels = max(9, list.labelTypes.count)
-        list.labelTypes = Array(repeating: .kString, count: levels)
-        list.strings = Array(repeating: bullet, count: levels)
+        switch marker {
+        case let .bullet(character):
+            list.labelTypes = Array(repeating: .kString, count: levels)
+            list.strings = Array(repeating: character, count: levels)
+            list.numberTypes = []
+        case let .numbered(format):
+            list.labelTypes = Array(repeating: .kNumber, count: levels)
+            list.numberTypes = Array(repeating: format.numberType, count: levels)
+            list.strings = []
+        }
         list.textIndents = Array(repeating: 1.09375, count: levels)  // theme's value
         list.indents = (0..<levels).map { Float(Double($0) * indent) }
         let geometry = TSWP_ListStyleArchive.LabelGeometry.with {
@@ -162,7 +210,7 @@ extension KeynoteDocument {
         list.geometries = Array(repeating: geometry, count: levels)
 
         let listID = try allocateIdentifier()
-        list.super.name = "Bullet"
+        list.super.name = "List"
         list.super.styleIdentifier = "kk-list-\(listID)"
         list.super.clearParent()
         let listRecord = try makeRecord(
@@ -170,7 +218,7 @@ extension KeynoteDocument {
         )
         components[stylesheetComponent].records.append(listRecord)
 
-        // Point every paragraph's list-style entry at the bullet style.
+        // Point every paragraph's list-style entry at the list style.
         let location = try locateSceneNode(nodeID)
         guard let storageID = try storageIdentifier(forNodeAt: location),
               let storageIndex = components[location.component].records.firstIndex(where: { $0.identifier == storageID })

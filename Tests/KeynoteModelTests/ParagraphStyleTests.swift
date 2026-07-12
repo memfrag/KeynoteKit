@@ -42,4 +42,12 @@ struct ParagraphStyleTests {
         let out = try reread(document)
         #expect(try out.sceneTree(forSlideAt: 0).nodes.contains { $0.id == text })
     }
+    @Test("numbered list round-trips")
+    func numbered() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let text = try document.addText(toSlideAt: 0, string: "A\nB\nC", frame: Frame(x: 0, y: 0, width: 500, height: 200))
+        try document.setNodeNumbered(text, .romanUpper)
+        let out = try reread(document)
+        #expect(try out.sceneTree(forSlideAt: 0).nodes.contains { $0.id == text })
+    }
 }

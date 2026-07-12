@@ -389,7 +389,7 @@ extension KeynoteDocument {
         }
     }
 
-    private func storageIdentifier(forNodeAt location: RecordLocation) throws -> UInt64? {
+    func storageIdentifier(forNodeAt location: RecordLocation) throws -> UInt64? {
         let record = components[location.component].records[location.record]
         let shape: TSWP_ShapeInfoArchive
         switch record.primaryType {

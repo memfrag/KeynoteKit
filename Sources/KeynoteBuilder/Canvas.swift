@@ -41,6 +41,10 @@ public struct ElementStyle: Sendable {
     public var flipHorizontal: Bool?
     public var flipVertical: Bool?
     public var mask: ShapeKind?
+    public var paragraphStyleName: String?
+    public var columns: Int?
+    public var columnGap: Double?
+    public var textInset: Double?
 
     public init() {}
 }
@@ -135,6 +139,15 @@ public struct Element: Sendable {
     /// Masks (clips) an image element to a shape — the image shows only
     /// through the shape. Any ``ShapeKind`` works.
     public func mask(_ kind: ShapeKind) -> Element { modifying { $0.mask = kind } }
+    /// Applies a named ``ParagraphStyle`` (registered on the writer) to a text
+    /// element.
+    public func paragraphStyle(_ name: String) -> Element { modifying { $0.paragraphStyleName = name } }
+    /// Lays a text element out in equal columns.
+    public func columns(_ count: Int, gap: Double = 20) -> Element {
+        modifying { $0.columns = count; $0.columnGap = gap }
+    }
+    /// Sets a text element's inset (padding between text and box edge).
+    public func textInset(_ inset: Double) -> Element { modifying { $0.textInset = inset } }
 
     private func modifying(_ change: (inout ElementStyle) -> Void) -> Element {
         var copy = self

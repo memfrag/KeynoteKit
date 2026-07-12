@@ -90,6 +90,30 @@ if arguments.count >= 4, arguments[1] == "textflip-test" {
     print("textflip written"); exit(0)
 }
 
+if arguments.count >= 4, arguments[1] == "parastyle-test" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let heading = try document.defineParagraphStyle(ParagraphStyle(
+        name: "Big Heading", fontSize: 54, bold: true, color: (0.15, 0.35, 0.8, 1), alignment: .center
+    ))
+    let body = try document.defineParagraphStyle(ParagraphStyle(
+        name: "Callout Body", fontSize: 26, italic: true, color: (0.3, 0.3, 0.3, 1),
+        alignment: .right, spaceBefore: 6, spaceAfter: 6, background: (0.95, 0.9, 0.7, 1)
+    ))
+    let t1 = try document.addText(toSlideAt: 0, string: "Centered heading", frame: Frame(x: 80, y: 120, width: 860, height: 120))
+    try document.applyParagraphStyle(heading, to: t1)
+    let t2 = try document.addText(toSlideAt: 0, string: "Right-aligned body text\non two lines", frame: Frame(x: 80, y: 300, width: 860, height: 160))
+    try document.applyParagraphStyle(body, to: t2)
+    // Columns + inset on a longer text box.
+    let t3 = try document.addText(toSlideAt: 0, string: "This paragraph flows across two columns with an inset from the box edge, wrapping as it goes so both columns fill with text and you can see the column gap between them.", frame: Frame(x: 80, y: 500, width: 860, height: 220))
+    try document.setNodeCharacterStyle(t3, fontSize: 22)
+    try document.setNodeColumns(t3, count: 2, gap: 40)
+    try document.setNodeTextInset(t3, 20)
+    try document.write(to: out)
+    print("parastyle test written"); exit(0)
+}
+
 if arguments.count >= 5, arguments[1] == "mask-test" {
     let paletteIn = URL(fileURLWithPath: arguments[2])
     let out = URL(fileURLWithPath: arguments[3])

@@ -31,27 +31,36 @@ public struct CanvasWriter {
         }
     }
 
-    public func write(_ canvases: [Canvas], to url: URL, imageBaseURL: URL? = nil) throws {
-        let document = try build(canvases, imageBaseURL: imageBaseURL)
+    public func write(
+        _ canvases: [Canvas], to url: URL, imageBaseURL: URL? = nil,
+        paragraphStyles: [ParagraphStyle] = []
+    ) throws {
+        let document = try build(canvases, imageBaseURL: imageBaseURL, paragraphStyles: paragraphStyles)
         try document.write(to: url)
     }
 
-    public func build(_ canvases: [Canvas], imageBaseURL: URL? = nil) throws -> KeynoteDocument {
+    public func build(
+        _ canvases: [Canvas], imageBaseURL: URL? = nil, paragraphStyles: [ParagraphStyle] = []
+    ) throws -> KeynoteDocument {
         guard !canvases.isEmpty else { throw CanvasWriterError.emptyCanvas }
         var document = try KeynoteDocument(contentsOf: paletteURL)
 
         while document.slideCount < canvases.count { try document.duplicateSlide(at: 0) }
         while document.slideCount > canvases.count { try document.removeSlide(at: document.slideCount - 1) }
 
+        // Register named paragraph styles once, document-wide.
+        var styleIDs: [String: UInt64] = [:]
+        for style in paragraphStyles { styleIDs[style.name] = try document.defineParagraphStyle(style) }
+
         for (index, canvas) in canvases.enumerated() {
-            try render(canvas, at: index, in: &document, imageBaseURL: imageBaseURL)
+            try render(canvas, at: index, in: &document, imageBaseURL: imageBaseURL, paragraphStyles: styleIDs)
         }
         return document
     }
 
     private func render(
         _ canvas: Canvas, at index: Int,
-        in document: inout KeynoteDocument, imageBaseURL: URL?
+        in document: inout KeynoteDocument, imageBaseURL: URL?, paragraphStyles: [String: UInt64]
     ) throws {
         // Every element is synthesized from scratch — nothing is cloned — so
         // the seed's prototypes are only removed, never used. Capture them up
@@ -67,7 +76,7 @@ public struct CanvasWriter {
         }
 
         for element in canvas.elements {
-            _ = try create(element, at: index, in: &document, imageBaseURL: imageBaseURL)
+            _ = try create(element, at: index, in: &document, imageBaseURL: imageBaseURL, paragraphStyles: paragraphStyles)
         }
 
         // Remove the seed's prototypes so only the composed elements remain.
@@ -78,13 +87,23 @@ public struct CanvasWriter {
 
     /// Creates one element (recursing into groups) and returns its node id.
     private func create(
-        _ element: Element, at index: Int, in document: inout KeynoteDocument, imageBaseURL: URL?
+        _ element: Element, at index: Int, in document: inout KeynoteDocument, imageBaseURL: URL?,
+        paragraphStyles: [String: UInt64]
     ) throws -> UInt64 {
         let frame = element.style.frame ?? Self.defaultFrame
         switch element.kind {
         case .text(let string):
             let newID = try document.addText(toSlideAt: index, string: string, frame: frame)
             try applyStyle(element.style, to: newID, in: &document)
+            if let name = element.style.paragraphStyleName, let styleID = paragraphStyles[name] {
+                try document.applyParagraphStyle(styleID, to: newID)
+            }
+            if let columns = element.style.columns {
+                try document.setNodeColumns(newID, count: columns, gap: element.style.columnGap ?? 20)
+            }
+            if let inset = element.style.textInset {
+                try document.setNodeTextInset(newID, inset)
+            }
             return newID
         case .shape(let kind):
             let newID = try document.addShape(toSlideAt: index, frame: frame, kind: kind)
@@ -99,7 +118,7 @@ public struct CanvasWriter {
             }
             return newID
         case .group(let children):
-            let ids = try children.map { try create($0, at: index, in: &document, imageBaseURL: imageBaseURL) }
+            let ids = try children.map { try create($0, at: index, in: &document, imageBaseURL: imageBaseURL, paragraphStyles: paragraphStyles) }
             let groupID = try document.groupNodes(ids, onSlideAt: index)
             // A group's frame is its members' bounds; rotation and lock apply.
             if let rotation = element.style.rotationDegrees {

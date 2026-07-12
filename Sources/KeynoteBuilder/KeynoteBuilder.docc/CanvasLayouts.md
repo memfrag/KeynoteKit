@@ -35,6 +35,31 @@ try writer.write([canvas], to: URL(filePath: "Deck.key"),
 
 Each entry in the list becomes one slide.
 
+## Paragraph styles
+
+Define named ``ParagraphStyle`` values on the writer — they're registered in
+the document's stylesheet (so they appear in Keynote's paragraph-styles
+panel) — then apply them to text by name. A style carries both font
+(`fontSize`/`bold`/`italic`/`color`) and paragraph formatting (`alignment`,
+`spaceBefore`/`spaceAfter`, indents, `background`):
+
+```swift
+let styles = [
+    ParagraphStyle(name: "Heading", fontSize: 54, bold: true, alignment: .center),
+    ParagraphStyle(name: "Body", fontSize: 24, alignment: .justified,
+                   spaceAfter: 8, leftIndent: 12),
+]
+let canvas = Canvas {
+    Text("Title").frame(x: 60, y: 60, width: 900, height: 120).paragraphStyle("Heading")
+    Text("Lorem ipsum…").frame(x: 60, y: 220, width: 900, height: 400)
+        .paragraphStyle("Body").columns(2, gap: 40).textInset(16)
+}
+try CanvasWriter().write([canvas], to: url, paragraphStyles: styles)
+```
+
+`.columns(_:gap:)` and `.textInset(_:)` are text-box container properties
+(not part of the paragraph style).
+
 ## Grouping
 
 Wrap elements in a `Group` to group them (groups can nest). The group's frame
@@ -176,6 +201,9 @@ Modifiers chain, SwiftUI-style, each returning a new ``Element``:
 | `.locked(_:)` | all | lock against selection/editing in Keynote |
 | `.flippedHorizontally(_:)` / `.flippedVertically(_:)` | all | mirror the element |
 | `.mask(_:)` | image | clip the image to a ``ShapeKind`` |
+| `.paragraphStyle(_:)` | text | apply a named ``ParagraphStyle`` |
+| `.columns(_:gap:)` | text | flow text in equal columns |
+| `.textInset(_:)` | text | padding between text and box edge |
 
 Colors are ``RGBAColor`` values in 0…1: `.white`, `.black`, or
 `.rgb(_:_:_:)`. A shape's `.fill(_:)` also takes a full ``Fill`` — the same

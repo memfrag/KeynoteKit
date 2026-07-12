@@ -116,6 +116,20 @@ extension KeynoteDocument {
         try mutateDrawable(nodeID) { $0.locked = locked }
     }
 
+    /// Flips a shape horizontally and/or vertically (mirrors its path source).
+    public mutating func setNodeFlip(_ nodeID: UInt64, horizontal: Bool = false, vertical: Bool = false) throws {
+        let location = try locateSceneNode(nodeID)
+        var record = components[location.component].records[location.record]
+        guard record.primaryType == 2011 else {
+            throw SceneEditError.unsupportedEdit("flip is only supported for shapes so far")
+        }
+        var shape = try record.decode(TSWP_ShapeInfoArchive.self)
+        shape.super.pathsource.horizontalFlip = horizontal
+        shape.super.pathsource.verticalFlip = vertical
+        try record.setMessage(shape)
+        components[location.component].records[location.record] = record
+    }
+
     /// Applies a change to a drawable's geometry, decoding whichever archive
     /// type the node is.
     mutating func mutateGeometry(_ nodeID: UInt64, _ apply: @escaping (inout TSD_GeometryArchive) -> Void) throws {

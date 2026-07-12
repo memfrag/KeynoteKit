@@ -89,6 +89,13 @@ public struct CanvasWriter {
         case .shape(let kind):
             let newID = try document.addShape(toSlideAt: index, frame: frame, kind: kind)
             try applyStyle(element.style, to: newID, in: &document)
+            if element.style.flipHorizontal == true || element.style.flipVertical == true {
+                try document.setNodeFlip(
+                    newID,
+                    horizontal: element.style.flipHorizontal ?? false,
+                    vertical: element.style.flipVertical ?? false
+                )
+            }
             return newID
         case .image(let path):
             let url = URL(fileURLWithPath: path, relativeTo: imageBaseURL)

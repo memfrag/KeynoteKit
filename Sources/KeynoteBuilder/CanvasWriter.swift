@@ -153,10 +153,11 @@ public struct CanvasWriter {
     private static let defaultFrame = Frame(x: 0, y: 0, width: 300, height: 200)
 
     private func applyStyle(_ style: ElementStyle, to nodeID: UInt64, in document: inout KeynoteDocument) throws {
-        if style.fontSize != nil || style.bold != nil || style.italic != nil || style.foregroundColor != nil
-            || style.underline != nil || style.strikethrough != nil {
+        if style.font != nil || style.fontSize != nil || style.bold != nil || style.italic != nil
+            || style.foregroundColor != nil || style.underline != nil || style.strikethrough != nil {
             try document.setNodeCharacterStyle(
                 nodeID,
+                fontName: style.font,
                 fontSize: style.fontSize,
                 bold: style.bold,
                 italic: style.italic,

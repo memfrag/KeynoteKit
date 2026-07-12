@@ -11,10 +11,13 @@ import SwiftProtobuf
 /// so overridden text opens and renders correctly.
 extension KeynoteDocument {
 
-    /// Overrides font size, weight, italic, and color on a text node. `nil`
-    /// arguments keep the inherited value. Colors are RGBA in 0…1.
+    /// Overrides font, size, weight, italic, and color on a text node. `nil`
+    /// arguments keep the inherited value. `fontName` is a font family or
+    /// PostScript face name (Keynote resolves it with the `bold`/`italic`
+    /// traits and substitutes if the font is unavailable). Colors are RGBA 0…1.
     public mutating func setNodeCharacterStyle(
         _ nodeID: UInt64,
+        fontName: String? = nil,
         fontSize: Double? = nil,
         bold: Bool? = nil,
         italic: Bool? = nil,
@@ -22,7 +25,7 @@ extension KeynoteDocument {
         underline: Bool? = nil,
         strikethrough: Bool? = nil
     ) throws {
-        guard fontSize != nil || bold != nil || italic != nil || color != nil
+        guard fontName != nil || fontSize != nil || bold != nil || italic != nil || color != nil
             || underline != nil || strikethrough != nil else { return }
 
         let location = try locateSceneNode(nodeID)
@@ -56,6 +59,7 @@ extension KeynoteDocument {
 
         var overrideCount: UInt32 = 0
         var properties = TSWP_CharacterStylePropertiesArchive()
+        if let fontName { properties.fontName = fontName; properties.fontNameNull = false; overrideCount += 1 }
         if let fontSize { properties.fontSize = Float(fontSize); overrideCount += 1 }
         if let bold { properties.bold = bold; overrideCount += 1 }
         if let italic { properties.italic = italic; overrideCount += 1 }

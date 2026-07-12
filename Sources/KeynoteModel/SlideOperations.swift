@@ -36,6 +36,24 @@ extension KeynoteDocument {
         (try? slideNodeIdentifiers().count) ?? 0
     }
 
+    /// The slide (canvas) dimensions in points, from `KN.ShowArchive.size`.
+    public func slideSize() throws -> (width: Double, height: Double) {
+        let show = try showRecord().decode(KN_ShowArchive.self)
+        return (Double(show.size.width), Double(show.size.height))
+    }
+
+    /// Sets the slide (canvas) dimensions in points — e.g. `1920 × 1080` for
+    /// 16:9. Writes `KN.ShowArchive.size`; existing slide content keeps its
+    /// coordinates, so lay content out for the new size.
+    public mutating func setSlideSize(width: Double, height: Double) throws {
+        let location = try locate(type: 2, orThrow: SlideOperationError.showArchiveNotFound)
+        var record = components[location.component].records[location.record]
+        var show = try record.decode(KN_ShowArchive.self)
+        show.size = TSP_Size.with { $0.width = Float(width); $0.height = Float(height) }
+        try record.setMessage(show)
+        components[location.component].records[location.record] = record
+    }
+
     // MARK: Reorder
 
     public mutating func moveSlide(from source: Int, to destination: Int) throws {

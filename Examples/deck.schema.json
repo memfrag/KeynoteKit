@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/memfrag/KeynoteKit/deck.schema.json",
+  "title": "KeynoteKit deck",
+  "description": "A declarative 16:9 (1920x1080) Keynote deck. Feed to `iwatool build-json <spec.json> <out.key>`.",
+  "type": "object",
+  "required": ["slides"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "name": { "type": "string", "description": "Document name." },
+    "template": { "type": "string", "description": "External template .key (relative to this file) used as the base document; its layouts can be cloned via slide.from." },
+    "imageBaseDir": { "type": "string", "description": "Directory (relative to this file) that image paths resolve against. Defaults to this file's directory." },
+    "defaultFont": { "type": "string", "description": "Font applied to all text unless an element or paragraph style overrides it." },
+    "paragraphStyles": { "type": "array", "items": { "$ref": "#/$defs/paragraphStyle" }, "description": "Named paragraph styles, appliable via element.paragraphStyle." },
+    "templates": { "type": "object", "additionalProperties": { "$ref": "#/$defs/template" }, "description": "Reusable in-JSON slide templates, addressed by slide.use." },
+    "slides": { "type": "array", "items": { "$ref": "#/$defs/slide" } }
+  },
+  "$defs": {
+    "color": {
+      "description": "A hex string (\"#RRGGBB\" / \"#RRGGBBAA\") or an array [r,g,b(,a)] of 0..1 floats.",
+      "oneOf": [
+        { "type": "string", "pattern": "^#?[0-9a-fA-F]{6}([0-9a-fA-F]{2})?$" },
+        { "type": "array", "items": { "type": "number", "minimum": 0, "maximum": 1 }, "minItems": 3, "maxItems": 4 }
+      ]
+    },
+    "frame": {
+      "description": "Explicit {x,y,width,height} or a helper {mode:\"cover\"|\"fit\"|\"coverBox\", box?}. cover/fit/coverBox read the element image's aspect (or its `aspect` override).",
+      "oneOf": [
+        {
+          "type": "object", "additionalProperties": false, "required": ["x", "y", "width", "height"],
+          "properties": {
+            "x": { "type": "number" }, "y": { "type": "number" },
+            "width": { "type": "number" }, "height": { "type": "number" }
+          }
+        },
+        {
+          "type": "object", "additionalProperties": false, "required": ["mode"],
+          "properties": {
+            "mode": { "enum": ["cover", "fit", "coverBox"] },
+            "box": {
+              "type": "object", "additionalProperties": false, "required": ["x", "y", "width", "height"],
+              "properties": { "x": { "type": "number" }, "y": { "type": "number" }, "width": { "type": "number" }, "height": { "type": "number" } }
+            }
+          }
+        }
+      ]
+    },
+    "fill": {
+      "description": "A fill. Shorthand: a bare color (hex or array) means a color fill.",
+      "oneOf": [
+        { "$ref": "#/$defs/color" },
+        {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "type": { "enum": ["none", "color", "linearGradient", "radialGradient", "image"] },
+            "color": { "$ref": "#/$defs/color" },
+            "stops": { "type": "array", "items": { "$ref": "#/$defs/gradientStop" } },
+            "angleDegrees": { "type": "number" },
+            "image": { "type": "string", "description": "Image path or data:/base64." },
+            "mode": { "enum": ["original", "stretch", "tile", "scaleToFill", "scaleToFit"] },
+            "tint": { "$ref": "#/$defs/color" }
+          }
+        }
+      ]
+    },
+    "gradientStop": {
+      "type": "object", "additionalProperties": false, "required": ["color", "location"],
+      "properties": { "color": { "$ref": "#/$defs/color" }, "location": { "type": "number", "minimum": 0, "maximum": 1 } }
+    },
+    "shape": {
+      "type": "object", "additionalProperties": false, "required": ["kind"],
+      "properties": {
+        "kind": { "enum": ["rectangle", "roundedRectangle", "ellipse", "line", "regularPolygon", "star", "path", "native"] },
+        "cornerRadius": { "type": "number" },
+        "sides": { "type": "integer" },
+        "points": { "type": "integer" },
+        "innerRatio": { "type": "number" },
+        "segments": { "type": "array", "items": { "$ref": "#/$defs/pathSegment" } },
+        "native": { "$ref": "#/$defs/parametricShape" }
+      }
+    },
+    "parametricShape": {
+      "type": "object", "additionalProperties": false, "required": ["shape"],
+      "properties": {
+        "shape": { "enum": ["roundedRectangle", "regularPolygon", "star", "chevron", "plus", "leftArrow", "rightArrow", "doubleArrow"] },
+        "cornerRadius": { "type": "number" }, "sides": { "type": "integer" },
+        "points": { "type": "integer" }, "innerRatio": { "type": "number" }, "depth": { "type": "number" }
+      }
+    },
+    "pathSegment": {
+      "type": "object", "additionalProperties": false, "required": ["op"],
+      "properties": {
+        "op": { "enum": ["move", "line", "quadCurve", "curve", "close"] },
+        "x": { "type": "number" }, "y": { "type": "number" },
+        "cx": { "type": "number" }, "cy": { "type": "number" },
+        "c1x": { "type": "number" }, "c1y": { "type": "number" }, "c2x": { "type": "number" }, "c2y": { "type": "number" }
+      }
+    },
+    "border": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "color": { "$ref": "#/$defs/color" },
+        "width": { "type": "number" },
+        "dash": { "type": "array", "items": { "type": "number" }, "description": "Dash/gap lengths in width-multiples; empty = solid." },
+        "roundCap": { "type": "boolean" },
+        "style": { "enum": ["dashed", "dotted"], "description": "Convenience preset (overrides dash)." }
+      }
+    },
+    "shadow": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "color": { "$ref": "#/$defs/color" }, "offset": { "type": "number" }, "blur": { "type": "number" },
+        "angleDegrees": { "type": "number" }, "opacity": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "bullet": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "marker": { "type": "string", "description": "Bullet glyph (default •)." }, "color": { "$ref": "#/$defs/color" } }
+    },
+    "numbered": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "format": { "enum": ["decimal", "decimalParen", "romanUpper", "romanLower", "alphaUpper", "alphaLower"] },
+        "color": { "$ref": "#/$defs/color" }
+      }
+    },
+    "dropCap": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "lines": { "type": "integer" }, "characters": { "type": "integer" } }
+    },
+    "paragraphStyle": {
+      "type": "object", "additionalProperties": false, "required": ["name"],
+      "properties": {
+        "name": { "type": "string" }, "font": { "type": "string" }, "fontSize": { "type": "number" },
+        "bold": { "type": "boolean" }, "italic": { "type": "boolean" }, "color": { "$ref": "#/$defs/color" },
+        "alignment": { "$ref": "#/$defs/alignment" },
+        "spaceBefore": { "type": "number" }, "spaceAfter": { "type": "number" },
+        "firstLineIndent": { "type": "number" }, "leftIndent": { "type": "number" }, "rightIndent": { "type": "number" },
+        "lineSpacing": { "type": "number", "description": "Multiple of the font size (1.0 single, 2.0 double)." },
+        "background": { "$ref": "#/$defs/color" },
+        "tabs": { "type": "array", "items": { "$ref": "#/$defs/tabStop" } }
+      }
+    },
+    "tabStop": {
+      "type": "object", "additionalProperties": false, "required": ["position"],
+      "properties": { "position": { "type": "number" }, "alignment": { "enum": ["left", "center", "right", "decimal"] }, "leader": { "type": "string" } }
+    },
+    "alignment": { "enum": ["left", "right", "center", "justified", "natural"] },
+    "verticalAlignment": { "enum": ["top", "middle", "bottom", "justified"] },
+    "lineEnd": { "enum": ["none", "arrow", "filledArrow", "openArrow", "invertedArrow", "filledCircle", "openCircle", "diamond", "filledSquare", "openSquare", "bar"] },
+    "direction": { "description": "Push direction: which edge content enters from.", "enum": ["fromLeft", "fromRight", "fromTop", "fromBottom"] },
+    "template": {
+      "type": "object", "additionalProperties": false, "required": ["elements"],
+      "properties": { "elements": { "type": "array", "items": { "$ref": "#/$defs/element" } } }
+    },
+    "element": {
+      "type": "object", "additionalProperties": false, "required": ["type"],
+      "properties": {
+        "type": { "enum": ["text", "image", "shape", "group"] },
+        "text": { "type": "string" },
+        "image": { "type": "string", "description": "Image path (relative to imageBaseDir) or data:/base64." },
+        "shape": { "$ref": "#/$defs/shape" },
+        "children": { "type": "array", "items": { "$ref": "#/$defs/element" } },
+        "frame": { "$ref": "#/$defs/frame" },
+        "aspect": { "type": "number", "description": "Image aspect (w/h) override for cover/fit/coverBox." },
+        "font": { "type": "string" },
+        "fontSize": { "type": "number" },
+        "bold": { "type": "boolean" },
+        "italic": { "type": "boolean" },
+        "underline": { "type": "boolean" },
+        "strikethrough": { "type": "boolean" },
+        "color": { "$ref": "#/$defs/color", "description": "Text (foreground) color." },
+        "alignment": { "$ref": "#/$defs/alignment" },
+        "verticalAlignment": { "$ref": "#/$defs/verticalAlignment" },
+        "paragraphStyle": { "type": "string", "description": "Name of a deck paragraphStyle." },
+        "columns": { "type": "integer" },
+        "columnGap": { "type": "number" },
+        "textInset": { "type": "number" },
+        "bulleted": { "$ref": "#/$defs/bullet" },
+        "numbered": { "$ref": "#/$defs/numbered" },
+        "dropCap": { "$ref": "#/$defs/dropCap" },
+        "fill": { "$ref": "#/$defs/fill" },
+        "border": { "$ref": "#/$defs/border" },
+        "shadow": { "$ref": "#/$defs/shadow" },
+        "opacity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "rotation": { "type": "number", "description": "Degrees (counterclockwise)." },
+        "startCap": { "$ref": "#/$defs/lineEnd" },
+        "endCap": { "$ref": "#/$defs/lineEnd" },
+        "mask": { "$ref": "#/$defs/shape", "description": "Clip shape for an image." },
+        "locked": { "type": "boolean" },
+        "flippedHorizontally": { "type": "boolean" },
+        "flippedVertically": { "type": "boolean" },
+        "name": { "type": "string", "description": "Object-list name; also the build/override target key. Must be unique per slide." }
+      }
+    },
+    "transition": {
+      "type": "object", "additionalProperties": false, "required": ["effect"],
+      "properties": {
+        "effect": { "type": "string", "description": "e.g. \"apple:push\", \"apple:dissolve\"." },
+        "duration": { "type": "number" }, "delay": { "type": "number" },
+        "direction": { "$ref": "#/$defs/direction" },
+        "isAutomatic": { "type": "boolean" },
+        "color": { "type": "array", "items": { "type": "number" } },
+        "textDelivery": { "enum": ["byObject", "byWord", "byCharacter", "byLine"] },
+        "twist": { "type": "number" }, "mosaicSize": { "type": "integer" },
+        "bounce": { "type": "boolean" }, "motionBlur": { "type": "boolean" }, "travelDistance": { "type": "number" }
+      }
+    },
+    "build": {
+      "type": "object", "additionalProperties": false, "required": ["target", "effect"],
+      "properties": {
+        "target": { "type": "string", "description": "Name of an element on this slide." },
+        "kind": { "type": "string", "description": "\"In\", \"Out\", or an action type. Default \"In\"." },
+        "effect": { "type": "string", "description": "e.g. \"apple:fade and move character\", \"apple:dissolve\"." },
+        "duration": { "type": "number" }, "delay": { "type": "number" },
+        "delivery": { "enum": ["All at Once", "By Paragraph", "By Paragraph Group", "By Highlighted Paragraph"] },
+        "textDelivery": { "enum": ["byObject", "byWord", "byCharacter", "byLine"], "description": "Required for multi-paragraph builds to play." },
+        "deliveryOption": { "enum": ["forward", "backward"] },
+        "direction": { "$ref": "#/$defs/direction" },
+        "travelDistance": { "type": "number", "description": "Fraction, e.g. 0.07 = 7%." },
+        "rotationAngle": { "type": "number" }, "scaleSize": { "type": "number" }, "opacity": { "type": "number" }
+      }
+    },
+    "from": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "template": { "type": "string", "description": "External template .key; defaults to the deck-level template." },
+        "layout": { "type": "string", "description": "Layout tag / master name in the template." },
+        "slideIndex": { "type": "integer" }
+      }
+    },
+    "override": {
+      "type": "object", "additionalProperties": false, "required": ["target"],
+      "properties": {
+        "target": { "type": "string", "description": "Named node on the cloned template slide." },
+        "text": { "type": "string" }, "image": { "type": "string" },
+        "frame": { "$ref": "#/$defs/frame" }, "fill": { "$ref": "#/$defs/fill" },
+        "border": { "$ref": "#/$defs/border" }, "shadow": { "$ref": "#/$defs/shadow" },
+        "opacity": { "type": "number" }
+      }
+    },
+    "setValue": {
+      "description": "A placeholder/element fill: a bare string (text) or { text?, image? }.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "object", "additionalProperties": false, "properties": { "text": { "type": "string" }, "image": { "type": "string" } } }
+      ]
+    },
+    "slide": {
+      "type": "object", "additionalProperties": false,
+      "description": "A slide. Free-form (elements), an in-JSON template instance (use), or an external-template clone (from).",
+      "properties": {
+        "background": { "$ref": "#/$defs/fill" },
+        "transition": { "$ref": "#/$defs/transition" },
+        "elements": { "type": "array", "items": { "$ref": "#/$defs/element" } },
+        "use": { "type": "string", "description": "Name of a deck template to instantiate." },
+        "from": { "$ref": "#/$defs/from" },
+        "set": { "type": "object", "additionalProperties": { "$ref": "#/$defs/setValue" }, "description": "Fill named template elements / placeholders." },
+        "override": { "type": "array", "items": { "$ref": "#/$defs/override" } },
+        "builds": { "type": "array", "items": { "$ref": "#/$defs/build" }, "description": "Ordered animations; array order = playback order." },
+        "notes": { "type": "string", "description": "Presenter notes." },
+        "title": { "type": "string", "description": "Navigator/outline title." }
+      }
+    }
+  }
+}

@@ -1,0 +1,1250 @@
+{
+  "$schema": "./deck.schema.json",
+  "name": "Otters",
+  "imageBaseDir": "../Assets",
+  "defaultFont": "Helvetica Neue",
+  "slides": [
+    {
+      "background": "#0E1317",
+      "transition": {
+        "effect": "apple:push",
+        "duration": 0.4,
+        "direction": "fromBottom"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "image": "lake-adam-vradenburg-GA09PKfRIQY-unsplash.jpg",
+          "frame": {
+            "mode": "cover"
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          "fill": {
+            "type": "color",
+            "color": [
+              0.03,
+              0.05,
+              0.06,
+              0.32
+            ]
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 0,
+            "y": 430,
+            "width": 1920,
+            "height": 650
+          },
+          "fill": {
+            "type": "linearGradient",
+            "angleDegrees": 270,
+            "stops": [
+              {
+                "color": [
+                  0.02,
+                  0.05,
+                  0.06,
+                  0
+                ],
+                "location": 0
+              },
+              {
+                "color": [
+                  0.02,
+                  0.05,
+                  0.06,
+                  0.78
+                ],
+                "location": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 900.0,
+            "y": 470,
+            "width": 120,
+            "height": 7
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "A FIELD GUIDE TO RIVERS & COASTS",
+          "frame": {
+            "x": 210,
+            "y": 500,
+            "width": 1500,
+            "height": 54
+          },
+          "fontSize": 32,
+          "bold": true,
+          "color": "#FA8C66",
+          "alignment": "center"
+        },
+        {
+          "type": "text",
+          "text": "Otters",
+          "frame": {
+            "x": 110,
+            "y": 548,
+            "width": 1700,
+            "height": 250
+          },
+          "font": "Futura",
+          "fontSize": 190,
+          "bold": true,
+          "color": "#F2F5F7",
+          "alignment": "center"
+        },
+        {
+          "type": "text",
+          "text": "Nature's playful engineers of water",
+          "frame": {
+            "x": 210,
+            "y": 820,
+            "width": 1500,
+            "height": 80
+          },
+          "fontSize": 46,
+          "italic": true,
+          "color": "#9EABB8",
+          "alignment": "center"
+        }
+      ]
+    },
+    {
+      "background": "#0E1317",
+      "transition": {
+        "effect": "apple:push",
+        "duration": 0.4,
+        "direction": "fromBottom"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "image": "otter-joshua-j-cotten-aaUMGx6YguU-unsplash.jpg",
+          "frame": {
+            "mode": "coverBox",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 1080
+            }
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 960,
+            "y": 0,
+            "width": 960,
+            "height": 1080
+          },
+          "fill": "#0E1317"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 952,
+            "y": 0,
+            "width": 8,
+            "height": 1080
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "01",
+          "frame": {
+            "x": 1040,
+            "y": 640,
+            "width": 960,
+            "height": 460
+          },
+          "font": "Futura",
+          "fontSize": 560,
+          "bold": true,
+          "color": "#F2F5F7",
+          "opacity": 0.06,
+          "alignment": "left"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 1090,
+            "y": 210,
+            "width": 90,
+            "height": 10
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "MEET THE OTTER",
+          "frame": {
+            "x": 1090,
+            "y": 250,
+            "width": 700,
+            "height": 50
+          },
+          "fontSize": 30,
+          "bold": true,
+          "color": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "Playful by Nature",
+          "frame": {
+            "x": 1090,
+            "y": 300,
+            "width": 720,
+            "height": 230
+          },
+          "font": "Futura",
+          "fontSize": 84,
+          "bold": true,
+          "color": "#F2F5F7"
+        },
+        {
+          "type": "text",
+          "name": "bullets",
+          "text": "Semi-aquatic mammals of the weasel family\nThirteen species, from rivers to open sea\nFamous for sliding, wrestling, and play",
+          "frame": {
+            "x": 1090,
+            "y": 600,
+            "width": 700,
+            "height": 420
+          },
+          "fontSize": 42,
+          "color": "#F2F5F7",
+          "bulleted": {
+            "marker": "•",
+            "color": "#FA8C66"
+          }
+        }
+      ],
+      "builds": [
+        {
+          "target": "bullets",
+          "kind": "In",
+          "effect": "apple:fade and move character",
+          "duration": 0.3,
+          "delivery": "By Paragraph",
+          "textDelivery": "byObject",
+          "direction": "fromBottom",
+          "travelDistance": 0.07
+        }
+      ]
+    },
+    {
+      "background": "#0E1317",
+      "transition": {
+        "effect": "apple:push",
+        "duration": 0.4,
+        "direction": "fromBottom"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "image": "otter-johnny-thorpe-n8IOzK96bN4-unsplash.jpg",
+          "frame": {
+            "mode": "coverBox",
+            "box": {
+              "x": 960,
+              "y": 0,
+              "width": 960,
+              "height": 1080
+            }
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 960,
+            "height": 1080
+          },
+          "fill": "#0E1317"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 952,
+            "y": 0,
+            "width": 8,
+            "height": 1080
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "02",
+          "frame": {
+            "x": -40,
+            "y": 640,
+            "width": 960,
+            "height": 460
+          },
+          "font": "Futura",
+          "fontSize": 560,
+          "bold": true,
+          "color": "#F2F5F7",
+          "opacity": 0.06,
+          "alignment": "right"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 130,
+            "y": 210,
+            "width": 90,
+            "height": 10
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "ANATOMY",
+          "frame": {
+            "x": 130,
+            "y": 250,
+            "width": 700,
+            "height": 50
+          },
+          "fontSize": 30,
+          "bold": true,
+          "color": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "Built for Water",
+          "frame": {
+            "x": 130,
+            "y": 300,
+            "width": 720,
+            "height": 230
+          },
+          "font": "Futura",
+          "fontSize": 84,
+          "bold": true,
+          "color": "#F2F5F7"
+        },
+        {
+          "type": "text",
+          "name": "bullets",
+          "text": "Webbed feet and a rudder-like tail\nThe densest fur of any animal\nBodies that twist and dive with ease",
+          "frame": {
+            "x": 130,
+            "y": 600,
+            "width": 700,
+            "height": 420
+          },
+          "fontSize": 42,
+          "color": "#F2F5F7",
+          "bulleted": {
+            "marker": "•",
+            "color": "#FA8C66"
+          }
+        }
+      ],
+      "builds": [
+        {
+          "target": "bullets",
+          "kind": "In",
+          "effect": "apple:fade and move character",
+          "duration": 0.3,
+          "delivery": "By Paragraph",
+          "textDelivery": "byObject",
+          "direction": "fromBottom",
+          "travelDistance": 0.07
+        }
+      ]
+    },
+    {
+      "background": "#0E1317",
+      "transition": {
+        "effect": "apple:push",
+        "duration": 0.4,
+        "direction": "fromBottom"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "image": "otter-kedar-gadge-X9cBHEPO6LU-unsplash.jpg",
+          "frame": {
+            "mode": "coverBox",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 1080
+            }
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 960,
+            "y": 0,
+            "width": 960,
+            "height": 1080
+          },
+          "fill": "#0E1317"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 952,
+            "y": 0,
+            "width": 8,
+            "height": 1080
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "03",
+          "frame": {
+            "x": 1040,
+            "y": 640,
+            "width": 960,
+            "height": 460
+          },
+          "font": "Futura",
+          "fontSize": 560,
+          "bold": true,
+          "color": "#F2F5F7",
+          "opacity": 0.06,
+          "alignment": "left"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 1090,
+            "y": 210,
+            "width": 90,
+            "height": 10
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "DIET",
+          "frame": {
+            "x": 1090,
+            "y": 250,
+            "width": 700,
+            "height": 50
+          },
+          "fontSize": 30,
+          "bold": true,
+          "color": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "Master Foragers",
+          "frame": {
+            "x": 1090,
+            "y": 300,
+            "width": 720,
+            "height": 230
+          },
+          "font": "Futura",
+          "fontSize": 84,
+          "bold": true,
+          "color": "#F2F5F7"
+        },
+        {
+          "type": "text",
+          "name": "bullets",
+          "text": "Hunt fish, crabs, urchins, and clams\nSea otters crack shells with stone tools\nEat a quarter of their weight each day",
+          "frame": {
+            "x": 1090,
+            "y": 600,
+            "width": 700,
+            "height": 420
+          },
+          "fontSize": 42,
+          "color": "#F2F5F7",
+          "bulleted": {
+            "marker": "•",
+            "color": "#FA8C66"
+          }
+        }
+      ],
+      "builds": [
+        {
+          "target": "bullets",
+          "kind": "In",
+          "effect": "apple:fade and move character",
+          "duration": 0.3,
+          "delivery": "By Paragraph",
+          "textDelivery": "byObject",
+          "direction": "fromBottom",
+          "travelDistance": 0.07
+        }
+      ]
+    },
+    {
+      "background": "#0E1317",
+      "transition": {
+        "effect": "apple:push",
+        "duration": 0.4,
+        "direction": "fromBottom"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "image": "otter-mana5280-axqTLZ12Jss-unsplash.jpg",
+          "frame": {
+            "mode": "coverBox",
+            "box": {
+              "x": 960,
+              "y": 0,
+              "width": 960,
+              "height": 1080
+            }
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 960,
+            "height": 1080
+          },
+          "fill": "#0E1317"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 952,
+            "y": 0,
+            "width": 8,
+            "height": 1080
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "04",
+          "frame": {
+            "x": -40,
+            "y": 640,
+            "width": 960,
+            "height": 460
+          },
+          "font": "Futura",
+          "fontSize": 560,
+          "bold": true,
+          "color": "#F2F5F7",
+          "opacity": 0.06,
+          "alignment": "right"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 130,
+            "y": 210,
+            "width": 90,
+            "height": 10
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "FAMILY LIFE",
+          "frame": {
+            "x": 130,
+            "y": 250,
+            "width": 700,
+            "height": 50
+          },
+          "fontSize": 30,
+          "bold": true,
+          "color": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "Rafts and Pups",
+          "frame": {
+            "x": 130,
+            "y": 300,
+            "width": 720,
+            "height": 230
+          },
+          "font": "Futura",
+          "fontSize": 84,
+          "bold": true,
+          "color": "#F2F5F7"
+        },
+        {
+          "type": "text",
+          "name": "bullets",
+          "text": "Float together in groups called rafts\nHold hands asleep so they don't drift\nMothers groom pups on their bellies",
+          "frame": {
+            "x": 130,
+            "y": 600,
+            "width": 700,
+            "height": 420
+          },
+          "fontSize": 42,
+          "color": "#F2F5F7",
+          "bulleted": {
+            "marker": "•",
+            "color": "#FA8C66"
+          }
+        }
+      ],
+      "builds": [
+        {
+          "target": "bullets",
+          "kind": "In",
+          "effect": "apple:fade and move character",
+          "duration": 0.3,
+          "delivery": "By Paragraph",
+          "textDelivery": "byObject",
+          "direction": "fromBottom",
+          "travelDistance": 0.07
+        }
+      ]
+    },
+    {
+      "background": "#0E1317",
+      "transition": {
+        "effect": "apple:push",
+        "duration": 0.4,
+        "direction": "fromBottom"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "image": "otter-mariola-grobelska-HTxbKcrdvoM-unsplash.jpg",
+          "frame": {
+            "mode": "coverBox",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 1080
+            }
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 960,
+            "y": 0,
+            "width": 960,
+            "height": 1080
+          },
+          "fill": "#0E1317"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 952,
+            "y": 0,
+            "width": 8,
+            "height": 1080
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "05",
+          "frame": {
+            "x": 1040,
+            "y": 640,
+            "width": 960,
+            "height": 460
+          },
+          "font": "Futura",
+          "fontSize": 560,
+          "bold": true,
+          "color": "#F2F5F7",
+          "opacity": 0.06,
+          "alignment": "left"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 1090,
+            "y": 210,
+            "width": 90,
+            "height": 10
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "HABITAT",
+          "frame": {
+            "x": 1090,
+            "y": 250,
+            "width": 700,
+            "height": 50
+          },
+          "fontSize": 30,
+          "bold": true,
+          "color": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "Rivers to Kelp Forests",
+          "frame": {
+            "x": 1090,
+            "y": 300,
+            "width": 720,
+            "height": 230
+          },
+          "font": "Futura",
+          "fontSize": 84,
+          "bold": true,
+          "color": "#F2F5F7"
+        },
+        {
+          "type": "text",
+          "name": "bullets",
+          "text": "River otters roam freshwater streams\nSea otters live in coastal kelp forests\nFound on nearly every continent",
+          "frame": {
+            "x": 1090,
+            "y": 600,
+            "width": 700,
+            "height": 420
+          },
+          "fontSize": 42,
+          "color": "#F2F5F7",
+          "bulleted": {
+            "marker": "•",
+            "color": "#FA8C66"
+          }
+        }
+      ],
+      "builds": [
+        {
+          "target": "bullets",
+          "kind": "In",
+          "effect": "apple:fade and move character",
+          "duration": 0.3,
+          "delivery": "By Paragraph",
+          "textDelivery": "byObject",
+          "direction": "fromBottom",
+          "travelDistance": 0.07
+        }
+      ]
+    },
+    {
+      "background": "#0E1317",
+      "transition": {
+        "effect": "apple:push",
+        "duration": 0.4,
+        "direction": "fromBottom"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "image": "otter-ray-harrington-0yaKFO-_GJM-unsplash.jpg",
+          "frame": {
+            "mode": "coverBox",
+            "box": {
+              "x": 960,
+              "y": 0,
+              "width": 960,
+              "height": 1080
+            }
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 960,
+            "height": 1080
+          },
+          "fill": "#0E1317"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 952,
+            "y": 0,
+            "width": 8,
+            "height": 1080
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "06",
+          "frame": {
+            "x": -40,
+            "y": 640,
+            "width": 960,
+            "height": 460
+          },
+          "font": "Futura",
+          "fontSize": 560,
+          "bold": true,
+          "color": "#F2F5F7",
+          "opacity": 0.06,
+          "alignment": "right"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 130,
+            "y": 210,
+            "width": 90,
+            "height": 10
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "ECOLOGY",
+          "frame": {
+            "x": 130,
+            "y": 250,
+            "width": 700,
+            "height": 50
+          },
+          "fontSize": 30,
+          "bold": true,
+          "color": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "A Keystone Species",
+          "frame": {
+            "x": 130,
+            "y": 300,
+            "width": 720,
+            "height": 230
+          },
+          "font": "Futura",
+          "fontSize": 84,
+          "bold": true,
+          "color": "#F2F5F7"
+        },
+        {
+          "type": "text",
+          "name": "bullets",
+          "text": "They keep urchin populations in check\nThat protects carbon-storing kelp\nTheir presence signals a healthy coast",
+          "frame": {
+            "x": 130,
+            "y": 600,
+            "width": 700,
+            "height": 420
+          },
+          "fontSize": 42,
+          "color": "#F2F5F7",
+          "bulleted": {
+            "marker": "•",
+            "color": "#FA8C66"
+          }
+        }
+      ],
+      "builds": [
+        {
+          "target": "bullets",
+          "kind": "In",
+          "effect": "apple:fade and move character",
+          "duration": 0.3,
+          "delivery": "By Paragraph",
+          "textDelivery": "byObject",
+          "direction": "fromBottom",
+          "travelDistance": 0.07
+        }
+      ]
+    },
+    {
+      "background": "#0E1317",
+      "transition": {
+        "effect": "apple:push",
+        "duration": 0.4,
+        "direction": "fromBottom"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "image": "otter-joshua-j-cotten-aaUMGx6YguU-unsplash.jpg",
+          "frame": {
+            "mode": "coverBox",
+            "box": {
+              "x": 0,
+              "y": 0,
+              "width": 960,
+              "height": 1080
+            }
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 960,
+            "y": 0,
+            "width": 960,
+            "height": 1080
+          },
+          "fill": "#0E1317"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 952,
+            "y": 0,
+            "width": 8,
+            "height": 1080
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "07",
+          "frame": {
+            "x": 1040,
+            "y": 640,
+            "width": 960,
+            "height": 460
+          },
+          "font": "Futura",
+          "fontSize": 560,
+          "bold": true,
+          "color": "#F2F5F7",
+          "opacity": 0.06,
+          "alignment": "left"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 1090,
+            "y": 210,
+            "width": 90,
+            "height": 10
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "CHALLENGES",
+          "frame": {
+            "x": 1090,
+            "y": 250,
+            "width": 700,
+            "height": 50
+          },
+          "fontSize": 30,
+          "bold": true,
+          "color": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "Under Pressure",
+          "frame": {
+            "x": 1090,
+            "y": 300,
+            "width": 720,
+            "height": 230
+          },
+          "font": "Futura",
+          "fontSize": 84,
+          "bold": true,
+          "color": "#F2F5F7"
+        },
+        {
+          "type": "text",
+          "name": "bullets",
+          "text": "Once hunted to near extinction for fur\nThreatened by pollution and oil spills\nSensitive to falling water quality",
+          "frame": {
+            "x": 1090,
+            "y": 600,
+            "width": 700,
+            "height": 420
+          },
+          "fontSize": 42,
+          "color": "#F2F5F7",
+          "bulleted": {
+            "marker": "•",
+            "color": "#FA8C66"
+          }
+        }
+      ],
+      "builds": [
+        {
+          "target": "bullets",
+          "kind": "In",
+          "effect": "apple:fade and move character",
+          "duration": 0.3,
+          "delivery": "By Paragraph",
+          "textDelivery": "byObject",
+          "direction": "fromBottom",
+          "travelDistance": 0.07
+        }
+      ]
+    },
+    {
+      "background": "#0E1317",
+      "transition": {
+        "effect": "apple:push",
+        "duration": 0.4,
+        "direction": "fromBottom"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "image": "otter-kedar-gadge-X9cBHEPO6LU-unsplash.jpg",
+          "frame": {
+            "mode": "coverBox",
+            "box": {
+              "x": 960,
+              "y": 0,
+              "width": 960,
+              "height": 1080
+            }
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 960,
+            "height": 1080
+          },
+          "fill": "#0E1317"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 952,
+            "y": 0,
+            "width": 8,
+            "height": 1080
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "08",
+          "frame": {
+            "x": -40,
+            "y": 640,
+            "width": 960,
+            "height": 460
+          },
+          "font": "Futura",
+          "fontSize": 560,
+          "bold": true,
+          "color": "#F2F5F7",
+          "opacity": 0.06,
+          "alignment": "right"
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 130,
+            "y": 210,
+            "width": 90,
+            "height": 10
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "THE FUTURE",
+          "frame": {
+            "x": 130,
+            "y": 250,
+            "width": 700,
+            "height": 50
+          },
+          "fontSize": 30,
+          "bold": true,
+          "color": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "A Conservation Story",
+          "frame": {
+            "x": 130,
+            "y": 300,
+            "width": 720,
+            "height": 230
+          },
+          "font": "Futura",
+          "fontSize": 84,
+          "bold": true,
+          "color": "#F2F5F7"
+        },
+        {
+          "type": "text",
+          "name": "bullets",
+          "text": "Protected populations are recovering\nReintroductions restore kelp coasts\nEvery clean waterway helps them thrive",
+          "frame": {
+            "x": 130,
+            "y": 600,
+            "width": 700,
+            "height": 420
+          },
+          "fontSize": 42,
+          "color": "#F2F5F7",
+          "bulleted": {
+            "marker": "•",
+            "color": "#FA8C66"
+          }
+        }
+      ],
+      "builds": [
+        {
+          "target": "bullets",
+          "kind": "In",
+          "effect": "apple:fade and move character",
+          "duration": 0.3,
+          "delivery": "By Paragraph",
+          "textDelivery": "byObject",
+          "direction": "fromBottom",
+          "travelDistance": 0.07
+        }
+      ]
+    },
+    {
+      "background": "#0E1317",
+      "transition": {
+        "effect": "apple:push",
+        "duration": 0.4,
+        "direction": "fromBottom"
+      },
+      "elements": [
+        {
+          "type": "image",
+          "image": "otter-johnny-thorpe-n8IOzK96bN4-unsplash.jpg",
+          "frame": {
+            "mode": "cover"
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "width": 1920,
+            "height": 1080
+          },
+          "fill": {
+            "type": "color",
+            "color": [
+              0.03,
+              0.05,
+              0.06,
+              0.32
+            ]
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 0,
+            "y": 430,
+            "width": 1920,
+            "height": 650
+          },
+          "fill": {
+            "type": "linearGradient",
+            "angleDegrees": 270,
+            "stops": [
+              {
+                "color": [
+                  0.02,
+                  0.05,
+                  0.06,
+                  0
+                ],
+                "location": 0
+              },
+              {
+                "color": [
+                  0.02,
+                  0.05,
+                  0.06,
+                  0.78
+                ],
+                "location": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "shape",
+          "frame": {
+            "x": 900.0,
+            "y": 470,
+            "width": 120,
+            "height": 7
+          },
+          "fill": "#FA8C66"
+        },
+        {
+          "type": "text",
+          "text": "THANK YOU",
+          "frame": {
+            "x": 210,
+            "y": 500,
+            "width": 1500,
+            "height": 54
+          },
+          "fontSize": 32,
+          "bold": true,
+          "color": "#FA8C66",
+          "alignment": "center"
+        },
+        {
+          "type": "text",
+          "text": "Keep Water Wild",
+          "frame": {
+            "x": 110,
+            "y": 548,
+            "width": 1700,
+            "height": 250
+          },
+          "font": "Futura",
+          "fontSize": 190,
+          "bold": true,
+          "color": "#F2F5F7",
+          "alignment": "center"
+        },
+        {
+          "type": "text",
+          "text": "— for the otters",
+          "frame": {
+            "x": 210,
+            "y": 820,
+            "width": 1500,
+            "height": 80
+          },
+          "fontSize": 46,
+          "italic": true,
+          "color": "#9EABB8",
+          "alignment": "center"
+        }
+      ]
+    }
+  ]
+}

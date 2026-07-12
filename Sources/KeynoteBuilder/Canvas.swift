@@ -26,6 +26,7 @@ public struct RGBAColor: Sendable, Equatable {
 /// the renderer applies the ones relevant to each element kind.
 public struct ElementStyle: Sendable {
     public var frame: Frame?
+    public var font: String?
     public var fontSize: Double?
     public var bold: Bool?
     public var italic: Bool?
@@ -95,6 +96,8 @@ public struct Element: Sendable {
         }
     }
 
+    /// Sets the font (family or PostScript face name) for a text element.
+    public func font(_ name: String) -> Element { modifying { $0.font = name } }
     public func fontSize(_ size: Double) -> Element { modifying { $0.fontSize = size } }
     public func bold(_ on: Bool = true) -> Element { modifying { $0.bold = on } }
     public func italic(_ on: Bool = true) -> Element { modifying { $0.italic = on } }
@@ -201,6 +204,12 @@ public func Shape(_ kind: ShapeKind = .rectangle) -> Element { Element(.shape(ki
 /// Groups can nest. The group's own frame is its members' bounding box.
 public func Group(@ElementBuilder _ content: () -> [Element]) -> Element {
     Element(.group(content()))
+}
+
+/// A group built from an already-realized element array (used when elements are
+/// produced programmatically rather than via the result builder).
+public func Group(_ elements: [Element]) -> Element {
+    Element(.group(elements))
 }
 
 /// A free-form slide built from absolutely-positioned elements, rather than

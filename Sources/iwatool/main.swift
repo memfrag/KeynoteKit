@@ -38,6 +38,7 @@ usage:
   iwatool build-md <slides.md> <out.key> [template.key]
                                                  build a deck from a markdown presentation,
                                                  optionally using a multi-layout template
+  iwatool build-json <spec.json> <out.key>       build a deck from a declarative JSON spec
   iwatool set-title <in.key> <out.key> <index> <text>   set a slide's title
   iwatool describe-template <file.key>           JSON: each slide's layout tag, master, and
                                                  fillable placeholders (role/kind/prompt/frame)
@@ -192,6 +193,21 @@ if arguments.count >= 4, arguments[1] == "builddelivery-test" {
     let builds = try reread.slideBuilds(at: 0)
     print("builds in order:", builds.map { "\($0.nodeID)/\($0.effect)/delivery=\($0.delivery ?? "-")" }.joined(separator: " | "))
     exit(0)
+}
+
+if arguments.count >= 4, arguments[1] == "font-test" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let a = try document.addText(toSlideAt: 0, string: "Futura at 80pt", frame: Frame(x: 120, y: 200, width: 1400, height: 140))
+    try document.setNodeCharacterStyle(a, fontName: "Futura", fontSize: 80, bold: true)
+    let b = try document.addText(toSlideAt: 0, string: "Times New Roman italic", frame: Frame(x: 120, y: 400, width: 1400, height: 140))
+    try document.setNodeCharacterStyle(b, fontName: "Times New Roman", fontSize: 80, italic: true)
+    let styled = try document.defineParagraphStyle(ParagraphStyle(name: "Mono", font: "Menlo", fontSize: 60, color: (0.2, 0.4, 0.9, 1)))
+    let c = try document.addText(toSlideAt: 0, string: "Menlo via paragraph style", frame: Frame(x: 120, y: 620, width: 1400, height: 140))
+    try document.applyParagraphStyle(styled, to: c)
+    try document.write(to: out)
+    print("font test written; nodes \(a),\(b),\(c)"); exit(0)
 }
 
 if arguments.count >= 4, arguments[1] == "bullet-test" {
@@ -803,6 +819,16 @@ case "build-md":
         message += " (\(imageCount) image reference(s))"
     }
     print(message)
+
+case "build-json":
+    guard arguments.count >= 4 else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    do {
+        try DeckSpecLoader.write(specURL: inputURL, to: outputURL)
+        print("built deck from JSON: \(outputURL.path)")
+    } catch let error as DeckSpecError {
+        fail("\(error)")
+    }
 
 default:
     fail(usage)

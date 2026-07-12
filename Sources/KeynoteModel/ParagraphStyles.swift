@@ -93,6 +93,9 @@ public enum NumberFormat: Sendable {
 public struct ParagraphStyle: Sendable {
     public var name: String
     // Font (character) properties.
+    /// Font family or PostScript face name (Keynote resolves it with the
+    /// bold/italic traits; substitutes if unavailable). `nil` keeps the theme font.
+    public var font: String?
     public var fontSize: Double?
     public var bold: Bool?
     public var italic: Bool?
@@ -112,7 +115,7 @@ public struct ParagraphStyle: Sendable {
     public var tabs: [TabStop]?
 
     public init(
-        name: String, fontSize: Double? = nil, bold: Bool? = nil, italic: Bool? = nil,
+        name: String, font: String? = nil, fontSize: Double? = nil, bold: Bool? = nil, italic: Bool? = nil,
         color: (Double, Double, Double, Double)? = nil, alignment: TextAlignment? = nil,
         spaceBefore: Double? = nil, spaceAfter: Double? = nil,
         firstLineIndent: Double? = nil, leftIndent: Double? = nil, rightIndent: Double? = nil,
@@ -121,6 +124,7 @@ public struct ParagraphStyle: Sendable {
         tabs: [TabStop]? = nil
     ) {
         self.name = name
+        self.font = font
         self.fontSize = fontSize
         self.bold = bold
         self.italic = italic
@@ -162,6 +166,7 @@ extension KeynoteDocument {
 
         var overrideCount: UInt32 = 0
         var charProperties = TSWP_CharacterStylePropertiesArchive()
+        if let font = style.font { charProperties.fontName = font; charProperties.fontNameNull = false; overrideCount += 1 }
         if let fontSize = style.fontSize { charProperties.fontSize = Float(fontSize); overrideCount += 1 }
         if let bold = style.bold { charProperties.bold = bold; overrideCount += 1 }
         if let italic = style.italic { charProperties.italic = italic; overrideCount += 1 }

@@ -18,9 +18,12 @@ extension KeynoteDocument {
         fontSize: Double? = nil,
         bold: Bool? = nil,
         italic: Bool? = nil,
-        color: (Double, Double, Double, Double)? = nil
+        color: (Double, Double, Double, Double)? = nil,
+        underline: Bool? = nil,
+        strikethrough: Bool? = nil
     ) throws {
-        guard fontSize != nil || bold != nil || italic != nil || color != nil else { return }
+        guard fontSize != nil || bold != nil || italic != nil || color != nil
+            || underline != nil || strikethrough != nil else { return }
 
         let location = try locateSceneNode(nodeID)
         guard let storageID = try storageIdentifier(forNodeAt: location),
@@ -32,9 +35,15 @@ extension KeynoteDocument {
 
         // The run's current character style is the parent the override
         // inherits from; the storage's stylesheet is the override's stylesheet.
-        guard let baseStyleID = storage.tableCharStyle.entries.first?.object.identifier,
-              storage.hasStyleSheet
-        else { throw SceneEditError.unsupportedEdit("text node \(nodeID) has no base character style to inherit") }
+        // If the char style was cleared (e.g. by a paragraph style), fall back
+        // to the theme's base character style.
+        var baseStyleID = storage.tableCharStyle.entries.first.flatMap {
+            $0.hasObject ? $0.object.identifier : nil
+        } ?? 0
+        if baseStyleID == 0 { baseStyleID = defaultTextStyles()?.char ?? 0 }
+        guard baseStyleID != 0, storage.hasStyleSheet else {
+            throw SceneEditError.unsupportedEdit("text node \(nodeID) has no base character style to inherit")
+        }
         let styleSheetID = storage.styleSheet.identifier
 
         // Overrides are anonymous styles that live in the document stylesheet
@@ -55,6 +64,8 @@ extension KeynoteDocument {
             properties.tsdFill = TSD_FillArchive.with { $0.color = Self.color(color) }
             overrideCount += 1
         }
+        if let underline { properties.underline = underline ? .kSingleUnderline : .kNoUnderline; overrideCount += 1 }
+        if let strikethrough { properties.strikethru = strikethrough ? .kSingleStrikethru : .kNoStrikethru; overrideCount += 1 }
 
         let newStyleID = try allocateIdentifier()
         let style = TSWP_CharacterStyleArchive.with {

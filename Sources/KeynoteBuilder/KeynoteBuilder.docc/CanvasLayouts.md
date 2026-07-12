@@ -193,6 +193,8 @@ Modifiers chain, SwiftUI-style, each returning a new ``Element``:
 | `.fontSize(_:)` | text | point size |
 | `.bold(_:)` / `.italic(_:)` | text | weight and slant |
 | `.foregroundColor(_:)` | text | text color |
+| `.underline(_:)` / `.strikethrough(_:)` | text | character decorations |
+| `.verticalAlignment(_:)` | text | top / middle / bottom / justified in the box |
 | `.fill(_:)` | shape | fill: a color or any ``Fill`` |
 | `.border(_:width:)` | shape, text, image | a solid border |
 | `.shadow(_:)` | shape, text, image | a drop shadow (defaults to soft black) |

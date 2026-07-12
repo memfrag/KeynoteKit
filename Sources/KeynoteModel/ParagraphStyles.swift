@@ -16,6 +16,20 @@ public enum TextAlignment: Sendable {
     }
 }
 
+/// Vertical alignment of text within its box.
+public enum VerticalAlignment: Sendable {
+    case top, middle, bottom, justified
+
+    var archiveValue: TSWP_ShapeStylePropertiesArchive.VerticalAlignmentType {
+        switch self {
+        case .top: return .kFrameAlignTop
+        case .middle: return .kFrameAlignMiddle
+        case .bottom: return .kFrameAlignBottom
+        case .justified: return .kFrameAlignJustify
+        }
+    }
+}
+
 /// A tab stop in a paragraph style.
 public struct TabStop: Sendable {
     public enum Alignment: Sendable { case left, center, right, decimal }
@@ -88,6 +102,8 @@ public struct ParagraphStyle: Sendable {
     public var firstLineIndent: Double?
     public var leftIndent: Double?
     public var rightIndent: Double?
+    /// Line spacing as a multiple of the font size (1.0 = single, 2.0 = double).
+    public var lineSpacing: Double?
     /// A paragraph background fill (RGBA 0…1).
     public var background: (Double, Double, Double, Double)?
     /// Tab stops.
@@ -98,6 +114,7 @@ public struct ParagraphStyle: Sendable {
         color: (Double, Double, Double, Double)? = nil, alignment: TextAlignment? = nil,
         spaceBefore: Double? = nil, spaceAfter: Double? = nil,
         firstLineIndent: Double? = nil, leftIndent: Double? = nil, rightIndent: Double? = nil,
+        lineSpacing: Double? = nil,
         background: (Double, Double, Double, Double)? = nil,
         tabs: [TabStop]? = nil
     ) {
@@ -112,6 +129,7 @@ public struct ParagraphStyle: Sendable {
         self.firstLineIndent = firstLineIndent
         self.leftIndent = leftIndent
         self.rightIndent = rightIndent
+        self.lineSpacing = lineSpacing
         self.background = background
         self.tabs = tabs
     }
@@ -158,6 +176,13 @@ extension KeynoteDocument {
         if let firstLineIndent = style.firstLineIndent { paraProperties.firstLineIndent = Float(firstLineIndent); overrideCount += 1 }
         if let leftIndent = style.leftIndent { paraProperties.leftIndent = Float(leftIndent); overrideCount += 1 }
         if let rightIndent = style.rightIndent { paraProperties.rightIndent = Float(rightIndent); overrideCount += 1 }
+        if let lineSpacing = style.lineSpacing {
+            paraProperties.lineSpacing = TSWP_LineSpacingArchive.with {
+                $0.mode = .kRelativeLineSpacing
+                $0.amount = Float(lineSpacing)
+            }
+            overrideCount += 1
+        }
         if let background = style.background { paraProperties.fill = Self.color(background); overrideCount += 1 }
         if let tabs = style.tabs {
             paraProperties.tabs = TSWP_TabsArchive.with {
@@ -343,6 +368,11 @@ extension KeynoteDocument {
                 }
             }
         }
+    }
+
+    /// Sets how text is aligned vertically within its box.
+    public mutating func setNodeVerticalAlignment(_ nodeID: UInt64, _ alignment: VerticalAlignment) throws {
+        try varyTextContainer(nodeID) { $0.verticalAlignment = alignment.archiveValue }
     }
 
     /// Sets a text box's inset — the padding between the text and the box edge

@@ -69,4 +69,15 @@ struct ParagraphStyleTests {
         let out = try reread(document)
         #expect(try out.sceneTree(forSlideAt: 0).nodes.contains { $0.id == text })
     }
+    @Test("line spacing, underline, strikethrough, vertical alignment round-trip")
+    func textExtras() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let styleID = try document.defineParagraphStyle(ParagraphStyle(name: "Loose", fontSize: 30, lineSpacing: 1.8))
+        let text = try document.addText(toSlideAt: 0, string: "One\nTwo", frame: Frame(x: 0, y: 0, width: 500, height: 200))
+        try document.applyParagraphStyle(styleID, to: text)
+        try document.setNodeCharacterStyle(text, underline: true, strikethrough: true)
+        try document.setNodeVerticalAlignment(text, .middle)
+        let out = try reread(document)
+        #expect(try out.sceneTree(forSlideAt: 0).nodes.contains { $0.id == text })
+    }
 }

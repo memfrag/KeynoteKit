@@ -110,6 +110,9 @@ public struct CanvasWriter {
             if let lines = element.style.dropCapLines {
                 try document.setNodeDropCap(newID, lines: lines, characters: element.style.dropCapCharacters ?? 1)
             }
+            if let valign = element.style.verticalAlignment {
+                try document.setNodeVerticalAlignment(newID, valign)
+            }
             return newID
         case .shape(let kind):
             let newID = try document.addShape(toSlideAt: index, frame: frame, kind: kind)
@@ -146,13 +149,16 @@ public struct CanvasWriter {
     private static let defaultFrame = Frame(x: 0, y: 0, width: 300, height: 200)
 
     private func applyStyle(_ style: ElementStyle, to nodeID: UInt64, in document: inout KeynoteDocument) throws {
-        if style.fontSize != nil || style.bold != nil || style.italic != nil || style.foregroundColor != nil {
+        if style.fontSize != nil || style.bold != nil || style.italic != nil || style.foregroundColor != nil
+            || style.underline != nil || style.strikethrough != nil {
             try document.setNodeCharacterStyle(
                 nodeID,
                 fontSize: style.fontSize,
                 bold: style.bold,
                 italic: style.italic,
-                color: style.foregroundColor.map { ($0.red, $0.green, $0.blue, $0.alpha) }
+                color: style.foregroundColor.map { ($0.red, $0.green, $0.blue, $0.alpha) },
+                underline: style.underline,
+                strikethrough: style.strikethrough
             )
         }
         try document.setNodeStyle(

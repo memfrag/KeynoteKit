@@ -145,6 +145,21 @@ if arguments.count >= 4, arguments[1] == "dropcap-test" {
     print("dropcap test written"); exit(0)
 }
 
+if arguments.count >= 4, arguments[1] == "textextra-test" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let u = try document.addText(toSlideAt: 0, string: "Underlined text", frame: Frame(x: 120, y: 140, width: 780, height: 90))
+    try document.setNodeCharacterStyle(u, fontSize: 40, underline: true)
+    let s = try document.addText(toSlideAt: 0, string: "Struck-through text", frame: Frame(x: 120, y: 260, width: 780, height: 90))
+    try document.setNodeCharacterStyle(s, fontSize: 40, strikethrough: true)
+    let sp = try document.defineParagraphStyle(ParagraphStyle(name: "Loose", fontSize: 30, lineSpacing: 2.0))
+    let l = try document.addText(toSlideAt: 0, string: "Line one with wide spacing\nLine two with wide spacing\nLine three", frame: Frame(x: 120, y: 380, width: 780, height: 260))
+    try document.applyParagraphStyle(sp, to: l)
+    try document.write(to: out)
+    print("textextra test written"); exit(0)
+}
+
 if arguments.count >= 4, arguments[1] == "builddelivery-test" {
     let paletteIn = URL(fileURLWithPath: arguments[2])
     let out = URL(fileURLWithPath: arguments[3])

@@ -48,6 +48,9 @@ public struct ElementStyle: Sendable {
     public var listMarker: ListMarker?
     public var dropCapLines: Int?
     public var dropCapCharacters: Int?
+    public var underline: Bool?
+    public var strikethrough: Bool?
+    public var verticalAlignment: VerticalAlignment?
 
     public init() {}
 }
@@ -91,6 +94,10 @@ public struct Element: Sendable {
     public func bold(_ on: Bool = true) -> Element { modifying { $0.bold = on } }
     public func italic(_ on: Bool = true) -> Element { modifying { $0.italic = on } }
     public func foregroundColor(_ color: RGBAColor) -> Element { modifying { $0.foregroundColor = color } }
+    public func underline(_ on: Bool = true) -> Element { modifying { $0.underline = on } }
+    public func strikethrough(_ on: Bool = true) -> Element { modifying { $0.strikethrough = on } }
+    /// Vertical alignment of text within its box.
+    public func verticalAlignment(_ alignment: VerticalAlignment) -> Element { modifying { $0.verticalAlignment = alignment } }
     /// Fill color, for shape elements.
     public func fill(_ color: RGBAColor) -> Element {
         modifying { $0.fill = .color(color.red, color.green, color.blue, color.alpha) }

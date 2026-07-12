@@ -46,11 +46,13 @@ public struct ElementStyle: Sendable {
     public var columnGap: Double?
     public var textInset: Double?
     public var listMarker: ListMarker?
+    public var listMarkerColor: RGBAColor?
     public var dropCapLines: Int?
     public var dropCapCharacters: Int?
     public var underline: Bool?
     public var strikethrough: Bool?
     public var verticalAlignment: VerticalAlignment?
+    public var alignment: TextAlignment?
     public var name: String?
 
     public init() {}
@@ -101,6 +103,8 @@ public struct Element: Sendable {
     public func strikethrough(_ on: Bool = true) -> Element { modifying { $0.strikethrough = on } }
     /// Vertical alignment of text within its box.
     public func verticalAlignment(_ alignment: VerticalAlignment) -> Element { modifying { $0.verticalAlignment = alignment } }
+    /// Horizontal paragraph alignment of a text element.
+    public func alignment(_ alignment: TextAlignment) -> Element { modifying { $0.alignment = alignment } }
     /// Fill color, for shape elements.
     public func fill(_ color: RGBAColor) -> Element {
         modifying { $0.fill = .color(color.red, color.green, color.blue, color.alpha) }
@@ -164,10 +168,16 @@ public struct Element: Sendable {
     }
     /// Sets a text element's inset (padding between text and box edge).
     public func textInset(_ inset: Double) -> Element { modifying { $0.textInset = inset } }
-    /// Turns a text element's paragraphs into a bulleted list.
-    public func bulleted(_ marker: String = "\u{2022}") -> Element { modifying { $0.listMarker = .bullet(marker) } }
-    /// Turns a text element's paragraphs into a numbered list.
-    public func numbered(_ format: NumberFormat = .decimal) -> Element { modifying { $0.listMarker = .numbered(format) } }
+    /// Turns a text element's paragraphs into a bulleted list. `color` tints
+    /// the bullet marker (defaults to the text color).
+    public func bulleted(_ marker: String = "\u{2022}", color: RGBAColor? = nil) -> Element {
+        modifying { $0.listMarker = .bullet(marker); $0.listMarkerColor = color }
+    }
+    /// Turns a text element's paragraphs into a numbered list. `color` tints the
+    /// numbers (defaults to the text color).
+    public func numbered(_ format: NumberFormat = .decimal, color: RGBAColor? = nil) -> Element {
+        modifying { $0.listMarker = .numbered(format); $0.listMarkerColor = color }
+    }
     /// Gives a text element a drop cap on its first paragraph.
     public func dropCap(lines: Int = 3, characters: Int = 1) -> Element {
         modifying { $0.dropCapLines = lines; $0.dropCapCharacters = characters }

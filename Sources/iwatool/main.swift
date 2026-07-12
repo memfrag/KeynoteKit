@@ -62,6 +62,13 @@ if arguments.count >= 4, arguments[1] == "otters" {
     print("otter slideshow written to \(out.path)"); exit(0)
 }
 
+if arguments.count >= 4, arguments[1] == "otters2" {
+    let assets = URL(fileURLWithPath: arguments[2], isDirectory: true)
+    let out = URL(fileURLWithPath: arguments[3])
+    try OtterDeck2.build(assets: assets, to: out)
+    print("otter slideshow (v2) written to \(out.path)"); exit(0)
+}
+
 if arguments.count >= 3, arguments[1] == "custom-path-demo" {
     let out = URL(fileURLWithPath: arguments[2])
     // A heart, drawn in a 100x90 space with two cubic curves.

@@ -61,6 +61,8 @@ public enum ListMarker: Sendable {
     case bullet(String)
     /// An auto-incrementing number in the given format.
     case numbered(NumberFormat)
+
+    var isBullet: Bool { if case .bullet = self { return true }; return false }
 }
 
 /// A numbered-list format.
@@ -232,21 +234,31 @@ extension KeynoteDocument {
     }
 
     /// Turns a text node's paragraphs into a bulleted list. Convenience for
-    /// ``setNodeList(_:_:indent:)`` with a string bullet.
-    public mutating func setNodeBulleted(_ nodeID: UInt64, bullet: String = "\u{2022}", indent: Double = 35) throws {
-        try setNodeList(nodeID, .bullet(bullet), indent: indent)
+    /// ``setNodeList(_:_:indent:color:)`` with a string bullet.
+    public mutating func setNodeBulleted(
+        _ nodeID: UInt64, bullet: String = "\u{2022}", indent: Double = 35,
+        color: (Double, Double, Double, Double)? = nil
+    ) throws {
+        try setNodeList(nodeID, .bullet(bullet), indent: indent, color: color)
     }
 
     /// Turns a text node's paragraphs into a numbered list. Convenience for
-    /// ``setNodeList(_:_:indent:)`` with a number format.
-    public mutating func setNodeNumbered(_ nodeID: UInt64, _ format: NumberFormat = .decimal, indent: Double = 35) throws {
-        try setNodeList(nodeID, .numbered(format), indent: indent)
+    /// ``setNodeList(_:_:indent:color:)`` with a number format.
+    public mutating func setNodeNumbered(
+        _ nodeID: UInt64, _ format: NumberFormat = .decimal, indent: Double = 35,
+        color: (Double, Double, Double, Double)? = nil
+    ) throws {
+        try setNodeList(nodeID, .numbered(format), indent: indent, color: color)
     }
 
     /// Turns a text node's paragraphs into a list with the given marker. Builds
     /// a list style from the theme's own (full per-level arrays) so the text
-    /// lays out correctly, then points every paragraph at it.
-    public mutating func setNodeList(_ nodeID: UInt64, _ marker: ListMarker, indent: Double = 35) throws {
+    /// lays out correctly, then points every paragraph at it. `color` tints the
+    /// marker (RGBA 0…1).
+    public mutating func setNodeList(
+        _ nodeID: UInt64, _ marker: ListMarker, indent: Double = 35,
+        color: (Double, Double, Double, Double)? = nil
+    ) throws {
         guard let styles = defaultTextStyles(), let baseListID = styles.list,
               let stylesheetComponent = components.firstIndex(where: {
                   $0.records.contains { $0.identifier == baseListID }
@@ -270,13 +282,23 @@ extension KeynoteDocument {
         }
         list.textIndents = Array(repeating: 1.09375, count: levels)  // theme's value
         list.indents = (0..<levels).map { Float(Double($0) * indent) }
-        let geometry = TSWP_ListStyleArchive.LabelGeometry.with {
-            $0.scale = 1; $0.baselineOffset = 0; $0.scaleWithText = true
-        }
+        // Match the marker size (bullet glyph, number) to the theme's own preset
+        // so it looks like Keynote's default rather than a flat 1.0 scale.
+        let presetSuffix = marker.isBullet ? "liststyle-Bullet" : "liststyle-Numbered"
+        let geometry = themeListGeometry(suffix: presetSuffix, in: stylesheetComponent)
+            ?? TSWP_ListStyleArchive.LabelGeometry.with {
+                $0.scale = 1; $0.baselineOffset = 0; $0.scaleWithText = true
+            }
         list.geometries = Array(repeating: geometry, count: levels)
+        if let color { list.fontColor = Self.color(color) }
 
         let listID = try allocateIdentifier()
-        list.super.name = "List"
+        // The name shows in Keynote's "Bullets & Lists" pop-up, so label it by
+        // its marker kind rather than a generic "List".
+        switch marker {
+        case .bullet: list.super.name = "Bullet"
+        case .numbered: list.super.name = "Numbered"
+        }
         list.super.styleIdentifier = "kk-list-\(listID)"
         list.super.clearParent()
         let listRecord = try makeRecord(
@@ -303,6 +325,22 @@ extension KeynoteDocument {
         try storageRecord.setObjectReferences(refs, at: 0)
         components[location.component].records[storageIndex] = storageRecord
         try declareExternalReference(fromComponent: location.component, toObject: listID)
+    }
+
+    /// The label geometry (marker scale, baseline) of the theme's own list-style
+    /// preset whose identifier ends with `suffix` (e.g. "liststyle-Bullet"), so
+    /// a synthesized list matches Keynote's default marker size.
+    private func themeListGeometry(
+        suffix: String, in component: Int
+    ) -> TSWP_ListStyleArchive.LabelGeometry? {
+        for record in components[component].records where record.primaryType == 2023 {
+            guard let style = try? record.decode(TSWP_ListStyleArchive.self),
+                  style.super.styleIdentifier.hasSuffix(suffix),
+                  let geometry = style.geometries.first
+            else { continue }
+            return geometry
+        }
+        return nil
     }
 
     /// Gives a text node a drop cap — the first `characters` character(s) of
@@ -464,6 +502,31 @@ extension KeynoteDocument {
         try storageRecord.setObjectReferences(refs, at: 0)
         components[location.component].records[storageIndex] = storageRecord
 
+        try declareExternalReference(fromComponent: location.component, toObject: styleID)
+    }
+
+    /// Sets the horizontal alignment of a text node's paragraphs, leaving its
+    /// character styling (font, size, color) untouched — unlike
+    /// ``applyParagraphStyle(_:to:)``, which lets a named style's font win.
+    public mutating func setNodeAlignment(_ nodeID: UInt64, _ alignment: TextAlignment) throws {
+        let styleID = try defineParagraphStyle(ParagraphStyle(name: "Aligned", alignment: alignment))
+        let location = try locateSceneNode(nodeID)
+        guard let storageID = try storageIdentifier(forNodeAt: location),
+              let storageIndex = components[location.component].records.firstIndex(where: { $0.identifier == storageID })
+        else { throw SceneEditError.nodeHasNoText(nodeID) }
+        var storageRecord = components[location.component].records[storageIndex]
+        var storage = try storageRecord.decode(TSWP_StorageArchive.self)
+        if storage.tableParaStyle.entries.isEmpty {
+            storage.tableParaStyle.entries = [TSWP_ObjectAttributeTable.ObjectAttribute.with { $0.characterIndex = 0 }]
+        }
+        for i in storage.tableParaStyle.entries.indices {
+            storage.tableParaStyle.entries[i].object = reference(styleID)
+        }
+        try storageRecord.setMessage(storage)
+        var refs = storageRecord.info.messageInfos[0].objectReferences
+        if !refs.contains(styleID) { refs.append(styleID) }
+        try storageRecord.setObjectReferences(refs, at: 0)
+        components[location.component].records[storageIndex] = storageRecord
         try declareExternalReference(fromComponent: location.component, toObject: styleID)
     }
 }

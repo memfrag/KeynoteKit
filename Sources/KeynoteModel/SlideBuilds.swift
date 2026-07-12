@@ -73,6 +73,17 @@ public enum BuildDelivery {
     public static let byHighlightedParagraph = "By Highlighted Paragraph"
 }
 
+/// The "Text Animation" options in Keynote's build inspector, for
+/// ``SlideBuild/textDelivery``. A build on multi-paragraph text generally needs
+/// one of these set, or the animation won't play. `byObject` reveals each
+/// paragraph as a whole.
+public enum BuildTextDelivery {
+    public static let byObject = "byObject"
+    public static let byWord = "byWord"
+    public static let byCharacter = "byCharacter"
+    public static let byLine = "byLine"
+}
+
 /// String names for the delivery enums.
 enum BuildEnumNames {
     static let textDelivery: [KN_BuildAttributesArchive.BuildAttributesTextDelivery: String] = [
@@ -143,13 +154,23 @@ extension KeynoteDocument {
             throw BuildError.nodeNotOnSlide(build.nodeID)
         }
 
-        // Allocate identifiers.
+        // A "By Paragraph" build plays one stage per paragraph, and Keynote
+        // stores that as one build chunk per paragraph (each a Build Order
+        // entry). All other deliveries are a single stage.
+        let stageCount: Int
+        if build.delivery == BuildDelivery.byParagraph, let count = paragraphCount(ofDrawable: build.nodeID) {
+            stageCount = max(1, count)
+        } else {
+            stageCount = 1
+        }
+
+        // Allocate identifiers: one for the build, then one per chunk.
         let metadataLocation = try locateRecord(type: 11006, orThrow: MediaOperationError.packageMetadataNotFound)
         var metadataRecord = components[metadataLocation.component].records[metadataLocation.record]
         var metadata = try metadataRecord.decode(TSP_PackageMetadata.self)
         let buildID = metadata.lastObjectIdentifier + 1
-        let chunkID = metadata.lastObjectIdentifier + 2
-        metadata.lastObjectIdentifier = chunkID
+        let chunkIDs = (0..<stageCount).map { metadata.lastObjectIdentifier + 2 + UInt64($0) }
+        metadata.lastObjectIdentifier = chunkIDs.last ?? buildID
         try metadataRecord.setMessage(metadata)
         components[metadataLocation.component].records[metadataLocation.record] = metadataRecord
 
@@ -182,45 +203,69 @@ extension KeynoteDocument {
                 if let scale = build.scaleSize { $0.actionScaleSize = scale }
                 if let alpha = build.opacity { $0.actionColorAlpha = alpha }
             }
-            $0.chunkIDSeed = 1
+            $0.chunkIDSeed = Int32(stageCount)
         }
+        // One UUID for the whole build; chunk ids run 1…stageCount.
         let buildUUID = TSP_UUID.with {
             $0.lower = UInt64.random(in: UInt64.min...UInt64.max)
             $0.upper = UInt64.random(in: UInt64.min...UInt64.max)
         }
-        let chunkArchive = KN_BuildChunkArchive.with {
-            $0.build = TSP_Reference.with { $0.identifier = buildID }
-            $0.delay = 0
-            $0.duration = build.duration
-            $0.automatic = false
-            $0.referent = true
-            $0.buildChunkIdentifier = KN_BuildChunkIdentifierArchive.with {
+        let chunkArchives = (0..<stageCount).map { stage in
+            KN_BuildChunkArchive.with {
+                $0.build = TSP_Reference.with { $0.identifier = buildID }
+                $0.delay = 0
+                $0.duration = build.duration
+                $0.automatic = false
+                $0.referent = true
+                $0.buildChunkIdentifier = KN_BuildChunkIdentifierArchive.with {
+                    $0.buildID = buildUUID
+                    $0.buildChunkID = Int32(stage + 1)
+                }
                 $0.buildID = buildUUID
-                $0.buildChunkID = 1
             }
-            $0.buildID = buildUUID
         }
 
         components[componentIndex].records.append(try makeRecord(
             identifier: buildID, type: 8, message: buildArchive,
             version: version, objectReferences: []
         ))
-        components[componentIndex].records.append(try makeRecord(
-            identifier: chunkID, type: 153, message: chunkArchive,
-            version: version, objectReferences: []
-        ))
+        for (chunkID, chunkArchive) in zip(chunkIDs, chunkArchives) {
+            components[componentIndex].records.append(try makeRecord(
+                identifier: chunkID, type: 153, message: chunkArchive,
+                version: version, objectReferences: []
+            ))
+        }
 
-        // Wire into the slide and its node cache.
+        // Wire into the slide and its node cache. One build reference; a chunk
+        // reference per stage, in playback order.
         slide.builds.append(TSP_Reference.with { $0.identifier = buildID })
-        slide.buildChunks.append(TSP_Reference.with { $0.identifier = chunkID })
+        for chunkID in chunkIDs {
+            slide.buildChunks.append(TSP_Reference.with { $0.identifier = chunkID })
+        }
         var slideRecord = components[componentIndex].records[recordIndex]
         try slideRecord.setMessage(slide)
         try slideRecord.setObjectReferences(
-            slideRecord.info.messageInfos[0].objectReferences + [buildID, chunkID], at: 0
+            slideRecord.info.messageInfos[0].objectReferences + [buildID] + chunkIDs, at: 0
         )
         components[componentIndex].records[recordIndex] = slideRecord
         try setNodeBuildFlags(at: index, hasBuilds: true)
         return buildID
+    }
+
+    /// Counts the paragraphs (U+2029-separated) in a text drawable's storage,
+    /// or nil when the node has no text. A trailing empty paragraph is ignored.
+    func paragraphCount(ofDrawable nodeID: UInt64) -> Int? {
+        guard let location = try? locateSceneNode(nodeID),
+              let storageID = try? storageIdentifier(forNodeAt: location),
+              let component = components.first(where: { $0.records.contains { $0.identifier == storageID } }),
+              let record = component.records.first(where: { $0.identifier == storageID }),
+              let storage = try? record.decode(TSWP_StorageArchive.self)
+        else { return nil }
+        let text = storage.text.joined()
+        guard !text.isEmpty else { return nil }
+        var parts = text.components(separatedBy: "\u{2029}")
+        if parts.last == "" { parts.removeLast() }
+        return max(1, parts.count)
     }
 
     // MARK: Ordering

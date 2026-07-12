@@ -109,8 +109,8 @@ enum OtterDeck {
         // Render, then layer on the animation.
         var document = try CanvasWriter().build(canvases, imageBaseURL: assets)
 
-        // "Bottom to top" direction constant (inferred — verify in Keynote).
-        let bottomToTop: UInt32 = 3
+        // Push from the bottom (content travels bottom → top).
+        let bottomToTop = PushDirection.fromBottom.rawValue
 
         for index in 0..<document.slideCount {
             try document.setSlideTransition(
@@ -118,14 +118,19 @@ enum OtterDeck {
                 to: SlideTransition(effect: "apple:push", duration: 0.4, direction: bottomToTop)
             )
         }
-        // Fade-and-move build-in on each content slide's bullets.
+        // "Fade and Move" build-in on each content slide's bullets. The real
+        // effect identifier is "apple:fade and move character" (with spaces) —
+        // "apple:fade-and-move" silently renders as Dissolve. For bulleted text
+        // the "By Bullet" UI option is stored as delivery "By Paragraph".
         for index in 1...content.count {
             guard let bullets = try document.sceneTree(forSlideAt: index).nodes.first(where: { $0.label == "bullets" })
             else { continue }
             try document.addBuild(
                 SlideBuild(
-                    nodeID: bullets.id, kind: "In", effect: "apple:fade-and-move",
-                    duration: 0.3, delivery: "By Bullet", direction: bottomToTop, travelDistance: 0.07
+                    nodeID: bullets.id, kind: "In", effect: "apple:fade and move character",
+                    duration: 0.3, delivery: BuildDelivery.byParagraph,
+                    textDelivery: BuildTextDelivery.byObject, direction: bottomToTop,
+                    travelDistance: 0.07
                 ),
                 toSlideAt: index
             )
@@ -151,7 +156,7 @@ enum OtterDeck {
             Text(slide.bullets.joined(separator: "\n"))
                 .frame(x: textX, y: 300, width: 430, height: 340)
                 .fontSize(24).foregroundColor(ink)
-                .bulleted()
+                .bulleted(color: ink)
                 .name("bullets")
             Image(path: slide.photo.file).frame(photoFrame)
                 .mask(.roundedRectangle(cornerRadius: 22))

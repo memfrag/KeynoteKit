@@ -57,6 +57,23 @@ public struct SlideTransition: Codable, Equatable, Sendable {
     }
 }
 
+/// Direction constants for directional slide transitions and builds (Push,
+/// Move In, Flip, …), as Keynote stores them in
+/// ``SlideTransition/direction`` / ``SlideBuild/direction``. The names describe
+/// the edge the incoming content pushes *from*, i.e. the direction of motion.
+///
+/// Verified against Keynote-authored decks for the Push transition.
+public enum PushDirection: UInt32, Sendable {
+    /// Push from the left edge — content travels left → right.
+    case fromLeft = 11
+    /// Push from the right edge — content travels right → left.
+    case fromRight = 12
+    /// Push from the top edge — content travels top → bottom.
+    case fromTop = 13
+    /// Push from the bottom edge — content travels bottom → top.
+    case fromBottom = 14
+}
+
 private let transitionTextDeliveryNames: [KN_TransitionAttributesArchive.TransitionCustomAttributesTextDeliveryType: String] = [
     .byObject: "byObject",
     .byWord: "byWord",

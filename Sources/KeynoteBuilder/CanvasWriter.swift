@@ -105,13 +105,17 @@ public struct CanvasWriter {
                 try document.setNodeTextInset(newID, inset)
             }
             if let marker = element.style.listMarker {
-                try document.setNodeList(newID, marker)
+                let markerColor = element.style.listMarkerColor.map { ($0.red, $0.green, $0.blue, $0.alpha) }
+                try document.setNodeList(newID, marker, color: markerColor)
             }
             if let lines = element.style.dropCapLines {
                 try document.setNodeDropCap(newID, lines: lines, characters: element.style.dropCapCharacters ?? 1)
             }
             if let valign = element.style.verticalAlignment {
                 try document.setNodeVerticalAlignment(newID, valign)
+            }
+            if let alignment = element.style.alignment {
+                try document.setNodeAlignment(newID, alignment)
             }
             return newID
         case .shape(let kind):

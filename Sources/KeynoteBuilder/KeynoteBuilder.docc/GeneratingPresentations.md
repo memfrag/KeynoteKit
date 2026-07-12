@@ -54,11 +54,20 @@ Slide(layout: "two-column", blocks: [
 ])
 ```
 
-A key matches a region by, in order: its **role** (`"title"`, `"body"`,
-`"object"`), the **label** the template author typed into it (type `"left"`
-into the left column when authoring the template), or the layout's **prompt**
-(`"Attribution"`). Values use `\n` for bullet/paragraph breaks, exactly like
-`body`.
+A key matches a region by, in priority order:
+
+1. an **explicit label** — an `@`-prefixed comment on the element (attach one
+   in Keynote to *any* element), or, for images, the accessibility
+   **Description**. An explicit label wins over every heuristic below, and the
+   builder strips these `@label` comments from the output so they never ship.
+2. the region's **role** (`"title"`, `"body"`, `"object"`);
+3. the **text** the template author typed into it as a makeshift label;
+4. the layout's **prompt** (`"Attribution"`).
+
+Explicit labels are the recommended way to tag a bespoke template: comment
+each element `@left`, `@right`, `@chart-caption`, and address them by those
+names — no dependence on roles or prompts. Values use `\n` for
+bullet/paragraph breaks, exactly like `body`.
 
 This makes nearly arbitrary layouts fillable: design a template slide in
 Keynote with as many text boxes as you like, label each with a short word,

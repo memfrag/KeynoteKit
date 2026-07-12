@@ -49,6 +49,10 @@ verified against Keynote itself.
 - ``LayoutDescription``
 - ``PlaceholderField``
 
+### Element labels
+
+- <doc:ElementLabels>
+
 ### Tables and charts
 
 - <doc:TablesAndCharts>

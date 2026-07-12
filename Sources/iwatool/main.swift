@@ -236,6 +236,14 @@ case "blocks-of":
         print("node \(block.nodeID): \(keys.map { "\"\($0)\"" }.joined(separator: " | "))")
     }
 
+case "strip-labels":
+    guard arguments.count >= 4 else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    try document.stripLabelComments()
+    try document.write(to: outputURL)
+    print("stripped @label comments")
+
 case "set-desc":
     guard arguments.count >= 6, let nodeID = UInt64(arguments[4]) else { fail(usage) }
     let outputURL = URL(fileURLWithPath: arguments[3])

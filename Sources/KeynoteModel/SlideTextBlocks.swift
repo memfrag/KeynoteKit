@@ -73,19 +73,26 @@ extension KeynoteDocument {
 
         func exact(_ value: String?) -> Bool { value?.lowercased() == needle }
         func partial(_ value: String?) -> Bool { value?.lowercased().contains(needle) ?? false }
-
-        // Exact matches first (role, accessibility label, typed label text,
-        // then prompt), then substring — each ordered by reading order. A
-        // leading "@" on a description label is optional in the key.
+        // A leading "@" on an explicit label is optional in the key.
         func matchesLabel(_ value: String?) -> Bool {
             guard let value = value?.lowercased() else { return false }
             return value == needle || value == "@" + needle
         }
-        let exactMatches = blocks.filter {
-            exact($0.role) || matchesLabel($0.label) || exact($0.text) || exact($0.prompt)
+
+        // Priority cascade: an explicit label (a comment/description the
+        // template author set) wins outright over every heuristic. Only when
+        // nothing carries a matching label do we fall back to role, then the
+        // typed placeholder text, then the layout prompt.
+        let labelled = blocks.filter { matchesLabel($0.label) }
+        if let target = labelled.first {
+            if labelled.count > 1 { throw TextBlockError.ambiguous(key, matches: labelled.count) }
+            try setNodeText(target.nodeID, to: text)
+            return
         }
+
+        let exactMatches = blocks.filter { exact($0.role) || exact($0.text) || exact($0.prompt) }
         let matches = exactMatches.isEmpty
-            ? blocks.filter { partial($0.label) || partial($0.text) || partial($0.prompt) }
+            ? blocks.filter { partial($0.text) || partial($0.prompt) }
             : exactMatches
 
         guard let target = matches.first else {

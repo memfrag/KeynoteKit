@@ -170,8 +170,9 @@ extension KeynoteDocument {
             ?? components.flatMap(\.records).first(where: { $0.identifier == id })
         else { return nil }
 
-        let label = (try? Self.drawableDescription(of: record))
-            .flatMap { ($0?.isEmpty ?? true) ? nil : $0 }
+        // Explicit label: a comment (any element) preferred over the
+        // accessibility description (images only).
+        let label = (try? Self.explicitLabel(of: record, in: component)) ?? nil
 
         switch record.primaryType {
         case 7: // KN.PlaceholderArchive

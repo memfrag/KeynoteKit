@@ -16,6 +16,31 @@ public enum TextAlignment: Sendable {
     }
 }
 
+/// A tab stop in a paragraph style.
+public struct TabStop: Sendable {
+    public enum Alignment: Sendable { case left, center, right, decimal }
+    /// Position from the left margin, in points.
+    public var position: Double
+    public var alignment: Alignment
+    /// Optional leader (e.g. "." for a dotted leader to the tab).
+    public var leader: String?
+
+    public init(position: Double, alignment: Alignment = .left, leader: String? = nil) {
+        self.position = position
+        self.alignment = alignment
+        self.leader = leader
+    }
+
+    var archiveAlignment: TSWP_TabArchive.TabAlignmentType {
+        switch alignment {
+        case .left: return .kTabAlignmentLeft
+        case .center: return .kTabAlignmentCenter
+        case .right: return .kTabAlignmentRight
+        case .decimal: return .kTabAlignmentDecimal
+        }
+    }
+}
+
 /// The label on a list's paragraphs.
 public enum ListMarker: Sendable {
     /// A string bullet (e.g. "•", "—", "▸").
@@ -65,13 +90,16 @@ public struct ParagraphStyle: Sendable {
     public var rightIndent: Double?
     /// A paragraph background fill (RGBA 0…1).
     public var background: (Double, Double, Double, Double)?
+    /// Tab stops.
+    public var tabs: [TabStop]?
 
     public init(
         name: String, fontSize: Double? = nil, bold: Bool? = nil, italic: Bool? = nil,
         color: (Double, Double, Double, Double)? = nil, alignment: TextAlignment? = nil,
         spaceBefore: Double? = nil, spaceAfter: Double? = nil,
         firstLineIndent: Double? = nil, leftIndent: Double? = nil, rightIndent: Double? = nil,
-        background: (Double, Double, Double, Double)? = nil
+        background: (Double, Double, Double, Double)? = nil,
+        tabs: [TabStop]? = nil
     ) {
         self.name = name
         self.fontSize = fontSize
@@ -85,6 +113,7 @@ public struct ParagraphStyle: Sendable {
         self.leftIndent = leftIndent
         self.rightIndent = rightIndent
         self.background = background
+        self.tabs = tabs
     }
 }
 
@@ -130,6 +159,18 @@ extension KeynoteDocument {
         if let leftIndent = style.leftIndent { paraProperties.leftIndent = Float(leftIndent); overrideCount += 1 }
         if let rightIndent = style.rightIndent { paraProperties.rightIndent = Float(rightIndent); overrideCount += 1 }
         if let background = style.background { paraProperties.fill = Self.color(background); overrideCount += 1 }
+        if let tabs = style.tabs {
+            paraProperties.tabs = TSWP_TabsArchive.with {
+                $0.tabs = tabs.map { stop in
+                    TSWP_TabArchive.with {
+                        $0.position = Float(stop.position)
+                        $0.alignment = stop.archiveAlignment
+                        if let leader = stop.leader { $0.leader = leader }
+                    }
+                }
+            }
+            overrideCount += 1
+        }
 
         let paragraphStyle = TSWP_ParagraphStyleArchive.with {
             $0.super = TSS_StyleArchive.with {

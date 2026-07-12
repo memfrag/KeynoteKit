@@ -114,6 +114,26 @@ if arguments.count >= 4, arguments[1] == "parastyle-test" {
     print("parastyle test written"); exit(0)
 }
 
+if arguments.count >= 4, arguments[1] == "tabborder-test" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let boxed = try document.defineParagraphStyle(ParagraphStyle(
+        name: "Boxed", fontSize: 34, color: (0.1,0.1,0.1,1), alignment: .center,
+        spaceBefore: 10, spaceAfter: 10, background: (0.93,0.96,1,1)
+    ))
+    let b = try document.addText(toSlideAt: 0, string: "Bordered paragraph", frame: Frame(x: 120, y: 160, width: 780, height: 120))
+    try document.applyParagraphStyle(boxed, to: b)
+    let tabbed = try document.defineParagraphStyle(ParagraphStyle(
+        name: "Tabbed", fontSize: 30, alignment: .left,
+        tabs: [TabStop(position: 400, alignment: .left, leader: "."), TabStop(position: 740, alignment: .right)]
+    ))
+    let tt = try document.addText(toSlideAt: 0, string: "Item one\t$10\nItem two\t$4\nGrand total\t$14", frame: Frame(x: 120, y: 360, width: 780, height: 250))
+    try document.applyParagraphStyle(tabbed, to: tt)
+    try document.write(to: out)
+    print("tabborder test written"); exit(0)
+}
+
 if arguments.count >= 4, arguments[1] == "builddelivery-test" {
     let paletteIn = URL(fileURLWithPath: arguments[2])
     let out = URL(fileURLWithPath: arguments[3])

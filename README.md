@@ -2,11 +2,27 @@
 
 A Swift package for reading and generating Apple Keynote `.key` files.
 
+![Swift 6.0](https://img.shields.io/badge/Swift-6.0-F05138?logo=swift&logoColor=white)
+![Platform macOS 13+](https://img.shields.io/badge/Platform-macOS%2013%2B-000000?logo=apple&logoColor=white)
+[![Docs](https://img.shields.io/badge/Docs-DocC-1E6BB8)](https://memfrag.github.io/KeynoteKit/)
+[![Tutorial](https://img.shields.io/badge/Tutorial-JSON%20decks-4CD9C2)](https://memfrag.github.io/KeynoteKit/tutorial.html)
+
 Keynote's file format is a ZIP archive of `.iwa` files — Snappy-compressed
 (with Apple's non-standard framing) Protocol Buffer messages using
 undocumented, reverse-engineered schemas. KeynoteKit implements this format
 natively in Swift, with the goal of enabling programmatic generation of
 Keynote presentations and Keynote export from macOS apps.
+
+These three slides were generated from JSON specs (`Examples/Otters.json`,
+`Examples/Otters2.json`) with `iwatool build-json` — full-bleed photos,
+gradients, masked images, colored bullets, and per-bullet build animations, all
+on a 16:9 canvas:
+
+<p align="center">
+  <img src="Docs/images/otters-intro.jpg" width="32%" alt="Title slide: 'Otters' over a scrimmed full-bleed lake photo." />
+  <img src="Docs/images/otters-content.jpg" width="32%" alt="Editorial content slide: half-bleed otter photo beside a text panel with a coral seam." />
+  <img src="Docs/images/otters-split.jpg" width="32%" alt="Split content slide: text column with aqua bullets beside a rounded, shadowed photo card." />
+</p>
 
 ## Status
 
@@ -449,10 +465,17 @@ swift run iwatool apply-tree In.key Out.key edited-tree.json
 
 ## Documentation
 
+Browse the docs online:
+
+- **[API reference &amp; guides](https://memfrag.github.io/KeynoteKit/)** (DocC)
+- **[JSON deck tutorial](https://memfrag.github.io/KeynoteKit/tutorial.html)** — an
+  illustrated walkthrough of the JSON format
+
 The package is documented with DocC — API reference plus guide articles
 (editing documents, the scene tree, tables & charts, animations, the
-markdown format, template decks, and the container format). Build it in
-Xcode (Product ▸ Build Documentation) or from the command line:
+markdown format, the JSON deck format, template decks, and the container
+format). Build it in Xcode (Product ▸ Build Documentation) or from the command
+line:
 
 ```sh
 swift package generate-documentation --target KeynoteModel

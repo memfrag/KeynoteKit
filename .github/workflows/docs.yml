@@ -1,0 +1,116 @@
+name: Documentation
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Build DocC for each target
+        run: |
+          set -eux
+          mkdir -p _site
+          for target in KeynoteBuilder KeynoteModel IWAContainer; do
+            swift package --allow-writing-to-directory _site \
+              generate-documentation \
+              --target "$target" \
+              --disable-indexing \
+              --transform-for-static-hosting \
+              --hosting-base-path "KeynoteKit/$target" \
+              --output-path "_site/$target"
+          done
+
+      - name: Copy tutorial and write landing page
+        run: |
+          cp Examples/json-tutorial.html _site/tutorial.html
+          cat > _site/index.html <<'HTML'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>KeynoteKit — Documentation</title>
+            <style>
+              body { margin:0; background:#0a1216; color:#e9f4f2; line-height:1.6;
+                font-family: ui-sans-serif,-apple-system,"Segoe UI",Roboto,sans-serif;
+                background-image: radial-gradient(60vw 40vw at 80% -10%, rgba(84,224,199,.14), transparent 60%),
+                                  radial-gradient(50vw 40vw at 5% 10%, rgba(255,138,99,.10), transparent 55%); }
+              .wrap { max-width: 720px; margin: 0 auto; padding: 96px 28px; }
+              h1 { font-family:"Futura","Avenir Next","Century Gothic",system-ui,sans-serif;
+                font-size: clamp(40px,8vw,72px); letter-spacing:-.02em; margin:0 0 6px; }
+              p.lead { color:#8fb0ad; font-size:19px; margin:0 0 40px; }
+              a.card { display:block; text-decoration:none; color:#e9f4f2; border:1px solid #1f3a42;
+                background:rgba(15,30,36,.6); border-radius:14px; padding:20px 22px; margin:12px 0;
+                transition:border-color .2s, transform .2s; }
+              a.card:hover { border-color:#54e0c7; transform: translateY(-2px); }
+              a.card .k { font-family: ui-monospace,"SF Mono",Menlo,monospace; font-size:12px;
+                letter-spacing:.16em; text-transform:uppercase; color:#54e0c7; }
+              a.card .t { font-size:22px; margin-top:4px; }
+              a.card .d { color:#8fb0ad; font-size:15px; margin-top:2px; }
+              footer { color:#5f8480; font-family: ui-monospace,Menlo,monospace; font-size:13px; margin-top:32px; }
+              footer a { color:#54e0c7; }
+            </style>
+          </head>
+          <body>
+            <div class="wrap">
+              <h1>KeynoteKit</h1>
+              <p class="lead">Generate Apple Keynote <code>.key</code> files from Swift &amp; JSON.</p>
+
+              <a class="card" href="tutorial.html">
+                <div class="k">Start here</div>
+                <div class="t">JSON deck tutorial &rarr;</div>
+                <div class="d">Build a deck from JSON — templates, inline layouts, and from-scratch slides.</div>
+              </a>
+              <a class="card" href="KeynoteBuilder/documentation/keynotebuilder/">
+                <div class="k">API</div>
+                <div class="t">KeynoteBuilder &rarr;</div>
+                <div class="d">The high-level API: Presentation, Canvas DSL, the JSON deck format.</div>
+              </a>
+              <a class="card" href="KeynoteModel/documentation/keynotemodel/">
+                <div class="k">API</div>
+                <div class="t">KeynoteModel &rarr;</div>
+                <div class="d">The object-graph layer: slides, text, shapes, transitions, builds.</div>
+              </a>
+              <a class="card" href="IWAContainer/documentation/iwacontainer/">
+                <div class="k">API</div>
+                <div class="t">IWAContainer &rarr;</div>
+                <div class="d">The container codec: Snappy, IWA framing, and the .key archive.</div>
+              </a>
+
+              <footer><a href="https://github.com/memfrag/KeynoteKit">github.com/memfrag/KeynoteKit</a></footer>
+            </div>
+          </body>
+          </html>
+          HTML
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -247,6 +247,87 @@ extension KeynoteDocument {
         return nil
     }
 
+    /// Groups existing drawables on a slide into a new group, and returns the
+    /// group's node id. Members must live on the given slide. The group's
+    /// frame is the members' bounding box; each member is reparented and moved
+    /// into the group's coordinate space. Members may themselves be groups, so
+    /// groups nest.
+    @discardableResult
+    public mutating func groupNodes(_ nodeIDs: [UInt64], onSlideAt index: Int) throws -> UInt64 {
+        guard nodeIDs.count >= 2 else {
+            throw SceneEditError.unsupportedEdit("a group needs at least two members")
+        }
+        let (_, slideComponent, slideRecordIndex) = try slideArchiveLocation(at: index)
+        let slideRootID = components[slideComponent].records[slideRecordIndex].identifier ?? 0
+        let version = components[slideComponent].records[slideRecordIndex].info.messageInfos[0].version
+
+        // Bounding box of the members, in slide coordinates.
+        var minX = Double.greatestFiniteMagnitude, minY = Double.greatestFiniteMagnitude
+        var maxX = -Double.greatestFiniteMagnitude, maxY = -Double.greatestFiniteMagnitude
+        for id in nodeIDs {
+            guard let geometry = try drawableGeometry(id) else {
+                throw SceneEditError.unsupportedEdit("node \(id) can't be grouped")
+            }
+            let x = Double(geometry.position.x), y = Double(geometry.position.y)
+            minX = min(minX, x); minY = min(minY, y)
+            maxX = max(maxX, x + Double(geometry.size.width)); maxY = max(maxY, y + Double(geometry.size.height))
+        }
+        let frame = Frame(x: minX, y: minY, width: maxX - minX, height: maxY - minY)
+
+        // Empty title/caption stand-ins (a group carries them like any drawable).
+        let captionID = try allocateIdentifier()
+        let titleID = try allocateIdentifier()
+        for id in [captionID, titleID] {
+            let record = try makeRecord(
+                identifier: id, type: 3097, message: TSD_StandinCaptionArchive(),
+                version: [10, 1, 0], objectReferences: []
+            )
+            components[slideComponent].records.append(record)
+        }
+
+        let groupID = try allocateIdentifier()
+        var group = TSD_GroupArchive()
+        group.super.geometry = Self.geometry(frame)
+        group.super.parent = reference(slideRootID)
+        group.super.title = reference(titleID)
+        group.super.caption = reference(captionID)
+        group.children = nodeIDs.map { reference($0) }
+        let record = try makeRecord(
+            identifier: groupID, type: 3008, message: group,
+            version: version, objectReferences: [captionID, titleID] + nodeIDs
+        )
+        components[slideComponent].records.append(record)
+
+        // Reparent each member into the group and move it into group space
+        // (child coordinates are relative to the group's origin).
+        let groupRef = reference(groupID)
+        for id in nodeIDs {
+            try mutateDrawable(id) { drawable in
+                drawable.parent = groupRef
+                drawable.geometry.position = TSP_Point.with {
+                    $0.x = Float(Double(drawable.geometry.position.x) - minX)
+                    $0.y = Float(Double(drawable.geometry.position.y) - minY)
+                }
+            }
+        }
+
+        // Swap the members for the group in the slide's ownership and z-order.
+        var slideRecord = components[slideComponent].records[slideRecordIndex]
+        var slide = try slideRecord.decode(KN_SlideArchive.self)
+        let members = Set(nodeIDs)
+        slide.ownedDrawables.removeAll { members.contains($0.identifier) }
+        slide.drawablesZOrder.removeAll { members.contains($0.identifier) }
+        slide.ownedDrawables.append(reference(groupID))
+        slide.drawablesZOrder.append(reference(groupID))
+        try slideRecord.setMessage(slide)
+        var refs = slideRecord.info.messageInfos[0].objectReferences.filter { !members.contains($0) }
+        refs.append(groupID)
+        try slideRecord.setObjectReferences(refs, at: 0)
+        components[slideComponent].records[slideRecordIndex] = slideRecord
+
+        return groupID
+    }
+
     // MARK: Building blocks
 
     /// Registers image bytes (and a scaled thumbnail) as document data blobs,

@@ -77,6 +77,24 @@ if arguments.count >= 3, arguments[1] == "custom-path-demo" {
     print("custom path demo written"); exit(0)
 }
 
+if arguments.count >= 4, arguments[1] == "group-demo" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let a = try document.addShape(toSlideAt: 0, frame: Frame(x: 100, y: 120, width: 160, height: 160), kind: .native(.star(points: 5, innerRatio: 0.42)))
+    try document.setNodeFill(a, to: (0.95, 0.8, 0.2, 1))
+    let b = try document.addShape(toSlideAt: 0, frame: Frame(x: 300, y: 120, width: 160, height: 160), kind: .ellipse)
+    try document.setNodeFill(b, to: (0.2, 0.5, 0.95, 1))
+    // Group the star + ellipse.
+    let inner = try document.groupNodes([a, b], onSlideAt: 0)
+    // A third shape, then nest: group the group with it.
+    let c = try document.addShape(toSlideAt: 0, frame: Frame(x: 200, y: 340, width: 160, height: 160), kind: .native(.plus))
+    try document.setNodeFill(c, to: (0.9, 0.3, 0.35, 1))
+    let outer = try document.groupNodes([inner, c], onSlideAt: 0)
+    try document.write(to: out)
+    print("group demo written; inner=\(inner) outer=\(outer)"); exit(0)
+}
+
 if arguments.count >= 3, arguments[1] == "arrows-demo" {
     let out = URL(fileURLWithPath: arguments[2])
     let canvas = Canvas {

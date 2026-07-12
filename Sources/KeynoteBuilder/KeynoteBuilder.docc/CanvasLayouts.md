@@ -35,6 +35,19 @@ try writer.write([canvas], to: URL(filePath: "Deck.key"),
 
 Each entry in the list becomes one slide.
 
+## Grouping
+
+Wrap elements in a `Group` to group them (groups can nest). The group's frame
+is its members' bounding box, and it moves as one in Keynote:
+
+```swift
+Group {
+    Shape(.star(points: 5, innerRatio: 0.42)).frame(x: 100, y: 120, width: 160, height: 160)
+    Shape(.ellipse).frame(x: 300, y: 120, width: 160, height: 160)
+}
+.rotation(degrees: 10)   // transforms the whole group
+```
+
 ## Coordinates and slide size
 
 Positions and sizes are in slide points, origin top-left. Keynote's logical
@@ -160,6 +173,7 @@ Modifiers chain, SwiftUI-style, each returning a new ``Element``:
 | `.shadow(_:)` | shape, text, image | a drop shadow (defaults to soft black) |
 | `.opacity(_:)` | all | element opacity, 0…1 |
 | `.rotation(degrees:)` | all | rotation; positive is counterclockwise |
+| `.locked(_:)` | all | lock against selection/editing in Keynote |
 
 Colors are ``RGBAColor`` values in 0…1: `.white`, `.black`, or
 `.rgb(_:_:_:)`. A shape's `.fill(_:)` also takes a full ``Fill`` — the same

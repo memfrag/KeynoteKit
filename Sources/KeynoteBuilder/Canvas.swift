@@ -37,6 +37,7 @@ public struct ElementStyle: Sendable {
     public var rotationDegrees: Double?
     public var startCap: LineEnd?
     public var endCap: LineEnd?
+    public var locked: Bool?
 
     public init() {}
 }
@@ -50,6 +51,7 @@ public struct Element: Sendable {
         case text(String)
         case image(path: String)
         case shape(ShapeKind)
+        case group([Element])
     }
 
     public var kind: Kind
@@ -121,6 +123,8 @@ public struct Element: Sendable {
     public func startCap(_ cap: LineEnd) -> Element { modifying { $0.startCap = cap } }
     /// A decoration on the line's finish end (for `Shape(.line)`).
     public func endCap(_ cap: LineEnd) -> Element { modifying { $0.endCap = cap } }
+    /// Locks the element so it can't be selected or edited in Keynote.
+    public func locked(_ on: Bool = true) -> Element { modifying { $0.locked = on } }
 
     private func modifying(_ change: (inout ElementStyle) -> Void) -> Element {
         var copy = self
@@ -136,6 +140,11 @@ public func Image(path: String) -> Element { Element(.image(path: path)) }
 /// A shape element — a rectangle by default, or any ``ShapeKind`` (ellipse,
 /// rounded rectangle, polygon, star).
 public func Shape(_ kind: ShapeKind = .rectangle) -> Element { Element(.shape(kind)) }
+/// A group of elements, positioned by their own frames and grouped into one.
+/// Groups can nest. The group's own frame is its members' bounding box.
+public func Group(@ElementBuilder _ content: () -> [Element]) -> Element {
+    Element(.group(content()))
+}
 
 /// A free-form slide built from absolutely-positioned elements, rather than
 /// from a template layout's placeholders.

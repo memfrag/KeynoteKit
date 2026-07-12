@@ -110,36 +110,62 @@ extension KeynoteDocument {
         try mutateGeometry(nodeID) { $0.angle = Float(degrees) }
     }
 
+    /// Locks or unlocks a drawable — a locked element can't be selected or
+    /// edited in Keynote until it's unlocked.
+    public mutating func setNodeLocked(_ nodeID: UInt64, _ locked: Bool) throws {
+        try mutateDrawable(nodeID) { $0.locked = locked }
+    }
+
     /// Applies a change to a drawable's geometry, decoding whichever archive
     /// type the node is.
-    mutating func mutateGeometry(_ nodeID: UInt64, _ apply: (inout TSD_GeometryArchive) -> Void) throws {
+    mutating func mutateGeometry(_ nodeID: UInt64, _ apply: @escaping (inout TSD_GeometryArchive) -> Void) throws {
+        try mutateDrawable(nodeID) { apply(&$0.geometry) }
+    }
+
+    /// Applies a change to a drawable's shared `TSD.DrawableArchive` fields
+    /// (geometry, parent, …), decoding whichever archive type the node is.
+    mutating func mutateDrawable(_ nodeID: UInt64, _ apply: (inout TSD_DrawableArchive) -> Void) throws {
         let location = try locateSceneNode(nodeID)
         var record = components[location.component].records[location.record]
         switch record.primaryType {
         case 7:
             var archive = try record.decode(KN_PlaceholderArchive.self)
-            apply(&archive.super.super.super.geometry)
+            apply(&archive.super.super.super)
             try record.setMessage(archive)
         case 2011:
             var archive = try record.decode(TSWP_ShapeInfoArchive.self)
-            apply(&archive.super.super.geometry)
+            apply(&archive.super.super)
             try record.setMessage(archive)
         case 3005:
             var archive = try record.decode(TSD_ImageArchive.self)
-            apply(&archive.super.geometry)
+            apply(&archive.super)
             try record.setMessage(archive)
         case 3007:
             var archive = try record.decode(TSD_MovieArchive.self)
-            apply(&archive.super.geometry)
+            apply(&archive.super)
             try record.setMessage(archive)
         case 3008:
             var archive = try record.decode(TSD_GroupArchive.self)
-            apply(&archive.super.geometry)
+            apply(&archive.super)
             try record.setMessage(archive)
         default:
             throw SceneEditError.nodeHasNoFrame(nodeID)
         }
         components[location.component].records[location.record] = record
+    }
+
+    /// A drawable node's geometry (position/size), or nil if it has none.
+    func drawableGeometry(_ nodeID: UInt64) throws -> TSD_GeometryArchive? {
+        let location = try locateSceneNode(nodeID)
+        let record = components[location.component].records[location.record]
+        switch record.primaryType {
+        case 7: return try record.decode(KN_PlaceholderArchive.self).super.super.super.geometry
+        case 2011: return try record.decode(TSWP_ShapeInfoArchive.self).super.super.geometry
+        case 3005: return try record.decode(TSD_ImageArchive.self).super.geometry
+        case 3007: return try record.decode(TSD_MovieArchive.self).super.geometry
+        case 3008: return try record.decode(TSD_GroupArchive.self).super.geometry
+        default: return nil
+        }
     }
 
     // MARK: Media

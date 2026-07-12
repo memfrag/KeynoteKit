@@ -67,24 +67,45 @@ public struct CanvasWriter {
         }
 
         for element in canvas.elements {
-            let frame = element.style.frame ?? Self.defaultFrame
-            switch element.kind {
-            case .text(let string):
-                let newID = try document.addText(toSlideAt: index, string: string, frame: frame)
-                try applyStyle(element.style, to: newID, in: &document)
-            case .shape(let kind):
-                let newID = try document.addShape(toSlideAt: index, frame: frame, kind: kind)
-                try applyStyle(element.style, to: newID, in: &document)
-            case .image(let path):
-                let url = URL(fileURLWithPath: path, relativeTo: imageBaseURL)
-                let newID = try document.addImage(toSlideAt: index, data: try Data(contentsOf: url), frame: frame)
-                try applyStyle(element.style, to: newID, in: &document)
-            }
+            _ = try create(element, at: index, in: &document, imageBaseURL: imageBaseURL)
         }
 
         // Remove the seed's prototypes so only the composed elements remain.
         for id in leftoverProtos {
             try? document.deleteDrawable(id)
+        }
+    }
+
+    /// Creates one element (recursing into groups) and returns its node id.
+    private func create(
+        _ element: Element, at index: Int, in document: inout KeynoteDocument, imageBaseURL: URL?
+    ) throws -> UInt64 {
+        let frame = element.style.frame ?? Self.defaultFrame
+        switch element.kind {
+        case .text(let string):
+            let newID = try document.addText(toSlideAt: index, string: string, frame: frame)
+            try applyStyle(element.style, to: newID, in: &document)
+            return newID
+        case .shape(let kind):
+            let newID = try document.addShape(toSlideAt: index, frame: frame, kind: kind)
+            try applyStyle(element.style, to: newID, in: &document)
+            return newID
+        case .image(let path):
+            let url = URL(fileURLWithPath: path, relativeTo: imageBaseURL)
+            let newID = try document.addImage(toSlideAt: index, data: try Data(contentsOf: url), frame: frame)
+            try applyStyle(element.style, to: newID, in: &document)
+            return newID
+        case .group(let children):
+            let ids = try children.map { try create($0, at: index, in: &document, imageBaseURL: imageBaseURL) }
+            let groupID = try document.groupNodes(ids, onSlideAt: index)
+            // A group's frame is its members' bounds; rotation and lock apply.
+            if let rotation = element.style.rotationDegrees {
+                try document.setNodeRotation(groupID, degrees: rotation)
+            }
+            if let locked = element.style.locked {
+                try document.setNodeLocked(groupID, locked)
+            }
+            return groupID
         }
     }
 
@@ -106,6 +127,9 @@ public struct CanvasWriter {
         )
         if let rotation = style.rotationDegrees {
             try document.setNodeRotation(nodeID, degrees: rotation)
+        }
+        if let locked = style.locked {
+            try document.setNodeLocked(nodeID, locked)
         }
     }
 }

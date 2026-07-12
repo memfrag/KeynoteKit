@@ -180,6 +180,36 @@ struct SceneSynthesisTests {
         }
     }
 
+    @Test("grouping nests and reparents members into group space")
+    func grouping() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let a = try document.addShape(toSlideAt: 0, frame: Frame(x: 100, y: 100, width: 100, height: 100))
+        let b = try document.addShape(toSlideAt: 0, frame: Frame(x: 300, y: 100, width: 100, height: 100))
+        let inner = try document.groupNodes([a, b], onSlideAt: 0)
+        let c = try document.addShape(toSlideAt: 0, frame: Frame(x: 100, y: 300, width: 100, height: 100))
+        let outer = try document.groupNodes([inner, c], onSlideAt: 0)
+
+        let reread = try writeAndReread(document)
+        let roots = try reread.sceneTree(forSlideAt: 0).nodes
+        let outerNode = try #require(roots.first { $0.id == outer })
+        #expect(outerNode.type == "group")
+        // The outer group's bounding box spans all three shapes.
+        #expect(outerNode.frame == Frame(x: 100, y: 100, width: 300, height: 300))
+        // It nests the inner group, and members are gone from the slide root.
+        #expect(outerNode.children.contains { $0.id == inner && $0.type == "group" })
+        #expect(roots.allSatisfy { $0.id != a && $0.id != b && $0.id != c })
+    }
+
+    @Test("locking a node round-trips")
+    func locking() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let id = try document.addShape(toSlideAt: 0, frame: Frame(x: 0, y: 0, width: 100, height: 100))
+        try document.setNodeLocked(id, true)
+        // No throw and the document still reads back with the node present.
+        let reread = try writeAndReread(document)
+        #expect(try reread.sceneTree(forSlideAt: 0).nodes.contains { $0.id == id })
+    }
+
     @Test("opacity and rotation apply to elements")
     func opacityAndRotation() throws {
         var document = try KeynoteDocument(contentsOf: Self.deckURL)

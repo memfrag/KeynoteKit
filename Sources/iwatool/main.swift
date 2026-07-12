@@ -78,7 +78,7 @@ if arguments.count >= 3, arguments[1] == "canvas-demo" {
             Image(path: "sun.png")
                 .frame(x: 480, y: 300, width: 420, height: 260)
                 .border(.rgb(1, 1, 1), width: 6)
-                .shadow(Shadow(color: (0, 0, 0, 1), offset: 8, blur: 12, angleDegrees: 315, opacity: 0.6))
+                .shadow(color: .black, offset: 8, blur: 12, opacity: 0.6)
                 .opacity(0.6)
         }
     }

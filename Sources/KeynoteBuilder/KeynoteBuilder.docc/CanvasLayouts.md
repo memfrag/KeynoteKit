@@ -116,14 +116,19 @@ Shape()
 ```
 
 Borders and shadows apply to every element kind — shapes, text boxes, and
-images:
+images. A border takes a color and width; a shadow takes color, offset,
+blur, angle, and opacity, each with a default (so `.shadow()` is a soft
+black shadow, and you tune only what you name):
 
 ```swift
 Image(path: "photo.jpg")
     .frame(x: 480, y: 300, width: 420, height: 260)
     .border(.white, width: 6)
-    .shadow(Shadow(offset: 8, blur: 12, opacity: 0.6))
+    .shadow(color: .black, offset: 8, blur: 12, opacity: 0.6)
 ```
+
+Borders are solid lines. For a pre-built value, `.shadow(_ shadow:)` and
+`.border(_ border:)` also take ``Shadow`` and ``Border`` directly.
 
 Text styling is applied as Keynote's own anonymous *variation* styles, and a
 shape's outline is rescaled to its frame, so overridden elements open and

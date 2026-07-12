@@ -89,9 +89,25 @@ public struct Element: Sendable {
     }
     /// A border, for shapes, text boxes, and images.
     public func border(_ border: Border) -> Element { modifying { $0.border = border } }
-    /// A drop shadow, for shapes, text boxes, and images. Defaults to a soft
-    /// black shadow.
-    public func shadow(_ shadow: Shadow = Shadow()) -> Element { modifying { $0.shadow = shadow } }
+    /// A drop shadow, for shapes, text boxes, and images. Every parameter has
+    /// a sensible default, so `.shadow()` gives a soft black shadow and any
+    /// one can be tuned: `.shadow(color: .black, blur: 12, opacity: 0.6)`.
+    public func shadow(
+        color: RGBAColor = .black,
+        offset: Double = 5,
+        blur: Double = 6,
+        angleDegrees: Double = 315,
+        opacity: Double = 0.5
+    ) -> Element {
+        modifying {
+            $0.shadow = Shadow(
+                color: (color.red, color.green, color.blue, color.alpha),
+                offset: offset, blur: blur, angleDegrees: angleDegrees, opacity: opacity
+            )
+        }
+    }
+    /// A drop shadow from a pre-built ``Shadow`` value.
+    public func shadow(_ shadow: Shadow) -> Element { modifying { $0.shadow = shadow } }
     /// Element opacity, 0…1.
     public func opacity(_ opacity: Double) -> Element { modifying { $0.opacity = opacity } }
     /// Rotation in degrees; positive rotates counterclockwise.

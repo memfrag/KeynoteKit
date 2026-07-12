@@ -247,6 +247,43 @@ extension KeynoteDocument {
         return nil
     }
 
+    /// Masks (clips) an image to a shape — Keynote's "Mask with Shape". The
+    /// image shows only through the shape; the rest is hidden. Pass any
+    /// ``ShapeKind`` (ellipse, rounded rectangle, star, a custom path…).
+    public mutating func maskImage(_ nodeID: UInt64, with kind: ShapeKind) throws {
+        let location = try locateSceneNode(nodeID)
+        var record = components[location.component].records[location.record]
+        guard record.primaryType == 3005 else {
+            throw SceneEditError.unsupportedEdit("node \(nodeID) is not an image")
+        }
+        var image = try record.decode(TSD_ImageArchive.self)
+        let size = image.super.geometry.size
+
+        // The mask covers the whole image; its geometry is in the image's own
+        // coordinate space (origin at the image's top-left).
+        let maskID = try allocateIdentifier()
+        var mask = TSD_MaskArchive()
+        mask.super.geometry = TSD_GeometryArchive.with {
+            $0.position = TSP_Point.with { $0.x = 0; $0.y = 0 }
+            $0.size = size
+            $0.flags = 3
+        }
+        mask.super.parent = reference(nodeID)
+        mask.pathsource = Self.pathSource(for: kind, width: Double(size.width), height: Double(size.height))
+        let maskRecord = try makeRecord(
+            identifier: maskID, type: 3006, message: mask,
+            version: record.info.messageInfos[0].version, objectReferences: []
+        )
+        components[location.component].records.append(maskRecord)
+
+        image.mask = reference(maskID)
+        try record.setMessage(image)
+        var refs = record.info.messageInfos[0].objectReferences
+        if !refs.contains(maskID) { refs.append(maskID) }
+        try record.setObjectReferences(refs, at: 0)
+        components[location.component].records[location.record] = record
+    }
+
     /// Groups existing drawables on a slide into a new group, and returns the
     /// group's node id. Members must live on the given slide. The group's
     /// frame is the members' bounding box; each member is reparented and moved

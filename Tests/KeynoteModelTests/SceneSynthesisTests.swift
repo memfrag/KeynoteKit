@@ -291,6 +291,21 @@ struct SceneSynthesisTests {
         }
     }
 
+    @Test("masking an image with a shape round-trips")
+    func maskImage() throws {
+        for kind in [ShapeKind.ellipse, .native(.star(points: 5, innerRatio: 0.45)), .roundedRectangle(cornerRadius: 40)] {
+            var document = try KeynoteDocument(contentsOf: Self.deckURL)
+            let id = try document.addImage(
+                toSlideAt: 0, data: try Data(contentsOf: Self.blueImageURL),
+                frame: Frame(x: 40, y: 40, width: 260, height: 260)
+            )
+            try document.maskImage(id, with: kind)
+            let reread = try writeAndReread(document)
+            #expect(try reread.sceneTree(forSlideAt: 0).nodes.contains { $0.id == id })
+            #expect(try reread.dataDigestsAreUnique())
+        }
+    }
+
     @Test("addImage registers data and places an image node")
     func addImage() throws {
         var document = try KeynoteDocument(contentsOf: Self.deckURL)

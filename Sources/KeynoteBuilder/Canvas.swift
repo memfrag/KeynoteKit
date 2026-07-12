@@ -40,6 +40,7 @@ public struct ElementStyle: Sendable {
     public var locked: Bool?
     public var flipHorizontal: Bool?
     public var flipVertical: Bool?
+    public var mask: ShapeKind?
 
     public init() {}
 }
@@ -131,6 +132,9 @@ public struct Element: Sendable {
     public func flippedHorizontally(_ on: Bool = true) -> Element { modifying { $0.flipHorizontal = on } }
     /// Flips the element vertically (mirror top↔bottom).
     public func flippedVertically(_ on: Bool = true) -> Element { modifying { $0.flipVertical = on } }
+    /// Masks (clips) an image element to a shape — the image shows only
+    /// through the shape. Any ``ShapeKind`` works.
+    public func mask(_ kind: ShapeKind) -> Element { modifying { $0.mask = kind } }
 
     private func modifying(_ change: (inout ElementStyle) -> Void) -> Element {
         var copy = self

@@ -90,6 +90,21 @@ if arguments.count >= 4, arguments[1] == "textflip-test" {
     print("textflip written"); exit(0)
 }
 
+if arguments.count >= 5, arguments[1] == "mask-test" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    let png = try Data(contentsOf: URL(fileURLWithPath: arguments[4]))
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let a = try document.addImage(toSlideAt: 0, data: png, frame: Frame(x: 80, y: 120, width: 260, height: 260))
+    try document.maskImage(a, with: .ellipse)
+    let b = try document.addImage(toSlideAt: 0, data: png, frame: Frame(x: 400, y: 120, width: 260, height: 260))
+    try document.maskImage(b, with: .native(.star(points: 5, innerRatio: 0.45)))
+    let c = try document.addImage(toSlideAt: 0, data: png, frame: Frame(x: 720, y: 120, width: 260, height: 260))
+    try document.maskImage(c, with: .roundedRectangle(cornerRadius: 60))
+    try document.write(to: out)
+    print("mask test written"); exit(0)
+}
+
 if arguments.count >= 5, arguments[1] == "flip-test" {
     let paletteIn = URL(fileURLWithPath: arguments[2])
     let out = URL(fileURLWithPath: arguments[3])

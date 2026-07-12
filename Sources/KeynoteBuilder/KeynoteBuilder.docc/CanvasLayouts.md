@@ -175,6 +175,7 @@ Modifiers chain, SwiftUI-style, each returning a new ``Element``:
 | `.rotation(degrees:)` | all | rotation; positive is counterclockwise |
 | `.locked(_:)` | all | lock against selection/editing in Keynote |
 | `.flippedHorizontally(_:)` / `.flippedVertically(_:)` | all | mirror the element |
+| `.mask(_:)` | image | clip the image to a ``ShapeKind`` |
 
 Colors are ``RGBAColor`` values in 0…1: `.white`, `.black`, or
 `.rgb(_:_:_:)`. A shape's `.fill(_:)` also takes a full ``Fill`` — the same

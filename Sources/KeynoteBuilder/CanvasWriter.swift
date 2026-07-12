@@ -94,6 +94,9 @@ public struct CanvasWriter {
             let url = URL(fileURLWithPath: path, relativeTo: imageBaseURL)
             let newID = try document.addImage(toSlideAt: index, data: try Data(contentsOf: url), frame: frame)
             try applyStyle(element.style, to: newID, in: &document)
+            if let mask = element.style.mask {
+                try document.maskImage(newID, with: mask)
+            }
             return newID
         case .group(let children):
             let ids = try children.map { try create($0, at: index, in: &document, imageBaseURL: imageBaseURL) }

@@ -104,6 +104,13 @@ public struct CanvasWriter {
         let frame = element.style.frame ?? Self.defaultFrame
         switch element.kind {
         case .text(let string):
+            // Leading tabs in a list item express nesting (Keynote stores it as
+            // a per-paragraph level). Strip them and pass the levels through.
+            var string = string
+            var listLevels: [Int]? = nil
+            if element.style.listMarker != nil {
+                (string, listLevels) = Self.stripListLevels(string)
+            }
             let newID = try document.addText(toSlideAt: index, string: string, frame: frame)
             try applyStyle(element.style, to: newID, in: &document)
             if let name = element.style.paragraphStyleName, let styleID = paragraphStyles[name] {
@@ -117,7 +124,7 @@ public struct CanvasWriter {
             }
             if let marker = element.style.listMarker {
                 let markerColor = element.style.listMarkerColor.map { ($0.red, $0.green, $0.blue, $0.alpha) }
-                try document.setNodeList(newID, marker, color: markerColor)
+                try document.setNodeList(newID, marker, color: markerColor, paragraphLevels: listLevels)
             }
             if let lines = element.style.dropCapLines {
                 try document.setNodeDropCap(newID, lines: lines, characters: element.style.dropCapCharacters ?? 1)
@@ -162,6 +169,21 @@ public struct CanvasWriter {
     }
 
     private static let defaultFrame = Frame(x: 0, y: 0, width: 300, height: 200)
+
+    /// Splits a list's text into (text without leading tabs, per-paragraph
+    /// nesting levels) — one leading tab per level, so `"A\n\tB\n\t\tC"` yields
+    /// levels `[0, 1, 2]`.
+    static func stripListLevels(_ string: String) -> (String, [Int]) {
+        var levels: [Int] = []
+        let lines = string.components(separatedBy: "\n").map { line -> String in
+            var rest = Substring(line)
+            var level = 0
+            while rest.first == "\t" { level += 1; rest = rest.dropFirst() }
+            levels.append(level)
+            return String(rest)
+        }
+        return (lines.joined(separator: "\n"), levels)
+    }
 
     private func applyStyle(_ style: ElementStyle, to nodeID: UInt64, in document: inout KeynoteDocument) throws {
         if style.font != nil || style.fontSize != nil || style.bold != nil || style.italic != nil

@@ -370,6 +370,9 @@ Highlights:
 - **Images** are file paths (resolved against `imageBaseDir`) or `data:`/base64.
 - **Builds** reference an element by `name`; the array order is playback order.
   "By Paragraph" delivery animates one bullet at a time.
+- **Nested bullets**: prefix a line in a bulleted element's `text` with tab
+  characters — one tab per level (`"Top\n\tNested\n\t\tDeeper"`). Keynote stores
+  the level per paragraph; the tabs are stripped.
 - **Reusable templates**: define named element sets under `templates` and
   instantiate them per slide with `use` + `set` (fill by element name).
 - **External templates**: set a deck-level `template` (a `.key`); each slide

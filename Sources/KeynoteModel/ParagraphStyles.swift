@@ -259,10 +259,13 @@ extension KeynoteDocument {
     /// Turns a text node's paragraphs into a list with the given marker. Builds
     /// a list style from the theme's own (full per-level arrays) so the text
     /// lays out correctly, then points every paragraph at it. `color` tints the
-    /// marker (RGBA 0…1).
+    /// marker (RGBA 0…1). `paragraphLevels` sets each paragraph's nesting level
+    /// (0 = top); a paragraph at level *n* uses the list style's *n*-th indent —
+    /// this is how Keynote stores nested bullets (a per-paragraph integer, not a
+    /// tab).
     public mutating func setNodeList(
         _ nodeID: UInt64, _ marker: ListMarker, indent: Double = 35,
-        color: (Double, Double, Double, Double)? = nil
+        color: (Double, Double, Double, Double)? = nil, paragraphLevels: [Int]? = nil
     ) throws {
         guard let styles = defaultTextStyles(), let baseListID = styles.list,
               let stylesheetComponent = components.firstIndex(where: {
@@ -323,6 +326,24 @@ extension KeynoteDocument {
         }
         for i in storage.tableListStyle.entries.indices {
             storage.tableListStyle.entries[i].object = reference(listID)
+        }
+
+        // Nesting: each paragraph carries its list level in `tableParaData`
+        // (the `first` field). Level n selects the list style's n-th indent.
+        if let paragraphLevels {
+            let text = storage.text.joined()
+            var starts = [0]
+            for (i, scalar) in text.unicodeScalars.enumerated() where scalar.value == 0x2029 {
+                starts.append(i + 1)
+            }
+            if let last = starts.last, last >= text.unicodeScalars.count { starts.removeLast() }
+            storage.tableParaData.entries = starts.enumerated().map { index, start in
+                TSWP_ParaDataAttributeTable.ParaDataAttribute.with {
+                    $0.characterIndex = UInt32(start)
+                    $0.first = UInt32(max(0, index < paragraphLevels.count ? paragraphLevels[index] : 0))
+                    $0.second = 0
+                }
+            }
         }
         try storageRecord.setMessage(storage)
         var refs = storageRecord.info.messageInfos[0].objectReferences

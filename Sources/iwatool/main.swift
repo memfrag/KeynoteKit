@@ -196,6 +196,19 @@ if arguments.count >= 4, arguments[1] == "font-test" {
     print("font test written; nodes \(a),\(b),\(c)"); exit(0)
 }
 
+if arguments.count >= 4, arguments[1] == "nested-test" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let n = try document.addText(
+        toSlideAt: 0, string: "Top level one\nNested once\nNested once again\nNested twice\nTop level two",
+        frame: Frame(x: 160, y: 200, width: 1500, height: 700))
+    try document.setNodeCharacterStyle(n, fontSize: 54)
+    try document.setNodeList(n, .bullet("\u{2022}"), paragraphLevels: [0, 1, 1, 2, 0])
+    try document.write(to: out)
+    print("nested test written"); exit(0)
+}
+
 if arguments.count >= 4, arguments[1] == "bullet-test" {
     let paletteIn = URL(fileURLWithPath: arguments[2])
     let out = URL(fileURLWithPath: arguments[3])

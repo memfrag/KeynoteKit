@@ -116,6 +116,7 @@
     },
     "bullet": {
       "type": "object", "additionalProperties": false,
+      "description": "Turns the element's paragraphs into a bulleted list. Nest a line by prefixing it with tab characters in `text` — one tab per level.",
       "properties": { "marker": { "type": "string", "description": "Bullet glyph (default •)." }, "color": { "$ref": "#/$defs/color" } }
     },
     "numbered": {

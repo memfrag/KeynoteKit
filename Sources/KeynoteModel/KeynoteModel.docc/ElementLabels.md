@@ -1,66 +1,52 @@
-# Element Labels
+# Names and Comments
 
-Tag template elements with explicit `@labels` and address them by name,
-instead of relying on roles, prompts, or geometry.
+Address elements by their Object List name, and read comments as intent.
 
-## Overview
+## Two distinct channels
 
-When you fill a template, KeynoteKit needs to know which element gets which
-content. Heuristics can guess — a placeholder's role, the layout's prompt
-text, the largest image — but for a bespoke layout the reliable answer is an
-**explicit label** the template author sets. Explicit labels take precedence
-over every heuristic.
+KeynoteKit keeps identity and intent separate:
 
-There are two label channels, and KeynoteKit reads both (a comment wins when
-both are present):
+- **Name** — every element's name in Keynote's **Object List** (double-click
+  to rename). It's stored as the element's accessibility description and works
+  on *any* element — text box, shape, image. KeynoteKit uses the name as the
+  **tag** to address an element by. This is `SceneNode.label`.
+- **Comment** — a comment attached to an element carries free-form **intent**:
+  what the element is for, how it should be used. It's context for a human or
+  an AI, never used for addressing. This is `SceneNode.comment`.
 
-- **Comments** — attach a comment to *any* element in Keynote (text box,
-  shape, image) and start it with `@`. This is the general mechanism.
-- **Image Description** — the accessibility "Description" field in the image
-  inspector. Keynote only exposes it for images, so it's the convenient
-  choice there.
+So: name the thing you want to find; comment the thing you want to explain.
 
 ```swift
-// Read the labels a template already carries:
 for node in try document.sceneTree(forSlideAt: 0).nodes {
-    print(node.id, node.type, node.label ?? "—")
+    print(node.id, node.type, node.label ?? "—", node.comment ?? "")
 }
-// 3959420 shape  @left
-// 3959492 shape  @right
-// 2652703 image  @hero
+// 3959420 shape  left-column   "intro copy, keep to two lines"
+// 2652703 image  hero          "swap per customer"
 ```
 
-## Addressing by label
+## Addressing by name
 
-Every content-filling entry point matches an explicit label first:
+Every content-filling entry point matches a name:
 
 ```swift
-// Text, by comment label:
-try document.setSlideText(at: 0, block: "left", to: "Left column…")
+// Text, by the block's name:
+try document.setSlideText(at: 0, block: "left-column", to: "Left column…")
 
-// An image, by comment or Description label:
+// An image, by name:
 try document.setSlideImage(at: 0, matching: "hero", to: photoData)
 ```
 
-The leading `@` is optional in the key — `"left"` matches an element
-commented `@left`. In the builder's DSL these are `Slide.blocks` and
-`Slide.images` (see the KeynoteBuilder module's "Generating Presentations"
-article).
+In the builder's DSL these are `Slide.blocks` and `Slide.images` (see the
+KeynoteBuilder module's "Generating Presentations" article).
 
-## Reading and writing labels directly
+## Reading and writing directly
 
 ```swift
-try document.nodeComment(nodeID)                    // an element's comment text
-try document.setNodeDescription(imageID, to: "@hero")   // an image's Description
+try document.nodeName(nodeID)                   // the Object List name (the tag)
+try document.setNodeName(nodeID, to: "hero")    // name any element
+try document.nodeComment(nodeID)                // the comment (intent), read-only
 ```
 
-## Keeping output clean
-
-`@label` comments are authoring scaffolding, not review comments.
-``KeynoteDocument/stripLabelComments()`` removes every comment whose text
-begins with `@` (leaving genuine comments intact), and the builder calls it
-automatically — so labels never ship in a generated deck.
-
-```swift
-try document.stripLabelComments()
-```
+`nodeName` / `setNodeName` and `nodeDescription` / `setNodeDescription` are
+the same field under two spellings — the Object List name is the accessibility
+description.

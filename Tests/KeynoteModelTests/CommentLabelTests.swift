@@ -2,7 +2,7 @@ import Foundation
 import Testing
 @testable import KeynoteModel
 
-@Suite("Comment labels")
+@Suite("Names and comments")
 struct CommentLabelTests {
 
     static var commentsURL: URL {
@@ -17,39 +17,43 @@ struct CommentLabelTests {
         return try KeynoteDocument(contentsOf: url)
     }
 
-    @Test("reads element comments as scene labels")
-    func readsLabels() throws {
+    @Test("comments are read as intent, separate from the label")
+    func commentsAreIntent() throws {
         let document = try KeynoteDocument(contentsOf: Self.commentsURL)
         let shapes = try document.sceneTree(forSlideAt: 0).nodes.filter { $0.type == "shape" }
-        let labels = Set(shapes.compactMap(\.label))
-        #expect(labels.contains("@left"))
-        #expect(labels.contains("@right"))
+        // The fixture's shapes carry comments; they surface as `comment`.
+        let comments = Set(shapes.compactMap(\.comment))
+        #expect(comments.contains("@left"))
+        #expect(comments.contains("@right"))
+        // …and a comment is NOT used as the addressing label.
+        #expect(shapes.allSatisfy { $0.label != "@left" && $0.label != "@right" })
     }
 
-    @Test("fills a shape by its comment label (explicit label beats heuristics)")
-    func fillByLabel() throws {
+    @Test("an element's Object List name is its label")
+    func nameIsLabel() throws {
         var document = try KeynoteDocument(contentsOf: Self.commentsURL)
-        try document.setSlideText(at: 0, block: "left", to: "Left wins")
-        try document.setSlideText(at: 0, block: "@right", to: "Right wins")
+        let shapes = try document.sceneTree(forSlideAt: 0).nodes.filter { $0.type == "shape" }
+        let target = try #require(shapes.first)
+        try document.setNodeName(target.id, to: "hero")
 
         let reread = try writeAndReread(document)
-        let shapes = try reread.sceneTree(forSlideAt: 0).nodes.filter { $0.type == "shape" }
-        let texts = Set(shapes.compactMap(\.text))
-        #expect(texts.contains("Left wins"))
-        #expect(texts.contains("Right wins"))
+        let named = try reread.sceneTree(forSlideAt: 0).nodes.first { $0.id == target.id }
+        #expect(named?.label == "hero")
+        #expect(try reread.nodeName(target.id) == "hero")
     }
 
-    @Test("stripLabelComments removes @labels but keeps content")
-    func strip() throws {
+    @Test("setSlideText fills a block by its name")
+    func fillByName() throws {
         var document = try KeynoteDocument(contentsOf: Self.commentsURL)
-        try document.setSlideText(at: 0, block: "left", to: "Kept text")
-        try document.stripLabelComments()
+        let shapes = try document.sceneTree(forSlideAt: 0).nodes.filter { $0.type == "shape" }
+        let target = try #require(shapes.first)
+        try document.setNodeName(target.id, to: "callout")
 
-        let reread = try writeAndReread(document)
-        let shapes = try reread.sceneTree(forSlideAt: 0).nodes.filter { $0.type == "shape" }
-        // No @labels remain…
-        #expect(shapes.allSatisfy { !($0.label?.hasPrefix("@") ?? false) })
-        // …and the filled content survives.
-        #expect(shapes.contains { $0.text == "Kept text" })
+        let reread0 = try writeAndReread(document)
+        var doc = reread0
+        try doc.setSlideText(at: 0, block: "callout", to: "Named content")
+
+        let reread = try writeAndReread(doc)
+        #expect(try reread.sceneTree(forSlideAt: 0).nodes.contains { $0.text == "Named content" })
     }
 }

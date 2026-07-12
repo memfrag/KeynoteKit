@@ -2,15 +2,26 @@ import Foundation
 import IWAContainer
 import KeynoteSchemas
 
-/// The accessibility description of a drawable — the "Description" field in
-/// Keynote's inspector. It lives on every drawable (`TSD.DrawableArchive`),
-/// so images, shapes, and text boxes can all carry one. KeynoteKit uses it
-/// as an addressing label: set a description like `@hero` in Keynote and
-/// target that element by it.
+/// The accessibility description of a drawable (`TSD.DrawableArchive`) — the
+/// same value as the element's **name in Keynote's Object List**. Renaming an
+/// object there sets this field, on any element (image, shape, text box), so
+/// KeynoteKit uses the name as the tag to address an element by. See
+/// ``nodeName(_:)`` / ``setNodeName(_:to:)`` for name-oriented spellings.
 extension KeynoteDocument {
 
+    /// The element's Object List name (its accessibility description), or nil
+    /// if unnamed.
+    public func nodeName(_ nodeID: UInt64) throws -> String? {
+        try nodeDescription(nodeID)
+    }
+
+    /// Names an element — the same as renaming it in Keynote's Object List.
+    public mutating func setNodeName(_ nodeID: UInt64, to name: String) throws {
+        try setNodeDescription(nodeID, to: name)
+    }
+
     /// The accessibility description ("Description" in the inspector) of a
-    /// node, or nil if unset.
+    /// node, or nil if unset. Equivalent to ``nodeName(_:)``.
     public func nodeDescription(_ nodeID: UInt64) throws -> String? {
         let location = try locateSceneNode(nodeID)
         let record = components[location.component].records[location.record]

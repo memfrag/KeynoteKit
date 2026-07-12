@@ -32,9 +32,12 @@ public struct SceneNode: Codable {
     public var text: String?
     public var frame: Frame?
     public var media: MediaReference?
-    /// The node's accessibility description ("Description" in Keynote's
-    /// inspector) — usable as an addressing label.
+    /// The element's name in Keynote's Object List (stored as its
+    /// accessibility description) — the tag used to address it.
     public var label: String?
+    /// A comment attached to the element, carrying intent or context about
+    /// what it's for. Free-form; not used for addressing. Read-only.
+    public var comment: String?
     /// For `"table"` nodes: the cell grid as display strings (nil = empty
     /// cell). Editable — the reconciler turns changed cells into
     /// `setTableCellText`/`setTableCellNumber`.
@@ -53,7 +56,7 @@ public struct SceneNode: Codable {
     public init(
         id: UInt64, type: String, role: String? = nil, prompt: String? = nil,
         text: String? = nil, frame: Frame? = nil, media: MediaReference? = nil,
-        label: String? = nil, cells: [[String?]]? = nil, chart: ChartData? = nil,
+        label: String? = nil, comment: String? = nil, cells: [[String?]]? = nil, chart: ChartData? = nil,
         children: [SceneNode] = [], cloneOf: UInt64? = nil
     ) {
         self.id = id
@@ -64,6 +67,7 @@ public struct SceneNode: Codable {
         self.frame = frame
         self.media = media
         self.label = label
+        self.comment = comment
         self.cells = cells
         self.chart = chart
         self.children = children
@@ -170,9 +174,11 @@ extension KeynoteDocument {
             ?? components.flatMap(\.records).first(where: { $0.identifier == id })
         else { return nil }
 
-        // Explicit label: a comment (any element) preferred over the
-        // accessibility description (images only).
-        let label = (try? Self.explicitLabel(of: record, in: component)) ?? nil
+        // The addressing label is the element's Object List name (its
+        // accessibility description); a comment carries separate intent.
+        let label = (((try? Self.drawableDescription(of: record)) ?? nil)?.isEmpty ?? true)
+            ? nil : (try? Self.drawableDescription(of: record)) ?? nil
+        let comment = (try? Self.commentText(of: record, in: component)) ?? nil
 
         switch record.primaryType {
         case 7: // KN.PlaceholderArchive
@@ -185,7 +191,8 @@ extension KeynoteDocument {
                 prompt: (role ?? kindName(placeholder.kind)).flatMap { promptByRole[$0] },
                 text: storageText(of: shape, in: component),
                 frame: frame(of: shape.super.super),
-                label: label
+                label: label,
+                comment: comment
             )
 
         case 2011: // TSWP.ShapeInfoArchive (text box / shape with text)
@@ -195,7 +202,8 @@ extension KeynoteDocument {
                 type: "shape",
                 text: storageText(of: shape, in: component),
                 frame: frame(of: shape.super.super),
-                label: label
+                label: label,
+                comment: comment
             )
 
         case 3005: // TSD.ImageArchive
@@ -212,7 +220,8 @@ extension KeynoteDocument {
                 type: "image",
                 frame: frame(of: image.super),
                 media: media,
-                label: label
+                label: label,
+                comment: comment
             )
 
         case 3007: // TSD.MovieArchive
@@ -229,7 +238,8 @@ extension KeynoteDocument {
                 type: "movie",
                 frame: frame(of: movie.super),
                 media: media,
-                label: label
+                label: label,
+                comment: comment
             )
 
         case 3008: // TSD.GroupArchive
@@ -247,6 +257,7 @@ extension KeynoteDocument {
                 type: "group",
                 frame: frame(of: group.super),
                 label: label,
+                comment: comment,
                 children: children
             )
 

@@ -3,32 +3,32 @@ import IWAContainer
 import KeynoteSchemas
 
 /// Element comments (`TSD.CommentStorageArchive`, referenced by every
-/// drawable via `DrawableArchive.comment`). Unlike the accessibility
-/// description — which Keynote only lets you edit for images — a comment can
-/// be attached to *any* element, so it is the general way to give a template
-/// element an explicit `@label`.
-///
-/// A comment whose text begins with `@` is treated as a label: it takes
-/// precedence over any heuristic when addressing the element, and the
-/// builder strips it from generated output so it doesn't ship as a stray
-/// comment.
+/// drawable via `DrawableArchive.comment`). A comment attaches free-form
+/// context to an element — what it's for, how it should be used — separate
+/// from the element's *name* (its accessibility description), which is what
+/// KeynoteKit uses to address it. Read a comment as intent; read the name as
+/// the tag.
 extension KeynoteDocument {
 
     /// The comment text on a node, or nil if it has none.
     public func nodeComment(_ nodeID: UInt64) throws -> String? {
         let location = try locateSceneNode(nodeID)
         let component = components[location.component]
-        let record = component.records[location.record]
-        guard let commentID = try Self.commentReference(of: record),
+        return try Self.commentText(of: component.records[location.record], in: component)
+    }
+
+    /// The comment text on a record, or nil if it has none.
+    static func commentText(of record: ObjectRecord, in component: Component) throws -> String? {
+        guard let commentID = try commentReference(of: record),
               let commentRecord = component.records.first(where: { $0.identifier == commentID }),
               commentRecord.primaryType == 3056
         else { return nil }
         let comment = try commentRecord.decode(TSD_CommentStorageArchive.self)
-        return comment.hasText ? comment.text : nil
+        return comment.hasText && !comment.text.isEmpty ? comment.text : nil
     }
 
     /// Removes a node's comment (clears the reference and drops the storage
-    /// record). Used to strip `@label` scaffolding from generated decks.
+    /// record).
     public mutating func removeComment(_ nodeID: UInt64) throws {
         let location = try locateSceneNode(nodeID)
         var record = components[location.component].records[location.record]
@@ -43,39 +43,6 @@ extension KeynoteDocument {
         components[location.component].records.removeAll {
             $0.identifier == commentID && $0.primaryType == 3056
         }
-    }
-
-    /// Removes every `@label` comment from the document (a comment whose
-    /// text begins with `@`), leaving genuine review comments intact. The
-    /// builder calls this so label scaffolding never ships in output.
-    public mutating func stripLabelComments() throws {
-        for componentIndex in components.indices {
-            for record in components[componentIndex].records {
-                guard let id = record.identifier,
-                      let commentID = try? Self.commentReference(of: record),
-                      let commentRecord = components[componentIndex].records.first(where: { $0.identifier == commentID }),
-                      commentRecord.primaryType == 3056,
-                      let comment = try? commentRecord.decode(TSD_CommentStorageArchive.self),
-                      comment.hasText, comment.text.hasPrefix("@")
-                else { continue }
-                try removeComment(id)
-            }
-        }
-    }
-
-    /// A node's explicit `@label`, preferring a comment (works on any
-    /// element) over the accessibility description (images only). The leading
-    /// `@` is retained; matching treats it as optional.
-    static func explicitLabel(of record: ObjectRecord, in component: Component) throws -> String? {
-        if let commentID = try commentReference(of: record),
-           let commentRecord = component.records.first(where: { $0.identifier == commentID }),
-           commentRecord.primaryType == 3056,
-           let comment = try? commentRecord.decode(TSD_CommentStorageArchive.self),
-           comment.hasText, comment.text.hasPrefix("@") {
-            return comment.text
-        }
-        let description = try drawableDescription(of: record)
-        return (description?.isEmpty ?? true) ? nil : description
     }
 
     // MARK: Drawable comment plumbing

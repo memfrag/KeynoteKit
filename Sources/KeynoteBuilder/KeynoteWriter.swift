@@ -68,8 +68,6 @@ public struct KeynoteWriter {
             try buildFromSingleSeed(presentation, into: &document)
         }
         try placeImages(presentation, into: &document, baseURL: imageBaseURL)
-        // `@label` comments are authoring scaffolding — never ship them.
-        try document.stripLabelComments()
         return document
     }
 

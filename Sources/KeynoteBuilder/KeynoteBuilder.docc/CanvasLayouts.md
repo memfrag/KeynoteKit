@@ -97,6 +97,8 @@ Modifiers chain, SwiftUI-style, each returning a new ``Element``:
 | `.bold(_:)` / `.italic(_:)` | text | weight and slant |
 | `.foregroundColor(_:)` | text | text color |
 | `.fill(_:)` | shape | fill: a color or any ``Fill`` |
+| `.border(_:width:)` | shape, text, image | a solid border |
+| `.shadow(_:)` | shape, text, image | a drop shadow (defaults to soft black) |
 
 Colors are ``RGBAColor`` values in 0…1: `.white`, `.black`, or
 `.rgb(_:_:_:)`. A shape's `.fill(_:)` also takes a full ``Fill`` — the same
@@ -109,6 +111,16 @@ Shape()
         GradientStop(color: (0.95, 0.55, 0.15, 1), location: 0),
         GradientStop(color: (0.6, 0.1, 0.35, 1), location: 1),
     ], angleDegrees: 90))
+```
+
+Borders and shadows apply to every element kind — shapes, text boxes, and
+images:
+
+```swift
+Image(path: "photo.jpg")
+    .frame(x: 480, y: 300, width: 420, height: 260)
+    .border(.white, width: 6)
+    .shadow(Shadow(offset: 8, blur: 12, opacity: 0.6))
 ```
 
 Text styling is applied as Keynote's own anonymous *variation* styles, and a
@@ -141,3 +153,5 @@ to think about it — identical images just work.
 - ``Fill``
 - ``GradientStop``
 - ``ImageFillMode``
+- ``Border``
+- ``Shadow``

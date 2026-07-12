@@ -28,6 +28,44 @@ public struct GradientStop: Sendable {
     }
 }
 
+/// A border (stroke) around a shape, text box, or image.
+public struct Border: Sendable {
+    /// RGBA in 0…1.
+    public var color: (Double, Double, Double, Double)
+    /// Line width in points.
+    public var width: Double
+
+    public init(color: (Double, Double, Double, Double) = (0, 0, 0, 1), width: Double = 1) {
+        self.color = color
+        self.width = width
+    }
+}
+
+/// A drop shadow behind a shape, text box, or image.
+public struct Shadow: Sendable {
+    /// RGBA in 0…1.
+    public var color: (Double, Double, Double, Double)
+    /// Distance from the object, in points.
+    public var offset: Double
+    /// Blur radius, in points.
+    public var blur: Double
+    /// Direction the shadow is cast, in degrees.
+    public var angleDegrees: Double
+    /// 0…1.
+    public var opacity: Double
+
+    public init(
+        color: (Double, Double, Double, Double) = (0, 0, 0, 1),
+        offset: Double = 5, blur: Double = 6, angleDegrees: Double = 315, opacity: Double = 0.5
+    ) {
+        self.color = color
+        self.offset = offset
+        self.blur = blur
+        self.angleDegrees = angleDegrees
+        self.opacity = opacity
+    }
+}
+
 /// How an image fill is scaled into its area.
 public enum ImageFillMode: Sendable {
     case original
@@ -94,6 +132,32 @@ extension KeynoteDocument {
                 }
             }
             return (archive, [mainID])
+        }
+    }
+
+    static func strokeArchive(_ border: Border) -> TSD_StrokeArchive {
+        TSD_StrokeArchive.with {
+            $0.color = Self.color(border.color)
+            $0.width = Float(border.width)
+            $0.cap = .buttCap
+            $0.join = .miterJoin
+            $0.miterLimit = 4
+            $0.pattern = TSD_StrokePatternArchive.with {
+                $0.type = .tsdsolidPattern
+                $0.count = 0
+            }
+        }
+    }
+
+    static func shadowArchive(_ shadow: Shadow) -> TSD_ShadowArchive {
+        TSD_ShadowArchive.with {
+            $0.color = Self.color(shadow.color)
+            $0.angle = Float(shadow.angleDegrees)
+            $0.offset = Float(shadow.offset)
+            $0.radius = Int32(shadow.blur.rounded())
+            $0.opacity = Float(shadow.opacity)
+            $0.isEnabled = true
+            $0.type = .tsddropShadow
         }
     }
 

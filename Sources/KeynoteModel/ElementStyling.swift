@@ -88,38 +88,82 @@ extension KeynoteDocument {
     }
 
     /// Overrides a shape's fill color (RGBA 0…1). Convenience for
-    /// ``setNodeFill(_:fill:)`` with a solid color.
+    /// ``setNodeStyle(_:fill:border:shadow:)``.
     public mutating func setNodeFill(_ nodeID: UInt64, to color: (Double, Double, Double, Double)) throws {
-        try setNodeFill(nodeID, fill: .color(color.0, color.1, color.2, color.3))
+        try setNodeStyle(nodeID, fill: .color(color.0, color.1, color.2, color.3))
     }
 
-    /// Overrides a shape's fill with any ``Fill`` — none, color, gradient, or
-    /// image — via an anonymous variation of its shape style, mirroring
-    /// Keynote's own structure.
+    /// Overrides a shape's fill with any ``Fill``. Convenience for
+    /// ``setNodeStyle(_:fill:border:shadow:)``.
     public mutating func setNodeFill(_ nodeID: UInt64, fill: Fill) throws {
+        try setNodeStyle(nodeID, fill: fill)
+    }
+
+    /// Adds or replaces a node's border. Convenience for
+    /// ``setNodeStyle(_:fill:border:shadow:)``.
+    public mutating func setNodeBorder(_ nodeID: UInt64, _ border: Border) throws {
+        try setNodeStyle(nodeID, border: border)
+    }
+
+    /// Adds or replaces a node's drop shadow. Convenience for
+    /// ``setNodeStyle(_:fill:border:shadow:)``.
+    public mutating func setNodeShadow(_ nodeID: UInt64, _ shadow: Shadow) throws {
+        try setNodeStyle(nodeID, shadow: shadow)
+    }
+
+    /// Overrides a drawable's visual style — fill, border, and/or drop shadow —
+    /// in a single anonymous style variation, mirroring Keynote's structure.
+    ///
+    /// Works on shapes and text boxes (which carry a shape style) and on images
+    /// (which carry a media style); `fill` applies only to shapes and text
+    /// boxes. `nil` arguments leave the inherited value.
+    public mutating func setNodeStyle(
+        _ nodeID: UInt64, fill: Fill? = nil, border: Border? = nil, shadow: Shadow? = nil
+    ) throws {
+        guard fill != nil || border != nil || shadow != nil else { return }
         let location = try locateSceneNode(nodeID)
-        var record = components[location.component].records[location.record]
-        guard record.primaryType == 2011 else {
-            throw SceneEditError.unsupportedEdit("node \(nodeID) is not a fillable shape")
+        let record = components[location.component].records[location.record]
+
+        switch record.primaryType {
+        case 2011:
+            try setShapeStyle(at: location, fill: fill, border: border, shadow: shadow)
+        case 3005:
+            try setMediaStyle(at: location, border: border, shadow: shadow)
+        default:
+            throw SceneEditError.unsupportedEdit("node \(nodeID) has no fillable/strokable style")
         }
+    }
+
+    /// Shape and text-box styling: a `TSWP.ShapeStyleArchive` variation whose
+    /// `shapeProperties` carries the fill, stroke, and shadow.
+    private mutating func setShapeStyle(
+        at location: RecordLocation, fill: Fill?, border: Border?, shadow: Shadow?
+    ) throws {
+        var record = components[location.component].records[location.record]
         var shape = try record.decode(TSWP_ShapeInfoArchive.self)
         guard shape.super.hasStyle else {
-            throw SceneEditError.unsupportedEdit("shape \(nodeID) has no base style to inherit")
+            throw SceneEditError.unsupportedEdit("shape \(record.identifier ?? 0) has no base style to inherit")
         }
         let baseStyleID = shape.super.style.identifier
-
-        // The base shape style (a TSWP.ShapeStyleArchive) lives in the
-        // stylesheet; the override inherits from it and goes there too.
         guard let stylesheetComponent = components.firstIndex(where: {
             $0.records.contains { $0.identifier == baseStyleID }
         }), let baseRecord = components[stylesheetComponent].records.first(where: { $0.identifier == baseStyleID }),
             let baseStyle = try? baseRecord.decode(TSWP_ShapeStyleArchive.self)
         else {
-            throw SceneEditError.unsupportedEdit("cannot locate the base style for shape \(nodeID)")
+            throw SceneEditError.unsupportedEdit("cannot locate the base style for shape \(record.identifier ?? 0)")
         }
         let styleSheetID = baseStyle.super.super.hasStylesheet ? baseStyle.super.super.stylesheet.identifier : nil
 
-        let (fillArchive, fillDataIDs) = try makeFillArchive(fill)
+        var fillDataIDs: [UInt64] = []
+        var properties = TSD_ShapeStylePropertiesArchive()
+        var overrideCount: UInt32 = 0
+        if let fill {
+            let (archive, ids) = try makeFillArchive(fill)
+            properties.fill = archive; fillDataIDs = ids; overrideCount += 1
+        }
+        if let border { properties.stroke = Self.strokeArchive(border); overrideCount += 1 }
+        if let shadow { properties.shadow = Self.shadowArchive(shadow); overrideCount += 1 }
+
         let newStyleID = try allocateIdentifier()
         let style = TSWP_ShapeStyleArchive.with {
             $0.super = TSD_ShapeStyleArchive.with {
@@ -128,19 +172,15 @@ extension KeynoteDocument {
                     $0.isVariation = true
                     if let styleSheetID { $0.stylesheet = reference(styleSheetID) }
                 }
-                $0.overrideCount = 1
-                $0.shapeProperties = TSD_ShapeStylePropertiesArchive.with { $0.fill = fillArchive }
+                $0.overrideCount = overrideCount
+                $0.shapeProperties = properties
             }
         }
         var styleRecord = try makeRecord(
             identifier: newStyleID, type: 2025, message: style,
-            version: record.info.messageInfos[0].version,
-            objectReferences: [baseStyleID]
+            version: record.info.messageInfos[0].version, objectReferences: [baseStyleID]
         )
-        // An image fill carries a data reference on the style record.
-        if !fillDataIDs.isEmpty {
-            try styleRecord.setDataReferences(fillDataIDs, at: 0)
-        }
+        if !fillDataIDs.isEmpty { try styleRecord.setDataReferences(fillDataIDs, at: 0) }
         components[stylesheetComponent].records.append(styleRecord)
         if !fillDataIDs.isEmpty {
             try bindDataReferences(fillDataIDs, toObject: newStyleID, inComponent: stylesheetComponent)
@@ -152,7 +192,55 @@ extension KeynoteDocument {
         if !refs.contains(newStyleID) { refs.append(newStyleID) }
         try record.setObjectReferences(refs, at: 0)
         components[location.component].records[location.record] = record
+        try declareExternalReference(fromComponent: location.component, toObject: newStyleID)
+    }
 
+    /// Image styling: a `TSD.MediaStyleArchive` variation whose
+    /// `mediaProperties` carries the stroke and shadow.
+    private mutating func setMediaStyle(at location: RecordLocation, border: Border?, shadow: Shadow?) throws {
+        guard border != nil || shadow != nil else { return }
+        var record = components[location.component].records[location.record]
+        var image = try record.decode(TSD_ImageArchive.self)
+        guard image.hasStyle else {
+            throw SceneEditError.unsupportedEdit("image \(record.identifier ?? 0) has no base style to inherit")
+        }
+        let baseStyleID = image.style.identifier
+        guard let stylesheetComponent = components.firstIndex(where: {
+            $0.records.contains { $0.identifier == baseStyleID }
+        }), let baseRecord = components[stylesheetComponent].records.first(where: { $0.identifier == baseStyleID }),
+            let baseStyle = try? baseRecord.decode(TSD_MediaStyleArchive.self)
+        else {
+            throw SceneEditError.unsupportedEdit("cannot locate the base style for image \(record.identifier ?? 0)")
+        }
+        let styleSheetID = baseStyle.super.hasStylesheet ? baseStyle.super.stylesheet.identifier : nil
+
+        var properties = TSD_MediaStylePropertiesArchive()
+        var overrideCount: UInt32 = 0
+        if let border { properties.stroke = Self.strokeArchive(border); overrideCount += 1 }
+        if let shadow { properties.shadow = Self.shadowArchive(shadow); overrideCount += 1 }
+
+        let newStyleID = try allocateIdentifier()
+        let style = TSD_MediaStyleArchive.with {
+            $0.super = TSS_StyleArchive.with {
+                $0.parent = reference(baseStyleID)
+                $0.isVariation = true
+                if let styleSheetID { $0.stylesheet = reference(styleSheetID) }
+            }
+            $0.overrideCount = overrideCount
+            $0.mediaProperties = properties
+        }
+        let styleRecord = try makeRecord(
+            identifier: newStyleID, type: 3016, message: style,
+            version: record.info.messageInfos[0].version, objectReferences: [baseStyleID]
+        )
+        components[stylesheetComponent].records.append(styleRecord)
+
+        image.style = reference(newStyleID)
+        try record.setMessage(image)
+        var refs = record.info.messageInfos[0].objectReferences
+        if !refs.contains(newStyleID) { refs.append(newStyleID) }
+        try record.setObjectReferences(refs, at: 0)
+        components[location.component].records[location.record] = record
         try declareExternalReference(fromComponent: location.component, toObject: newStyleID)
     }
 

@@ -31,6 +31,8 @@ public struct ElementStyle: Sendable {
     public var italic: Bool?
     public var foregroundColor: RGBAColor?
     public var fill: Fill?
+    public var border: Border?
+    public var shadow: Shadow?
 
     public init() {}
 }
@@ -79,6 +81,15 @@ public struct Element: Sendable {
     }
     /// Fill for shape elements — a color, gradient, image, or `.none`.
     public func fill(_ fill: Fill) -> Element { modifying { $0.fill = fill } }
+    /// A border, for shapes, text boxes, and images.
+    public func border(_ color: RGBAColor, width: Double = 1) -> Element {
+        modifying { $0.border = Border(color: (color.red, color.green, color.blue, color.alpha), width: width) }
+    }
+    /// A border, for shapes, text boxes, and images.
+    public func border(_ border: Border) -> Element { modifying { $0.border = border } }
+    /// A drop shadow, for shapes, text boxes, and images. Defaults to a soft
+    /// black shadow.
+    public func shadow(_ shadow: Shadow = Shadow()) -> Element { modifying { $0.shadow = shadow } }
 
     private func modifying(_ change: (inout ElementStyle) -> Void) -> Element {
         var copy = self

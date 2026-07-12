@@ -108,6 +108,30 @@ struct SceneSynthesisTests {
         }
     }
 
+    @Test("border and shadow apply to shape, text, and image")
+    func borderAndShadow() throws {
+        let border = Border(color: (1, 1, 1, 1), width: 4)
+        let shadow = Shadow(offset: 6, blur: 8, opacity: 0.6)
+
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let shapeID = try document.addShape(toSlideAt: 0, frame: Frame(x: 0, y: 0, width: 200, height: 150))
+        try document.setNodeStyle(shapeID, fill: .color(0.9, 0.5, 0.1, 1), border: border, shadow: shadow)
+
+        let textID = try document.addText(toSlideAt: 0, string: "Framed", frame: Frame(x: 220, y: 0, width: 300, height: 100))
+        try document.setNodeStyle(textID, border: border, shadow: shadow)
+
+        let imageID = try document.addImage(
+            toSlideAt: 0, data: try Data(contentsOf: Self.blueImageURL),
+            frame: Frame(x: 0, y: 200, width: 200, height: 150)
+        )
+        try document.setNodeStyle(imageID, border: border, shadow: shadow)
+
+        let reread = try writeAndReread(document)
+        let ids = Set(try reread.sceneTree(forSlideAt: 0).nodes.map(\.id))
+        #expect(ids.isSuperset(of: [shapeID, textID, imageID]))
+        #expect(try reread.dataDigestsAreUnique())
+    }
+
     @Test("a synthesized shape accepts gradient and image fills")
     func shapeFillKinds() throws {
         let sun = try Data(contentsOf: Self.blueImageURL)

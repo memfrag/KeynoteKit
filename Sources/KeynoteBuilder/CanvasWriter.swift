@@ -77,7 +77,8 @@ public struct CanvasWriter {
                 try applyStyle(element.style, to: newID, in: &document)
             case .image(let path):
                 let url = URL(fileURLWithPath: path, relativeTo: imageBaseURL)
-                try document.addImage(toSlideAt: index, data: try Data(contentsOf: url), frame: frame)
+                let newID = try document.addImage(toSlideAt: index, data: try Data(contentsOf: url), frame: frame)
+                try applyStyle(element.style, to: newID, in: &document)
             }
         }
 
@@ -99,8 +100,6 @@ public struct CanvasWriter {
                 color: style.foregroundColor.map { ($0.red, $0.green, $0.blue, $0.alpha) }
             )
         }
-        if let fill = style.fill {
-            try document.setNodeFill(nodeID, fill: fill)
-        }
+        try document.setNodeStyle(nodeID, fill: style.fill, border: style.border, shadow: style.shadow)
     }
 }

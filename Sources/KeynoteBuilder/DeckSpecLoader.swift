@@ -37,31 +37,34 @@ public final class DeckSpecLoader {
             throw DeckSpecError.decoding("\(error)")
         }
 
+        let specDir = specURL.deletingLastPathComponent()
         let baseDir = spec.imageBaseDir.map {
-            URL(fileURLWithPath: $0, relativeTo: specURL.deletingLastPathComponent())
-        } ?? specURL.deletingLastPathComponent()
+            URL(fileURLWithPath: $0, relativeTo: specDir)
+        } ?? specDir
 
-        let loader = DeckSpecLoader(spec: spec, baseDir: baseDir)
+        let loader = DeckSpecLoader(spec: spec, baseDir: baseDir, specDir: specDir)
         defer { loader.cleanupTempImages() }
 
         // 1. Validate the whole spec; report every problem at once.
         let issues = loader.validate()
         guard issues.isEmpty else { throw DeckSpecError.validation(issues) }
 
-        // 2. Resolve each slide to a Canvas (+ its build requests, in order).
-        var canvases: [Canvas] = []
-        var buildRequests: [[BuildSpec]] = []
-        for slide in spec.slides {
-            let (canvas, builds) = try loader.canvas(for: slide)
-            canvases.append(canvas)
-            buildRequests.append(builds)
+        // 2. Named paragraph styles, document-wide.
+        let styles = (spec.paragraphStyles ?? []).map { loader.paragraphStyle($0) }
+        let buildRequests = spec.slides.map { $0.builds ?? [] }
+
+        // 3. Build the base document — from an external template (clone + fill)
+        // or by synthesizing free-form/`use` slides onto the bundled seed.
+        var document: KeynoteDocument
+        if spec.template != nil {
+            document = try loader.assembleTemplateDeck(styles: styles)
+        } else {
+            var canvases: [Canvas] = []
+            for slide in spec.slides { canvases.append(try loader.canvas(for: slide).0) }
+            document = try CanvasWriter().build(canvases, paragraphStyles: styles)
         }
 
-        // 3. Named paragraph styles, document-wide.
-        let styles = (spec.paragraphStyles ?? []).map { loader.paragraphStyle($0) }
-
-        // 4. Build the document, then layer transitions + builds per slide.
-        var document = try CanvasWriter().build(canvases, paragraphStyles: styles)
+        // 4. Per-slide: transition, notes, title, builds.
         for (index, slide) in spec.slides.enumerated() {
             if let t = slide.transition {
                 try document.setSlideTransition(at: index, to: loader.transition(t))
@@ -90,11 +93,13 @@ public final class DeckSpecLoader {
 
     let spec: DeckSpec
     let baseDir: URL
+    let specDir: URL
     private var tempImages: [URL] = []
 
-    init(spec: DeckSpec, baseDir: URL) {
+    init(spec: DeckSpec, baseDir: URL, specDir: URL) {
         self.spec = spec
         self.baseDir = baseDir
+        self.specDir = specDir
     }
 
     func cleanupTempImages() {
@@ -111,19 +116,43 @@ public final class DeckSpecLoader {
                 issues.append("paragraphStyles[\(styleIndex)]: unknown alignment \"\(style.alignment!)\"")
             }
         }
+        // External-template decks are validated against the template's layouts.
+        let templateLibrary: TemplateLibrary? = spec.template.flatMap {
+            try? TemplateLibrary(templateURL: URL(fileURLWithPath: $0, relativeTo: specDir))
+        }
+        if spec.template != nil, templateLibrary == nil {
+            issues.append("template: cannot load template \"\(spec.template!)\"")
+        }
+
         for (slideIndex, slide) in spec.slides.enumerated() {
             let path = "slides[\(slideIndex)]"
 
-            // Features that arrive in a later step — never silently dropped.
-            if slide.from != nil { issues.append("\(path): external templates (`from`) are not supported yet") }
-            if slide.override != nil { issues.append("\(path): `override` requires an external-template slide (not supported yet)") }
+            // Template deck: every slide clones a layout via `from`.
+            if spec.template != nil {
+                if slide.elements != nil || slide.use != nil {
+                    issues.append("\(path): a template deck's slides use `from` (not `elements`/`use`)")
+                }
+                if let from = slide.from {
+                    if let library = templateLibrary, let layout = from.layout,
+                       library.slideIndex(for: layout) == nil {
+                        issues.append("\(path): unknown layout \"\(layout)\"; available: \(templateLibrary?.availableLayouts.joined(separator: ", ") ?? "")")
+                    }
+                } else {
+                    issues.append("\(path): slide needs a `from` (this is a template deck)")
+                }
+                if let transition = slide.transition, let d = transition.direction, direction(d) == nil {
+                    issues.append("\(path).transition: unknown direction \"\(d)\"")
+                }
+                continue
+            }
+
+            // Free-form / in-JSON template deck.
+            if slide.from != nil { issues.append("\(path): `from` needs a deck-level `template`") }
+            if slide.override != nil { issues.append("\(path): `override` requires an external-template slide") }
             if let use = slide.use, spec.templates?[use] == nil {
                 issues.append("\(path): unknown template \"\(use)\"")
             }
-            // A title needs a title placeholder, which only external-template
-            // slides carry. (KN.SlideArchive.name is the master's layout name,
-            // not a per-slide title — setting it crashes Keynote.)
-            if slide.title != nil, slide.from == nil {
+            if slide.title != nil {
                 issues.append("\(path): `title` requires an external-template slide (a layout with a title placeholder)")
             }
 
@@ -196,6 +225,84 @@ public final class DeckSpecLoader {
         if let text = value.text { copy.text = text }
         if let image = value.image { copy.image = image }
         return copy
+    }
+
+    // MARK: - External template (clone layout slides + fill)
+
+    /// Builds a document by cloning layout slides from the deck's `template`
+    /// `.key` (one per spec slide) and filling placeholders / named nodes.
+    func assembleTemplateDeck(styles: [ParagraphStyle]) throws -> KeynoteDocument {
+        let templateURL = URL(fileURLWithPath: spec.template!, relativeTo: specDir)
+        var document = try KeynoteDocument(contentsOf: templateURL)
+        for style in styles { _ = try document.defineParagraphStyle(style) }
+
+        let library = try TemplateLibrary(document: document)
+        let templateCount = document.slideCount
+
+        // Clone the chosen layout per spec slide, moving each clone to the tail
+        // so the original example slides stay at the front for removal.
+        for slide in spec.slides {
+            let layoutIndex = try resolveLayout(slide.from, library: library)
+            try document.duplicateSlide(at: layoutIndex)
+            try document.moveSlide(from: layoutIndex + 1, to: document.slideCount - 1)
+        }
+        for _ in 0..<templateCount { try document.removeSlide(at: 0) }
+
+        for (index, slide) in spec.slides.enumerated() {
+            try fillTemplateSlide(slide, at: index, in: &document)
+        }
+        return document
+    }
+
+    private func resolveLayout(_ from: FromSpec?, library: TemplateLibrary) throws -> Int {
+        guard let from else { throw DeckSpecError.validation(["template slide needs a `from`"]) }
+        if let layout = from.layout {
+            guard let index = library.slideIndex(for: layout) else {
+                throw DeckSpecError.validation([
+                    "unknown layout \"\(layout)\"; available: \(library.availableLayouts.joined(separator: ", "))"])
+            }
+            return index
+        }
+        return from.slideIndex ?? 0
+    }
+
+    private func fillTemplateSlide(_ slide: SlideSpec, at index: Int, in document: inout KeynoteDocument) throws {
+        for (key, value) in slide.set ?? [:] {
+            if let text = value.text {
+                switch key {
+                case "title": try document.setSlideText(at: index, .title, to: text)
+                case "body": try document.setSlideText(at: index, .body, to: text)
+                default: try document.setSlideText(at: index, block: key, to: text)
+                }
+            }
+            if let imageRef = value.image {
+                try document.setSlideImage(at: index, matching: key, to: try Data(contentsOf: resolveImageURL(imageRef)))
+            }
+        }
+        for over in slide.override ?? [] {
+            let nodes = try document.sceneTree(forSlideAt: index).nodes
+            guard let node = nodes.first(where: { $0.label == over.target }) else { continue }
+            if let text = over.text { try document.setNodeText(node.id, to: text) }
+            if let imageRef = over.image {
+                try document.setNodeMedia(node.id, to: try Data(contentsOf: resolveImageURL(imageRef)))
+            }
+            if let frame = over.frame { try document.setNodeFrame(node.id, to: try explicitFrame(frame)) }
+            if over.fill != nil || over.border != nil || over.shadow != nil || over.opacity != nil {
+                try document.setNodeStyle(
+                    node.id,
+                    fill: try over.fill.map(fill),
+                    border: try over.border.map(border),
+                    shadow: over.shadow.map(shadow),
+                    opacity: over.opacity)
+            }
+        }
+    }
+
+    private func explicitFrame(_ spec: FrameSpec) throws -> Frame {
+        guard case .explicit(let frame) = spec.layout else {
+            throw DeckSpecError.validation(["override frame must be explicit x/y/width/height"])
+        }
+        return frame
     }
 
     // MARK: - ElementSpec → Element

@@ -33,6 +33,8 @@ public struct SlideBuild: Codable, Equatable, Sendable {
     public var deliveryOption: String?
     /// Effect-specific direction constant.
     public var direction: UInt32?
+    /// Travel distance for move-style effects, as a fraction (0.07 = 7%).
+    public var travelDistance: Double?
     /// Action-build parameters (Rotate / Scale / Opacity actions).
     public var rotationAngle: Double?
     public var scaleSize: Double?
@@ -42,7 +44,7 @@ public struct SlideBuild: Codable, Equatable, Sendable {
         id: UInt64 = 0, nodeID: UInt64, kind: String, effect: String,
         duration: Double = 1.0, delay: Double = 0.0,
         delivery: String? = nil, textDelivery: String? = nil, deliveryOption: String? = nil,
-        direction: UInt32? = nil, rotationAngle: Double? = nil,
+        direction: UInt32? = nil, travelDistance: Double? = nil, rotationAngle: Double? = nil,
         scaleSize: Double? = nil, opacity: Double? = nil
     ) {
         self.id = id
@@ -52,6 +54,7 @@ public struct SlideBuild: Codable, Equatable, Sendable {
         self.duration = duration
         self.delay = delay
         self.delivery = delivery
+        self.travelDistance = travelDistance
         self.textDelivery = textDelivery
         self.deliveryOption = deliveryOption
         self.direction = direction
@@ -120,6 +123,7 @@ extension KeynoteDocument {
                 deliveryOption: attributes.hasCustomDeliveryOption
                     ? BuildEnumNames.deliveryOption[attributes.customDeliveryOption] : nil,
                 direction: animation.hasDirection ? animation.direction : nil,
+                travelDistance: attributes.hasCustomTravelDistance ? Double(attributes.customTravelDistance) : nil,
                 rotationAngle: attributes.hasActionRotationAngle ? attributes.actionRotationAngle : nil,
                 scaleSize: attributes.hasActionScaleSize ? attributes.actionScaleSize : nil,
                 opacity: attributes.hasActionColorAlpha ? attributes.actionColorAlpha : nil
@@ -173,6 +177,7 @@ extension KeynoteDocument {
                    let value = BuildEnumNames.deliveryOption.first(where: { $0.value == name })?.key {
                     $0.customDeliveryOption = value
                 }
+                if let travel = build.travelDistance { $0.customTravelDistance = travel }
                 if let angle = build.rotationAngle { $0.actionRotationAngle = angle }
                 if let scale = build.scaleSize { $0.actionScaleSize = scale }
                 if let alpha = build.opacity { $0.actionColorAlpha = alpha }

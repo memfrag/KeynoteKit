@@ -51,6 +51,7 @@ public struct ElementStyle: Sendable {
     public var underline: Bool?
     public var strikethrough: Bool?
     public var verticalAlignment: VerticalAlignment?
+    public var name: String?
 
     public init() {}
 }
@@ -81,6 +82,8 @@ public struct Element: Sendable {
     public func frame(x: Double, y: Double, width: Double, height: Double) -> Element {
         modifying { $0.frame = Frame(x: x, y: y, width: width, height: height) }
     }
+    /// Positions and sizes the element with a ``Frame``.
+    public func frame(_ frame: Frame) -> Element { modifying { $0.frame = frame } }
 
     /// Moves the element, keeping its current (or the prototype's) size.
     public func position(x: Double, y: Double) -> Element {
@@ -142,6 +145,9 @@ public struct Element: Sendable {
     public func endCap(_ cap: LineEnd) -> Element { modifying { $0.endCap = cap } }
     /// Locks the element so it can't be selected or edited in Keynote.
     public func locked(_ on: Bool = true) -> Element { modifying { $0.locked = on } }
+    /// Names the element (its Object List name / accessibility description) —
+    /// useful for addressing it later.
+    public func name(_ name: String) -> Element { modifying { $0.name = name } }
     /// Flips the element horizontally (mirror left↔right).
     public func flippedHorizontally(_ on: Bool = true) -> Element { modifying { $0.flipHorizontal = on } }
     /// Flips the element vertically (mirror top↔bottom).

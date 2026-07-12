@@ -176,5 +176,8 @@ public struct CanvasWriter {
                 nodeID, horizontal: style.flipHorizontal ?? false, vertical: style.flipVertical ?? false
             )
         }
+        if let name = style.name {
+            try document.setNodeName(nodeID, to: name)
+        }
     }
 }

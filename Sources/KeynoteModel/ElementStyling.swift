@@ -143,10 +143,17 @@ extension KeynoteDocument {
         try declareExternalReference(fromComponent: location.component, toObject: newStyleID)
     }
 
-    /// Sets a slide's background fill color (RGBA 0…1) by attaching an
-    /// anonymous variation of its slide style, mirroring how Keynote overrides
-    /// a single slide's background without touching the shared master style.
+    /// Sets a slide's background fill color (RGBA 0…1). Convenience for
+    /// ``setSlideBackground(at:fill:)`` with a solid color.
     public mutating func setSlideBackground(at index: Int, to color: (Double, Double, Double, Double)) throws {
+        try setSlideBackground(at: index, fill: .color(color.0, color.1, color.2, color.3))
+    }
+
+    /// Sets a slide's background to any ``Fill`` — none, color, gradient, or
+    /// image — by attaching an anonymous variation of its slide style, so a
+    /// single slide's background changes without touching the shared master
+    /// style.
+    public mutating func setSlideBackground(at index: Int, fill: Fill) throws {
         let (slideArchive, slideComponent, slideRecordIndex) = try slideArchiveLocation(at: index)
         var slide = slideArchive
         let version = components[slideComponent].records[slideRecordIndex].info.messageInfos[0].version
@@ -171,6 +178,7 @@ extension KeynoteDocument {
             throw SceneEditError.unsupportedEdit("no slide style component to hold the background")
         }
 
+        let (fillArchive, fillDataIDs) = try makeFillArchive(fill)
         let newStyleID = try allocateIdentifier()
         let style = KN_SlideStyleArchive.with {
             $0.super = TSS_StyleArchive.with {
@@ -181,15 +189,20 @@ extension KeynoteDocument {
                 if let styleSheetID { $0.stylesheet = reference(styleSheetID) }
             }
             $0.overrideCount = 1
-            $0.slideProperties = KN_SlideStylePropertiesArchive.with {
-                $0.fill = TSD_FillArchive.with { $0.color = Self.color(color) }
-            }
+            $0.slideProperties = KN_SlideStylePropertiesArchive.with { $0.fill = fillArchive }
         }
-        let styleRecord = try makeRecord(
+        var styleRecord = try makeRecord(
             identifier: newStyleID, type: 9, message: style, version: version,
             objectReferences: baseStyleID.map { [$0] } ?? []
         )
+        // An image fill carries a data reference on the style record.
+        if !fillDataIDs.isEmpty {
+            try styleRecord.setDataReferences(fillDataIDs, at: 0)
+        }
         components[stylesheetComponent].records.append(styleRecord)
+        if !fillDataIDs.isEmpty {
+            try bindDataReferences(fillDataIDs, toObject: newStyleID, inComponent: stylesheetComponent)
+        }
 
         // Repoint the slide at the new style and fix its references.
         var slideRecord = components[slideComponent].records[slideRecordIndex]

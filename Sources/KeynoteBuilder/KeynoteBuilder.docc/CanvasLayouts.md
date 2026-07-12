@@ -35,6 +35,39 @@ try writer.write([canvas], to: URL(filePath: "Deck.key"),
 
 Each entry in the list becomes one slide.
 
+## Coordinates and slide size
+
+Positions and sizes are in slide points, origin top-left. Keynote's logical
+slide sizes — which also double as the 1× export pixel dimensions — are
+**1920 × 1080** for a 16:9 (Wide) slide and **1024 × 768** for a 4:3
+(Standard) slide. Lay elements out against whichever your seed uses.
+
+## Slide backgrounds
+
+Pass a ``Fill`` as a canvas `background` to set the slide's background —
+matching Keynote's inspector: none, a solid color, a gradient (linear or
+radial), or an image.
+
+```swift
+Canvas(background: .linearGradient(
+    stops: [
+        GradientStop(color: (0.1, 0.2, 0.6, 1), location: 0),
+        GradientStop(color: (0.7, 0.2, 0.5, 1), location: 1),
+    ],
+    angleDegrees: 90
+)) {
+    Text("On a gradient").frame(x: 80, y: 80, width: 800, height: 120)
+        .fontSize(48).bold().foregroundColor(.white)
+}
+
+// Or: .color(0.1, 0.12, 0.2, 1) · .radialGradient(stops:) ·
+//     .image(pngData, mode: .scaleToFill) · .none
+```
+
+`nil` (the default) keeps the theme's background. The background changes only
+that slide — it's applied as a variation of the slide's style, leaving the
+shared master untouched.
+
 ## Elements
 
 Three element kinds are built by free functions:
@@ -91,6 +124,9 @@ to think about it — identical images just work.
 - ``CanvasWriter``
 - ``CanvasWriterError``
 
-### Colors
+### Colors and fills
 
 - ``RGBAColor``
+- ``Fill``
+- ``GradientStop``
+- ``ImageFillMode``

@@ -63,10 +63,7 @@ public struct CanvasWriter {
         let leftoverProtos = [Self.textProto, Self.shapeProto, Self.imageProto].compactMap(prototypeID)
 
         if let background = canvas.background {
-            try document.setSlideBackground(
-                at: index,
-                to: (background.red, background.green, background.blue, background.alpha)
-            )
+            try document.setSlideBackground(at: index, fill: background)
         }
 
         for element in canvas.elements {

@@ -301,7 +301,7 @@ extension KeynoteDocument {
     }
 
     /// Records, in a component's metadata, that `objectID` uses each data blob.
-    private mutating func bindDataReferences(_ dataIDs: [UInt64], toObject objectID: UInt64, inComponent component: Int) throws {
+    mutating func bindDataReferences(_ dataIDs: [UInt64], toObject objectID: UInt64, inComponent component: Int) throws {
         let componentRootID = components[component].records.first?.identifier ?? 0
         let metadataLocation = try locateRecord(type: 11006, orThrow: MediaOperationError.packageMetadataNotFound)
         var record = components[metadataLocation.component].records[metadataLocation.record]

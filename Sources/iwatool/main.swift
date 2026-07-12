@@ -58,7 +58,7 @@ let arguments = CommandLine.arguments
 if arguments.count >= 3, arguments[1] == "canvas-demo" {
     let out = URL(fileURLWithPath: arguments[2])
     let imageBase = arguments.count >= 4 ? URL(fileURLWithPath: arguments[3]) : nil
-    let canvas = Canvas(background: .rgb(0.1, 0.12, 0.2)) {
+    let canvas = Canvas(background: .color(0.1, 0.12, 0.2, 1)) {
         Text("Composed with a DSL")
             .frame(x: 60, y: 60, width: 840, height: 120)
             .fontSize(54).bold().foregroundColor(.rgb(0.2, 0.5, 0.95))
@@ -109,6 +109,35 @@ if arguments.count >= 7, arguments[1] == "set-bg" {
     try document.setSlideBackground(at: 0, to: (r, g, b, 1))
     try document.write(to: out)
     print("background set"); exit(0)
+}
+
+if arguments.count >= 4, arguments[1] == "set-bg-fill" {
+    // set-bg-fill <in> <out> <kind> [imagePath]
+    let input = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    let kind = arguments.count >= 5 ? arguments[4] : "linear"
+    var document = try KeynoteDocument(contentsOf: input)
+    let fill: Fill
+    switch kind {
+    case "none": fill = .none
+    case "linear":
+        fill = .linearGradient(stops: [
+            GradientStop(color: (0.1, 0.2, 0.6, 1), location: 0),
+            GradientStop(color: (0.7, 0.2, 0.5, 1), location: 1),
+        ], angleDegrees: 90)
+    case "radial":
+        fill = .radialGradient(stops: [
+            GradientStop(color: (0.95, 0.85, 0.3, 1), location: 0),
+            GradientStop(color: (0.6, 0.1, 0.2, 1), location: 1),
+        ])
+    case "image":
+        let path = URL(fileURLWithPath: arguments[5])
+        fill = .image(try Data(contentsOf: path), mode: .scaleToFill)
+    default: fatalError("unknown fill kind")
+    }
+    try document.setSlideBackground(at: 0, fill: fill)
+    try document.write(to: out)
+    print("bg fill \(kind) set"); exit(0)
 }
 
 if arguments.count >= 4, arguments[1] == "synth-text" {

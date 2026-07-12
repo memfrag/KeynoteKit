@@ -83,6 +83,31 @@ struct SceneSynthesisTests {
         #expect(try reread.sceneTree(forSlideAt: 0).nodes.isEmpty == false)
     }
 
+    @Test("every background fill kind round-trips")
+    func backgroundFillKinds() throws {
+        let sun = try Data(contentsOf: Self.blueImageURL)
+        let fills: [Fill] = [
+            .none,
+            .color(0.2, 0.3, 0.5, 1),
+            .linearGradient(stops: [
+                GradientStop(color: (0, 0, 0, 1), location: 0),
+                GradientStop(color: (1, 1, 1, 1), location: 1),
+            ], angleDegrees: 45),
+            .radialGradient(stops: [
+                GradientStop(color: (1, 1, 0, 1), location: 0),
+                GradientStop(color: (1, 0, 0, 1), location: 1),
+            ]),
+            .image(sun, mode: .scaleToFill),
+        ]
+        for fill in fills {
+            var document = try KeynoteDocument(contentsOf: Self.deckURL)
+            try document.setSlideBackground(at: 0, fill: fill)
+            let reread = try writeAndReread(document)
+            #expect(try reread.dataDigestsAreUnique())
+            #expect(try reread.sceneTree(forSlideAt: 0).nodes.isEmpty == false)
+        }
+    }
+
     @Test("addImage registers data and places an image node")
     func addImage() throws {
         var document = try KeynoteDocument(contentsOf: Self.deckURL)

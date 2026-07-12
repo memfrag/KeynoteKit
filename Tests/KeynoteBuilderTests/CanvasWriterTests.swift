@@ -112,7 +112,7 @@ struct CanvasWriterTests {
 
     @Test("a canvas background is applied without breaking the slide")
     func canvasBackground() throws {
-        let canvas = Canvas(background: .rgb(0.1, 0.2, 0.4)) {
+        let canvas = Canvas(background: .color(0.1, 0.2, 0.4, 1)) {
             Text("On a dark slide").frame(x: 40, y: 40, width: 600, height: 100).foregroundColor(.white)
         }
         let document = try buildAndReread([canvas])

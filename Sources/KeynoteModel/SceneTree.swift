@@ -32,6 +32,9 @@ public struct SceneNode: Codable {
     public var text: String?
     public var frame: Frame?
     public var media: MediaReference?
+    /// The node's accessibility description ("Description" in Keynote's
+    /// inspector) — usable as an addressing label.
+    public var label: String?
     /// For `"table"` nodes: the cell grid as display strings (nil = empty
     /// cell). Editable — the reconciler turns changed cells into
     /// `setTableCellText`/`setTableCellNumber`.
@@ -50,7 +53,7 @@ public struct SceneNode: Codable {
     public init(
         id: UInt64, type: String, role: String? = nil, prompt: String? = nil,
         text: String? = nil, frame: Frame? = nil, media: MediaReference? = nil,
-        cells: [[String?]]? = nil, chart: ChartData? = nil,
+        label: String? = nil, cells: [[String?]]? = nil, chart: ChartData? = nil,
         children: [SceneNode] = [], cloneOf: UInt64? = nil
     ) {
         self.id = id
@@ -60,6 +63,7 @@ public struct SceneNode: Codable {
         self.text = text
         self.frame = frame
         self.media = media
+        self.label = label
         self.cells = cells
         self.chart = chart
         self.children = children
@@ -166,6 +170,9 @@ extension KeynoteDocument {
             ?? components.flatMap(\.records).first(where: { $0.identifier == id })
         else { return nil }
 
+        let label = (try? Self.drawableDescription(of: record))
+            .flatMap { ($0?.isEmpty ?? true) ? nil : $0 }
+
         switch record.primaryType {
         case 7: // KN.PlaceholderArchive
             let placeholder = try record.decode(KN_PlaceholderArchive.self)
@@ -176,7 +183,8 @@ extension KeynoteDocument {
                 role: role ?? kindName(placeholder.kind),
                 prompt: (role ?? kindName(placeholder.kind)).flatMap { promptByRole[$0] },
                 text: storageText(of: shape, in: component),
-                frame: frame(of: shape.super.super)
+                frame: frame(of: shape.super.super),
+                label: label
             )
 
         case 2011: // TSWP.ShapeInfoArchive (text box / shape with text)
@@ -185,7 +193,8 @@ extension KeynoteDocument {
                 id: id,
                 type: "shape",
                 text: storageText(of: shape, in: component),
-                frame: frame(of: shape.super.super)
+                frame: frame(of: shape.super.super),
+                label: label
             )
 
         case 3005: // TSD.ImageArchive
@@ -201,7 +210,8 @@ extension KeynoteDocument {
                 id: id,
                 type: "image",
                 frame: frame(of: image.super),
-                media: media
+                media: media,
+                label: label
             )
 
         case 3007: // TSD.MovieArchive
@@ -217,7 +227,8 @@ extension KeynoteDocument {
                 id: id,
                 type: "movie",
                 frame: frame(of: movie.super),
-                media: media
+                media: media,
+                label: label
             )
 
         case 3008: // TSD.GroupArchive
@@ -234,6 +245,7 @@ extension KeynoteDocument {
                 id: id,
                 type: "group",
                 frame: frame(of: group.super),
+                label: label,
                 children: children
             )
 

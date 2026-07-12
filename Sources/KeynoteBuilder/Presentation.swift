@@ -38,10 +38,15 @@ public struct Slide {
     /// lets the writer pick a default. Ignored when building without a
     /// multi-layout template.
     public var layout: String?
-    /// Image file paths parsed from the source (e.g. markdown `![](…)`).
-    /// Not yet rendered — image placement lands with M4; carried so the
-    /// format stays forward-compatible.
+    /// Image file paths placed into the layout's image nodes, largest frame
+    /// first. Use `images` instead to target specific images by label.
     public var imagePaths: [String]
+    /// Images addressed by label: each key is an image's description (set in
+    /// Keynote's inspector, e.g. `@hero`), the value is the file path. This
+    /// removes the ambiguity of `imagePaths` when a layout has several
+    /// same-size pictures. A leading `@` in the key is optional. Applied
+    /// after `imagePaths`.
+    public var images: [String: String]
 
     public init(
         title: String? = nil,
@@ -49,7 +54,8 @@ public struct Slide {
         notes: String? = nil,
         layout: String? = nil,
         blocks: [String: String] = [:],
-        imagePaths: [String] = []
+        imagePaths: [String] = [],
+        images: [String: String] = [:]
     ) {
         self.title = title
         self.body = body
@@ -57,6 +63,7 @@ public struct Slide {
         self.layout = layout
         self.blocks = blocks
         self.imagePaths = imagePaths
+        self.images = images
     }
 }
 

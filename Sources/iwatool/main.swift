@@ -231,10 +231,18 @@ case "blocks-of":
     guard arguments.count >= 4, let slideIndex = Int(arguments[3]) else { fail(usage) }
     let document = try KeynoteDocument(contentsOf: inputURL)
     for block in try document.slideTextBlocks(at: slideIndex) {
-        let keys = [block.role, block.text, block.prompt]
+        let keys = [block.role, block.label, block.text, block.prompt]
             .compactMap { $0 }.filter { !$0.isEmpty }
         print("node \(block.nodeID): \(keys.map { "\"\($0)\"" }.joined(separator: " | "))")
     }
+
+case "set-desc":
+    guard arguments.count >= 6, let nodeID = UInt64(arguments[4]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    try document.setNodeDescription(nodeID, to: arguments[5])
+    try document.write(to: outputURL)
+    print("set description of node \(nodeID)")
 
 case "masters":
     let document = try KeynoteDocument(contentsOf: inputURL)

@@ -17,6 +17,9 @@ public struct SlideTextBlock: Sendable, Codable {
     /// The text currently in the region — e.g. a label the template author
     /// typed to identify it ("LEFT COLUMN").
     public let text: String?
+    /// The region's accessibility description ("Description" in Keynote's
+    /// inspector), a clean way to label a block without visible text.
+    public let label: String?
     /// Position and size, for disambiguating by geometry.
     public let frame: Frame?
 }
@@ -50,6 +53,7 @@ extension KeynoteDocument {
                 role: node.role,
                 prompt: field?.prompt,
                 text: node.text,
+                label: node.label,
                 frame: node.frame
             ))
         }
@@ -70,11 +74,18 @@ extension KeynoteDocument {
         func exact(_ value: String?) -> Bool { value?.lowercased() == needle }
         func partial(_ value: String?) -> Bool { value?.lowercased().contains(needle) ?? false }
 
-        // Exact matches first (role, then label text, then prompt), then
-        // substring — each stage ordered by the slide's reading order.
-        let exactMatches = blocks.filter { exact($0.role) || exact($0.text) || exact($0.prompt) }
+        // Exact matches first (role, accessibility label, typed label text,
+        // then prompt), then substring — each ordered by reading order. A
+        // leading "@" on a description label is optional in the key.
+        func matchesLabel(_ value: String?) -> Bool {
+            guard let value = value?.lowercased() else { return false }
+            return value == needle || value == "@" + needle
+        }
+        let exactMatches = blocks.filter {
+            exact($0.role) || matchesLabel($0.label) || exact($0.text) || exact($0.prompt)
+        }
         let matches = exactMatches.isEmpty
-            ? blocks.filter { partial($0.text) || partial($0.prompt) }
+            ? blocks.filter { partial($0.label) || partial($0.text) || partial($0.prompt) }
             : exactMatches
 
         guard let target = matches.first else {

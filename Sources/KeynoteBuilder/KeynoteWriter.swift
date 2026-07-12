@@ -94,6 +94,14 @@ public struct KeynoteWriter {
                 try document.setNodeMedia(node.id, to: try Data(contentsOf: url))
             }
         }
+
+        // Label-addressed images (by the image's description).
+        for (index, slide) in presentation.slides.enumerated() {
+            for (label, path) in slide.images {
+                let url = URL(fileURLWithPath: path, relativeTo: baseURL)
+                try document.setSlideImage(at: index, matching: label, to: try Data(contentsOf: url))
+            }
+        }
     }
 
     /// Multi-layout template: clone the matching example slide per content

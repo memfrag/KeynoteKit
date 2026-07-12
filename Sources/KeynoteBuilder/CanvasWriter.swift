@@ -58,6 +58,17 @@ public struct CanvasWriter {
         return document
     }
 
+    /// Synthesizes one canvas's elements onto an existing slide in a document
+    /// you're assembling yourself — e.g. adding free-form content to a slide in
+    /// a deck that also clones template layouts. The slide should be blank;
+    /// `paragraphStyles` maps a registered style name to its id.
+    public func render(
+        _ canvas: Canvas, ontoSlideAt index: Int, in document: inout KeynoteDocument,
+        imageBaseURL: URL? = nil, paragraphStyles: [String: UInt64] = [:]
+    ) throws {
+        try render(canvas, at: index, in: &document, imageBaseURL: imageBaseURL, paragraphStyles: paragraphStyles)
+    }
+
     private func render(
         _ canvas: Canvas, at index: Int,
         in document: inout KeynoteDocument, imageBaseURL: URL?, paragraphStyles: [String: UInt64]

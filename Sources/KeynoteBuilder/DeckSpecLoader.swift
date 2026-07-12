@@ -127,18 +127,15 @@ public final class DeckSpecLoader {
         for (slideIndex, slide) in spec.slides.enumerated() {
             let path = "slides[\(slideIndex)]"
 
-            // Template deck: every slide clones a layout via `from`.
-            if spec.template != nil {
-                if slide.elements != nil || slide.use != nil {
-                    issues.append("\(path): a template deck's slides use `from` (not `elements`/`use`)")
-                }
-                if let from = slide.from {
-                    if let library = templateLibrary, let layout = from.layout,
-                       library.slideIndex(for: layout) == nil {
-                        issues.append("\(path): unknown layout \"\(layout)\"; available: \(templateLibrary?.availableLayouts.joined(separator: ", ") ?? "")")
-                    }
-                } else {
-                    issues.append("\(path): slide needs a `from` (this is a template deck)")
+            // A `from` slide clones a template layout — validate it and move on.
+            // Free-form and `use` slides can sit alongside `from` slides in the
+            // same deck (mixed).
+            if let from = slide.from {
+                if spec.template == nil {
+                    issues.append("\(path): `from` needs a deck-level `template`")
+                } else if let library = templateLibrary, let layout = from.layout,
+                          library.slideIndex(for: layout) == nil {
+                    issues.append("\(path): unknown layout \"\(layout)\"; available: \(library.availableLayouts.joined(separator: ", "))")
                 }
                 if let transition = slide.transition, let d = transition.direction, direction(d) == nil {
                     issues.append("\(path).transition: unknown direction \"\(d)\"")
@@ -146,14 +143,13 @@ public final class DeckSpecLoader {
                 continue
             }
 
-            // Free-form / in-JSON template deck.
-            if slide.from != nil { issues.append("\(path): `from` needs a deck-level `template`") }
-            if slide.override != nil { issues.append("\(path): `override` requires an external-template slide") }
+            // Free-form / in-JSON template slide.
+            if slide.override != nil { issues.append("\(path): `override` requires a `from` (external-template) slide") }
             if let use = slide.use, spec.templates?[use] == nil {
                 issues.append("\(path): unknown template \"\(use)\"")
             }
             if slide.title != nil {
-                issues.append("\(path): `title` requires an external-template slide (a layout with a title placeholder)")
+                issues.append("\(path): `title` requires a `from` (external-template) slide with a title placeholder")
             }
 
             var elementSpecs: [ElementSpec] = []
@@ -229,29 +225,51 @@ public final class DeckSpecLoader {
 
     // MARK: - External template (clone layout slides + fill)
 
-    /// Builds a document by cloning layout slides from the deck's `template`
-    /// `.key` (one per spec slide) and filling placeholders / named nodes.
+    /// Builds a document from the deck's `template` `.key`, cloning a working
+    /// slide per spec slide. `from` slides clone their chosen layout and fill
+    /// its placeholders; free-form / `use` slides clone the first layout as a
+    /// scratch base, blank it, and synthesize their elements — so all three
+    /// slide kinds can be mixed in one deck.
     func assembleTemplateDeck(styles: [ParagraphStyle]) throws -> KeynoteDocument {
         let templateURL = URL(fileURLWithPath: spec.template!, relativeTo: specDir)
         var document = try KeynoteDocument(contentsOf: templateURL)
-        for style in styles { _ = try document.defineParagraphStyle(style) }
+        var styleIDs: [String: UInt64] = [:]
+        for style in styles { styleIDs[style.name] = try document.defineParagraphStyle(style) }
 
         let library = try TemplateLibrary(document: document)
         let templateCount = document.slideCount
+        let writer = try CanvasWriter()
 
-        // Clone the chosen layout per spec slide, moving each clone to the tail
-        // so the original example slides stay at the front for removal.
+        // Clone a working slide per spec slide, moving each clone to the tail so
+        // the original example slides stay at the front for removal.
         for slide in spec.slides {
-            let layoutIndex = try resolveLayout(slide.from, library: library)
-            try document.duplicateSlide(at: layoutIndex)
-            try document.moveSlide(from: layoutIndex + 1, to: document.slideCount - 1)
+            let sourceIndex = slide.from != nil ? try resolveLayout(slide.from, library: library) : 0
+            try document.duplicateSlide(at: sourceIndex)
+            try document.moveSlide(from: sourceIndex + 1, to: document.slideCount - 1)
         }
         for _ in 0..<templateCount { try document.removeSlide(at: 0) }
 
         for (index, slide) in spec.slides.enumerated() {
-            try fillTemplateSlide(slide, at: index, in: &document)
+            if slide.from != nil {
+                try fillTemplateSlide(slide, at: index, in: &document)
+            } else {
+                try blankSlide(at: index, in: &document)
+                let (canvas, _) = try canvas(for: slide)
+                try writer.render(canvas, ontoSlideAt: index, in: &document, paragraphStyles: styleIDs)
+            }
         }
         return document
+    }
+
+    /// Empties a cloned layout so free-form content renders on a clean slide:
+    /// clears its title/body text and removes non-placeholder drawables (empty
+    /// placeholders are invisible; placeholders can't be deleted).
+    private func blankSlide(at index: Int, in document: inout KeynoteDocument) throws {
+        try? document.setSlideText(at: index, .title, to: "")
+        try? document.setSlideText(at: index, .body, to: "")
+        for node in try document.sceneTree(forSlideAt: index).nodes {
+            try? document.deleteDrawable(node.id)
+        }
     }
 
     private func resolveLayout(_ from: FromSpec?, library: TemplateLibrary) throws -> Int {

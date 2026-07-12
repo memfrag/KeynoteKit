@@ -44,12 +44,12 @@ Three element kinds are built by free functions:
   `imageBaseURL`.
 - ``Shape()`` — a rectangle you can fill and size.
 
-Shapes and images are **synthesized from scratch** — their records are built
-directly and reference the theme's shape and media styles, so a fill or a
-frame behaves exactly as it would on a template element. Text boxes are
-cloned from a bundled prototype, because a text box's paragraph and
-character style tables are impractical to build from nothing; the clone
-supplies a real base style for ``Text`` to vary.
+Every element is **synthesized from scratch** — nothing is cloned. Each
+element's records are built directly and reference the seed theme's styles:
+a shape style for shapes, a media style for images, and paragraph/character
+styles for text. So a fill, a frame, or a font override behaves exactly as
+it would on a template element, and the output inherits real theme
+typography.
 
 ## Modifiers
 

@@ -53,47 +53,32 @@ public struct CanvasWriter {
         _ canvas: Canvas, at index: Int,
         in document: inout KeynoteDocument, imageBaseURL: URL?
     ) throws {
-        // Capture prototype ids once, up front. Only the text prototype is
-        // required — shapes and images are synthesized from scratch, so their
-        // prototypes are optional (and just deleted if the palette carries
-        // them). The text clone inherits the label, so a later lookup would
-        // find a clone.
-        func prototypeID(_ label: String) throws -> UInt64 {
-            let nodes = try document.sceneTree(forSlideAt: index).nodes
-            guard let node = nodes.first(where: { $0.label == label }) else {
-                throw CanvasWriterError.prototypeMissing(label)
-            }
-            return node.id
+        // Every element is synthesized from scratch — nothing is cloned — so
+        // the seed's prototypes are only removed, never used. Capture them up
+        // front (they may be absent in a slimmed seed).
+        func prototypeID(_ label: String) -> UInt64? {
+            let nodes = (try? document.sceneTree(forSlideAt: index).nodes) ?? []
+            return nodes.first(where: { $0.label == label })?.id
         }
-        let textProtoID = try prototypeID(Self.textProto)
-        let leftoverProtos = [Self.shapeProto, Self.imageProto].compactMap { try? prototypeID($0) }
+        let leftoverProtos = [Self.textProto, Self.shapeProto, Self.imageProto].compactMap(prototypeID)
 
         for element in canvas.elements {
-            let frame = element.style.frame
+            let frame = element.style.frame ?? Self.defaultFrame
             switch element.kind {
             case .text(let string):
-                // Text still clones a prototype — a text box's paragraph and
-                // character style tables are hard to synthesize from nothing.
-                let newID = try document.cloneDrawable(textProtoID, toSlideAt: index)
-                try document.setNodeText(newID, to: string)
-                if let frame { try document.setNodeFrame(newID, to: frame) }
+                let newID = try document.addText(toSlideAt: index, string: string, frame: frame)
                 try applyStyle(element.style, to: newID, in: &document)
-                try? document.setNodeDescription(newID, to: "")
             case .shape:
-                let newID = try document.addShape(toSlideAt: index, frame: frame ?? Self.defaultFrame)
+                let newID = try document.addShape(toSlideAt: index, frame: frame)
                 try applyStyle(element.style, to: newID, in: &document)
             case .image(let path):
                 let url = URL(fileURLWithPath: path, relativeTo: imageBaseURL)
-                try document.addImage(
-                    toSlideAt: index,
-                    data: try Data(contentsOf: url),
-                    frame: frame ?? Self.defaultFrame
-                )
+                try document.addImage(toSlideAt: index, data: try Data(contentsOf: url), frame: frame)
             }
         }
 
-        // Remove the prototypes so only the composed elements remain.
-        for id in [textProtoID] + leftoverProtos {
+        // Remove the seed's prototypes so only the composed elements remain.
+        for id in leftoverProtos {
             try? document.deleteDrawable(id)
         }
     }

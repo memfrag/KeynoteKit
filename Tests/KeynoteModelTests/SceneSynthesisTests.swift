@@ -45,6 +45,35 @@ struct SceneSynthesisTests {
         #expect(try reread.sceneTree(forSlideAt: 0).nodes.contains { $0.id == id })
     }
 
+    @Test("addText places a text node with the given string and frame")
+    func addText() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let id = try document.addText(toSlideAt: 0, string: "Hello", frame: Frame(x: 40, y: 40, width: 600, height: 100))
+        let reread = try writeAndReread(document)
+        let node = try reread.sceneTree(forSlideAt: 0).nodes.first { $0.id == id }
+        #expect(node?.text == "Hello")
+        #expect(node?.frame == Frame(x: 40, y: 40, width: 600, height: 100))
+    }
+
+    @Test("multi-paragraph synthesized text round-trips paragraph breaks")
+    func addMultilineText() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let id = try document.addText(toSlideAt: 0, string: "Line A\nLine B", frame: Frame(x: 0, y: 0, width: 400, height: 200))
+        let reread = try writeAndReread(document)
+        let node = try reread.sceneTree(forSlideAt: 0).nodes.first { $0.id == id }
+        #expect(node?.text == "Line A\u{2029}Line B")
+    }
+
+    @Test("synthesized text accepts character-style overrides")
+    func styleSynthesizedText() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let id = try document.addText(toSlideAt: 0, string: "Styled", frame: Frame(x: 0, y: 0, width: 400, height: 100))
+        // A from-scratch text box must carry a base character style to vary.
+        try document.setNodeCharacterStyle(id, fontSize: 40, bold: true, color: (0.1, 0.3, 0.8, 1))
+        let reread = try writeAndReread(document)
+        #expect(try reread.sceneTree(forSlideAt: 0).nodes.contains { $0.id == id })
+    }
+
     @Test("addImage registers data and places an image node")
     func addImage() throws {
         var document = try KeynoteDocument(contentsOf: Self.deckURL)

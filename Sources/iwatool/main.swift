@@ -101,6 +101,19 @@ if arguments.count >= 5, arguments[1] == "synth-image" {
     print("synthesized image id \(id)"); exit(0)
 }
 
+if arguments.count >= 4, arguments[1] == "synth-text" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let id = try document.addText(
+        toSlideAt: 0, string: "Synthesized from scratch",
+        frame: Frame(x: 120, y: 120, width: 700, height: 120)
+    )
+    try document.setNodeCharacterStyle(id, fontSize: 44, bold: true, color: (0.15, 0.35, 0.8, 1))
+    try document.write(to: out)
+    print("synthesized text id \(id)"); exit(0)
+}
+
 // Commands that take no input file.
 if arguments.count >= 2, arguments[1] == "effects" {
     let lists: [(String, [String])] = [

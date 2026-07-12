@@ -107,6 +107,144 @@ extension KeynoteDocument {
         return nodeID
     }
 
+    /// Adds a freshly-synthesized text box to a slide and returns its node id.
+    /// The box is built from scratch, but its text still leans on the theme's
+    /// paragraph/character/list styles (discovered on an existing text
+    /// storage), so it renders with real theme typography and
+    /// ``setNodeCharacterStyle(_:fontSize:bold:italic:color:)`` can override it.
+    @discardableResult
+    public mutating func addText(toSlideAt index: Int, string: String, frame: Frame) throws -> UInt64 {
+        guard let styles = defaultTextStyles() else {
+            throw SceneEditError.unsupportedEdit("no theme text styles to reference")
+        }
+        guard let shapeStyleID = firstIdentifier(ofType: 2025) else {
+            throw SceneEditError.unsupportedEdit("no theme shape style to reference")
+        }
+        let (_, slideComponent, slideRecord) = try slideArchiveLocation(at: index)
+        let slideRootID = components[slideComponent].records[slideRecord].identifier ?? 0
+        let version = components[slideComponent].records[slideRecord].info.messageInfos[0].version
+
+        // The text storage, seeded with a char-0 entry in each paragraph-keyed
+        // table (setNodeText then replicates them per paragraph).
+        func objectTable(_ styleID: UInt64?) -> TSWP_ObjectAttributeTable {
+            TSWP_ObjectAttributeTable.with {
+                $0.entries = [TSWP_ObjectAttributeTable.ObjectAttribute.with {
+                    $0.characterIndex = 0
+                    if let styleID { $0.object = reference(styleID) }
+                }]
+            }
+        }
+        func dataTable() -> TSWP_ParaDataAttributeTable {
+            TSWP_ParaDataAttributeTable.with {
+                $0.entries = [TSWP_ParaDataAttributeTable.ParaDataAttribute.with {
+                    $0.characterIndex = 0; $0.first = 0; $0.second = 0
+                }]
+            }
+        }
+        let storageID = try allocateIdentifier()
+        var storage = TSWP_StorageArchive()
+        storage.styleSheet = reference(styles.styleSheet)
+        storage.text = [""]
+        storage.tableParaStyle = objectTable(styles.para)
+        storage.tableParaData = dataTable()
+        if let listID = styles.list { storage.tableListStyle = objectTable(listID) }
+        storage.tableCharStyle = objectTable(styles.char)
+        storage.inDocument = true
+        storage.tableParaStarts = dataTable()
+        storage.tableParaBidi = dataTable()
+        storage.tableDropCapStyle = objectTable(nil)
+        let storageRecord = try makeRecord(
+            identifier: storageID, type: 2001, message: storage,
+            version: [1, 0, 5], objectReferences: [styles.para, styles.char] + [styles.list].compactMap { $0 }
+        )
+        components[slideComponent].records.append(storageRecord)
+
+        let captionID = try allocateIdentifier()
+        let titleID = try allocateIdentifier()
+        for id in [captionID, titleID] {
+            let record = try makeRecord(
+                identifier: id, type: 3097, message: TSD_StandinCaptionArchive(),
+                version: [10, 1, 0], objectReferences: []
+            )
+            components[slideComponent].records.append(record)
+        }
+
+        let nodeID = try allocateIdentifier()
+        var shape = TSWP_ShapeInfoArchive()
+        shape.super.super.geometry = Self.geometry(frame)
+        shape.super.super.parent = reference(slideRootID)
+        shape.super.super.exteriorTextWrap = TSD_ExteriorTextWrapArchive.with {
+            $0.type = 4
+            $0.direction = 2
+            $0.fitType = 1
+            $0.margin = 12
+            $0.alphaThreshold = 0.5
+            $0.isHtmlWrap = false
+        }
+        shape.super.super.title = reference(titleID)
+        shape.super.super.caption = reference(captionID)
+        shape.super.style = reference(shapeStyleID)
+        shape.super.pathsource = Self.rectanglePath(width: frame.width, height: frame.height)
+        shape.deprecatedStorage = reference(storageID)
+        shape.ownedStorage = reference(storageID)
+        shape.isTextBox = true
+        let record = try makeRecord(
+            identifier: nodeID, type: 2011, message: shape,
+            version: version, objectReferences: [captionID, titleID, shapeStyleID, storageID]
+        )
+        components[slideComponent].records.append(record)
+
+        try attachDrawable(nodeID, toSlideAt: slideComponent, record: slideRecord)
+        for external in [shapeStyleID, styles.char, styles.para] + [styles.list].compactMap({ $0 }) {
+            try declareExternalReference(fromComponent: slideComponent, toObject: external)
+        }
+
+        // Fill in the text through the proven path (replicates paragraph tables).
+        try setNodeText(nodeID, to: string)
+        return nodeID
+    }
+
+    /// The theme's default paragraph/character/list styles and its stylesheet,
+    /// learned from an existing text storage. Any real deck carries several
+    /// (placeholders, prototypes), so this finds one to reference.
+    func defaultTextStyles() -> (char: UInt64, para: UInt64, list: UInt64?, styleSheet: UInt64)? {
+        // Best: styles from an existing populated text storage — guaranteed
+        // theme-consistent and known-good.
+        for component in components {
+            for record in component.records where record.primaryType == 2001 {
+                guard let storage = try? record.decode(TSWP_StorageArchive.self), storage.hasStyleSheet,
+                      let charEntry = storage.tableCharStyle.entries.first, charEntry.hasObject,
+                      let paraEntry = storage.tableParaStyle.entries.first, paraEntry.hasObject
+                else { continue }
+                let listID = storage.tableListStyle.entries.first
+                    .flatMap { $0.hasObject ? $0.object.identifier : nil } ?? firstIdentifier(ofType: 2023)
+                return (charEntry.object.identifier, paraEntry.object.identifier, listID, storage.styleSheet.identifier)
+            }
+        }
+        // Fallback (empty placeholders carry no char table): reference base
+        // styles straight from a stylesheet component. Prefer a non-variation
+        // character style as the base to override.
+        for component in components {
+            guard let styleSheetID = component.records.first(where: { $0.primaryType == 401 })?.identifier,
+                  let paraID = component.records.first(where: { $0.primaryType == 2022 })?.identifier
+            else { continue }
+            // Prefer a plain base: a non-variation style with no underline or
+            // strikethrough (avoids picking a link/emphasis style).
+            func score(_ record: ObjectRecord) -> Int {
+                guard let style = try? record.decode(TSWP_CharacterStyleArchive.self) else { return -1 }
+                return (style.super.isVariation ? 0 : 2)
+                    + (!style.charProperties.hasUnderline && !style.charProperties.hasStrikethru ? 1 : 0)
+            }
+            let baseChar = component.records
+                .filter { $0.primaryType == 2021 }
+                .max { score($0) < score($1) }
+            guard let charID = baseChar?.identifier else { continue }
+            let listID = component.records.first(where: { $0.primaryType == 2023 })?.identifier
+            return (charID, paraID, listID, styleSheetID)
+        }
+        return nil
+    }
+
     // MARK: Building blocks
 
     /// Registers image bytes (and a scaled thumbnail) as document data blobs,

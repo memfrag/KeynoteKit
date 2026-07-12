@@ -64,25 +64,18 @@ extension KeynoteDocument {
         return master.hasName ? master.name : nil
     }
 
-    /// Sets the slide's navigator/outline name (`KN.SlideArchive.name`).
+    /// Sets a slide's title — the text Keynote shows in the navigator/outline.
+    /// This is the **title placeholder** text (`setSlideText(at:.title,to:)`),
+    /// which is what Keynote actually derives the outline title from.
     ///
-    /// - Warning: Writing this field currently corrupts the slide for Keynote —
-    ///   it opens but crashes on export/playback (`templateSlide` selector),
-    ///   suggesting schema drift on `KN.SlideArchive.name`. Do not use until the
-    ///   correct field encoding is confirmed. Kept for investigation.
+    /// - Important: This is NOT `KN.SlideArchive.name`. That field is the
+    ///   *master's layout name* ("Title & Bullets", …); writing it on a content
+    ///   slide makes Keynote mis-resolve the slide as a template and crash
+    ///   (`templateSlide` selector). A free-form slide with no title placeholder
+    ///   throws `SlideContentError.noPlaceholder(.title)` — give it a layout that
+    ///   has a title placeholder (e.g. an external-template slide).
     public mutating func setSlideTitle(at index: Int, to title: String) throws {
-        let (slide, componentIndex, recordIndex) = try slideArchiveLocation(at: index)
-        var updated = slide
-        updated.name = title
-        var record = components[componentIndex].records[recordIndex]
-        try record.setMessage(updated)
-        components[componentIndex].records[recordIndex] = record
-    }
-
-    /// The slide's navigator/outline name, if set.
-    public func slideName(at index: Int) throws -> String? {
-        let (slide, _, _) = try slideArchiveLocation(at: index)
-        return slide.hasName ? slide.name : nil
+        try setSlideText(at: index, .title, to: title)
     }
 
     public func slideText(at index: Int, _ placeholder: SlidePlaceholder) throws -> String? {

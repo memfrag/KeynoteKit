@@ -69,10 +69,12 @@ public final class DeckSpecLoader {
             if let notes = slide.notes {
                 try document.setSlideText(at: index, .notes, to: notes)
             }
-            // NOTE: `title` (navigator name) is intentionally not applied — writing
-            // KN.SlideArchive.name currently corrupts the slide for Keynote
-            // (crashes on export/playback via a templateSlide selector). Tracked
-            // as an open issue; `title` is accepted but ignored for now.
+            // `title` sets the title-placeholder text (the real navigator/outline
+            // title). Only slides with a title placeholder (external-template
+            // slides) have one; validation blocks it on free-form slides.
+            if let title = slide.title {
+                try document.setSlideTitle(at: index, to: title)
+            }
             if !buildRequests[index].isEmpty {
                 let nodes = try document.sceneTree(forSlideAt: index).nodes
                 for build in buildRequests[index] {
@@ -117,6 +119,12 @@ public final class DeckSpecLoader {
             if slide.override != nil { issues.append("\(path): `override` requires an external-template slide (not supported yet)") }
             if let use = slide.use, spec.templates?[use] == nil {
                 issues.append("\(path): unknown template \"\(use)\"")
+            }
+            // A title needs a title placeholder, which only external-template
+            // slides carry. (KN.SlideArchive.name is the master's layout name,
+            // not a per-slide title — setting it crashes Keynote.)
+            if slide.title != nil, slide.from == nil {
+                issues.append("\(path): `title` requires an external-template slide (a layout with a title placeholder)")
             }
 
             var elementSpecs: [ElementSpec] = []

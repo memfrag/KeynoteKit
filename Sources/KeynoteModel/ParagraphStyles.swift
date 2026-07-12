@@ -280,6 +280,59 @@ extension KeynoteDocument {
         try declareExternalReference(fromComponent: location.component, toObject: listID)
     }
 
+    /// Gives a text node a drop cap — the first `characters` character(s) of
+    /// the first paragraph enlarged to span `lines` lines.
+    public mutating func setNodeDropCap(_ nodeID: UInt64, lines: Int = 3, characters: Int = 1) throws {
+        guard let styles = defaultTextStyles() else {
+            throw SceneEditError.unsupportedEdit("no theme stylesheet for a drop cap")
+        }
+        let styleSheetID = styles.styleSheet
+        guard let stylesheetComponent = components.firstIndex(where: {
+            $0.records.contains { $0.identifier == styleSheetID }
+        }) else {
+            throw SceneEditError.unsupportedEdit("cannot locate the document stylesheet")
+        }
+
+        let dropCapID = try allocateIdentifier()
+        let dropCap = TSWP_DropCapStyleArchive.with {
+            $0.super = TSS_StyleArchive.with {
+                $0.name = "Drop Cap"
+                $0.styleIdentifier = "kk-dropcap-\(dropCapID)"
+                $0.stylesheet = reference(styleSheetID)
+            }
+            $0.overrideCount = 1
+            $0.dropCapProperties = TSWP_DropCapStylePropertiesArchive.with {
+                $0.dropCap = TSWP_DropCapArchive.with {
+                    $0.type = .tswpdropCapTypeText
+                    $0.numberOfLines = UInt32(max(2, lines))
+                    $0.numberOfCharacters = UInt32(max(1, characters))
+                }
+            }
+        }
+        let dropCapRecord = try makeRecord(
+            identifier: dropCapID, type: 10024, message: dropCap, version: [1, 0, 5], objectReferences: []
+        )
+        components[stylesheetComponent].records.append(dropCapRecord)
+
+        // The drop cap sits on the first paragraph (character 0).
+        let location = try locateSceneNode(nodeID)
+        guard let storageID = try storageIdentifier(forNodeAt: location),
+              let storageIndex = components[location.component].records.firstIndex(where: { $0.identifier == storageID })
+        else { throw SceneEditError.nodeHasNoText(nodeID) }
+        var storageRecord = components[location.component].records[storageIndex]
+        var storage = try storageRecord.decode(TSWP_StorageArchive.self)
+        if storage.tableDropCapStyle.entries.isEmpty {
+            storage.tableDropCapStyle.entries = [TSWP_ObjectAttributeTable.ObjectAttribute.with { $0.characterIndex = 0 }]
+        }
+        storage.tableDropCapStyle.entries[0].object = reference(dropCapID)
+        try storageRecord.setMessage(storage)
+        var refs = storageRecord.info.messageInfos[0].objectReferences
+        if !refs.contains(dropCapID) { refs.append(dropCapID) }
+        try storageRecord.setObjectReferences(refs, at: 0)
+        components[location.component].records[storageIndex] = storageRecord
+        try declareExternalReference(fromComponent: location.component, toObject: dropCapID)
+    }
+
     /// Lays a text box out in `count` equal columns with a `gap` between them.
     public mutating func setNodeColumns(_ nodeID: UInt64, count: Int, gap: Double = 20) throws {
         try varyTextContainer(nodeID) {

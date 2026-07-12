@@ -107,6 +107,9 @@ public struct CanvasWriter {
             if let marker = element.style.listMarker {
                 try document.setNodeList(newID, marker)
             }
+            if let lines = element.style.dropCapLines {
+                try document.setNodeDropCap(newID, lines: lines, characters: element.style.dropCapCharacters ?? 1)
+            }
             return newID
         case .shape(let kind):
             let newID = try document.addShape(toSlideAt: index, frame: frame, kind: kind)

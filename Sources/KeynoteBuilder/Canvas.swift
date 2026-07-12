@@ -46,6 +46,8 @@ public struct ElementStyle: Sendable {
     public var columnGap: Double?
     public var textInset: Double?
     public var listMarker: ListMarker?
+    public var dropCapLines: Int?
+    public var dropCapCharacters: Int?
 
     public init() {}
 }
@@ -153,6 +155,10 @@ public struct Element: Sendable {
     public func bulleted(_ marker: String = "\u{2022}") -> Element { modifying { $0.listMarker = .bullet(marker) } }
     /// Turns a text element's paragraphs into a numbered list.
     public func numbered(_ format: NumberFormat = .decimal) -> Element { modifying { $0.listMarker = .numbered(format) } }
+    /// Gives a text element a drop cap on its first paragraph.
+    public func dropCap(lines: Int = 3, characters: Int = 1) -> Element {
+        modifying { $0.dropCapLines = lines; $0.dropCapCharacters = characters }
+    }
 
     private func modifying(_ change: (inout ElementStyle) -> Void) -> Element {
         var copy = self

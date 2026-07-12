@@ -134,6 +134,17 @@ if arguments.count >= 4, arguments[1] == "tabborder-test" {
     print("tabborder test written"); exit(0)
 }
 
+if arguments.count >= 4, arguments[1] == "dropcap-test" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let t = try document.addText(toSlideAt: 0, string: "Once upon a time there was a paragraph that began with a large decorative drop cap spanning several lines of text as is traditional in fine typography and books.", frame: Frame(x: 120, y: 160, width: 780, height: 360))
+    try document.setNodeCharacterStyle(t, fontSize: 30)
+    try document.setNodeDropCap(t, lines: 3, characters: 1)
+    try document.write(to: out)
+    print("dropcap test written"); exit(0)
+}
+
 if arguments.count >= 4, arguments[1] == "builddelivery-test" {
     let paletteIn = URL(fileURLWithPath: arguments[2])
     let out = URL(fileURLWithPath: arguments[3])

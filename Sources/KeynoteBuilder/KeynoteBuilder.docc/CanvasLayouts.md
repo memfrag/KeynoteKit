@@ -99,6 +99,8 @@ Modifiers chain, SwiftUI-style, each returning a new ``Element``:
 | `.fill(_:)` | shape | fill: a color or any ``Fill`` |
 | `.border(_:width:)` | shape, text, image | a solid border |
 | `.shadow(_:)` | shape, text, image | a drop shadow (defaults to soft black) |
+| `.opacity(_:)` | all | element opacity, 0…1 |
+| `.rotation(degrees:)` | all | rotation; positive is counterclockwise |
 
 Colors are ``RGBAColor`` values in 0…1: `.white`, `.black`, or
 `.rgb(_:_:_:)`. A shape's `.fill(_:)` also takes a full ``Fill`` — the same

@@ -106,29 +106,36 @@ extension KeynoteDocument {
     }
 
     /// Adds or replaces a node's drop shadow. Convenience for
-    /// ``setNodeStyle(_:fill:border:shadow:)``.
+    /// ``setNodeStyle(_:fill:border:shadow:opacity:)``.
     public mutating func setNodeShadow(_ nodeID: UInt64, _ shadow: Shadow) throws {
         try setNodeStyle(nodeID, shadow: shadow)
     }
 
-    /// Overrides a drawable's visual style — fill, border, and/or drop shadow —
-    /// in a single anonymous style variation, mirroring Keynote's structure.
+    /// Sets a node's opacity (0…1). Convenience for
+    /// ``setNodeStyle(_:fill:border:shadow:opacity:)``.
+    public mutating func setNodeOpacity(_ nodeID: UInt64, _ opacity: Double) throws {
+        try setNodeStyle(nodeID, opacity: opacity)
+    }
+
+    /// Overrides a drawable's visual style — fill, border, drop shadow, and/or
+    /// opacity — in a single anonymous style variation, mirroring Keynote's
+    /// structure.
     ///
     /// Works on shapes and text boxes (which carry a shape style) and on images
     /// (which carry a media style); `fill` applies only to shapes and text
     /// boxes. `nil` arguments leave the inherited value.
     public mutating func setNodeStyle(
-        _ nodeID: UInt64, fill: Fill? = nil, border: Border? = nil, shadow: Shadow? = nil
+        _ nodeID: UInt64, fill: Fill? = nil, border: Border? = nil, shadow: Shadow? = nil, opacity: Double? = nil
     ) throws {
-        guard fill != nil || border != nil || shadow != nil else { return }
+        guard fill != nil || border != nil || shadow != nil || opacity != nil else { return }
         let location = try locateSceneNode(nodeID)
         let record = components[location.component].records[location.record]
 
         switch record.primaryType {
         case 2011:
-            try setShapeStyle(at: location, fill: fill, border: border, shadow: shadow)
+            try setShapeStyle(at: location, fill: fill, border: border, shadow: shadow, opacity: opacity)
         case 3005:
-            try setMediaStyle(at: location, border: border, shadow: shadow)
+            try setMediaStyle(at: location, border: border, shadow: shadow, opacity: opacity)
         default:
             throw SceneEditError.unsupportedEdit("node \(nodeID) has no fillable/strokable style")
         }
@@ -137,7 +144,7 @@ extension KeynoteDocument {
     /// Shape and text-box styling: a `TSWP.ShapeStyleArchive` variation whose
     /// `shapeProperties` carries the fill, stroke, and shadow.
     private mutating func setShapeStyle(
-        at location: RecordLocation, fill: Fill?, border: Border?, shadow: Shadow?
+        at location: RecordLocation, fill: Fill?, border: Border?, shadow: Shadow?, opacity: Double?
     ) throws {
         var record = components[location.component].records[location.record]
         var shape = try record.decode(TSWP_ShapeInfoArchive.self)
@@ -163,6 +170,7 @@ extension KeynoteDocument {
         }
         if let border { properties.stroke = Self.strokeArchive(border); overrideCount += 1 }
         if let shadow { properties.shadow = Self.shadowArchive(shadow); overrideCount += 1 }
+        if let opacity { properties.opacity = Float(opacity); overrideCount += 1 }
 
         let newStyleID = try allocateIdentifier()
         let style = TSWP_ShapeStyleArchive.with {
@@ -197,8 +205,8 @@ extension KeynoteDocument {
 
     /// Image styling: a `TSD.MediaStyleArchive` variation whose
     /// `mediaProperties` carries the stroke and shadow.
-    private mutating func setMediaStyle(at location: RecordLocation, border: Border?, shadow: Shadow?) throws {
-        guard border != nil || shadow != nil else { return }
+    private mutating func setMediaStyle(at location: RecordLocation, border: Border?, shadow: Shadow?, opacity: Double?) throws {
+        guard border != nil || shadow != nil || opacity != nil else { return }
         var record = components[location.component].records[location.record]
         var image = try record.decode(TSD_ImageArchive.self)
         guard image.hasStyle else {
@@ -218,6 +226,7 @@ extension KeynoteDocument {
         var overrideCount: UInt32 = 0
         if let border { properties.stroke = Self.strokeArchive(border); overrideCount += 1 }
         if let shadow { properties.shadow = Self.shadowArchive(shadow); overrideCount += 1 }
+        if let opacity { properties.opacity = Float(opacity); overrideCount += 1 }
 
         let newStyleID = try allocateIdentifier()
         let style = TSD_MediaStyleArchive.with {

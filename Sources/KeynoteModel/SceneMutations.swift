@@ -105,6 +105,43 @@ extension KeynoteDocument {
         components[location.component].records[location.record] = record
     }
 
+    /// Rotates a drawable node. Positive degrees rotate counterclockwise.
+    public mutating func setNodeRotation(_ nodeID: UInt64, degrees: Double) throws {
+        try mutateGeometry(nodeID) { $0.angle = Float(degrees) }
+    }
+
+    /// Applies a change to a drawable's geometry, decoding whichever archive
+    /// type the node is.
+    mutating func mutateGeometry(_ nodeID: UInt64, _ apply: (inout TSD_GeometryArchive) -> Void) throws {
+        let location = try locateSceneNode(nodeID)
+        var record = components[location.component].records[location.record]
+        switch record.primaryType {
+        case 7:
+            var archive = try record.decode(KN_PlaceholderArchive.self)
+            apply(&archive.super.super.super.geometry)
+            try record.setMessage(archive)
+        case 2011:
+            var archive = try record.decode(TSWP_ShapeInfoArchive.self)
+            apply(&archive.super.super.geometry)
+            try record.setMessage(archive)
+        case 3005:
+            var archive = try record.decode(TSD_ImageArchive.self)
+            apply(&archive.super.geometry)
+            try record.setMessage(archive)
+        case 3007:
+            var archive = try record.decode(TSD_MovieArchive.self)
+            apply(&archive.super.geometry)
+            try record.setMessage(archive)
+        case 3008:
+            var archive = try record.decode(TSD_GroupArchive.self)
+            apply(&archive.super.geometry)
+            try record.setMessage(archive)
+        default:
+            throw SceneEditError.nodeHasNoFrame(nodeID)
+        }
+        components[location.component].records[location.record] = record
+    }
+
     // MARK: Media
 
     /// Replaces the media content of an image node.

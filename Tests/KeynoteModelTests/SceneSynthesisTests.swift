@@ -108,6 +108,26 @@ struct SceneSynthesisTests {
         }
     }
 
+    @Test("opacity and rotation apply to elements")
+    func opacityAndRotation() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let shapeID = try document.addShape(toSlideAt: 0, frame: Frame(x: 40, y: 40, width: 200, height: 150))
+        try document.setNodeRotation(shapeID, degrees: 15)
+        try document.setNodeOpacity(shapeID, 0.5)
+
+        let imageID = try document.addImage(
+            toSlideAt: 0, data: try Data(contentsOf: Self.blueImageURL),
+            frame: Frame(x: 300, y: 40, width: 200, height: 150)
+        )
+        try document.setNodeRotation(imageID, degrees: -20)
+        try document.setNodeOpacity(imageID, 0.75)
+
+        let reread = try writeAndReread(document)
+        let node = try reread.sceneTree(forSlideAt: 0).nodes.first { $0.id == shapeID }
+        #expect(node != nil)
+        #expect(try reread.sceneTree(forSlideAt: 0).nodes.contains { $0.id == imageID })
+    }
+
     @Test("border and shadow apply to shape, text, and image")
     func borderAndShadow() throws {
         let border = Border(color: (1, 1, 1, 1), width: 4)

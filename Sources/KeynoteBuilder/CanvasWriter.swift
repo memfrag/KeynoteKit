@@ -100,6 +100,11 @@ public struct CanvasWriter {
                 color: style.foregroundColor.map { ($0.red, $0.green, $0.blue, $0.alpha) }
             )
         }
-        try document.setNodeStyle(nodeID, fill: style.fill, border: style.border, shadow: style.shadow)
+        try document.setNodeStyle(
+            nodeID, fill: style.fill, border: style.border, shadow: style.shadow, opacity: style.opacity
+        )
+        if let rotation = style.rotationDegrees {
+            try document.setNodeRotation(nodeID, degrees: rotation)
+        }
     }
 }

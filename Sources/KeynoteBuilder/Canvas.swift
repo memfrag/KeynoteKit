@@ -33,6 +33,8 @@ public struct ElementStyle: Sendable {
     public var fill: Fill?
     public var border: Border?
     public var shadow: Shadow?
+    public var opacity: Double?
+    public var rotationDegrees: Double?
 
     public init() {}
 }
@@ -90,6 +92,10 @@ public struct Element: Sendable {
     /// A drop shadow, for shapes, text boxes, and images. Defaults to a soft
     /// black shadow.
     public func shadow(_ shadow: Shadow = Shadow()) -> Element { modifying { $0.shadow = shadow } }
+    /// Element opacity, 0…1.
+    public func opacity(_ opacity: Double) -> Element { modifying { $0.opacity = opacity } }
+    /// Rotation in degrees; positive rotates counterclockwise.
+    public func rotation(degrees: Double) -> Element { modifying { $0.rotationDegrees = degrees } }
 
     private func modifying(_ change: (inout ElementStyle) -> Void) -> Element {
         var copy = self

@@ -83,10 +83,13 @@ if arguments.count >= 3, arguments[1] == "arrows-demo" {
         Shape(.native(.leftArrow)).frame(x: 100, y: 80, width: 380, height: 140).fill(.rgb(0.15, 0.7, 0.5))
         Shape(.native(.rightArrow)).frame(x: 540, y: 80, width: 380, height: 140).fill(.rgb(0.6, 0.35, 0.85))
         Shape(.native(.doubleArrow)).frame(x: 300, y: 320, width: 420, height: 140).fill(.rgb(0.95, 0.55, 0.15))
-        // Lines with endings.
-        Shape(.line).frame(x: 120, y: 560, width: 360, height: 0).border(.rgb(0.2, 0.2, 0.2), width: 4).endCap(.arrow)
-        Shape(.line).frame(x: 560, y: 560, width: 360, height: 0).border(.rgb(0.9, 0.3, 0.35), width: 5)
-            .startCap(.arrow).endCap(.arrow)
+        // Lines with different caps.
+        Shape(.line).frame(x: 120, y: 520, width: 360, height: 0).border(.rgb(0.2, 0.2, 0.2), width: 4).endCap(.filledArrow)
+        Shape(.line).frame(x: 560, y: 520, width: 360, height: 0).border(.rgb(0.2, 0.5, 0.95), width: 4)
+            .startCap(.filledCircle).endCap(.diamond)
+        // Lines with different stroke styles.
+        Shape(.line).frame(x: 120, y: 620, width: 360, height: 0).border(.rgb(0.2, 0.2, 0.2), width: 4, dash: [6, 6])
+        Shape(.line).frame(x: 560, y: 620, width: 360, height: 0).border(.dotted(color: (0.9, 0.3, 0.35, 1), width: 6))
     }
     try CanvasWriter().write([canvas], to: out)
     print("arrows demo written"); exit(0)

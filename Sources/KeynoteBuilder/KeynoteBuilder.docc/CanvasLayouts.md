@@ -121,7 +121,20 @@ Three element kinds are built by free functions:
   Shape(.line).frame(x: 120, y: 400, width: 360, height: 0)
       .border(.black, width: 4).endCap(.arrow)                 // one arrow
   Shape(.line).frame(x: 120, y: 460, width: 360, height: 0)
-      .border(.red, width: 5).startCap(.arrow).endCap(.arrow)  // both ends
+      .border(.red, width: 5).startCap(.filledCircle).endCap(.diamond)
+  ```
+
+  Caps come from Keynote's line-ending presets — `.arrow`, `.filledArrow`,
+  `.openArrow`, `.invertedArrow`, `.filledCircle`, `.openCircle`, `.diamond`,
+  `.filledSquare`, `.openSquare`, `.bar`. Strokes can be dashed or dotted via
+  the border's `dash` (dash/gap in width-multiples) — `Border.dashed`/`.dotted`
+  are shortcuts:
+
+  ```swift
+  Shape(.line).frame(x: 120, y: 520, width: 360, height: 0)
+      .border(.black, width: 4, dash: [6, 6])                  // dashed
+  Shape(.line).frame(x: 120, y: 580, width: 360, height: 0)
+      .border(.dotted(color: (0.9, 0.3, 0.35, 1), width: 6))   // round dots
   ```
 
 Every element is **synthesized from scratch** — nothing is cloned. Each

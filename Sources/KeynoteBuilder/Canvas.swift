@@ -85,9 +85,12 @@ public struct Element: Sendable {
     }
     /// Fill for shape elements — a color, gradient, image, or `.none`.
     public func fill(_ fill: Fill) -> Element { modifying { $0.fill = fill } }
-    /// A border, for shapes, text boxes, and images.
-    public func border(_ color: RGBAColor, width: Double = 1) -> Element {
-        modifying { $0.border = Border(color: (color.red, color.green, color.blue, color.alpha), width: width) }
+    /// A border, for shapes, text boxes, and images. `dash` gives dash/gap
+    /// lengths in width-multiples (empty = solid).
+    public func border(_ color: RGBAColor, width: Double = 1, dash: [Double] = []) -> Element {
+        modifying {
+            $0.border = Border(color: (color.red, color.green, color.blue, color.alpha), width: width, dash: dash)
+        }
     }
     /// A border, for shapes, text boxes, and images.
     public func border(_ border: Border) -> Element { modifying { $0.border = border } }

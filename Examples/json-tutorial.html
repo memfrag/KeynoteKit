@@ -212,13 +212,17 @@ iwatool describe-template brand.key</code></pre>
       <div class="card"><div class="tag">Frames</div><h3>Explicit or fit</h3><p>{x,y,width,height}, or cover / fit / coverBox that measure the image.</p></div>
       <div class="card"><div class="tag">Fonts</div><h3>Family or face</h3><p>A deck defaultFont, overridable per element; bold / italic apply as traits.</p></div>
     </div>
+    <p class="sub" style="margin-top:22px"><b style="color:var(--aqua)">Nested bullets:</b>
+      prefix a line in a bulleted element's <code>text</code> with tab characters — one per level —
+      e.g. <code>"Otters\n\tRiver\n\t\tSea"</code>. Keynote stores the level per paragraph; the tabs are stripped.</p>
   </section>
 
   <!-- STEP 3 -->
   <section>
     <div class="sec-head"><span class="step-no">03</span><h2>Three ways to build a slide</h2></div>
-    <p class="sub">Mix and match to taste. Free-form and inline-template slides share the bundled themed
-      seed; Keynote-template slides clone your <code>brand.key</code>.</p>
+    <p class="sub">Mix and match freely — all three can live in <em>one</em> deck. When you set a
+      deck-level <code>template</code>, <code>from</code> slides clone its layouts while free-form and
+      <code>use</code> slides are synthesized onto a blank slide alongside them.</p>
 
     <!-- WAY 1 -->
     <div class="way"><span class="n">1</span> From scratch</div>

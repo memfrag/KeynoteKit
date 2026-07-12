@@ -375,10 +375,14 @@ Highlights:
   the level per paragraph; the tabs are stripped.
 - **Reusable templates**: define named element sets under `templates` and
   instantiate them per slide with `use` + `set` (fill by element name).
-- **External templates**: set a deck-level `template` (a `.key`); each slide
-  then `from`s one of its layouts and fills placeholders via `set` (title /
-  body / named blocks / images) and named-node `override`s — inheriting the
-  template's real masters.
+- **External templates**: set a deck-level `template` (a `.key`); a slide then
+  `from`s one of its layouts and fills placeholders via `set` (title / body /
+  named blocks / images) and named-node `override`s — inheriting the template's
+  real masters.
+- **Mix all three**: in one deck, `from` (Keynote-template), free-form
+  (`elements`), and `use` (inline-template) slides can be interleaved freely.
+  Free-form/`use` slides are synthesized onto a blanked scratch layout; note
+  their text inherits the template theme's default alignment.
 
 Validation is fail-fast: an invalid spec reports **every** problem at once
 (with a `slides[i].elements[j]` path) and writes nothing. The full grammar,

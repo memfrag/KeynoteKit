@@ -157,6 +157,25 @@ node's text, image, frame, or style. Cloned slides inherit the template's real
 masters — so `title` (the navigator/outline title) works here, where free-form
 slides have no title placeholder.
 
+## Mixing slide kinds
+
+A deck with a `template` can freely interleave all three kinds — `from`
+(clone a layout), free-form (`elements`), and `use` (inline template). `from`
+slides clone and fill their layout; free-form/`use` slides are synthesized onto
+a blanked scratch layout. (Their text inherits the template theme's default
+paragraph alignment, unlike the placeholders on a `from` slide.)
+
+## Nested bullets
+
+Prefix a line in a bulleted element's `text` with tab characters — one tab per
+level — to nest it. Keynote stores the level per paragraph (it is not a literal
+tab); the tabs are stripped.
+
+```json
+{ "type": "text", "bulleted": { "marker": "•" },
+  "text": "Otters\n\tRiver otters\n\tSea otters\n\t\tUse tools\nConservation" }
+```
+
 ## Validation
 
 Validation is fail-fast and exhaustive: an invalid spec reports **every**

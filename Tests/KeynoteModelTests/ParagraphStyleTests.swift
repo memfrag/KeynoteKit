@@ -34,4 +34,12 @@ struct ParagraphStyleTests {
         let out = try reread(document)
         #expect(try out.sceneTree(forSlideAt: 0).nodes.contains { $0.id == text })
     }
+    @Test("bulleting text round-trips")
+    func bulleted() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let text = try document.addText(toSlideAt: 0, string: "One\nTwo\nThree", frame: Frame(x: 0, y: 0, width: 500, height: 200))
+        try document.setNodeBulleted(text)
+        let out = try reread(document)
+        #expect(try out.sceneTree(forSlideAt: 0).nodes.contains { $0.id == text })
+    }
 }

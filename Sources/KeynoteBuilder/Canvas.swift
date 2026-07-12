@@ -45,6 +45,7 @@ public struct ElementStyle: Sendable {
     public var columns: Int?
     public var columnGap: Double?
     public var textInset: Double?
+    public var bulletMarker: String?
 
     public init() {}
 }
@@ -148,6 +149,8 @@ public struct Element: Sendable {
     }
     /// Sets a text element's inset (padding between text and box edge).
     public func textInset(_ inset: Double) -> Element { modifying { $0.textInset = inset } }
+    /// Turns a text element's paragraphs into a bulleted list.
+    public func bulleted(_ marker: String = "\u{2022}") -> Element { modifying { $0.bulletMarker = marker } }
 
     private func modifying(_ change: (inout ElementStyle) -> Void) -> Element {
         var copy = self

@@ -136,6 +136,61 @@ extension KeynoteDocument {
         return newID
     }
 
+    /// Turns a text node's paragraphs into a bulleted list, using `bullet` as
+    /// the marker. Builds a list style from the theme's own list style (full
+    /// per-level arrays) so the text lays out correctly, then points every
+    /// paragraph at it.
+    public mutating func setNodeBulleted(_ nodeID: UInt64, bullet: String = "\u{2022}", indent: Double = 35) throws {
+        guard let styles = defaultTextStyles(), let baseListID = styles.list,
+              let stylesheetComponent = components.firstIndex(where: {
+                  $0.records.contains { $0.identifier == baseListID }
+              }),
+              let baseRecord = components[stylesheetComponent].records.first(where: { $0.identifier == baseListID }),
+              var list = try? baseRecord.decode(TSWP_ListStyleArchive.self)
+        else { throw SceneEditError.unsupportedEdit("no theme list style to base a bullet on") }
+
+        // Keynote's list styles carry one entry per indent level; a bullet
+        // needs a full set (a single-entry array corrupts text layout).
+        let levels = max(9, list.labelTypes.count)
+        list.labelTypes = Array(repeating: .kString, count: levels)
+        list.strings = Array(repeating: bullet, count: levels)
+        list.textIndents = Array(repeating: 1.09375, count: levels)  // theme's value
+        list.indents = (0..<levels).map { Float(Double($0) * indent) }
+        let geometry = TSWP_ListStyleArchive.LabelGeometry.with {
+            $0.scale = 1; $0.baselineOffset = 0; $0.scaleWithText = true
+        }
+        list.geometries = Array(repeating: geometry, count: levels)
+
+        let listID = try allocateIdentifier()
+        list.super.name = "Bullet"
+        list.super.styleIdentifier = "kk-list-\(listID)"
+        list.super.clearParent()
+        let listRecord = try makeRecord(
+            identifier: listID, type: 2023, message: list, version: [1, 0, 5], objectReferences: []
+        )
+        components[stylesheetComponent].records.append(listRecord)
+
+        // Point every paragraph's list-style entry at the bullet style.
+        let location = try locateSceneNode(nodeID)
+        guard let storageID = try storageIdentifier(forNodeAt: location),
+              let storageIndex = components[location.component].records.firstIndex(where: { $0.identifier == storageID })
+        else { throw SceneEditError.nodeHasNoText(nodeID) }
+        var storageRecord = components[location.component].records[storageIndex]
+        var storage = try storageRecord.decode(TSWP_StorageArchive.self)
+        if storage.tableListStyle.entries.isEmpty {
+            storage.tableListStyle.entries = [TSWP_ObjectAttributeTable.ObjectAttribute.with { $0.characterIndex = 0 }]
+        }
+        for i in storage.tableListStyle.entries.indices {
+            storage.tableListStyle.entries[i].object = reference(listID)
+        }
+        try storageRecord.setMessage(storage)
+        var refs = storageRecord.info.messageInfos[0].objectReferences
+        if !refs.contains(listID) { refs.append(listID) }
+        try storageRecord.setObjectReferences(refs, at: 0)
+        components[location.component].records[storageIndex] = storageRecord
+        try declareExternalReference(fromComponent: location.component, toObject: listID)
+    }
+
     /// Lays a text box out in `count` equal columns with a `gap` between them.
     public mutating func setNodeColumns(_ nodeID: UInt64, count: Int, gap: Double = 20) throws {
         try varyTextContainer(nodeID) {

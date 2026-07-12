@@ -80,9 +80,13 @@ if arguments.count >= 3, arguments[1] == "custom-path-demo" {
 if arguments.count >= 3, arguments[1] == "arrows-demo" {
     let out = URL(fileURLWithPath: arguments[2])
     let canvas = Canvas {
-        Shape(.native(.leftArrow)).frame(x: 100, y: 100, width: 380, height: 140).fill(.rgb(0.15, 0.7, 0.5))
-        Shape(.native(.rightArrow)).frame(x: 540, y: 100, width: 380, height: 140).fill(.rgb(0.6, 0.35, 0.85))
-        Shape(.native(.doubleArrow)).frame(x: 300, y: 380, width: 420, height: 140).fill(.rgb(0.95, 0.55, 0.15))
+        Shape(.native(.leftArrow)).frame(x: 100, y: 80, width: 380, height: 140).fill(.rgb(0.15, 0.7, 0.5))
+        Shape(.native(.rightArrow)).frame(x: 540, y: 80, width: 380, height: 140).fill(.rgb(0.6, 0.35, 0.85))
+        Shape(.native(.doubleArrow)).frame(x: 300, y: 320, width: 420, height: 140).fill(.rgb(0.95, 0.55, 0.15))
+        // Lines with endings.
+        Shape(.line).frame(x: 120, y: 560, width: 360, height: 0).border(.rgb(0.2, 0.2, 0.2), width: 4).endCap(.arrow)
+        Shape(.line).frame(x: 560, y: 560, width: 360, height: 0).border(.rgb(0.9, 0.3, 0.35), width: 5)
+            .startCap(.arrow).endCap(.arrow)
     }
     try CanvasWriter().write([canvas], to: out)
     print("arrows demo written"); exit(0)

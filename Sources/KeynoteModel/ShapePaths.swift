@@ -10,6 +10,9 @@ public enum ShapeKind: Sendable {
     case roundedRectangle(cornerRadius: Double)
     /// An ellipse filling the frame — a circle when the frame is square.
     case ellipse
+    /// A straight line across the frame (left to right, at mid-height). Style
+    /// it with a border for the stroke and `.startCap`/`.endCap` for arrows.
+    case line
     /// A regular polygon with `sides` vertices, pointing up.
     case regularPolygon(sides: Int)
     /// A star with `points` points; `innerRatio` (0…1) sets the notch depth.
@@ -212,6 +215,13 @@ extension KeynoteDocument {
             return roundedRectanglePath(width: w, height: h, radius: cornerRadius)
         case .ellipse:
             return ellipsePath(width: w, height: h)
+        case .line:
+            return TSP_Path.with {
+                $0.elements = [
+                    TSP_Path.Element.with { $0.type = .moveTo; $0.points = [TSP_Point.with { $0.x = 0; $0.y = Float(h / 2) }] },
+                    TSP_Path.Element.with { $0.type = .lineTo; $0.points = [TSP_Point.with { $0.x = Float(w); $0.y = Float(h / 2) }] },
+                ]
+            }
         case let .regularPolygon(sides):
             return polygonPath(width: w, height: h, sides: max(3, sides))
         case let .star(points, innerRatio):

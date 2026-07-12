@@ -114,6 +114,16 @@ Three element kinds are built by free functions:
   Shape(.native(.doubleArrow))   // give arrows width for the shaft
   ```
 
+  `Shape(.line)` is a straight line — style it with a border for the stroke
+  and `.startCap(_:)` / `.endCap(_:)` for arrowheads:
+
+  ```swift
+  Shape(.line).frame(x: 120, y: 400, width: 360, height: 0)
+      .border(.black, width: 4).endCap(.arrow)                 // one arrow
+  Shape(.line).frame(x: 120, y: 460, width: 360, height: 0)
+      .border(.red, width: 5).startCap(.arrow).endCap(.arrow)  // both ends
+  ```
+
 Every element is **synthesized from scratch** — nothing is cloned. Each
 element's records are built directly and reference the seed theme's styles:
 a shape style for shapes, a media style for images, and paragraph/character

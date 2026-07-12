@@ -28,6 +28,13 @@ public struct GradientStop: Sendable {
     }
 }
 
+/// A decoration on the end of a line.
+public enum LineEnd: Sendable {
+    case none
+    /// A filled triangular arrowhead ("simple arrow").
+    case arrow
+}
+
 /// A border (stroke) around a shape, text box, or image.
 public struct Border: Sendable {
     /// RGBA in 0…1.
@@ -145,6 +152,31 @@ extension KeynoteDocument {
             $0.pattern = TSD_StrokePatternArchive.with {
                 $0.type = .tsdsolidPattern
                 $0.count = 0
+            }
+        }
+    }
+
+    /// The archive for a line-end decoration, or `nil` for `.none`. Mirrors
+    /// Keynote's "simple arrow" preset (a small filled triangle).
+    static func lineEndArchive(_ end: LineEnd) -> TSD_LineEndArchive? {
+        switch end {
+        case .none:
+            return nil
+        case .arrow:
+            func point(_ x: Double, _ y: Double) -> TSP_Point { TSP_Point.with { $0.x = Float(x); $0.y = Float(y) } }
+            return TSD_LineEndArchive.with {
+                $0.path = TSP_Path.with {
+                    $0.elements = [
+                        TSP_Path.Element.with { $0.type = .moveTo; $0.points = [point(0, 0)] },
+                        TSP_Path.Element.with { $0.type = .lineTo; $0.points = [point(3, 6)] },
+                        TSP_Path.Element.with { $0.type = .lineTo; $0.points = [point(6, 0)] },
+                        TSP_Path.Element.with { $0.type = .closeSubpath },
+                    ]
+                }
+                $0.lineJoin = .miterJoin
+                $0.endPoint = point(3, 0)
+                $0.isFilled = true
+                $0.identifier = "simple arrow"
             }
         }
     }

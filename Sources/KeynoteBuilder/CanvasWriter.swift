@@ -101,7 +101,8 @@ public struct CanvasWriter {
             )
         }
         try document.setNodeStyle(
-            nodeID, fill: style.fill, border: style.border, shadow: style.shadow, opacity: style.opacity
+            nodeID, fill: style.fill, border: style.border, shadow: style.shadow,
+            opacity: style.opacity, startCap: style.startCap, endCap: style.endCap
         )
         if let rotation = style.rotationDegrees {
             try document.setNodeRotation(nodeID, degrees: rotation)

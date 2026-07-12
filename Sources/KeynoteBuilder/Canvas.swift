@@ -35,6 +35,8 @@ public struct ElementStyle: Sendable {
     public var shadow: Shadow?
     public var opacity: Double?
     public var rotationDegrees: Double?
+    public var startCap: LineEnd?
+    public var endCap: LineEnd?
 
     public init() {}
 }
@@ -112,6 +114,10 @@ public struct Element: Sendable {
     public func opacity(_ opacity: Double) -> Element { modifying { $0.opacity = opacity } }
     /// Rotation in degrees; positive rotates counterclockwise.
     public func rotation(degrees: Double) -> Element { modifying { $0.rotationDegrees = degrees } }
+    /// A decoration on the line's start end (for `Shape(.line)`).
+    public func startCap(_ cap: LineEnd) -> Element { modifying { $0.startCap = cap } }
+    /// A decoration on the line's finish end (for `Shape(.line)`).
+    public func endCap(_ cap: LineEnd) -> Element { modifying { $0.endCap = cap } }
 
     private func modifying(_ change: (inout ElementStyle) -> Void) -> Element {
         var copy = self

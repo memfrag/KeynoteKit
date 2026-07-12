@@ -74,6 +74,16 @@ struct SceneSynthesisTests {
         }
     }
 
+    @Test("a line with arrow endings round-trips")
+    func lineWithEndings() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let id = try document.addShape(toSlideAt: 0, frame: Frame(x: 40, y: 300, width: 360, height: 0), kind: .line)
+        try document.setNodeStyle(id, border: Border(color: (0, 0, 0, 1), width: 4),
+                                  startCap: .arrow, endCap: .arrow)
+        let reread = try writeAndReread(document)
+        #expect(try reread.sceneTree(forSlideAt: 0).nodes.contains { $0.id == id })
+    }
+
     @Test("a custom bezier path shape round-trips")
     func customBezierPath() throws {
         let arrow = BezierPath()

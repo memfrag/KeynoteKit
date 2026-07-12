@@ -125,15 +125,18 @@ extension KeynoteDocument {
     /// (which carry a media style); `fill` applies only to shapes and text
     /// boxes. `nil` arguments leave the inherited value.
     public mutating func setNodeStyle(
-        _ nodeID: UInt64, fill: Fill? = nil, border: Border? = nil, shadow: Shadow? = nil, opacity: Double? = nil
+        _ nodeID: UInt64, fill: Fill? = nil, border: Border? = nil, shadow: Shadow? = nil,
+        opacity: Double? = nil, startCap: LineEnd? = nil, endCap: LineEnd? = nil
     ) throws {
-        guard fill != nil || border != nil || shadow != nil || opacity != nil else { return }
+        guard fill != nil || border != nil || shadow != nil || opacity != nil
+            || startCap != nil || endCap != nil else { return }
         let location = try locateSceneNode(nodeID)
         let record = components[location.component].records[location.record]
 
         switch record.primaryType {
         case 2011:
-            try setShapeStyle(at: location, fill: fill, border: border, shadow: shadow, opacity: opacity)
+            try setShapeStyle(at: location, fill: fill, border: border, shadow: shadow,
+                              opacity: opacity, startCap: startCap, endCap: endCap)
         case 3005:
             try setMediaStyle(at: location, border: border, shadow: shadow, opacity: opacity)
         default:
@@ -144,7 +147,8 @@ extension KeynoteDocument {
     /// Shape and text-box styling: a `TSWP.ShapeStyleArchive` variation whose
     /// `shapeProperties` carries the fill, stroke, and shadow.
     private mutating func setShapeStyle(
-        at location: RecordLocation, fill: Fill?, border: Border?, shadow: Shadow?, opacity: Double?
+        at location: RecordLocation, fill: Fill?, border: Border?, shadow: Shadow?,
+        opacity: Double?, startCap: LineEnd? = nil, endCap: LineEnd? = nil
     ) throws {
         var record = components[location.component].records[location.record]
         var shape = try record.decode(TSWP_ShapeInfoArchive.self)
@@ -171,6 +175,9 @@ extension KeynoteDocument {
         if let border { properties.stroke = Self.strokeArchive(border); overrideCount += 1 }
         if let shadow { properties.shadow = Self.shadowArchive(shadow); overrideCount += 1 }
         if let opacity { properties.opacity = Float(opacity); overrideCount += 1 }
+        // Line-end decorations: the tail is the line's start, the head its end.
+        if let startCap, let archive = Self.lineEndArchive(startCap) { properties.tailLineEnd = archive; overrideCount += 1 }
+        if let endCap, let archive = Self.lineEndArchive(endCap) { properties.headLineEnd = archive; overrideCount += 1 }
 
         let newStyleID = try allocateIdentifier()
         let style = TSWP_ShapeStyleArchive.with {

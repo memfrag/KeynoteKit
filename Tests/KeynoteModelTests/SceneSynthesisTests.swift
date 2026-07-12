@@ -52,6 +52,25 @@ struct SceneSynthesisTests {
         }
     }
 
+    @Test("native parametric shapes round-trip")
+    func nativeParametricShapes() throws {
+        let shapes: [ParametricShape] = [
+            .roundedRectangle(cornerRadius: 40),
+            .regularPolygon(sides: 6),
+            .star(points: 6, innerRatio: 0.5),
+            .chevron(depth: 0.4),
+            .plus,
+        ]
+        for shape in shapes {
+            var document = try KeynoteDocument(contentsOf: Self.deckURL)
+            let id = try document.addShape(
+                toSlideAt: 0, frame: Frame(x: 0, y: 0, width: 200, height: 200), kind: .native(shape)
+            )
+            let reread = try writeAndReread(document)
+            #expect(try reread.sceneTree(forSlideAt: 0).nodes.first { $0.id == id }?.type == "shape")
+        }
+    }
+
     @Test("a custom bezier path shape round-trips")
     func customBezierPath() throws {
         let arrow = BezierPath()

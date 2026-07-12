@@ -17,6 +17,22 @@ public enum ShapeKind: Sendable {
     /// An arbitrary bezier outline. Its bounding box maps to the element's
     /// frame, so you can draw in any coordinate space.
     case path(BezierPath)
+    /// A native Keynote parametric shape. Unlike the bezier kinds above, these
+    /// stay editable in Keynote's inspector (drag a star's points, a corner
+    /// radius…), and include shapes with no bezier equivalent here (chevron,
+    /// arrows, plus).
+    case native(ParametricShape)
+}
+
+/// A shape Keynote draws from parameters, so it remains editable in the
+/// inspector. Rendered by Keynote itself from the type + parameter + size.
+public enum ParametricShape: Sendable {
+    case roundedRectangle(cornerRadius: Double)
+    case regularPolygon(sides: Int)
+    case star(points: Int, innerRatio: Double)
+    /// A chevron (arrow-tail) with notch `depth` (0…1).
+    case chevron(depth: Double)
+    case plus
 }
 
 /// An arbitrary 2-D outline, built from move/line/curve segments. Coordinates
@@ -123,18 +139,60 @@ extension KeynoteDocument {
     /// A path source (bezier) for a shape kind sized to `width`×`height`.
     /// Generated shapes are drawn at the frame size; a custom ``BezierPath``
     /// keeps its own coordinates and lets its bounding box scale to the frame.
-    static func pathSource(for kind: ShapeKind, width: Double, height: Double) -> TSD_PathSourceArchive {
-        TSD_PathSourceArchive.with {
+    static func pathSource(for kind: ShapeKind, width w: Double, height h: Double) -> TSD_PathSourceArchive {
+        let natural = TSP_Size.with { $0.width = Float(w); $0.height = Float(h) }
+        if case let .native(shape) = kind {
+            return parametricPathSource(shape, width: w, height: h, natural: natural)
+        }
+        return TSD_PathSourceArchive.with {
             $0.bezierPathSource = TSD_BezierPathSourceArchive.with {
-                $0.naturalSize = TSP_Size.with { $0.width = Float(width); $0.height = Float(height) }
-                $0.path = shapePath(for: kind, width: width, height: height)
+                $0.naturalSize = natural
+                $0.path = shapePath(for: kind, width: w, height: h)
             }
         }
     }
 
+    /// A native parametric path source that Keynote regenerates on open, so
+    /// the shape stays editable in the inspector.
+    private static func parametricPathSource(
+        _ shape: ParametricShape, width w: Double, height h: Double, natural: TSP_Size
+    ) -> TSD_PathSourceArchive {
+        func scalarSource(_ type: TSD_ScalarPathSourceArchive.ScalarPathSourceType, _ value: Double) -> TSD_PathSourceArchive {
+            TSD_PathSourceArchive.with {
+                $0.scalarPathSource = TSD_ScalarPathSourceArchive.with {
+                    $0.type = type
+                    $0.scalar = Float(value)
+                    $0.naturalSize = natural
+                }
+            }
+        }
+        func pointSource(_ type: TSD_PointPathSourceArchive.PointPathSourceType, _ px: Double, _ py: Double) -> TSD_PathSourceArchive {
+            TSD_PathSourceArchive.with {
+                $0.pointPathSource = TSD_PointPathSourceArchive.with {
+                    $0.type = type
+                    $0.point = TSP_Point.with { $0.x = Float(px); $0.y = Float(py) }
+                    $0.naturalSize = natural
+                }
+            }
+        }
+        switch shape {
+        case let .roundedRectangle(cornerRadius):
+            return scalarSource(.kTsdroundedRectangle, min(cornerRadius, min(w, h) / 2))
+        case let .regularPolygon(sides):
+            return scalarSource(.kTsdregularPolygon, Double(max(3, sides)))
+        case let .chevron(depth):
+            return scalarSource(.kTsdchevron, min(1, max(0, depth)))
+        case let .star(points, innerRatio):
+            return pointSource(.kTsdstar, Double(max(3, points)), min(max(innerRatio, 0.05), 0.95))
+        case .plus:
+            return pointSource(.kTsdplus, w / 3, h / 3)
+        }
+    }
+
+    /// The bezier outline for a non-native shape kind.
     static func shapePath(for kind: ShapeKind, width w: Double, height h: Double) -> TSP_Path {
         switch kind {
-        case .rectangle:
+        case .rectangle, .native:
             return rectangleTSPPath(width: w, height: h)
         case let .roundedRectangle(cornerRadius):
             return roundedRectanglePath(width: w, height: h, radius: cornerRadius)
@@ -146,7 +204,6 @@ extension KeynoteDocument {
             return starPath(width: w, height: h, points: max(3, points),
                             innerRatio: min(max(innerRatio, 0.05), 0.95))
         case let .path(bezier):
-            // Scale the path's own coordinate space to fill the frame.
             let (extentW, extentH) = bezier.extent
             return bezier.tspPath(scaleX: w / extentW, scaleY: h / extentH)
         }

@@ -100,6 +100,18 @@ Three element kinds are built by free functions:
   Shape(.path(heart)).frame(x: 120, y: 150, width: 300, height: 270).fill(.rgb(0.9, 0.2, 0.35))
   ```
 
+  The kinds above are generated as bezier outlines — universal and always
+  exact. For a shape that stays **editable in Keynote's inspector** (drag its
+  corner radius or star points after opening), use `.native(_:)` with a
+  ``ParametricShape``, which also offers a chevron and plus:
+
+  ```swift
+  Shape(.native(.roundedRectangle(cornerRadius: 24)))
+  Shape(.native(.star(points: 6, innerRatio: 0.5)))
+  Shape(.native(.chevron(depth: 0.4)))
+  Shape(.native(.plus))
+  ```
+
 Every element is **synthesized from scratch** — nothing is cloned. Each
 element's records are built directly and reference the seed theme's styles:
 a shape style for shapes, a media style for images, and paragraph/character
@@ -172,6 +184,7 @@ to think about it — identical images just work.
 - ``Canvas``
 - ``Element``
 - ``ShapeKind``
+- ``ParametricShape``
 - ``BezierPath``
 - ``ElementStyle``
 - ``ElementBuilder``

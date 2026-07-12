@@ -80,12 +80,13 @@ if arguments.count >= 3, arguments[1] == "custom-path-demo" {
 if arguments.count >= 3, arguments[1] == "shapes-demo" {
     let out = URL(fileURLWithPath: arguments[2])
     let kinds: [(ShapeKind, RGBAColor)] = [
-        (.rectangle, .rgb(0.2, 0.5, 0.95)),
-        (.roundedRectangle(cornerRadius: 40), .rgb(0.15, 0.7, 0.5)),
-        (.ellipse, .rgb(0.95, 0.55, 0.15)),
-        (.regularPolygon(sides: 3), .rgb(0.9, 0.3, 0.35)),
-        (.regularPolygon(sides: 6), .rgb(0.6, 0.35, 0.85)),
+        // Top row: bezier shapes. Bottom row: native parametric equivalents.
+        (.roundedRectangle(cornerRadius: 50), .rgb(0.15, 0.7, 0.5)),
+        (.regularPolygon(sides: 5), .rgb(0.6, 0.35, 0.85)),
         (.star(points: 5, innerRatio: 0.42), .rgb(0.95, 0.8, 0.2)),
+        (.native(.roundedRectangle(cornerRadius: 50)), .rgb(0.15, 0.7, 0.5)),
+        (.native(.chevron(depth: 0.5)), .rgb(0.2, 0.5, 0.95)),
+        (.native(.plus), .rgb(0.95, 0.55, 0.15)),
     ]
     var elements: [Element] = []
     for (i, item) in kinds.enumerated() {

@@ -14,11 +14,115 @@ public enum ShapeKind: Sendable {
     case regularPolygon(sides: Int)
     /// A star with `points` points; `innerRatio` (0…1) sets the notch depth.
     case star(points: Int, innerRatio: Double)
+    /// An arbitrary bezier outline. Its bounding box maps to the element's
+    /// frame, so you can draw in any coordinate space.
+    case path(BezierPath)
+}
+
+/// An arbitrary 2-D outline, built from move/line/curve segments. Coordinates
+/// are in your own space (the path's bounding box is scaled to fill the
+/// shape's frame). The fluent methods each return a new path, so a shape can
+/// be described inline:
+///
+/// ```swift
+/// let triangle = BezierPath()
+///     .move(to: 50, 0).line(to: 100, 100).line(to: 0, 100).close()
+/// ```
+public struct BezierPath: Sendable {
+    public enum Segment: Sendable {
+        case move(x: Double, y: Double)
+        case line(x: Double, y: Double)
+        case quadCurve(cx: Double, cy: Double, x: Double, y: Double)
+        case curve(c1x: Double, c1y: Double, c2x: Double, c2y: Double, x: Double, y: Double)
+        case close
+    }
+
+    public var segments: [Segment]
+    public init(_ segments: [Segment] = []) { self.segments = segments }
+
+    /// Starts a new subpath at a point.
+    public func move(to x: Double, _ y: Double) -> BezierPath { adding(.move(x: x, y: y)) }
+    /// Draws a straight line to a point.
+    public func line(to x: Double, _ y: Double) -> BezierPath { adding(.line(x: x, y: y)) }
+    /// Draws a cubic bezier curve to a point with two control points.
+    public func curve(
+        to x: Double, _ y: Double, control1: (Double, Double), control2: (Double, Double)
+    ) -> BezierPath {
+        adding(.curve(c1x: control1.0, c1y: control1.1, c2x: control2.0, c2y: control2.1, x: x, y: y))
+    }
+    /// Draws a quadratic bezier curve to a point with one control point.
+    public func quadCurve(to x: Double, _ y: Double, control: (Double, Double)) -> BezierPath {
+        adding(.quadCurve(cx: control.0, cy: control.1, x: x, y: y))
+    }
+    /// Closes the current subpath back to its start.
+    public func close() -> BezierPath { adding(.close) }
+
+    private func adding(_ segment: Segment) -> BezierPath {
+        var copy = self
+        copy.segments.append(segment)
+        return copy
+    }
+}
+
+extension BezierPath.Segment {
+    /// Every coordinate the segment carries (endpoints and controls).
+    var coordinates: [(Double, Double)] {
+        switch self {
+        case let .move(x, y), let .line(x, y): return [(x, y)]
+        case let .quadCurve(cx, cy, x, y): return [(cx, cy), (x, y)]
+        case let .curve(c1x, c1y, c2x, c2y, x, y): return [(c1x, c1y), (c2x, c2y), (x, y)]
+        case .close: return []
+        }
+    }
+}
+
+extension BezierPath {
+    /// The path's extent from the origin (at least 1×1, so the natural size is
+    /// never degenerate).
+    var extent: (Double, Double) {
+        var maxX = 1.0, maxY = 1.0
+        for segment in segments {
+            for (x, y) in segment.coordinates {
+                maxX = max(maxX, x)
+                maxY = max(maxY, y)
+            }
+        }
+        return (maxX, maxY)
+    }
+
+    /// The path as a `TSP_Path`, with all coordinates scaled by `scaleX`/
+    /// `scaleY` (used to fit the path's own space to the shape's frame).
+    func tspPath(scaleX: Double = 1, scaleY: Double = 1) -> TSP_Path {
+        func point(_ x: Double, _ y: Double) -> TSP_Point {
+            TSP_Point.with { $0.x = Float(x * scaleX); $0.y = Float(y * scaleY) }
+        }
+        return TSP_Path.with {
+            $0.elements = segments.map { segment in
+                switch segment {
+                case let .move(x, y):
+                    return TSP_Path.Element.with { $0.type = .moveTo; $0.points = [point(x, y)] }
+                case let .line(x, y):
+                    return TSP_Path.Element.with { $0.type = .lineTo; $0.points = [point(x, y)] }
+                case let .quadCurve(cx, cy, x, y):
+                    return TSP_Path.Element.with { $0.type = .quadCurveTo; $0.points = [point(cx, cy), point(x, y)] }
+                case let .curve(c1x, c1y, c2x, c2y, x, y):
+                    return TSP_Path.Element.with {
+                        $0.type = .curveTo
+                        $0.points = [point(c1x, c1y), point(c2x, c2y), point(x, y)]
+                    }
+                case .close:
+                    return TSP_Path.Element.with { $0.type = .closeSubpath }
+                }
+            }
+        }
+    }
 }
 
 extension KeynoteDocument {
 
     /// A path source (bezier) for a shape kind sized to `width`×`height`.
+    /// Generated shapes are drawn at the frame size; a custom ``BezierPath``
+    /// keeps its own coordinates and lets its bounding box scale to the frame.
     static func pathSource(for kind: ShapeKind, width: Double, height: Double) -> TSD_PathSourceArchive {
         TSD_PathSourceArchive.with {
             $0.bezierPathSource = TSD_BezierPathSourceArchive.with {
@@ -41,6 +145,10 @@ extension KeynoteDocument {
         case let .star(points, innerRatio):
             return starPath(width: w, height: h, points: max(3, points),
                             innerRatio: min(max(innerRatio, 0.05), 0.95))
+        case let .path(bezier):
+            // Scale the path's own coordinate space to fill the frame.
+            let (extentW, extentH) = bezier.extent
+            return bezier.tspPath(scaleX: w / extentW, scaleY: h / extentH)
         }
     }
 

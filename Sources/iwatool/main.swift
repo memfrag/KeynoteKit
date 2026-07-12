@@ -55,6 +55,28 @@ func fail(_ message: String) -> Never {
 
 let arguments = CommandLine.arguments
 
+if arguments.count >= 3, arguments[1] == "custom-path-demo" {
+    let out = URL(fileURLWithPath: arguments[2])
+    // A heart, drawn in a 100x90 space with two cubic curves.
+    let heart = BezierPath()
+        .move(to: 50, 90)
+        .curve(to: 0, 35, control1: (35, 75), control2: (0, 58))
+        .curve(to: 50, 22, control1: (0, 8), control2: (38, 2))
+        .curve(to: 100, 35, control1: (62, 2), control2: (100, 8))
+        .curve(to: 50, 90, control1: (100, 58), control2: (65, 75))
+        .close()
+    // An arrow (open polygon).
+    let arrow = BezierPath()
+        .move(to: 0, 30).line(to: 60, 30).line(to: 60, 10).line(to: 100, 50)
+        .line(to: 60, 90).line(to: 60, 70).line(to: 0, 70).close()
+    let canvas = Canvas {
+        Shape(.path(heart)).frame(x: 120, y: 150, width: 300, height: 270).fill(.rgb(0.9, 0.2, 0.35))
+        Shape(.path(arrow)).frame(x: 560, y: 180, width: 340, height: 200).fill(.rgb(0.2, 0.55, 0.9))
+    }
+    try CanvasWriter().write([canvas], to: out)
+    print("custom path demo written"); exit(0)
+}
+
 if arguments.count >= 3, arguments[1] == "shapes-demo" {
     let out = URL(fileURLWithPath: arguments[2])
     let kinds: [(ShapeKind, RGBAColor)] = [

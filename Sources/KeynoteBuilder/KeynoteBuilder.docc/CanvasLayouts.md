@@ -86,6 +86,20 @@ Three element kinds are built by free functions:
   Shape(.star(points: 5, innerRatio: 0.42)).frame(x: 600, y: 60, width: 200, height: 200)
   ```
 
+  For anything else, pass `.path(_:)` with a ``BezierPath`` — drawn in its own
+  coordinate space, scaled to fill the frame:
+
+  ```swift
+  let heart = BezierPath()
+      .move(to: 50, 90)
+      .curve(to: 0, 35, control1: (35, 75), control2: (0, 58))
+      .curve(to: 50, 22, control1: (0, 8), control2: (38, 2))
+      .curve(to: 100, 35, control1: (62, 2), control2: (100, 8))
+      .curve(to: 50, 90, control1: (100, 58), control2: (65, 75))
+      .close()
+  Shape(.path(heart)).frame(x: 120, y: 150, width: 300, height: 270).fill(.rgb(0.9, 0.2, 0.35))
+  ```
+
 Every element is **synthesized from scratch** — nothing is cloned. Each
 element's records are built directly and reference the seed theme's styles:
 a shape style for shapes, a media style for images, and paragraph/character
@@ -158,6 +172,7 @@ to think about it — identical images just work.
 - ``Canvas``
 - ``Element``
 - ``ShapeKind``
+- ``BezierPath``
 - ``ElementStyle``
 - ``ElementBuilder``
 - ``CanvasWriter``

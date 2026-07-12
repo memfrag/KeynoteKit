@@ -52,6 +52,17 @@ struct SceneSynthesisTests {
         }
     }
 
+    @Test("a custom bezier path shape round-trips")
+    func customBezierPath() throws {
+        let arrow = BezierPath()
+            .move(to: 0, 30).line(to: 60, 30).line(to: 60, 10).line(to: 100, 50)
+            .line(to: 60, 90).line(to: 60, 70).line(to: 0, 70).close()
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        let id = try document.addShape(toSlideAt: 0, frame: Frame(x: 40, y: 40, width: 300, height: 200), kind: .path(arrow))
+        let reread = try writeAndReread(document)
+        #expect(try reread.sceneTree(forSlideAt: 0).nodes.first { $0.id == id }?.type == "shape")
+    }
+
     @Test("a synthesized shape can be filled")
     func fillSynthesizedShape() throws {
         var document = try KeynoteDocument(contentsOf: Self.deckURL)

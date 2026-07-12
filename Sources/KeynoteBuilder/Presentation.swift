@@ -48,6 +48,15 @@ public struct Slide {
     /// after `imagePaths`.
     public var images: [String: String]
 
+    /// A free-form ``Canvas`` for this slide. When set, the writer synthesizes
+    /// the slide from the canvas (over a blanked scratch layout) instead of
+    /// filling a template layout — so a `Presentation` can mix template
+    /// `Slide`s and free-form `Canvas` slides. `title`/`body`/`blocks`/`layout`
+    /// are ignored for a canvas slide (it carries its own content and
+    /// background); `notes` still apply. Canvas text on a template base inherits
+    /// the theme's default paragraph alignment.
+    public var canvas: Canvas?
+
     public init(
         title: String? = nil,
         body: String? = nil,
@@ -55,7 +64,8 @@ public struct Slide {
         layout: String? = nil,
         blocks: [String: String] = [:],
         imagePaths: [String] = [],
-        images: [String: String] = [:]
+        images: [String: String] = [:],
+        canvas: Canvas? = nil
     ) {
         self.title = title
         self.body = body
@@ -64,6 +74,12 @@ public struct Slide {
         self.blocks = blocks
         self.imagePaths = imagePaths
         self.images = images
+        self.canvas = canvas
+    }
+
+    /// A free-form slide built from a ``Canvas``.
+    public init(_ canvas: Canvas) {
+        self.init(canvas: canvas)
     }
 }
 
@@ -71,6 +87,8 @@ public struct Slide {
 public enum SlideBuilder {
     public static func buildExpression(_ slide: Slide) -> [Slide] { [slide] }
     public static func buildExpression(_ slides: [Slide]) -> [Slide] { slides }
+    /// A bare `Canvas` in a `Presentation` becomes a free-form slide.
+    public static func buildExpression(_ canvas: Canvas) -> [Slide] { [Slide(canvas)] }
     public static func buildBlock(_ groups: [Slide]...) -> [Slide] { groups.flatMap { $0 } }
     public static func buildArray(_ groups: [[Slide]]) -> [Slide] { groups.flatMap { $0 } }
     public static func buildOptional(_ slides: [Slide]?) -> [Slide] { slides ?? [] }

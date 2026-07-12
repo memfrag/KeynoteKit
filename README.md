@@ -163,6 +163,27 @@ try writer.write(deck, to: URL(filePath: "Deck.key"))
 The builder returns a `KeynoteDocument` from `build(_:)` if you want to apply
 further edits (e.g. `replaceImage`) before writing.
 
+**Mix template slides with free-form ones.** A `Presentation` can contain a
+free-form `Canvas` anywhere a `Slide` goes — the writer fills template layouts
+for `Slide`s and synthesizes the `Canvas` onto a blanked scratch layout, in the
+same themed deck:
+
+```swift
+let deck = Presentation {
+    Slide(title: "Q3 Review", layout: "title")
+    Canvas {
+        Image(path: "chart.png").frame(x: 0, y: 0, width: 1920, height: 1080)
+        Text("A custom slide").frame(x: 120, y: 820, width: 1680, height: 160)
+            .font("Futura").fontSize(96).bold().foregroundColor(.white)
+    }
+    Slide(title: "Details", body: "First point\nSecond point", layout: "bullets")
+}
+try KeynoteWriter(templateURL: brandTemplate).write(deck, to: URL(filePath: "Deck.key"))
+```
+
+(A `Canvas` slide's text inherits the template theme's default paragraph
+alignment. For pure free-form decks, use `CanvasWriter` directly.)
+
 Or author the deck as markdown:
 
 ```markdown

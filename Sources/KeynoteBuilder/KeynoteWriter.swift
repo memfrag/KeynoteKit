@@ -63,9 +63,9 @@ public struct KeynoteWriter {
         let library = try TemplateLibrary(document: document)
 
         if library.declaresLayouts {
-            try buildFromLayouts(presentation, into: &document, library: library)
+            try buildFromLayouts(presentation, into: &document, library: library, imageBaseURL: imageBaseURL)
         } else {
-            try buildFromSingleSeed(presentation, into: &document)
+            try buildFromSingleSeed(presentation, into: &document, imageBaseURL: imageBaseURL)
         }
         try placeImages(presentation, into: &document, baseURL: imageBaseURL)
         return document
@@ -109,11 +109,27 @@ public struct KeynoteWriter {
     private func buildFromLayouts(
         _ presentation: Presentation,
         into document: inout KeynoteDocument,
-        library: TemplateLibrary
+        library: TemplateLibrary,
+        imageBaseURL: URL?
     ) throws {
         let templateCount = document.slideCount
+        let canvasWriter = try CanvasWriter()
 
         for (contentIndex, slide) in presentation.slides.enumerated() {
+            let index = templateCount + contentIndex
+
+            // A free-form Canvas slide: clone a scratch layout, blank it, and
+            // synthesize the canvas onto it.
+            if let canvas = slide.canvas {
+                let scratchIndex = library.slideIndex(for: defaultLayout) ?? 0
+                try document.duplicateSlide(at: scratchIndex)
+                try document.moveSlide(from: scratchIndex + 1, to: document.slideCount - 1)
+                try Self.blankSlide(at: index, in: &document)
+                try canvasWriter.render(canvas, ontoSlideAt: index, in: &document, imageBaseURL: imageBaseURL)
+                if let notes = slide.notes { try? document.setSlideText(at: index, .notes, to: notes) }
+                continue
+            }
+
             let requested = slide.layout ?? defaultLayout
             let templateIndex = library.slideIndex(for: requested)
                 ?? (slide.layout == nil ? 0 : nil)
@@ -128,7 +144,6 @@ public struct KeynoteWriter {
             // and content accumulates at the tail in order.
             try document.duplicateSlide(at: templateIndex)
             try document.moveSlide(from: templateIndex + 1, to: document.slideCount - 1)
-            let index = templateCount + contentIndex
             let forceBody = bodyPrimaryLayouts.contains(TemplateLibrary.normalize(requested))
             try fill(slide, at: index, forceBodyPrimary: forceBody, in: &document)
         }
@@ -142,15 +157,34 @@ public struct KeynoteWriter {
     /// Single-slide seed: grow/shrink by cloning/removing slide 0.
     private func buildFromSingleSeed(
         _ presentation: Presentation,
-        into document: inout KeynoteDocument
+        into document: inout KeynoteDocument,
+        imageBaseURL: URL?
     ) throws {
         let target = presentation.slides.count
         var current = document.slideCount
         while current < target { try document.duplicateSlide(at: 0); current += 1 }
         while current > target { try document.removeSlide(at: current - 1); current -= 1 }
 
+        let canvasWriter = try CanvasWriter()
         for (index, slide) in presentation.slides.enumerated() {
-            try fill(slide, at: index, forceBodyPrimary: false, in: &document)
+            if let canvas = slide.canvas {
+                try Self.blankSlide(at: index, in: &document)
+                try canvasWriter.render(canvas, ontoSlideAt: index, in: &document, imageBaseURL: imageBaseURL)
+                if let notes = slide.notes { try? document.setSlideText(at: index, .notes, to: notes) }
+            } else {
+                try fill(slide, at: index, forceBodyPrimary: false, in: &document)
+            }
+        }
+    }
+
+    /// Empties a slide so free-form content renders cleanly: clears title/body
+    /// and removes non-placeholder drawables (placeholders can't be deleted and
+    /// are invisible when empty).
+    private static func blankSlide(at index: Int, in document: inout KeynoteDocument) throws {
+        try? document.setSlideText(at: index, .title, to: "")
+        try? document.setSlideText(at: index, .body, to: "")
+        for node in try document.sceneTree(forSlideAt: index).nodes {
+            try? document.deleteDrawable(node.id)
         }
     }
 

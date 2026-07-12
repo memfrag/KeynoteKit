@@ -196,6 +196,28 @@ if arguments.count >= 4, arguments[1] == "font-test" {
     print("font test written; nodes \(a),\(b),\(c)"); exit(0)
 }
 
+if arguments.count >= 5, arguments[1] == "mixpres-test" {
+    let template = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    let assets = URL(fileURLWithPath: arguments[4], isDirectory: true)
+    let deck = Presentation {
+        Slide(title: "Quarterly Review", body: "A mixed Presentation demo", layout: "title")
+        Canvas {
+            Image(path: "lake-adam-vradenburg-GA09PKfRIQY-unsplash.jpg").frame(x: 0, y: 0, width: 1920, height: 1080)
+            Shape().frame(x: 0, y: 620, width: 1920, height: 460)
+                .fill(.linearGradient(stops: [
+                    GradientStop(color: (0.02, 0.07, 0.08, 0), location: 0),
+                    GradientStop(color: (0.02, 0.07, 0.08, 0.9), location: 1),
+                ], angleDegrees: 270))
+            Text("A free-form Canvas slide").frame(x: 120, y: 820, width: 1680, height: 160)
+                .font("Futura").fontSize(96).bold().foregroundColor(.white)
+        }
+        Slide(title: "Highlights", body: "Revenue up 20%\nTwo new markets\nTeam doubled", layout: "bullets")
+    }
+    try KeynoteWriter(templateURL: template).write(deck, to: out, imageBaseURL: assets)
+    print("mixed presentation written (\(deck.slides.count) slides)"); exit(0)
+}
+
 if arguments.count >= 4, arguments[1] == "nested-test" {
     let paletteIn = URL(fileURLWithPath: arguments[2])
     let out = URL(fileURLWithPath: arguments[3])

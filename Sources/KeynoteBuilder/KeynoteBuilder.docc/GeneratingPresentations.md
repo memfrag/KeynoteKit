@@ -140,3 +140,29 @@ for index in 0..<document.slideCount {
 }
 try document.write(to: URL(filePath: "Out.key"))
 ```
+
+## Mixing free-form slides
+
+A ``Presentation`` can hold a free-form ``Canvas`` anywhere a ``Slide`` goes —
+useful for a one-off designed slide (a full-bleed cover, a diagram) inside an
+otherwise template-driven deck. The writer fills template layouts for `Slide`s
+and synthesizes each `Canvas` onto a blanked scratch layout in the same themed
+document:
+
+```swift
+let deck = Presentation {
+    Slide(title: "Q3 Review", layout: "title")
+    Canvas {
+        Image(path: "chart.png").frame(x: 0, y: 0, width: 1920, height: 1080)
+        Text("A custom slide").frame(x: 120, y: 820, width: 1680, height: 160)
+            .font("Futura").fontSize(96).bold().foregroundColor(.white)
+    }
+    Slide(title: "Details", body: "First point\nSecond point", layout: "bullets")
+}
+try KeynoteWriter(templateURL: brand).write(deck, to: URL(filePath: "Deck.key"))
+```
+
+A `Canvas` slide carries its own content and background; its `title`/`body`/
+`layout` are ignored (but `notes` still apply). Its text inherits the template
+theme's default paragraph alignment — for full free-form control (including
+alignment), build a pure-`Canvas` deck with ``CanvasWriter`` instead.

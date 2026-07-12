@@ -38,7 +38,7 @@ let package = Package(
         .target(
             name: "KeynoteBuilder",
             dependencies: ["KeynoteModel"],
-            resources: [.copy("Resources/seed.key")]
+            resources: [.copy("Resources/seed.key"), .copy("Resources/palette.key")]
         ),
         .executableTarget(
             name: "iwatool",

@@ -80,6 +80,12 @@ extension KeynoteDocument {
         case 2011:
             var archive = try record.decode(TSWP_ShapeInfoArchive.self)
             updated(&archive.super.super.geometry)
+            // A shape's outline is drawn from its path source in "natural
+            // size" coordinates; the geometry frame alone doesn't stretch it.
+            // Rescale the path to the new size so the shape fills its frame.
+            if archive.super.hasPathsource {
+                Self.resizePathSource(&archive.super.pathsource, to: frame)
+            }
             try record.setMessage(archive)
         case 3005:
             var archive = try record.decode(TSD_ImageArchive.self)
@@ -170,29 +176,39 @@ extension KeynoteDocument {
         let thumbnailData = Self.imageData(newData, scaledToFit: 512) ?? newData
         let ext = Self.imageExtension(of: newData)
 
-        var nextDataID = (metadata.datas.map(\.identifier).max() ?? 0) + 1
-        func makeData(_ bytes: Data, stem: String) -> TSP_DataInfo {
-            let id = nextDataID
-            nextDataID += 1
-            return TSP_DataInfo.with {
+        // Resolve a blob to a DataInfo identifier. Keynote forbids two
+        // DataInfos with the same content digest — a duplicate makes
+        // TSPersistence abort on open — so if a data with this digest already
+        // exists (a theme asset, or the same image used twice), reuse it
+        // instead of registering a colliding copy. New datas allocate their id
+        // from last_object_identifier, since data ids share the document-wide
+        // id space with objects.
+        var newlyCreatedDigests: [Data] = []
+        func resolveData(_ bytes: Data, stem: String) -> UInt64 {
+            let digest = Data(Insecure.SHA1.hash(data: bytes))
+            if let existing = metadata.datas.first(where: { $0.digest == digest }) {
+                return existing.identifier
+            }
+            metadata.lastObjectIdentifier += 1
+            let id = metadata.lastObjectIdentifier
+            let info = TSP_DataInfo.with {
                 $0.identifier = id
-                $0.digest = Data(Insecure.SHA1.hash(data: bytes))
+                $0.digest = digest
                 $0.preferredFileName = "\(stem).\(ext)"
                 $0.fileName = "\(stem)-\(id).\(ext)"
                 $0.materializedLength = UInt64(bytes.count)
             }
+            setEntryData(at: "Data/" + info.fileName, to: bytes)
+            metadata.datas.append(info)
+            newlyCreatedDigests.append(digest)
+            return id
         }
-        let mainInfo = makeData(newData, stem: "media")
-        let thumbnailInfo = makeData(thumbnailData, stem: "media-small")
+        let mainID = resolveData(newData, stem: "media")
+        let thumbnailID = resolveData(thumbnailData, stem: "media-small")
 
-        // Files + registration + digest list.
-        setEntryData(at: "Data/" + mainInfo.fileName, to: newData)
-        setEntryData(at: "Data/" + thumbnailInfo.fileName, to: thumbnailData)
-        metadata.datas.append(mainInfo)
-        metadata.datas.append(thumbnailInfo)
-
-        // Component data-reference bookkeeping: this object no longer uses
-        // the old datas; it uses the new ones.
+        // Component data-reference bookkeeping: this object no longer uses the
+        // old datas; it uses the resolved ones. Append to an existing usage
+        // list when the resolved data is already referenced (dedup case).
         let objectID = record.identifier ?? 0
         let componentRootID = components[location.component].records.first?.identifier ?? 0
         if let componentInfoIndex = metadata.components.firstIndex(where: { $0.identifier == componentRootID }) {
@@ -203,45 +219,50 @@ extension KeynoteDocument {
                 updated.objectReferenceList.removeAll { $0.objectIdentifier == objectID }
                 return updated.objectReferenceList.isEmpty ? nil : updated
             }
-            for dataID in [mainInfo.identifier, thumbnailInfo.identifier] {
-                info.dataReferences.append(TSP_ComponentDataReference.with {
-                    $0.dataIdentifier = dataID
-                    $0.objectReferenceList = [
-                        TSP_ComponentDataReference.ObjectReference.with {
-                            $0.objectIdentifier = objectID
-                            $0.count = 1
-                        },
-                    ]
-                })
+            for dataID in [mainID, thumbnailID] {
+                let usage = TSP_ComponentDataReference.ObjectReference.with {
+                    $0.objectIdentifier = objectID
+                    $0.count = 1
+                }
+                if let existing = info.dataReferences.firstIndex(where: { $0.dataIdentifier == dataID }) {
+                    info.dataReferences[existing].objectReferenceList.append(usage)
+                } else {
+                    info.dataReferences.append(TSP_ComponentDataReference.with {
+                        $0.dataIdentifier = dataID
+                        $0.objectReferenceList = [usage]
+                    })
+                }
             }
             metadata.components[componentInfoIndex] = info
         }
         try metadataRecord.setMessage(metadata)
         components[metadataLocation.component].records[metadataLocation.record] = metadataRecord
 
-        // DocumentMetadata digest list.
-        let documentMetadataLocation = try locateRecord(type: 11011, orThrow: MediaOperationError.documentMetadataNotFound)
-        var documentMetadataRecord = components[documentMetadataLocation.component].records[documentMetadataLocation.record]
-        var documentMetadata = try documentMetadataRecord.decode(TSP_DocumentMetadata.self)
-        for bytes in [newData, thumbnailData] {
-            documentMetadata.dataPropertiesV1.properties.append(TSP_DataPropertiesEntryV1.with {
-                $0.digest = Data(Insecure.SHA1.hash(data: bytes))
-                $0.expectsMatchedDigest = true
-            })
+        // DocumentMetadata digest list — only for datas we newly registered.
+        if !newlyCreatedDigests.isEmpty {
+            let documentMetadataLocation = try locateRecord(type: 11011, orThrow: MediaOperationError.documentMetadataNotFound)
+            var documentMetadataRecord = components[documentMetadataLocation.component].records[documentMetadataLocation.record]
+            var documentMetadata = try documentMetadataRecord.decode(TSP_DocumentMetadata.self)
+            for digest in newlyCreatedDigests {
+                documentMetadata.dataPropertiesV1.properties.append(TSP_DataPropertiesEntryV1.with {
+                    $0.digest = digest
+                    $0.expectsMatchedDigest = true
+                })
+            }
+            try documentMetadataRecord.setMessage(documentMetadata)
+            components[documentMetadataLocation.component].records[documentMetadataLocation.record] = documentMetadataRecord
         }
-        try documentMetadataRecord.setMessage(documentMetadata)
-        components[documentMetadataLocation.component].records[documentMetadataLocation.record] = documentMetadataRecord
 
         // Repoint the node and its MessageInfo data references.
-        image.data = TSP_DataReference.with { $0.identifier = mainInfo.identifier }
-        image.thumbnailData = TSP_DataReference.with { $0.identifier = thumbnailInfo.identifier }
+        image.data = TSP_DataReference.with { $0.identifier = mainID }
+        image.thumbnailData = TSP_DataReference.with { $0.identifier = thumbnailID }
         image.clearAdjustedImageData()
         image.clearEnhancedImageData()
         image.clearThumbnailAdjustedImageData()
         image.clearOriginalData()
         try record.setMessage(image)
         var dataReferences = record.info.messageInfos[0].dataReferences.filter { !oldIDs.contains($0) }
-        dataReferences.append(contentsOf: [mainInfo.identifier, thumbnailInfo.identifier])
+        dataReferences.append(contentsOf: [mainID, thumbnailID])
         try record.setDataReferences(dataReferences, at: 0)
         components[location.component].records[location.record] = record
     }
@@ -483,6 +504,52 @@ extension KeynoteDocument {
             }
         }
         throw SceneEditError.unknownNode(nodeID)
+    }
+
+    // MARK: Shape helpers
+
+    /// Rescales a shape's path source so it fills a frame of `size`. Parametric
+    /// sources (rounded rects, stars, callouts) just adopt the new natural
+    /// size; explicit bezier paths have their points scaled from the old
+    /// natural size to the new one.
+    private static func resizePathSource(_ pathSource: inout TSD_PathSourceArchive, to size: Frame) {
+        let newSize = TSP_Size.with { $0.width = Float(size.width); $0.height = Float(size.height) }
+
+        func scaleFactors(from natural: TSP_Size) -> (Float, Float) {
+            let ow = natural.width > 0 ? natural.width : Float(size.width)
+            let oh = natural.height > 0 ? natural.height : Float(size.height)
+            return (Float(size.width) / ow, Float(size.height) / oh)
+        }
+        func scale(_ point: inout TSP_Point, _ sx: Float, _ sy: Float) {
+            point.x *= sx
+            point.y *= sy
+        }
+
+        if pathSource.hasBezierPathSource {
+            let (sx, sy) = scaleFactors(from: pathSource.bezierPathSource.naturalSize)
+            for i in pathSource.bezierPathSource.path.elements.indices {
+                for j in pathSource.bezierPathSource.path.elements[i].points.indices {
+                    scale(&pathSource.bezierPathSource.path.elements[i].points[j], sx, sy)
+                }
+            }
+            pathSource.bezierPathSource.naturalSize = newSize
+        } else if pathSource.hasEditableBezierPathSource {
+            let (sx, sy) = scaleFactors(from: pathSource.editableBezierPathSource.naturalSize)
+            for s in pathSource.editableBezierPathSource.subpaths.indices {
+                for n in pathSource.editableBezierPathSource.subpaths[s].nodes.indices {
+                    scale(&pathSource.editableBezierPathSource.subpaths[s].nodes[n].inControlPoint, sx, sy)
+                    scale(&pathSource.editableBezierPathSource.subpaths[s].nodes[n].nodePoint, sx, sy)
+                    scale(&pathSource.editableBezierPathSource.subpaths[s].nodes[n].outControlPoint, sx, sy)
+                }
+            }
+            pathSource.editableBezierPathSource.naturalSize = newSize
+        } else if pathSource.hasPointPathSource {
+            pathSource.pointPathSource.naturalSize = newSize
+        } else if pathSource.hasScalarPathSource {
+            pathSource.scalarPathSource.naturalSize = newSize
+        } else if pathSource.hasCalloutPathSource {
+            pathSource.calloutPathSource.naturalSize = newSize
+        }
     }
 
     // MARK: Image helpers

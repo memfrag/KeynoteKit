@@ -49,3 +49,11 @@ theme or a custom one — and tag its slides with the layouts they demonstrate
 
 - <doc:TemplateDecks>
 - ``TemplateLibrary``
+
+### Free-form layouts
+
+- <doc:CanvasLayouts>
+- ``Canvas``
+- ``Element``
+- ``CanvasWriter``
+- ``RGBAColor``

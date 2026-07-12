@@ -55,6 +55,27 @@ func fail(_ message: String) -> Never {
 
 let arguments = CommandLine.arguments
 
+if arguments.count >= 3, arguments[1] == "canvas-demo" {
+    let out = URL(fileURLWithPath: arguments[2])
+    let imageBase = arguments.count >= 4 ? URL(fileURLWithPath: arguments[3]) : nil
+    let canvas = Canvas {
+        Text("Composed with a DSL")
+            .frame(x: 60, y: 60, width: 840, height: 120)
+            .fontSize(54).bold().foregroundColor(.rgb(0.2, 0.5, 0.95))
+        Text("Every element is placed by hand")
+            .frame(x: 60, y: 190, width: 840, height: 80)
+            .fontSize(28).italic().foregroundColor(.rgb(0.4, 0.4, 0.45))
+        Shape()
+            .frame(x: 60, y: 300, width: 360, height: 260)
+            .fill(.rgb(0.95, 0.55, 0.15))
+        if imageBase != nil {
+            Image(path: "sun.png").frame(x: 480, y: 300, width: 420, height: 260)
+        }
+    }
+    try CanvasWriter().write([canvas], to: out, imageBaseURL: imageBase)
+    print("canvas demo written"); exit(0)
+}
+
 // Commands that take no input file.
 if arguments.count >= 2, arguments[1] == "effects" {
     let lists: [(String, [String])] = [
@@ -79,6 +100,27 @@ let command = arguments[1]
 let inputURL = URL(fileURLWithPath: arguments[2])
 
 switch command {
+case "set-fill":
+    guard arguments.count >= 8, let nodeID = UInt64(arguments[4]),
+          let r = Double(arguments[5]), let g = Double(arguments[6]), let b = Double(arguments[7]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    try document.setNodeFill(nodeID, to: (r, g, b, 1))
+    try document.write(to: outputURL)
+    print("set fill on node \(nodeID)")
+
+case "set-char-style":
+    guard arguments.count >= 6, let nodeID = UInt64(arguments[4]), let size = Double(arguments[5]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    var color: (Double, Double, Double, Double)? = nil
+    if arguments.count >= 9, let r = Double(arguments[6]), let g = Double(arguments[7]), let b = Double(arguments[8]) {
+        color = (r, g, b, 1)
+    }
+    try document.setNodeCharacterStyle(nodeID, fontSize: size, bold: true, color: color)
+    try document.write(to: outputURL)
+    print("set char style on node \(nodeID)")
+
 case "info":
     let archive = try KeyArchive.read(from: inputURL)
     for entry in archive.entries {

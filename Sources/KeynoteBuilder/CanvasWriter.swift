@@ -100,7 +100,7 @@ public struct CanvasWriter {
             )
         }
         if let fill = style.fill {
-            try document.setNodeFill(nodeID, to: (fill.red, fill.green, fill.blue, fill.alpha))
+            try document.setNodeFill(nodeID, fill: fill)
         }
     }
 }

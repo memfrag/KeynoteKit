@@ -58,7 +58,7 @@ let arguments = CommandLine.arguments
 if arguments.count >= 3, arguments[1] == "canvas-demo" {
     let out = URL(fileURLWithPath: arguments[2])
     let imageBase = arguments.count >= 4 ? URL(fileURLWithPath: arguments[3]) : nil
-    let canvas = Canvas(background: .color(0.1, 0.12, 0.2, 1)) {
+    let canvas = Canvas {
         Text("Composed with a DSL")
             .frame(x: 60, y: 60, width: 840, height: 120)
             .fontSize(54).bold().foregroundColor(.rgb(0.2, 0.5, 0.95))
@@ -67,11 +67,18 @@ if arguments.count >= 3, arguments[1] == "canvas-demo" {
             .fontSize(28).italic().foregroundColor(.rgb(0.75, 0.78, 0.85))
         Shape()
             .frame(x: 60, y: 300, width: 360, height: 260)
-            .fill(.rgb(0.95, 0.55, 0.15))
+            .fill(.linearGradient(stops: [
+                GradientStop(color: (0.95, 0.55, 0.15, 1), location: 0),
+                GradientStop(color: (0.6, 0.1, 0.35, 1), location: 1),
+            ], angleDegrees: 90))
         if imageBase != nil {
-            Image(path: "sun.png").frame(x: 480, y: 300, width: 420, height: 260)
+            Shape()
+                .frame(x: 480, y: 300, width: 420, height: 260)
+                .fill(.image((try? Data(contentsOf: imageBase!.appendingPathComponent("sun.png"))) ?? Data(),
+                             mode: .scaleToFill))
         }
     }
+    .background(.color(0.1, 0.12, 0.2, 1))
     try CanvasWriter().write([canvas], to: out, imageBaseURL: imageBase)
     print("canvas demo written"); exit(0)
 }

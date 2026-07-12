@@ -87,9 +87,16 @@ extension KeynoteDocument {
         try declareExternalReference(fromComponent: location.component, toObject: newStyleID)
     }
 
-    /// Overrides a shape's fill color (RGBA 0…1) via an anonymous variation
-    /// of its shape style, mirroring Keynote's own structure.
+    /// Overrides a shape's fill color (RGBA 0…1). Convenience for
+    /// ``setNodeFill(_:fill:)`` with a solid color.
     public mutating func setNodeFill(_ nodeID: UInt64, to color: (Double, Double, Double, Double)) throws {
+        try setNodeFill(nodeID, fill: .color(color.0, color.1, color.2, color.3))
+    }
+
+    /// Overrides a shape's fill with any ``Fill`` — none, color, gradient, or
+    /// image — via an anonymous variation of its shape style, mirroring
+    /// Keynote's own structure.
+    public mutating func setNodeFill(_ nodeID: UInt64, fill: Fill) throws {
         let location = try locateSceneNode(nodeID)
         var record = components[location.component].records[location.record]
         guard record.primaryType == 2011 else {
@@ -112,6 +119,7 @@ extension KeynoteDocument {
         }
         let styleSheetID = baseStyle.super.super.hasStylesheet ? baseStyle.super.super.stylesheet.identifier : nil
 
+        let (fillArchive, fillDataIDs) = try makeFillArchive(fill)
         let newStyleID = try allocateIdentifier()
         let style = TSWP_ShapeStyleArchive.with {
             $0.super = TSD_ShapeStyleArchive.with {
@@ -121,17 +129,22 @@ extension KeynoteDocument {
                     if let styleSheetID { $0.stylesheet = reference(styleSheetID) }
                 }
                 $0.overrideCount = 1
-                $0.shapeProperties = TSD_ShapeStylePropertiesArchive.with {
-                    $0.fill = TSD_FillArchive.with { $0.color = Self.color(color) }
-                }
+                $0.shapeProperties = TSD_ShapeStylePropertiesArchive.with { $0.fill = fillArchive }
             }
         }
-        let styleRecord = try makeRecord(
+        var styleRecord = try makeRecord(
             identifier: newStyleID, type: 2025, message: style,
             version: record.info.messageInfos[0].version,
             objectReferences: [baseStyleID]
         )
+        // An image fill carries a data reference on the style record.
+        if !fillDataIDs.isEmpty {
+            try styleRecord.setDataReferences(fillDataIDs, at: 0)
+        }
         components[stylesheetComponent].records.append(styleRecord)
+        if !fillDataIDs.isEmpty {
+            try bindDataReferences(fillDataIDs, toObject: newStyleID, inComponent: stylesheetComponent)
+        }
 
         shape.super.style = reference(newStyleID)
         try record.setMessage(shape)

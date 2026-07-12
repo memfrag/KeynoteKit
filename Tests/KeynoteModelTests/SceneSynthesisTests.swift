@@ -108,6 +108,31 @@ struct SceneSynthesisTests {
         }
     }
 
+    @Test("a synthesized shape accepts gradient and image fills")
+    func shapeFillKinds() throws {
+        let sun = try Data(contentsOf: Self.blueImageURL)
+        let fills: [Fill] = [
+            .color(0.9, 0.5, 0.1, 1),
+            .linearGradient(stops: [
+                GradientStop(color: (1, 0, 0, 1), location: 0),
+                GradientStop(color: (0, 0, 1, 1), location: 1),
+            ], angleDegrees: 90),
+            .radialGradient(stops: [
+                GradientStop(color: (1, 1, 1, 1), location: 0),
+                GradientStop(color: (0, 0, 0, 1), location: 1),
+            ]),
+            .image(sun, mode: .tile),
+        ]
+        for fill in fills {
+            var document = try KeynoteDocument(contentsOf: Self.deckURL)
+            let id = try document.addShape(toSlideAt: 0, frame: Frame(x: 0, y: 0, width: 300, height: 200))
+            try document.setNodeFill(id, fill: fill)
+            let reread = try writeAndReread(document)
+            #expect(try reread.dataDigestsAreUnique())
+            #expect(try reread.sceneTree(forSlideAt: 0).nodes.contains { $0.id == id })
+        }
+    }
+
     @Test("addImage registers data and places an image node")
     func addImage() throws {
         var document = try KeynoteDocument(contentsOf: Self.deckURL)

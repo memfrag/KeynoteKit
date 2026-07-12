@@ -44,29 +44,30 @@ slide sizes — which also double as the 1× export pixel dimensions — are
 
 ## Slide backgrounds
 
-Pass a ``Fill`` as a canvas `background` to set the slide's background —
-matching Keynote's inspector: none, a solid color, a gradient (linear or
-radial), or an image.
+Chain a `.background(_:)` modifier on a canvas to set the slide's background
+to a ``Fill`` — matching Keynote's inspector: none, a solid color, a gradient
+(linear or radial), or an image.
 
 ```swift
-Canvas(background: .linearGradient(
+Canvas {
+    Text("On a gradient").frame(x: 80, y: 80, width: 800, height: 120)
+        .fontSize(48).bold().foregroundColor(.white)
+}
+.background(.linearGradient(
     stops: [
         GradientStop(color: (0.1, 0.2, 0.6, 1), location: 0),
         GradientStop(color: (0.7, 0.2, 0.5, 1), location: 1),
     ],
     angleDegrees: 90
-)) {
-    Text("On a gradient").frame(x: 80, y: 80, width: 800, height: 120)
-        .fontSize(48).bold().foregroundColor(.white)
-}
+))
 
-// Or: .color(0.1, 0.12, 0.2, 1) · .radialGradient(stops:) ·
-//     .image(pngData, mode: .scaleToFill) · .none
+// Or: .background(.color(0.1, 0.12, 0.2, 1)) · .background(.radialGradient(stops:))
+//     .background(.image(pngData, mode: .scaleToFill)) · .background(.none)
 ```
 
-`nil` (the default) keeps the theme's background. The background changes only
-that slide — it's applied as a variation of the slide's style, leaving the
-shared master untouched.
+Without the modifier a canvas keeps the theme's background. The background
+changes only that slide — it's applied as a variation of the slide's style,
+leaving the shared master untouched.
 
 ## Elements
 
@@ -95,10 +96,20 @@ Modifiers chain, SwiftUI-style, each returning a new ``Element``:
 | `.fontSize(_:)` | text | point size |
 | `.bold(_:)` / `.italic(_:)` | text | weight and slant |
 | `.foregroundColor(_:)` | text | text color |
-| `.fill(_:)` | shape | fill color |
+| `.fill(_:)` | shape | fill: a color or any ``Fill`` |
 
 Colors are ``RGBAColor`` values in 0…1: `.white`, `.black`, or
-`.rgb(_:_:_:)`.
+`.rgb(_:_:_:)`. A shape's `.fill(_:)` also takes a full ``Fill`` — the same
+gradients and images available for slide backgrounds:
+
+```swift
+Shape()
+    .frame(x: 60, y: 300, width: 360, height: 260)
+    .fill(.linearGradient(stops: [
+        GradientStop(color: (0.95, 0.55, 0.15, 1), location: 0),
+        GradientStop(color: (0.6, 0.1, 0.35, 1), location: 1),
+    ], angleDegrees: 90))
+```
 
 Text styling is applied as Keynote's own anonymous *variation* styles, and a
 shape's outline is rescaled to its frame, so overridden elements open and

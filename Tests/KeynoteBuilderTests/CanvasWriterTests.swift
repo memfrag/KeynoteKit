@@ -112,9 +112,10 @@ struct CanvasWriterTests {
 
     @Test("a canvas background is applied without breaking the slide")
     func canvasBackground() throws {
-        let canvas = Canvas(background: .color(0.1, 0.2, 0.4, 1)) {
+        let canvas = Canvas {
             Text("On a dark slide").frame(x: 40, y: 40, width: 600, height: 100).foregroundColor(.white)
         }
+        .background(.color(0.1, 0.2, 0.4, 1))
         let document = try buildAndReread([canvas])
         let nodes = try drawables(document)
         #expect(nodes.contains { $0.text == "On a dark slide" })

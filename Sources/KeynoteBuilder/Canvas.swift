@@ -24,13 +24,13 @@ public struct RGBAColor: Sendable, Equatable {
 
 /// Geometry and style a canvas element carries. Modifiers accumulate here;
 /// the renderer applies the ones relevant to each element kind.
-public struct ElementStyle: Sendable, Equatable {
+public struct ElementStyle: Sendable {
     public var frame: Frame?
     public var fontSize: Double?
     public var bold: Bool?
     public var italic: Bool?
     public var foregroundColor: RGBAColor?
-    public var fill: RGBAColor?
+    public var fill: Fill?
 
     public init() {}
 }
@@ -74,7 +74,11 @@ public struct Element: Sendable {
     public func italic(_ on: Bool = true) -> Element { modifying { $0.italic = on } }
     public func foregroundColor(_ color: RGBAColor) -> Element { modifying { $0.foregroundColor = color } }
     /// Fill color, for shape elements.
-    public func fill(_ color: RGBAColor) -> Element { modifying { $0.fill = color } }
+    public func fill(_ color: RGBAColor) -> Element {
+        modifying { $0.fill = .color(color.red, color.green, color.blue, color.alpha) }
+    }
+    /// Fill for shape elements — a color, gradient, image, or `.none`.
+    public func fill(_ fill: Fill) -> Element { modifying { $0.fill = fill } }
 
     private func modifying(_ change: (inout ElementStyle) -> Void) -> Element {
         var copy = self
@@ -98,13 +102,15 @@ public struct Canvas: Sendable {
     /// keeps the theme's background.
     public var background: Fill?
 
-    public init(elements: [Element], background: Fill? = nil) {
-        self.elements = elements
-        self.background = background
-    }
-    public init(background: Fill? = nil, @ElementBuilder _ content: () -> [Element]) {
-        self.background = background
-        self.elements = content()
+    public init(elements: [Element]) { self.elements = elements }
+    public init(@ElementBuilder _ content: () -> [Element]) { self.elements = content() }
+
+    /// Sets the slide background — a color, gradient, image, or `.none`.
+    /// Chainable, SwiftUI-style: `Canvas { … }.background(.color(…))`.
+    public func background(_ fill: Fill) -> Canvas {
+        var copy = self
+        copy.background = fill
+        return copy
     }
 }
 

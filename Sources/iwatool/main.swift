@@ -76,6 +76,31 @@ if arguments.count >= 3, arguments[1] == "canvas-demo" {
     print("canvas demo written"); exit(0)
 }
 
+if arguments.count >= 4, arguments[1] == "synth-shape" {
+    // Prove from-scratch drawable synthesis: no clone, just a built shape.
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let id = try document.addShape(toSlideAt: 0, frame: Frame(x: 120, y: 120, width: 500, height: 320))
+    try document.setNodeFill(id, to: (0.2, 0.7, 0.4, 1))
+    try document.write(to: out)
+    print("synthesized shape id \(id)"); exit(0)
+}
+
+if arguments.count >= 5, arguments[1] == "synth-image" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    let imagePath = URL(fileURLWithPath: arguments[4])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let id = try document.addImage(
+        toSlideAt: 0,
+        data: try Data(contentsOf: imagePath),
+        frame: Frame(x: 120, y: 120, width: 500, height: 320)
+    )
+    try document.write(to: out)
+    print("synthesized image id \(id)"); exit(0)
+}
+
 // Commands that take no input file.
 if arguments.count >= 2, arguments[1] == "effects" {
     let lists: [(String, [String])] = [

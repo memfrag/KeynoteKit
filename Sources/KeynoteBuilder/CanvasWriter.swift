@@ -53,8 +53,11 @@ public struct CanvasWriter {
         _ canvas: Canvas, at index: Int,
         in document: inout KeynoteDocument, imageBaseURL: URL?
     ) throws {
-        // Capture the original prototype ids once — clones inherit the label,
-        // so re-looking-up would find a clone after the first element.
+        // Capture prototype ids once, up front. Only the text prototype is
+        // required — shapes and images are synthesized from scratch, so their
+        // prototypes are optional (and just deleted if the palette carries
+        // them). The text clone inherits the label, so a later lookup would
+        // find a clone.
         func prototypeID(_ label: String) throws -> UInt64 {
             let nodes = try document.sceneTree(forSlideAt: index).nodes
             guard let node = nodes.first(where: { $0.label == label }) else {
@@ -63,40 +66,39 @@ public struct CanvasWriter {
             return node.id
         }
         let textProtoID = try prototypeID(Self.textProto)
-        let shapeProtoID = try prototypeID(Self.shapeProto)
-        let imageProtoID = try prototypeID(Self.imageProto)
+        let leftoverProtos = [Self.shapeProto, Self.imageProto].compactMap { try? prototypeID($0) }
 
         for element in canvas.elements {
-            let sourceID: UInt64
-            switch element.kind {
-            case .text: sourceID = textProtoID
-            case .shape: sourceID = shapeProtoID
-            case .image: sourceID = imageProtoID
-            }
-            let newID = try document.cloneDrawable(sourceID, toSlideAt: index)
-
+            let frame = element.style.frame
             switch element.kind {
             case .text(let string):
+                // Text still clones a prototype — a text box's paragraph and
+                // character style tables are hard to synthesize from nothing.
+                let newID = try document.cloneDrawable(textProtoID, toSlideAt: index)
                 try document.setNodeText(newID, to: string)
+                if let frame { try document.setNodeFrame(newID, to: frame) }
+                try applyStyle(element.style, to: newID, in: &document)
+                try? document.setNodeDescription(newID, to: "")
+            case .shape:
+                let newID = try document.addShape(toSlideAt: index, frame: frame ?? Self.defaultFrame)
+                try applyStyle(element.style, to: newID, in: &document)
             case .image(let path):
                 let url = URL(fileURLWithPath: path, relativeTo: imageBaseURL)
-                try document.setNodeMedia(newID, to: try Data(contentsOf: url))
-            case .shape:
-                break
+                try document.addImage(
+                    toSlideAt: index,
+                    data: try Data(contentsOf: url),
+                    frame: frame ?? Self.defaultFrame
+                )
             }
-            if let frame = element.style.frame {
-                try document.setNodeFrame(newID, to: frame)
-            }
-            try applyStyle(element.style, to: newID, in: &document)
-            // Clear the label the clone inherited from its prototype.
-            try? document.setNodeDescription(newID, to: "")
         }
 
         // Remove the prototypes so only the composed elements remain.
-        for id in [textProtoID, shapeProtoID, imageProtoID] {
+        for id in [textProtoID] + leftoverProtos {
             try? document.deleteDrawable(id)
         }
     }
+
+    private static let defaultFrame = Frame(x: 0, y: 0, width: 300, height: 200)
 
     private func applyStyle(_ style: ElementStyle, to nodeID: UInt64, in document: inout KeynoteDocument) throws {
         if style.fontSize != nil || style.bold != nil || style.italic != nil || style.foregroundColor != nil {

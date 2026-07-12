@@ -44,9 +44,12 @@ Three element kinds are built by free functions:
   `imageBaseURL`.
 - ``Shape()`` — a rectangle you can fill and size.
 
-Every element is realized by cloning a prototype from a bundled palette, so
-it inherits valid Keynote structure and default styling before your
-modifiers apply.
+Shapes and images are **synthesized from scratch** — their records are built
+directly and reference the theme's shape and media styles, so a fill or a
+frame behaves exactly as it would on a template element. Text boxes are
+cloned from a bundled prototype, because a text box's paragraph and
+character style tables are impractical to build from nothing; the clone
+supplies a real base style for ``Text`` to vary.
 
 ## Modifiers
 

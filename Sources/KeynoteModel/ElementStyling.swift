@@ -145,7 +145,7 @@ extension KeynoteDocument {
 
     // MARK: Helpers
 
-    private func reference(_ id: UInt64) -> TSP_Reference {
+    func reference(_ id: UInt64) -> TSP_Reference {
         TSP_Reference.with { $0.identifier = id }
     }
 
@@ -160,7 +160,7 @@ extension KeynoteDocument {
         }
     }
 
-    private mutating func allocateIdentifier() throws -> UInt64 {
+    mutating func allocateIdentifier() throws -> UInt64 {
         let metadataLocation = try locateRecord(type: 11006, orThrow: MediaOperationError.packageMetadataNotFound)
         var record = components[metadataLocation.component].records[metadataLocation.record]
         var metadata = try record.decode(TSP_PackageMetadata.self)
@@ -173,7 +173,7 @@ extension KeynoteDocument {
 
     /// Declares a cross-component reference in `component`'s ComponentInfo
     /// (idempotent). No-op if the object is local.
-    private mutating func declareExternalReference(fromComponent component: Int, toObject objectID: UInt64) throws {
+    mutating func declareExternalReference(fromComponent component: Int, toObject objectID: UInt64) throws {
         if components[component].records.contains(where: { $0.identifier == objectID }) { return }
         guard let ownerRootID = components.first(where: {
             $0.records.contains { $0.identifier == objectID }

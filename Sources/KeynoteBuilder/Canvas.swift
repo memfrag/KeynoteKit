@@ -47,7 +47,7 @@ public struct Element: Sendable {
     public enum Kind: Sendable {
         case text(String)
         case image(path: String)
-        case shape
+        case shape(ShapeKind)
     }
 
     public var kind: Kind
@@ -124,8 +124,9 @@ public struct Element: Sendable {
 public func Text(_ string: String) -> Element { Element(.text(string)) }
 /// Image element (file path resolved against the writer's `imageBaseURL`).
 public func Image(path: String) -> Element { Element(.image(path: path)) }
-/// A shape element.
-public func Shape() -> Element { Element(.shape) }
+/// A shape element — a rectangle by default, or any ``ShapeKind`` (ellipse,
+/// rounded rectangle, polygon, star).
+public func Shape(_ kind: ShapeKind = .rectangle) -> Element { Element(.shape(kind)) }
 
 /// A free-form slide built from absolutely-positioned elements, rather than
 /// from a template layout's placeholders.

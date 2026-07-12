@@ -12,7 +12,9 @@ extension KeynoteDocument {
     /// The shape references a theme shape style, so ``setNodeFill(_:to:)`` can
     /// override its fill exactly as it would for a cloned shape.
     @discardableResult
-    public mutating func addShape(toSlideAt index: Int, frame: Frame) throws -> UInt64 {
+    public mutating func addShape(
+        toSlideAt index: Int, frame: Frame, kind: ShapeKind = .rectangle
+    ) throws -> UInt64 {
         guard let shapeStyleID = firstIdentifier(ofType: 2025) else {
             throw SceneEditError.unsupportedEdit("no theme shape style to reference")
         }
@@ -26,7 +28,7 @@ extension KeynoteDocument {
         shape.super.super.geometry = Self.geometry(frame)
         shape.super.super.parent = reference(slideRootID)
         shape.super.style = reference(shapeStyleID)
-        shape.super.pathsource = Self.rectanglePath(width: frame.width, height: frame.height)
+        shape.super.pathsource = Self.pathSource(for: kind, width: frame.width, height: frame.height)
         shape.isTextBox = false
 
         let record = try makeRecord(

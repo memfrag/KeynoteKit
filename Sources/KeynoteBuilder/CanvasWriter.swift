@@ -72,8 +72,8 @@ public struct CanvasWriter {
             case .text(let string):
                 let newID = try document.addText(toSlideAt: index, string: string, frame: frame)
                 try applyStyle(element.style, to: newID, in: &document)
-            case .shape:
-                let newID = try document.addShape(toSlideAt: index, frame: frame)
+            case .shape(let kind):
+                let newID = try document.addShape(toSlideAt: index, frame: frame, kind: kind)
                 try applyStyle(element.style, to: newID, in: &document)
             case .image(let path):
                 let url = URL(fileURLWithPath: path, relativeTo: imageBaseURL)

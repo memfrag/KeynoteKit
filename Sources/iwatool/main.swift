@@ -55,6 +55,30 @@ func fail(_ message: String) -> Never {
 
 let arguments = CommandLine.arguments
 
+if arguments.count >= 3, arguments[1] == "shapes-demo" {
+    let out = URL(fileURLWithPath: arguments[2])
+    let kinds: [(ShapeKind, RGBAColor)] = [
+        (.rectangle, .rgb(0.2, 0.5, 0.95)),
+        (.roundedRectangle(cornerRadius: 40), .rgb(0.15, 0.7, 0.5)),
+        (.ellipse, .rgb(0.95, 0.55, 0.15)),
+        (.regularPolygon(sides: 3), .rgb(0.9, 0.3, 0.35)),
+        (.regularPolygon(sides: 6), .rgb(0.6, 0.35, 0.85)),
+        (.star(points: 5, innerRatio: 0.42), .rgb(0.95, 0.8, 0.2)),
+    ]
+    var elements: [Element] = []
+    for (i, item) in kinds.enumerated() {
+        let col = i % 3, row = i / 3
+        elements.append(
+            Shape(item.0)
+                .frame(x: 90 + Double(col) * 300, y: 120 + Double(row) * 300, width: 220, height: 220)
+                .fill(item.1)
+        )
+    }
+    let canvas = Canvas(elements: elements)
+    try CanvasWriter().write([canvas], to: out)
+    print("shapes demo written"); exit(0)
+}
+
 if arguments.count >= 3, arguments[1] == "canvas-demo" {
     let out = URL(fileURLWithPath: arguments[2])
     let imageBase = arguments.count >= 4 ? URL(fileURLWithPath: arguments[3]) : nil

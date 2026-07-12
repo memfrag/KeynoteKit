@@ -76,7 +76,15 @@ Three element kinds are built by free functions:
 - ``Text(_:)`` — a text box holding the given string.
 - ``Image(path:)`` — an image, its file resolved against the writer's
   `imageBaseURL`.
-- ``Shape()`` — a rectangle you can fill and size.
+- ``Shape(_:)`` — a shape. Defaults to a rectangle; pass a ``ShapeKind`` for
+  a rounded rectangle, ellipse (a circle in a square frame), regular polygon,
+  or star:
+
+  ```swift
+  Shape(.ellipse).frame(x: 60, y: 60, width: 200, height: 200)
+  Shape(.roundedRectangle(cornerRadius: 24)).frame(x: 300, y: 60, width: 260, height: 160)
+  Shape(.star(points: 5, innerRatio: 0.42)).frame(x: 600, y: 60, width: 200, height: 200)
+  ```
 
 Every element is **synthesized from scratch** — nothing is cloned. Each
 element's records are built directly and reference the seed theme's styles:
@@ -149,6 +157,7 @@ to think about it — identical images just work.
 
 - ``Canvas``
 - ``Element``
+- ``ShapeKind``
 - ``ElementStyle``
 - ``ElementBuilder``
 - ``CanvasWriter``

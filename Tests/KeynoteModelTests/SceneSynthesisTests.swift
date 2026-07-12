@@ -34,6 +34,24 @@ struct SceneSynthesisTests {
         #expect(shape?.frame == Frame(x: 100, y: 120, width: 400, height: 260))
     }
 
+    @Test("every shape kind round-trips")
+    func shapeKinds() throws {
+        let kinds: [ShapeKind] = [
+            .rectangle,
+            .roundedRectangle(cornerRadius: 30),
+            .ellipse,
+            .regularPolygon(sides: 6),
+            .star(points: 5, innerRatio: 0.4),
+        ]
+        for kind in kinds {
+            var document = try KeynoteDocument(contentsOf: Self.deckURL)
+            let id = try document.addShape(toSlideAt: 0, frame: Frame(x: 0, y: 0, width: 200, height: 200), kind: kind)
+            let reread = try writeAndReread(document)
+            let shape = try reread.sceneTree(forSlideAt: 0).nodes.first { $0.id == id }
+            #expect(shape?.type == "shape")
+        }
+    }
+
     @Test("a synthesized shape can be filled")
     func fillSynthesizedShape() throws {
         var document = try KeynoteDocument(contentsOf: Self.deckURL)

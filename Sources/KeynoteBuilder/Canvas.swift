@@ -127,9 +127,9 @@ public struct Element: Sendable {
     public func endCap(_ cap: LineEnd) -> Element { modifying { $0.endCap = cap } }
     /// Locks the element so it can't be selected or edited in Keynote.
     public func locked(_ on: Bool = true) -> Element { modifying { $0.locked = on } }
-    /// Flips a shape horizontally (mirror left↔right).
+    /// Flips the element horizontally (mirror left↔right).
     public func flippedHorizontally(_ on: Bool = true) -> Element { modifying { $0.flipHorizontal = on } }
-    /// Flips a shape vertically (mirror top↔bottom).
+    /// Flips the element vertically (mirror top↔bottom).
     public func flippedVertically(_ on: Bool = true) -> Element { modifying { $0.flipVertical = on } }
 
     private func modifying(_ change: (inout ElementStyle) -> Void) -> Element {

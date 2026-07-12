@@ -67,9 +67,8 @@ extension KeynoteDocument {
         func updated(_ geometry: inout TSD_GeometryArchive) {
             geometry.position = TSP_Point.with { $0.x = Float(frame.x); $0.y = Float(frame.y) }
             geometry.size = TSP_Size.with { $0.width = Float(frame.width); $0.height = Float(frame.height) }
-            // Clear the "size is unset" flag (bit 2) if present so the
-            // explicit size takes effect.
-            geometry.flags &= ~UInt32(4)
+            // (Bits 0x4/0x8 are the horizontal/vertical flip flags — leave them
+            // untouched so resizing a flipped element keeps its flip.)
         }
 
         switch record.primaryType {
@@ -116,18 +115,13 @@ extension KeynoteDocument {
         try mutateDrawable(nodeID) { $0.locked = locked }
     }
 
-    /// Flips a shape horizontally and/or vertically (mirrors its path source).
+    /// Flips a drawable horizontally and/or vertically. Works on any element —
+    /// shape, image, text box, group — via the geometry flip flags.
     public mutating func setNodeFlip(_ nodeID: UInt64, horizontal: Bool = false, vertical: Bool = false) throws {
-        let location = try locateSceneNode(nodeID)
-        var record = components[location.component].records[location.record]
-        guard record.primaryType == 2011 else {
-            throw SceneEditError.unsupportedEdit("flip is only supported for shapes so far")
+        try mutateGeometry(nodeID) { geometry in
+            if horizontal { geometry.flags |= 0x4 } else { geometry.flags &= ~UInt32(0x4) }
+            if vertical { geometry.flags |= 0x8 } else { geometry.flags &= ~UInt32(0x8) }
         }
-        var shape = try record.decode(TSWP_ShapeInfoArchive.self)
-        shape.super.pathsource.horizontalFlip = horizontal
-        shape.super.pathsource.verticalFlip = vertical
-        try record.setMessage(shape)
-        components[location.component].records[location.record] = record
     }
 
     /// Applies a change to a drawable's geometry, decoding whichever archive

@@ -77,17 +77,35 @@ if arguments.count >= 3, arguments[1] == "custom-path-demo" {
     print("custom path demo written"); exit(0)
 }
 
-if arguments.count >= 4, arguments[1] == "flip-test" {
+if arguments.count >= 4, arguments[1] == "textflip-test" {
     let paletteIn = URL(fileURLWithPath: arguments[2])
     let out = URL(fileURLWithPath: arguments[3])
     var document = try KeynoteDocument(contentsOf: paletteIn)
-    let normal = try document.addShape(toSlideAt: 0, frame: Frame(x: 100, y: 150, width: 300, height: 140), kind: .native(.rightArrow))
-    try document.setNodeFill(normal, to: (0.2, 0.5, 0.95, 1))
-    let flipped = try document.addShape(toSlideAt: 0, frame: Frame(x: 100, y: 400, width: 300, height: 140), kind: .native(.rightArrow))
-    try document.setNodeFill(flipped, to: (0.9, 0.3, 0.35, 1))
-    try document.setNodeFlip(flipped, horizontal: true)
+    let a = try document.addText(toSlideAt: 0, string: "Flip me", frame: Frame(x: 120, y: 150, width: 500, height: 120))
+    try document.setNodeCharacterStyle(a, fontSize: 60, bold: true)
+    let b = try document.addText(toSlideAt: 0, string: "Flip me", frame: Frame(x: 120, y: 350, width: 500, height: 120))
+    try document.setNodeCharacterStyle(b, fontSize: 60, bold: true, color: (0.9,0.3,0.35,1))
+    try document.setNodeFlip(b, horizontal: true)
     try document.write(to: out)
-    print("flip test written"); exit(0)
+    print("textflip written"); exit(0)
+}
+
+if arguments.count >= 5, arguments[1] == "flip-test" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    let fpng = try Data(contentsOf: URL(fileURLWithPath: arguments[4]))
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let n = try document.addImage(toSlideAt: 0, data: fpng, frame: Frame(x: 60, y: 120, width: 200, height: 200))
+    let h = try document.addImage(toSlideAt: 0, data: fpng, frame: Frame(x: 320, y: 120, width: 200, height: 200))
+    try document.setNodeFlip(h, horizontal: true)
+    let v = try document.addImage(toSlideAt: 0, data: fpng, frame: Frame(x: 580, y: 120, width: 200, height: 200))
+    try document.setNodeFlip(v, vertical: true)
+    // A shape flipped horizontally (was path-source; now geometry flags).
+    let s = try document.addShape(toSlideAt: 0, frame: Frame(x: 320, y: 420, width: 300, height: 140), kind: .native(.rightArrow))
+    try document.setNodeFill(s, to: (0.9, 0.3, 0.35, 1))
+    try document.setNodeFlip(s, horizontal: true)
+    try document.write(to: out)
+    print("flip test: normal=\(n) h=\(h) v=\(v) shape=\(s)"); exit(0)
 }
 
 if arguments.count >= 4, arguments[1] == "group-demo" {

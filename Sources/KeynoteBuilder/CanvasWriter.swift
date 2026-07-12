@@ -89,13 +89,6 @@ public struct CanvasWriter {
         case .shape(let kind):
             let newID = try document.addShape(toSlideAt: index, frame: frame, kind: kind)
             try applyStyle(element.style, to: newID, in: &document)
-            if element.style.flipHorizontal == true || element.style.flipVertical == true {
-                try document.setNodeFlip(
-                    newID,
-                    horizontal: element.style.flipHorizontal ?? false,
-                    vertical: element.style.flipVertical ?? false
-                )
-            }
             return newID
         case .image(let path):
             let url = URL(fileURLWithPath: path, relativeTo: imageBaseURL)
@@ -111,6 +104,12 @@ public struct CanvasWriter {
             }
             if let locked = element.style.locked {
                 try document.setNodeLocked(groupID, locked)
+            }
+            if element.style.flipHorizontal == true || element.style.flipVertical == true {
+                try document.setNodeFlip(
+                    groupID, horizontal: element.style.flipHorizontal ?? false,
+                    vertical: element.style.flipVertical ?? false
+                )
             }
             return groupID
         }
@@ -137,6 +136,11 @@ public struct CanvasWriter {
         }
         if let locked = style.locked {
             try document.setNodeLocked(nodeID, locked)
+        }
+        if style.flipHorizontal == true || style.flipVertical == true {
+            try document.setNodeFlip(
+                nodeID, horizontal: style.flipHorizontal ?? false, vertical: style.flipVertical ?? false
+            )
         }
     }
 }

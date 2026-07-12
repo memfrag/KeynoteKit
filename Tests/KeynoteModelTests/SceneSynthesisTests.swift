@@ -203,10 +203,13 @@ struct SceneSynthesisTests {
     @Test("flipping a shape round-trips")
     func flipping() throws {
         var document = try KeynoteDocument(contentsOf: Self.deckURL)
-        let id = try document.addShape(toSlideAt: 0, frame: Frame(x: 0, y: 0, width: 200, height: 120), kind: .native(.rightArrow))
-        try document.setNodeFlip(id, horizontal: true)
+        let shape = try document.addShape(toSlideAt: 0, frame: Frame(x: 0, y: 0, width: 200, height: 120), kind: .native(.rightArrow))
+        try document.setNodeFlip(shape, horizontal: true)
+        let image = try document.addImage(toSlideAt: 0, data: try Data(contentsOf: Self.blueImageURL), frame: Frame(x: 0, y: 200, width: 200, height: 120))
+        try document.setNodeFlip(image, vertical: true)
         let reread = try writeAndReread(document)
-        #expect(try reread.sceneTree(forSlideAt: 0).nodes.contains { $0.id == id })
+        let ids = Set(try reread.sceneTree(forSlideAt: 0).nodes.map(\.id))
+        #expect(ids.isSuperset(of: [shape, image]))
     }
 
     @Test("locking a node round-trips")

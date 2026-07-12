@@ -99,4 +99,26 @@ struct SlideBuildTests {
             )
         }
     }
+    @Test("build delivery round-trips")
+    func delivery() throws {
+        var document = try KeynoteDocument(contentsOf: Self.twoSlideURL)
+        let shape = try #require(try document.sceneTree(forSlideAt: 0).nodes.first { $0.type == "shape" || $0.type == "placeholder" })
+        _ = try document.addBuild(SlideBuild(nodeID: shape.id, kind: "In", effect: "apple:dissolve", delivery: BuildDelivery.byParagraph), toSlideAt: 0)
+        let reread = try writeAndReread(document)
+        #expect(try reread.slideBuilds(at: 0).first?.delivery == "By Paragraph")
+    }
+
+    @Test("reorderBuilds changes playback order")
+    func reorder() throws {
+        var document = try KeynoteDocument(contentsOf: Self.twoSlideURL)
+        let nodes = try document.sceneTree(forSlideAt: 0).nodes.filter { $0.type == "shape" || $0.type == "placeholder" }
+        let a = try #require(nodes.first)
+        let b = try #require(nodes.dropFirst().first)
+        let buildA = try document.addBuild(SlideBuild(nodeID: a.id, kind: "In", effect: "apple:bc-appear"), toSlideAt: 0)
+        let buildB = try document.addBuild(SlideBuild(nodeID: b.id, kind: "In", effect: "apple:dissolve"), toSlideAt: 0)
+        try document.reorderBuilds(onSlideAt: 0, order: [buildB, buildA])
+        let reread = try writeAndReread(document)
+        let order = try reread.slideBuilds(at: 0).map(\.nodeID)
+        #expect(order == [b.id, a.id])
+    }
 }

@@ -24,6 +24,9 @@ public struct SlideBuild: Codable, Equatable, Sendable {
 
     // Parameters (optional; omitted = the effect's default).
 
+    /// How a multi-paragraph object is delivered: "All at Once", "By
+    /// Paragraph", "By Paragraph Group", or "By Highlighted Paragraph".
+    public var delivery: String?
     /// How text builds: "byObject", "byWord", "byCharacter", or "byLine".
     public var textDelivery: String?
     /// "forward" or "backward".
@@ -38,7 +41,7 @@ public struct SlideBuild: Codable, Equatable, Sendable {
     public init(
         id: UInt64 = 0, nodeID: UInt64, kind: String, effect: String,
         duration: Double = 1.0, delay: Double = 0.0,
-        textDelivery: String? = nil, deliveryOption: String? = nil,
+        delivery: String? = nil, textDelivery: String? = nil, deliveryOption: String? = nil,
         direction: UInt32? = nil, rotationAngle: Double? = nil,
         scaleSize: Double? = nil, opacity: Double? = nil
     ) {
@@ -48,6 +51,7 @@ public struct SlideBuild: Codable, Equatable, Sendable {
         self.effect = effect
         self.duration = duration
         self.delay = delay
+        self.delivery = delivery
         self.textDelivery = textDelivery
         self.deliveryOption = deliveryOption
         self.direction = direction
@@ -55,6 +59,15 @@ public struct SlideBuild: Codable, Equatable, Sendable {
         self.scaleSize = scaleSize
         self.opacity = opacity
     }
+}
+
+/// The paragraph-delivery options in Keynote's build inspector, for
+/// ``SlideBuild/delivery``.
+public enum BuildDelivery {
+    public static let allAtOnce = "All at Once"
+    public static let byParagraph = "By Paragraph"
+    public static let byParagraphGroup = "By Paragraph Group"
+    public static let byHighlightedParagraph = "By Highlighted Paragraph"
 }
 
 /// String names for the delivery enums.
@@ -101,6 +114,7 @@ extension KeynoteDocument {
                 effect: animation.effect,
                 duration: animation.duration,
                 delay: animation.delay,
+                delivery: build.hasDelivery && !build.delivery.isEmpty ? build.delivery : nil,
                 textDelivery: attributes.hasCustomTextDelivery
                     ? BuildEnumNames.textDelivery[attributes.customTextDelivery] : nil,
                 deliveryOption: attributes.hasCustomDeliveryOption
@@ -140,7 +154,7 @@ extension KeynoteDocument {
 
         let buildArchive = KN_BuildArchive.with {
             $0.drawable = TSP_Reference.with { $0.identifier = build.nodeID }
-            $0.delivery = "All at Once"
+            $0.delivery = build.delivery ?? "All at Once"
             $0.attributes = KN_BuildAttributesArchive.with {
                 $0.eventTrigger = 1
                 $0.animationAttributes = KN_AnimationAttributesArchive.with {
@@ -202,6 +216,38 @@ extension KeynoteDocument {
         components[componentIndex].records[recordIndex] = slideRecord
         try setNodeBuildFlags(at: index, hasBuilds: true)
         return buildID
+    }
+
+    // MARK: Ordering
+
+    /// Reorders the element animations on a slide. `order` must contain exactly
+    /// the current build ids (as ``slideBuilds(at:)`` reports them), in the new
+    /// playback order.
+    public mutating func reorderBuilds(onSlideAt index: Int, order buildIDs: [UInt64]) throws {
+        var (slide, componentIndex, recordIndex) = try slideArchiveLocation(at: index)
+        let existing = Set(slide.builds.map(\.identifier))
+        guard Set(buildIDs) == existing else {
+            throw BuildError.buildNotFound(buildIDs.first(where: { !existing.contains($0) }) ?? 0)
+        }
+        let rank = Dictionary(uniqueKeysWithValues: buildIDs.enumerated().map { ($1, $0) })
+
+        func buildID(ofChunk reference: TSP_Reference) -> UInt64? {
+            guard let record = components[componentIndex].records.first(where: { $0.identifier == reference.identifier }),
+                  record.primaryType == 153,
+                  let chunk = try? record.decode(KN_BuildChunkArchive.self)
+            else { return nil }
+            return chunk.build.identifier
+        }
+        // Chunk order is playback order; sort chunks (and the builds list) by
+        // the requested rank of the build they animate.
+        slide.buildChunks.sort {
+            (buildID(ofChunk: $0).flatMap { rank[$0] } ?? 0) < (buildID(ofChunk: $1).flatMap { rank[$0] } ?? 0)
+        }
+        slide.builds.sort { (rank[$0.identifier] ?? 0) < (rank[$1.identifier] ?? 0) }
+
+        var slideRecord = components[componentIndex].records[recordIndex]
+        try slideRecord.setMessage(slide)
+        components[componentIndex].records[recordIndex] = slideRecord
     }
 
     // MARK: Removing

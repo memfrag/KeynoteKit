@@ -114,6 +114,26 @@ if arguments.count >= 4, arguments[1] == "parastyle-test" {
     print("parastyle test written"); exit(0)
 }
 
+if arguments.count >= 4, arguments[1] == "builddelivery-test" {
+    let paletteIn = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: paletteIn)
+    let a = try document.addShape(toSlideAt: 0, frame: Frame(x: 100, y: 120, width: 200, height: 160), kind: .native(.star(points: 5, innerRatio: 0.42)))
+    try document.setNodeFill(a, to: (0.95, 0.8, 0.2, 1))
+    let b = try document.addText(toSlideAt: 0, string: "First line\nSecond line\nThird line", frame: Frame(x: 400, y: 120, width: 500, height: 200))
+    try document.setNodeCharacterStyle(b, fontSize: 40)
+    let build1 = try document.addBuild(SlideBuild(nodeID: a, kind: "In", effect: "apple:bc-appear"), toSlideAt: 0)
+    let build2 = try document.addBuild(SlideBuild(nodeID: b, kind: "In", effect: "apple:dissolve", delivery: "By Paragraph"), toSlideAt: 0)
+    // Reverse the order: text animates before the star.
+    try document.reorderBuilds(onSlideAt: 0, order: [build2, build1])
+    try document.write(to: out)
+    // Read back to confirm.
+    let reread = try KeynoteDocument(contentsOf: out)
+    let builds = try reread.slideBuilds(at: 0)
+    print("builds in order:", builds.map { "\($0.nodeID)/\($0.effect)/delivery=\($0.delivery ?? "-")" }.joined(separator: " | "))
+    exit(0)
+}
+
 if arguments.count >= 5, arguments[1] == "mask-test" {
     let paletteIn = URL(fileURLWithPath: arguments[2])
     let out = URL(fileURLWithPath: arguments[3])
@@ -561,12 +581,22 @@ case "add-build":
     let outputURL = URL(fileURLWithPath: arguments[3])
     var document = try KeynoteDocument(contentsOf: inputURL)
     let duration = arguments.count >= 9 ? Double(arguments[8]) ?? 1.0 : 1.0
+    let delivery = arguments.count >= 10 ? arguments[9] : nil
     let buildID = try document.addBuild(
-        SlideBuild(nodeID: nodeID, kind: arguments[6], effect: arguments[7], duration: duration),
+        SlideBuild(nodeID: nodeID, kind: arguments[6], effect: arguments[7], duration: duration, delivery: delivery),
         toSlideAt: slideIndex
     )
     try document.write(to: outputURL)
     print("added build \(buildID) to node \(nodeID)")
+
+case "reorder-builds":
+    guard arguments.count >= 6, let slideIndex = Int(arguments[4]) else { fail(usage) }
+    let outputURL = URL(fileURLWithPath: arguments[3])
+    var document = try KeynoteDocument(contentsOf: inputURL)
+    let order = arguments[5].split(separator: ",").compactMap { UInt64($0) }
+    try document.reorderBuilds(onSlideAt: slideIndex, order: order)
+    try document.write(to: outputURL)
+    print("reordered builds: \(order)")
 
 case "remove-build":
     guard arguments.count >= 6, let slideIndex = Int(arguments[4]), let buildID = UInt64(arguments[5]) else { fail(usage) }

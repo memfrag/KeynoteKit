@@ -58,13 +58,13 @@ let arguments = CommandLine.arguments
 if arguments.count >= 3, arguments[1] == "canvas-demo" {
     let out = URL(fileURLWithPath: arguments[2])
     let imageBase = arguments.count >= 4 ? URL(fileURLWithPath: arguments[3]) : nil
-    let canvas = Canvas {
+    let canvas = Canvas(background: .rgb(0.1, 0.12, 0.2)) {
         Text("Composed with a DSL")
             .frame(x: 60, y: 60, width: 840, height: 120)
             .fontSize(54).bold().foregroundColor(.rgb(0.2, 0.5, 0.95))
         Text("Every element is placed by hand")
             .frame(x: 60, y: 190, width: 840, height: 80)
-            .fontSize(28).italic().foregroundColor(.rgb(0.4, 0.4, 0.45))
+            .fontSize(28).italic().foregroundColor(.rgb(0.75, 0.78, 0.85))
         Shape()
             .frame(x: 60, y: 300, width: 360, height: 260)
             .fill(.rgb(0.95, 0.55, 0.15))
@@ -99,6 +99,16 @@ if arguments.count >= 5, arguments[1] == "synth-image" {
     )
     try document.write(to: out)
     print("synthesized image id \(id)"); exit(0)
+}
+
+if arguments.count >= 7, arguments[1] == "set-bg" {
+    let input = URL(fileURLWithPath: arguments[2])
+    let out = URL(fileURLWithPath: arguments[3])
+    let r = Double(arguments[4])!, g = Double(arguments[5])!, b = Double(arguments[6])!
+    var document = try KeynoteDocument(contentsOf: input)
+    try document.setSlideBackground(at: 0, to: (r, g, b, 1))
+    try document.write(to: out)
+    print("background set"); exit(0)
 }
 
 if arguments.count >= 4, arguments[1] == "synth-text" {

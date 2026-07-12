@@ -94,9 +94,17 @@ public func Shape() -> Element { Element(.shape) }
 /// from a template layout's placeholders.
 public struct Canvas: Sendable {
     public var elements: [Element]
+    /// Slide background fill. `nil` keeps the theme's background.
+    public var background: RGBAColor?
 
-    public init(elements: [Element]) { self.elements = elements }
-    public init(@ElementBuilder _ content: () -> [Element]) { self.elements = content() }
+    public init(elements: [Element], background: RGBAColor? = nil) {
+        self.elements = elements
+        self.background = background
+    }
+    public init(background: RGBAColor? = nil, @ElementBuilder _ content: () -> [Element]) {
+        self.background = background
+        self.elements = content()
+    }
 }
 
 @resultBuilder

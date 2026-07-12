@@ -143,6 +143,67 @@ extension KeynoteDocument {
         try declareExternalReference(fromComponent: location.component, toObject: newStyleID)
     }
 
+    /// Sets a slide's background fill color (RGBA 0…1) by attaching an
+    /// anonymous variation of its slide style, mirroring how Keynote overrides
+    /// a single slide's background without touching the shared master style.
+    public mutating func setSlideBackground(at index: Int, to color: (Double, Double, Double, Double)) throws {
+        let (slideArchive, slideComponent, slideRecordIndex) = try slideArchiveLocation(at: index)
+        var slide = slideArchive
+        let version = components[slideComponent].records[slideRecordIndex].info.messageInfos[0].version
+
+        // The slide's current style (from its master) is the parent to inherit.
+        let baseStyleID: UInt64? = slide.hasStyle ? slide.style.identifier : nil
+
+        // Variation styles live in the stylesheet component that holds the
+        // base style; fall back to any component that carries slide styles.
+        let stylesheetComponent: Int
+        var styleSheetID: UInt64?
+        if let baseStyleID,
+           let comp = components.firstIndex(where: { $0.records.contains { $0.identifier == baseStyleID } }) {
+            stylesheetComponent = comp
+            if let baseRecord = components[comp].records.first(where: { $0.identifier == baseStyleID }),
+               let baseStyle = try? baseRecord.decode(KN_SlideStyleArchive.self), baseStyle.super.hasStylesheet {
+                styleSheetID = baseStyle.super.stylesheet.identifier
+            }
+        } else if let comp = components.firstIndex(where: { $0.records.contains { $0.primaryType == 9 } }) {
+            stylesheetComponent = comp
+        } else {
+            throw SceneEditError.unsupportedEdit("no slide style component to hold the background")
+        }
+
+        let newStyleID = try allocateIdentifier()
+        let style = KN_SlideStyleArchive.with {
+            $0.super = TSS_StyleArchive.with {
+                if let baseStyleID {
+                    $0.parent = reference(baseStyleID)
+                    $0.isVariation = true
+                }
+                if let styleSheetID { $0.stylesheet = reference(styleSheetID) }
+            }
+            $0.overrideCount = 1
+            $0.slideProperties = KN_SlideStylePropertiesArchive.with {
+                $0.fill = TSD_FillArchive.with { $0.color = Self.color(color) }
+            }
+        }
+        let styleRecord = try makeRecord(
+            identifier: newStyleID, type: 9, message: style, version: version,
+            objectReferences: baseStyleID.map { [$0] } ?? []
+        )
+        components[stylesheetComponent].records.append(styleRecord)
+
+        // Repoint the slide at the new style and fix its references.
+        var slideRecord = components[slideComponent].records[slideRecordIndex]
+        slide.style = reference(newStyleID)
+        try slideRecord.setMessage(slide)
+        var refs = slideRecord.info.messageInfos[0].objectReferences
+        if let baseStyleID { refs.removeAll { $0 == baseStyleID } }
+        if !refs.contains(newStyleID) { refs.append(newStyleID) }
+        try slideRecord.setObjectReferences(refs, at: 0)
+        components[slideComponent].records[slideRecordIndex] = slideRecord
+
+        try declareExternalReference(fromComponent: slideComponent, toObject: newStyleID)
+    }
+
     // MARK: Helpers
 
     func reference(_ id: UInt64) -> TSP_Reference {

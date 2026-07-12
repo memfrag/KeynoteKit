@@ -74,6 +74,15 @@ struct SceneSynthesisTests {
         #expect(try reread.sceneTree(forSlideAt: 0).nodes.contains { $0.id == id })
     }
 
+    @Test("setSlideBackground applies without breaking the document")
+    func setBackground() throws {
+        var document = try KeynoteDocument(contentsOf: Self.deckURL)
+        try document.setSlideBackground(at: 0, to: (0.1, 0.2, 0.4, 1))
+        let reread = try writeAndReread(document)
+        // The slide still reads back with its nodes intact.
+        #expect(try reread.sceneTree(forSlideAt: 0).nodes.isEmpty == false)
+    }
+
     @Test("addImage registers data and places an image node")
     func addImage() throws {
         var document = try KeynoteDocument(contentsOf: Self.deckURL)

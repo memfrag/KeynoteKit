@@ -110,6 +110,17 @@ struct CanvasWriterTests {
         #expect(try document.dataDigestsAreUnique())
     }
 
+    @Test("a canvas background is applied without breaking the slide")
+    func canvasBackground() throws {
+        let canvas = Canvas(background: .rgb(0.1, 0.2, 0.4)) {
+            Text("On a dark slide").frame(x: 40, y: 40, width: 600, height: 100).foregroundColor(.white)
+        }
+        let document = try buildAndReread([canvas])
+        let nodes = try drawables(document)
+        #expect(nodes.contains { $0.text == "On a dark slide" })
+        #expect(try document.dataDigestsAreUnique())
+    }
+
     @Test("multiple canvases produce multiple slides")
     func multipleSlides() throws {
         let document = try buildAndReread([

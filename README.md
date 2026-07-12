@@ -29,7 +29,8 @@ Early development. Working today:
   - **Slide operations**: duplicate (deep-copies the slide's `.iwa` component
     with fresh identifiers, rewriting internal references while preserving
     external style/theme references, and maintaining all package metadata),
-    remove, and reorder
+    remove, reorder, and set the slide (canvas) size (`setSlideSize`, e.g.
+    1920×1080 for 16:9)
   - **Image replacement**: swaps a `Data/` image in place, re-renders the
     Keynote-generated preview at its original size, and updates the SHA-1
     digests in both `PackageMetadata` and `DocumentMetadata`
@@ -109,6 +110,16 @@ Early development. Working today:
     content slide is cloned from the matching template slide, so it inherits
     that layout's real masters and styling. Design the template in Keynote;
     the builder rearranges and fills it.
+  - **Canvas DSL**: a SwiftUI-like, free-form layout API (`Canvas { … }`) that
+    places `Text`, `Image`, `Shape`, and `Group` elements by absolute frame and
+    synthesizes them from scratch. Chainable modifiers cover font (family/face
+    + size/bold/italic), color, fill (color/gradient/image), border, shadow,
+    opacity, rotation, mask, alignment, bullets/numbers, columns, drop cap, and
+    more. `CanvasWriter` renders `[Canvas]` to a `.key` on a themed 16:9 seed.
+  - **JSON deck format**: describe a whole deck as JSON and build it with
+    `iwatool build-json spec.json out.key` (see below). A companion JSON Schema
+    (`Examples/deck.schema.json`) documents the format and can be handed to an
+    LLM to generate decks.
 - **`iwatool`** — CLI for inspecting, round-tripping, and rewriting `.key` files
 
 Files generated or modified through KeynoteKit open cleanly in Keynote with
@@ -306,6 +317,71 @@ Apple's or your own: the theme and its masters travel inside the template
 file. Use `iwatool describe-template` to see how a template's layouts are
 structured (each placeholder's role, prompt text, and geometry).
 
+## Building a deck from JSON
+
+For richer, designed decks — full-bleed images, gradients, shapes, colored
+bullets, per-bullet builds — describe the deck as JSON and build it:
+
+```sh
+swift run iwatool build-json deck.json out.key
+```
+
+The format maps onto the Canvas DSL. A deck is `slides`, each an ordered list
+of `elements` placed by `frame` on a 16:9 (1920×1080) canvas, plus an optional
+`background`, `transition`, and `builds`:
+
+```json
+{
+  "$schema": "./deck.schema.json",
+  "defaultFont": "Helvetica Neue",
+  "imageBaseDir": "assets",
+  "slides": [
+    {
+      "background": "#0E2529",
+      "transition": { "effect": "apple:push", "duration": 0.4, "direction": "fromBottom" },
+      "elements": [
+        { "type": "image", "image": "lake.jpg", "frame": { "mode": "cover" } },
+        { "type": "text", "text": "Otters", "frame": {"x":120,"y":700,"width":1680,"height":220},
+          "font": "Futura", "fontSize": 200, "bold": true, "color": "#EDF7F5", "alignment": "center" },
+        { "type": "text", "name": "points", "text": "First\nSecond\nThird",
+          "frame": {"x":120,"y":520,"width":760,"height":420}, "fontSize": 44, "color": "#EDF7F5",
+          "bulleted": { "marker": "•", "color": "#4CD9C2" } }
+      ],
+      "builds": [
+        { "target": "points", "effect": "apple:fade and move character", "duration": 0.3,
+          "delivery": "By Paragraph", "textDelivery": "byObject", "direction": "fromBottom",
+          "travelDistance": 0.07 }
+      ]
+    }
+  ]
+}
+```
+
+Highlights:
+
+- **Colors** are a hex string (`"#RRGGBB"` / `"#RRGGBBAA"`) or a `[r,g,b(,a)]`
+  array of 0…1 floats. A bare color is also accepted anywhere a fill is expected.
+- **Frames** are explicit `{x,y,width,height}` or a helper —
+  `{"mode":"cover"}` (full-bleed), `{"mode":"fit","box":{…}}`, or
+  `{"mode":"coverBox","box":{…}}` — which read the image's pixel dimensions to
+  compute the aspect, so image layouts need no hard-coded ratios.
+- **Fonts**: a deck-level `defaultFont`, overridable per element (`font`) and in
+  `paragraphStyles`; `bold`/`italic` apply as traits.
+- **Images** are file paths (resolved against `imageBaseDir`) or `data:`/base64.
+- **Builds** reference an element by `name`; the array order is playback order.
+  "By Paragraph" delivery animates one bullet at a time.
+- **Reusable templates**: define named element sets under `templates` and
+  instantiate them per slide with `use` + `set` (fill by element name).
+- **External templates**: set a deck-level `template` (a `.key`); each slide
+  then `from`s one of its layouts and fills placeholders via `set` (title /
+  body / named blocks / images) and named-node `override`s — inheriting the
+  template's real masters.
+
+Validation is fail-fast: an invalid spec reports **every** problem at once
+(with a `slides[i].elements[j]` path) and writes nothing. The full grammar,
+with a `description` on every field, lives in `Examples/deck.schema.json`;
+`Examples/Otters.json` and `Examples/Otters2.json` are complete worked decks.
+
 ## Usage
 
 ```sh
@@ -339,6 +415,9 @@ swift run iwatool build outline.txt Deck.key
 # Build a deck from a markdown presentation (optionally with a layout template)
 swift run iwatool build-md talk.md Deck.key
 swift run iwatool build-md talk.md Deck.key MyTemplate.key
+
+# Build a designed deck from a JSON spec (see "Building a deck from JSON")
+swift run iwatool build-json deck.json Deck.key
 
 # Show the master (slide layout) each slide uses
 swift run iwatool masters Deck.key

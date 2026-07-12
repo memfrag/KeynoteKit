@@ -9,3 +9,4 @@ DerivedData/
 # Local Claude Code settings
 .claude/settings.local.json
 Otters.key
+Examples/Otters2.key

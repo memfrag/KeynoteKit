@@ -1,7 +1,7 @@
 # ``KeynoteBuilder``
 
 Generate Keynote presentations declaratively — from Swift, from markdown,
-and from template decks.
+from template decks, from free-form Canvas layouts, and from JSON.
 
 ## Overview
 
@@ -57,3 +57,11 @@ theme or a custom one — and tag its slides with the layouts they demonstrate
 - ``Element``
 - ``CanvasWriter``
 - ``RGBAColor``
+
+### JSON deck format
+
+- <doc:JSONFormat>
+- ``DeckSpec``
+- ``DeckSpecLoader``
+- ``SlideSpec``
+- ``ElementSpec``

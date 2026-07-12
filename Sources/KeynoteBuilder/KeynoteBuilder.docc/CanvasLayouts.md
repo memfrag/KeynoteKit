@@ -17,7 +17,7 @@ import KeynoteBuilder
 let canvas = Canvas {
     Text("Composed with a DSL")
         .frame(x: 60, y: 60, width: 840, height: 120)
-        .fontSize(54).bold().foregroundColor(.rgb(0.2, 0.5, 0.95))
+        .font("Futura").fontSize(54).bold().foregroundColor(.rgb(0.2, 0.5, 0.95))
     Text("Every element is placed by hand")
         .frame(x: 60, y: 190, width: 840, height: 80)
         .fontSize(28).italic()

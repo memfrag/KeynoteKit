@@ -6,6 +6,7 @@ A Swift package for reading and generating Apple Keynote `.key` files.
 ![Platform macOS 13+](https://img.shields.io/badge/Platform-macOS%2013%2B-000000?logo=apple&logoColor=white)
 [![Docs](https://img.shields.io/badge/Docs-DocC-1E6BB8)](https://memfrag.github.io/KeynoteKit/)
 [![Tutorial](https://img.shields.io/badge/Tutorial-JSON%20decks-4CD9C2)](https://memfrag.github.io/KeynoteKit/tutorial.html)
+[![License: 0BSD](https://img.shields.io/badge/License-0BSD-blue.svg)](LICENSE)
 
 Keynote's file format is a ZIP archive of `.iwa` files — Snappy-compressed
 (with Apple's non-standard framing) Protocol Buffer messages using
@@ -517,6 +518,16 @@ code for a new schema version:
 PROTOC=/path/to/protoc PROTOC_GEN_SWIFT=/path/to/protoc-gen-swift \
   scripts/gen-protos.sh 14.4
 ```
+
+## License
+
+KeynoteKit is released under the [BSD Zero Clause License](LICENSE) (0BSD) — a
+public-domain-equivalent license with no attribution requirement. Use it for
+anything.
+
+The vendored protobuf schemas under `proto/` derive from
+[keynote-parser](https://github.com/psobot/keynote-parser) (MIT); see its
+license for those files.
 
 ## Acknowledgements
 
